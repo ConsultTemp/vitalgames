@@ -26,6 +26,14 @@ export async function generateMetadata(props: { params: Params }): Promise<Metad
         title: `${dictionary.booking.pageTitle} | Patty Car`,
         description: seoData.description,
         keywords: seoData.keywords,
+        icons: {
+            icon: [
+              { url: '/favicon.ico' }, 
+              { url: '/logopatty.png' }
+            ],
+            apple: { url: '/favicon.ico' },
+            shortcut: { url: '/favicon.ico' }
+          },
         alternates: {
             canonical: `/${params.lang}/booking`,
             languages: {

@@ -58,12 +58,20 @@ export async function generateMetadata(props: { params: Params }): Promise<Metad
       type: "website",
       images: [
         {
-          url: "/images/fleet/hero.jpg",
+          url: "/fleethero.jpg",
           width: 1200,
           height: 630,
           alt: `${dictionary.fleet.title} - Patty Car`,
         },
       ],
+    },
+    icons: {
+      icon: [
+        { url: '/favicon.ico' }, 
+        { url: '/logopatty.png' }
+      ],
+      apple: { url: '/favicon.ico' },
+      shortcut: { url: '/favicon.ico' }
     },
     twitter: {
       card: "summary_large_image",

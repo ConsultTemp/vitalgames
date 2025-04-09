@@ -27,6 +27,14 @@ export async function generateMetadata(props: { params: Params }): Promise<Metad
                 "ar-SA": "/ar/contact",
             },
         },
+        icons: {
+            icon: [
+              { url: '/favicon.ico' }, 
+              { url: '/logopatty.png' }
+            ],
+            apple: { url: '/favicon.ico' },
+            shortcut: { url: '/favicon.ico' }
+          },
         openGraph: {
             title: `${dictionary.contact.title} | Patty Car`,
             description: seoData.description,
@@ -87,7 +95,7 @@ export default async function ContactPage(props: { params: Params }) {
                     <div className="bg-white p-6 border border-gray-100">
                         <h2 className="text-base font-light text-red-700 mb-6">{dictionary.contact.formTitle}</h2>
 
-                        <form action="https://formsubmit.co/cahuas72@gmail.com" method="POST" className="space-y-6">
+                        <form action="https://formsubmit.co/915048087f6b65d98e55fdda9ae6a9c6" method="POST" className="space-y-6">
                             <input type="hidden" name="_subject" value="Nuovo messaggio dal sito Patty Car" />
                             <input type="hidden" name="_captcha" value="false" />
                             <input type="hidden" name="_next" value={`https://pattycar.com/${params.lang}/thank-you`} />

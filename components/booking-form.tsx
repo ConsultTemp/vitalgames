@@ -44,7 +44,7 @@ export default function BookingForm({ dictionary }: { dictionary: any }) {
           </div>
         ) : (
           <form
-            action="https://formsubmit.co/cahuas72@gmail.com"
+            action="https://formsubmit.co/915048087f6b65d98e55fdda9ae6a9c6"
             method="POST"
             onSubmit={handleSubmit}
             className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6"
