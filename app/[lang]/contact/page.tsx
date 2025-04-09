@@ -98,7 +98,7 @@ export default async function ContactPage(props: { params: Params }) {
                         <form action="https://formsubmit.co/915048087f6b65d98e55fdda9ae6a9c6" method="POST" className="space-y-6">
                             <input type="hidden" name="_subject" value="Nuovo messaggio dal sito Patty Car" />
                             <input type="hidden" name="_captcha" value="false" />
-                            <input type="hidden" name="_next" value={`https://pattycar.com/${params.lang}/thank-you`} />
+                            <input type="hidden" name="_next" value={`https://pattycar.com/${params.lang}/`} />
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>

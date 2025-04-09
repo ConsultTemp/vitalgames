@@ -7,14 +7,49 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import { Calendar } from "@/components/ui/calendar"
+import { Button } from "@/components/ui/button"
+import { format } from "date-fns"
+import { CalendarIcon } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 export default function BookingForm({ dictionary }: { dictionary: any }) {
   const { lang } = useLanguage()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const [date, setDate] = useState<Date>()
+  const [hour, setHour] = useState<string>("")
+  const [minute, setMinute] = useState<string>("")
 
   const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
     setIsSubmitting(true)
+
+    // Create hidden inputs for date and time
+    const form = e.target as HTMLFormElement
+
+    // Add date value
+    if (date) {
+      const dateInput = document.createElement("input")
+      dateInput.type = "hidden"
+      dateInput.name = "date"
+      dateInput.value = format(date, "yyyy-MM-dd")
+      form.appendChild(dateInput)
+    }
+
+    // Add time value
+    if (hour && minute) {
+      const timeInput = document.createElement("input")
+      timeInput.type = "hidden"
+      timeInput.name = "time"
+      timeInput.value = `${hour}:${minute}`
+      form.appendChild(timeInput)
+    }
+
+    // Submit the form
+    form.submit()
+
     // FormSubmit will handle the actual submission
     // This is just for the UI feedback
     setTimeout(() => {
@@ -22,6 +57,10 @@ export default function BookingForm({ dictionary }: { dictionary: any }) {
       setSubmitStatus("success")
     }, 1000)
   }
+
+  // Generate hours and minutes for the time selector
+  const hours = Array.from({ length: 24 }, (_, i) => i.toString().padStart(2, "0"))
+  const minutes = Array.from({ length: 12 }, (_, i) => (i * 5).toString().padStart(2, "0"))
 
   return (
     <section className="py-20 bg-white">
@@ -52,7 +91,7 @@ export default function BookingForm({ dictionary }: { dictionary: any }) {
             {/* FormSubmit configuration fields */}
             <input type="hidden" name="_subject" value="New Booking Request from Patty Car Website" />
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value={`https://pattycar.com/${lang}/thank-you`} />
+            <input type="hidden" name="_next" value={`https://pattycar.com/${lang}/`} />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="language" value={lang} />
 
@@ -88,8 +127,8 @@ export default function BookingForm({ dictionary }: { dictionary: any }) {
                 <SelectContent>
                   <SelectItem value="sedan">Sedan</SelectItem>
                   <SelectItem value="van">Van</SelectItem>
-                  <SelectItem value="suv">SUV</SelectItem>
-                  <SelectItem value="luxury">Luxury</SelectItem>
+                  <SelectItem value="suv">Minivan</SelectItem>
+                  <SelectItem value="luxury">S Class / First Class</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -116,14 +155,56 @@ export default function BookingForm({ dictionary }: { dictionary: any }) {
               <label htmlFor="date" className="block text-sm text-gray-600 mb-1">
                 {dictionary.dateLabel}
               </label>
-              <Input type="date" id="date" name="date" required />
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button
+                    variant="outline"
+                    className={cn(
+                      "w-full justify-start text-left font-normal bg-gray-100 border-transparent hover:bg-gray-200",
+                      !date && "text-gray-500",
+                    )}
+                  >
+                    <CalendarIcon className="mr-2 h-4 w-4" />
+                    {date ? format(date, "PPP") : ""}
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0" align="start">
+                  <Calendar mode="single" selected={date} onSelect={setDate} className="bg-white" />
+                </PopoverContent>
+              </Popover>
             </div>
 
             <div className="transition-all duration-300 hover:shadow-sm">
               <label htmlFor="time" className="block text-sm text-gray-600 mb-1">
                 {dictionary.timeLabel}
               </label>
-              <Input type="time" id="time" name="time" required />
+              <div className="flex space-x-2">
+                <Select value={hour} onValueChange={setHour} required>
+                  <SelectTrigger className="w-full bg-gray-100 border-transparent">
+                    <SelectValue placeholder={dictionary.timeLabel || "Hour"} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {hours.map((h) => (
+                      <SelectItem key={h} value={h}>
+                        {h}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <span className="flex items-center">:</span>
+                <Select value={minute} onValueChange={setMinute} required>
+                  <SelectTrigger className="w-full bg-gray-100 border-transparent">
+                    <SelectValue placeholder="Min" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {minutes.map((m) => (
+                      <SelectItem key={m} value={m}>
+                        {m}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
 
             <div className="transition-all duration-300 hover:shadow-sm">
@@ -131,6 +212,17 @@ export default function BookingForm({ dictionary }: { dictionary: any }) {
                 {dictionary.passengersLabel}
               </label>
               <Input type="number" id="passengers" name="passengers" min="1" required />
+            </div>
+
+            <div className="transition-all duration-300 hover:shadow-sm">
+              <label htmlFor="flight" className="block text-sm text-gray-600 mb-1">
+                {dictionary.flightLabel || "Arrival flight"}
+              </label>
+              <Input
+                type="text"
+                id="flight"
+                name="flight"
+              />
             </div>
 
             <div className="transition-all duration-300 hover:shadow-sm">
@@ -179,4 +271,3 @@ export default function BookingForm({ dictionary }: { dictionary: any }) {
     </section>
   )
 }
-

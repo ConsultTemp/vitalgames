@@ -4,7 +4,7 @@ import type { Locale } from "@/i18n-config"
 import type { Metadata } from "next"
 import { generateSEOMetadata } from "@/lib/seo-config"
 import BookingForm from "@/components/booking-form"
-import fleetHero from '../../../public/fleethero.png'
+import fleetHero from '../../../public/fleethero.jpg'
 import fleetHighlight from '../../../public/fleetpar.png'
 export const dynamic = "force-dynamic";
 export const fetchCache = "force-no-store";

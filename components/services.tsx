@@ -22,6 +22,7 @@ type Service = {
 export default function Services({ dictionary }: { dictionary: any }) {
   const { lang } = useLanguage()
   const [hoveredService, setHoveredService] = useState<string | null>(null)
+  
 
   const services: Service[] = [
     {
@@ -62,8 +63,8 @@ export default function Services({ dictionary }: { dictionary: any }) {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-black">
-      <div className="container mx-auto px-8">
+    <section className="pt-20 border-0">
+      <div className="container mx-auto px-8 ">
         <h2 className="text-3xl mb-12 text-center atacama">
           {dictionary.title} <span className="text-red-700 atacama-italic">{dictionary.titleHighlight}</span>
         </h2>
@@ -132,6 +133,7 @@ export default function Services({ dictionary }: { dictionary: any }) {
           </Carousel>
         </div>
       </div>
+      <div className="h-36 bg-gradient-to-b from-white to-black border-0"></div>
     </section>
   )
 }

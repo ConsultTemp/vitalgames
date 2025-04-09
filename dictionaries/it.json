@@ -17,7 +17,7 @@
     {
       "key": "fleet",
       "href": "/fleet",
-      "label": "Mezzi"
+      "label": "Flotta"
     },
     {
       "key": "book",
@@ -295,7 +295,7 @@
     }
   },
   "fleet": {
-    "title": "Mezzi",
+    "title": "Flotta",
     "subtitle": "Eleganza e prestigio in ogni dettaglio",
     "description": "La nostra flotta è composta da veicoli di alta gamma, selezionati per offrire il massimo del comfort, della raffinatezza e della sicurezza. Viaggia con noi e scopri il piacere di un comfort senza pari.",
     "fleetTitle": "La nostra",
