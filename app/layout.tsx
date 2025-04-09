@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     template: "%s | Patty Car",
   },
   description: "Viaggia con eleganza, comfort e puntualità con il nostro servizio di auto di lusso",
+  icons: {
+    icon: [
+      { url: '/favicon.ico' }, 
+      { url: '/logopatty.png' }
+    ],
+    apple: { url: '/favicon.ico' },
+    shortcut: { url: '/favicon.ico' }
+  },
   keywords: [
     "luxury car",
     "car service",
@@ -82,7 +90,7 @@ export const metadata: Metadata = {
       me: ["info@pattycar.com"],
     },
   },
-  generator: "v0.dev",
+  generator: "Patty Car",
 }
 
 export async function generateStaticParams() {
@@ -104,52 +112,52 @@ export default function RootLayout({
         {/* Preconnect to important domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="icon" type="image/png" href="../public/logopatty.png"/>
+          {/* Preload critical assets */}
+          <link rel="preload" as="image" href="/images/hero-background.jpg" />
 
-        {/* Preload critical assets */}
-        <link rel="preload" as="image" href="/images/hero-background.jpg" />
-
-        {/* Structured data for local business */}
-        <Script
-          id="local-business-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "@id": "https://pattycar.com",
-              name: "Patty Car",
-              image: "https://pattycar.com/images/patty-car-logo.jpg",
-              url: "https://pattycar.com",
-              telephone: locationData.telephone,
-              email: locationData.email,
-              priceRange: "€€€",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: locationData.address.streetAddress,
-                addressLocality: locationData.address.addressLocality,
-                addressRegion: locationData.address.addressRegion,
-                postalCode: locationData.address.postalCode,
-                addressCountry: locationData.address.addressCountry,
-              },
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: locationData.geo.latitude,
-                longitude: locationData.geo.longitude,
-              },
-              openingHoursSpecification: {
-                "@type": "OpeningHoursSpecification",
-                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                opens: "00:00",
-                closes: "23:59",
-              },
-              sameAs: [
-                "https://www.facebook.com/pattycar",
-                "https://www.instagram.com/pattycar_milano",
-                "https://www.linkedin.com/company/patty-car",
-              ],
-            }),
-          }}
-        />
+          {/* Structured data for local business */}
+          <Script
+            id="local-business-schema"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "@id": "https://pattycar.com",
+                name: "Patty Car",
+                image: "https://pattycar.com/images/patty-car-logo.jpg",
+                url: "https://pattycar.com",
+                telephone: locationData.telephone,
+                email: locationData.email,
+                priceRange: "€€€",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: locationData.address.streetAddress,
+                  addressLocality: locationData.address.addressLocality,
+                  addressRegion: locationData.address.addressRegion,
+                  postalCode: locationData.address.postalCode,
+                  addressCountry: locationData.address.addressCountry,
+                },
+                geo: {
+                  "@type": "GeoCoordinates",
+                  latitude: locationData.geo.latitude,
+                  longitude: locationData.geo.longitude,
+                },
+                openingHoursSpecification: {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                  opens: "00:00",
+                  closes: "23:59",
+                },
+                sameAs: [
+                  "https://www.facebook.com/pattycar",
+                  "https://www.instagram.com/pattycar_milano",
+                  "https://www.linkedin.com/company/patty-car",
+                ],
+              }),
+            }}
+          />
       </head>
       <body className={inter.className}>{children}</body>
     </html>

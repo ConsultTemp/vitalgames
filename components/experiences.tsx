@@ -56,9 +56,9 @@ export default function Experiences({ dictionary }: { dictionary: any }) {
               </div>
               <h3 className="text-lg font-semibold mb-2">{exp.title}</h3>
               <p className="text-black font-light text-sm mb-4 flex-grow">{exp.description}</p>
-              <Link href={exp.link} className="text-sm font-light text-darkGray hover:text-black">
+              <p className="text-sm font-light text-darkGray hover:text-black">
                 {dictionary.experienceBy} Patty Car
-              </Link>
+              </p>
             </div>
           ))}
         </div>
