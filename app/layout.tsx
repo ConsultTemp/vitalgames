@@ -112,7 +112,6 @@ export default function RootLayout({
         {/* Preconnect to important domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="icon" type="image/png" href="../public/logopatty.png"/>
           {/* Preload critical assets */}
           <link rel="preload" as="image" href="/images/hero-background.jpg" />
 
