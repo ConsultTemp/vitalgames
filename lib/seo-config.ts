@@ -433,6 +433,41 @@ export function generateSEOMetadata(page: string, locale: Locale) {
         keywords: ["اتصل بسائق ميلانو", "حجز سيارة مع سائق", "عرض أسعار خدمة سائق", "حجز نقل ميلانو", "اتصل بسائق خاص"],
       },
     },
+    booking: {
+      it: {
+        title: "Prenota | Servizio NCC | Patty Car Milano",
+        description: "Prenota il tuo servizio di noleggio con conducente a Milano. Transfer aeroportuali, eventi, servizi business e molto altro.",
+        keywords: [
+          "prenota NCC Milano",
+          "prenotazione auto con conducente",
+          "prenotazione transfer Milano",
+          "prenotazione servizio autista",
+          "booking NCC Milano",
+        ],
+      },
+      en: {
+        title: "Book | Chauffeur Service | Patty Car Milan",
+        description: "Book your chauffeur service in Milan. Airport transfers, events, business services and more.",
+        keywords: [
+          "book Milan chauffeur",
+          "book car with driver",
+          "book Milan transfer",
+          "book driver service",
+          "Milan chauffeur booking",
+        ],
+      },
+      ar: {
+        title: "احجز | خدمة سائق | باتي كار ميلانو",
+        description: "احجز خدمة السائق الخاصة بك في ميلانو. نقل المطار والمناسبات وخدمات الأعمال والمزيد.",
+        keywords: [
+          "حجز سائق ميلانو",
+          "حجز سيارة مع سائق",
+          "حجز نقل ميلانو",
+          "حجز خدمة سائق",
+          "حجز سائق ميلانو",
+        ],
+      },
+    },
   }
 
   return localizedPages[page as keyof typeof localizedPages][locale]
