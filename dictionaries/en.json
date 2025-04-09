@@ -1,0 +1,366 @@
+{
+  "metadata": {
+    "title": "Patty Car | Luxury Car Service",
+    "description": "Travel with elegance, comfort and punctuality with our luxury car service"
+  },
+  "navigation": [
+    {
+      "key": "home",
+      "href": "/",
+      "label": "Home"
+    },
+    {
+      "key": "services",
+      "href": "/services",
+      "label": "Services"
+    },
+    {
+      "key": "fleet",
+      "href": "/fleet",
+      "label": "Fleet"
+    },
+    {
+      "key": "about",
+      "href": "/about",
+      "label": "About Us"
+    },
+    {
+      "key": "contact",
+      "href": "/contact",
+      "label": "Contact"
+    }
+  ],
+  "hero": {
+    "title": "Travel with elegance, comfort and punctuality",
+    "description": "Since 1998, Patty Car has been offering high-level chauffeur services (NCC), guaranteeing exclusive and personalized transfers in Italy and abroad. Whether for business or pleasure, our service is available 24/7 to meet all your travel needs.",
+    "subDescription": "Whether you're heading to a business meeting, a special event, or simply desire a luxury transfer, Patty Car is the perfect choice for all your travel needs.",
+    "ctaButton": "Book Now",
+    "bottomText": "A Prestigious NCC Service since 1998"
+  },
+  "services": {
+    "title": "Discover our",
+    "titleHighlight": "services",
+    "learnMore": "Learn more",
+    "items": [
+      {
+        "title": "NCC Transfer",
+        "description": "Travel in style and comfort with our fleet of luxury cars, vans, and buses. Perfect for private, corporate, or tourist transfers."
+      },
+      {
+        "title": "Transport for events",
+        "description": "Elegant transportation solutions for weddings, ceremonies, and special occasions."
+      },
+      {
+        "title": "Diplomatic services",
+        "description": "We manage transfers for consular and diplomatic officials, coordinating with law enforcement to ensure maximum security."
+      },
+      {
+        "title": "Luxury Hotel Services",
+        "description": "Collaborations with luxury hotels to offer their guests an exclusive transport service."
+      },
+      {
+        "title": "Business transfers",
+        "description": "Mobility solutions for professionals and companies with regular transport needs."
+      }
+    ]
+  },
+  "about": {
+    "label": "About Us",
+    "title": "A prestigious NCC service since 1998",
+    "paragraph1": "Patty Car is a reference point in the chauffeur service sector. With offices in Milan and Rome and a widespread network of collaborators, we operate throughout the national and international territory. We have had the honor of serving prestigious events such as Expo 2015 and the Paris 2024 Olympic Games. Our mission is to offer impeccable service, available 24 hours a day, every day of the week, to guarantee you a stress-free travel experience with maximum comfort."
+  },
+  "clients": {
+    "title": "Some of our clients"
+  },
+  "experiences": {
+    "title": "recommended",
+    "titleHighlight": "Experiences",
+    "subtitle": "Offer your guests a unique travel experience with our exclusive tours",
+    "experienceBy": "Experience by",
+    "items": [
+      {
+        "title": "Maranello Tour",
+        "description": "An unforgettable experience in the world of Ferrari"
+      },
+      {
+        "title": "Lake Como and Bellagio Tour",
+        "description": "Discover the beauty of the lake and its historic villages"
+      },
+      {
+        "title": "Serravalle Transfer with VIP Lounge",
+        "description": "Luxury shopping with exclusive transport service"
+      }
+    ]
+  },
+  "booking": {
+    "title": "Request a reservation",
+    "subtitle": "Fill out the form to book your luxury transfer",
+    "nameLabel": "Full Name",
+    "phoneLabel": "Phone Number",
+    "emailLabel": "Email",
+    "vehicleTypeLabel": "Vehicle Type",
+    "vehicleCountLabel": "Number of Vehicles",
+    "selectVehicle": "Select a vehicle",
+    "dateLabel": "Transfer Date",
+    "timeLabel": "Pickup Time",
+    "passengersLabel": "Number of Passengers",
+    "destinationLabel": "Destination",
+    "meetAndGreetLabel": "Meet and Greet service at the airport",
+    "notesLabel": "Notes and extra requests",
+    "messageLabel": "Message",
+    "submitButton": "Submit Reservation",
+    "successMessage": "Thank you for your request. We will contact you soon.",
+    "pageTitle": "Booking",
+    "serviceLabel": "Services",
+    "description": "Booking your journey with us is a simple and quick experience, designed for those seeking impeccable service at every stage. Our intuitive platform allows you to reserve your transfer or tour in just a few steps, with the certainty of exclusive treatment from the first contact.",
+    "formTitle": "Request a booking",
+    "formSubtitle": "Fill out the form to book your transfer",
+    "namePlaceholder": "Enter your full name",
+    "phonePlaceholder": "Enter your phone number",
+    "vehicleTypePlaceholder": "Choose vehicle type",
+    "flightLabel": "Arrival flight",
+    "flightPlaceholder": "Enter your flight number",
+    "passengersPlaceholder": "Select number of passengers",
+    "bookingDescription": "Booking your journey with us is a simple and quick experience, designed for those seeking impeccable service at every stage. Our intuitive platform allows you to reserve your transfer or tour in just a few steps, with the certainty of exclusive treatment from the first contact.",
+    "bookingFormTitle": "Request a booking",
+    "bookingFormSubtitle": "Fill out the form to book your transfer",
+    "nameFieldLabel": "Full name*",
+    "phoneFieldLabel": "Phone number*",
+    "vehicleTypeFieldLabel": "Vehicle type*",
+    "flightFieldLabel": "Arrival flight",
+    "dateTimeFieldLabel": "Date and time of booking*",
+    "passengersFieldLabel": "Number of passengers",
+    "submitBookingButton": "Submit booking"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "links": [
+      {
+        "key": "privacy",
+        "href": "/privacy",
+        "label": "Privacy"
+      },
+      {
+        "key": "terms",
+        "href": "/terms",
+        "label": "Terms of Service"
+      },
+      {
+        "key": "cookies",
+        "href": "/cookies",
+        "label": "Cookies"
+      }
+    ]
+  },
+  "serviceDetail": {
+    "transfer-ncc": {
+      "title": "NCC Transfer",
+      "subtitle": "Your time is precious, your comfort is essential",
+      "intro": "Your time is a treasure, and every journey deserves to be treated with the same care and attention reserved for the most exclusive details.",
+      "description": "With our luxury transfer service, every journey becomes a moment of pure pleasure and satisfaction, designed for those who know that the value of an experience is measured not only in the certainty of arrival, but also in the quality of the journey.",
+      "sections": [
+        {
+          "title": "Serenity",
+          "description": "Your time is a treasure, and every journey deserves to be treated with the same care and attention reserved for the most exclusive details.",
+          "icon": "heart"
+        },
+        {
+          "title": "Punctuality",
+          "description": "Imagine being welcomed by a professional, elegant, and discreet chauffeur, ready to drive you to your destination in a vehicle of excellence, selected to offer the maximum of luxury and comfort.",
+          "icon": "clock"
+        },
+        {
+          "title": "Always available",
+          "description": "For our most demanding clients, our service is available 24 hours a day, both in Italy and abroad, guaranteeing unparalleled continuity.",
+          "icon": "phone"
+        }
+      ],
+      "highlight": {
+        "text": "Whether you're looking for a first-class airport transfer, transportation for prestigious events, or simply the comfort of a stress-free journey, our service is synonymous with elegance and safety.",
+        "image": "/placeholder.svg?height=600&width=800"
+      },
+      "conclusion": "With us, every journey is more than just a simple transfer: it's an opportunity to experience luxury, refinement, and elegance at every moment."
+    },
+    "events": {
+      "title": "Transport for events",
+      "subtitle": "Elegant transportation for every special occasion",
+      "intro": "Every special event deserves a memorable entrance. Our event transportation service ensures that you and your guests arrive in style and on time.",
+      "description": "Whether it's a wedding, a corporate ceremony, or a gala event, our team of professionals will take care of every detail to ensure an impeccable transportation experience. We offer a fleet of luxury vehicles, experienced drivers, and personalized service to meet the specific needs of your event.",
+      "sections": [
+        {
+          "title": "Detailed Planning",
+          "description": "Complete coordination with event organizers to ensure that every aspect of transportation is perfectly synchronized with the event schedule.",
+          "icon": "calendar"
+        },
+        {
+          "title": "Group Management",
+          "description": "Solutions for groups of any size, with logistical coordination to ensure that all guests arrive on time and in total comfort.",
+          "icon": "users"
+        },
+        {
+          "title": "Premium Service",
+          "description": "Attention to details and customization for each event, with vehicles decorated according to your preferences and drivers in formal attire.",
+          "icon": "star"
+        }
+      ],
+      "highlight": {
+        "text": "With our event service, every special occasion becomes even more memorable. From weddings to corporate ceremonies, we guarantee a transportation experience that reflects the importance of your event.",
+        "image": "/placeholder.svg?height=600&width=800"
+      },
+      "conclusion": "With Patty Car, transportation becomes an integral part of the success of your event, ensuring a memorable experience for you and your guests."
+    },
+    "diplomatic": {
+      "title": "Diplomatic services",
+      "subtitle": "Reserved and professional transportation for diplomatic delegations",
+      "intro": "Patty Car's diplomatic services are designed to meet the specific needs of embassies, consulates, and international delegations, ensuring security, discretion, and professionalism.",
+      "description": "Our experience in serving diplomatic clients has allowed us to develop specific protocols that respect the security and confidentiality requirements. We collaborate with law enforcement when necessary and guarantee impeccable service for every diplomatic mission.",
+      "sections": [
+        {
+          "title": "Security",
+          "description": "Advanced security protocols and coordination with law enforcement to ensure safe transfers for high-profile personalities.",
+          "icon": "shield"
+        },
+        {
+          "title": "Confidentiality",
+          "description": "Maximum discretion and respect for privacy, with drivers selected and specifically trained to serve diplomatic clientele.",
+          "icon": "lock"
+        },
+        {
+          "title": "International Experience",
+          "description": "Multilingual staff and knowledge of international diplomatic protocols for a service that respects conventions and traditions.",
+          "icon": "globe"
+        }
+      ],
+      "highlight": {
+        "text": "Our diplomatic service has been chosen by numerous embassies and consulates for its reliability and professionalism. We understand the importance of protocol and ensure that every aspect of the service meets the highest standards.",
+        "image": "/placeholder.svg?height=600&width=800"
+      },
+      "conclusion": "With Patty Car, diplomatic delegations can rely on a service that understands the importance of protocol, security, and discretion."
+    },
+    "luxury-hotels": {
+      "title": "Luxury Hotel Services",
+      "subtitle": "Exclusive transportation service for guests of the best hotels",
+      "intro": "Patty Car collaborates with the best luxury hotels to offer their guests an impeccable transportation experience, extending the elegance and comfort of the hotel to the final destination.",
+      "description": "Our luxury hotel service is designed to integrate perfectly with the experience offered by the hotel. We offer an extension of the luxury and attention to detail that guests expect, ensuring continuity in service excellence.",
+      "sections": [
+        {
+          "title": "Hotel Integration",
+          "description": "Service perfectly integrated with partner hotel facilities, with direct communication between our team and the hotel concierge.",
+          "icon": "hotel"
+        },
+        {
+          "title": "Premium Experience",
+          "description": "Extension of the hotel's luxury experience during transportation, with high-end vehicles and personalized services.",
+          "icon": "star"
+        },
+        {
+          "title": "24/7 Availability",
+          "description": "Service available at any time for hotel guests, with bookings managed directly by the reception or concierge.",
+          "icon": "clock"
+        }
+      ],
+      "highlight": {
+        "text": "Our collaboration with luxury hotels has allowed us to develop a service that meets the expectations of the most demanding guests. We offer airport transfers, personalized tours, and private chauffeur services for shopping and events.",
+        "image": "/placeholder.svg?height=600&width=800"
+      },
+      "conclusion": "Choosing Patty Car for hotel transportation services means guaranteeing guests a travel experience that matches the prestige of the facility."
+    },
+    "business": {
+      "title": "Business transfers",
+      "subtitle": "Mobility solutions for professionals and companies",
+      "intro": "Patty Car offers tailored business transportation solutions for professionals and companies that require reliability, punctuality, and discretion in their business travel.",
+      "description": "Our business service is designed to optimize the valuable time of professionals, ensuring punctual and comfortable transfers. We offer customized solutions for companies with regular transportation needs, with the possibility of corporate accounts and detailed reporting.",
+      "sections": [
+        {
+          "title": "Professionalism",
+          "description": "Experienced and discreet drivers, accustomed to the needs of the business world, ready to adapt to schedule changes and last-minute requests.",
+          "icon": "briefcase"
+        },
+        {
+          "title": "Efficiency",
+          "description": "Optimization of travel times and guaranteed punctuality, with constant traffic monitoring and planning of alternative routes.",
+          "icon": "clock"
+        },
+        {
+          "title": "Global Coverage",
+          "description": "Service available in Italy and abroad, with international partners to ensure continuity of service wherever your business takes you.",
+          "icon": "globe"
+        }
+      ],
+      "highlight": {
+        "text": "Our business solutions include airport transfers, dedicated chauffeur service for meeting days, transportation for corporate events and conferences, and solutions for team trips and delegations.",
+        "image": "/placeholder.svg?height=600&width=800"
+      },
+      "conclusion": "Choosing Patty Car for business transfers means investing in the productivity and image of your company, ensuring comfort and punctuality in every journey."
+    }
+  },
+  "fleet": {
+    "title": "Fleet",
+    "subtitle": "Elegance and prestige in every detail",
+    "description": "Our fleet consists of high-end vehicles, selected to offer the maximum comfort, refinement, and safety. Travel with us and discover the pleasure of unparalleled comfort.",
+    "fleetTitle": "Our",
+    "fleetTitleHighlight": "fleet",
+    "vehicles": [
+      {
+        "name": "Mercedes Benz E-Class",
+        "image": "/placeholder.svg?height=300&width=500&text=Mercedes+E-Class",
+        "passengers": 3,
+        "luggage": 2
+      },
+      {
+        "name": "Mercedes Benz S-Class",
+        "image": "/placeholder.svg?height=300&width=500&text=Mercedes+S-Class",
+        "passengers": 3,
+        "luggage": 2
+      },
+      {
+        "name": "Mercedes Benz V-Class",
+        "image": "/placeholder.svg?height=300&width=500&text=Mercedes+V-Class",
+        "passengers": 7,
+        "luggage": 7
+      },
+      {
+        "name": "Mercedes Benz Sprinter",
+        "image": "/placeholder.svg?height=300&width=500&text=Mercedes+Sprinter",
+        "passengers": 8,
+        "luggage": 8
+      },
+      {
+        "name": "Tesla Model S",
+        "image": "/placeholder.svg?height=300&width=500&text=Tesla+Model+S",
+        "passengers": 3,
+        "luggage": 2
+      },
+      {
+        "name": "Fiat Ducato",
+        "image": "/placeholder.svg?height=300&width=500&text=Fiat+Ducato",
+        "passengers": 8,
+        "luggage": 8
+      }
+    ],
+    "highlight": {
+      "text": "Entrust your journey to our fleet and experience excellence at every kilometer.",
+      "image": "/placeholder.svg?height=600&width=800&text=Chauffeur+Service"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "We are at your disposal for any information.",
+    "phoneTitle": "Phone number",
+    "phoneNumber": "+39 366 400 7807",
+    "emailTitle": "Email",
+    "emailAddress": "Email@pattycar.com",
+    "formTitle": "Fill out the form",
+    "nameLabel": "Full name*",
+    "namePlaceholder": "Enter your full name",
+    "emailLabel": "Email*",
+    "emailPlaceholder": "Enter your email",
+    "detailsLabel": "Details",
+    "detailsPlaceholder": "How can we help you?",
+    "submitButton": "Send message",
+    "companyInfo1": "Our company has offices in Milan and Rome; however, thanks to a dense network of collaborators, we are able to operate throughout Italy and abroad, as happened during the Paris 2024 Games.",
+    "companyInfo2": "Based on the needs and requirements of the client, our company offers transfer services with cars, vans, and buses. In order to guarantee a quality service, we offer 24/7 availability, every day of the week.",
+    "companyInfo3": "Operating in the sector for many years, we are able to offer a range of transversal services, aimed at satisfying a heterogeneous clientele, which includes the hotel, sports, corporate, private, and, above all, events sectors.",
+    "legalInfo": "legal information privacy, terms of service, etc."
+  }
+}
