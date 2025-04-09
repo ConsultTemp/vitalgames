@@ -113,7 +113,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
           {/* Preload critical assets */}
-          <link rel="preload" as="image" href="/images/hero-background.jpg" />
+          <link rel="preload" as="image" href="/fleethero.jpg" />
 
           {/* Structured data for local business */}
           <Script

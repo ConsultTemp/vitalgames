@@ -93,7 +93,7 @@
     ]
   },
   "booking": {
-    "title": "Richiedi una prenotazione",
+    "title": "Prenota con noi",
     "subtitle": "Compila il modulo per prenotare il tuo trasferimento di lusso",
     "nameLabel": "Nome e Cognome",
     "phoneLabel": "Numero di telefono",
@@ -102,10 +102,10 @@
     "vehicleCountLabel": "Numero di veicoli",
     "selectVehicle": "Seleziona un veicolo",
     "dateLabel": "Data del trasferimento",
-    "timeLabel": "Ora di prelevamento",
+    "timeLabel": "Orario di partenza",
     "passengersLabel": "Numero di passeggeri",
     "destinationLabel": "Destinazione",
-    "meetAndGreetLabel": "Servizio di accoglienza in aeroporto",
+    "meetAndGreetLabel": "Servizio di Meet & Greet",
     "notesLabel": "Note e richieste extra",
     "messageLabel": "Messaggio",
     "submitButton": "Invia prenotazione",
