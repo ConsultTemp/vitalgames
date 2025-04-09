@@ -3,9 +3,12 @@ import { getDictionary } from "@/lib/dictionary"
 import type { Locale } from "@/i18n-config"
 import type { Metadata } from "next"
 import { generateSEOMetadata } from "@/lib/seo-config"
-import { Heart, Clock, Phone, Shield, Lock, Globe, Briefcase, Star, Hotel, Users, Calendar } from "lucide-react"
+import { Heart, Clock, Phone, Shield, Lock, Globe, Briefcase, Star, Hotel, Users, Calendar } from 'lucide-react'
 import { notFound } from "next/navigation"
 import type { JSX } from "react"
+import BookingForm from "@/components/booking-form"
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 
 // Import service images
 import transferNccHero from "../../../../public/services/transfer-hero.jpg"
@@ -18,9 +21,8 @@ import luxuryHotelsHero from "../../../../public/services/company-hero.jpg"
 import luxuryHotelsPar from "../../../../public/services/hotel-par.jpg"
 import businessHero from "../../../../public/services/company-hero.jpg"
 import businessPar from "../../../../public/services/company-par.jpg"
-import BookingForm from "@/components/booking-form"
 
-type Params = Promise<{ lang: Locale ,service: string }>
+type Params = Promise<{ lang: Locale, service: string }>
 
 // Define valid service slugs
 const validServices = ["transfer-ncc", "events", "diplomatic", "luxury-hotels", "business"]
@@ -58,10 +60,22 @@ const iconComponents: Record<string, JSX.Element> = {
   calendar: <Calendar className="w-12 h-12 mb-4 text-red-700" />,
 }
 
+export async function generateStaticParams() {
+  const services = ["transfer-ncc", "events", "diplomatic", "luxury-hotels", "business"]
+  const locales = ["en", "it", "ar"]
+
+  return locales.flatMap((lang) =>
+    services.map((service) => ({
+      lang,
+      service,
+    }))
+  )
+}
+
 export async function generateMetadata(props:{ params: Params }): Promise<Metadata | null> {
-    const params = await props.params
+    let params = await props.params
     if (!params || !params.lang) {
-        return null;
+        params = {lang: 'it', service: 'transfer-ncc'}
     }
   const { lang, service } = params
 
@@ -119,10 +133,12 @@ export async function generateMetadata(props:{ params: Params }): Promise<Metada
 }
 
 export default async function ServicePage(props:{ params: Params }) {
-    const params = await props.params
+    let params = await props.params
     if (!params || !params.lang) {
-        return null;
+        params = {lang: 'it', service: "transfer-ncc"}
     }
+    console.log(params)
+console.log(params.lang)
   // Check if service is valid
   if (!validServices.includes(params.service)) {
     notFound()

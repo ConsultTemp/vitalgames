@@ -6,6 +6,8 @@ import { generateSEOMetadata } from "@/lib/seo-config"
 import BookingForm from "@/components/booking-form"
 import fleetHero from '../../../public/fleethero.png'
 import fleetHighlight from '../../../public/fleetpar.png'
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 
 // Import fleet images
 import mercedesEClass from "../../../public/classee.png"
@@ -27,11 +29,11 @@ const vehicleImages: Record<string, any> = {
 
 type Params = Promise<{ lang: Locale }>
 
-export async function generateMetadata(props:{ params: Params }): Promise<Metadata | null> {
-  const params = await props.params
+export async function generateMetadata(props: { params: Params }): Promise<Metadata | null> {
+  let params = await props.params
   if (!params || !params.lang) {
-        return null;
-    }
+    params = { lang: 'it' }
+  }
   const dictionary = await getDictionary(params.lang)
   const seoData = generateSEOMetadata("services", params.lang)
 
@@ -72,14 +74,15 @@ export async function generateMetadata(props:{ params: Params }): Promise<Metada
   }
 }
 
-export default async function FleetPage(props:{ params: Params }) {
-  const params = await props.params
+export default async function FleetPage(props: { params: Params }) {
+  let params = await props.params
   if (!params || !params.lang) {
-        return null;
-    }
+    params = { lang: 'it' }
+  }
   const dictionary = await getDictionary(params.lang)
   const fleet = dictionary.fleet
-
+  console.log(params)
+  console.log(params.lang)
   return (
     <>
       {/* Hero Section */}

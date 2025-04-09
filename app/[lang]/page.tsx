@@ -70,7 +70,7 @@ export default async function Home(props:{ params: Params }) {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ItemList",
-            itemListElement: services.map((service, index) => ({
+            /* itemListElement: services.map((service, index) => ({
               "@type": "ListItem",
               position: index + 1,
               item: {
@@ -89,7 +89,7 @@ export default async function Home(props:{ params: Params }) {
                 },
                 url: `https://pattycar.com/${params.lang}/services/${service.name.toLowerCase().replace(/\s+/g, "-")}`,
               },
-            })),
+            })), */
           }),
         }}
       />

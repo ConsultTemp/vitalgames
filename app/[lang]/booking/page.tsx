@@ -5,16 +5,22 @@ import type { Metadata } from "next"
 import { generateSEOMetadata } from "@/lib/seo-config"
 import BookingForm from "@/components/booking-form"
 import book from '../../../public/book.jpg'
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 
 type Params = Promise<{ lang: Locale }>
 
+export async function generateStaticParams() {
+    return [{ lang: "en" }, { lang: "it" }, { lang: "ar" }]
+}
+
 export async function generateMetadata(props: { params: Params }): Promise<Metadata | null> {
-    const params = await props.params
+    let params = await props.params
     if (!params || !params.lang) {
-        return null;
+        params = { lang: 'it' }
     }
     const dictionary = await getDictionary(params.lang)
-    const seoData = generateSEOMetadata("contact", params.lang)
+    const seoData = generateSEOMetadata("booking", params.lang)
 
     return {
         title: `${dictionary.booking.pageTitle} | Patty Car`,
@@ -47,20 +53,21 @@ export async function generateMetadata(props: { params: Params }): Promise<Metad
 export default async function BookingPage(props: {
     params: Params
 }) {
-    const params = await props.params
+    let params = await props.params
     if (!params || !params.lang) {
-        return null;
+        params = { lang: 'it' }
     }
     const lang = params.lang
     const dictionary = await getDictionary(lang)
-
+    console.log(params)
+    console.log(params.lang)
     return (
         <>
             {/* Hero Section */}
             <section className="relative h-screen">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src={book}
+                        src={book || "/placeholder.svg"}
                         alt={dictionary.booking.pageTitle}
                         fill
                         priority

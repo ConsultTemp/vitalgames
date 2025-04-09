@@ -8,6 +8,10 @@ const dictionaries = {
 }
 
 export const getDictionary = async (locale: Locale) => {
-  return dictionaries[locale]()
+  // Check if the locale is valid, otherwise default to 'en'
+  if (!locale || !dictionaries[locale]) {
+    console.warn(`Dictionary for locale "${locale}" not found, using "en" as fallback`);
+    return dictionaries.en();
+  }
+  return dictionaries[locale]();
 }
-

@@ -20,21 +20,33 @@ function getLocale(request: NextRequest): string {
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
-  // Check if there is any supported locale in the pathname
-  const pathnameIsMissingLocale = i18n.locales.every(
-    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
+  // Extract the locale from the pathname if it exists
+  const pathnameHasLocale = i18n.locales.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
   )
 
-  // Redirect if there is no locale
-  if (pathnameIsMissingLocale) {
+  // Check if the locale in the pathname is valid
+  const localeInPathname = pathname.split("/")[1]
+  const isValidLocale = i18n.locales.includes(localeInPathname as any)
+
+  // If pathname has no locale or has an invalid locale, redirect
+  if (!pathnameHasLocale || !isValidLocale) {
     const locale = getLocale(request)
 
-    // e.g. incoming request is /products
-    // The new URL is now /en/products
-    return NextResponse.redirect(new URL(`/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`, request.url))
+    // For paths without locale or with invalid locale, redirect to the correct locale
+    let redirectPath = pathname
+    if (pathnameHasLocale && !isValidLocale) {
+      // If there's an invalid locale, remove it from the path
+      redirectPath = pathname.replace(`/${localeInPathname}`, "")
+    }
+
+    // Construct the new URL with the correct locale
+    return NextResponse.redirect(
+      new URL(`/${locale}${redirectPath.startsWith("/") ? redirectPath : `/${redirectPath}`}`, request.url),
+    )
   }
 
-  // Add cache control headers for static assets
+  // For valid locales, proceed with the request
   const response = NextResponse.next()
 
   // Add cache headers for static assets
@@ -43,7 +55,7 @@ export function middleware(request: NextRequest) {
   }
 
   // Add cache headers for HTML pages
-  if (pathname.endsWith("/")) {
+  if (pathname.endsWith("/") || pathname.endsWith(".html")) {
     response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=86400, stale-while-revalidate=86400")
   }
 
@@ -54,4 +66,3 @@ export const config = {
   // Matcher ignoring `/_next/` and `/api/`
   matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
 }
-

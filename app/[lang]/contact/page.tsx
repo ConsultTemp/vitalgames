@@ -5,6 +5,9 @@ import type { Metadata } from "next"
 import { generateSEOMetadata } from "@/lib/seo-config"
 import { Phone, Mail } from "lucide-react"
 import contacts from '../../../public/contacts.jpg'
+
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 type Params = Promise<{ lang: Locale }>
 
 export async function generateMetadata(props: { params: Params }): Promise<Metadata> {
@@ -41,9 +44,14 @@ export async function generateMetadata(props: { params: Params }): Promise<Metad
 }
 
 export default async function ContactPage(props: { params: Params }) {
-    const params = await props.params
+    let params = await props.params
+    if (!params || !params.lang) {
+        params = {lang: 'it'}
+    }
     const dictionary = await getDictionary(params.lang)
 
+    console.log(params)
+    console.log(params.lang)
     return (
         <div className="pt-24">
             {/* Header */}

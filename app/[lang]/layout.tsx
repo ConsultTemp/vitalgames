@@ -11,13 +11,24 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }))
 }
 
+type Params = Promise<{ lang: Locale }>
+
 export default async function LocaleLayout({
   children,
-  params: { lang },
+  params,
 }: {
   children: React.ReactNode
-  params: { lang: Locale }
+  params: { lang: Locale } | Params
 }) {
+  // Gestisci params come Promise se necessario
+  const resolvedParams = "then" in params ? await params : params
+
+  // Controllo di sicurezza
+  if (!resolvedParams || !resolvedParams.lang) {
+    return <>{children}</>
+  }
+
+  const lang = resolvedParams.lang
   const dictionary = await getDictionary(lang)
 
   return (
