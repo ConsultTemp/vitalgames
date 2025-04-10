@@ -20,9 +20,9 @@
       "label": "Fleet"
     },
     {
-      "key": "about",
-      "href": "/about",
-      "label": "About Us"
+      "key": "book",
+      "href": "/book",
+      "label": "Book"
     },
     {
       "key": "contact",
@@ -139,16 +139,6 @@
         "key": "privacy",
         "href": "/privacy",
         "label": "Privacy"
-      },
-      {
-        "key": "terms",
-        "href": "/terms",
-        "label": "Terms of Service"
-      },
-      {
-        "key": "cookies",
-        "href": "/cookies",
-        "label": "Cookies"
       }
     ]
   },
@@ -349,7 +339,7 @@
     "phoneTitle": "Phone number",
     "phoneNumber": "+39 366 400 7807",
     "emailTitle": "Email",
-    "emailAddress": "Email@pattycar.com",
+    "emailAddress": "gamestime@pattycar.com",
     "formTitle": "Fill out the form",
     "nameLabel": "Full name*",
     "namePlaceholder": "Enter your full name",
@@ -357,10 +347,178 @@
     "emailPlaceholder": "Enter your email",
     "detailsLabel": "Details",
     "detailsPlaceholder": "How can we help you?",
-    "submitButton": "Send message",
+    "submitButton": "Contact",
     "companyInfo1": "Our company has offices in Milan and Rome; however, thanks to a dense network of collaborators, we are able to operate throughout Italy and abroad, as happened during the Paris 2024 Games.",
     "companyInfo2": "Based on the needs and requirements of the client, our company offers transfer services with cars, vans, and buses. In order to guarantee a quality service, we offer 24/7 availability, every day of the week.",
     "companyInfo3": "Operating in the sector for many years, we are able to offer a range of transversal services, aimed at satisfying a heterogeneous clientele, which includes the hotel, sports, corporate, private, and, above all, events sectors.",
     "legalInfo": "legal information privacy, terms of service, etc."
+  },
+  "cookieBanner": {
+    "title": "Cookie Policy",
+    "description": "This website uses cookies to improve your browsing experience, personalize content and ads, provide social media features, and analyze our traffic. We also use third-party cookies that help us analyze and understand how you use this website.",
+    "acceptButton": "Accept All",
+    "rejectButton": "Reject",
+    "learnMoreLink": "Learn More",
+    "showDetails": "Show details",
+    "hideDetails": "Hide details"
+  },
+  "privacy": {
+    "title": "Privacy & Cookie Policy",
+    "subtitle": "Information on the processing of personal data",
+    "lastUpdated": "Last updated: April 2025",
+    "sections": {
+      "introduction": {
+        "title": "Introduction",
+        "content": "This document provides information on how PATTY CAR SERVICE Srl and PATTY CAR di GHIRLANDI ENRICO (hereinafter \"Patty Car\", \"we\", \"us\", or \"our\") process personal data collected through the website www.pattycar.com."
+      },
+      "dataController": {
+        "title": "1. Data Controller",
+        "content": "The data controller for personal data collected through the website www.pattycar.com is PATTY CAR SERVICE Srl, with registered office in Rome, Via del Velodromo n. 44, VAT number 16640371007. Contact email: pattycar@pattycar.com"
+      },
+      "developerResponsibility": {
+        "title": "2. Website Developer Responsibility",
+        "content": "The company that developed the website, SKEELS SRLS with registered office in Milan, Via Boscovich 31 - VAT number 11707420961, assumes full responsibility for ensuring that the website complies with applicable data protection legislation, in particular with Regulation (EU) 2016/679 (GDPR)."
+      },
+      "purposesOfProcessing": {
+        "title": "3. Purposes of Personal Data Processing",
+        "content": "Personal data collected through the website www.pattycar.com are processed for the following purposes:",
+        "items": [
+          "Provision of chauffeur service (NCC): Managing bookings, organizing and providing the requested service (including travel details, schedules, and chosen vehicle).",
+          "Management of contact requests: Responding to questions or requests sent through the contact form or other communication methods.",
+          "Tax and accounting compliance: To comply with legal, tax, and regulatory obligations, including the management of invoices and tax documents.",
+          "Direct marketing (optional): Sending promotional or marketing communications via email, if the user has explicitly provided consent for this purpose.",
+          "Statistical analysis and service improvement: Collection of data related to website usage for statistical analysis and to improve service quality."
+        ]
+      },
+      "legalBasis": {
+        "title": "4. Legal Basis for Data Processing",
+        "content": "The processing of personal data is carried out on the following legal bases provided by the GDPR:",
+        "items": [
+          "Performance of a contract (Art. 6(1)(b) GDPR): Processing necessary for the provision of the chauffeur service and to respond to user requests.",
+          "User consent (Art. 6(1)(a) GDPR): Processing for direct marketing purposes and for other optional activities, only with the explicit consent of the user.",
+          "Compliance with legal obligations (Art. 6(1)(c) GDPR): Processing to comply with legal obligations, such as issuing invoices or storing data for tax purposes."
+        ]
+      },
+      "dataTypes": {
+        "title": "5. Types of Data Processed",
+        "content": "The personal data processed may include, but are not limited to, the following categories of information:",
+        "items": [
+          "Identification data: name, surname, tax code.",
+          "Contact data: email address, phone number, residential address.",
+          "Payment data: information related to payments made, including credit card data, if applicable.",
+          "Navigation data: IP address, date and time of access, type of browser used, operating system.",
+          "Data related to the requested service: booking details (times, vehicle, destination), travel preferences, user feedback.",
+          "Other data that the user may voluntarily provide through the contact form, newsletter subscription, etc."
+        ]
+      },
+      "processingMethods": {
+        "title": "6. Data Processing Methods",
+        "content": "The processing of personal data takes place through electronic (both automated and manual) and IT methods, and in some cases also on paper. Data are processed in compliance with adequate security measures to protect the confidentiality, integrity, and availability of personal data. Access to personal data is allowed only to authorized personnel, who use them exclusively for the purposes described."
+      },
+      "dataRetention": {
+        "title": "7. Personal Data Retention",
+        "content": "Personal data are kept for a period not exceeding that necessary for the purposes for which they were collected. In general, data will be kept for a period of 5 years from collection. However, in case of specific legal or contractual obligations, the retention period may be longer."
+      },
+      "dataSharing": {
+        "title": "8. Communication of Data to Third Parties",
+        "content": "Personal data collected will not be disclosed to unauthorized subjects. However, data may be communicated to third parties in the following situations:",
+        "items": [
+          "Service providers (e.g., drivers, payment platforms) for the provision of the chauffeur service.",
+          "External professionals (tax consultants, legal advisors, auditors) for consulting needs or mandatory compliance.",
+          "Public entities and competent authorities (e.g., law enforcement) if required by law."
+        ],
+        "additionalContent": "Personal data are not transferred to third parties outside the European Union, except in cases where it is necessary for the provision of the service (e.g., international payment services or invoice issuance)."
+      },
+      "internationalTransfers": {
+        "title": "9. International Transfer of Personal Data",
+        "content": "Personal data are stored within the European Union. However, some services may involve the transfer of personal data to countries outside the European Union. In such cases, the transfer will only take place in compliance with the GDPR, using adequate legal instruments such as Standard Contractual Clauses."
+      },
+      "userRights": {
+        "title": "10. Rights of the Data Subject",
+        "content": "Under the GDPR, the user has the right to:",
+        "items": [
+          "Access their personal data (Art. 15 GDPR): obtain confirmation of the existence of the data and a copy of the same.",
+          "Request rectification of data (Art. 16 GDPR): correct inaccurate or incomplete data.",
+          "Request erasure of data (Art. 17 GDPR - Right to be forgotten): request the removal of personal data in the circumstances provided by law.",
+          "Request restriction of processing (Art. 18 GDPR): limit the use of data in certain situations.",
+          "Object to processing (Art. 21 GDPR): object, for legitimate reasons, to the processing of data.",
+          "Request data portability (Art. 20 GDPR): receive the data in a machine-readable format and transmit it to another controller.",
+          "Withdraw consent (Art. 7 GDPR): withdraw consent provided for processing based on this legal basis."
+        ],
+        "additionalContent": "To exercise these rights, users can send a request via email to pattycar@pattycar.com. If the user believes that their rights have been violated, they can lodge a complaint with the Data Protection Authority (https://www.garanteprivacy.it)."
+      },
+      "dpo": {
+        "title": "11. Data Protection Officer (DPO)",
+        "content": "At present, a Data Protection Officer (DPO) has not been appointed. For any questions regarding data processing, or to exercise your rights, you can contact the data controller at pattycar@pattycar.com."
+      },
+      "cookiePolicy": {
+        "title": "Cookie Policy",
+        "content": "The website www.pattycar.com uses cookies to improve the browsing experience, to collect statistics, and for marketing purposes.",
+        "typesTitle": "Types of Cookies Used",
+        "types": [
+          {
+            "title": "1. Technical Cookies:",
+            "description": "Essential for the functioning of the website, such as those to keep the user's session active during navigation."
+          },
+          {
+            "title": "2. Analytical Cookies:",
+            "description": "Used to collect aggregate data on website usage (e.g., Google Analytics)."
+          },
+          {
+            "title": "3. Profiling Cookies:",
+            "description": "Used to personalize advertising and send promotional content in line with the user's interests (e.g., Facebook Pixel, Google Ads)."
+          }
+        ],
+        "managementTitle": "Cookie Management",
+        "management": [
+          {
+            "title": "Cookie acceptance:",
+            "description": "At first access, the site shows a banner that requests consent for the use of cookies. The user can choose to accept or customize their cookie preferences."
+          },
+          {
+            "title": "Cookie disabling:",
+            "description": "Users can disable cookies through their browser settings. However, some website features may not be accessible without cookies."
+          }
+        ],
+        "thirdPartyTitle": "Third-Party Cookies",
+        "thirdParty": "The site uses third-party cookies, including for performance analysis and advertising. The user can consult the relevant policies for more details."
+      },
+      "changes": {
+        "title": "12. Changes to the Privacy & Cookie Policy",
+        "content": "The controller reserves the right to modify this Privacy and Cookie Policy at any time. Any changes will be communicated through the website and will be binding from the date of publication of the update."
+      },
+      "userResponsibility": {
+        "title": "13. User Responsibility",
+        "content": "The user undertakes, by accessing and using the website www.pattycar.com, to fully comply with the provisions of the Privacy Policy, Cookie Policy, and Terms of Service, as well as all applicable regulations regarding the protection of personal data and Italian laws."
+      },
+      "liability": {
+        "title": "14. Limitation of Liability of Patty Car",
+        "content": "Patty Car makes every effort to ensure that the website www.pattycar.com is accessible and functions correctly. However, the user acknowledges and agrees that Patty Car cannot be held responsible for certain events, unless they derive from willful misconduct or gross negligence on the part of Patty Car."
+      },
+      "serviceChanges": {
+        "title": "15. Changes to the Service and Website",
+        "content": "Patty Car reserves the right to modify, suspend, or discontinue the website and the services offered at any time, with or without notice, for technical, organizational, or legal reasons."
+      },
+      "jurisdiction": {
+        "title": "16. Jurisdiction and Applicable Law",
+        "content": "This contract is governed by Italian law. For any dispute that may arise in relation to the interpretation, execution, or validity of this document, the parties agree that the competent court will exclusively be the Court of MILAN, with the exclusion of any other alternative forum, even if concurrent."
+      },
+      "indemnity": {
+        "title": "17. Indemnity",
+        "content": "The user agrees to defend, indemnify, and hold harmless Patty Car (including employees, collaborators, suppliers, and partners) from any claim, legal action, damage, liability, expense, or loss arising from: violations of the Terms of Service, Privacy Policy, Cookie Policy, or any other applicable policy by the user; improper use of the site and services; provision of incorrect information during registration, booking of services, or any other interaction with the site."
+      },
+      "severability": {
+        "title": "18. Severability Clause",
+        "content": "In the event that one or more provisions of this document are declared null, invalid, or unenforceable by a competent judicial or administrative authority, the remaining provisions will remain fully valid and effective."
+      },
+      "assignment": {
+        "title": "19. Assignment of Rights and Obligations",
+        "content": "Patty Car reserves the right to assign or transfer all or part of its rights and obligations arising from this contract, including personal data collected, to third parties in case of sale, merger, reorganization, or other corporate operations."
+      },
+      "acceptance": {
+        "title": "20. Acceptance of Terms",
+        "content": "The user, by accessing and using the website www.pattycar.com, declares to have read, understood, and accepted without reservation all the provisions of the Privacy Policy, Cookie Policy, and Terms of Service, as well as any other related legal documentation."
+      }
+    }
   }
 }

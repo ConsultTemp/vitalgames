@@ -4,6 +4,7 @@ import { i18n } from "@/i18n-config"
 import type { Locale } from "@/i18n-config"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import CookieBanner from "@/components/cookie-banner"
 import { getDictionary } from "@/lib/dictionary"
 import { LanguageProvider } from "@/components/language-provider"
 
@@ -36,6 +37,7 @@ export default async function LocaleLayout({
       <Header />
       <main>{children}</main>
       <Footer />
+      <CookieBanner />
     </LanguageProvider>
   )
 }
