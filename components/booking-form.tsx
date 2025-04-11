@@ -215,14 +215,10 @@ export default function BookingForm({ dictionary }: { dictionary: any }) {
             </div>
 
             <div className="transition-all duration-300 hover:shadow-sm">
-              <label htmlFor="flight" className="block text-sm text-gray-600 mb-1">
-                {dictionary.flightLabel || "Arrival flight"}
+              <label htmlFor="departureAddress" className="block text-sm text-gray-600 mb-1">
+                {dictionary.departureAddressLabel || "Indirizzo di partenza"}
               </label>
-              <Input
-                type="text"
-                id="flight"
-                name="flight"
-              />
+              <Input type="text" id="departureAddress" name="departureAddress" required />
             </div>
 
             <div className="transition-all duration-300 hover:shadow-sm">
@@ -230,6 +226,21 @@ export default function BookingForm({ dictionary }: { dictionary: any }) {
                 {dictionary.destinationLabel || "Destination"}
               </label>
               <Input type="text" id="destination" name="destination" required />
+            </div>
+
+            <div className="transition-all duration-300 hover:shadow-sm">
+              <label htmlFor="luggage" className="block text-sm text-gray-600 mb-1">
+                {dictionary.luggageLabel || "Numero di bagagli"}
+              </label>
+              <Input type="number" id="luggage" name="luggage" min="0" required />
+            </div>
+
+            
+            <div className="transition-all duration-300 hover:shadow-sm">
+              <label htmlFor="flight" className="block text-sm text-gray-600 mb-1">
+                {dictionary.flightTrainLabel || "Volo/treno di provenienza"}
+              </label>
+              <Input type="text" id="flight" name="flight" />
             </div>
 
             <div className="md:col-span-2">

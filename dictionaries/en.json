@@ -130,7 +130,10 @@
     "flightFieldLabel": "Arrival flight",
     "dateTimeFieldLabel": "Date and time of booking*",
     "passengersFieldLabel": "Number of passengers",
-    "submitBookingButton": "Submit booking"
+    "submitBookingButton": "Submit booking",
+    "luggageLabel": "Number of bags",
+    "departureAddressLabel": "Departure address",
+    "flightTrainLabel": "Flight/train number"
   },
   "footer": {
     "rights": "All rights reserved",

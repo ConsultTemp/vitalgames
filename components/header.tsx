@@ -80,7 +80,7 @@ export default function Header() {
                         key={service.key}
                         href={`/${lang}/services/${service.key}`}
                         onClick={handleLinkClick}
-                        className="block py-2 text-darkGray font-thin hover:text-darkGray transition-colors duration-300"
+                        className="block py-2 text-darkGray font-extralight hover:text-darkGray transition-colors duration-300"
                       >
                         {service.label}
                       </Link>

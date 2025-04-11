@@ -130,7 +130,10 @@
     "flightFieldLabel": "رحلة الوصول",
     "dateTimeFieldLabel": "تاريخ ووقت الحجز*",
     "passengersFieldLabel": "عدد الركاب",
-    "submitBookingButton": "إرسال الحجز"
+    "submitBookingButton": "إرسال الحجز",
+    "luggageLabel": "عدد الحقائب",
+    "departureAddressLabel": "عنوان المغادرة",
+    "flightTrainLabel": "رقم الرحلة/القطار"
   },
   "footer": {
     "rights": "جميع الحقوق محفوظة",

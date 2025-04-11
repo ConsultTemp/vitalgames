@@ -130,7 +130,10 @@
     "flightFieldLabel": "Volo di provenienza",
     "dateTimeFieldLabel": "Data e ora della prenotazione*",
     "passengersFieldLabel": "Numero dei passeggeri",
-    "submitBookingButton": "Invia prenotazione"
+    "submitBookingButton": "Invia prenotazione",
+    "luggageLabel": "Numero di bagagli",
+    "departureAddressLabel": "Indirizzo di partenza",
+    "flightTrainLabel": "Volo/treno di provenienza"
   },
   "footer": {
     "rights": "Tutti i diritti riservati",
