@@ -83,7 +83,7 @@ export default function BookingForm({ dictionary }: { dictionary: any }) {
           </div>
         ) : (
           <form
-            action="https://formsubmit.co/gamestime@pattycar.com"
+            action="https://formsubmit.co/14f7eed24c722a9bcf728d63f1e3d6bf"
             method="POST"
             onSubmit={handleSubmit}
             className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6"
