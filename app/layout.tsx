@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/fleethero.jpg",
         width: 1200,
         height: 630,
         alt: "Patty Car - Luxury Car Service",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Patty Car | Luxury Car Service",
     description: "Viaggia con eleganza, comfort e puntualità con il nostro servizio di auto di lusso",
-    images: ["/og-image.jpg"],
+    images: ["/fleethero.jpg"],
   },
   robots: {
     index: true,
@@ -125,7 +125,7 @@ export default function RootLayout({
                 "@type": "LocalBusiness",
                 "@id": "https://pattycar.com",
                 name: "Patty Car",
-                image: "https://pattycar.com/images/patty-car-logo.jpg",
+                image: "https://pattycar.com/images/logopatty.png",
                 url: "https://pattycar.com",
                 telephone: locationData.telephone,
                 email: locationData.email,

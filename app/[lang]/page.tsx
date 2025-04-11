@@ -38,7 +38,7 @@ export async function generateMetadata(props:{ params: Params }): Promise<Metada
       type: "website",
       images: [
         {
-          url: "/images/og-home.jpg",
+          url: "/fleethero.jpg",
           width: 1200,
           height: 630,
           alt: "Patty Car - Luxury Car Service",
