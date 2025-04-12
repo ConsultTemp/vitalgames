@@ -16,7 +16,7 @@ export default function SEOHead({
   title,
   description,
   keywords,
-  ogImage = "/images/fleethero.jpg",
+  ogImage = "/fleethero.jpg",
   ogType = "website",
   twitterCard = "summary_large_image",
 }: SEOHeadProps) {

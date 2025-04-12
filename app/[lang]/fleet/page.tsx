@@ -89,8 +89,6 @@ export default async function FleetPage(props: { params: Params }) {
   }
   const dictionary = await getDictionary(params.lang)
   const fleet = dictionary.fleet
-  console.log(params)
-  console.log(params.lang)
   return (
     <>
       {/* Hero Section */}

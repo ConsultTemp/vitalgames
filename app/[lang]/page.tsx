@@ -96,7 +96,7 @@ export default async function Home(props:{ params: Params }) {
       <Hero dictionary={dictionary.hero} />
       <Services dictionary={dictionary.services} />
       <About dictionary={dictionary.about} />
-      <Clients dictionary={dictionary.clients} />
+      {/* <Clients dictionary={dictionary.clients} /> */}
       <Experiences dictionary={dictionary.experiences} />
       <BookingForm dictionary={dictionary.booking} />
     </>
