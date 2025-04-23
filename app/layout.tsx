@@ -104,7 +104,7 @@ export default function RootLayout({
   children: React.ReactNode
   params: { lang?: string }
 }) {
-  const lang = params?.lang || "it"
+  const lang = params?.lang || "en"
 
   return (
     <html lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>
