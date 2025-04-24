@@ -13,14 +13,48 @@ import { Button } from "@/components/ui/button"
 import { format } from "date-fns"
 import { CalendarIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@/components/ui/command"
 
 export default function BookingForm({ dictionary }: { dictionary: any }) {
   const { lang } = useLanguage()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const [date, setDate] = useState<Date>()
-  const [hour, setHour] = useState<string>("")
-  const [minute, setMinute] = useState<string>("")
+  const [time, setTime] = useState("")
+  const [differentVehicles, setDifferentVehicles] = useState(false)
+  const [openPickupLocation, setOpenPickupLocation] = useState(false)
+  const [pickupLocation, setPickupLocation] = useState("")
+
+  // Mock data for pickup locations
+  const locations = [
+    { value: "roma_termini", label: "Roma Termini" },
+    { value: "roma_tiburtina", label: "Roma Tiburtina" },
+    { value: "roma_fiumicino", label: "Aeroporto Fiumicino" },
+    { value: "roma_ciampino", label: "Aeroporto Ciampino" },
+    { value: "napoli_centrale", label: "Napoli Centrale" },
+    { value: "milano_centrale", label: "Milano Centrale" },
+    { value: "firenze_smn", label: "Firenze S.M.N." },
+  ]
+
+  // Country codes for phone prefixes
+  const countryCodes = [
+    { value: "+39", label: "Italy (+39)" },
+    { value: "+1", label: "USA (+1)" },
+    { value: "+44", label: "UK (+44)" },
+    { value: "+33", label: "France (+33)" },
+    { value: "+49", label: "Germany (+49)" },
+    { value: "+34", label: "Spain (+34)" },
+    { value: "+41", label: "Switzerland (+41)" },
+    { value: "+43", label: "Austria (+43)" },
+    { value: "+31", label: "Netherlands (+31)" },
+    { value: "+32", label: "Belgium (+32)" }
+  ]
+
+  // Hours for time selection
+  const hours = Array.from({ length: 24 }, (_, i) => {
+    const hour = i.toString().padStart(2, '0')
+    return { value: hour, label: hour }
+  })
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -39,12 +73,21 @@ export default function BookingForm({ dictionary }: { dictionary: any }) {
     }
 
     // Add time value
-    if (hour && minute) {
+    if (time) {
       const timeInput = document.createElement("input")
       timeInput.type = "hidden"
       timeInput.name = "time"
-      timeInput.value = `${hour}:${minute}`
+      timeInput.value = time
       form.appendChild(timeInput)
+    }
+
+    // Add pickup location value
+    if (pickupLocation) {
+      const pickupInput = document.createElement("input")
+      pickupInput.type = "hidden"
+      pickupInput.name = "pickupLocation"
+      pickupInput.value = pickupLocation
+      form.appendChild(pickupInput)
     }
 
     // Submit the form
@@ -57,10 +100,6 @@ export default function BookingForm({ dictionary }: { dictionary: any }) {
       setSubmitStatus("success")
     }, 1000)
   }
-
-  // Generate hours and minutes for the time selector
-  const hours = Array.from({ length: 24 }, (_, i) => i.toString().padStart(2, "0"))
-  const minutes = Array.from({ length: 12 }, (_, i) => (i * 5).toString().padStart(2, "0"))
 
   return (
     <section className="py-20 bg-white">
@@ -95,28 +134,45 @@ export default function BookingForm({ dictionary }: { dictionary: any }) {
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="language" value={lang} />
 
-            <div className="transition-all duration-300 hover:shadow-sm">
+            {/* Full width name field */}
+            <div className="md:col-span-2 transition-all duration-300 ">
               <label htmlFor="name" className="block text-sm text-gray-600 mb-1">
                 {dictionary.nameLabel}
               </label>
               <Input type="text" id="name" name="name" required />
+              <p className="text-xs text-gray-500 mt-1">{dictionary.nameHelperText}</p>
             </div>
 
-            <div className="transition-all duration-300 hover:shadow-sm">
-              <label htmlFor="phone" className="block text-sm text-gray-600 mb-1">
-                {dictionary.phoneLabel}
-              </label>
-              <Input type="tel" id="phone" name="phone" required />
-            </div>
-
-            <div className="transition-all duration-300 hover:shadow-sm">
+            {/* Email and phone on the same row */}
+            <div className="transition-all duration-300 ">
               <label htmlFor="email" className="block text-sm text-gray-600 mb-1">
                 {dictionary.emailLabel}
               </label>
               <Input type="email" id="email" name="email" required />
             </div>
 
-            <div className="transition-all duration-300 hover:shadow-sm">
+            <div className="transition-all duration-300 ">
+              <label htmlFor="phone" className="block text-sm text-gray-600 mb-1">
+                {dictionary.phoneLabel}
+              </label>
+              <div className="flex space-x-2">
+                <Select name="phonePrefix">
+                  <SelectTrigger className="w-1/3">
+                    <SelectValue placeholder="+39" defaultValue="+39" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {countryCodes.map((code) => (
+                      <SelectItem key={code.value} value={code.value}>
+                        {code.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <Input type="tel" id="phone" name="phoneNumber" className="w-2/3" required />
+              </div>
+            </div>
+
+            <div className="transition-all duration-300 ">
               <label htmlFor="vehicleType" className="block text-sm text-gray-600 mb-1">
                 {dictionary.vehicleTypeLabel}
               </label>
@@ -126,23 +182,23 @@ export default function BookingForm({ dictionary }: { dictionary: any }) {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="sedan">Sedan</SelectItem>
+                  <SelectItem value="luxury">Luxury Sedan</SelectItem>
+                  <SelectItem value="minibus">Mini Bus</SelectItem>
                   <SelectItem value="van">Van</SelectItem>
-                  <SelectItem value="suv">Minivan</SelectItem>
-                  <SelectItem value="luxury">S Class / First Class</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
-            <div className="transition-all duration-300 hover:shadow-sm">
+            <div className="transition-all duration-300 ">
               <label htmlFor="vehicleCount" className="block text-sm text-gray-600 mb-1">
-                {dictionary.vehicleCountLabel || "Number of Vehicles"}
+                {dictionary.vehicleCountLabel}
               </label>
               <Select name="vehicleCount" defaultValue="1">
                 <SelectTrigger id="vehicleCount">
                   <SelectValue placeholder="1" />
                 </SelectTrigger>
                 <SelectContent>
-                  {[1, 2, 3, 4, 5].map((num) => (
+                  {Array.from({ length: 10 }, (_, i) => i + 1).map((num) => (
                     <SelectItem key={num} value={num.toString()}>
                       {num}
                     </SelectItem>
@@ -151,55 +207,36 @@ export default function BookingForm({ dictionary }: { dictionary: any }) {
               </Select>
             </div>
 
-            <div className="transition-all duration-300 hover:shadow-sm">
+            <div className="transition-all duration-300 ">
               <label htmlFor="date" className="block text-sm text-gray-600 mb-1">
                 {dictionary.dateLabel}
               </label>
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button
-                    variant="outline"
-                    className={cn(
-                      "w-full justify-start text-left font-normal bg-gray-100 border-transparent hover:bg-gray-200",
-                      !date && "text-gray-500",
-                    )}
-                  >
-                    <CalendarIcon className="mr-2 h-4 w-4" />
-                    {date ? format(date, "PPP") : ""}
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto p-0" align="start">
-                  <Calendar mode="single" selected={date} onSelect={setDate} className="bg-white" />
-                </PopoverContent>
-              </Popover>
-            </div>
-
-            <div className="transition-all duration-300 hover:shadow-sm">
-              <label htmlFor="time" className="block text-sm text-gray-600 mb-1">
-                {dictionary.timeLabel}
-              </label>
               <div className="flex space-x-2">
-                <Select value={hour} onValueChange={setHour} required>
-                  <SelectTrigger className="w-full bg-gray-100 border-transparent">
-                    <SelectValue placeholder={dictionary.timeLabel || "Hour"} />
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className={cn(
+                        "w-full justify-start text-left font-normal bg-gray-100 border-transparent hover:bg-gray-200",
+                        !date && "text-gray-500",
+                      )}
+                    >
+                      <CalendarIcon className="mr-2 h-4 w-4" />
+                      {date ? format(date, "PPP") : ""}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0" align="start">
+                    <Calendar mode="single" selected={date} onSelect={setDate} className="bg-white" />
+                  </PopoverContent>
+                </Popover>
+                <Select name="time" onValueChange={setTime}>
+                  <SelectTrigger className="w-1/3">
+                    <SelectValue placeholder={dictionary.timeLabel || "Time"} />
                   </SelectTrigger>
                   <SelectContent>
-                    {hours.map((h) => (
-                      <SelectItem key={h} value={h}>
-                        {h}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <span className="flex items-center">:</span>
-                <Select value={minute} onValueChange={setMinute} required>
-                  <SelectTrigger className="w-full bg-gray-100 border-transparent">
-                    <SelectValue placeholder="Min" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {minutes.map((m) => (
-                      <SelectItem key={m} value={m}>
-                        {m}
+                    {hours.map((hour) => (
+                      <SelectItem key={hour.value} value={hour.value}>
+                        {hour.label}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -207,54 +244,111 @@ export default function BookingForm({ dictionary }: { dictionary: any }) {
               </div>
             </div>
 
-            <div className="transition-all duration-300 hover:shadow-sm">
+            <div className="transition-all duration-300 ">
+              <label htmlFor="pickupLocation" className="block text-sm text-gray-600 mb-1">
+                {dictionary.departureLocationLabel || "Luogo di partenza"}
+              </label>
+              <Popover open={openPickupLocation} onOpenChange={setOpenPickupLocation}>
+                <PopoverTrigger asChild>
+                  <Button
+                    variant="outline"
+                    role="combobox"
+                    aria-expanded={openPickupLocation}
+                    className="w-full justify-between font-normal bg-gray-100 border-transparent hover:bg-gray-200"
+                  >
+                    {pickupLocation
+                      ? locations.find((location) => location.value === pickupLocation)?.label
+                      : dictionary.selectDepartureLocation || "Seleziona luogo di partenza"}
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-full p-0">
+                  <Command>
+                    <CommandInput placeholder={dictionary.searchDepartureLocation || "Cerca luogo di partenza"} />
+                    <CommandEmpty>{dictionary.noLocationsFound}</CommandEmpty>
+                    <CommandGroup>
+                      {locations.map((location) => (
+                        <CommandItem
+                          key={location.value}
+                          value={location.value}
+                          className="pickup-location-item"
+                          onSelect={(currentValue) => {
+                            setPickupLocation(currentValue === pickupLocation ? "" : currentValue)
+                            setOpenPickupLocation(false)
+                          }}
+                        >
+                          {location.label}
+                        </CommandItem>
+                      ))}
+                    </CommandGroup>
+                  </Command>
+                </PopoverContent>
+              </Popover>
+            </div>
+
+            <div className="transition-all duration-300 ">
               <label htmlFor="passengers" className="block text-sm text-gray-600 mb-1">
                 {dictionary.passengersLabel}
               </label>
               <Input type="number" id="passengers" name="passengers" min="1" required />
             </div>
 
-            <div className="transition-all duration-300 hover:shadow-sm">
-              <label htmlFor="departureAddress" className="block text-sm text-gray-600 mb-1">
-                {dictionary.departureAddressLabel || "Indirizzo di partenza"}
-              </label>
-              <Input type="text" id="departureAddress" name="departureAddress" required />
-            </div>
-
-            <div className="transition-all duration-300 hover:shadow-sm">
+            <div className="transition-all duration-300 ">
               <label htmlFor="destination" className="block text-sm text-gray-600 mb-1">
-                {dictionary.destinationLabel || "Destination"}
+                {dictionary.destinationLabel}
               </label>
               <Input type="text" id="destination" name="destination" required />
             </div>
 
-            <div className="transition-all duration-300 hover:shadow-sm">
+            <div className="transition-all duration-300 ">
               <label htmlFor="luggage" className="block text-sm text-gray-600 mb-1">
-                {dictionary.luggageLabel || "Numero di bagagli"}
+                {dictionary.luggageLabel}
               </label>
               <Input type="number" id="luggage" name="luggage" min="0" required />
             </div>
 
-            
-            <div className="transition-all duration-300 hover:shadow-sm">
+            <div className="transition-all duration-300 ">
               <label htmlFor="flight" className="block text-sm text-gray-600 mb-1">
-                {dictionary.flightTrainLabel || "Volo/treno di provenienza"}
+                {dictionary.flightTrainLabel}
               </label>
               <Input type="text" id="flight" name="flight" />
+            </div>
+
+            <div className="md:col-span-2 transition-all duration-300 ">
+              <label htmlFor="billingInfo" className="block text-sm text-gray-600 mb-1">
+                {dictionary.billingInfoLabel}
+              </label>
+              <Textarea id="billingInfo" name="billingInfo" rows={4} />
             </div>
 
             <div className="md:col-span-2">
               <div className="flex items-center mb-4 transition-all duration-300 hover:bg-gray-50 p-2">
                 <Checkbox id="meetAndGreet" name="meetAndGreet" value="yes" className="mr-2" />
                 <label htmlFor="meetAndGreet" className="text-sm text-gray-600">
-                  {dictionary.meetAndGreetLabel || "Meet and Greet service at the airport"}
+                  {dictionary.meetAndGreetLabel}
                 </label>
               </div>
+              
+              <div className="flex items-center mb-4 transition-all duration-300 hover:bg-gray-50 p-2">
+                <Checkbox 
+                  id="differentVehicles" 
+                  name="differentVehicles" 
+                  value="yes" 
+                  className="mr-2"
+                  checked={differentVehicles}
+                  onCheckedChange={(checked) => setDifferentVehicles(checked as boolean)}
+                />
+                <label htmlFor="differentVehicles" className="text-sm text-gray-600">
+                  {dictionary.differentVehiclesLabel}
+                </label>
+              </div>
+              {differentVehicles && (
+                <p className="text-xs text-gray-500 ml-6 mb-4">{dictionary.differentVehiclesHelperText}</p>
+              )}
             </div>
 
-            <div className="md:col-span-2 transition-all duration-300 hover:shadow-sm">
+            <div className="md:col-span-2 transition-all duration-300 ">
               <label htmlFor="notes" className="block text-sm text-gray-600 mb-1">
-                {dictionary.notesLabel || "Notes and extra requests"}
+                {dictionary.notesLabel}
               </label>
               <Textarea id="notes" name="notes" rows={4} />
             </div>

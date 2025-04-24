@@ -27,6 +27,16 @@ const vehicleImages: Record<string, any> = {
   "Fiat Ducato": fiatDucato,
 }
 
+// Map vehicle names to their passenger capacity
+const vehicleCapacity: Record<string, number> = {
+  "Mercedes Benz E-Class": 4,
+  "Mercedes Benz S-Class": 4,
+  "Mercedes Benz V-Class": 7,
+  "Mercedes Benz Sprinter": 9,
+  "Tesla Model S": 4,
+  "Fiat Ducato": 9,
+}
+
 type Params = Promise<{ lang: Locale }>
 
 export async function generateMetadata(props: { params: Params }): Promise<Metadata | null> {
@@ -145,6 +155,7 @@ export default async function FleetPage(props: { params: Params }) {
                   />
                 </div>
                 <h3 className="text-xl text-center font-light border-b border-b-1 vorder-b-darkGray pb-4">{vehicle.name}</h3>
+                <p className="text-xs text-center text-gray-500 mt-2">{vehicleCapacity[vehicle.name] || "-"} {dictionary.fleet.seatsLabel || "Seats"}</p>
               </div>
             ))}
           </div>

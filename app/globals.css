@@ -168,3 +168,11 @@ body {
   font-family: 'Atacama Trial', serif;
   font-style: italic;
 }
+.pickup-location-item:hover{
+  background-color: rgb(230, 230, 230) !important;
+}
+
+.pickup-location-item{
+  background-color: rgb(255, 255, 255) !important;
+}
+
