@@ -6,7 +6,7 @@ interface AgeRestrictionsProps {
   className?: string
 }
 
-export function AgeRestrictions({ className = '' }: AgeRestrictionsProps) {
+export default function AgeRestrictions({ className = '' }: AgeRestrictionsProps) {
   return (
     <div className={`w-full px-4 sm:px-8 md:px-16 lg:px-32 relative my-8 sm:my-12 md:my-16`}>
       <div className="absolute inset-0"></div>
@@ -26,5 +26,3 @@ export function AgeRestrictions({ className = '' }: AgeRestrictionsProps) {
     </div>
   )
 }
-
-export default AgeRestrictions

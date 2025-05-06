@@ -61,6 +61,8 @@ export default async function Home(props: { params: Params }) {
   const dictionary = await getDictionary(params.lang)
   const products = productTypes[params.lang as keyof typeof productTypes]
 
+  console.log(products)
+
   return (
     <>
       <Script
