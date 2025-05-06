@@ -1,230 +1,254 @@
 "use client"
 
-import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { useLanguage } from "@/components/language-provider"
-import { i18n } from "@/i18n-config"
-import { Menu, ChevronDown, Globe } from "lucide-react"
+import { Menu, ChevronDown, X, ChevronRight } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+import { GameCarousel } from "@/components/games/GameCarousel"
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu"
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarHeader,
+  SidebarFooter,
+  SidebarProvider,
+  SidebarTrigger,
+  useSidebar,
+} from "@/components/ui/sidebar"
+import logo from '../public/logovital.svg'
+import { games, multigames } from '../lib/cards'
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { DialogTitle } from "./ui/dialog"
-import logo from '../public/logopatty.png'
+import { DialogTitle } from "@radix-ui/react-dialog"
 
-export default function Header() {
-  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
-  const [isMobileLanguageOpen, setIsMobileLanguageOpen] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false)
+  const [isSheetOpen, setIsSheetOpen] = useState(false)
   const pathname = usePathname()
-  const { dictionary, lang } = useLanguage()
 
-  // Get the path without the language prefix
-  const pathWithoutLang = pathname.replace(/^\/[a-z]{2}(?:\/|$)/, "/")
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setScrolled(true)
+      } else {
+        setScrolled(false)
+      }
+    }
 
-  // Services list
-  const services = [
-    { key: "transfer-ncc", label: dictionary.services?.items?.[0]?.title || "Transfer NCC" },
-    { key: "events", label: dictionary.services?.items?.[1]?.title || "Events" },
-    { key: "diplomatic", label: dictionary.services?.items?.[2]?.title || "Diplomatic" },
-    { key: "luxury-hotels", label: dictionary.services?.items?.[3]?.title || "Luxury Hotels" },
-    { key: "business", label: dictionary.services?.items?.[4]?.title || "Business" },
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  // Menu items based on the image
+  const menuItems = [
+    { label: "Multigames", href: "/awp-multigames", hasDropdown: true, dropdownType: "awp-multigames" },
+    { label: "All games", href: "/allgames", hasDropdown: true, dropdownType: "allgames" },
+    { label: "Online games", href: "/online-games", hasDropdown: true, dropdownType: "online-games" },
+    { label: "Cabinet", href: "/vlt", hasDropdown: false },
+    { label: "About us", href: "/about-us", hasDropdown: false },
   ]
 
-  const handleLinkClick = () => {
-    setIsMobileMenuOpen(false)
-  }
-
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Mobile menu */}
-        <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-          <SheetTrigger className="md:hidden">
-            <Menu size={24} />
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300`}
+    >
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex w-screen mx-auto px-4 py-3 items-center relative bg-black/30 backdrop-blur-md">
+        {/* Logo - Left */}
+        <div className="flex-1 flex justify-start">
+          <Link href="/" className="flex items-center z-10">
+            <div className="relative h-16 w-24 mr-2">
+              <Image
+                src={logo}
+                alt="Vital Games"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </Link>
+        </div>
+
+        {/* Navigation - Center */}
+        <div className="flex-1 flex justify-center">
+          <NavigationMenu>
+            <NavigationMenuList className="flex items-center space-x-6 z-10">
+              {menuItems.map((item) => {
+                const slots = item.dropdownType === "awp-multigames" ? multigames : games
+
+                return(
+                <NavigationMenuItem key={item.label} className="relative">
+                  {item.hasDropdown ? (
+                    <>
+                      <NavigationMenuTrigger className="text-sm text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none whitespace-nowrap bg-transparent hover:bg-transparent">
+                        {item.label}
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent className="backdrop-blur-md bg-black bg-transparent border border-gray-800 p-2 w-[800px] left-1/2 -translate-x-1/2 absolute">
+                        <div className="grid grid-cols-3 gap-2">
+                          {slots.map((game, index) => (
+                            <Link
+                              key={index}
+                              href={`/${item.dropdownType}/${game.slug}`}
+                              className="block"
+                              style={{
+                                opacity: 0,
+                                animation: 'fadeIn 0.3s ease-in-out forwards',
+                                animationDelay: `${index * 50}ms`
+                              }}
+                            >
+                              <div className="rounded-lg h-48 w-42 overflow-hidden border border-gray-700 transition-all duration-200 hover:-translate-y-1">
+                                <div className="relative h-full">
+                                  <Image
+                                    src={game.image || "/placeholder.svg"}
+                                    alt={game.title}
+                                    fill
+                                    className="object-cover"
+                                  />
+                                </div>
+                                <div className="py-2 px-2 absolute rounded-b-lg backdrop-blur-md bg-black/30 bottom-0 left-0 right-0">
+                                  <h3 className="text-white font-bold text-xs mb-1">{game.title}</h3>
+                                </div>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+
+                        <div
+                          className="mt-2 border-t border-gray-800 text-center w-[600px] pb-0"
+                          style={{ animationDelay: '200ms' }}
+                        >
+                          <Link
+                            href={item.href}
+                            className="text-white text-xs flex flex-row items-center cursor-pointer font-medium inline-flex items-center"
+                          >
+                            View all {item.label}
+                            <ChevronRight className="w-3 h-3 ml-1 text-white" />
+                          </Link>
+                        </div>
+                      </NavigationMenuContent>
+                    </>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={`text-sm text-gray-300 hover:text-white transition-colors whitespace-nowrap duration-300 ${pathname === item.href ? "text-white" : ""
+                        }`}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </NavigationMenuItem>
+              )}
+              )}
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+
+        {/* Contact Us Button - Right */}
+        <div className="flex-1 flex justify-end">
+          <Button
+            asChild
+            className="bg-vitalYellow hover:bg-vitalYellow/90 text-black font-medium rounded-md px-4 py-2 text-sm"
+          >
+            <Link href="/contact">Contact us</Link>
+          </Button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      <div className="md:hidden flex w-full px-4 py-3 items-center justify-between bg-black/30 backdrop-blur-md fixed top-0 left-0 right-0 z-[999]">
+        <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+          <SheetTrigger asChild>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-white"
+            >
+              <Menu size={24} />
+            </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="w-full p-0">
+          <SheetContent side="left" className="w-full bg-black border-r border-gray-800 p-0">
             <DialogTitle></DialogTitle>
-            <div className="flex flex-col h-full text-darkGray bg-white">
-              <div className="p-4 flex justify-center border-b">
-                <Link href={`/${lang}`} onClick={handleLinkClick}>
-                  <Image
-                    src={logo}
-                    alt="Patty Car"
-                    width={150}
-                    height={40}
-                    className="h-10 w-auto"
-                    priority
-                  />
+            <div className="flex flex-col h-full">
+              {/* Header */}
+              <div className="p-4 border-b border-gray-800 flex items-center justify-between">
+                <Link href="/" className="flex items-center">
+                  <div className="relative h-10 w-16">
+                    <Image
+                      src={logo}
+                      alt="Vital Games"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                 </Link>
               </div>
-              <nav className="flex flex-col p-6 space-y-6">
-                {/* Home link */}
-                <Link href={`/${lang}`} onClick={handleLinkClick} className="text-xl text-darkGray hover:text-darkGray transition-colors duration-300 font-light">
-                  {dictionary.navigation[0].label}
-                </Link>
 
-                {/* Services with collapsible submenu */}
-                <Collapsible open={isMobileServicesOpen} onOpenChange={setIsMobileServicesOpen} className="w-full">
-                  <CollapsibleTrigger className="flex items-center justify-between w-full text-xl text-darkGray hover:text-darkGray transition-colors duration-300 font-light">
-                    {dictionary.navigation[1].label}
-                    <ChevronDown
-                      size={20}
-                      className={`transition-transform duration-300 ${isMobileServicesOpen ? "rotate-180" : ""}`}
-                    />
-                  </CollapsibleTrigger>
-                  <CollapsibleContent className="mt-2 pl-4 space-y-3 overflow-hidden pt-8">
-                    {services.map((service) => (
-                      <Link
-                        key={service.key}
-                        href={`/${lang}/services/${service.key}`}
-                        onClick={handleLinkClick}
-                        className="block py-2 text-darkGray font-extralight hover:text-darkGray transition-colors duration-300"
-                      >
-                        {service.label}
-                      </Link>
-                    ))}
-                  </CollapsibleContent>
-                </Collapsible>
-
-                {/* Fleet link */}
-                <Link
-                  href={`/${lang}/fleet`}
-                  onClick={handleLinkClick}
-                  className="text-xl text-darkGray hover:text-darkGray transition-colors duration-300 font-light"
-                >
-                  {dictionary.navigation[2].label}
-                </Link>
-
-                {/* About and Contact links */}
-                {dictionary.navigation.slice(3).map((item: { key: Key | null | undefined; href: any; label: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined }) => (
-                  <Link
-                    key={item.key}
-                    href={`/${lang}${item.href}`}
-                    onClick={handleLinkClick}
-                    className="text-xl text-darkGray hover:text-darkGray transition-colors duration-300 font-light"
+              {/* Content */}
+              <div className="flex flex-col p-6 space-y-8 overflow-y-auto flex-grow">
+                {menuItems.map((item, index) => (
+                  <div
+                    key={item.label}
+                    className="animate-slideInRight"
+                    style={{
+                      animationDuration: '0.4s',
+                      animationDelay: `${index * 50 + 100}ms`,
+                      animationFillMode: 'both'
+                    }}
                   >
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
-              <div className="mt-auto p-6 border-t">
-                <div className="flex justify-center space-x-6">
-                  {i18n.locales.map((locale) => (
                     <Link
-                      key={locale}
-                      href={`/${locale}${pathWithoutLang}`}
-                      onClick={handleLinkClick}
-                      className={`px-4 py-2 ${locale === lang ? "font-bold" : ""} transition-colors duration-300 hover:bg-gray-100`}
+                      href={item.href}
+                      onClick={() => setIsSheetOpen(false)}
+                      className={`block text-lg font-medium text-gray-300 hover:text-white transition-colors duration-300 mb-3 ${pathname === item.href ? "text-white" : ""
+                        }`}
                     >
-                      {locale === "en" ? "English" : locale === "it" ? "Italiano" : "العربية"}
+                      {item.label}
                     </Link>
-                  ))}
-                </div>
+
+                    {/* Game carousel for mobile */}
+                    {item.hasDropdown && (
+                      <div className="mt-3 pb-2">
+                        <GameCarousel games={games} onGameClick={() => setIsSheetOpen(false)} />
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* Footer */}
+              <div className="p-6 border-t border-gray-800">
+                <Button
+                  asChild
+                  className="bg-vitalYellow hover:bg-vitalYellow/90 text-black font-bold rounded-md px-3 py-2 w-full animate-fadeIn"
+                  style={{ animationDuration: '0.5s', animationDelay: '400ms', animationFillMode: 'both' }}
+                >
+                  <Link href="/contact-us" onClick={() => setIsSheetOpen(false)}>
+                    Contact us
+                  </Link>
+                </Button>
               </div>
             </div>
           </SheetContent>
         </Sheet>
 
-        {/* Left navigation */}
-        <nav className="hidden md:flex items-center space-x-6 text-darkGray text-sm">
-          {/* Home link */}
-          <Link href={`/${lang}`} className="text-darkGray transition-colors duration-300 font-light">
-            {dictionary.navigation[0].label}
+        {/* Logo */}
+        <div className="flex items-center">
+          <Link href="/" className="flex items-center">
+            <div className="relative h-14 w-20">
+              <Image
+                src={logo}
+                alt="Vital Games"
+                fill
+                className="object-contain"
+              />
+            </div>
           </Link>
-
-          {/* Services dropdown using shadcn/ui */}
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center text-darkGray hover:text-darkGray transition-colors duration-300 focus:outline-none font-light">
-              {dictionary.navigation[1].label}
-              <ChevronDown size={16} className="ml-1" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="w-48">
-              {services.map((service) => (
-                <Link key={service.key} href={`/${lang}/services/${service.key}`} className="block w-full">
-                  <DropdownMenuItem className="cursor-pointer hover:bg-gray-100 text-xs font-light">{service.label}</DropdownMenuItem>
-                </Link>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </nav>
-
-        {/* Logo (centered on desktop) */}
-        <Link href={`/${lang}`} className="absolute left-1/2 transform -translate-x-1/2 hidden md:block">
-          <Image
-            src={logo}
-            alt="Patty Car"
-            width={150}
-            height={40}
-            className="h-10 w-auto"
-            priority
-          />
-        </Link>
-
-        {/* Mobile logo and language selector */}
-        <div className="md:hidden flex items-center">
-          <Link href={`/${lang}`} className="mr-4">
-            <Image
-              src={logo}
-              alt="Patty Car"
-              width={150}
-              height={40}
-              className="h-10 w-auto"
-              priority
-            />
-          </Link>
-
-          {/* Mobile language selector */}
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center text-lack transition-colors duration-300 focus:outline-none">
-              <Globe size={20} className="text-black" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-32 text-darkGray">
-              {i18n.locales.map((locale) => (
-                <Link key={locale} href={`/${locale}${pathWithoutLang}`} className="block w-full">
-                  <DropdownMenuItem
-                    className={`cursor-pointer hover:bg-gray-100 ${locale === lang ? "font-bold" : ""}`}
-                  >
-                    {locale === "en" ? "English" : locale === "it" ? "Italiano" : "العربية"}
-                  </DropdownMenuItem>
-                </Link>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-
-        {/* Right navigation */}
-        <div className="hidden md:flex items-center space-x-6 text-sm">
-          {/* Fleet link */}
-          <Link href={`/${lang}/fleet`} className="text-darkGray hover:text-darkGray transition-colors duration-300 font-light">
-            {dictionary.navigation[2].label}
-          </Link>
-
-          {/* About and Contact links */}
-          {dictionary.navigation.slice(3).map((item: { key: Key | null | undefined; href: any; label: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined }) => (
-            <Link key={item.key} href={`/${lang}${item.href}`} className="text-darkGray transition-colors duration-300 font-light">
-              {item.label}
-            </Link>
-          ))}
-
-          {/* Language selector */}
-          <DropdownMenu>
-            <DropdownMenuTrigger className="text-darkGray hover:text-darkGray uppercase transition-colors duration-300 focus:outline-none">
-              <Globe className="w-4"/>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-32">
-              {i18n.locales.map((locale) => (
-                <Link key={locale} href={`/${locale}${pathWithoutLang}`} className="block w-full">
-                  <DropdownMenuItem
-                    className={`cursor-pointer hover:bg-gray-100 ${locale === lang ? "font-bold" : ""}`}
-                  >
-                    {locale === "en" ? "English" : locale === "it" ? "Italiano" : "العربية"}
-                  </DropdownMenuItem>
-                </Link>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
         </div>
       </div>
     </header>

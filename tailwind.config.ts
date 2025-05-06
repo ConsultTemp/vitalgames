@@ -13,6 +13,7 @@ const config: Config = {
         primary: "#000000",
         secondary: "#ffffff",
         darkGray: '#7B8487',
+        vitalYellow: "#FFFF00",
         accent: "#b91c1c", // red-700 for the red highlights
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -75,10 +76,21 @@ const config: Config = {
             height: "0",
           },
         },
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+        rock: {
+          '0%, 100%': { transform: 'rotate(0deg) scale(1)' },
+          '25%': { transform: 'rotate(-15deg) scale(1.1)' },
+          '75%': { transform: 'rotate(15deg) scale(1.1)' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "infinite-scroll": "infinite-scroll 25s linear infinite",
+        rock: 'rock 1s ease-in-out',
       },
     },
   },

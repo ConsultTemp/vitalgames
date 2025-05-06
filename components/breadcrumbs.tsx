@@ -1,29 +1,37 @@
+"use client"
+
 import Link from "next/link"
-import { ChevronRight } from "lucide-react"
+import { ChevronRight, Home } from "lucide-react"
+import { useLanguage } from "@/components/language-provider"
 
 type BreadcrumbItem = {
   label: string
-  href: string
+  href?: string
 }
 
 export default function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
+  const { dictionary, lang } = useLanguage()
+  const { breadcrumbs } = dictionary.common
+
   return (
-    <nav aria-label="Breadcrumb" className="container mx-auto px-4 py-4">
-      <ol className="flex items-center space-x-2 text-sm text-gray-600">
-        {items.map((item, index) => (
-          <li key={item.href} className="flex items-center">
-            {index > 0 && <ChevronRight size={14} className="mx-2" />}
-            {index === items.length - 1 ? (
-              <span aria-current="page">{item.label}</span>
-            ) : (
-              <Link href={item.href} className="hover:text-black">
-                {item.label}
-              </Link>
-            )}
-          </li>
-        ))}
-      </ol>
+    <nav className="flex items-center text-sm text-gray-500 py-4">
+      <Link href={`/${lang}`} className="flex items-center hover:text-gray-900">
+        <Home size={16} className="mr-1" />
+        <span>{breadcrumbs.home}</span>
+      </Link>
+
+      {items.map((item, index) => (
+        <div key={index} className="flex items-center">
+          <ChevronRight size={16} className="mx-2" />
+          {item.href ? (
+            <Link href={item.href} className="hover:text-gray-900">
+              {item.label}
+            </Link>
+          ) : (
+            <span className="text-gray-900 font-medium">{item.label}</span>
+          )}
+        </div>
+      ))}
     </nav>
   )
 }
-

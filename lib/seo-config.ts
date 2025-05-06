@@ -1,243 +1,248 @@
-// Comprehensive SEO configuration for Patty Car
+// Comprehensive SEO configuration for Vitalgames
 import type { Locale } from "@/i18n-config"
 
-// Main service keywords by language
-export const serviceKeywords = {
+// Main gaming keywords by language
+export const gameKeywords = {
   it: [
     // Primary keywords
-    "noleggio con conducente",
-    "NCC Milano",
-    "auto di lusso con autista",
-    "servizio autista privato",
-    "transfer aeroporto Milano",
-    "trasferimento VIP",
-    "auto con conducente",
-    "servizio limousine",
+    "slot machine",
+    "VLT",
+    "AWP",
+    "multigame",
+    "giochi da casinò",
+    "produttore slot machine",
+    "slot machine fisiche",
+    "slot online",
+    "macchinette da gioco",
+    "cabinet slot",
 
-    // Service-specific keywords
-    "transfer aeroporto Malpensa",
-    "transfer aeroporto Linate",
-    "transfer aeroporto Orio al Serio",
-    "servizio autista per eventi",
-    "auto matrimonio Milano",
-    "auto per cerimonie",
-    "trasporto executive",
-    "servizio autista aziendale",
-    "trasferimenti business",
-    "servizio autista per hotel",
-    "trasporto diplomatico",
-    "autista per delegazioni",
+    // Product-specific keywords
+    "VLT Italia",
+    "AWP multigame",
+    "slot machine bar",
+    "slot machine sala giochi",
+    "produzione slot machine",
+    "slot machine Milano",
+    "cabinet VLT",
+    "giochi AWP",
+    "slot machine legali",
+    "slot machine AAMS",
 
     // Long-tail keywords
-    "noleggio auto di lusso con conducente Milano",
-    "servizio autista privato per eventi aziendali",
-    "transfer VIP aeroporto Malpensa",
-    "auto con conducente per matrimonio Milano",
-    "servizio transfer hotel di lusso Milano",
-    "autista privato per shopping di lusso",
-    "trasporto executive per meeting aziendali",
-    "servizio limousine per eventi speciali",
+    "produttore italiano slot machine",
+    "slot machine per sale giochi",
+    "slot machine per casinò",
+    "slot machine con jackpot",
+    "slot machine con bonus game",
+    "slot machine tema frutta",
+    "slot machine tema egizio",
+    "slot machine tema fantasy",
+    "slot machine tema western",
+    "slot machine tema horror",
 
     // Location-specific keywords
-    "NCC Milano centro",
-    "auto con conducente Milano Monza",
-    "servizio autista Como Bellagio",
-    "transfer Lago di Como",
-    "noleggio con conducente Milano Torino",
-    "NCC Milano Venezia",
-    "servizio autista Milano Roma",
-    "transfer Milano Firenze",
+    "slot machine Milano",
+    "produttore slot machine Italia",
+    "slot machine Lombardia",
+    "slot machine autorizzate Italia",
+    "slot machine certificate ADM",
+    "slot machine legali Italia",
   ],
   en: [
     // Primary keywords
-    "chauffeur service Milan",
-    "luxury car hire with driver",
-    "private driver service",
-    "Milan airport transfer",
-    "VIP transfer service",
-    "executive car service",
-    "limousine service Milan",
-    "professional driver hire",
+    "slot machines",
+    "VLT",
+    "AWP",
+    "multigame",
+    "casino games",
+    "slot machine manufacturer",
+    "physical slot machines",
+    "online slots",
+    "gaming machines",
+    "slot cabinets",
 
-    // Service-specific keywords
-    "Malpensa airport transfer",
-    "Linate airport pickup",
-    "Orio al Serio airport transfer",
-    "chauffeur service for events",
-    "wedding car service Milan",
-    "ceremony transportation",
-    "executive transport",
-    "corporate chauffeur service",
-    "business transfers",
-    "hotel chauffeur service",
-    "diplomatic transport",
-    "driver for delegations",
+    // Product-specific keywords
+    "VLT Italy",
+    "AWP multigame",
+    "bar slot machines",
+    "arcade slot machines",
+    "slot machine production",
+    "Milan slot machines",
+    "VLT cabinets",
+    "AWP games",
+    "legal slot machines",
+    "AAMS slot machines",
 
     // Long-tail keywords
-    "luxury car with driver Milan",
-    "private chauffeur for corporate events",
-    "VIP airport transfer Malpensa",
-    "wedding car hire with chauffeur Milan",
-    "luxury hotel transfer service Milan",
-    "private driver for luxury shopping",
-    "executive transport for business meetings",
-    "limousine service for special events",
+    "Italian slot machine manufacturer",
+    "slot machines for arcades",
+    "slot machines for casinos",
+    "jackpot slot machines",
+    "bonus game slot machines",
+    "fruit-themed slot machines",
+    "Egyptian-themed slot machines",
+    "fantasy-themed slot machines",
+    "western-themed slot machines",
+    "horror-themed slot machines",
 
     // Location-specific keywords
-    "chauffeur service Milan city center",
-    "car with driver Milan Monza",
-    "chauffeur service Como Bellagio",
-    "Lake Como transfer",
-    "car hire with driver Milan Turin",
-    "chauffeur service Milan Venice",
-    "driver service Milan Rome",
-    "transfer Milan Florence",
+    "Milan slot machines",
+    "Italian slot machine manufacturer",
+    "Lombardy slot machines",
+    "authorized slot machines Italy",
+    "ADM certified slot machines",
+    "legal slot machines Italy",
   ],
   ar: [
     // Primary keywords
-    "خدمة سائق في ميلانو",
-    "تأجير سيارات فاخرة مع سائق",
-    "خدمة سائق خاص",
-    "خدمة نقل من مطار ميلانو",
-    "خدمة نقل VIP",
-    "خدمة سيارات تنفيذية",
-    "خدمة ليموزين ميلانو",
-    "استئجار سائق محترف",
+    "ماكينات القمار",
+    "VLT",
+    "AWP",
+    "ألعاب متعددة",
+    "ألعاب الكازينو",
+    "مصنع ماكينات القمار",
+    "ماكينات القمار الفعلية",
+    "فتحات عبر الإنترنت",
+    "آلات الألعاب",
+    "خزائن فتحات",
 
-    // Service-specific keywords
-    "خدمة نقل من مطار مالبينسا",
-    "خدمة توصيل من مطار ليناتي",
-    "خدمة نقل من مطار أوريو الساريو",
-    "خدمة سائق للمناسبات",
-    "خدمة سيارات الزفاف ميلانو",
-    "نقل للاحتفالات",
-    "نقل تنفيذي",
-    "خدمة سائق للشركات",
-    "نقل رجال الأعمال",
-    "خدمة سائق للفنادق",
-    "نقل دبلوماسي",
-    "سائق للوفود",
+    // Product-specific keywords
+    "VLT إيطاليا",
+    "AWP متعدد الألعاب",
+    "ماكينات القمار في الحانة",
+    "ماكينات القمار في صالة الألعاب",
+    "إنتاج ماكينات القمار",
+    "ماكينات القمار ميلانو",
+    "خزائن VLT",
+    "ألعاب AWP",
+    "ماكينات القمار القانونية",
+    "ماكينات القمار AAMS",
 
     // Long-tail keywords
-    "سيارة فاخرة مع سائق في ميلانو",
-    "سائق خاص لفعاليات الشركات",
-    "نقل VIP من مطار مالبينسا",
-    "تأجير سيارة زفاف مع سائق في ميلانو",
-    "خدمة نقل للفنادق الفاخرة في ميلانو",
-    "سائق خاص للتسوق الفاخر",
-    "نقل تنفيذي لاجتماعات العمل",
-    "خدمة ليموزين للمناسبات الخاصة",
+    "مصنع ماكينات القمار الإيطالي",
+    "ماكينات القمار لصالات الألعاب",
+    "ماكينات القمار للكازينوهات",
+    "ماكينات القمار مع الجائزة الكبرى",
+    "ماكينات القمار مع لعبة المكافأة",
+    "ماكينات القمار بموضوع الفاكهة",
+    "ماكينات القمار بموضوع مصري",
+    "ماكينات القمار بموضوع الخيال",
+    "ماكينات القمار بموضوع الغرب",
+    "ماكينات القمار بموضوع الرعب",
 
     // Location-specific keywords
-    "خدمة سائق في وسط مدينة ميلانو",
-    "سيارة مع سائق ميلانو مونزا",
-    "خدمة سائق كومو بيلاجيو",
-    "نقل بحيرة كومو",
-    "تأجير مع سائق ميلانو تورينو",
-    "خدمة سائق ميلانو البندقية",
-    "خدمة سائق ميلانو روما",
-    "نقل ميلانو فلورنسا",
+    "ماكينات القمار ميلانو",
+    "مصنع ماكينات القمار الإيطالي",
+    "ماكينات القمار لومباردي",
+    "ماكينات القمار المعتمدة في إيطاليا",
+    "ماكينات القمار المعتمدة من ADM",
+    "ماكينات القمار القانونية في إيطاليا",
   ],
 }
 
-// Service types with descriptions for structured data
-export const serviceTypes = {
+// Product types with descriptions for structured data
+export const productTypes = {
   it: [
     {
-      name: "Transfer Aeroportuali",
+      name: "Slot Machine AWP",
       description:
-        "Servizio di trasferimento di lusso da e per gli aeroporti di Milano Malpensa, Linate e Orio al Serio con autisti professionisti.",
-      keywords: ["transfer aeroporto", "trasferimento aeroportuale", "NCC aeroporto", "servizio navetta aeroporto"],
+        "Slot machine fisiche per bar, sale giochi e locali autorizzati, conformi alle normative ADM italiane.",
+      keywords: ["AWP", "slot machine bar", "slot machine fisiche", "macchinette da gioco", "slot legali"],
     },
     {
-      name: "Servizi per Eventi",
-      description:
-        "Auto di lusso con conducente per matrimoni, cerimonie, eventi aziendali e occasioni speciali in tutta Italia.",
-      keywords: ["auto per matrimonio", "NCC per eventi", "auto cerimonie", "trasporto eventi speciali"],
+      name: "Videolottery (VLT)",
+      description: "Cabinet VLT di alta qualità per sale dedicate, con grafica avanzata e jackpot collegati in rete.",
+      keywords: ["VLT", "videolottery", "cabinet VLT", "slot machine sala VLT", "jackpot VLT"],
     },
     {
-      name: "Servizi Diplomatici",
+      name: "Multigames",
       description:
-        "Trasporto riservato e professionale per delegazioni diplomatiche, consolati e personalità di alto profilo.",
-      keywords: ["trasporto diplomatico", "autista per delegazioni", "servizio VIP", "trasferimento personalità"],
+        "Sistemi multigame che offrono diverse slot in un'unica macchina, per massimizzare l'intrattenimento e l'offerta di gioco.",
+      keywords: ["multigame", "multi gioco", "slot multiple", "sistema multigame", "cabinet multigame"],
     },
     {
-      name: "Servizi per Hotel di Lusso",
+      name: "Slot Online",
       description:
-        "Collaborazioni con hotel di lusso per offrire ai loro ospiti un servizio di trasporto esclusivo e personalizzato.",
-      keywords: ["NCC per hotel", "trasporto ospiti hotel", "servizio autista hotel", "transfer hotel di lusso"],
+        "Versioni digitali delle nostre slot più popolari, disponibili sulle principali piattaforme di gioco online autorizzate.",
+      keywords: ["slot online", "giochi online", "casinò online", "slot digitali", "slot AAMS online"],
     },
     {
-      name: "Trasferimenti Business",
+      name: "Cabinet Personalizzati",
       description:
-        "Soluzioni di mobilità per professionisti e aziende con esigenze di trasporto regolari, meeting e conferenze.",
-      keywords: ["trasporto executive", "NCC aziendale", "autista per business", "transfer meeting"],
+        "Soluzioni hardware personalizzate per operatori di gioco, con design esclusivi e configurazioni su misura.",
+      keywords: ["cabinet personalizzati", "hardware slot", "design cabinet", "cabinet su misura", "cabinet esclusivi"],
     },
   ],
   en: [
     {
-      name: "Airport Transfers",
+      name: "AWP Slot Machines",
       description:
-        "Luxury transfer service to and from Milan Malpensa, Linate and Orio al Serio airports with professional chauffeurs.",
-      keywords: ["airport transfer", "airport pickup", "chauffeur airport", "airport shuttle service"],
+        "Physical slot machines for bars, arcades and authorized venues, compliant with Italian ADM regulations.",
+      keywords: ["AWP", "bar slot machines", "physical slot machines", "gaming machines", "legal slots"],
     },
     {
-      name: "Event Services",
+      name: "Video Lottery Terminals (VLT)",
       description:
-        "Luxury cars with driver for weddings, ceremonies, corporate events and special occasions throughout Italy.",
-      keywords: ["wedding car", "chauffeur for events", "ceremony transportation", "special event transport"],
+        "High-quality VLT cabinets for dedicated venues, featuring advanced graphics and networked jackpots.",
+      keywords: ["VLT", "video lottery", "VLT cabinets", "VLT venue slot machines", "VLT jackpots"],
     },
     {
-      name: "Diplomatic Services",
+      name: "Multigames",
       description:
-        "Reserved and professional transportation for diplomatic delegations, consulates and high-profile personalities.",
-      keywords: ["diplomatic transport", "chauffeur for delegations", "VIP service", "personality transfer"],
+        "Multigame systems offering various slots in a single machine, maximizing entertainment and gaming options.",
+      keywords: ["multigame", "multi-game", "multiple slots", "multigame system", "multigame cabinet"],
     },
     {
-      name: "Luxury Hotel Services",
-      description:
-        "Collaborations with luxury hotels to offer their guests an exclusive and personalized transportation service.",
-      keywords: ["chauffeur for hotels", "hotel guest transport", "hotel driver service", "luxury hotel transfer"],
+      name: "Online Slots",
+      description: "Digital versions of our most popular slots, available on major authorized online gaming platforms.",
+      keywords: ["online slots", "online games", "online casino", "digital slots", "AAMS online slots"],
     },
     {
-      name: "Business Transfers",
+      name: "Custom Cabinets",
       description:
-        "Mobility solutions for professionals and companies with regular transportation needs, meetings and conferences.",
-      keywords: ["executive transport", "corporate chauffeur", "business driver", "meeting transfer"],
+        "Customized hardware solutions for gaming operators, with exclusive designs and tailored configurations.",
+      keywords: ["custom cabinets", "slot hardware", "cabinet design", "tailored cabinets", "exclusive cabinets"],
     },
   ],
   ar: [
     {
-      name: "خدمات نقل المطار",
-      description: "خدمة نقل فاخرة من وإلى مطارات ميلانو مالبينسا، ليناتي وأوريو الساريو مع سائقين محترفين.",
-      keywords: ["نقل المطار", "استقبال المطار", "سائق المطار", "خدمة نقل المطار"],
+      name: "ماكينات القمار AWP",
+      description: "ماكينات قمار فعلية للحانات وصالات الألعاب والأماكن المصرح بها، متوافقة مع لوائح ADM الإيطالية.",
+      keywords: ["AWP", "ماكينات القمار في الحانة", "ماكينات القمار الفعلية", "آلات الألعاب", "فتحات قانونية"],
     },
     {
-      name: "خدمات المناسبات",
-      description: "سيارات فاخرة مع سائق للأعراس والاحتفالات وفعاليات الشركات والمناسبات الخاصة في جميع أنحاء إيطاليا.",
-      keywords: ["سيارة زفاف", "سائق للمناسبات", "نقل للاحتفالات", "نقل للمناسبات الخاصة"],
+      name: "محطات يانصيب الفيديو (VLT)",
+      description: "خزائن VLT عالية الجودة للأماكن المخصصة، تتميز برسومات متقدمة وجوائز كبرى مرتبطة بالشبكة.",
+      keywords: ["VLT", "يانصيب الفيديو", "خزائن VLT", "ماكينات القمار في صالة VLT", "الجوائز الكبرى VLT"],
     },
     {
-      name: "الخدمات الدبلوماسية",
-      description: "نقل محجوز ومهني للوفود الدبلوماسية والقنصليات والشخصيات رفيعة المستوى.",
-      keywords: ["نقل دبلوماسي", "سائق للوفود", "خدمة VIP", "نقل الشخصيات"],
+      name: "ألعاب متعددة",
+      description: "أنظمة متعددة الألعاب تقدم فتحات متنوعة في آلة واحدة، لتعظيم الترفيه وخيارات الألعاب.",
+      keywords: ["ألعاب متعددة", "لعبة متعددة", "فتحات متعددة", "نظام متعدد الألعاب", "خزانة متعددة الألعاب"],
     },
     {
-      name: "خدمات الفنادق الفاخرة",
-      description: "تعاون مع الفنادق الفاخرة لتقديم خدمة نقل حصرية ومخصصة لضيوفهم.",
-      keywords: ["سائق للفنادق", "نقل ضيوف الفندق", "خدمة سائق الفندق", "نقل الفنادق الفاخرة"],
+      name: "فتحات عبر الإنترنت",
+      description: "إصدارات رقمية من أكثر فتحاتنا شعبية، متوفرة على منصات الألعاب عبر الإنترنت الرئيسية المعتمدة.",
+      keywords: [
+        "فتحات عبر الإنترنت",
+        "ألعاب عبر الإنترنت",
+        "كازينو عبر الإنترنت",
+        "فتحات رقمية",
+        "فتحات AAMS عبر الإنترنت",
+      ],
     },
     {
-      name: "نقل رجال الأعمال",
-      description: "حلول التنقل للمحترفين والشركات ذات احتياجات النقل المنتظمة والاجتماعات والمؤتمرات.",
-      keywords: ["نقل تنفيذي", "سائق الشركات", "سائق الأعمال", "نقل الاجتماعات"],
+      name: "خزائن مخصصة",
+      description: "حلول أجهزة مخصصة لمشغلي الألعاب، مع تصميمات حصرية وتكوينات مخصصة.",
+      keywords: ["خزائن مخصصة", "أجهزة الفتحات", "تصميم الخزانة", "خزائن مصممة", "خزائن حصرية"],
     },
   ],
 }
 
-// Location data for local business structured data
-export const locationData = {
-  name: "Patty Car",
+// Company data for structured data
+export const companyData = {
+  name: "Vitalgames",
+  foundingYear: "1996",
   address: {
     streetAddress: "Via Milano, 123",
     addressLocality: "Milano",
@@ -250,221 +255,288 @@ export const locationData = {
     longitude: "9.1900",
   },
   telephone: "+39 02 1234567",
-  email: "info@pattycar.com",
+  email: "info@vitalgames.com",
+  description: {
+    it: "Dal 1996, Vitalgames è leader nella produzione di slot machine, VLT e sistemi multigame in Italia. Con sede a Milano, offriamo soluzioni di gioco innovative e conformi alle normative per bar, sale giochi e piattaforme online.",
+    en: "Since 1996, Vitalgames has been a leader in the production of slot machines, VLTs and multigame systems in Italy. Based in Milan, we offer innovative gaming solutions compliant with regulations for bars, arcades and online platforms.",
+    ar: "منذ عام 1996، كانت Vitalgames رائدة في إنتاج ماكينات القمار وأجهزة VLT وأنظمة الألعاب المتعددة في إيطاليا. ومقرها في ميلانو، نقدم حلول ألعاب مبتكرة متوافقة مع اللوائح للحانات وصالات الألعاب والمنصات عبر الإنترنت.",
+  },
 }
 
 // Generate SEO metadata for each page
 export function generateSEOMetadata(page: string, locale: Locale) {
-  const baseUrl = "https://pattycar.com"
+  const baseUrl = "https://vitalgames.com"
   const localizedPages = {
     home: {
       it: {
-        title: "Patty Car | Servizio Auto di Lusso con Conducente a Milano",
+        title: "Vitalgames | Produttore di Slot Machine, VLT e Multigame dal 1996",
         description:
-          "Servizio NCC di prestigio a Milano dal 1998. Auto di lusso con conducente per transfer aeroportuali, eventi, servizi diplomatici e business.",
+          "Leader italiano nella produzione di slot machine, VLT e sistemi multigame. Dal 1996 creiamo giochi innovativi per bar, sale giochi e piattaforme online.",
         keywords: [
-          "noleggio con conducente Milano",
-          "NCC Milano",
-          "auto di lusso con autista",
-          "servizio autista privato",
-          "transfer aeroporto Milano",
+          "slot machine",
+          "VLT",
+          "AWP",
+          "multigame",
+          "produttore slot machine",
+          "slot machine Italia",
+          "giochi da casinò",
+          "macchinette da gioco",
         ],
       },
       en: {
-        title: "Patty Car | Luxury Chauffeur Service in Milan",
+        title: "Vitalgames | Slot Machine, VLT and Multigame Manufacturer since 1996",
         description:
-          "Prestigious chauffeur service in Milan since 1998. Luxury cars with driver for airport transfers, events, diplomatic services and business.",
+          "Italian leader in the production of slot machines, VLTs and multigame systems. Since 1996, we've been creating innovative games for bars, arcades and online platforms.",
         keywords: [
-          "chauffeur service Milan",
-          "Milan car with driver",
-          "luxury car hire with driver",
-          "private driver service",
-          "Milan airport transfer",
+          "slot machines",
+          "VLT",
+          "AWP",
+          "multigame",
+          "slot machine manufacturer",
+          "Italian slot machines",
+          "casino games",
+          "gaming machines",
         ],
       },
       ar: {
-        title: "باتي كار | خدمة سيارات فاخرة مع سائق في ميلانو",
+        title: "فيتالجيمز | مصنع ماكينات القمار وVLT والألعاب المتعددة منذ عام 1996",
         description:
-          "خدمة سائق مرموقة في ميلانو منذ عام 1998. سيارات فاخرة مع سائق للنقل من المطار والمناسبات والخدمات الدبلوماسية والأعمال.",
+          "الشركة الرائدة في إيطاليا في إنتاج ماكينات القمار وأجهزة VLT وأنظمة الألعاب المتعددة. منذ عام 1996، نقوم بإنشاء ألعاب مبتكرة للحانات وصالات الألعاب والمنصات عبر الإنترنت.",
         keywords: [
-          "خدمة سائق في ميلانو",
-          "سيارة مع سائق في ميلانو",
-          "تأجير سيارات فاخرة مع سائق",
-          "خدمة سائق خاص",
-          "خدمة نقل من مطار ميلانو",
+          "ماكينات القمار",
+          "VLT",
+          "AWP",
+          "ألعاب متعددة",
+          "مصنع ماكينات القمار",
+          "ماكينات القمار الإيطالية",
+          "ألعاب الكازينو",
+          "آلات الألعاب",
         ],
       },
     },
-    services: {
+    vlt: {
       it: {
-        title: "Servizi NCC di Lusso | Patty Car Milano",
+        title: "Cabinet VLT | Videolottery di Alta Qualità | Vitalgames",
         description:
-          "Scopri i nostri servizi di noleggio con conducente: transfer aeroportuali, eventi, servizi diplomatici, hotel di lusso e business.",
+          "Scopri la nostra gamma di cabinet VLT di alta qualità. Sistemi videolottery innovativi con grafica avanzata e jackpot collegati in rete per sale dedicate.",
         keywords: [
-          "servizi NCC Milano",
-          "noleggio con conducente servizi",
-          "transfer aeroporto Milano",
-          "auto per eventi",
-          "trasporto executive",
+          "VLT",
+          "videolottery",
+          "cabinet VLT",
+          "slot machine sala VLT",
+          "jackpot VLT",
+          "produttore VLT Italia",
+          "VLT certificate ADM",
+          "VLT legali Italia",
         ],
       },
       en: {
-        title: "Luxury Chauffeur Services | Patty Car Milan",
+        title: "VLT Cabinets | High-Quality Video Lottery Terminals | Vitalgames",
         description:
-          "Discover our chauffeur services: airport transfers, events, diplomatic services, luxury hotels and business transportation.",
+          "Discover our range of high-quality VLT cabinets. Innovative video lottery systems with advanced graphics and networked jackpots for dedicated venues.",
         keywords: [
-          "Milan chauffeur services",
-          "car with driver services",
-          "Milan airport transfer",
-          "event car service",
-          "executive transport",
+          "VLT",
+          "video lottery terminals",
+          "VLT cabinets",
+          "VLT venue slot machines",
+          "VLT jackpots",
+          "Italian VLT manufacturer",
+          "ADM certified VLT",
+          "legal VLT Italy",
         ],
       },
       ar: {
-        title: "خدمات سائق فاخرة | باتي كار ميلانو",
+        title: "خزائن VLT | محطات يانصيب الفيديو عالية الجودة | فيتالجيمز",
         description:
-          "اكتشف خدمات السائق لدينا: نقل المطار، المناسبات، الخدمات الدبلوماسية، الفنادق الفاخرة ونقل الأعمال.",
-        keywords: ["خدمات سائق ميلانو", "خدمات سيارة مع سائق", "نقل مطار ميلانو", "خدمة سيارة للمناسبات", "نقل تنفيذي"],
-      },
-    },
-    experiences: {
-      it: {
-        title: "Esperienze Esclusive | Tour Privati con Autista | Patty Car",
-        description:
-          "Vivi esperienze uniche con i nostri tour privati: Maranello e Ferrari, Lago di Como, shopping di lusso con servizio VIP.",
+          "اكتشف مجموعتنا من خزائن VLT عالية الجودة. أنظمة يانصيب فيديو مبتكرة مع رسومات متقدمة وجوائز كبرى مرتبطة بالشبكة للأماكن المخصصة.",
         keywords: [
-          "tour privati con autista",
-          "esperienza Ferrari Maranello",
-          "tour Lago di Como",
-          "shopping di lusso con autista",
-          "esperienze esclusive Milano",
-        ],
-      },
-      en: {
-        title: "Exclusive Experiences | Private Tours with Chauffeur | Patty Car",
-        description:
-          "Experience unique journeys with our private tours: Maranello and Ferrari, Lake Como, luxury shopping with VIP service.",
-        keywords: [
-          "private tours with chauffeur",
-          "Ferrari Maranello experience",
-          "Lake Como tour",
-          "luxury shopping with driver",
-          "exclusive experiences Milan",
-        ],
-      },
-      ar: {
-        title: "تجارب حصرية | جولات خاصة مع سائق | باتي كار",
-        description: "استمتع برحلات فريدة مع جولاتنا الخاصة: مارانيلو وفيراري، بحيرة كومو، تسوق فاخر مع خدمة VIP.",
-        keywords: [
-          "جولات خاصة مع سائق",
-          "تجربة فيراري مارانيلو",
-          "جولة بحيرة كومو",
-          "تسوق فاخر مع سائق",
-          "تجارب حصرية ميلانو",
+          "VLT",
+          "محطات يانصيب الفيديو",
+          "خزائن VLT",
+          "ماكينات القمار في صالة VLT",
+          "الجوائز الكبرى VLT",
+          "مصنع VLT الإيطالي",
+          "VLT معتمدة من ADM",
+          "VLT قانونية في إيطاليا",
         ],
       },
     },
-    about: {
+    awpMultigames: {
       it: {
-        title: "Chi Siamo | Patty Car | Servizio NCC di Prestigio dal 1998",
+        title: "AWP Multigames | Sistemi Multi Gioco per Bar e Sale | Vitalgames",
         description:
-          "Patty Car offre servizi di noleggio con conducente di alta qualità a Milano dal 1998. Scopri la nostra storia, la flotta e il team.",
+          "I nostri sistemi AWP multigame offrono diverse slot in un'unica macchina. Massimizza l'intrattenimento e l'offerta di gioco nei bar e nelle sale giochi.",
         keywords: [
-          "chi siamo Patty Car",
-          "storia NCC Milano",
-          "servizio autista Milano storia",
-          "azienda noleggio con conducente",
-          "flotta auto di lusso Milano",
+          "AWP multigame",
+          "multi gioco",
+          "slot multiple",
+          "sistema multigame",
+          "cabinet multigame",
+          "slot machine bar",
+          "slot machine sala giochi",
+          "multigame Italia",
         ],
       },
       en: {
-        title: "About Us | Patty Car | Prestigious Chauffeur Service since 1998",
+        title: "AWP Multigames | Multi-Game Systems for Bars and Arcades | Vitalgames",
         description:
-          "Patty Car offers high-quality chauffeur services in Milan since 1998. Discover our history, fleet and team.",
+          "Our AWP multigame systems offer various slots in a single machine. Maximize entertainment and gaming options in bars and arcades.",
         keywords: [
-          "about Patty Car",
-          "Milan chauffeur service history",
-          "Milan driver service history",
-          "car with driver company",
-          "luxury car fleet Milan",
+          "AWP multigame",
+          "multi-game",
+          "multiple slots",
+          "multigame system",
+          "multigame cabinet",
+          "bar slot machines",
+          "arcade slot machines",
+          "multigame Italy",
         ],
       },
       ar: {
-        title: "من نحن | باتي كار | خدمة سائق مرموقة منذ عام 1998",
-        description: "تقدم باتي كار خدمات سائق عالية الجودة في ميلانو منذ عام 1998. اكتشف تاريخنا وأسطولنا وفريقنا.",
+        title: "ألعاب AWP المتعددة | أنظمة متعددة الألعاب للحانات وصالات الألعاب | فيتالجيمز",
+        description:
+          "توفر أنظمة الألعاب المتعددة AWP لدينا فتحات متنوعة في آلة واحدة. تعظيم الترفيه وخيارات الألعاب في الحانات وصالات الألعاب.",
         keywords: [
-          "عن باتي كار",
-          "تاريخ خدمة سائق ميلانو",
-          "تاريخ خدمة سائق ميلانو",
-          "شركة سيارة مع سائق",
-          "أسطول سيارات فاخرة ميلانو",
+          "ألعاب AWP المتعددة",
+          "لعبة متعددة",
+          "فتحات متعددة",
+          "نظام متعدد الألعاب",
+          "خزانة متعددة الألعاب",
+          "ماكينات القمار في الحانة",
+          "ماكينات القمار في صالة الألعاب",
+          "ألعاب متعددة إيطاليا",
         ],
       },
     },
-    contact: {
+    allGames: {
       it: {
-        title: "Contatti | Prenota il Tuo Servizio NCC | Patty Car Milano",
+        title: "Tutti i Giochi | Slot Machine, VLT e Multigame | Vitalgames",
         description:
-          "Contatta Patty Car per prenotare il tuo servizio di noleggio con conducente a Milano. Richiedi un preventivo per transfer, eventi o servizi business.",
+          "Esplora la nostra completa collezione di giochi: slot machine AWP, VLT, multigame e slot online. Giochi innovativi con temi diversi e meccaniche coinvolgenti.",
         keywords: [
-          "contatti NCC Milano",
-          "prenotazione auto con conducente",
-          "preventivo noleggio con conducente",
-          "prenotazione transfer Milano",
-          "contatta autista privato",
+          "slot machine",
+          "giochi slot",
+          "VLT",
+          "AWP",
+          "multigame",
+          "slot online",
+          "giochi da casinò",
+          "macchinette da gioco",
         ],
       },
       en: {
-        title: "Contact | Book Your Chauffeur Service | Patty Car Milan",
+        title: "All Games | Slot Machines, VLTs and Multigames | Vitalgames",
         description:
-          "Contact Patty Car to book your chauffeur service in Milan. Request a quote for transfers, events or business services.",
+          "Explore our complete collection of games: AWP slot machines, VLTs, multigames and online slots. Innovative games with diverse themes and engaging mechanics.",
         keywords: [
-          "contact Milan chauffeur",
-          "book car with driver",
-          "chauffeur service quote",
-          "book Milan transfer",
-          "contact private driver",
+          "slot machines",
+          "slot games",
+          "VLT",
+          "AWP",
+          "multigame",
+          "online slots",
+          "casino games",
+          "gaming machines",
         ],
       },
       ar: {
-        title: "اتصل بنا | احجز خدمة السائق الخاصة بك | باتي كار ميلانو",
+        title: "جميع الألعاب | ماكينات القمار وVLT والألعاب المتعددة | فيتالجيمز",
         description:
-          "اتصل بباتي كار لحجز خدمة السائق الخاصة بك في ميلانو. اطلب عرض أسعار للنقل أو المناسبات أو خدمات الأعمال.",
-        keywords: ["اتصل بسائق ميلانو", "حجز سيارة مع سائق", "عرض أسعار خدمة سائق", "حجز نقل ميلانو", "اتصل بسائق خاص"],
+          "استكشف مجموعتنا الكاملة من الألعاب: ماكينات قمار AWP وأجهزة VLT وألعاب متعددة وفتحات عبر الإنترنت. ألعاب مبتكرة بموضوعات متنوعة وميكانيكا جذابة.",
+        keywords: [
+          "ماكينات القمار",
+          "ألعاب الفتحات",
+          "VLT",
+          "AWP",
+          "ألعاب متعددة",
+          "فتحات عبر الإنترنت",
+          "ألعاب الكازينو",
+          "آلات الألعاب",
+        ],
       },
     },
-    booking: {
+    gameDetail: {
       it: {
-        title: "Prenota | Servizio NCC | Patty Car Milano",
-        description: "Prenota il tuo servizio di noleggio con conducente a Milano. Transfer aeroportuali, eventi, servizi business e molto altro.",
+        title: "GAME_NAME | Slot Machine Innovativa | Vitalgames",
+        description:
+          "Scopri GAME_NAME, una slot machine innovativa con grafica accattivante e funzionalità bonus emozionanti. Disponibile in versione AWP, VLT e online.",
         keywords: [
-          "prenota NCC Milano",
-          "prenotazione auto con conducente",
-          "prenotazione transfer Milano",
-          "prenotazione servizio autista",
-          "booking NCC Milano",
+          "GAME_NAME slot",
+          "GAME_NAME Vitalgames",
+          "slot machine GAME_NAME",
+          "gioco GAME_NAME",
+          "GAME_NAME AWP",
+          "GAME_NAME VLT",
+          "GAME_NAME online",
         ],
       },
       en: {
-        title: "Book | Chauffeur Service | Patty Car Milan",
-        description: "Book your chauffeur service in Milan. Airport transfers, events, business services and more.",
+        title: "GAME_NAME | Innovative Slot Machine | Vitalgames",
+        description:
+          "Discover GAME_NAME, an innovative slot machine with captivating graphics and exciting bonus features. Available in AWP, VLT and online versions.",
         keywords: [
-          "book Milan chauffeur",
-          "book car with driver",
-          "book Milan transfer",
-          "book driver service",
-          "Milan chauffeur booking",
+          "GAME_NAME slot",
+          "GAME_NAME Vitalgames",
+          "GAME_NAME slot machine",
+          "GAME_NAME game",
+          "GAME_NAME AWP",
+          "GAME_NAME VLT",
+          "GAME_NAME online",
         ],
       },
       ar: {
-        title: "احجز | خدمة سائق | باتي كار ميلانو",
-        description: "احجز خدمة السائق الخاصة بك في ميلانو. نقل المطار والمناسبات وخدمات الأعمال والمزيد.",
+        title: "GAME_NAME | ماكينة قمار مبتكرة | فيتالجيمز",
+        description:
+          "اكتشف GAME_NAME، ماكينة قمار مبتكرة برسومات جذابة وميزات مكافآت مثيرة. متوفر في إصدارات AWP وVLT وعبر الإنترنت.",
         keywords: [
-          "حجز سائق ميلانو",
-          "حجز سيارة مع سائق",
-          "حجز نقل ميلانو",
-          "حجز خدمة سائق",
-          "حجز سائق ميلانو",
+          "فتحة GAME_NAME",
+          "GAME_NAME فيتالجيمز",
+          "ماكينة قمار GAME_NAME",
+          "لعبة GAME_NAME",
+          "GAME_NAME AWP",
+          "GAME_NAME VLT",
+          "GAME_NAME عبر الإنترنت",
+        ],
+      },
+    },
+    multigameDetail: {
+      it: {
+        title: "MULTIGAME_NAME | Sistema Multigame AWP | Vitalgames",
+        description:
+          "MULTIGAME_NAME offre diverse slot in un'unica macchina. Un sistema multigame innovativo per bar e sale giochi con grafica HD e interfaccia intuitiva.",
+        keywords: [
+          "MULTIGAME_NAME multigame",
+          "MULTIGAME_NAME Vitalgames",
+          "sistema multigame MULTIGAME_NAME",
+          "AWP MULTIGAME_NAME",
+          "multi gioco MULTIGAME_NAME",
+          "slot multiple MULTIGAME_NAME",
+        ],
+      },
+      en: {
+        title: "MULTIGAME_NAME | AWP Multigame System | Vitalgames",
+        description:
+          "MULTIGAME_NAME offers various slots in a single machine. An innovative multigame system for bars and arcades with HD graphics and intuitive interface.",
+        keywords: [
+          "MULTIGAME_NAME multigame",
+          "MULTIGAME_NAME Vitalgames",
+          "MULTIGAME_NAME multigame system",
+          "MULTIGAME_NAME AWP",
+          "MULTIGAME_NAME multi-game",
+          "MULTIGAME_NAME multiple slots",
+        ],
+      },
+      ar: {
+        title: "MULTIGAME_NAME | نظام ألعاب متعددة AWP | فيتالجيمز",
+        description:
+          "يقدم MULTIGAME_NAME فتحات متنوعة في آلة واحدة. نظام ألعاب متعددة مبتكر للحانات وصالات الألعاب مع رسومات عالية الدقة وواجهة بديهية.",
+        keywords: [
+          "ألعاب متعددة MULTIGAME_NAME",
+          "MULTIGAME_NAME فيتالجيمز",
+          "نظام ألعاب متعددة MULTIGAME_NAME",
+          "MULTIGAME_NAME AWP",
+          "لعبة متعددة MULTIGAME_NAME",
+          "فتحات متعددة MULTIGAME_NAME",
         ],
       },
     },
@@ -473,54 +545,53 @@ export function generateSEOMetadata(page: string, locale: Locale) {
   return localizedPages[page as keyof typeof localizedPages][locale]
 }
 
-// Generate JSON-LD structured data
-export function generateLocalBusinessSchema(locale: Locale) {
+// Generate JSON-LD structured data for the company
+export function generateCompanySchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://pattycar.com",
-    name: "Patty Car",
-    image: "https://pattycar.com/images/patty-car-logo.jpg",
-    url: "https://pattycar.com",
-    telephone: locationData.telephone,
-    email: locationData.email,
-    priceRange: "€€€",
+    "@type": "Organization",
+    "@id": "https://vitalgames.com",
+    name: companyData.name,
+    url: "https://vitalgames.com",
+    logo: "https://vitalgames.com/images/logo.png",
+    foundingDate: companyData.foundingYear,
+    description: companyData.description.en,
     address: {
       "@type": "PostalAddress",
-      streetAddress: locationData.address.streetAddress,
-      addressLocality: locationData.address.addressLocality,
-      addressRegion: locationData.address.addressRegion,
-      postalCode: locationData.address.postalCode,
-      addressCountry: locationData.address.addressCountry,
+      streetAddress: companyData.address.streetAddress,
+      addressLocality: companyData.address.addressLocality,
+      addressRegion: companyData.address.addressRegion,
+      postalCode: companyData.address.postalCode,
+      addressCountry: companyData.address.addressCountry,
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: locationData.geo.latitude,
-      longitude: locationData.geo.longitude,
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "00:00",
-      closes: "23:59",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: companyData.telephone,
+      email: companyData.email,
+      contactType: "customer service",
     },
     sameAs: [
-      "https://www.facebook.com/pattycar",
-      "https://www.instagram.com/pattycar_milano",
-      "https://www.linkedin.com/company/patty-car",
+      "https://www.facebook.com/vitalgames",
+      "https://www.instagram.com/vitalgames_official",
+      "https://www.linkedin.com/company/vitalgames",
     ],
   }
 }
 
-// Generate service schema for structured data
-export function generateServiceSchema(service: any, locale: Locale) {
+// Generate product schema for structured data
+export function generateProductSchema(product: any, locale: Locale) {
   return {
     "@context": "https://schema.org",
-    "@type": "Service",
-    serviceType: service.name,
-    provider: {
-      "@type": "LocalBusiness",
-      name: "Patty Car",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    brand: {
+      "@type": "Brand",
+      name: "Vitalgames",
+    },
+    manufacturer: {
+      "@type": "Organization",
+      name: "Vitalgames",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Milano",
@@ -528,11 +599,39 @@ export function generateServiceSchema(service: any, locale: Locale) {
         addressCountry: "IT",
       },
     },
-    description: service.description,
-    areaServed: {
-      "@type": "City",
-      name: "Milano",
-    },
+    category: "Gaming Machines",
+    image: product.image || "https://vitalgames.com/images/products/default.jpg",
   }
 }
 
+// Generate game schema for structured data
+export function generateGameSchema(game: any) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Game",
+    name: game.name,
+    description: game.description || `${game.name} - Slot machine by Vitalgames`,
+    gameItem: {
+      "@type": "Thing",
+      name: "Slot Machine",
+    },
+    gamePlatform: ["AWP", "VLT", "Online"],
+    genre: "Slot Machine",
+    image: game.coverImage || game.mainImage,
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      price: "0",
+      priceCurrency: "EUR",
+      seller: {
+        "@type": "Organization",
+        name: "Vitalgames",
+      },
+    },
+    provider: {
+      "@type": "Organization",
+      name: "Vitalgames",
+      url: "https://vitalgames.com",
+    },
+  }
+}

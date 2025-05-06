@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Patty Car | Luxury Car Service",
-    "description": "Travel with elegance, comfort and punctuality with our luxury car service"
+    "title": "Vitalgames | Slot Machine Manufacturer since 1996",
+    "description": "Since 1996, Vitalgames has been a leader in the production of slot machines, VLTs, and multigame systems in Italy. Innovative gaming solutions for bars, arcades, and online platforms."
   },
   "navigation": [
     {
@@ -10,19 +10,19 @@
       "label": "Home"
     },
     {
-      "key": "services",
-      "href": "/services",
-      "label": "Services"
+      "key": "vlt",
+      "href": "/vlt",
+      "label": "VLT"
     },
     {
-      "key": "fleet",
-      "href": "/fleet",
-      "label": "Fleet"
+      "key": "awp",
+      "href": "/awp-multigames",
+      "label": "AWP Multigames"
     },
     {
-      "key": "book",
-      "href": "/booking",
-      "label": "Book"
+      "key": "allgames",
+      "href": "/allgames",
+      "label": "All Games"
     },
     {
       "key": "contact",
@@ -30,338 +30,487 @@
       "label": "Contact"
     }
   ],
+  "header": {
+    "contactUs": "Contact us"
+  },
   "hero": {
-    "title": "Travel with elegance, comfort and punctuality",
-    "description": "Since 1998, Patty Car has been offering high-level chauffeur services (NCC), guaranteeing exclusive and personalized transfers in Italy and abroad. Whether for business or pleasure, our service is available 24/7 to meet all your travel needs.",
-    "subDescription": "Whether you're heading to a business meeting, a special event, or simply desire a luxury transfer, Patty Car is the perfect choice for all your travel needs.",
-    "ctaButton": "Book Now",
-    "bottomText": "A Prestigious NCC Service since 1998"
+    "title": "Innovation in Gaming Since 1996",
+    "description": "Vitalgames has been creating high-quality slot machines, VLTs, and multigame systems for over 25 years. Our products combine cutting-edge technology with engaging gameplay to deliver exceptional gaming experiences.",
+    "subDescription": "Whether for bars, arcades, or online platforms, our gaming solutions are designed to maximize player engagement and operator revenue.",
+    "ctaButton": "Discover Our Games",
+    "bottomText": "A Leader in Gaming Technology Since 1996"
   },
-  "services": {
-    "title": "Discover our",
-    "titleHighlight": "services",
-    "learnMore": "Learn more",
-    "items": [
-      {
-        "title": "NCC Transfer",
-        "description": "Travel in style and comfort with our fleet of luxury cars, vans, and buses. Perfect for private, corporate, or tourist transfers."
-      },
-      {
-        "title": "Transport for events",
-        "description": "Elegant transportation solutions for weddings, ceremonies, and special occasions."
-      },
-      {
-        "title": "Diplomatic services",
-        "description": "We manage transfers for consular and diplomatic officials, coordinating with law enforcement to ensure maximum security."
-      },
-      {
-        "title": "Luxury Hotel Services",
-        "description": "Collaborations with luxury hotels to offer their guests an exclusive transport service."
-      },
-      {
-        "title": "Business transfers",
-        "description": "Mobility solutions for professionals and companies with regular transport needs."
-      }
-    ]
-  },
-  "about": {
-    "label": "About Us",
-    "title": "A prestigious NCC service since 1998",
-    "paragraph1": "Patty Car is a reference point in the chauffeur service sector. With offices in Milan and Rome and a widespread network of collaborators, we operate throughout the national and international territory. We have had the honor of serving prestigious events such as Expo 2015 and the Paris 2024 Olympic Games. Our mission is to offer impeccable service, available 24 hours a day, every day of the week, to guarantee you a stress-free travel experience with maximum comfort."
-  },
-  "clients": {
-    "title": "Some of our clients"
-  },
-  "experiences": {
-    "title": "recommended",
-    "titleHighlight": "Experiences",
-    "subtitle": "Offer your guests a unique travel experience with our exclusive tours",
-    "experienceBy": "Experience by",
-    "items": [
-      {
-        "title": "Maranello Tour",
-        "description": "An unforgettable experience in the world of Ferrari"
-      },
-      {
-        "title": "Lake Como and Bellagio Tour",
-        "description": "Discover the beauty of the lake and its historic villages"
-      },
-      {
-        "title": "Serravalle Transfer with VIP Lounge",
-        "description": "Luxury shopping with exclusive transport service"
-      }
-    ]
-  },
-  "booking": {
-    "title": "Request a reservation",
-    "subtitle": "Fill out the form to book your luxury transfer",
-    "nameLabel": "Name",
-    "nameHelperText": "This name will be displayed at reception",
-    "phoneLabel": "Phone Number",
-    "emailLabel": "Email",
-    "vehicleTypeLabel": "Vehicle Type",
-    "vehicleCountLabel": "Number of Vehicles",
-    "selectVehicle": "Select a vehicle",
-    "dateLabel": "Transfer Date",
-    "timeLabel": "Time",
-    "passengersLabel": "Number of Passengers",
-    "destinationLabel": "Destination",
-    "meetAndGreetLabel": "Meet and Greet service at the airport",
-    "differentVehiclesLabel": "I need different types of vehicles",
-    "differentVehiclesHelperText": "Write your different needs and requests in the notes",
-    "notesLabel": "Notes and extra requests",
-    "billingInfoLabel": "Billing Information",
-    "submitButton": "Submit Reservation",
-    "successMessage": "Thank you for your request. We will contact you soon.",
-    "pageTitle": "Booking",
-    "serviceLabel": "Services",
-    "description": "Booking your journey with us is a simple and quick experience, designed for those seeking impeccable service at every stage. Our intuitive platform allows you to reserve your transfer or tour in just a few steps, with the certainty of exclusive treatment from the first contact.",
-    "formTitle": "Request a booking",
-    "formSubtitle": "Fill out the form to book your transfer",
-    "namePlaceholder": "Enter your full name",
-    "phonePlaceholder": "Enter your phone number",
-    "vehicleTypePlaceholder": "Choose vehicle type",
-    "flightLabel": "Arrival flight",
-    "flightPlaceholder": "Enter your flight number",
-    "passengersPlaceholder": "Select number of passengers",
-    "departureLocationLabel": "Departure Location",
-    "selectDepartureLocation": "Select departure location",
-    "searchDepartureLocation": "Search departure location",
-    "noLocationsFound": "No locations found",
-    "bookingDescription": "Booking your journey with us is a simple and quick experience, designed for those seeking impeccable service at every stage. Our intuitive platform allows you to reserve your transfer or tour in just a few steps, with the certainty of exclusive treatment from the first contact.",
-    "bookingFormTitle": "Request a booking",
-    "bookingFormSubtitle": "Fill out the form to book your transfer",
-    "nameFieldLabel": "Full name*",
-    "phoneFieldLabel": "Phone number*",
-    "vehicleTypeFieldLabel": "Vehicle type*",
-    "flightFieldLabel": "Arrival flight",
-    "dateTimeFieldLabel": "Date and time of booking*",
-    "passengersFieldLabel": "Number of passengers",
-    "submitBookingButton": "Submit booking",
-    "luggageLabel": "Number of bags",
-    "flightTrainLabel": "Flight/train number"
-  },
-  "footer": {
-    "rights": "All rights reserved",
-    "links": [
-      {
-        "key": "privacy",
-        "href": "/privacy",
-        "label": "Privacy"
-      }
-    ]
-  },
-  "serviceDetail": {
-    "transfer-ncc": {
-      "title": "NCC Transfer",
-      "subtitle": "Your time is precious, your comfort is essential",
-      "intro": "Your time is a treasure, and every journey deserves to be treated with the same care and attention reserved for the most exclusive details.",
-      "description": "With our luxury transfer service, every journey becomes a moment of pure pleasure and satisfaction, designed for those who know that the value of an experience is measured not only in the certainty of arrival, but also in the quality of the journey.",
-      "sections": [
-        {
-          "title": "Serenity",
-          "description": "Your time is a treasure, and every journey deserves to be treated with the same care and attention reserved for the most exclusive details.",
-          "icon": "heart"
-        },
-        {
-          "title": "Punctuality",
-          "description": "Imagine being welcomed by a professional, elegant, and discreet chauffeur, ready to drive you to your destination in a vehicle of excellence, selected to offer the maximum of luxury and comfort.",
-          "icon": "clock"
-        },
-        {
-          "title": "Always available",
-          "description": "For our most demanding clients, our service is available 24 hours a day, both in Italy and abroad, guaranteeing unparalleled continuity.",
-          "icon": "phone"
-        }
-      ],
-      "highlight": {
-        "text": "Whether you're looking for a first-class airport transfer, transportation for prestigious events, or simply the comfort of a stress-free journey, our service is synonymous with elegance and safety.",
-        "image": "/placeholder.svg?height=600&width=800"
-      },
-      "conclusion": "With us, every journey is more than just a simple transfer: it's an opportunity to experience luxury, refinement, and elegance at every moment."
+  "home": {
+    "ageRestriction": {
+      "title": "Age Restriction +18",
+      "description": "Gaming should be safe entertainment. We promote responsible gaming and remind that our products are exclusively intended for adults (18+)."
     },
-    "events": {
-      "title": "Transport for events",
-      "subtitle": "Elegant transportation for every special occasion",
-      "intro": "Every special event deserves a memorable entrance. Our event transportation service ensures that you and your guests arrive in style and on time.",
-      "description": "Whether it's a wedding, a corporate ceremony, or a gala event, our team of professionals will take care of every detail to ensure an impeccable transportation experience. We offer a fleet of luxury vehicles, experienced drivers, and personalized service to meet the specific needs of your event.",
-      "sections": [
-        {
-          "title": "Detailed Planning",
-          "description": "Complete coordination with event organizers to ensure that every aspect of transportation is perfectly synchronized with the event schedule.",
-          "icon": "calendar"
-        },
-        {
-          "title": "Group Management",
-          "description": "Solutions for groups of any size, with logistical coordination to ensure that all guests arrive on time and in total comfort.",
-          "icon": "users"
-        },
-        {
-          "title": "Premium Service",
-          "description": "Attention to details and customization for each event, with vehicles decorated according to your preferences and drivers in formal attire.",
-          "icon": "star"
-        }
-      ],
-      "highlight": {
-        "text": "With our event service, every special occasion becomes even more memorable. From weddings to corporate ceremonies, we guarantee a transportation experience that reflects the importance of your event.",
-        "image": "/placeholder.svg?height=600&width=800"
-      },
-      "conclusion": "With Patty Car, transportation becomes an integral part of the success of your event, ensuring a memorable experience for you and your guests."
+    "cabinet": {
+      "title": "DISCOVER",
+      "titleLine2": "OUR",
+      "titleLine3": "VLT CABINETS",
+      "subtitle": "Vitalgames",
+      "description": "Explore our selection of high-quality VLT cabinets, designed to deliver an immersive and engaging gaming experience.",
+      "cta": "Discover more"
     },
-    "diplomatic": {
-      "title": "Diplomatic services",
-      "subtitle": "Reserved and professional transportation for diplomatic delegations",
-      "intro": "Patty Car's diplomatic services are designed to meet the specific needs of embassies, consulates, and international delegations, ensuring security, discretion, and professionalism.",
-      "description": "Our experience in serving diplomatic clients has allowed us to develop specific protocols that respect the security and confidentiality requirements. We collaborate with law enforcement when necessary and guarantee impeccable service for every diplomatic mission.",
-      "sections": [
-        {
-          "title": "Security",
-          "description": "Advanced security protocols and coordination with law enforcement to ensure safe transfers for high-profile personalities.",
-          "icon": "shield"
-        },
-        {
-          "title": "Confidentiality",
-          "description": "Maximum discretion and respect for privacy, with drivers selected and specifically trained to serve diplomatic clientele.",
-          "icon": "lock"
-        },
-        {
-          "title": "International Experience",
-          "description": "Multilingual staff and knowledge of international diplomatic protocols for a service that respects conventions and traditions.",
-          "icon": "globe"
-        }
-      ],
-      "highlight": {
-        "text": "Our diplomatic service has been chosen by numerous embassies and consulates for its reliability and professionalism. We understand the importance of protocol and ensure that every aspect of the service meets the highest standards.",
-        "image": "/placeholder.svg?height=600&width=800"
-      },
-      "conclusion": "With Patty Car, diplomatic delegations can rely on a service that understands the importance of protocol, security, and discretion."
+    "technology": {
+      "title": "ADVANCED",
+      "titleLine2": "TECHNOLOGY",
+      "subtitle": "Vitalgames",
+      "description": "Our games use cutting-edge technology to ensure a smooth and exciting gaming experience.",
+      "features": ["High-definition graphics", "Immersive sound", "Intuitive interface", "Regular updates"]
     },
-    "luxury-hotels": {
-      "title": "Luxury Hotel Services",
-      "subtitle": "Exclusive transportation service for guests of the best hotels",
-      "intro": "Patty Car collaborates with the best luxury hotels to offer their guests an impeccable transportation experience, extending the elegance and comfort of the hotel to the final destination.",
-      "description": "Our luxury hotel service is designed to integrate perfectly with the experience offered by the hotel. We offer an extension of the luxury and attention to detail that guests expect, ensuring continuity in service excellence.",
-      "sections": [
-        {
-          "title": "Hotel Integration",
-          "description": "Service perfectly integrated with partner hotel facilities, with direct communication between our team and the hotel concierge.",
-          "icon": "hotel"
-        },
-        {
-          "title": "Premium Experience",
-          "description": "Extension of the hotel's luxury experience during transportation, with high-end vehicles and personalized services.",
-          "icon": "star"
-        },
-        {
-          "title": "24/7 Availability",
-          "description": "Service available at any time for hotel guests, with bookings managed directly by the reception or concierge.",
-          "icon": "clock"
-        }
-      ],
-      "highlight": {
-        "text": "Our collaboration with luxury hotels has allowed us to develop a service that meets the expectations of the most demanding guests. We offer airport transfers, personalized tours, and private chauffeur services for shopping and events.",
-        "image": "/placeholder.svg?height=600&width=800"
-      },
-      "conclusion": "Choosing Patty Car for hotel transportation services means guaranteeing guests a travel experience that matches the prestige of the facility."
+    "winningTechnology": {
+      "title": "WINNING",
+      "titleLine2": "TECHNOLOGY",
+      "subtitle": "Vitalgames",
+      "description": "Our games are designed with advanced algorithms to ensure a fair and exciting gaming experience.",
+      "features": [
+        "Certified random number generators",
+        "Balanced mathematics",
+        "Exciting bonus features",
+        "Progressive jackpots"
+      ]
     },
-    "business": {
-      "title": "Business transfers",
-      "subtitle": "Mobility solutions for professionals and companies",
-      "intro": "Patty Car offers tailored business transportation solutions for professionals and companies that require reliability, punctuality, and discretion in their business travel.",
-      "description": "Our business service is designed to optimize the valuable time of professionals, ensuring punctual and comfortable transfers. We offer customized solutions for companies with regular transportation needs, with the possibility of corporate accounts and detailed reporting.",
-      "sections": [
-        {
-          "title": "Professionalism",
-          "description": "Experienced and discreet drivers, accustomed to the needs of the business world, ready to adapt to schedule changes and last-minute requests.",
-          "icon": "briefcase"
-        },
-        {
-          "title": "Efficiency",
-          "description": "Optimization of travel times and guaranteed punctuality, with constant traffic monitoring and planning of alternative routes.",
-          "icon": "clock"
-        },
-        {
-          "title": "Global Coverage",
-          "description": "Service available in Italy and abroad, with international partners to ensure continuity of service wherever your business takes you.",
-          "icon": "globe"
-        }
-      ],
-      "highlight": {
-        "text": "Our business solutions include airport transfers, dedicated chauffeur service for meeting days, transportation for corporate events and conferences, and solutions for team trips and delegations.",
-        "image": "/placeholder.svg?height=600&width=800"
-      },
-      "conclusion": "Choosing Patty Car for business transfers means investing in the productivity and image of your company, ensuring comfort and punctuality in every journey."
+    "magicDiamond": {
+      "title": "MAGIC",
+      "titleLine2": "DIAMOND",
+      "subtitle": "Vitalgames",
+      "description": "Magic Diamond is our flagship series of games, featuring stunning graphics and innovative features.",
+      "features": ["High-quality graphics", "Exciting bonuses", "Progressive jackpots", "Various themes"]
+    },
+    "multigames": {
+      "title": "MULTIGAMES",
+      "subtitle": "Vitalgames",
+      "description": "Our multigame systems offer a variety of games on a single machine, maximizing floor space and fun.",
+      "features": ["Multiple games on one machine", "Easy navigation", "Regular updates", "Customization for operators"]
     }
   },
-  "fleet": {
-    "title": "Fleet",
-    "subtitle": "Elegance and prestige in every detail",
-    "seatsLabel": "posti",
-    "description": "Our fleet consists of high-end vehicles, selected to offer the maximum comfort, refinement, and safety. Travel with us and discover the pleasure of unparalleled comfort.",
-    "fleetTitle": "Our",
-    "fleetTitleHighlight": "fleet",
-    "vehicles": [
+  "vlt": {
+    "title": "VLT CABINETS",
+    "description": "Discover our high-quality VLT cabinets, designed to deliver a superior gaming experience in dedicated venues",
+    "hero": {
+      "title": "Video Lottery Terminals",
+      "subtitle": "Advanced Gaming Solutions",
+      "description": "Our VLT systems represent the pinnacle of gaming technology, offering secure, networked gaming experiences with central monitoring and control."
+    },
+    "features": {
+      "title": "VLT Features",
+      "items": [
+        {
+          "title": "Networked Gaming",
+          "description": "All our VLTs are connected to a central system for monitoring, control, and jackpot management."
+        },
+        {
+          "title": "Secure Platform",
+          "description": "Built with multiple security layers to protect both players and operators."
+        },
+        {
+          "title": "Premium Content",
+          "description": "Featuring our most advanced games with exclusive features and jackpots."
+        },
+        {
+          "title": "Regulatory Compliance",
+          "description": "Designed to meet all regulatory requirements across different jurisdictions."
+        }
+      ]
+    },
+    "systems": {
+      "title": "Our VLT Systems",
+      "description": "Vitalgames offers a range of VLT solutions to meet different regulatory requirements and operator needs.",
+      "items": [
+        {
+          "title": "Diamond VLT",
+          "description": "Our flagship VLT system featuring premium games and advanced features."
+        },
+        {
+          "title": "Crystal Network",
+          "description": "A scalable VLT solution ideal for medium to large venues."
+        },
+        {
+          "title": "Ruby Link",
+          "description": "Compact VLT system perfect for smaller locations with limited space."
+        }
+      ]
+    },
+    "benefits": {
+      "title": "Operator Benefits",
+      "items": [
+        {
+          "title": "Real-time Monitoring",
+          "description": "Track performance, diagnose issues, and manage your VLT network in real-time."
+        },
+        {
+          "title": "Flexible Configuration",
+          "description": "Customize game selection, bet limits, and features to suit your venue."
+        },
+        {
+          "title": "Detailed Reporting",
+          "description": "Access comprehensive reports on performance, player behavior, and revenue."
+        },
+        {
+          "title": "Remote Updates",
+          "description": "Deploy new games and software updates remotely without disruption."
+        }
+      ]
+    },
+    "cabinets": [
       {
-        "name": "Mercedes Benz E-Class",
-        "image": "/placeholder.svg?height=300&width=500&text=Mercedes+E-Class",
-        "passengers": 3,
-        "luggage": 2
+        "name": "VLT Classic",
+        "description": "Classic VLT cabinet with elegant design and intuitive interface, ideal for traditional gaming halls."
       },
       {
-        "name": "Mercedes Benz S-Class",
-        "image": "/placeholder.svg?height=300&width=500&text=Mercedes+S-Class",
-        "passengers": 3,
-        "luggage": 2
+        "name": "VLT Pro",
+        "description": "Professional version with HD screen and advanced audio system for an immersive gaming experience."
       },
       {
-        "name": "Mercedes Benz V-Class",
-        "image": "/placeholder.svg?height=300&width=500&text=Mercedes+V-Class",
-        "passengers": 7,
-        "luggage": 7
+        "name": "VLT Deluxe",
+        "description": "Luxury cabinet with premium finishes and cutting-edge technology for exclusive VLT venues."
       },
       {
-        "name": "Mercedes Benz Sprinter",
-        "image": "/placeholder.svg?height=300&width=500&text=Mercedes+Sprinter",
-        "passengers": 8,
-        "luggage": 8
+        "name": "VLT Premium",
+        "description": "Premium solution with dual screen and customizable LED lighting to maximize appeal."
       },
       {
-        "name": "Tesla Model S",
-        "image": "/placeholder.svg?height=300&width=500&text=Tesla+Model+S",
-        "passengers": 3,
-        "luggage": 2
+        "name": "VLT Gold",
+        "description": "Distinctive octagonal design with 4K graphics and linked jackpot system for more exciting wins."
       },
       {
-        "name": "Fiat Ducato",
-        "image": "/placeholder.svg?height=300&width=500&text=Fiat+Ducato",
-        "passengers": 8,
-        "luggage": 8
+        "name": "VLT Platinum",
+        "description": "Our top-of-the-line solution with triple screen, extraordinary visual effects, and ergonomic comfort."
       }
-    ],
-    "highlight": {
-      "text": "Entrust your journey to our fleet and experience excellence at every kilometer.",
-      "image": "/placeholder.svg?height=600&width=800&text=Chauffeur+Service"
+    ]
+  },
+  "awpMultigames": {
+    "hero": {
+      "title": "AWP Multigame Systems",
+      "subtitle": "Multiple Games, One Machine",
+      "description": "Our AWP multigame systems offer a variety of gaming experiences in a single cabinet, maximizing floor space and player engagement."
+    },
+    "features": {
+      "title": "Multigame Features",
+      "items": [
+        {
+          "title": "Game Variety",
+          "description": "Up to 50 different games available on a single machine."
+        },
+        {
+          "title": "Easy Navigation",
+          "description": "Intuitive interface allowing players to quickly find and switch between games."
+        },
+        {
+          "title": "Regular Updates",
+          "description": "New games added regularly to keep content fresh and engaging."
+        },
+        {
+          "title": "Customization",
+          "description": "Operators can select which games to feature based on player preferences."
+        }
+      ]
+    },
+    "systems": {
+      "title": "Our Multigame Systems",
+      "description": "Vitalgames offers several multigame platforms to suit different venue types and player preferences.",
+      "items": [
+        {
+          "title": "Diamond Collection",
+          "description": "Our premium multigame system featuring our most popular titles."
+        },
+        {
+          "title": "Sapphire Selection",
+          "description": "A balanced mix of classic and new games for broad appeal."
+        },
+        {
+          "title": "Emerald Series",
+          "description": "Focused on innovative game mechanics and bonus features."
+        }
+      ]
+    },
+    "benefits": {
+      "title": "Operator Benefits",
+      "items": [
+        {
+          "title": "Space Efficiency",
+          "description": "Offer more game variety without requiring additional floor space."
+        },
+        {
+          "title": "Player Retention",
+          "description": "Keep players engaged longer with multiple gaming options."
+        },
+        {
+          "title": "Revenue Optimization",
+          "description": "Track which games perform best and adjust your offering accordingly."
+        },
+        {
+          "title": "Future-Proof Investment",
+          "description": "Regular updates ensure your machines always offer fresh content."
+        }
+      ]
+    }
+  },
+  "allGames": {
+    "hero": {
+      "title": "Our Game Library",
+      "subtitle": "Diverse Gaming Experiences",
+      "description": "Explore our extensive collection of games, from classic fruit machines to innovative video slots with immersive bonus features."
+    },
+    "categories": {
+      "all": "All Games",
+      "classic": "Classic Slots",
+      "video": "Video Slots",
+      "fruit": "Fruit Games",
+      "card": "Card Games",
+      "special": "Special Games"
+    },
+    "filters": {
+      "title": "Filter Games",
+      "byCategory": "By Category",
+      "byFeatures": "By Features",
+      "search": "Search games...",
+      "features": {
+        "freeSpin": "Free Spins",
+        "bonus": "Bonus Games",
+        "jackpot": "Jackpots",
+        "multiplier": "Multipliers"
+      }
+    },
+    "noGames": "No games found matching your criteria.",
+    "loadMore": "Load More Games",
+    "recommended": {
+      "title": "Recommended Games",
+      "subtitle": "Player Favorites"
+    }
+  },
+  "gameDetail": {
+    "info": {
+      "releaseDate": "Release Date",
+      "category": "Category",
+      "rtp": "Return to Player",
+      "volatility": "Volatility",
+      "minBet": "Minimum Bet",
+      "maxBet": "Maximum Bet",
+      "maxWin": "Maximum Win"
+    },
+    "features": {
+      "title": "Game Features",
+      "freeSpins": "Free Spins",
+      "bonusGames": "Bonus Games",
+      "wildSymbols": "Wild Symbols",
+      "scatterSymbols": "Scatter Symbols",
+      "multipliers": "Multipliers",
+      "jackpots": "Jackpots"
+    },
+    "description": {
+      "title": "Game Description"
+    },
+    "howToPlay": {
+      "title": "How to Play",
+      "steps": {
+        "title": "Game Steps",
+        "selectBet": "Select your bet",
+        "spin": "Press spin",
+        "winEvaluation": "Wins are evaluated",
+        "features": "Special features may trigger"
+      }
+    },
+    "symbols": {
+      "title": "Symbol Overview",
+      "high": "High Value Symbols",
+      "low": "Low Value Symbols",
+      "special": "Special Symbols"
+    },
+    "relatedGames": {
+      "title": "Similar Games You Might Enjoy"
+    }
+  },
+  "multigameDetail": {
+    "info": {
+      "releaseDate": "Release Date",
+      "gameCount": "Number of Games",
+      "cabinetType": "Cabinet Type",
+      "systemRequirements": "System Requirements"
+    },
+    "features": {
+      "title": "System Features",
+      "gameSelection": "Game Selection",
+      "userInterface": "User Interface",
+      "reportingTools": "Reporting Tools",
+      "remoteManagement": "Remote Management"
+    },
+    "includedGames": {
+      "title": "Included Games"
+    },
+    "specifications": {
+      "title": "Technical Specifications",
+      "hardware": "Hardware",
+      "software": "Software",
+      "connectivity": "Connectivity",
+      "dimensions": "Dimensions"
     }
   },
   "contact": {
-    "title": "Contact",
-    "subtitle": "We are at your disposal for any information.",
-    "phoneTitle": "Phone number",
-    "phoneNumber": "+39 366 400 7807",
-    "emailTitle": "Email",
-    "emailAddress": "gamestime@pattycar.com",
-    "formTitle": "Fill out the form",
-    "nameLabel": "Full name*",
-    "namePlaceholder": "Enter your full name",
-    "emailLabel": "Email*",
-    "emailPlaceholder": "Enter your email",
-    "detailsLabel": "Details",
-    "detailsPlaceholder": "How can we help you?",
-    "submitButton": "Contact",
-    "companyInfo1": "Our company has offices in Milan and Rome; however, thanks to a dense network of collaborators, we are able to operate throughout Italy and abroad, as happened during the Paris 2024 Games.",
-    "companyInfo2": "Based on the needs and requirements of the client, our company offers transfer services with cars, vans, and buses. In order to guarantee a quality service, we offer 24/7 availability, every day of the week.",
-    "companyInfo3": "Operating in the sector for many years, we are able to offer a range of transversal services, aimed at satisfying a heterogeneous clientele, which includes the hotel, sports, corporate, private, and, above all, events sectors.",
-    "legalInfo": "legal information privacy, terms of service, etc."
+    "title": "Contact Us",
+    "subtitle": "We're here to help with any questions about our products and services.",
+    "info": {
+      "address": {
+        "title": "Address",
+        "value": "Via Milano 123, 20100 Milan, Italy"
+      },
+      "phone": {
+        "title": "Phone",
+        "value": "+39 02 1234567"
+      },
+      "email": {
+        "title": "Email",
+        "value": "info@vitalgames.com"
+      },
+      "hours": {
+        "title": "Business Hours",
+        "value": "Monday to Friday: 9:00 AM - 6:00 PM"
+      }
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "name": {
+        "label": "Full Name",
+        "placeholder": "Enter your full name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter your email address"
+      },
+      "subject": {
+        "label": "Subject",
+        "placeholder": "What is your message about?"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "How can we help you?"
+      },
+      "submit": "Send Message",
+      "success": "Your message has been sent. We'll get back to you soon.",
+      "error": "There was an error sending your message. Please try again."
+    },
+    "departments": {
+      "title": "Departments",
+      "sales": {
+        "title": "Sales",
+        "description": "For inquiries about purchasing our products",
+        "email": "sales@vitalgames.com"
+      },
+      "support": {
+        "title": "Technical Support",
+        "description": "For technical assistance with our products",
+        "email": "support@vitalgames.com"
+      },
+      "business": {
+        "title": "Business Development",
+        "description": "For partnership and business opportunities",
+        "email": "business@vitalgames.com"
+      }
+    }
+  },
+  "footer": {
+    "games": "Games",
+    "allGames": "All games",
+    "multigames": "Multigames",
+    "cabinet": "Cabinet",
+    "onlineGames": "Online games",
+    "company": "Vital games",
+    "aboutUs": "About us",
+    "contactUs": "Contact us",
+    "instagram": "Instagram",
+    "usage": "Usage",
+    "privacyPolicies": "Privacy & Policies",
+    "sections": {
+      "products": {
+        "title": "Products",
+        "links": [
+          {
+            "label": "VLT Systems",
+            "href": "/vlt"
+          },
+          {
+            "label": "AWP Multigames",
+            "href": "/awp-multigames"
+          },
+          {
+            "label": "Game Library",
+            "href": "/allgames"
+          },
+          {
+            "label": "Cabinets",
+            "href": "/cabinets"
+          }
+        ]
+      },
+      "company": {
+        "title": "Company",
+        "links": [
+          {
+            "label": "About Us",
+            "href": "/about"
+          },
+          {
+            "label": "Contact",
+            "href": "/contact"
+          },
+          {
+            "label": "Careers",
+            "href": "/careers"
+          },
+          {
+            "label": "News",
+            "href": "/news"
+          }
+        ]
+      },
+      "legal": {
+        "title": "Legal",
+        "links": [
+          {
+            "label": "Terms of Service",
+            "href": "/terms"
+          },
+          {
+            "label": "Privacy Policy",
+            "href": "/privacy"
+          },
+          {
+            "label": "Responsible Gaming",
+            "href": "/responsible-gaming"
+          },
+          {
+            "label": "Licenses",
+            "href": "/licenses"
+          }
+        ]
+      }
+    },
+    "copyright": "© 2025 Vital Games Project S.r.l©. All rights reserved. P. IVA: 08160840966. Powered by DK",
+    "responsibleGaming": "Please play responsibly. Gambling should be entertaining and not a way to make money. Remember that gambling can be addictive. If you need help, contact a gambling support organization."
+  },
+  "common": {
+    "buttons": {
+      "readMore": "Read More",
+      "viewAll": "View All",
+      "learnMore": "Learn More",
+      "contactUs": "Contact Us",
+      "backToHome": "Back to Home",
+      "backToGames": "Back to Games",
+      "playNow": "Play Now",
+      "downloadBrochure": "Download Brochure"
+    },
+    "loading": "Loading...",
+    "error": "An error occurred. Please try again.",
+    "notFound": {
+      "title": "Page Not Found",
+      "message": "The page you are looking for does not exist or has been moved.",
+      "action": "Go back to home"
+    },
+    "breadcrumbs": {
+      "home": "Home"
+    }
   },
   "cookieBanner": {
     "title": "Cookie Policy",
@@ -371,164 +520,5 @@
     "learnMoreLink": "Learn More",
     "showDetails": "Show details",
     "hideDetails": "Hide details"
-  },
-  "privacy": {
-    "title": "Privacy & Cookie Policy",
-    "subtitle": "Information on the processing of personal data",
-    "lastUpdated": "Last updated: April 2025",
-    "sections": {
-      "introduction": {
-        "title": "Introduction",
-        "content": "This document provides information on how PATTY CAR SERVICE Srl and PATTY CAR di GHIRLANDI ENRICO (hereinafter \"Patty Car\", \"we\", \"us\", or \"our\") process personal data collected through the website www.pattycar.com."
-      },
-      "dataController": {
-        "title": "1. Data Controller",
-        "content": "The data controller for personal data collected through the website www.pattycar.com is PATTY CAR SERVICE Srl, with registered office in Rome, Via del Velodromo n. 44, VAT number 16640371007. Contact email: pattycar@pattycar.com"
-      },
-      "developerResponsibility": {
-        "title": "2. Website Developer Responsibility",
-        "content": "The company that developed the website, SKEELS SRLS with registered office in Milan, Via Boscovich 31 - VAT number 11707420961, assumes full responsibility for ensuring that the website complies with applicable data protection legislation, in particular with Regulation (EU) 2016/679 (GDPR)."
-      },
-      "purposesOfProcessing": {
-        "title": "3. Purposes of Personal Data Processing",
-        "content": "Personal data collected through the website www.pattycar.com are processed for the following purposes:",
-        "items": [
-          "Provision of chauffeur service (NCC): Managing bookings, organizing and providing the requested service (including travel details, schedules, and chosen vehicle).",
-          "Management of contact requests: Responding to questions or requests sent through the contact form or other communication methods.",
-          "Tax and accounting compliance: To comply with legal, tax, and regulatory obligations, including the management of invoices and tax documents.",
-          "Direct marketing (optional): Sending promotional or marketing communications via email, if the user has explicitly provided consent for this purpose.",
-          "Statistical analysis and service improvement: Collection of data related to website usage for statistical analysis and to improve service quality."
-        ]
-      },
-      "legalBasis": {
-        "title": "4. Legal Basis for Data Processing",
-        "content": "The processing of personal data is carried out on the following legal bases provided by the GDPR:",
-        "items": [
-          "Performance of a contract (Art. 6(1)(b) GDPR): Processing necessary for the provision of the chauffeur service and to respond to user requests.",
-          "User consent (Art. 6(1)(a) GDPR): Processing for direct marketing purposes and for other optional activities, only with the explicit consent of the user.",
-          "Compliance with legal obligations (Art. 6(1)(c) GDPR): Processing to comply with legal obligations, such as issuing invoices or storing data for tax purposes."
-        ]
-      },
-      "dataTypes": {
-        "title": "5. Types of Data Processed",
-        "content": "The personal data processed may include, but are not limited to, the following categories of information:",
-        "items": [
-          "Identification data: name, surname, tax code.",
-          "Contact data: email address, phone number, residential address.",
-          "Payment data: information related to payments made, including credit card data, if applicable.",
-          "Navigation data: IP address, date and time of access, type of browser used, operating system.",
-          "Data related to the requested service: booking details (times, vehicle, destination), travel preferences, user feedback.",
-          "Other data that the user may voluntarily provide through the contact form, newsletter subscription, etc."
-        ]
-      },
-      "processingMethods": {
-        "title": "6. Data Processing Methods",
-        "content": "The processing of personal data takes place through electronic (both automated and manual) and IT methods, and in some cases also on paper. Data are processed in compliance with adequate security measures to protect the confidentiality, integrity, and availability of personal data. Access to personal data is allowed only to authorized personnel, who use them exclusively for the purposes described."
-      },
-      "dataRetention": {
-        "title": "7. Personal Data Retention",
-        "content": "Personal data are kept for a period not exceeding that necessary for the purposes for which they were collected. In general, data will be kept for a period of 5 years from collection. However, in case of specific legal or contractual obligations, the retention period may be longer."
-      },
-      "dataSharing": {
-        "title": "8. Communication of Data to Third Parties",
-        "content": "Personal data collected will not be disclosed to unauthorized subjects. However, data may be communicated to third parties in the following situations:",
-        "items": [
-          "Service providers (e.g., drivers, payment platforms) for the provision of the chauffeur service.",
-          "External professionals (tax consultants, legal advisors, auditors) for consulting needs or mandatory compliance.",
-          "Public entities and competent authorities (e.g., law enforcement) if required by law."
-        ],
-        "additionalContent": "Personal data are not transferred to third parties outside the European Union, except in cases where it is necessary for the provision of the service (e.g., international payment services or invoice issuance)."
-      },
-      "internationalTransfers": {
-        "title": "9. International Transfer of Personal Data",
-        "content": "Personal data are stored within the European Union. However, some services may involve the transfer of personal data to countries outside the European Union. In such cases, the transfer will only take place in compliance with the GDPR, using adequate legal instruments such as Standard Contractual Clauses."
-      },
-      "userRights": {
-        "title": "10. Rights of the Data Subject",
-        "content": "Under the GDPR, the user has the right to:",
-        "items": [
-          "Access their personal data (Art. 15 GDPR): obtain confirmation of the existence of the data and a copy of the same.",
-          "Request rectification of data (Art. 16 GDPR): correct inaccurate or incomplete data.",
-          "Request erasure of data (Art. 17 GDPR - Right to be forgotten): request the removal of personal data in the circumstances provided by law.",
-          "Request restriction of processing (Art. 18 GDPR): limit the use of data in certain situations.",
-          "Object to processing (Art. 21 GDPR): object, for legitimate reasons, to the processing of data.",
-          "Request data portability (Art. 20 GDPR): receive the data in a machine-readable format and transmit it to another controller.",
-          "Withdraw consent (Art. 7 GDPR): withdraw consent provided for processing based on this legal basis."
-        ],
-        "additionalContent": "To exercise these rights, users can send a request via email to pattycar@pattycar.com. If the user believes that their rights have been violated, they can lodge a complaint with the Data Protection Authority (https://www.garanteprivacy.it)."
-      },
-      "dpo": {
-        "title": "11. Data Protection Officer (DPO)",
-        "content": "At present, a Data Protection Officer (DPO) has not been appointed. For any questions regarding data processing, or to exercise your rights, you can contact the data controller at pattycar@pattycar.com."
-      },
-      "cookiePolicy": {
-        "title": "Cookie Policy",
-        "content": "The website www.pattycar.com uses cookies to improve the browsing experience, to collect statistics, and for marketing purposes.",
-        "typesTitle": "Types of Cookies Used",
-        "types": [
-          {
-            "title": "1. Technical Cookies:",
-            "description": "Essential for the functioning of the website, such as those to keep the user's session active during navigation."
-          },
-          {
-            "title": "2. Analytical Cookies:",
-            "description": "Used to collect aggregate data on website usage (e.g., Google Analytics)."
-          },
-          {
-            "title": "3. Profiling Cookies:",
-            "description": "Used to personalize advertising and send promotional content in line with the user's interests (e.g., Facebook Pixel, Google Ads)."
-          }
-        ],
-        "managementTitle": "Cookie Management",
-        "management": [
-          {
-            "title": "Cookie acceptance:",
-            "description": "At first access, the site shows a banner that requests consent for the use of cookies. The user can choose to accept or customize their cookie preferences."
-          },
-          {
-            "title": "Cookie disabling:",
-            "description": "Users can disable cookies through their browser settings. However, some website features may not be accessible without cookies."
-          }
-        ],
-        "thirdPartyTitle": "Third-Party Cookies",
-        "thirdParty": "The site uses third-party cookies, including for performance analysis and advertising. The user can consult the relevant policies for more details."
-      },
-      "changes": {
-        "title": "12. Changes to the Privacy & Cookie Policy",
-        "content": "The controller reserves the right to modify this Privacy and Cookie Policy at any time. Any changes will be communicated through the website and will be binding from the date of publication of the update."
-      },
-      "userResponsibility": {
-        "title": "13. User Responsibility",
-        "content": "The user undertakes, by accessing and using the website www.pattycar.com, to fully comply with the provisions of the Privacy Policy, Cookie Policy, and Terms of Service, as well as all applicable regulations regarding the protection of personal data and Italian laws."
-      },
-      "liability": {
-        "title": "14. Limitation of Liability of Patty Car",
-        "content": "Patty Car makes every effort to ensure that the website www.pattycar.com is accessible and functions correctly. However, the user acknowledges and agrees that Patty Car cannot be held responsible for certain events, unless they derive from willful misconduct or gross negligence on the part of Patty Car."
-      },
-      "serviceChanges": {
-        "title": "15. Changes to the Service and Website",
-        "content": "Patty Car reserves the right to modify, suspend, or discontinue the website and the services offered at any time, with or without notice, for technical, organizational, or legal reasons."
-      },
-      "jurisdiction": {
-        "title": "16. Jurisdiction and Applicable Law",
-        "content": "This contract is governed by Italian law. For any dispute that may arise in relation to the interpretation, execution, or validity of this document, the parties agree that the competent court will exclusively be the Court of MILAN, with the exclusion of any other alternative forum, even if concurrent."
-      },
-      "indemnity": {
-        "title": "17. Indemnity",
-        "content": "The user agrees to defend, indemnify, and hold harmless Patty Car (including employees, collaborators, suppliers, and partners) from any claim, legal action, damage, liability, expense, or loss arising from: violations of the Terms of Service, Privacy Policy, Cookie Policy, or any other applicable policy by the user; improper use of the site and services; provision of incorrect information during registration, booking of services, or any other interaction with the site."
-      },
-      "severability": {
-        "title": "18. Severability Clause",
-        "content": "In the event that one or more provisions of this document are declared null, invalid, or unenforceable by a competent judicial or administrative authority, the remaining provisions will remain fully valid and effective."
-      },
-      "assignment": {
-        "title": "19. Assignment of Rights and Obligations",
-        "content": "Patty Car reserves the right to assign or transfer all or part of its rights and obligations arising from this contract, including personal data collected, to third parties in case of sale, merger, reorganization, or other corporate operations."
-      },
-      "acceptance": {
-        "title": "20. Acceptance of Terms",
-        "content": "The user, by accessing and using the website www.pattycar.com, declares to have read, understood, and accepted without reservation all the provisions of the Privacy Policy, Cookie Policy, and Terms of Service, as well as any other related legal documentation."
-      }
-    }
   }
 }

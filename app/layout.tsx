@@ -3,7 +3,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import type { Metadata } from "next"
 import { i18n } from "@/i18n-config"
-import { locationData } from "@/lib/seo-config"
+import { companyData } from "@/lib/seo-config"
 import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"], display: "swap" })
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico' }, 
-      { url: '/logopatty.png' }
+      { url: '/logovital.svg' }
     ],
     apple: { url: '/favicon.ico' },
     shortcut: { url: '/favicon.ico' }
@@ -107,7 +107,7 @@ export default function RootLayout({
   const lang = params?.lang || "en"
 
   return (
-    <html lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>
+    <html lang={lang}>
       <head>
         {/* Preconnect to important domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -125,23 +125,23 @@ export default function RootLayout({
                 "@type": "LocalBusiness",
                 "@id": "https://pattycar.com",
                 name: "Patty Car",
-                image: "https://pattycar.com/images/logopatty.png",
+                image: "https://pattycar.com/images/logovital.svg",
                 url: "https://pattycar.com",
-                telephone: locationData.telephone,
-                email: locationData.email,
+                telephone: companyData.telephone,
+                email: companyData.email,
                 priceRange: "€€€",
                 address: {
                   "@type": "PostalAddress",
-                  streetAddress: locationData.address.streetAddress,
-                  addressLocality: locationData.address.addressLocality,
-                  addressRegion: locationData.address.addressRegion,
-                  postalCode: locationData.address.postalCode,
-                  addressCountry: locationData.address.addressCountry,
+                  streetAddress: companyData.address.streetAddress,
+                  addressLocality: companyData.address.addressLocality,
+                  addressRegion: companyData.address.addressRegion,
+                  postalCode: companyData.address.postalCode,
+                  addressCountry: companyData.address.addressCountry,
                 },
                 geo: {
                   "@type": "GeoCoordinates",
-                  latitude: locationData.geo.latitude,
-                  longitude: locationData.geo.longitude,
+                  latitude: companyData.geo.latitude,
+                  longitude: companyData.geo.longitude,
                 },
                 openingHoursSpecification: {
                   "@type": "OpeningHoursSpecification",
@@ -158,7 +158,7 @@ export default function RootLayout({
             }}
           />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className="w-screen">{children}</body>
     </html>
   )
 }
