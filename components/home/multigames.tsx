@@ -81,7 +81,7 @@ export default function Multigames() {
                 }}
             />
 
-            <div className="absolute top-[-30px] md:top-[-100px] left-0 md:right-10 z-[1] max-w-[150px] md:max-w-none overflow-visible opacity-80">
+            <div className="absolute top-[-80px] md:top-[-100px] left-0 md:right-10 z-[1] max-w-[150px] md:max-w-none overflow-visible opacity-80">
                 <FloatingImage
                     src={floatingImage1}
                     alt="Floating Image 1"

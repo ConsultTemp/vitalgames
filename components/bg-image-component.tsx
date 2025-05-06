@@ -15,7 +15,7 @@ export default function FloatingImage({ src, alt, className = '' }: FloatingImag
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       const { innerWidth, innerHeight } = window;
-      const x = (event.clientX / innerWidth - 0.5) * 0.7;
+      const x = (event.clientX / innerWidth - 0.5) * 0.7; // da -1 a 1
       const y = (event.clientY / innerHeight - 0.5) * 0.7;
       setPosition({ x, y });
     };
@@ -27,7 +27,7 @@ export default function FloatingImage({ src, alt, className = '' }: FloatingImag
     };
   }, []);
 
-  const moveFactor = 20;
+  const moveFactor = 20; // Quanto si muove (puoi aumentare/ridurre)
 
   return (
     <div
@@ -36,9 +36,10 @@ export default function FloatingImage({ src, alt, className = '' }: FloatingImag
         transform: `translate(${position.x * moveFactor}px, ${position.y * moveFactor}px)`,
         transition: 'transform 0.1s ease-out',
         overflow: 'visible',
+        padding: '20px 0'
       }}
     >
-      <Image src={src} alt={alt} fill className="object-cover overflow-visible" sizes="100vw" />
+      <Image src={src} alt={alt} className="object-contain overflow-visible" />
     </div>
   );
 }
