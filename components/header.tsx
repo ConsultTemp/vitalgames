@@ -58,14 +58,14 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 `}
     >
       {/* Desktop Navigation */}
-      <div className="hidden md:flex w-screen mx-auto px-4 py-3 items-center relative bg-black/30 backdrop-blur-md">
+      <div className="hidden md:flex w-screen mx-auto px-24 py-3 items-center relative bg-black/30 backdrop-blur-md">
         {/* Logo - Left */}
         <div className="flex-1 flex justify-start">
           <Link href="/" className="flex items-center z-10">
-            <div className="relative h-16 w-24 mr-2">
+            <div className="relative h-14 w-24 mr-2">
               <Image
                 src={logo}
                 alt="Vital Games"
@@ -154,7 +154,7 @@ export default function Navbar() {
         <div className="flex-1 flex justify-end">
           <Button
             asChild
-            className="bg-vitalYellow hover:bg-vitalYellow/90 text-black font-medium rounded-md px-4 py-2 text-sm"
+            className="bg-vitalYellow hover:bg-vitalYellow/90 px-8 text-black font-medium rounded-md py-2 text-sm"
           >
             <Link href="/contact">Contact us</Link>
           </Button>

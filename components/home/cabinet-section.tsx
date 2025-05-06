@@ -96,10 +96,14 @@ export default function CabinetSection() {
           </div>
 
           {/* Right side - Cabinet carousel con sfondo grigio scuro */}
-          <SmoothReveal className="w-full  relative rounded-lg">
+          <SmoothReveal className="w-full h-full relative rounded-lg">
             {/* Carousel container con sfondo grigio scuro */}
-            <div ref={carouselRef} className="relative flex flex-col items-center justify-center">
-              <Image src={cabinets[3].image || "/placeholder.svg"} alt={cabinets[3].name} className="h-full w-auto" />
+            <div ref={carouselRef} className="relative flex flex-col items-center h-full w-full justify-center">
+              <Image 
+                src={cabinets[3].image || "/placeholder.svg"} 
+                alt={cabinets[3].name} 
+                className="h-full w-auto md:h-[350px] lg:h-[450px]" 
+              />
             </div>
           </SmoothReveal>
         </div>

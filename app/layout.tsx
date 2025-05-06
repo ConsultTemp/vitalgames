@@ -5,6 +5,7 @@ import type { Metadata } from "next"
 import { i18n } from "@/i18n-config"
 import { companyData } from "@/lib/seo-config"
 import Script from "next/script"
+import IntroVideo from "./components/IntroVideo"
 
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
@@ -158,7 +159,10 @@ export default function RootLayout({
             }}
           />
       </head>
-      <body className="w-screen">{children}</body>
+      <body className="w-screen">
+        <IntroVideo />
+        {children}
+      </body>
     </html>
   )
 }

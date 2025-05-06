@@ -160,7 +160,7 @@ export default function Multigames() {
                         </div>
                     ))}
                 </div>
-                <div className="w-full flex flex-col items-center py-16"><Button variant={"vitalYellow"} className="bg-vitalYellow text-sm text-black hover:opacity-90 px-8"><Link href="/awp-multigames">Guarda tutti i multigames</Link></Button></div>
+                <div className="w-full flex flex-col items-center py-16"><Button variant={"vitalYellow"} className="bg-vitalYellow text-sm text-black hover:opacity-90 px-8"><Link href="/awp-multigames">Tutti i multigames</Link></Button></div>
 
             </div>
         </section>
