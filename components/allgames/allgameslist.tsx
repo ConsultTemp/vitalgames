@@ -20,7 +20,7 @@ export default function AllGamesList() {
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {sortedGames.map((game) => (
             <SmoothReveal key={game.name}>
-              <Link key={game.name} href={`/games/${game.slug}`} className="w-full aspect-[1080/1196] block group rounded-lg overflow-hidden relative">
+              <Link key={game.name} href={`/allgames/${game.slug}`} className="w-full aspect-[1080/1196] block group rounded-lg overflow-hidden relative">
                 <Image
                   src={game.mainImage}
                   alt={game.name}
