@@ -192,7 +192,9 @@ export default function Navbar() {
 
               {/* Content */}
               <div className="flex flex-col p-6 space-y-8 overflow-y-auto flex-grow">
-                {menuItems.map((item, index) => (
+                {menuItems.map((item, index) =>{ 
+                  const slots = item.dropdownType === "awp-multigames" ? multigames : games
+                  return(
                   <div
                     key={item.label}
                     className="animate-slideInRight"
@@ -214,11 +216,11 @@ export default function Navbar() {
                     {/* Game carousel for mobile */}
                     {item.hasDropdown && (
                       <div className="mt-3 pb-2">
-                        <GameCarousel games={games} onGameClick={() => setIsSheetOpen(false)} />
+                        <GameCarousel  games={slots} onGameClick={() => setIsSheetOpen(false)} type={item.dropdownType ? item.dropdownType : "allgames"} />
                       </div>
                     )}
                   </div>
-                ))}
+                )})}
               </div>
 
               {/* Footer */}
@@ -228,7 +230,7 @@ export default function Navbar() {
                   className="bg-vitalYellow hover:bg-vitalYellow/90 text-black font-bold rounded-md px-3 py-2 w-full animate-fadeIn"
                   style={{ animationDuration: '0.5s', animationDelay: '400ms', animationFillMode: 'both' }}
                 >
-                  <Link href="/contact-us" onClick={() => setIsSheetOpen(false)}>
+                  <Link href="/contact" onClick={() => setIsSheetOpen(false)}>
                     Contact us
                   </Link>
                 </Button>

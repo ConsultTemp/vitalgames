@@ -16,9 +16,10 @@ interface Game {
 interface GameCarouselProps {
   games: Game[]
   onGameClick?: () => void
+  type: string
 }
 
-export function GameCarousel({ games, onGameClick }: GameCarouselProps) {
+export function GameCarousel({ games, onGameClick, type }: GameCarouselProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
   const scroll = (direction: "left" | "right") => {
@@ -60,7 +61,7 @@ export function GameCarousel({ games, onGameClick }: GameCarouselProps) {
         >
           {games.map((game) => (
             <div key={game.id} className="min-w-[250px] snap-start">
-              <Link href={`/allgames/${game.slug}`} onClick={onGameClick}>
+              <Link href={`/${type}/${game.slug}`} onClick={onGameClick}>
                 <div className="bg-black rounded-lg overflow-hidden border border-gray-700 hover:border-vitalYellow transition-colors">
                   <div className="relative aspect-video">
                     <Image src={game.image || "/placeholder.svg"} alt={game.title} fill className="object-cover" />
