@@ -68,7 +68,7 @@ import IL_CUOCO from '../public/games-images/IL CUOCO/IL CUOCO.jpg'
 import IL_CUOCO_PHOTO1 from '../public/games-images/IL CUOCO/IMG_9215.png'
 import IL_CUOCO_PHOTO2 from '../public/games-images/IL CUOCO/IMG_9219.png'
 import IL_CUOCO_PHOTO3 from '../public/games-images/IL CUOCO/IMG_9220.png'
-import IL_CUOCO_PHOTO4 from '../public/games-images/IL CUOCO/IMG_9221.png'
+import IL_CUOCO_PHOTO4 from '../public/games-images/IL CUOCO/IMG_9220.png'
 
 import IL_GIULLARE from '../public/games-images/IL GIULLARE/IL GIULLARE.jpg'
 import IL_GIULLARE_PHOTO1 from '../public/games-images/IL GIULLARE/PHOTO-2024-05-13-11-00-01 2.jpg'
