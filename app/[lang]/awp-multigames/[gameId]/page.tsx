@@ -2,7 +2,7 @@
 import Image from "next/image"
 import { Play } from "lucide-react"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import SmoothReveal from "@/components/smooth-reveal"
 import { multigames } from "@/lib/multigames"
@@ -13,8 +13,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 export default function MultigamePage({ params }: { params: { gameId: string } }) {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null);
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [videoRefs, setVideoRefs] = useState<HTMLVideoElement[]>([]);
     const multigame = multigames.find(m => m.slug === params.gameId);
-    console.log(multigame)
+    
     if (!multigame) {
         notFound();
     }
@@ -23,6 +25,46 @@ export default function MultigamePage({ params }: { params: { gameId: string } }
 
     const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
     const scrollNext = () => emblaApi && emblaApi.scrollNext();
+
+    const onSelect = useCallback(() => {
+        if (!emblaApi) return;
+        setSelectedIndex(emblaApi.selectedScrollSnap());
+    }, [emblaApi]);
+
+    useEffect(() => {
+        if (!emblaApi) return;
+        onSelect();
+        emblaApi.on('select', onSelect);
+        return () => {
+            emblaApi.off('select', onSelect);
+        };
+    }, [emblaApi, onSelect]);
+
+    useEffect(() => {
+        // Pause all videos
+        videoRefs.forEach(video => {
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
+        });
+
+        // Play the selected video
+        if (videoRefs[selectedIndex]) {
+            const playPromise = videoRefs[selectedIndex].play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Playback failed:", error);
+                });
+            }
+        }
+    }, [selectedIndex, videoRefs]);
+
+    const addVideoRef = useCallback((video: HTMLVideoElement | null) => {
+        if (video && !videoRefs.includes(video)) {
+            setVideoRefs(prev => [...prev, video]);
+        }
+    }, [videoRefs]);
 
     return (
         <div>
@@ -71,14 +113,16 @@ export default function MultigamePage({ params }: { params: { gameId: string } }
                                     <div key={index} className="flex-[0_0_100%] min-w-0 relative">
                                         <div className="w-full rounded-lg overflow-hidden">
                                             <video
+                                                ref={addVideoRef}
                                                 src={video}
                                                 className="w-full h-full object-cover rounded-lg"
                                                 controls={false}
                                                 loop
-                                                autoPlay
+                                                autoPlay={index === 0}
                                                 muted
                                                 playsInline
                                                 poster={multigame.coverImage.src}
+                                                preload="auto"
                                             />
                                         </div>
                                     </div>

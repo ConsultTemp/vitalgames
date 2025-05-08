@@ -206,7 +206,7 @@ export default function AwpMultigamesPage() {
               </SmoothReveal>
             </div>
             <div
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 px-0 sm:px-4 md:px-4 lg:px-8"
+              className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6 px-0 sm:px-4 md:px-4 lg:px-8"
               onMouseLeave={() => setHoveredCard(null)}
             >
               {multigames.map((game) => (
