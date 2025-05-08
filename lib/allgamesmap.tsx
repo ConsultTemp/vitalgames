@@ -68,8 +68,7 @@ import IL_CUOCO from '../public/games-images/IL CUOCO/IL CUOCO.jpg'
 import IL_CUOCO_PHOTO1 from '../public/games-images/IL CUOCO/IMG_9215.png'
 import IL_CUOCO_PHOTO2 from '../public/games-images/IL CUOCO/IMG_9219.png'
 import IL_CUOCO_PHOTO3 from '../public/games-images/IL CUOCO/IMG_9220.png'
-import IL_CUOCO_PHOTO4 from '../public/games-images/IL CUOCO/IMG_9220.png'
-
+import IL_CUOCO_PHOTO4 from '../public/games-images/IL CUOCO/IMG_9221.png'
 
 import IL_GIULLARE from '../public/games-images/IL GIULLARE/IL GIULLARE.jpg'
 import IL_GIULLARE_PHOTO1 from '../public/games-images/IL GIULLARE/PHOTO-2024-05-13-11-00-01 2.jpg'
@@ -243,6 +242,10 @@ import struzzo from '../public/allgames/struzzo.png'
 import lucky8 from '../public/allgames/lucky8.png'
 import pablito from '../public/allgames/pablito.png'
 import pepita from '../public/allgames/pepitadoro.png'
+import cherry from '../public/allgames/CHERRY.jpg'
+import midnightsaloon from '../public/allgames/MIDNIGHT SALOON.jpg'
+import shark from '../public/allgames/SHARK.jpg'
+import chef from '../public/allgames/LE CHEF.jpg'
 
 export const games = [
   {
@@ -634,5 +637,41 @@ export const games = [
     images: [REGGAE_FROG_PHOTO1, REGGAE_FROG_PHOTO2, REGGAE_FROG_PHOTO3, REGGAE_FROG_PHOTO4],
     description: 'Balliamo con la rana reggae',
     featured: ['il-grillo', 'lo-struzzo', 'sonny-bono', 'striptease']
+  },
+  {
+    name: 'Cherry',
+    subtitle: 'Un\'avventura nel mondo della frutta',
+    href: 'cherry',
+    slug: 'cherry',
+    coverImage: cherry,
+    mainImage: cherry,
+    images:[]
+  },
+  {
+    name: 'Midnight Saloon',
+    subtitle: 'Un\'avventura nel mondo della notte',
+    href: 'midnight-saloon',
+    slug: 'midnight-saloon',
+    coverImage: midnightsaloon,
+    mainImage: midnightsaloon,
+    images:[]
+  },
+  {
+    name: 'Shark',
+    subtitle: 'Un\'avventura nel mondo del mare',
+    href: 'shark',
+    slug: 'shark',
+    coverImage: shark,
+    mainImage: shark,
+    images:[]
+  },
+  {
+    name: 'Le Chef',
+    subtitle: 'Un\'avventura nel mondo della cucina',
+    href: 'le-chef',
+    slug: 'le-chef',
+    coverImage: chef,
+    mainImage: chef,
+    images:[]
   }
 ]

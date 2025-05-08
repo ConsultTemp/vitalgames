@@ -50,8 +50,8 @@ export default function Navbar() {
   // Menu items based on the image
   const menuItems = [
     { label: "Multigames", href: "/awp-multigames", hasDropdown: true, dropdownType: "awp-multigames" },
-    { label: "All games", href: "/allgames", hasDropdown: true, dropdownType: "allgames" },
-    { label: "Online games", href: "/online-games", hasDropdown: true, dropdownType: "online-games" },
+    { label: "All games", href: "/allgames", hasDropdown:false  },
+    { label: "Online games", href: "/online-games", hasDropdown: false  },
     { label: "Cabinet", href: "/vlt", hasDropdown: false },
     { label: "About us", href: "/about-us", hasDropdown: false },
   ]
@@ -79,9 +79,9 @@ export default function Navbar() {
         {/* Navigation - Center */}
         <div className="flex-1 flex justify-center">
           <NavigationMenu>
-            <NavigationMenuList className="flex items-center space-x-6 z-10">
+            <NavigationMenuList className="flex items-center gap-2 z-10">
               {menuItems.map((item) => {
-                const slots = item.dropdownType === "awp-multigames" ? multigames : games
+                const slots = item.dropdownType === "awp-multigames" ? multigames.slice(0, 3) : games
 
                 return(
                 <NavigationMenuItem key={item.label} className="relative">
@@ -201,13 +201,14 @@ export default function Navbar() {
                     style={{
                       animationDuration: '0.4s',
                       animationDelay: `${index * 50 + 100}ms`,
-                      animationFillMode: 'both'
+                      animationFillMode: 'both',
+                      margin: '0px'
                     }}
                   >
                     <Link
                       href={item.href}
                       onClick={() => setIsSheetOpen(false)}
-                      className={`block text-lg font-medium text-gray-300 hover:text-white transition-colors duration-300 mb-3 ${pathname === item.href ? "text-white" : ""
+                      className={`block text-base font-medium text-gray-300 hover:text-white transition-colors duration-300 mb-3 ${pathname === item.href ? "text-white" : ""
                         }`}
                     >
                       {item.label}

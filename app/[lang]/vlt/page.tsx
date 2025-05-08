@@ -7,7 +7,7 @@ import VLT_CARD2 from "@/public/vlts/SLOT_2022_Alta.png"
 import VLT_CARD3 from "@/public/vlts/SLOT_2022_Bassa.png"
 import VLT_CARD4 from "@/public/vlts/Sidney LQ 1.png"
 import VLT_CARD5 from "@/public/vlts/Octagon LQ 1.png"
-import VLT_CARD6 from "@/public/vlts/TRIOOCTAGON LQ 1.png"
+import VLT_CARD6 from "@/public/vlts/TRIOOCTAGON LQ.png"
 import Head from "next/head"
 
 const vltCards = [

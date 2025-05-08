@@ -10,6 +10,14 @@ export const multigames = [
         coverImage: bgmultigamopen,
         logo: multigamelogo,
         description: "Un'esperienza di gioco unica nel suo genere",
+        videos: [
+            "https://example.com/video1.mp4",
+            "https://example.com/video2.mp4",
+            "https://example.com/video3.mp4",
+            "https://example.com/video4.mp4",
+            "https://example.com/video5.mp4",
+            "https://example.com/video6.mp4"
+        ],
         games: [
             games.find(g => g.slug === 'fortune')!,
             games.find(g => g.slug === 'billionaire')!,
@@ -26,12 +34,20 @@ export const multigames = [
         coverImage: bgmultigamopen,
         logo: multigamelogo,
         description: "Brilla come un diamante",
+        videos: [
+            "https://files.catbox.moe/mx9cy6.mp4",
+            "https://files.catbox.moe/8umbgu.mp4",
+            "https://files.catbox.moe/ykr73i.mp4",
+            "https://files.catbox.moe/wpxen9.mp4",
+            "https://files.catbox.moe/6di38y.mp4",
+            "https://files.catbox.moe/duq7o3.mp4"
+        ],
         games: [
             games.find(g => g.slug === 'magic-diamond-2')!,
-            games.find(g => g.slug === 'la-scatola-magica')!,
-            games.find(g => g.slug === 'book-of-magic')!,
-            games.find(g => g.slug === 'elfi')!,
-            games.find(g => g.slug === 'eden')!
+            games.find(g => g.slug === 'le-chef')!,
+            games.find(g => g.slug === 'shark')!,
+            games.find(g => g.slug === 'cherry')!,
+            games.find(g => g.slug === 'midnight-saloon')!
         ],
         recommended: ["casino-royale", "golden-club", "piggy-gold"]
     },
@@ -42,6 +58,14 @@ export const multigames = [
         coverImage: bgmultigamopen,
         logo: multigamelogo,
         description: "L'esclusività del gioco d'oro",
+        videos: [
+            "https://example.com/video1.mp4",
+            "https://example.com/video2.mp4",
+            "https://example.com/video3.mp4",
+            "https://example.com/video4.mp4",
+            "https://example.com/video5.mp4",
+            "https://example.com/video6.mp4"
+        ],
         games: [
             games.find(g => g.slug === 'il-barone-rosso')!,
             games.find(g => g.slug === 'dragon')!,
@@ -58,6 +82,14 @@ export const multigames = [
         coverImage: bgmultigamopen,
         logo: multigamelogo,
         description: "La fortuna è nel maialino",
+        videos: [
+            "https://example.com/video1.mp4",
+            "https://example.com/video2.mp4",
+            "https://example.com/video3.mp4",
+            "https://example.com/video4.mp4",
+            "https://example.com/video5.mp4",
+            "https://example.com/video6.mp4"
+        ],
         games: [
             games.find(g => g.slug === 'il-cuoco')!,
             games.find(g => g.slug === 'il-giullare')!,
@@ -74,6 +106,14 @@ export const multigames = [
         coverImage: bgmultigamopen,
         logo: multigamelogo,
         description: "Il rosso della fortuna",
+        videos: [
+            "https://example.com/video1.mp4",
+            "https://example.com/video2.mp4",
+            "https://example.com/video3.mp4",
+            "https://example.com/video4.mp4",
+            "https://example.com/video5.mp4",
+            "https://example.com/video6.mp4"
+        ],
         games: [
             games.find(g => g.slug === 'cowboy-revenge-2')!,
             games.find(g => g.slug === 'mexican')!,
@@ -90,6 +130,14 @@ export const multigames = [
         coverImage: bgmultigamopen,
         logo: multigamelogo,
         description: "Il blu della fortuna",
+        videos: [
+            "https://example.com/video1.mp4",
+            "https://example.com/video2.mp4",
+            "https://example.com/video3.mp4",
+            "https://example.com/video4.mp4",
+            "https://example.com/video5.mp4",
+            "https://example.com/video6.mp4"
+        ],
         games: [
             games.find(g => g.slug === 'braccio-di-ferro')!,
             games.find(g => g.slug === 'scacco-matto')!,

@@ -7,6 +7,7 @@ import pepitadoro from "../../public/pepitadoro.jpg"
 import lucky8 from "../../public/lucky8.jpg"
 import piggy1 from "../../public/piggy1.jpg"
 import mexican from "../../public/mexican.jpg"
+import reggae from "../../public/allgames/REGGAE FROG.jpg"
 import elfi from "../../public/elfi.jpg"
 import bookofmagic from "../../public/bookofmagic.jpg"
 import cowboyrevange from "../../public/cowboyrevange.jpg"
@@ -24,6 +25,12 @@ const games = [
     slug: "lo-struzzo",
     title: "Lo struzzo",
     image: struzzo,
+  },
+  {
+    id: 9,
+    slug: "reggae-from",
+    title: "Reggae Frog",
+    image: reggae,
   },
   {
     id: 2,
@@ -48,12 +55,6 @@ const games = [
     slug: "lucky-8",
     title: "Lucky8",
     image: lucky8,
-  },
-  {
-    id: 6,
-    slug: "cowboy-revenge-2",
-    title: "Cowboy Revange",
-    image: cowboyrevange,
   },
   {
     id: 7,
@@ -110,7 +111,7 @@ export default function GameCards() {
               <SmoothReveal>
                 <Link 
                   href={`/allgames/${game.slug}`} 
-                  className="w-full aspect-[1080/1196] block group rounded-sm relative neon-card"
+                  className="w-full aspect-[1080/1196] block group rounded-sm relative x"
                 >
                   <div className="w-full h-full">
                     <Image

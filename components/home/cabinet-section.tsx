@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import cabiner1 from "../../public/SLOT_2022_Alta.png"
 import cabiner2 from "../../public/SLOT_2022_Bassa.png"
 import cabiner3 from "../../public/Octagon LQ.png"
-import cabiner4 from "../../public/TRIOOCTAGON LQ.png"
+import cabiner4 from "../../public/vlts/TRIOOCTAGON LQ.png"
 import cherry from "../../public/cherry.png"
 import FloatingImage from "../bg-image-component"
 import SmoothReveal from "../smooth-reveal"
@@ -63,49 +63,56 @@ export default function CabinetSection() {
       </SmoothReveal>
 
       <div className="container mx-auto relative z-10 rounded-lg m-4 md:m-8 lg:m-12 pt-0 mt-0">
-        <div className="w-full flex flex-col justify-center md:flex-row items-center">
-          {/* Left side - Text content */}
-          <div className="w-full md:w-1/2 mb-10 md:mb-0 md:pr-8">
-            <div
-              className={`transition-all duration-700 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
-            >
-              {/* Piccola scritta sopra il titolo */}
-              <SmoothReveal>
-                {" "}
-                <p className="text-vitalYellow text-sm mb-2 font-medium">{cabinet.subtitle}</p>
-              </SmoothReveal>
+        {/* Mobile Layout */}
+        <div className="flex flex-col items-center md:hidden">
+          <div className="w-full text-center mb-6">
+            <h2 className="text-5xl sm:text-6xl font-bold text-white dharma leading-tight">
+              <SmoothReveal>{cabinet.title}</SmoothReveal>
+              <SmoothReveal>{cabinet.titleLine2}</SmoothReveal>
+              <SmoothReveal>{cabinet.titleLine3}</SmoothReveal>
+            </h2>
+          </div>
 
-              <h2 className="text-8xl flex flex-col items-start font-bold text-white mb-6 dharma">
+          <div className="w-full mb-12">
+            <Image 
+              src={cabiner4} 
+              alt={cabinets[3].name} 
+              className="w-full h-auto max-h-[600px] object-contain mx-auto" 
+            />
+          </div>
+
+          <Button variant="outline" className="rounded-full hover:bg-opacity-80 text-white border-white font-medium px-8 py-3 text-lg">
+            <Link href={`/${lang}/vlt`}>{cabinet.cta}</Link>
+          </Button>
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden md:flex w-full flex-row items-center">
+          {/* Left side - Text content */}
+          <div className="w-1/2 pr-8">
+            <div className={`transition-all duration-700 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
+              <h2 className="text-4xl lg:text-8xl flex flex-col items-start font-bold text-white mb-6 dharma">
                 <SmoothReveal>{cabinet.title}</SmoothReveal>
                 <SmoothReveal>{cabinet.titleLine2}</SmoothReveal>
                 <SmoothReveal>{cabinet.titleLine3}</SmoothReveal>
               </h2>
 
-              <SmoothReveal>
-                {" "}
-                <p className="text-gray-300 text-sm mb-8 w-1/2">{cabinet.description}</p>
-              </SmoothReveal>
-
-              <SmoothReveal>
-                {" "}
-                <Button variant="outline" className="rounded-full hover:bg-opacity-80 text-white border-white font-medium px-6 py-2">
-                  <Link href={`/${lang}/vlt`}>{cabinet.cta}</Link>
-                </Button>
-              </SmoothReveal>
+              <Button variant="outline" className="rounded-full hover:bg-opacity-80 text-white border-white font-medium px-6 py-2">
+                <Link href={`/${lang}/vlt`}>{cabinet.cta}</Link>
+              </Button>
             </div>
           </div>
 
-          {/* Right side - Cabinet carousel con sfondo grigio scuro */}
-          <SmoothReveal className="w-full h-full relative rounded-lg">
-            {/* Carousel container con sfondo grigio scuro */}
+          {/* Right side - Cabinet carousel */}
+          <div className="w-1/2 h-full relative rounded-lg">
             <div ref={carouselRef} className="relative flex flex-col items-center h-full w-full justify-center">
               <Image 
-                src={cabinets[3].image || "/placeholder.svg"} 
+                src={cabiner4} 
                 alt={cabinets[3].name} 
-                className="h-full w-auto md:h-[350px] lg:h-[450px]" 
+                className="w-full h-auto max-h-[1000px] object-contain" 
               />
             </div>
-          </SmoothReveal>
+          </div>
         </div>
       </div>
     </section>

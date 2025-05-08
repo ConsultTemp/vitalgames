@@ -19,6 +19,7 @@ import ciliegia from "../../public/symbols/ciliegia.png"
 import bar1 from "../../public/symbols/1BAR.png"
 import bar3 from "../../public/symbols/3BAR.png"
 import Link from "next/link"
+import misterdiamond from "../../public/misterdiamond.jpeg"
 
 const InfiniteScrollGallery = () => {
   const symbols = [
@@ -35,12 +36,21 @@ const InfiniteScrollGallery = () => {
   ]
 
   return (
-    <div className="relative w-full py-4 my-16 right-0">
-      {/* Blur background */}
-      <div className="absolute w-[1000000px] inset-0 backdrop-blur-sm bg-black/30 -z-10"></div>
+    <div className="w-full flex flex-col items-center justify-center py-4 my-6 right-0">
+
+
+      <Image
+        src={scatter}
+        alt="Scatter Symbol"
+        width={300}
+        height={300}
+        className="relative w-[300px] h-[300px] object-contain drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]"
+      />
+      {/* Blur background */}{/* 
+      <div className="absolute w-[1000000px] inset-0 backdrop-blur-sm bg-black/30 -z-10"></div> */}
 
       {/* Scrolling symbols container - background layer */}
-      <div className="flex animate-infinite-scroll opacity-30 gap-[50px]">
+      {/* <div className="flex animate-infinite-scroll opacity-30 gap-[50px]">
         {[...symbols, ...symbols, ...symbols, ...symbols, ...symbols, ...symbols, ...symbols, ...symbols].map((symbol, index) => (
           <div key={index} className="flex-shrink-0 w-[120px] h-[120px] mx-2">
             <Image
@@ -52,28 +62,28 @@ const InfiniteScrollGallery = () => {
             />
           </div>
         ))}
-      </div>
+      </div> */}
 
       {/* Large Scatter symbol - foreground layer */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-        <div className="relative">
-          <div className="absolute inset-0 bg-blue-500 blur-2xl opacity-50 rounded-full"></div>
-          <Image
+      {/*  <div className="">
+        <div className="">
+          <div className=" inset-0 bg-blue-500 blur-2xl opacity-50 rounded-full"></div>
+          
+        </div><Image
             src={scatter}
             alt="Scatter Symbol"
             width={300}
             height={300}
             className="relative w-[300px] h-[300px] object-contain drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]"
           />
-        </div>
-      </div>
+      </div> */}
     </div>
   )
 }
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-transparent mb-16">
+    <div className="relative min-h-screen overflow-hidden bg-transparent mb-16 px-4">
       {/* Central circular teal glow effect */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vh] h-[60vh] pointer-events-none"></div>
 
@@ -130,7 +140,7 @@ export default function Home() {
         </SmoothReveal>
 
         {/* Description */}
-        <SmoothReveal>
+        {/* <SmoothReveal>
           <div className="max-w-3xl text-white text-center mb-12">
             <p className="mb-4 text-xs font-normal px-3">
               Scopri l'energia scintillante di Mr. Diamond, la slot dove ogni spin può attivare bonus esplosivi! Raccogli
@@ -138,11 +148,22 @@ export default function Home() {
               Con il Buy Bonus, entri subito nell'azione. E grazie ad Autoplay e Quick Spin, il ritmo non si ferma mai!
             </p>
           </div>
-        </SmoothReveal>
+        </SmoothReveal> */}
 
         {/* Infinite Scroll Gallery */}
-        <div className="w-screen mb-12">
+       {/*  <div className="w-screen mb-12">
           <InfiniteScrollGallery />
+        </div> */}
+        <div className="w-full flex flex-col items-center justify-center mt-4 mb-12">
+          <div className="w-full max-w-[600px] md:max-w-[650px] rounded-xl overflow-hidden relative">
+            <Image 
+              src={misterdiamond} 
+              alt="Scatter Symbol" 
+              className="w-full h-auto object-cover"
+              priority
+              style={{ borderRadius: '12px' }}
+            />
+          </div>
         </div>
 
         {/* Call to action */}

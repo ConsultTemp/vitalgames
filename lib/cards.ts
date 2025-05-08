@@ -1,9 +1,10 @@
 import reggaefrog from '../public/reggaefrog.png'
 import magicdiamond2 from '../public/magicdiamond2.png'
 import struzzo from '../public/struzzo.png'
-import diamante from '../public/multigames/diamante.png'
-import casinoRoyale from '../public/multigames/casinoroyale.png'
-import piggyGold from '../public/multigames/piggygold.png'
+import diamante from '../public/multigames-cards/DIAMANTE_Converted.jpg'
+import casinoRoyale from '../public/multigames-cards/CASINO ROYALE_Converted.jpg'
+import luckySlot from '../public/multigames-cards/lucky_slot.png'
+import champions from '../public/multigames-cards/CHAMPIONS.png'
 
 export const games = [
     {
@@ -38,17 +39,24 @@ export const multigames = [
         image: diamante,
     },
     {
-        id: 1,
+        id: 2,
         slug: 'casino-royale',
         title: 'Casino Royale Multigame',
         description: 'Reggaefrog is a fun and addictive game that challenges your reflexes and timing.',
         image: casinoRoyale,
     },
     {
-        id: 1,
-        slug: 'piggy-gold',
-        title: 'Piggy Gold',
+        id: 3,
+        slug: 'champions-slot',
+        title: 'Champions Slot',
         description: 'Reggaefrog is a fun and addictive game that challenges your reflexes and timing.',
-        image: piggyGold,
+        image: champions,
+    },
+    {
+        id: 4,
+        slug: 'lucky-slot',
+        title: 'Lucky Slot',
+        description: 'Reggaefrog is a fun and addictive game that challenges your reflexes and timing.',
+        image: luckySlot,
     }
 ]

@@ -7,6 +7,10 @@ import isologo from '../../public/isologo.svg'
 import seven from '../../public/seven.png'
 import FloatingImage from '../bg-image-component'
 import SmoothReveal from '../smooth-reveal'
+import certificate from '../../public/golden-certificate.png'
+import vitalhq from '../../public/vital-hq.jpeg'
+import vitalpres from '../../public/vitalgames-pres.jpeg'
+import Link from 'next/link'
 
 interface WinningTechnologyProps {
     className?: string
@@ -18,7 +22,7 @@ export function Technology({ className = '' }: WinningTechnologyProps) {
             {/* Bottom right image - positioned absolutely to be visible under footer */}
 
 
-            <section className={`relative min-h-screen overflow-visible pb-16 pt-8`}>
+            <section className={`relative min-h-screen overflow-visible pt-8`}>
                 {/* Background decorative images */}
                 <div className="absolute inset-0 overflow-visible pointer-events-none w-full opacity-80">
                     {/* Top right image */}
@@ -32,7 +36,7 @@ export function Technology({ className = '' }: WinningTechnologyProps) {
                     </div>
 
                     {/* Left middle image */}
-                    <div className="absolute top-[30%] left-[-10%] w-64 h-64">
+                    <div className="absolute top-[30%] left-[0%] w-64 h-64">
                         <FloatingImage
                             src={sprinter}
                             alt="Decorative element"
@@ -41,14 +45,14 @@ export function Technology({ className = '' }: WinningTechnologyProps) {
                     </div>
 
                     {/* Bottom center-left image */}
-                    <div className="absolute bottom-[-10%] left-[15%] w-80 h-80">
+                    <div className="absolute bottom-[-3%] left-[15%] w-80 h-80">
                         <FloatingImage
                             src={squalo}
                             alt="Decorative element"
                             className="w-64 md:w-72 h-32 sm:h-48 md:h-72 overflow-visible"
                         />
                     </div>
-                    <div className="absolute bottom-[-25%] right-[2%] w-[300] h-[300] z-[5] pointer-events-none">
+                    <div className="absolute bottom-[-10%] right-[2%] w-[300] h-[300] z-[5] pointer-events-none">
                         <FloatingImage
                             src={seven}
                             alt="Decorative element"
@@ -70,12 +74,8 @@ export function Technology({ className = '' }: WinningTechnologyProps) {
                         </SmoothReveal>
 
                         {/* Content placeholder - Will be filled later */}
-                        <SmoothReveal className="max-w-4xl mx-auto">
-                            <p className="text-white font-extralight text-xs w-full text-center mb-8 px-3">
-                                Vitalgames è stata fondata nel 1996 a Milano.<br />
-                                Nel corso degli anni si è potuta affermare tra le migliori e più conosciute<br />
-                                aziende produttrici di software di giochi d'Italia.
-                            </p>
+                        <SmoothReveal className="max-w-4xl mx-auto mb-12">
+                            <Image src={certificate} alt="ISO"  width={300} height={500} />
                         </SmoothReveal>
                         <SmoothReveal className='p-6 rounded-lg border border-1 border-gray-800 flex flex-row items-center justify-center gap-4 backdrop-blur-md'>
                             <Image src={isologo} alt="ISO" width={50} height={50} />
@@ -83,6 +83,15 @@ export function Technology({ className = '' }: WinningTechnologyProps) {
                                 <p>Qualità italiana certificata</p>
                                 <p>ISO 9001</p>
                             </div>
+                        </SmoothReveal>
+                        <SmoothReveal className="flex flex-col md:flex-row gap-8 mt-16">
+                            <Image src={vitalhq} alt="Vital HQ" width={400} height={400} className="rounded-2xl w-full md:w-[400px]" />
+                            <Image src={vitalpres} alt="Vital HQ" width={400} height={400} className="rounded-2xl w-full md:w-[400px]" />
+                        </SmoothReveal>
+                        <SmoothReveal className="flex justify-center mt-12">
+                            <Link href="/contact" className="bg-vitalYellow text-black px-8 py-4 rounded-lg font-medium hover:bg-yellow-400 transition-colors">
+                                Work with us
+                            </Link>
                         </SmoothReveal>
                     </div>
                 </div>

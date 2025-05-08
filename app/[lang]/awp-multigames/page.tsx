@@ -7,15 +7,18 @@ import SmoothReveal from "@/components/smooth-reveal"
 import Head from "next/head"
 
 // Importa qui le immagini dei giochi come in multigames.tsx
-import casinoroyale from "@/public/multigames/casinoroyale.png"
-import casinoroyaleHover from "@/public/multigames/casinoroyalehover.jpg"
-import diamante from "@/public/multigames/diamante.png"
-import diamanteHover from "@/public/multigames/diamantehover.jpg"
-import goldenclub from "@/public/multigames/goldenclub.png"
-import piggygold from "@/public/multigames/piggygold.png"
-import piggygoldHover from "@/public/multigames/piggygoldhover.jpg"
-import rubino from "@/public/multigames/rubino.png"
-import zaffiro from "@/public/multigames/zaffiro.png"
+import casinoroyale from "@/public/multigames-cards/CASINO ROYALE_Converted.jpg"
+import diamante from "@/public/multigames-cards/DIAMANTE_Converted.jpg"
+import goldenclub from "@/public/multigames-cards/GOLDEN CLUB ORO_Converted.jpg"
+import piggygold from "@/public/multigames-cards/PIGGY GOLD MULTIGAME_Converted.jpg"
+import rubino from "@/public/multigames-cards/RUBINO_Converted.jpg"
+import zaffiro from "@/public/multigames-cards/ZAFFIRO_Converted.jpg"
+import topazio from "@/public/multigames-cards/TOPAZIO_Converted.jpg"
+import circus from "@/public/multigames-cards/CIRCUS_Converted.jpg"
+import pool4 from "@/public/multigames-cards/POOL 4_Converted.jpg"
+import champions from "@/public/multigames-cards/CHAMPIONS.png"
+import ipfum from "@/public/multigames-cards/IP FUM.png"
+import luckyslot from "@/public/multigames-cards/lucky_slot.png"
 
 const multigames = [
   {
@@ -23,7 +26,6 @@ const multigames = [
     slug: "casino-royale",
     title: "Casino Royale",
     image: casinoroyale,
-    hoverImage: casinoroyaleHover,
     description: "Sistema multigame con 10 giochi a tema casinò classico, interfaccia elegante e jackpot progressivo.",
   },
   {
@@ -31,7 +33,6 @@ const multigames = [
     slug: "diamante",
     title: "Diamante Multigame",
     image: diamante,
-    hoverImage: diamanteHover,
     description: "La nostra soluzione premium con 12 giochi esclusivi, grafica HD e funzionalità bonus avanzate.",
   },
   {
@@ -46,7 +47,6 @@ const multigames = [
     slug: "piggy-gold",
     title: "Piggy Gold Multigame",
     image: piggygold,
-    hoverImage: piggygoldHover,
     description: "Divertente sistema con 10 giochi a tema denaro e fortuna, perfetto per un pubblico giovane.",
   },
   {
@@ -61,8 +61,49 @@ const multigames = [
     slug: "zaffiro",
     title: "Zaffiro",
     image: zaffiro,
-    description:
-      "Sistema elegante con 8 giochi a tema gemme, effetti visivi spettacolari e alta percentuale di vincita.",
+    description: "Sistema elegante con 8 giochi a tema gemme, effetti visivi spettacolari e alta percentuale di vincita.",
+  },
+  {
+    id: 7,
+    slug: "topazio",
+    title: "Topazio",
+    image: topazio,
+    description: "Multigame con 8 giochi premium, grafica raffinata e funzionalità bonus esclusive.",
+  },
+  {
+    id: 8,
+    slug: "circus",
+    title: "Circus",
+    image: circus,
+    description: "Sistema divertente con 10 giochi a tema circo, perfetto per un pubblico giovane e dinamico.",
+  },
+  {
+    id: 9,
+    slug: "pool-4",
+    title: "Pool 4",
+    image: pool4,
+    description: "Multigame con 8 giochi premium, grafica moderna e funzionalità bonus innovative.",
+  },
+  {
+    id: 10,
+    slug: "champions",
+    title: "Champions",
+    image: champions,
+    description: "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
+  },
+  {
+    id: 11,
+    slug: "ip-fum",
+    title: "IP FUM",
+    image: ipfum,
+    description: "Multigame con 8 giochi premium, grafica moderna e funzionalità bonus innovative.",
+  },
+  {
+    id: 12,
+    slug: "lucky-slot",
+    title: "Lucky Slot",
+    image: luckyslot,
+    description: "Sistema con 8 giochi a tema fortuna, grafica accattivante e funzionalità bonus esclusive.",
   },
 ]
 
@@ -119,11 +160,13 @@ export default function AwpMultigamesPage() {
             priority
           />
           <div className="absolute inset-0 bg-black/50" />
-          <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
-            <h1 className="text-4xl md:text-6xl font-bold text-white dharma mb-4 text-center">AWP MULTIGAMES</h1>
-            <p className="text-lg md:text-2xl text-white text-center">
-              Scopri la nostra selezione di sistemi multigame per bar e sale giochi
-            </p>
+          <div className="relative z-10 flex flex-col items-start justify-center h-full w-full px-4 md:px-8 lg:px-16 xl:px-24">
+            <div className="max-w-2xl">
+              <h1 className="text-4xl md:text-6xl font-bold text-white dharma mb-4">AWP MULTIGAMES</h1>
+              <p className="text-sm text-white">
+                Scopri la nostra selezione di sistemi multigame per bar e sale giochi
+              </p>
+            </div>
           </div>
         </div>
 
@@ -170,7 +213,7 @@ export default function AwpMultigamesPage() {
                 <div key={game.id} className="transition-all duration-300" onMouseEnter={() => setHoveredCard(game.id)}>
                   <SmoothReveal>
                     <Link
-                      href={`/multigame/${game.slug}`}
+                      href={`/awp-multigames/${game.slug}`}
                       className="w-full block group rounded-lg relative overflow-hidden hover:scale-105 transition-all duration-300"
                     >
                       <div className="w-full h-full relative">
@@ -179,58 +222,18 @@ export default function AwpMultigamesPage() {
                           alt={game.title}
                           className="object-cover w-full h-full"
                         />
-                        {game.hoverImage && (
-                          <>
-                            <div
-                              className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 bg-transparent rounded-full transition-all duration-700 ${hoveredCard === game.id ? "w-[400%] h-[400%]" : ""}`}
-                              style={{
-                                transform:
-                                  hoveredCard === game.id
-                                    ? "translate(-50%, -50%) scale(1)"
-                                    : "translate(-50%, -50%) scale(0)",
-                                transition: "all 700ms cubic-bezier(0.4, 0, 0.2, 1)",
-                                opacity: hoveredCard === game.id ? "1" : "0",
-                                transitionProperty: "transform, opacity",
-                                transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
-                              }}
-                            />
-                            <div
-                              className={`absolute inset-0 transition-opacity duration-300 ${hoveredCard === game.id ? "opacity-100" : "opacity-0"}`}
-                              style={{
-                                clipPath: hoveredCard === game.id ? "circle(100% at center)" : "circle(0% at center)",
-                                transition: "clip-path 700ms cubic-bezier(0.4, 0, 0.2, 1)",
-                                opacity: hoveredCard === game.id ? "1" : "0",
-                                transitionProperty: "clip-path, opacity",
-                                transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
-                              }}
-                            >
-                              <Image
-                                src={game.hoverImage || "/placeholder.svg"}
-                                alt={`${game.title} hover`}
-                                className="object-cover w-full h-full"
-                              />
-                            </div>
-                          </>
+                        {hoveredCard === game.id && (
+                          <div
+                            className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 bg-transparent rounded-full transition-all duration-700 ${hoveredCard === game.id ? "w-[400%] h-[400%]" : ""}`}
+                            style={{
+                              transform: "translate(-50%, -50%) scale(1)",
+                              transition: "all 700ms cubic-bezier(0.4, 0, 0.2, 1)",
+                              opacity: "1",
+                              transitionProperty: "transform, opacity",
+                              transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+                            }}
+                          />
                         )}
-                        <div
-                          className={`absolute bottom-0 left-0 right-0 h-full flex flex-col items-center justify-end pb-4 transition-all duration-500 ${hoveredCard === game.id ? "opacity-100" : "opacity-0"}`}
-                          style={{
-                            background:
-                              hoveredCard === game.id
-                                ? "linear-gradient(to bottom, transparent 0%, transparent 0%, rgba(0,0,0,1) 100%)"
-                                : "transparent",
-                            transition: "all 500ms cubic-bezier(0.4, 0, 0.2, 1)",
-                            opacity: hoveredCard === game.id ? "1" : "0",
-                            transitionProperty: "background, opacity",
-                            transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
-                          }}
-                        >
-                          <h3 className="text-white text-base font-bold mb-2">{game.title}</h3>
-                          <p className="text-white/80 text-xs mb-4 px-4 text-center">{game.description}</p>
-                          <button className="bg-white hover:opacity-90 text-black px-8 py-3 text-sm rounded-full flex items-center gap-2">
-                            Scopri di più
-                          </button>
-                        </div>
                       </div>
                     </Link>
                   </SmoothReveal>

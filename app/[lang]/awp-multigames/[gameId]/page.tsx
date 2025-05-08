@@ -7,9 +7,12 @@ import { Button } from "@/components/ui/button"
 import SmoothReveal from "@/components/smooth-reveal"
 import { multigames } from "@/lib/multigames"
 import { notFound } from "next/navigation"
+import useEmblaCarousel from 'embla-carousel-react'
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 export default function MultigamePage({ params }: { params: { gameId: string } }) {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
     const multigame = multigames.find(m => m.slug === params.gameId);
     console.log(multigame)
     if (!multigame) {
@@ -17,6 +20,9 @@ export default function MultigamePage({ params }: { params: { gameId: string } }
     }
 
     const recommendedMultigames = multigames.filter(m => multigame.recommended.includes(m.slug));
+
+    const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
+    const scrollNext = () => emblaApi && emblaApi.scrollNext();
 
     return (
         <div>
@@ -43,6 +49,58 @@ export default function MultigamePage({ params }: { params: { gameId: string } }
                     </div>
                 </div>
             </div>
+
+            {/* VIDEO CAROUSEL SECTION */}
+            <section className="relative bg-transparent pt-32">
+                <div className="container mx-auto px-4 relative z-10 pb-12">
+                    <div className="mb-6 md:mb-8 w-full flex flex-col items-center">
+                        <SmoothReveal className="inline-block bg-vitalYellow text-black text-xs font-medium px-2 py-[3.5px] rounded mb-2">
+                            VIDEO GALLERY
+                        </SmoothReveal>
+                        <SmoothReveal>
+                            <h2 className="text-center text-4xl md:text-7xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap px-4">
+                                GUARDA I VIDEO
+                            </h2>
+                        </SmoothReveal>
+                    </div>
+                    
+                    <div className="relative max-w-4xl mx-auto">
+                        <div className="overflow-hidden" ref={emblaRef}>
+                            <div className="flex">
+                                {multigame.videos.map((video, index) => (
+                                    <div key={index} className="flex-[0_0_100%] min-w-0 relative">
+                                        <div className="w-full rounded-lg overflow-hidden">
+                                            <video
+                                                src={video}
+                                                className="w-full h-full object-cover rounded-lg"
+                                                controls={false}
+                                                loop
+                                                autoPlay
+                                                muted
+                                                playsInline
+                                                poster={multigame.coverImage.src}
+                                            />
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        
+                        <button
+                            className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                            onClick={scrollPrev}
+                        >
+                            <ChevronLeft className="w-6 h-6" />
+                        </button>
+                        <button
+                            className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                            onClick={scrollNext}
+                        >
+                            <ChevronRight className="w-6 h-6" />
+                        </button>
+                    </div>
+                </div>
+            </section>
 
             {/* GAMES CARDS SECTION */}
             <section className="relative bg-transparent pt-32">
@@ -72,7 +130,7 @@ export default function MultigamePage({ params }: { params: { gameId: string } }
                         </SmoothReveal>
                     </div>
                     <div
-                        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 px-0 sm:px-4 md:px-4 lg:px-8"
+                        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 px-0"
                     >
                         {multigame.games.map((game, index) => (
                             <SmoothReveal key={index}>
@@ -93,7 +151,7 @@ export default function MultigamePage({ params }: { params: { gameId: string } }
             </section>
 
             {/* RECOMMENDED MULTIGAMES SECTION */}
-            <section className="relative bg-transparent">
+           {/*  <section className="relative bg-transparent">
                 <div className="container mx-auto px-4 relative z-10 pb-12 md:pb-36">
                     <div className="mb-6 md:mb-8 w-full flex flex-col items-center">
                         <SmoothReveal className="inline-block bg-vitalYellow text-black text-xs font-medium px-2 py-[3.5px] rounded mb-2">
@@ -131,7 +189,7 @@ export default function MultigamePage({ params }: { params: { gameId: string } }
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
         </div>
     )
 } 
