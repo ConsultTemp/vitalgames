@@ -274,7 +274,7 @@ export default function Navbar() {
                 </Button>
 
                 {/* Language Selector for Mobile */}
-                <div className="ml-auto">
+                {/* <div className="ml-auto">
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
@@ -296,7 +296,7 @@ export default function Navbar() {
                       ))}
                     </DropdownMenuContent>
                   </DropdownMenu>
-                </div>
+                </div> */}
               </div>
             </div>
           </SheetContent>
