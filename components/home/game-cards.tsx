@@ -29,7 +29,7 @@ const games = [
   },
   {
     id: 9,
-    slug: "reggae-from",
+    slug: "reggae-frog",
     title: "Reggae Frog",
     image: reggae,
   },
