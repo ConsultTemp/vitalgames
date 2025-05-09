@@ -61,17 +61,13 @@
         "cta": "Descubre más"
       },
       "technology": {
-        "title": "TECNOLOGÍA",
-        "titleLine2": "AVANZADA",
-        "subtitle": "Vitalgames",
-        "description": "Nuestros juegos utilizan tecnología de vanguardia para garantizar una experiencia de juego fluida y emocionante.",
-        "features": [
-          "Gráficos de alta definición",
-          "Sonido inmersivo",
-          "Interfaz intuitiva",
-          "Actualizaciones regulares"
-        ],
-        "cta": "Más Información Sobre Nuestra Tecnología"
+        "title": "VITAL GAMES",
+        "subtitle": "TECNOLOGÍA GANADORA",
+        "certification": {
+          "title": "Calidad italiana certificada",
+          "standard": "ISO 9001"
+        },
+        "cta": "Trabaja con nosotros"
       },
       "winningTechnology": {
         "title": "TECNOLOGÍA",
@@ -87,15 +83,15 @@
         "cta": "Descubre Nuestras Características de Juego"
       },
       "magicDiamond": {
-        "title": "MAGIC",
-        "titleLine2": "DIAMOND",
-        "subtitle": "Vitalgames",
-        "description": "Magic Diamond es nuestra serie insignia de juegos, con gráficos impresionantes y características innovadoras.",
-        "features": ["Gráficos de alta calidad", "Bonificaciones emocionantes", "Jackpots progresivos", "Temas variados"],
-        "cta": "Explora Magic Diamond"
+        "title": "ITALY'S TOP RATED",
+        "titleLine2": "ONLINE SLOT GAME",
+        "playNow": "Jugar ahora",
+        "startDemo": "Iniciar demo",
+        "learnMore": "Descubrir más",
+        "gameTitle": "Magic Diamond™"
       },
       "multigames": {
-        "title": "MULTIGAMES",
+        "title": "DESCUBRE NUESTROS MULTIGAMES",
         "subtitle": "Vitalgames",
         "description": "Nuestros sistemas multigame ofrecen una variedad de juegos en una sola máquina, maximizando el espacio y la diversión.",
         "features": [
@@ -105,6 +101,11 @@
           "Personalización para operadores"
         ],
         "cta": "Ver Opciones Multigame"
+      },
+      "gameCards": {
+        "badge": "All games",
+        "title": "TODOS LOS JUEGOS BY VITAL GAMES",
+        "viewAll": "Ver todos los juegos"
       }
     },
     "vlt": {
@@ -267,13 +268,23 @@
             "description": "Las actualizaciones regulares aseguran que tus máquinas siempre ofrezcan contenido fresco."
           }
         ]
+      },
+      "page": {
+        "title": "AWP MULTIGAMES",
+        "subtitle": "Descubre nuestra selección de sistemas multigame para bares y salas de juego",
+        "section": {
+          "badge": "AWP MULTIGAMES",
+          "title": "DESCUBRE NUESTROS MULTIGAMES",
+          "description": "Sistemas multigame innovadores que ofrecen múltiples slots en una sola máquina, ideales para bares y salas de juego que buscan maximizar la oferta de entretenimiento"
+        }
       }
     },
     "allGames": {
       "hero": {
         "title": "Nuestra Biblioteca de Juegos",
         "subtitle": "Experiencias de Juego Diversas",
-        "description": "Explora nuestra extensa colección de juegos, desde máquinas tragamonedas de frutas clásicas hasta video slots innovadoras con características de bonificación inmersivas."
+        "description": "Explora nuestra extensa colección de juegos, desde las clásicas máquinas de frutas hasta las innovadoras video slots con características de bono inmersivas.",
+        "discoverAll": "Descubre todos nuestros juegos"
       },
       "categories": {
         "all": "Todos los Juegos",
@@ -298,8 +309,8 @@
       "noGames": "No se encontraron juegos que coincidan con tus criterios.",
       "loadMore": "Cargar Más Juegos",
       "recommended": {
-        "title": "Juegos Recomendados",
-        "subtitle": "Favoritos de los Jugadores"
+        "badge": "Juegos Recomendados",
+        "title": "JUEGOS RECOMENDADOS"
       }
     },
     "gameDetail": {
@@ -367,6 +378,13 @@
         "software": "Software",
         "connectivity": "Conectividad",
         "dimensions": "Dimensiones"
+      },
+      "videoGallery": {
+        "badge": "GALERÍA DE VIDEOS",
+        "title": "VER LOS VIDEOS"
+      },
+      "discover": {
+        "title": "Descubre"
       }
     },
     "contact": {
@@ -499,7 +517,7 @@
       },
       "games": "Juegos",
       "allGames": "Todos los juegos",
-      "multigames": "Multigames",
+      "multigames": "Todos los multigames",
       "cabinet": "Gabinetes",
       "onlineGames": "Juegos online",
       "company": "Vitalgames",

@@ -4,6 +4,7 @@ import { useRef } from "react"
 import Image, { StaticImageData } from "next/image"
 import Link from "next/link"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useLanguage } from "@/components/language-provider"
 
 interface Game {
   id: number
@@ -21,6 +22,7 @@ interface GameCarouselProps {
 
 export function GameCarousel({ games, onGameClick, type }: GameCarouselProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const { dictionary: dict } = useLanguage()
 
   const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
@@ -33,7 +35,7 @@ export function GameCarousel({ games, onGameClick, type }: GameCarouselProps) {
   return (
     <div className="relative">
       <div className="flex items-center justify-between mb-2">
-        <h3 className="text-sm font-medium text-gray-400">Featured Games</h3>
+        <h3 className="text-sm font-medium text-gray-400">{dict.allGames.recommended.title}</h3>
         <div className="flex space-x-1">
           <button
             onClick={() => scroll("left")}

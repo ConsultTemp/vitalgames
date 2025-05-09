@@ -52,11 +52,7 @@ export async function generateMetadata(props: { params: Params }): Promise<Metad
   }
 }
 
-export default async function Home(props: { params: Params }) {
-  const params = await props.params
-  const dictionary = await getDictionary(params.lang)
-  const products = productTypes[params.lang as keyof typeof productTypes]
-
+export default function Home(props: { params: { lang: Locale } }) {
   return (
     <>
       <Script
@@ -80,7 +76,7 @@ export default async function Home(props: { params: Params }) {
                 gamePlatform: ["AWP", "VLT", "Online"],
                 genre: "Slot Machine",
                 image: game.coverImage.src || game.mainImage.src,
-                url: `https://vitalgames.com/${params.lang}/allgames/${game.slug}`,
+                url: `https://vitalgames.com/${props.params.lang}/allgames/${game.slug}`,
                 provider: {
                   "@type": "Organization",
                   name: "Vitalgames",

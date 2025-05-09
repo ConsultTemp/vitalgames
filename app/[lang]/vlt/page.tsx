@@ -9,45 +9,68 @@ import VLT_CARD4 from "@/public/vlts/Sidney LQ 1.png"
 import VLT_CARD5 from "@/public/vlts/Octagon LQ 1.png"
 import VLT_CARD6 from "@/public/vlts/TRIOOCTAGON LQ.png"
 import Head from "next/head"
+import { useLanguage } from "@/components/language-provider"
 
 const vltCards = [
   {
     name: "VLT Classic",
     image: VLT_CARD1,
-    description:
-      "Cabinet VLT classico con design elegante e interfaccia intuitiva, ideale per sale giochi tradizionali.",
+    description: {
+      it: "Cabinet VLT classico con design elegante e interfaccia intuitiva, ideale per sale giochi tradizionali.",
+      en: "Classic VLT cabinet with elegant design and intuitive interface, ideal for traditional gaming halls.",
+      es: "Cabinet VLT clásico con diseño elegante e interfaz intuitiva, ideal para salas de juego tradicionales."
+    },
   },
   {
     name: "VLT Pro",
     image: VLT_CARD2,
-    description: "Versione professionale con schermo HD e sistema audio avanzato per un'esperienza di gioco immersiva.",
+    description: {
+      it: "Versione professionale con schermo HD e sistema audio avanzato per un'esperienza di gioco immersiva.",
+      en: "Professional version with HD screen and advanced audio system for an immersive gaming experience.",
+      es: "Versión profesional con pantalla HD y sistema de audio avanzado para una experiencia de juego inmersiva."
+    },
   },
   {
     name: "VLT Deluxe",
     image: VLT_CARD3,
-    description: "Cabinet di lusso con finiture premium e tecnologia all'avanguardia per sale VLT esclusive.",
+    description: {
+      it: "Cabinet di lusso con finiture premium e tecnologia all'avanguardia per sale VLT esclusive.",
+      en: "Luxury cabinet with premium finishes and cutting-edge technology for exclusive VLT halls.",
+      es: "Cabinet de lujo con acabados premium y tecnología de vanguardia para salas VLT exclusivas."
+    },
   },
   {
     name: "VLT Premium",
     image: VLT_CARD4,
-    description:
-      "Soluzione premium con doppio schermo e illuminazione LED personalizzabile per massimizzare l'attrattiva.",
+    description: {
+      it: "Soluzione premium con doppio schermo e illuminazione LED personalizzabile per massimizzare l'attrattiva.",
+      en: "Premium solution with dual screen and customizable LED lighting to maximize appeal.",
+      es: "Solución premium con doble pantalla e iluminación LED personalizable para maximizar el atractivo."
+    },
   },
   {
     name: "VLT Gold",
     image: VLT_CARD5,
-    description:
-      "Design ottagonale distintivo con grafica 4K e sistema di jackpot collegato per vincite più emozionanti.",
+    description: {
+      it: "Design ottagonale distintivo con grafica 4K e sistema di jackpot collegato per vincite più emozionanti.",
+      en: "Distinctive octagonal design with 4K graphics and linked jackpot system for more exciting wins.",
+      es: "Diseño octogonal distintivo con gráficos 4K y sistema de jackpot vinculado para ganancias más emocionantes."
+    },
   },
   {
     name: "VLT Platinum",
     image: VLT_CARD6,
-    description:
-      "La nostra soluzione top di gamma con triplo schermo, effetti visivi straordinari e comfort ergonomico.",
+    description: {
+      it: "La nostra soluzione top di gamma con triplo schermo, effetti visivi straordinari e comfort ergonomico.",
+      en: "Our top-of-the-line solution with triple screen, extraordinary visual effects and ergonomic comfort.",
+      es: "Nuestra solución de gama alta con triple pantalla, efectos visuales extraordinarios y confort ergonómico."
+    },
   },
 ]
 
 export default function VLTPage() {
+  const { dictionary: dict, lang } = useLanguage()
+
   return (
     <>
       <Head>
@@ -70,7 +93,7 @@ export default function VLTPage() {
               item: {
                 "@type": "Product",
                 name: card.name,
-                description: card.description,
+                description: card.description[lang],
                 brand: {
                   "@type": "Brand",
                   name: "Vitalgames",
@@ -96,8 +119,7 @@ export default function VLTPage() {
               <div className="max-w-5xl mx-auto text-center">
                 <h1 className="text-8xl md:text-8xl dharma font-bold text-white mb-4">CABINET VLT</h1>
                 <p className="text-sm font-light text-white/80 max-w-2xl mx-auto">
-                  Scopri le nostre cabinet VLT di alta qualità, progettate per offrire un'esperienza di gioco
-                  superiore nelle sale dedicate
+                  {dict.vlt.hero.description}
                 </p>
               </div>
             </div>
@@ -118,7 +140,7 @@ export default function VLTPage() {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-white text-center">{card.name}</h3>
-                <p className="text-sm text-white/70 text-center mt-2">{card.description}</p>
+                <p className="text-sm text-white/70 text-center mt-2">{card.description[lang]}</p>
               </div>
             ))}
           </div>

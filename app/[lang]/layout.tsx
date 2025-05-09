@@ -9,7 +9,7 @@ import type { Locale } from "@/i18n-config"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { getDictionary } from "@/lib/dictionary"
-import { LanguageProvider } from "@/components/language-provider"
+import { Language, LanguageProvider } from "@/components/language-provider"
 
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
@@ -166,7 +166,7 @@ export default async function LocaleLayout({
         />
       </head> */}
       <div className="w-screen">
-        <LanguageProvider lang={lang} dictionary={dictionary}>
+        <LanguageProvider>
           <div className="w-screen overflow-x-hidden">
             <Header />
             <main>{children}</main>

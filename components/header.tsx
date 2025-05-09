@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Menu, ChevronDown, X, ChevronRight } from 'lucide-react'
+import { Menu, ChevronDown, X, ChevronRight, Globe } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { GameCarousel } from "@/components/games/GameCarousel"
 import {
@@ -27,11 +27,19 @@ import logo from '../public/logovital.svg'
 import { games, multigames } from '../lib/cards'
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { DialogTitle } from "@radix-ui/react-dialog"
+import { useLanguage } from "@/components/language-provider"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [isSheetOpen, setIsSheetOpen] = useState(false)
   const pathname = usePathname()
+  const { dictionary: dict, lang, setLang } = useLanguage()
 
   // Handle scroll effect
   useEffect(() => {
@@ -50,10 +58,16 @@ export default function Navbar() {
   // Menu items based on the image
   const menuItems = [
     { label: "Multigames", href: "/awp-multigames", hasDropdown: true, dropdownType: "awp-multigames" },
-    { label: "All games", href: "/allgames", hasDropdown:false  },
-    { label: "Online games", href: "/online-games", hasDropdown: false  },
+    { label: "All games", href: "/allgames", hasDropdown:true, dropdownType: "allgames" },
+    { label: "Online games", href: "/online-games", hasDropdown: true, dropdownType: "allgames" },
     { label: "Cabinet", href: "/vlt", hasDropdown: false },
-    { label: "About us", href: "/about-us", hasDropdown: false },
+    { label: dict.footer.aboutUs, href: "/about-us", hasDropdown: false },
+  ]
+
+  const languages = [
+    { code: 'it', label: 'Italiano' },
+    { code: 'en', label: 'English' },
+    { code: 'es', label: 'Español' }
   ]
 
   return (
@@ -79,7 +93,7 @@ export default function Navbar() {
         {/* Navigation - Center */}
         <div className="flex-1 flex justify-center">
           <NavigationMenu>
-            <NavigationMenuList className="flex items-center gap-2 z-10">
+            <NavigationMenuList className="flex items-center gap-4 z-10">
               {menuItems.map((item) => {
                 const slots = item.dropdownType === "awp-multigames" ? multigames.slice(0, 3) : games
 
@@ -150,14 +164,37 @@ export default function Navbar() {
           </NavigationMenu>
         </div>
 
-        {/* Contact Us Button - Right */}
-        <div className="flex-1 flex justify-end">
+        {/* Right side buttons */}
+        <div className="flex-1 flex justify-end items-center gap-4">
           <Button
             asChild
             className="bg-vitalYellow hover:bg-vitalYellow/90 px-8 text-black font-medium rounded-md py-2 text-sm"
           >
-            <Link href="/contact">Contact us</Link>
+            <Link href="/contact">{dict.header.contactUs}</Link>
           </Button>
+
+          {/* Language Selector */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+                <Globe className="h-5 w-5" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md border border-gray-800">
+              {languages.map((language) => (
+                <DropdownMenuItem
+                  key={language.code}
+                  className={`text-sm ${lang === language.code ? 'text-vitalYellow' : 'text-white'} hover:bg-white/10 cursor-pointer`}
+                  onClick={() => {
+                    const newPath = pathname.replace(/^\/[a-z]{2}/, `/${language.code}`);
+                    window.location.href = newPath;
+                  }}
+                >
+                  {language.label}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
 
@@ -215,7 +252,7 @@ export default function Navbar() {
                     </Link>
 
                     {/* Game carousel for mobile */}
-                    {item.hasDropdown && (
+                    {item.hasDropdown && item.dropdownType == "awp-multigames" && (
                       <div className="mt-3 pb-2">
                         <GameCarousel  games={slots} onGameClick={() => setIsSheetOpen(false)} type={item.dropdownType ? item.dropdownType : "allgames"} />
                       </div>
@@ -225,25 +262,50 @@ export default function Navbar() {
               </div>
 
               {/* Footer */}
-              <div className="p-6 border-t border-gray-800">
+              <div className="p-6 border-t border-gray-800 space-y-4">
                 <Button
                   asChild
                   className="bg-vitalYellow hover:bg-vitalYellow/90 text-black font-bold rounded-md px-3 py-2 w-full animate-fadeIn"
                   style={{ animationDuration: '0.5s', animationDelay: '400ms', animationFillMode: 'both' }}
                 >
                   <Link href="/contact" onClick={() => setIsSheetOpen(false)}>
-                    Contact us
+                    {dict.header.contactUs}
                   </Link>
                 </Button>
+
+                {/* Language Selector for Mobile */}
+                <div className="ml-auto">
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+                        <Globe className="h-5 w-5" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md border border-gray-800">
+                      {languages.map((language) => (
+                        <DropdownMenuItem
+                          key={language.code}
+                          className={`text-sm ${lang === language.code ? 'text-vitalYellow' : 'text-white'} hover:bg-white/10 cursor-pointer`}
+                          onClick={() => {
+                            const newPath = pathname.replace(/^\/[a-z]{2}/, `/${language.code}`);
+                            window.location.href = newPath;
+                          }}
+                        >
+                          {language.label}
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </div>
               </div>
             </div>
           </SheetContent>
         </Sheet>
 
-        {/* Logo */}
-        <div className="flex items-center">
+        {/* Right side with Logo and Language Selector */}
+        <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center">
-            <div className="relative h-14 w-20">
+            <div className="relative h-10 w-16">
               <Image
                 src={logo}
                 alt="Vital Games"
@@ -252,6 +314,29 @@ export default function Navbar() {
               />
             </div>
           </Link>
+
+          {/* Language Selector for Mobile Header */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+                <Globe className="h-5 w-5" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md border border-gray-800">
+              {languages.map((language) => (
+                <DropdownMenuItem
+                  key={language.code}
+                  className={`text-sm ${lang === language.code ? 'text-vitalYellow' : 'text-white'} hover:bg-white/10 cursor-pointer`}
+                  onClick={() => {
+                    const newPath = pathname.replace(/^\/[a-z]{2}/, `/${language.code}`);
+                    window.location.href = newPath;
+                  }}
+                >
+                  {language.label}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </header>

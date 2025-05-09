@@ -61,12 +61,13 @@
       "cta": "Scopri di più"
     },
     "technology": {
-      "title": "TECNOLOGIA",
-      "titleLine2": "AVANZATA",
-      "subtitle": "Vital games",
-      "description": "I nostri giochi utilizzano tecnologia all'avanguardia per garantire un'esperienza di gioco fluida ed emozionante.",
-      "features": ["Grafica ad alta definizione", "Audio immersivo", "Interfaccia intuitiva", "Aggiornamenti regolari"],
-      "cta": "Scopri di Più sulla Nostra Tecnologia"
+      "title": "VITAL GAMES",
+      "subtitle": "TECNOLOGIA VINCENTE",
+      "certification": {
+        "title": "Qualità italiana certificata",
+        "standard": "ISO 9001"
+      },
+      "cta": "Lavora con noi"
     },
     "winningTechnology": {
       "title": "TECNOLOGIA",
@@ -82,15 +83,15 @@
       "cta": "Scopri le Nostre Funzionalità di Gioco"
     },
     "magicDiamond": {
-      "title": "MAGIC",
-      "titleLine2": "DIAMOND",
-      "subtitle": "Vital games",
-      "description": "Magic Diamond è la nostra serie di punta di giochi, con grafica straordinaria e funzionalità innovative.",
-      "features": ["Grafica di alta qualità", "Bonus emozionanti", "Jackpot progressivi", "Temi vari"],
-      "cta": "Esplora Magic Diamond"
+      "title": "ITALY'S TOP RATED",
+      "titleLine2": "ONLINE SLOT GAME",
+      "playNow": "Prova ora",
+      "startDemo": "Avvia demo",
+      "learnMore": "Scopri di più",
+      "gameTitle": "Magic Diamond™"
     },
     "multigames": {
-      "title": "MULTIGAMES",
+      "title": "SCOPRI I NOSTRI MULTIGAMES",
       "subtitle": "Vital games",
       "description": "I nostri sistemi multigame offrono una varietà di giochi su una singola macchina, massimizzando lo spazio e il divertimento.",
       "features": [
@@ -100,6 +101,11 @@
         "Personalizzazione per operatori"
       ],
       "cta": "Visualizza Opzioni Multigame"
+    },
+    "gameCards": {
+      "badge": "All games",
+      "title": "TUTTI I GIOCHI BY VITAL GAMES",
+      "viewAll": "Guarda tutti i giochi"
     }
   },
   "vlt": {
@@ -262,13 +268,23 @@
           "description": "Gli aggiornamenti regolari assicurano che le tue macchine offrano sempre contenuti freschi."
         }
       ]
+    },
+    "page": {
+      "title": "AWP MULTIGAMES",
+      "subtitle": "Scopri la nostra selezione di sistemi multigame per bar e sale giochi",
+      "section": {
+        "badge": "AWP MULTIGAMES",
+        "title": "SCOPRI I NOSTRI MULTIGAMES",
+        "description": "Sistemi multigame innovativi che offrono diverse slot in un'unica macchina, ideali per bar e sale giochi che vogliono massimizzare l'offerta di intrattenimento"
+      }
     }
   },
   "allGames": {
     "hero": {
       "title": "La Nostra Libreria di Giochi",
       "subtitle": "Esperienze di Gioco Diverse",
-      "description": "Esplora la nostra vasta collezione di giochi, dalle classiche slot machine a frutta alle innovative video slot con funzionalità bonus immersive."
+      "description": "Esplora la nostra vasta collezione di giochi, dalle classiche slot machine a frutta alle innovative video slot con funzionalità bonus immersive.",
+      "discoverAll": "Scopri tutti i nostri giochi"
     },
     "categories": {
       "all": "Tutti i Giochi",
@@ -293,8 +309,8 @@
     "noGames": "Nessun gioco trovato che corrisponda ai tuoi criteri.",
     "loadMore": "Carica Altri Giochi",
     "recommended": {
-      "title": "Giochi Consigliati",
-      "subtitle": "Preferiti dai Giocatori"
+      "badge": "Giochi Consigliati",
+      "title": "GIOCHI CONSIGLIATI"
     }
   },
   "gameDetail": {
@@ -362,6 +378,13 @@
       "software": "Software",
       "connectivity": "Connettività",
       "dimensions": "Dimensioni"
+    },
+    "videoGallery": {
+      "badge": "GALLERIA VIDEO",
+      "title": "GUARDA I VIDEO"
+    },
+    "discover": {
+      "title": "Scopri"
     }
   },
   "contact": {
@@ -494,7 +517,7 @@
     },
     "games": "Giochi",
     "allGames": "All games",
-    "multigames": "Multigames",
+    "multigames": "Tutti i multigames",
     "cabinet": "Cabinet",
     "onlineGames": "Giochi online",
     "company": "Vital games",

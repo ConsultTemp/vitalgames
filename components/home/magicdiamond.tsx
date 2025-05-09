@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import diamond from "../../public/diamond.png"
@@ -5,6 +6,9 @@ import logomagic from "../../public/logo-magic.svg"
 import { Play } from "lucide-react"
 import FloatingImage from "../bg-image-component"
 import SmoothReveal from "../smooth-reveal"
+import { useLanguage } from "@/components/language-provider"
+import Link from "next/link"
+import misterdiamond from "../../public/misterdiamond.jpeg"
 
 // Import slot machine symbols
 import jolly from "../../public/symbols/JOLLY.png"
@@ -18,8 +22,6 @@ import bar2 from "../../public/symbols/2BAR.png"
 import ciliegia from "../../public/symbols/ciliegia.png"
 import bar1 from "../../public/symbols/1BAR.png"
 import bar3 from "../../public/symbols/3BAR.png"
-import Link from "next/link"
-import misterdiamond from "../../public/misterdiamond.jpeg"
 
 const InfiniteScrollGallery = () => {
   const symbols = [
@@ -82,6 +84,8 @@ const InfiniteScrollGallery = () => {
 }
 
 export default function Home() {
+  const { dictionary: dict } = useLanguage()
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-transparent mb-16 px-4">
       {/* Central circular teal glow effect */}
@@ -133,9 +137,9 @@ export default function Home() {
         {/* Main heading */}
         <SmoothReveal>
           <h1 className="text-white text-5xl md:text-7xl font-bold text-center mb-8 leading-tight dharma">
-            ENTRA NEL MONDO DI
+            {dict.home.magicDiamond.title}
             <br />
-            <span className="text-vitalYellow">MAGIC DIAMOND</span>
+            <span className="text-vitalYellow">{dict.home.magicDiamond.titleLine2}</span>
           </h1>
         </SmoothReveal>
 
@@ -169,19 +173,19 @@ export default function Home() {
         {/* Call to action */}
         <div className="w-full flex flex-col md:flex-row justify-center md:justify-between items-center max-w-4xl">
           <SmoothReveal className="flex flex-col items-center md:items-start mb-8 md:mb-0">
-            <p className="text-white text-sm font-light mb-1">Prova ora</p>
-            <h2 className="text-white text-4xl font-bold">Magic Diamond™</h2>
+            <p className="text-white text-sm font-light mb-1">{dict.home.magicDiamond.playNow}</p>
+            <h2 className="text-white text-4xl font-bold">{dict.home.magicDiamond.gameTitle}</h2>
           </SmoothReveal>
           <SmoothReveal className="flex flex-row gap-4 justify-center">
             <Button className="bg-vitalYellow hover:bg-yellow-500 text-black font-bold px-4 py-2 rounded-full flex flex-row">
               <Play className="text-black w-3 h-3 mr-2" />
-              Avvia demo
+              {dict.home.magicDiamond.startDemo}
             </Button>
             <Button
               variant="outline"
               className="border-white text-white hover:bg-white/10 font-bold px-4 py-2 rounded-full"
             >
-              <Link href="/allgames/magic-diamond-2">Scopri di più</Link>
+              <Link href="/allgames/magic-diamond-2">{dict.home.magicDiamond.learnMore}</Link>
             </Button>
           </SmoothReveal>
         </div>

@@ -43,7 +43,7 @@
   "home": {
     "ageRestriction": {
       "title": "Age Restriction +18",
-      "description": "Gaming should be safe entertainment. We promote responsible gaming and remind that our products are exclusively intended for adults (18+)."
+      "description": "Gaming should be safe entertainment. We promote responsible gaming and remind that our products are intended exclusively for adults (18+)."
     },
     "cabinet": {
       "title": "DISCOVER",
@@ -54,11 +54,13 @@
       "cta": "Discover more"
     },
     "technology": {
-      "title": "ADVANCED",
-      "titleLine2": "TECHNOLOGY",
-      "subtitle": "Vitalgames",
-      "description": "Our games use cutting-edge technology to ensure a smooth and exciting gaming experience.",
-      "features": ["High-definition graphics", "Immersive sound", "Intuitive interface", "Regular updates"]
+      "title": "VITAL GAMES",
+      "subtitle": "WINNING TECHNOLOGY",
+      "certification": {
+        "title": "Certified Italian Quality",
+        "standard": "ISO 9001"
+      },
+      "cta": "Work with us"
     },
     "winningTechnology": {
       "title": "WINNING",
@@ -73,17 +75,24 @@
       ]
     },
     "magicDiamond": {
-      "title": "MAGIC",
-      "titleLine2": "DIAMOND",
-      "subtitle": "Vitalgames",
-      "description": "Magic Diamond is our flagship series of games, featuring stunning graphics and innovative features.",
-      "features": ["High-quality graphics", "Exciting bonuses", "Progressive jackpots", "Various themes"]
+      "title": "ITALY'S TOP RATED",
+      "titleLine2": "ONLINE SLOT GAME",
+      "playNow": "Play now",
+      "startDemo": "Start demo",
+      "learnMore": "Learn more",
+      "gameTitle": "Magic Diamond™"
     },
     "multigames": {
-      "title": "MULTIGAMES",
+      "title": "DISCOVER OUR MULTIGAMES",
       "subtitle": "Vitalgames",
       "description": "Our multigame systems offer a variety of games on a single machine, maximizing floor space and fun.",
-      "features": ["Multiple games on one machine", "Easy navigation", "Regular updates", "Customization for operators"]
+      "features": ["Multiple games on one machine", "Easy navigation", "Regular updates", "Customization for operators"],
+      "cta": "View Multigame Options"
+    },
+    "gameCards": {
+      "badge": "All games",
+      "title": "ALL GAMES BY VITAL GAMES",
+      "viewAll": "View all games"
     }
   },
   "vlt": {
@@ -246,13 +255,23 @@
           "description": "Regular updates ensure your machines always offer fresh content."
         }
       ]
+    },
+    "page": {
+      "title": "AWP MULTIGAMES",
+      "subtitle": "Discover our selection of multigame systems for bars and gaming halls",
+      "section": {
+        "badge": "AWP MULTIGAMES",
+        "title": "DISCOVER OUR MULTIGAMES",
+        "description": "Innovative multigame systems that offer multiple slots in a single machine, ideal for bars and gaming halls looking to maximize entertainment offerings"
+      }
     }
   },
   "allGames": {
     "hero": {
       "title": "Our Game Library",
       "subtitle": "Diverse Gaming Experiences",
-      "description": "Explore our extensive collection of games, from classic fruit machines to innovative video slots with immersive bonus features."
+      "description": "Explore our extensive collection of games, from classic fruit machines to innovative video slots with immersive bonus features.",
+      "discoverAll": "Discover all our games"
     },
     "categories": {
       "all": "All Games",
@@ -277,8 +296,8 @@
     "noGames": "No games found matching your criteria.",
     "loadMore": "Load More Games",
     "recommended": {
-      "title": "Recommended Games",
-      "subtitle": "Player Favorites"
+      "badge": "Recommended Games",
+      "title": "RECOMMENDED GAMES"
     }
   },
   "gameDetail": {
@@ -346,6 +365,13 @@
       "software": "Software",
       "connectivity": "Connectivity",
       "dimensions": "Dimensions"
+    },
+    "videoGallery": {
+      "badge": "VIDEO GALLERY",
+      "title": "WATCH THE VIDEOS"
+    },
+    "discover": {
+      "title": "Discover"
     }
   },
   "contact": {
@@ -413,7 +439,7 @@
   "footer": {
     "games": "Games",
     "allGames": "All games",
-    "multigames": "Multigames",
+    "multigames": "All multigames",
     "cabinet": "Cabinet",
     "onlineGames": "Online games",
     "company": "Vital games",

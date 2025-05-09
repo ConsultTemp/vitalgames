@@ -9,12 +9,14 @@ import { multigames } from "@/lib/multigames"
 import { notFound } from "next/navigation"
 import useEmblaCarousel from 'embla-carousel-react'
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useLanguage } from "@/components/language-provider"
 
 export default function MultigamePage({ params }: { params: { gameId: string } }) {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null);
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [videoRefs, setVideoRefs] = useState<HTMLVideoElement[]>([]);
+    const { dictionary: dict } = useLanguage();
     const multigame = multigames.find(m => m.slug === params.gameId);
     
     if (!multigame) {
@@ -69,7 +71,7 @@ export default function MultigamePage({ params }: { params: { gameId: string } }
     return (
         <div>
             {/* HERO HEADER */}
-            <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+            <div className="relative w-full h-[100vh] flex items-center justify-center">
                 <Image
                     src={multigame.coverImage}
                     alt={multigame.title}
@@ -93,15 +95,15 @@ export default function MultigamePage({ params }: { params: { gameId: string } }
             </div>
 
             {/* VIDEO CAROUSEL SECTION */}
-            <section className="relative bg-transparent pt-32">
-                <div className="container mx-auto px-4 relative z-10 pb-12">
+            <section className="relative bg-transparent pt-8">
+                <div className="container mx-auto px-4 relative z-10 pb-6">
                     <div className="mb-6 md:mb-8 w-full flex flex-col items-center">
                         <SmoothReveal className="inline-block bg-vitalYellow text-black text-xs font-medium px-2 py-[3.5px] rounded mb-2">
-                            VIDEO GALLERY
+                            {dict.multigameDetail.videoGallery.badge}
                         </SmoothReveal>
                         <SmoothReveal>
                             <h2 className="text-center text-4xl md:text-7xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap px-4">
-                                GUARDA I VIDEO
+                                {dict.multigameDetail.videoGallery.title}
                             </h2>
                         </SmoothReveal>
                     </div>
@@ -147,29 +149,29 @@ export default function MultigamePage({ params }: { params: { gameId: string } }
             </section>
 
             {/* GAMES CARDS SECTION */}
-            <section className="relative bg-transparent pt-32">
+            <section className="relative bg-transparent pt-8">
                 {/* Side gradients */}
                 <div
-                    className="absolute top-[60%] -translate-y-1/2 left-0 w-[500px] h-[1200px] pointer-events-none"
+                    className="absolute top-[60%] -translate-y-1/2 left-0 w-[300px] h-[800px] pointer-events-none"
                     style={{
                         background: 'radial-gradient(circle at left center, rgba(255, 196, 0, 0.35) 0%, rgba(255, 196, 0, 0.2) 30%, rgba(255, 196, 0, 0.1) 50%, transparent 70%)'
                     }}
                 />
                 <div
-                    className="absolute top-[40%] -translate-y-1/2 right-0 w-[500px] h-[1200px] pointer-events-none"
+                    className="absolute top-[40%] -translate-y-1/2 right-0 w-[300px] h-[800px] pointer-events-none"
                     style={{
                         background: 'radial-gradient(circle at right center, rgba(59, 130, 246, 0.35) 0%, rgba(59, 130, 246, 0.2) 30%, rgba(59, 130, 246, 0.1) 50%, transparent 70%)'
                     }}
                 />
 
-                <div className="container mx-auto px-4 relative z-10 pb-12 md:pb-36">
-                    <div className="mb-6 md:mb-8 w-full flex flex-col items-center">
+                <div className="container mx-auto px-4 relative z-10 pb-6">
+                    <div className="mb-4 w-full flex flex-col items-center">
                         <SmoothReveal className="inline-block bg-vitalYellow text-black text-xs font-medium px-2 py-[3.5px] rounded mb-2">
                             {multigame.title}
                         </SmoothReveal>
                         <SmoothReveal>
                             <h2 className="text-center text-4xl md:text-7xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap px-4">
-                                Scopri {multigame.title}
+                                {dict.multigameDetail.discover.title} {multigame.title}
                             </h2>
                         </SmoothReveal>
                     </div>

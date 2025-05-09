@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Image from 'next/image'
 import squalo from '../../public/goldshark.png'
@@ -11,12 +13,15 @@ import certificate from '../../public/golden-certificate.png'
 import vitalhq from '../../public/vital-hq.jpeg'
 import vitalpres from '../../public/vitalgames-pres.jpeg'
 import Link from 'next/link'
+import { useLanguage } from "@/components/language-provider"
 
 interface WinningTechnologyProps {
     className?: string
 }
 
 export function Technology({ className = '' }: WinningTechnologyProps) {
+    const { dictionary: dict } = useLanguage()
+
     return (
         <div className="relative">
             {/* Bottom right image - positioned absolutely to be visible under footer */}
@@ -26,7 +31,7 @@ export function Technology({ className = '' }: WinningTechnologyProps) {
                 {/* Background decorative images */}
                 <div className="absolute inset-0 overflow-visible pointer-events-none w-full opacity-80">
                     {/* Top right image */}
-                    <div className="absolute top-[10%] right-[-80px] w-72 h-72">
+                    <div className="absolute top-[0%] right-[-80px] w-72 h-72">
                         <FloatingImage
                             src={campana}
                             alt="Decorative element"
@@ -67,9 +72,9 @@ export function Technology({ className = '' }: WinningTechnologyProps) {
                         {/* Title placeholder */}
                         <SmoothReveal>
                         <h2 className="text-8xl font-bold dharma text-white mb-12 text-center dharma">
-                            <span className='text-vitalYellow'>VITAL GAMES</span>
+                            <span className='text-vitalYellow'>{dict.home.technology.title}</span>
                             <br />
-                            WINNING TECHNOLOGY
+                            {dict.home.technology.subtitle}
                         </h2>
                         </SmoothReveal>
 
@@ -80,8 +85,8 @@ export function Technology({ className = '' }: WinningTechnologyProps) {
                         <SmoothReveal className='p-6 rounded-lg border border-1 border-gray-800 flex flex-row items-center justify-center gap-4 backdrop-blur-md'>
                             <Image src={isologo} alt="ISO" width={50} height={50} />
                             <div>
-                                <p>Qualità italiana certificata</p>
-                                <p>ISO 9001</p>
+                                <p>{dict.home.technology.certification.title}</p>
+                                <p>{dict.home.technology.certification.standard}</p>
                             </div>
                         </SmoothReveal>
                         <SmoothReveal className="flex flex-col md:flex-row gap-8 mt-16">
@@ -90,7 +95,7 @@ export function Technology({ className = '' }: WinningTechnologyProps) {
                         </SmoothReveal>
                         <SmoothReveal className="flex justify-center mt-12">
                             <Link href="/contact" className="bg-vitalYellow text-black px-8 py-4 rounded-lg font-medium hover:bg-yellow-400 transition-colors">
-                                Work with us
+                                {dict.home.technology.cta}
                             </Link>
                         </SmoothReveal>
                     </div>

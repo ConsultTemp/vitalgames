@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import FloatingImage from "../bg-image-component"
 import SmoothReveal from "../smooth-reveal"
+import { useLanguage } from "@/components/language-provider"
 
 // Import images
 import casinoroyaleHover from "../../public/multigames-cards/CASINO ROYALE_Converted.jpg"
@@ -41,6 +42,8 @@ const multigames = [
 ]
 
 export default function Multigames() {
+    const { dictionary: dict } = useLanguage()
+
     return (
         <section className="relative bg-transparent pt-32">
             {/* Side gradients */}
@@ -76,7 +79,7 @@ export default function Multigames() {
                     <SmoothReveal className="inline-block bg-vitalYellow text-black text-xs font-medium px-2 py-[3.5px] rounded mb-2">
                         AWP MULTIGAMES
                     </SmoothReveal>
-                    <SmoothReveal> <h2 className="text-center text-4xl md:text-7xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap px-4">SCOPRI I NOSTRI MULTIGAMES</h2></SmoothReveal>
+                    <SmoothReveal> <h2 className="text-center text-4xl md:text-7xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap px-4">{dict.home.multigames.title}</h2></SmoothReveal>
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-2 md:gap-2 px-0 sm:px-4 md:px-4 lg:px-8">
@@ -85,7 +88,7 @@ export default function Multigames() {
                             <SmoothReveal>
                                 <Link
                                     href={`/awp-multigames/${game.slug}`}
-                                    className="w-full block group rounded-sm relative hover:scale-[1.02] transition-all duration-300"
+                                    className="w-full block group rounded-sm relative hover:scale-[1.01] transition-all duration-300"
                                 >
                                     <div className="w-full h-full relative rounded-sm">
                                         <Image
@@ -101,7 +104,7 @@ export default function Multigames() {
                 </div>
                 <div className="w-full flex flex-col items-center py-16">
                     <Button variant={"vitalYellow"} className="bg-vitalYellow text-sm text-black hover:opacity-90 px-8">
-                        <Link href="/awp-multigames">Tutti i multigames</Link>
+                        <Link href="/awp-multigames">{dict.footer.multigames}</Link>
                     </Button>
                 </div>
             </div>

@@ -5,6 +5,7 @@ import { useState } from "react"
 import bgawp from "@/public/bgawp.png"
 import SmoothReveal from "@/components/smooth-reveal"
 import Head from "next/head"
+import { useLanguage } from "@/components/language-provider"
 
 // Importa qui le immagini dei giochi come in multigames.tsx
 import casinoroyale from "@/public/multigames-cards/CASINO ROYALE_Converted.jpg"
@@ -109,6 +110,7 @@ const multigames = [
 
 export default function AwpMultigamesPage() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+  const { dictionary: dict } = useLanguage()
 
   return (
     <>
@@ -162,16 +164,16 @@ export default function AwpMultigamesPage() {
           <div className="absolute inset-0 bg-black/50" />
           <div className="relative z-10 flex flex-col items-start justify-center h-full w-full px-4 md:px-8 lg:px-16 xl:px-24">
             <div className="max-w-2xl">
-              <h1 className="text-4xl md:text-6xl font-bold text-white dharma mb-4">AWP MULTIGAMES</h1>
+              <h1 className="text-4xl md:text-6xl font-bold text-white dharma">{dict.awpMultigames.page.title}</h1>
               <p className="text-sm text-white">
-                Scopri la nostra selezione di sistemi multigame per bar e sale giochi
+                {dict.awpMultigames.page.subtitle}
               </p>
             </div>
           </div>
         </div>
 
         {/* MULTIGAMES CARDS SECTION */}
-        <section className="relative bg-transparent">
+        <section className="relative bg-transparent pt-16">
           {/* Side gradients */}
           <div
             className="absolute top-[60%] -translate-y-1/2 left-0 w-[500px] h-[1200px] pointer-events-none"
@@ -191,17 +193,16 @@ export default function AwpMultigamesPage() {
           <div className="container mx-auto px-4 relative z-10 pb-12 md:pb-36">
             <div className="mb-6 md:mb-8 w-full flex flex-col items-center">
               <SmoothReveal className="inline-block bg-vitalYellow text-black text-xs font-medium px-2 py-[3.5px] rounded mb-2">
-                AWP MULTIGAMES
+                {dict.awpMultigames.page.section.badge}
               </SmoothReveal>
               <SmoothReveal>
                 <h2 className="text-center text-4xl md:text-7xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap px-4">
-                  SCOPRI I NOSTRI MULTIGAMES
+                  {dict.awpMultigames.page.section.title}
                 </h2>
               </SmoothReveal>
               <SmoothReveal>
                 <p className="text-center text-white/80 max-w-2xl mt-4">
-                  Sistemi multigame innovativi che offrono diverse slot in un'unica macchina, ideali per bar e sale
-                  giochi che vogliono massimizzare l'offerta di intrattenimento
+                  {dict.awpMultigames.page.section.description}
                 </p>
               </SmoothReveal>
             </div>

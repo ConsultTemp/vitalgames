@@ -20,7 +20,7 @@ export default function GamePage() {
         <div className="min-h-screen bg-black">
             {/* Hero Section */}
             <div className="relative w-full">
-                <div className="relative w-full min-h-[80vh]">
+                <div className="relative w-full min-h-[100vh]">
                     <Image
                         src={game.coverImage}
                         alt={game.name}

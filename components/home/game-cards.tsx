@@ -17,6 +17,7 @@ import FloatingImage from "../bg-image-component"
 import SmoothReveal from "../smooth-reveal"
 import { useState } from "react"
 import { Button } from "../ui/button"
+import { useLanguage } from "@/components/language-provider"
 
 
 const games = [
@@ -73,6 +74,7 @@ const games = [
 
 export default function GameCards() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const { dictionary: dict } = useLanguage()
 
   return (
     <section className="py-t md:pt-16 relative overflow-visible absolute bg-transparent">
@@ -93,9 +95,9 @@ export default function GameCards() {
       <div className="container mx-auto px-4 relative z-10 pb-12 md:pb-36">
         <div className="mb-6 md:mb-8 w-full flex flex-col items-center">
           <SmoothReveal className="inline-block bg-vitalYellow text-black text-xs font-medium px-2 py-[3.5px] rounded mb-2">
-            All games
+            {dict.home.gameCards.badge}
           </SmoothReveal>
-          <SmoothReveal> <h2 className="text-center text-4xl md:text-7xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap px-4">TUTTI I GIOCHI BY VITAL GAMES</h2></SmoothReveal>
+          <SmoothReveal> <h2 className="text-center text-4xl md:text-7xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap px-4">{dict.home.gameCards.title}</h2></SmoothReveal>
         </div>
 
         <div 
@@ -105,7 +107,7 @@ export default function GameCards() {
           {games.map((game) => (
             <div 
               key={game.id}
-              className={`transition-opacity duration-300 ${hoveredCard !== null && hoveredCard !== game.id ? 'opacity-50' : 'opacity-100'}`}
+              className={`transition hover:scale-[1.02] duration-300 ${hoveredCard !== null && hoveredCard !== game.id ? 'opacity-50' : 'opacity-100'}`}
               onMouseEnter={() => setHoveredCard(game.id)}
             >
               <SmoothReveal>
@@ -125,7 +127,11 @@ export default function GameCards() {
             </div>
           ))}
         </div>
-        <div className="w-full flex flex-col items-center py-16"><Button variant={"vitalYellow"} className="bg-vitalYellow px-8  text-sm text-black"><Link href="/allgames">Guarda tutti i giochi</Link></Button></div>
+        <div className="w-full flex flex-col items-center py-16">
+          <Button variant={"vitalYellow"} className="bg-vitalYellow px-8 text-sm text-black">
+            <Link href="/allgames">{dict.home.gameCards.viewAll}</Link>
+          </Button>
+        </div>
       </div>
     </section>
   )

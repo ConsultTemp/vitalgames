@@ -3,22 +3,26 @@
 import { useEffect, useState } from "react"
 
 export default function IntroVideo() {
-  const [showVideo, setShowVideo] = useState(true)
+  // Stato per verificare se l'utente ha già visto il video
+  const [hasSeenVideo, setHasSeenVideo] = useState(true) // Inizia con true per evitare flash durante idratazione
   const [isFading, setIsFading] = useState(false)
-
+  
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsFading(true)
-      setTimeout(() => {
-        setShowVideo(false)
-      }, 1000) // Wait for fade out animation to complete
-    }, 4000) // Start fading 1 second before video ends
-
-    return () => clearTimeout(timer)
+    // Controlla se il video è già stato visto in questa sessione
+    const videoSeen = sessionStorage.getItem('videoSeen')
+    
+    // Se non è stato visto, imposta lo stato per mostrarlo
+    if (!videoSeen) {
+      setHasSeenVideo(false)
+      sessionStorage.setItem('videoSeen', 'true')
+    }
   }, [])
-
-  if (!showVideo) return null
-
+  
+  // Non renderizzare nulla se l'utente ha già visto il video
+  if (hasSeenVideo) {
+    return null
+  }
+  
   return (
     <div 
       className={`fixed inset-0 z-[9999] bg-black w-screen h-screen overflow-hidden pointer-events-none transition-opacity duration-1000 ${
@@ -28,16 +32,19 @@ export default function IntroVideo() {
       <video
         autoPlay
         muted
-        className="w-screen h-screen object-cover pointer-events-none"
+        playsInline
+        className="w-screen h-screen object-cover"
         onEnded={() => {
+          // Avvia il fade out quando il video termina
           setIsFading(true)
+          // Rimuovi il componente completamente dopo che il fade è terminato
           setTimeout(() => {
-            setShowVideo(false)
-          }, 1000)
+            setHasSeenVideo(true)
+          }, 1000) // 1 secondo per il fade out
         }}
       >
         <source src="https://files.catbox.moe/mwyvxd.mp4" type="video/mp4" />
       </video>
     </div>
   )
-} 
+}

@@ -1,17 +1,21 @@
+'use client'
 import Image from "next/image"
 import Link from "next/link"
 import SmoothReveal from "../smooth-reveal"
 import { games } from "../../lib/allgamesmap"
+import { useLanguage } from "@/components/language-provider"
 
 interface RecommendedGamesProps {
   currentGame: typeof games[0]
 }
 
 export default function RecommendedGames({ currentGame }: RecommendedGamesProps) {
+  const { dictionary: dict } = useLanguage()
+  
   // Get the featured games for the current game
-  const featuredGames = currentGame.featured.map(slug => 
+  const featuredGames = currentGame.featured?.map(slug => 
     games.find(game => game.slug === slug)
-  ).filter((game): game is NonNullable<typeof game> => game !== undefined)
+  ).filter((game): game is NonNullable<typeof game> => game !== undefined) || []
 
   return (
     <section className="relative overflow-hidden">
@@ -25,11 +29,11 @@ export default function RecommendedGames({ currentGame }: RecommendedGamesProps)
         <div className="container mx-auto px-4">
           <div className="mb-8 w-full flex flex-col items-center">
             <SmoothReveal className="inline-block bg-vitalYellow text-black text-xs font-medium px-2 py-[3.5px] rounded mb-2">
-              Recommended Games
+              {dict.allGames.recommended.badge}
             </SmoothReveal>
             <SmoothReveal>
               <h2 className="text-center text-xl md:text-4xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap px-4">
-                GIOCHI CONSIGLIATI
+                {dict.allGames.recommended.title}
               </h2>
             </SmoothReveal>
           </div>
