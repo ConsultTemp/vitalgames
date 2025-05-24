@@ -20,7 +20,7 @@ type Slide = {
 const slides: Slide[] = [
   {
     type: "video",
-    src: "https://files.catbox.moe/mx9cy6.mp4",
+    src: "https://files.catbox.moe/6d4v6k.mp4",
   },
 ]
 
@@ -82,9 +82,6 @@ export default function HeroSection() {
           <CarouselNext className="right-4" />
         </Carousel>
       </div>
-
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50 z-10" />
 
       {/* Coming soon text - positioned at bottom left */}
       <div className="absolute bottom-8 left-8 z-20">

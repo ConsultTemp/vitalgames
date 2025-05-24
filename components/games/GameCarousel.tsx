@@ -65,11 +65,14 @@ export function GameCarousel({ games, onGameClick, type }: GameCarouselProps) {
             <div key={game.id} className="min-w-[250px] snap-start">
               <Link href={`/${type}/${game.slug}`} onClick={onGameClick}>
                 <div className="bg-black rounded-lg overflow-hidden border border-gray-700 hover:border-vitalYellow transition-colors">
-                  <div className="relative aspect-video">
-                    <Image src={game.image || "/placeholder.svg"} alt={game.title} fill className="object-cover" />
-                  </div>
-                  <div className="p-3">
-                    <h3 className="text-white font-medium text-sm">{game.title}</h3>
+                  <div className="relative w-[250px]">
+                    <Image 
+                      src={game.image || "/placeholder.svg"} 
+                      alt={game.title} 
+                      width={250}
+                      height={250}
+                      className="object-contain w-full h-auto" 
+                    />
                   </div>
                 </div>
               </Link>

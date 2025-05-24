@@ -3,7 +3,7 @@ import magicdiamond2 from '../public/magicdiamond2.png'
 import struzzo from '../public/struzzo.png'
 import diamante from '../public/multigames-cards/DIAMANTE_Converted.jpg'
 import casinoRoyale from '../public/multigames-cards/CASINO ROYALE_Converted.jpg'
-import luckySlot from '../public/multigames-cards/lucky_slot.png'
+import fortune from '../public/multigames/Multigames/Fortune Ultralink/fortune_ultralink.jpg'
 import champions from '../public/multigames-cards/CHAMPIONS.png'
 
 export const games = [
@@ -32,11 +32,25 @@ export const games = [
 
 export const multigames = [
     {
+        id: 3,
+        slug: 'champions-slot',
+        title: 'Champions Slot',
+        description: 'Reggaefrog is a fun and addictive game that challenges your reflexes and timing.',
+        image: champions,
+    },
+    {
         id: 1,
         slug: 'diamante',
         title: 'Diamante Multigame',
         description: 'Reggaefrog is a fun and addictive game that challenges your reflexes and timing.',
         image: diamante,
+    },
+    {
+        id: 4,
+        slug: 'fortune-ultralink',
+        title: 'Fortune Ultralink',
+        description: 'Reggaefrog is a fun and addictive game that challenges your reflexes and timing.',
+        image: fortune,
     },
     {
         id: 2,
@@ -45,18 +59,4 @@ export const multigames = [
         description: 'Reggaefrog is a fun and addictive game that challenges your reflexes and timing.',
         image: casinoRoyale,
     },
-    {
-        id: 3,
-        slug: 'champions-slot',
-        title: 'Champions Slot',
-        description: 'Reggaefrog is a fun and addictive game that challenges your reflexes and timing.',
-        image: champions,
-    },
-    {
-        id: 4,
-        slug: 'lucky-slot',
-        title: 'Lucky Slot',
-        description: 'Reggaefrog is a fun and addictive game that challenges your reflexes and timing.',
-        image: luckySlot,
-    }
 ]

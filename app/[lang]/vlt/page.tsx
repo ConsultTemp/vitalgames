@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import VLT_HERO from "@/public/bgcabinet.png"
+import VLT_HERO from "@/public/bgvlt.png"
 import VLT_CARD1 from "@/public/vlts/SLOT_2022_Alta 1.png"
 import VLT_CARD2 from "@/public/vlts/SLOT_2022_Alta.png"
 import VLT_CARD3 from "@/public/vlts/SLOT_2022_Bassa.png"
@@ -10,6 +10,7 @@ import VLT_CARD5 from "@/public/vlts/Octagon LQ 1.png"
 import VLT_CARD6 from "@/public/vlts/TRIOOCTAGON LQ.png"
 import Head from "next/head"
 import { useLanguage } from "@/components/language-provider"
+import VideoHero from "@/components/VideoHero"
 
 const vltCards = [
   {
@@ -111,27 +112,18 @@ export default function VLTPage() {
       </Head>
       <div className="min-h-screen bg-black">
         {/* Hero Section */}
-        <div className="relative w-full">
-          <div className="relative aspect-[16/9] w-full min-h-[80vh]">
-            <Image src={VLT_HERO || "/placeholder.svg"} alt="VLT Hero" fill className="object-cover" priority />
-            <div className="absolute inset-0 bg-black/30" />
-            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-              <div className="max-w-5xl mx-auto text-center">
-                <h1 className="text-8xl md:text-8xl dharma font-bold text-white mb-4">CABINET VLT</h1>
-                <p className="text-sm font-light text-white/80 max-w-2xl mx-auto">
-                  {dict.vlt.hero.description}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <VideoHero 
+          title="CABINET VLT"
+          subtitle={dict.vlt.hero.description}
+          videoUrl="https://files.catbox.moe/pvi9mx.mp4"
+        />
 
         {/* Cards Section */}
-        <div className="max-w-5xl mx-auto px-8 sm:px-16 lg:px-32 xl:px-48 py-32">
+        <div className="mx-auto px-8 sm:px-16 lg:px-32 xl:px-48 py-32">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {vltCards.map((card, index) => (
-              <div key={index} className="bg-[#171717] rounded-xl p-4 border border-1 border-[#3C3C3C]">
-                <div className="relative aspect-[3/2] w-full mb-4">
+              <div key={index} className="bg-[#171717] rounded-xl p-4 border border-1 border-[#3C3C3C] aspect-square py-8">
+                <div className="relative aspect-square w-full p-4 mb-8">
                   <Image
                     src={card.image || "/placeholder.svg"}
                     alt={card.name}
@@ -140,7 +132,6 @@ export default function VLTPage() {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-white text-center">{card.name}</h3>
-                <p className="text-sm text-white/70 text-center mt-2">{card.description[lang]}</p>
               </div>
             ))}
           </div>

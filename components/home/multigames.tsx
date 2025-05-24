@@ -1,20 +1,23 @@
-'use client'
+"use client"
+
+import { useRef, useEffect, useState } from "react"
+import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import FloatingImage from "../bg-image-component"
 import SmoothReveal from "../smooth-reveal"
 import { useLanguage } from "@/components/language-provider"
+import { Button } from "../ui/button"
 
-// Import images
+// Import delle immagini
 import casinoroyaleHover from "../../public/multigames-cards/CASINO ROYALE_Converted.jpg"
 import diamanteHover from "../../public/multigames-cards/DIAMANTE_Converted.jpg"
 import luckySlot from "../../public/multigames-cards/lucky_slot.png"
 import floatingImage1 from "../../public/squalorosa.png"
 import floatingImage2 from "../../public/squaloarancione.png"
-import { Button } from "../ui/button"
-import fortuneUltralink from '../../public/fortune_ultralink.png'
+import fortuneUltralink from "../../public/fortune_ultralink.png"
 
-const multigames = [
+export const multigames = [
     {
         id: 1,
         slug: "casino-royale",
@@ -38,74 +41,225 @@ const multigames = [
         slug: "lucky-slot",
         title: "Lucky Slot",
         image: luckySlot,
-    }
+    },
 ]
 
 export default function Multigames() {
     const { dictionary: dict } = useLanguage()
+    const containerRef = useRef<HTMLElement>(null)
+    const leftContentRef = useRef<HTMLDivElement>(null)
+    const rightContentRef = useRef<HTMLDivElement>(null)
+    
+    const [scrollState, setScrollState] = useState({
+        containerTop: 0,
+        containerBottom: 0,
+        containerHeight: 0,
+        leftColumnLeft: 0,
+        leftColumnWidth: 0,
+        leftHeight: 0,
+        rightHeight: 0
+    })
+
+    useEffect(() => {
+        const updateDimensions = () => {
+            if (!containerRef.current || !leftContentRef.current || !rightContentRef.current) return
+            
+            const containerHeight = containerRef.current.offsetHeight
+            const leftHeight = leftContentRef.current.offsetHeight
+            const rightHeight = rightContentRef.current.offsetHeight
+            
+            // Ottieni le dimensioni della colonna sinistra, non del container
+            const leftColumn = leftContentRef.current.parentElement
+            const leftColumnRect = leftColumn?.getBoundingClientRect()
+            
+            setScrollState(prev => ({ 
+                ...prev, 
+                containerHeight,
+                leftColumnLeft: leftColumnRect?.left || 0,
+                leftColumnWidth: leftColumn?.offsetWidth || 0,
+                leftHeight,
+                rightHeight
+            }))
+        }
+
+        updateDimensions()
+        window.addEventListener('resize', updateDimensions)
+
+        const handleScroll = () => {
+            if (!containerRef.current) return
+
+            const containerRect = containerRef.current.getBoundingClientRect()
+            
+            // Aggiorna anche le dimensioni della colonna sinistra ad ogni scroll
+            const leftColumn = leftContentRef.current?.parentElement
+            const leftColumnRect = leftColumn?.getBoundingClientRect()
+            
+            setScrollState(prev => ({
+                ...prev,
+                containerTop: containerRect.top,
+                containerBottom: containerRect.bottom,
+                leftColumnLeft: leftColumnRect?.left || prev.leftColumnLeft,
+                leftColumnWidth: leftColumn?.offsetWidth || prev.leftColumnWidth
+            }))
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true })
+        handleScroll()
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+            window.removeEventListener('resize', updateDimensions)
+        }
+    }, [])
+
+    // Calcola la posizione del contenuto di sinistra
+    const getLeftContentStyle = () => {
+        // Su mobile/tablet disabilita completamente l'effetto pin
+        if (window.innerWidth < 768) { // md breakpoint
+            return {
+                position: 'relative' as const,
+                top: 'auto',
+                transform: 'none'
+            }
+        }
+
+        const { containerTop, containerBottom, leftColumnLeft, leftColumnWidth, leftHeight } = scrollState
+        const windowHeight = window.innerHeight
+        
+        // Punto in cui il contenuto sarebbe centrato nello schermo
+        const centerPoint = (windowHeight - leftHeight) / 2
+        
+        // CONDIZIONI SIMMETRICHE per scroll up e down:
+        
+        // FASE 1: Inizio pin - quando il top del container raggiunge il punto di centratura
+        const shouldStartPin = containerTop <= centerPoint
+        
+        // FASE 3: Fine pin - quando il bottom del container - altezza contenuto raggiunge il punto di centratura  
+        const shouldEndPin = containerBottom <= centerPoint + leftHeight
+        
+        if (!shouldStartPin) {
+            // Prima del pin - scroll normale
+            return {
+                position: 'relative' as const,
+                top: 'auto',
+                transform: 'none'
+            }
+        }
+        
+        if (shouldEndPin) {
+            // Dopo il pin - scroll normale alla fine
+            // Posizionare in modo che sia allineato al bottom del container
+            return {
+                position: 'relative' as const,
+                top: 'auto',
+                transform: 'none',
+                marginTop: 'auto' // Questo lo spinge verso il basso nel flex container
+            }
+        }
+        
+        // FASE 2: Pin attivo - fixed al centro con posizione e larghezza corrette
+        return {
+            position: 'fixed' as const,
+            top: '50%',
+            left: `${leftColumnLeft}px`,
+            transform: 'translateY(-50%)',
+            width: `${leftColumnWidth}px`,
+            zIndex: 50
+        }
+    }
 
     return (
-        <section className="relative bg-transparent pt-32">
-            {/* Side gradients */}
-            <div
-                className="absolute top-[60%] -translate-y-1/2 left-0 w-[500px] h-[1200px] pointer-events-none"
-                style={{
-                    background: 'radial-gradient(circle at left center, rgba(255, 196, 0, 0.35) 0%, rgba(255, 196, 0, 0.2) 30%, rgba(255, 196, 0, 0.1) 50%, transparent 70%)'
-                }}
-            />
-            <div
-                className="absolute top-[40%] -translate-y-1/2 right-0 w-[500px] h-[1200px] pointer-events-none"
-                style={{
-                    background: 'radial-gradient(circle at right center, rgba(59, 130, 246, 0.35) 0%, rgba(59, 130, 246, 0.2) 30%, rgba(59, 130, 246, 0.1) 50%, transparent 70%)'
-                }}
-            />
-
-            <div className="absolute top-[0px] md:top-[0px] left-0 md:right-10 z-[1] max-w-[150px] md:max-w-none overflow-visible opacity-80">
-                <FloatingImage
-                    src={floatingImage1}
-                    alt="Floating Image 1"
-                    className="w-64 md:w-72 h-32 sm:h-48 md:h-72 overflow-visible"
-                />
-            </div>
-            <div className="absolute bottom-[-50px] right-[100px] md:right-[-10px] md:right-0 z-[1] max-w-[120px] md:max-w-none">
+        <section ref={containerRef} className="relative bg-transparent mb-16 mt-36">
+            <div className="absolute bottom-[0px] right-[50px] z-[1] max-w-[120px]">
                 <FloatingImage
                     src={floatingImage2}
                     alt="Floating Image 2"
-                    className="w-72 md:w-72 h-32 sm:h-48 md:h-72 overflow-visible"
+                    className="w-72 h-32 md:w-72 md:h-72"
                 />
             </div>
-            <div className="container mx-auto px-4 relative z-10 pb-12 md:pb-36">
-                <div className="mb-6 md:mb-8 w-full flex flex-col items-center">
-                    <SmoothReveal className="inline-block bg-vitalYellow text-black text-xs font-medium px-2 py-[3.5px] rounded mb-2">
-                        AWP MULTIGAMES
-                    </SmoothReveal>
-                    <SmoothReveal> <h2 className="text-center text-4xl md:text-7xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap px-4">{dict.home.multigames.title}</h2></SmoothReveal>
-                </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-2 md:gap-2 px-0 sm:px-4 md:px-4 lg:px-8">
-                    {multigames.map((game) => (
-                        <div key={game.id}>
-                            <SmoothReveal>
+            <div className="container mx-auto px-4 relative z-10">
+                <div className="flex flex-col md:flex-row">
+                    {/* Contenuto sinistro con pin effect smooth */}
+                    <div className="w-full md:w-1/2 lg:w-1/2 md:pr-8 lg:pr-16 relative flex flex-col">
+                        <motion.div 
+                            ref={leftContentRef}
+                            style={getLeftContentStyle()}
+                            transition={{ 
+                                type: "tween",
+                                duration: 0.1,
+                                ease: "linear"
+                            }}
+                        >
+                            <div className="absolute top-[-120px] left-[300px] z-[1] max-w-[150px] opacity-80">
+                                <FloatingImage
+                                    src={floatingImage1}
+                                    alt="Floating Image 1"
+                                    className="w-64 h-32 md:w-72 md:h-72"
+                                />
+                            </div>
+                            
+                            <div className="relative z-[1] pb-12 md:pb-0">
+                                <div className="text-vitalYellow text-xs font-medium py-[3.5px]">
+                                    {dict.home.multigames.subtitle}
+                                </div>
+                                <h2 className="text-8xl md:text-7xl lg:text-[100px] font-bold text-white dharma">
+                                    {dict.home.multigames.title} <br />
+                                    {dict.home.multigames.titleLine2}
+                                </h2>
+                                <p className="mb-8">
+                                    {dict.home.multigames.description}
+                                </p>
+
+                                <div>
+                                    <Button
+                                        variant={"vitalYellow"}
+                                        className="bg-vitalYellow text-sm text-black hover:opacity-90 px-8 w-fit"
+                                    >
+                                        <Link href="/awp-multigames">{dict.home.multigames.cta}</Link>
+                                    </Button>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+
+                    {/* Cards container - parte destra che scorre */}
+                    <div 
+                        ref={rightContentRef}
+                        className="w-full md:w-1/2 lg:w-1/2 flex flex-col gap-4"
+                    >
+                        {multigames.map((game, index) => (
+                            <motion.div
+                                key={game.id}
+                                initial={{ opacity: 0, y: 100 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ 
+                                    duration: 0.6, 
+                                    delay: index * 0.1,
+                                    ease: "easeOut" 
+                                }}
+                                viewport={{ once: true, margin: "-50px" }}
+                            >
                                 <Link
                                     href={`/awp-multigames/${game.slug}`}
-                                    className="w-full block group rounded-sm relative hover:scale-[1.01] transition-all duration-300"
+                                    className="w-full block group rounded-sm relative transition-all duration-300"
                                 >
-                                    <div className="w-full h-full relative rounded-sm">
+                                    <motion.div 
+                                        className="w-full relative rounded-sm aspect-[12/9]"
+                                        whileHover={{ scale: 1.02 }}
+                                        transition={{ duration: 0.3 }}
+                                    >
                                         <Image
-                                            src={game.image}
+                                            src={game.image || "/placeholder.svg"}
                                             alt={game.title}
                                             className="object-cover w-full h-full rounded-sm"
+                                            fill
                                         />
-                                    </div>
+                                    </motion.div>
                                 </Link>
-                            </SmoothReveal>
-                        </div>
-                    ))}
-                </div>
-                <div className="w-full flex flex-col items-center py-16">
-                    <Button variant={"vitalYellow"} className="bg-vitalYellow text-sm text-black hover:opacity-90 px-8">
-                        <Link href="/awp-multigames">{dict.footer.multigames}</Link>
-                    </Button>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

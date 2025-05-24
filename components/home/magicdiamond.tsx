@@ -183,7 +183,7 @@ export default function Home() {
             </Button>
             <Button
               variant="outline"
-              className="border-white text-white hover:bg-white/10 font-bold px-4 py-2 rounded-full"
+              className="border-white text-white hover:bg-white/5 font-bold px-4 py-2 rounded-full"
             >
               <Link href="/allgames/magic-diamond-2">{dict.home.magicDiamond.learnMore}</Link>
             </Button>

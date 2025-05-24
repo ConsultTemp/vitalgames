@@ -1,564 +1,589 @@
 {
-    "metadata": {
-      "title": "Vitalgames | Fabricante de Máquinas Tragamonedas desde 1996",
-      "description": "Desde 1996, Vitalgames ha sido líder en la producción de máquinas tragamonedas, VLT y sistemas multigame en Italia. Soluciones de juego innovadoras para bares, salas de juego y plataformas online."
+  "metadata": {
+    "title": "Vitalgames | Fabricante de Máquinas Tragamonedas desde 1996",
+    "description": "Desde 1996, Vitalgames ha sido líder en la producción de máquinas tragamonedas, VLT y sistemas multigame en Italia. Soluciones de juego innovadoras para bares, salas de juego y plataformas online."
+  },
+  "navigation": [
+    {
+      "key": "home",
+      "href": "/",
+      "label": "Inicio"
     },
-    "navigation": [
-      {
-        "key": "home",
-        "href": "/",
-        "label": "Inicio"
+    {
+      "key": "vlt",
+      "href": "/vlt",
+      "label": "VLT"
+    },
+    {
+      "key": "awp",
+      "href": "/awp-multigames",
+      "label": "AWP Multigames"
+    },
+    {
+      "key": "allgames",
+      "href": "/allgames",
+      "label": "Todos los Juegos"
+    },
+    {
+      "key": "contact",
+      "href": "/contact",
+      "label": "Contacto"
+    }
+  ],
+  "header": {
+    "contactUs": "Contáctanos"
+  },
+  "hero": {
+    "title": "Innovación en Juegos Desde 1996",
+    "description": "Vitalgames ha estado creando máquinas tragamonedas, VLT y sistemas multigame de alta calidad durante más de 25 años. Nuestros productos combinan tecnología de vanguardia con una jugabilidad atractiva para ofrecer experiencias de juego excepcionales.",
+    "subDescription": "Ya sea para bares, salas de juego o plataformas online, nuestras soluciones de juego están diseñadas para maximizar la participación de los jugadores y los ingresos de los operadores.",
+    "ctaButton": "Descubre Nuestros Juegos",
+    "bottomText": "Líder en Tecnología de Juegos Desde 1996"
+  },
+  "home": {
+    "ageRestriction": {
+      "title": "Responsible gaming: +18!",
+      "description": "El juego es ante todo entretenimiento. Vitalgames se compromete a que cada jugador viva una experiencia divertida y consciente. La promoción del juego responsable es la base de nuestra filosofía. Prohibido para menores de 18 años."
+    },
+    "cabinet": {
+      "title": "Descubre",
+      "titleLine2": "Nuestro",
+      "titleLine3": "Gabinetes Vlt",
+      "subtitle": "Vitalgames",
+      "description": "Explora nuestra selección de gabinetes VLT de alta calidad, diseñados para ofrecer una experiencia de juego inmersiva y atractiva.",
+      "features": [
+        "Pantallas de alta definición",
+        "Sistemas de sonido inmersivos",
+        "Diseño ergonómico",
+        "Construcción duradera",
+        "Iluminación personalizable"
+      ],
+      "cta": "Descubre más"
+    },
+    "technology": {
+      "title": "QUIÉNES SOMOS",
+      "subtitle": "La evolución del gaming, made in Italy",
+      "description": "VitalGames es sinónimo de garantía en el sector del gaming. Con raíces profundas en el mercado AWP, hemos atravesado generaciones de jugadores, innovando constantemente sin perder nunca nuestra identidad. Somos parte integral de la evolución del juego en Italia, punto de referencia para quienes buscan calidad, experiencia y una visión siempre proyectada hacia el futuro.",
+      "certification": {
+        "title": "Calidad italiana certificada",
+        "standard": "ISO 9001"
       },
-      {
-        "key": "vlt",
-        "href": "/vlt",
-        "label": "VLT"
-      },
-      {
-        "key": "awp",
-        "href": "/awp-multigames",
-        "label": "AWP Multigames"
-      },
-      {
-        "key": "allgames",
-        "href": "/allgames",
-        "label": "Todos los Juegos"
-      },
-      {
-        "key": "contact",
-        "href": "/contact",
-        "label": "Contacto"
+      "cta": "Trabaja con nosotros"
+    },
+    "winningTechnology": {
+      "title": "La evolución del gaming, made in Italy",
+      "description": "VitalGames es sinónimo de confiabilidad en la industria del juego. Con profundas raíces en el mercado AWP, hemos atravesado generaciones de jugadores, innovando constantemente sin perder nuestra identidad.",
+      "description2": "Somos una parte integral de la evolución del juego en Italia, un punto de referencia para quienes buscan calidad, experiencia y una visión siempre proyectada hacia el futuro.",
+      "cards": {
+        "iso": {
+          "description": "Certificado ISO, estándar de calidad"
+        },
+        "experience": {
+          "description": "Más de 25 años de actividad en el mercado del gaming italiano"
+        },
+        "games": {
+          "description": "Más de 40 mil títulos en Italia"
+        },
+        "partners": {
+          "description": "Colaboraciones consolidadas con los principales operadores y concesionarios del sector"
+        }
       }
-    ],
-    "header": {
-      "contactUs": "Contáctanos"
     },
+    "manhattan": {
+      "title": "MANHATTAN",
+      "comingSoon": "PRÓXIMAMENTE",
+      "description": "Vital Games presenta MultiGames Manhattan, una mezcla de 5 juegos únicos: Shark, Midnight Saloon, Mister Diamond, Cherry y Le Chef, diseñado para ofrecer entretenimiento completo y atractivo.",
+      "ageRestriction": "El juego está prohibido para menores de 18 años. Juega responsablemente"
+    },
+    "magicDiamond": {
+      "title": "ITALY'S TOP RATED",
+      "titleLine2": "ONLINE SLOT GAME",
+      "playNow": "Jugar ahora",
+      "startDemo": "Iniciar demo",
+      "learnMore": "Descubrir más",
+      "gameTitle": "Magic Diamond™"
+    },
+    "multigames": {
+      "title": "NUESTROS",
+      "titleLine2": "MULTIGAMES",
+      "subtitle": "Vital games",
+      "description": "Más allá del juego simple: experimenta Multigames by Vital Games.",
+      "features": [
+        "Múltiples juegos en una máquina",
+        "Fácil navegación",
+        "Actualizaciones regulares",
+        "Personalización para operadores"
+      ],
+      "cta": "Descubre Multigames",
+      "descriptions": {
+        "manhattan": "Sistema deportivo con 8 juegos temáticos de fútbol, perfecto para los amantes del deporte.",
+        "champions-slot": "Sistema deportivo con 8 juegos temáticos de fútbol, perfecto para los amantes del deporte.",
+        "fortune-ultralink": "Sistema multigame con 10 juegos temáticos de casino clásico, interfaz elegante y jackpot progresivo.",
+        "diamante": "Nuestra solución premium con 12 juegos exclusivos, gráficos HD y funciones de bonificación avanzadas.",
+        "piggy-gold": "Sistema divertido con 10 juegos temáticos de dinero y fortuna, perfecto para un público joven.",
+        "casino-royale": "Sistema multigame con 10 juegos temáticos de casino clásico, interfaz elegante y jackpot progresivo.",
+        "circus": "Sistema entretenido con 10 juegos temáticos de circo, perfecto para un público joven y dinámico.",
+        "rubino": "Multigame con 6 juegos premium, gráficos vibrantes y funciones de bonificación exclusivas.",
+        "zaffiro": "Sistema elegante con 8 juegos temáticos de gemas, efectos visuales espectaculares y alta tasa de ganancia.",
+        "golden-club": "Experiencia VIP con 8 juegos seleccionados, tema lujoso y mecánicas de juego innovadoras.",
+        "lucky-slot": "Sistema con 8 juegos temáticos de fortuna, gráficos atractivos y funciones de bonificación exclusivas."
+      }
+    },
+    "gameCards": {
+      "badge": "All games",
+      "title": "ALL GAMES",
+      "viewAll": "Ver todos los juegos"
+    },
+    "partners": {
+      "title": "Nuestros Partners"
+    }
+  },
+  "vlt": {
+    "title": "GABINETES VLT",
+    "description": "Descubre nuestros gabinetes VLT de alta calidad, diseñados para ofrecer una experiencia de juego superior en salas dedicadas",
     "hero": {
-      "title": "Innovación en Juegos Desde 1996",
-      "description": "Vitalgames ha estado creando máquinas tragamonedas, VLT y sistemas multigame de alta calidad durante más de 25 años. Nuestros productos combinan tecnología de vanguardia con una jugabilidad atractiva para ofrecer experiencias de juego excepcionales.",
-      "subDescription": "Ya sea para bares, salas de juego o plataformas online, nuestras soluciones de juego están diseñadas para maximizar la participación de los jugadores y los ingresos de los operadores.",
-      "ctaButton": "Descubre Nuestros Juegos",
-      "bottomText": "Líder en Tecnología de Juegos Desde 1996"
+      "title": "Terminales de Video Lotería",
+      "subtitle": "Soluciones de Juego Avanzadas",
+      "description": "Descubra nuestros armarios VLT"
     },
-    "home": {
-      "ageRestriction": {
-        "title": "Restricción de Edad +18",
-        "description": "El juego debe ser un entretenimiento seguro. Promovemos el juego responsable y recordamos que nuestros productos están destinados exclusivamente a mayores de edad (18+)."
-      },
-      "cabinet": {
-        "title": "DESCUBRE",
-        "titleLine2": "NUESTROS",
-        "titleLine3": "GABINETES VLT",
-        "subtitle": "Vitalgames",
-        "description": "Explora nuestra selección de gabinetes VLT de alta calidad, diseñados para ofrecer una experiencia de juego inmersiva y atractiva.",
-        "features": [
-          "Pantallas de alta definición",
-          "Sistemas de sonido inmersivos",
-          "Diseño ergonómico",
-          "Construcción duradera",
-          "Iluminación personalizable"
-        ],
-        "cta": "Descubre más"
-      },
-      "technology": {
-        "title": "VITAL GAMES",
-        "subtitle": "TECNOLOGÍA GANADORA",
-        "certification": {
-          "title": "Calidad italiana certificada",
-          "standard": "ISO 9001"
-        },
-        "cta": "Trabaja con nosotros"
-      },
-      "winningTechnology": {
-        "title": "TECNOLOGÍA",
-        "titleLine2": "GANADORA",
-        "subtitle": "Vitalgames",
-        "description": "Nuestros juegos están diseñados con algoritmos avanzados para garantizar una experiencia de juego justa y emocionante.",
-        "features": [
-          "Generadores de números aleatorios certificados",
-          "Matemáticas equilibradas",
-          "Características de bonificación emocionantes",
-          "Jackpots progresivos"
-        ],
-        "cta": "Descubre Nuestras Características de Juego"
-      },
-      "magicDiamond": {
-        "title": "ITALY'S TOP RATED",
-        "titleLine2": "ONLINE SLOT GAME",
-        "playNow": "Jugar ahora",
-        "startDemo": "Iniciar demo",
-        "learnMore": "Descubrir más",
-        "gameTitle": "Magic Diamond™"
-      },
-      "multigames": {
-        "title": "DESCUBRE NUESTROS MULTIGAMES",
-        "subtitle": "Vitalgames",
-        "description": "Nuestros sistemas multigame ofrecen una variedad de juegos en una sola máquina, maximizando el espacio y la diversión.",
-        "features": [
-          "Múltiples juegos en una máquina",
-          "Fácil navegación",
-          "Actualizaciones regulares",
-          "Personalización para operadores"
-        ],
-        "cta": "Ver Opciones Multigame"
-      },
-      "gameCards": {
-        "badge": "All games",
-        "title": "TODOS LOS JUEGOS BY VITAL GAMES",
-        "viewAll": "Ver todos los juegos"
-      }
-    },
-    "vlt": {
-      "title": "GABINETES VLT",
-      "description": "Descubre nuestros gabinetes VLT de alta calidad, diseñados para ofrecer una experiencia de juego superior en salas dedicadas",
-      "hero": {
-        "title": "Terminales de Video Lotería",
-        "subtitle": "Soluciones de Juego Avanzadas",
-        "description": "Nuestros sistemas VLT representan el pináculo de la tecnología de juego, ofreciendo experiencias de juego seguras y en red con monitoreo y control central."
-      },
-      "features": {
-        "title": "Características VLT",
-        "items": [
-          {
-            "title": "Juego en Red",
-            "description": "Todos nuestros VLT están conectados a un sistema central para monitoreo, control y gestión de jackpot."
-          },
-          {
-            "title": "Plataforma Segura",
-            "description": "Construida con múltiples capas de seguridad para proteger tanto a los jugadores como a los operadores."
-          },
-          {
-            "title": "Contenido Premium",
-            "description": "Con nuestros juegos más avanzados con características exclusivas y jackpots."
-          },
-          {
-            "title": "Cumplimiento Normativo",
-            "description": "Diseñados para cumplir con todos los requisitos regulatorios en diferentes jurisdicciones."
-          }
-        ]
-      },
-      "systems": {
-        "title": "Nuestros Sistemas VLT",
-        "description": "Vitalgames ofrece una gama de soluciones VLT para satisfacer diferentes requisitos regulatorios y necesidades de los operadores.",
-        "items": [
-          {
-            "title": "Diamond VLT",
-            "description": "Nuestro sistema VLT insignia con juegos premium y características avanzadas."
-          },
-          {
-            "title": "Crystal Network",
-            "description": "Una solución VLT escalable ideal para lugares medianos y grandes."
-          },
-          {
-            "title": "Ruby Link",
-            "description": "Sistema VLT compacto perfecto para ubicaciones más pequeñas con espacio limitado."
-          }
-        ]
-      },
-      "benefits": {
-        "title": "Beneficios para el Operador",
-        "items": [
-          {
-            "title": "Monitoreo en Tiempo Real",
-            "description": "Rastrea el rendimiento, diagnostica problemas y gestiona tu red VLT en tiempo real."
-          },
-          {
-            "title": "Configuración Flexible",
-            "description": "Personaliza la selección de juegos, límites de apuestas y características para adaptarse a tu local."
-          },
-          {
-            "title": "Informes Detallados",
-            "description": "Accede a informes completos sobre rendimiento, comportamiento del jugador e ingresos."
-          },
-          {
-            "title": "Actualizaciones Remotas",
-            "description": "Implementa nuevos juegos y actualizaciones de software de forma remota sin interrupciones."
-          }
-        ]
-      },
-      "cabinets": [
+    "features": {
+      "title": "Características VLT",
+      "items": [
         {
-          "name": "VLT Classic",
-          "description": "Gabinete VLT clásico con diseño elegante e interfaz intuitiva, ideal para salas de juego tradicionales."
+          "title": "Juego en Red",
+          "description": "Todos nuestros VLT están conectados a un sistema central para monitoreo, control y gestión de jackpot."
         },
         {
-          "name": "VLT Pro",
-          "description": "Versión profesional con pantalla HD y sistema de audio avanzado para una experiencia de juego inmersiva."
+          "title": "Plataforma Segura",
+          "description": "Construida con múltiples capas de seguridad para proteger tanto a los jugadores como a los operadores."
         },
         {
-          "name": "VLT Deluxe",
-          "description": "Gabinete de lujo con acabados premium y tecnología de vanguardia para salas VLT exclusivas."
+          "title": "Contenido Premium",
+          "description": "Con nuestros juegos más avanzados con características exclusivas y jackpots."
         },
         {
-          "name": "VLT Premium",
-          "description": "Solución premium con doble pantalla e iluminación LED personalizable para maximizar el atractivo."
-        },
-        {
-          "name": "VLT Gold",
-          "description": "Diseño octagonal distintivo con gráficos 4K y sistema de jackpot conectado para ganancias más emocionantes."
-        },
-        {
-          "name": "VLT Platinum",
-          "description": "Nuestra solución de gama alta con triple pantalla, efectos visuales extraordinarios y comodidad ergonómica."
+          "title": "Cumplimiento Normativo",
+          "description": "Diseñados para cumplir con todos los requisitos regulatorios en diferentes jurisdicciones."
         }
       ]
     },
-    "awpMultigames": {
-      "hero": {
-        "title": "Sistemas Multigame AWP",
-        "subtitle": "Múltiples Juegos, Una Máquina",
-        "description": "Nuestros sistemas multigame AWP ofrecen una variedad de experiencias de juego en un solo gabinete, maximizando el espacio en el suelo y la participación de los jugadores."
+    "systems": {
+      "title": "Nuestros Sistemas VLT",
+      "description": "Vitalgames ofrece una gama de soluciones VLT para satisfacer diferentes requisitos regulatorios y necesidades de los operadores.",
+      "items": [
+        {
+          "title": "Diamond VLT",
+          "description": "Nuestro sistema VLT insignia con juegos premium y características avanzadas."
+        },
+        {
+          "title": "Crystal Network",
+          "description": "Una solución VLT escalable ideal para lugares medianos y grandes."
+        },
+        {
+          "title": "Ruby Link",
+          "description": "Sistema VLT compacto perfecto para ubicaciones más pequeñas con espacio limitado."
+        }
+      ]
+    },
+    "benefits": {
+      "title": "Beneficios para el Operador",
+      "items": [
+        {
+          "title": "Monitoreo en Tiempo Real",
+          "description": "Rastrea el rendimiento, diagnostica problemas y gestiona tu red VLT en tiempo real."
+        },
+        {
+          "title": "Configuración Flexible",
+          "description": "Personaliza la selección de juegos, límites de apuestas y características para adaptarse a tu local."
+        },
+        {
+          "title": "Informes Detallados",
+          "description": "Accede a informes completos sobre rendimiento, comportamiento del jugador e ingresos."
+        },
+        {
+          "title": "Actualizaciones Remotas",
+          "description": "Implementa nuevos juegos y actualizaciones de software de forma remota sin interrupciones."
+        }
+      ]
+    },
+    "cabinets": [
+      {
+        "name": "VLT Classic",
+        "description": "Gabinete VLT clásico con diseño elegante e interfaz intuitiva, ideal para salas de juego tradicionales."
       },
+      {
+        "name": "VLT Pro",
+        "description": "Versión profesional con pantalla HD y sistema de audio avanzado para una experiencia de juego inmersiva."
+      },
+      {
+        "name": "VLT Deluxe",
+        "description": "Gabinete de lujo con acabados premium y tecnología de vanguardia para salas VLT exclusivas."
+      },
+      {
+        "name": "VLT Premium",
+        "description": "Solución premium con doble pantalla e iluminación LED personalizable para maximizar el atractivo."
+      },
+      {
+        "name": "VLT Gold",
+        "description": "Diseño octagonal distintivo con gráficos 4K y sistema de jackpot conectado para ganancias más emocionantes."
+      },
+      {
+        "name": "VLT Platinum",
+        "description": "Nuestra solución de gama alta con triple pantalla, efectos visuales extraordinarios y comodidad ergonómica."
+      }
+    ]
+  },
+  "awpMultigames": {
+    "hero": {
+      "title": "Sistemas Multigame AWP",
+      "subtitle": "Múltiples Juegos, Una Máquina",
+      "description": "Nuestros sistemas multigame AWP ofrecen una variedad de experiencias de juego en un solo gabinete, maximizando el espacio en el suelo y la participación de los jugadores."
+    },
+    "features": {
+      "title": "Características Multigame",
+      "items": [
+        {
+          "title": "Variedad de Juegos",
+          "description": "Hasta 50 juegos diferentes disponibles en una sola máquina."
+        },
+        {
+          "title": "Navegación Fácil",
+          "description": "Interfaz intuitiva que permite a los jugadores encontrar y cambiar rápidamente entre juegos."
+        },
+        {
+          "title": "Actualizaciones Regulares",
+          "description": "Nuevos juegos añadidos regularmente para mantener el contenido fresco y atractivo."
+        },
+        {
+          "title": "Personalización",
+          "description": "Los operadores pueden seleccionar qué juegos presentar según las preferencias de los jugadores."
+        }
+      ]
+    },
+    "systems": {
+      "title": "Nuestros Sistemas Multigame",
+      "description": "Vitalgames ofrece varias plataformas multigame para adaptarse a diferentes tipos de locales y preferencias de los jugadores.",
+      "items": [
+        {
+          "title": "Diamond Collection",
+          "description": "Nuestro sistema multigame premium con nuestros títulos más populares."
+        },
+        {
+          "title": "Sapphire Selection",
+          "description": "Una mezcla equilibrada de juegos clásicos y nuevos para un amplio atractivo."
+        },
+        {
+          "title": "Emerald Series",
+          "description": "Enfocado en mecánicas de juego innovadoras y características de bonificación."
+        }
+      ]
+    },
+    "benefits": {
+      "title": "Beneficios para el Operador",
+      "items": [
+        {
+          "title": "Eficiencia de Espacio",
+          "description": "Ofrece más variedad de juegos sin requerir espacio adicional."
+        },
+        {
+          "title": "Retención de Jugadores",
+          "description": "Mantén a los jugadores comprometidos por más tiempo con múltiples opciones de juego."
+        },
+        {
+          "title": "Optimización de Ingresos",
+          "description": "Rastrea qué juegos rinden mejor y ajusta tu oferta en consecuencia."
+        },
+        {
+          "title": "Inversión a Prueba de Futuro",
+          "description": "Las actualizaciones regulares aseguran que tus máquinas siempre ofrezcan contenido fresco."
+        }
+      ]
+    },
+    "page": {
+      "title": "AWP MULTIGAMES",
+      "subtitle": "Descubre nuestra selección de sistemas multigame para bares y salas de juego",
+      "section": {
+        "badge": "AWP MULTIGAMES",
+        "title": "DESCUBRE NUESTROS MULTIGAMES",
+        "description": "Sistemas multigame innovadores que ofrecen múltiples slots en una sola máquina, ideales para bares y salas de juego que buscan maximizar la oferta de entretenimiento"
+      }
+    }
+  },
+  "allGames": {
+    "hero": {
+      "title": "Nuestra Biblioteca de Juegos",
+      "subtitle": "Experiencias de Juego Diversas",
+      "description": "Explora nuestra extensa colección de juegos, desde las clásicas máquinas de frutas hasta las innovadoras video slots con características de bono inmersivas.",
+      "discoverAll": "Descubre todos nuestros juegos"
+    },
+    "categories": {
+      "all": "Todos los Juegos",
+      "classic": "Slots Clásicas",
+      "video": "Video Slots",
+      "fruit": "Juegos de Frutas",
+      "card": "Juegos de Cartas",
+      "special": "Juegos Especiales"
+    },
+    "filters": {
+      "title": "Filtrar Juegos",
+      "byCategory": "Por Categoría",
+      "byFeatures": "Por Características",
+      "search": "Buscar juegos...",
       "features": {
-        "title": "Características Multigame",
-        "items": [
+        "freeSpin": "Giros Gratis",
+        "bonus": "Juegos de Bonificación",
+        "jackpot": "Jackpots",
+        "multiplier": "Multiplicadores"
+      }
+    },
+    "noGames": "No se encontraron juegos que coincidan con tus criterios.",
+    "loadMore": "Cargar Más Juegos",
+    "recommended": {
+      "badge": "Juegos Recomendados",
+      "title": "JUEGOS RECOMENDADOS"
+    },
+    "youMightAlsoLike": "También te podría interesar"
+  },
+  "gameDetail": {
+    "info": {
+      "releaseDate": "Fecha de Lanzamiento",
+      "category": "Categoría",
+      "rtp": "Retorno al Jugador",
+      "volatility": "Volatilidad",
+      "minBet": "Apuesta Mínima",
+      "maxBet": "Apuesta Máxima",
+      "maxWin": "Ganancia Máxima"
+    },
+    "features": {
+      "title": "Características del Juego",
+      "freeSpins": "Giros Gratis",
+      "bonusGames": "Juegos de Bonificación",
+      "wildSymbols": "Símbolos Wild",
+      "scatterSymbols": "Símbolos Scatter",
+      "multipliers": "Multiplicadores",
+      "jackpots": "Jackpots"
+    },
+    "description": {
+      "title": "Descripción del Juego"
+    },
+    "howToPlay": {
+      "title": "Cómo Jugar",
+      "steps": {
+        "title": "Pasos del Juego",
+        "selectBet": "Selecciona tu apuesta",
+        "spin": "Presiona girar",
+        "winEvaluation": "Se evalúan las ganancias",
+        "features": "Pueden activarse características especiales"
+      }
+    },
+    "symbols": {
+      "title": "Resumen de Símbolos",
+      "high": "Símbolos de Alto Valor",
+      "low": "Símbolos de Bajo Valor",
+      "special": "Símbolos Especiales"
+    },
+    "relatedGames": {
+      "title": "Juegos Similares Que Podrían Gustarte"
+    }
+  },
+  "multigameDetail": {
+    "info": {
+      "releaseDate": "Fecha de Lanzamiento",
+      "gameCount": "Número de Juegos",
+      "cabinetType": "Tipo de Gabinete",
+      "systemRequirements": "Requisitos del Sistema"
+    },
+    "features": {
+      "title": "Características del Sistema",
+      "gameSelection": "Selección de Juegos",
+      "userInterface": "Interfaz de Usuario",
+      "reportingTools": "Herramientas de Informes",
+      "remoteManagement": "Gestión Remota"
+    },
+    "includedGames": {
+      "title": "Juegos Incluidos"
+    },
+    "specifications": {
+      "title": "Especificaciones Técnicas",
+      "hardware": "Hardware",
+      "software": "Software",
+      "connectivity": "Conectividad",
+      "dimensions": "Dimensiones"
+    },
+    "videoGallery": {
+      "badge": "GALERÍA DE VIDEOS",
+      "title": "VER LOS VIDEOS"
+    },
+    "discover": {
+      "title": "Descubre"
+    },
+    "partOf": "Parte de"
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "Estamos aquí para ayudarte con cualquier pregunta sobre nuestros productos y servicios.",
+    "info": {
+      "address": {
+        "title": "Dirección",
+        "value": "Via Milano 123, 20100 Milán, Italia"
+      },
+      "phone": {
+        "title": "Teléfono",
+        "value": "+39 02 1234567"
+      },
+      "email": {
+        "title": "Email",
+        "value": "info@vitalgames.com"
+      },
+      "hours": {
+        "title": "Horario de Trabajo",
+        "value": "Lunes a Viernes: 9:00 - 18:00"
+      }
+    },
+    "form": {
+      "title": "Envíanos un Mensaje",
+      "name": {
+        "label": "Nombre Completo",
+        "placeholder": "Introduce tu nombre completo"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Introduce tu dirección de email"
+      },
+      "subject": {
+        "label": "Asunto",
+        "placeholder": "¿De qué trata tu mensaje?"
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "¿Cómo podemos ayudarte?"
+      },
+      "submit": "Enviar Mensaje",
+      "success": "Tu mensaje ha sido enviado. Te responderemos pronto.",
+      "error": "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo."
+    },
+    "departments": {
+      "title": "Departamentos",
+      "sales": {
+        "title": "Ventas",
+        "description": "Para consultas sobre la compra de nuestros productos",
+        "email": "ventas@vitalgames.com"
+      },
+      "support": {
+        "title": "Soporte Técnico",
+        "description": "Para asistencia técnica con nuestros productos",
+        "email": "soporte@vitalgames.com"
+      },
+      "business": {
+        "title": "Desarrollo de Negocios",
+        "description": "Para asociaciones y oportunidades de negocio",
+        "email": "negocios@vitalgames.com"
+      }
+    }
+  },
+  "footer": {
+    "sections": {
+      "games": {
+        "title": "Juegos",
+        "links": [
           {
-            "title": "Variedad de Juegos",
-            "description": "Hasta 50 juegos diferentes disponibles en una sola máquina."
+            "label": "Todos los juegos",
+            "href": "/allgames"
           },
           {
-            "title": "Navegación Fácil",
-            "description": "Interfaz intuitiva que permite a los jugadores encontrar y cambiar rápidamente entre juegos."
+            "label": "Multigames",
+            "href": "/awp-multigames"
           },
           {
-            "title": "Actualizaciones Regulares",
-            "description": "Nuevos juegos añadidos regularmente para mantener el contenido fresco y atractivo."
-          },
-          {
-            "title": "Personalización",
-            "description": "Los operadores pueden seleccionar qué juegos presentar según las preferencias de los jugadores."
+            "label": "Cabinet",
+            "href": "/cabinets"
           }
         ]
       },
-      "systems": {
-        "title": "Nuestros Sistemas Multigame",
-        "description": "Vitalgames ofrece varias plataformas multigame para adaptarse a diferentes tipos de locales y preferencias de los jugadores.",
-        "items": [
+      "company": {
+        "title": "Vital Games",
+        "links": [
           {
-            "title": "Diamond Collection",
-            "description": "Nuestro sistema multigame premium con nuestros títulos más populares."
+            "label": "Quiénes somos",
+            "href": "/about"
           },
           {
-            "title": "Sapphire Selection",
-            "description": "Una mezcla equilibrada de juegos clásicos y nuevos para un amplio atractivo."
+            "label": "Contáctanos",
+            "href": "/contact"
           },
           {
-            "title": "Emerald Series",
-            "description": "Enfocado en mecánicas de juego innovadoras y características de bonificación."
+            "label": "Instagram",
+            "href": "https://instagram.com/vitalgames"
           }
         ]
       },
-      "benefits": {
-        "title": "Beneficios para el Operador",
-        "items": [
+      "usage": {
+        "title": "Uso",
+        "links": [
           {
-            "title": "Eficiencia de Espacio",
-            "description": "Ofrece más variedad de juegos sin requerir espacio adicional."
-          },
-          {
-            "title": "Retención de Jugadores",
-            "description": "Mantén a los jugadores comprometidos por más tiempo con múltiples opciones de juego."
-          },
-          {
-            "title": "Optimización de Ingresos",
-            "description": "Rastrea qué juegos rinden mejor y ajusta tu oferta en consecuencia."
-          },
-          {
-            "title": "Inversión a Prueba de Futuro",
-            "description": "Las actualizaciones regulares aseguran que tus máquinas siempre ofrezcan contenido fresco."
+            "label": "Privacidad & Política",
+            "href": "/privacy"
           }
         ]
-      },
-      "page": {
-        "title": "AWP MULTIGAMES",
-        "subtitle": "Descubre nuestra selección de sistemas multigame para bares y salas de juego",
-        "section": {
-          "badge": "AWP MULTIGAMES",
-          "title": "DESCUBRE NUESTROS MULTIGAMES",
-          "description": "Sistemas multigame innovadores que ofrecen múltiples slots en una sola máquina, ideales para bares y salas de juego que buscan maximizar la oferta de entretenimiento"
-        }
       }
     },
-    "allGames": {
-      "hero": {
-        "title": "Nuestra Biblioteca de Juegos",
-        "subtitle": "Experiencias de Juego Diversas",
-        "description": "Explora nuestra extensa colección de juegos, desde las clásicas máquinas de frutas hasta las innovadoras video slots con características de bono inmersivas.",
-        "discoverAll": "Descubre todos nuestros juegos"
-      },
-      "categories": {
-        "all": "Todos los Juegos",
-        "classic": "Slots Clásicas",
-        "video": "Video Slots",
-        "fruit": "Juegos de Frutas",
-        "card": "Juegos de Cartas",
-        "special": "Juegos Especiales"
-      },
-      "filters": {
-        "title": "Filtrar Juegos",
-        "byCategory": "Por Categoría",
-        "byFeatures": "Por Características",
-        "search": "Buscar juegos...",
-        "features": {
-          "freeSpin": "Giros Gratis",
-          "bonus": "Juegos de Bonificación",
-          "jackpot": "Jackpots",
-          "multiplier": "Multiplicadores"
-        }
-      },
-      "noGames": "No se encontraron juegos que coincidan con tus criterios.",
-      "loadMore": "Cargar Más Juegos",
-      "recommended": {
-        "badge": "Juegos Recomendados",
-        "title": "JUEGOS RECOMENDADOS"
-      }
-    },
-    "gameDetail": {
-      "info": {
-        "releaseDate": "Fecha de Lanzamiento",
-        "category": "Categoría",
-        "rtp": "Retorno al Jugador",
-        "volatility": "Volatilidad",
-        "minBet": "Apuesta Mínima",
-        "maxBet": "Apuesta Máxima",
-        "maxWin": "Ganancia Máxima"
-      },
-      "features": {
-        "title": "Características del Juego",
-        "freeSpins": "Giros Gratis",
-        "bonusGames": "Juegos de Bonificación",
-        "wildSymbols": "Símbolos Wild",
-        "scatterSymbols": "Símbolos Scatter",
-        "multipliers": "Multiplicadores",
-        "jackpots": "Jackpots"
-      },
-      "description": {
-        "title": "Descripción del Juego"
-      },
-      "howToPlay": {
-        "title": "Cómo Jugar",
-        "steps": {
-          "title": "Pasos del Juego",
-          "selectBet": "Selecciona tu apuesta",
-          "spin": "Presiona girar",
-          "winEvaluation": "Se evalúan las ganancias",
-          "features": "Pueden activarse características especiales"
-        }
-      },
-      "symbols": {
-        "title": "Resumen de Símbolos",
-        "high": "Símbolos de Alto Valor",
-        "low": "Símbolos de Bajo Valor",
-        "special": "Símbolos Especiales"
-      },
-      "relatedGames": {
-        "title": "Juegos Similares Que Podrían Gustarte"
-      }
-    },
-    "multigameDetail": {
-      "info": {
-        "releaseDate": "Fecha de Lanzamiento",
-        "gameCount": "Número de Juegos",
-        "cabinetType": "Tipo de Gabinete",
-        "systemRequirements": "Requisitos del Sistema"
-      },
-      "features": {
-        "title": "Características del Sistema",
-        "gameSelection": "Selección de Juegos",
-        "userInterface": "Interfaz de Usuario",
-        "reportingTools": "Herramientas de Informes",
-        "remoteManagement": "Gestión Remota"
-      },
-      "includedGames": {
-        "title": "Juegos Incluidos"
-      },
-      "specifications": {
-        "title": "Especificaciones Técnicas",
-        "hardware": "Hardware",
-        "software": "Software",
-        "connectivity": "Conectividad",
-        "dimensions": "Dimensiones"
-      },
-      "videoGallery": {
-        "badge": "GALERÍA DE VIDEOS",
-        "title": "VER LOS VIDEOS"
-      },
-      "discover": {
-        "title": "Descubre"
-      }
-    },
-    "contact": {
-      "title": "Contáctanos",
-      "subtitle": "Estamos aquí para ayudarte con cualquier pregunta sobre nuestros productos y servicios.",
-      "info": {
-        "address": {
-          "title": "Dirección",
-          "value": "Via Milano 123, 20100 Milán, Italia"
-        },
-        "phone": {
-          "title": "Teléfono",
-          "value": "+39 02 1234567"
-        },
-        "email": {
-          "title": "Email",
-          "value": "info@vitalgames.com"
-        },
-        "hours": {
-          "title": "Horario de Trabajo",
-          "value": "Lunes a Viernes: 9:00 - 18:00"
-        }
-      },
-      "form": {
-        "title": "Envíanos un Mensaje",
-        "name": {
-          "label": "Nombre Completo",
-          "placeholder": "Introduce tu nombre completo"
-        },
-        "email": {
-          "label": "Email",
-          "placeholder": "Introduce tu dirección de email"
-        },
-        "subject": {
-          "label": "Asunto",
-          "placeholder": "¿De qué trata tu mensaje?"
-        },
-        "message": {
-          "label": "Mensaje",
-          "placeholder": "¿Cómo podemos ayudarte?"
-        },
-        "submit": "Enviar Mensaje",
-        "success": "Tu mensaje ha sido enviado. Te responderemos pronto.",
-        "error": "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo."
-      },
-      "departments": {
-        "title": "Departamentos",
-        "sales": {
-          "title": "Ventas",
-          "description": "Para consultas sobre la compra de nuestros productos",
-          "email": "ventas@vitalgames.com"
-        },
-        "support": {
-          "title": "Soporte Técnico",
-          "description": "Para asistencia técnica con nuestros productos",
-          "email": "soporte@vitalgames.com"
-        },
-        "business": {
-          "title": "Desarrollo de Negocios",
-          "description": "Para asociaciones y oportunidades de negocio",
-          "email": "negocios@vitalgames.com"
-        }
-      }
-    },
-    "footer": {
-      "sections": {
-        "products": {
-          "title": "Productos",
-          "links": [
-            {
-              "label": "Sistemas VLT",
-              "href": "/vlt"
-            },
-            {
-              "label": "AWP Multigames",
-              "href": "/awp-multigames"
-            },
-            {
-              "label": "Biblioteca de Juegos",
-              "href": "/allgames"
-            },
-            {
-              "label": "Gabinetes",
-              "href": "/cabinets"
-            }
-          ]
-        },
-        "company": {
-          "title": "Empresa",
-          "links": [
-            {
-              "label": "Sobre Nosotros",
-              "href": "/about"
-            },
-            {
-              "label": "Contacto",
-              "href": "/contact"
-            },
-            {
-              "label": "Carreras",
-              "href": "/careers"
-            },
-            {
-              "label": "Noticias",
-              "href": "/news"
-            }
-          ]
-        },
-        "legal": {
-          "title": "Legal",
-          "links": [
-            {
-              "label": "Términos de Servicio",
-              "href": "/terms"
-            },
-            {
-              "label": "Política de Privacidad",
-              "href": "/privacy"
-            },
-            {
-              "label": "Juego Responsable",
-              "href": "/responsible-gaming"
-            },
-            {
-              "label": "Licencias",
-              "href": "/licenses"
-            }
-          ]
-        }
-      },
-      "games": "Juegos",
-      "allGames": "Todos los juegos",
-      "multigames": "Todos los multigames",
-      "cabinet": "Gabinetes",
-      "onlineGames": "Juegos online",
-      "company": "Vitalgames",
-      "aboutUs": "Quiénes somos",
+    "copyright": "Vital Games Project S.r.l© 2025. Todos los derechos reservados. P. IVA: 08160840968. Powered by DK"
+  },
+  "common": {
+    "buttons": {
+      "readMore": "Leer Más",
+      "viewAll": "Ver Todos",
+      "learnMore": "Más Información",
       "contactUs": "Contáctanos",
-      "instagram": "Instagram",
-      "usage": "Uso",
-      "privacyPolicies": "Privacidad & Políticas",
-      "copyright": "© 2025 Vital Games Project S.r.l©. Todos los derechos reservados. P. IVA: 08160840966. Desarrollado por DK",
-      "responsibleGaming": "Por favor, juega con responsabilidad. El juego debe ser entretenido y no una forma de ganar dinero. Recuerda que el juego puede ser adictivo. Si necesitas ayuda, contacta con una organización de apoyo al juego."
+      "backToHome": "Volver al Inicio",
+      "backToGames": "Volver a los Juegos",
+      "playNow": "Jugar Ahora",
+      "downloadBrochure": "Descargar Folleto"
     },
-    "common": {
-      "buttons": {
-        "readMore": "Leer Más",
-        "viewAll": "Ver Todos",
-        "learnMore": "Más Información",
-        "contactUs": "Contáctanos",
-        "backToHome": "Volver al Inicio",
-        "backToGames": "Volver a los Juegos",
-        "playNow": "Jugar Ahora",
-        "downloadBrochure": "Descargar Folleto"
+    "loading": "Cargando...",
+    "error": "Se ha producido un error. Por favor, inténtalo de nuevo.",
+    "notFound": {
+      "title": "Página No Encontrada",
+      "message": "La página que estás buscando no existe o ha sido movida.",
+      "action": "Volver al inicio"
+    },
+    "breadcrumbs": {
+      "home": "Inicio"
+    }
+  },
+  "cookieBanner": {
+    "title": "Política de Cookies",
+    "description": "Este sitio web utiliza cookies para mejorar tu experiencia de navegación, personalizar contenido y anuncios, proporcionar funciones de redes sociales y analizar nuestro tráfico. También utilizamos cookies de terceros que nos ayudan a analizar y comprender cómo utilizas este sitio web.",
+    "acceptButton": "Aceptar Todo",
+    "rejectButton": "Rechazar",
+    "learnMoreLink": "Más Información",
+    "showDetails": "Mostrar detalles",
+    "hideDetails": "Ocultar detalles"
+  },
+  "aboutUs": {
+    "title": "QUIÉNES SOMOS",
+    "description": "VitalGames representa la excelencia en el sector del gaming italiano. Con una historia que se remonta al mercado AWP, hemos acompañado a generaciones de jugadores a través de la evolución del sector, manteniendo siempre viva nuestra identidad.",
+    "philosophy": {
+      "title": "Nuestra filosofía",
+      "description": "Se basa en tres pilares: calidad, innovación y fiabilidad. Utilizamos tecnologías de vanguardia y algoritmos certificados para garantizar una experiencia de juego justa y atractiva."
+    },
+    "presence": {
+      "title": "Nuestra presencia",
+      "description": "En el territorio italiano está atestiguada por más de 40.000 títulos instalados y una red de colaboraciones consolidadas con los principales operadores del sector."
+    },
+    "cards": {
+      "iso": {
+        "description": "Certificado <span className=\"font-bold\">ISO</span>, estándar de <span className=\"font-bold\">calidad</span>"
       },
-      "loading": "Cargando...",
-      "error": "Se ha producido un error. Por favor, inténtalo de nuevo.",
-      "notFound": {
-        "title": "Página No Encontrada",
-        "message": "La página que estás buscando no existe o ha sido movida.",
-        "action": "Volver al inicio"
+      "experience": {
+        "description": "Más de <span className=\"font-bold\">25 años de actividad</span> en el mercado del gaming <span className=\"font-bold\">italiano</span>"
       },
-      "breadcrumbs": {
-        "home": "Inicio"
+      "games": {
+        "description": "Más de <span className=\"font-bold\">40 mil</span> títulos en <span className=\"font-bold\">Italia</span>"
+      },
+      "partners": {
+        "description": "<span className=\"font-bold\">Colaboraciones consolidadas</span> con los <span className=\"font-bold\">principales</span> operadores y concesionarios del sector"
       }
-    },
-    "cookieBanner": {
-      "title": "Política de Cookies",
-      "description": "Este sitio web utiliza cookies para mejorar tu experiencia de navegación, personalizar contenido y anuncios, proporcionar funciones de redes sociales y analizar nuestro tráfico. También utilizamos cookies de terceros que nos ayudan a analizar y comprender cómo utilizas este sitio web.",
-      "acceptButton": "Aceptar Todo",
-      "rejectButton": "Rechazar",
-      "learnMoreLink": "Más Información",
-      "showDetails": "Mostrar detalles",
-      "hideDetails": "Ocultar detalles"
     }
   }
-  
+}

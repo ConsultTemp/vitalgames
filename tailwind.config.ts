@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(circle, var(--tw-gradient-stops))',
+      },
       colors: {
         primary: "#000000",
         secondary: "#ffffff",
@@ -78,7 +81,7 @@ const config: Config = {
         },
         "infinite-scroll": {
           from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-50%)" },
+          to: { transform: "translateX(-100%)" },
         },
         rock: {
           '0%, 100%': { transform: 'rotate(0deg) scale(1)' },
@@ -89,7 +92,7 @@ const config: Config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "infinite-scroll": "infinite-scroll 25s linear infinite",
+        "infinite-scroll": "infinite-scroll var(--scroll-duration, 50s) linear infinite",
         rock: 'rock 1s ease-in-out',
       },
     },

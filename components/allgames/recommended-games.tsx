@@ -19,10 +19,7 @@ export default function RecommendedGames({ currentGame }: RecommendedGamesProps)
 
   return (
     <section className="relative overflow-hidden">
-      {/* Background with gradient and logo pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-black/50 to-transparent">
-        <div className="absolute inset-0 bglogopattern"></div>
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#007bff]/50 to-transparent pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 py-16">

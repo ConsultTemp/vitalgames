@@ -58,10 +58,9 @@ export default function Navbar() {
   // Menu items based on the image
   const menuItems = [
     { label: "Multigames", href: "/awp-multigames", hasDropdown: true, dropdownType: "awp-multigames" },
-    { label: "All games", href: "/allgames", hasDropdown:true, dropdownType: "allgames" },
-    { label: "Online games", href: "/online-games", hasDropdown: true, dropdownType: "allgames" },
+    { label: "All games", href: "/allgames", hasDropdown: false },
     { label: "Cabinet", href: "/vlt", hasDropdown: false },
-    { label: dict.footer.aboutUs, href: "/about-us", hasDropdown: false },
+    { label: "About us", href: "/about-us", hasDropdown: false },
   ]
 
   const languages = [
@@ -75,7 +74,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 `}
     >
       {/* Desktop Navigation */}
-      <div className="hidden md:flex w-screen mx-auto px-24 py-3 items-center relative bg-black/30 backdrop-blur-md">
+      <div className="hidden md:flex w-screen mx-auto px-8 py-3 overflow-visible items-center relative bg-gradient-to-b from-black/90 to-transparent" style={{height: "90px"}}>
         {/* Logo - Left */}
         <div className="flex-1 flex justify-start">
           <Link href="/" className="flex items-center z-10">
@@ -92,74 +91,75 @@ export default function Navbar() {
 
         {/* Navigation - Center */}
         <div className="flex-1 flex justify-center">
-          <NavigationMenu>
-            <NavigationMenuList className="flex items-center gap-4 z-10">
-              {menuItems.map((item) => {
-                const slots = item.dropdownType === "awp-multigames" ? multigames.slice(0, 3) : games
-
-                return(
-                <NavigationMenuItem key={item.label} className="relative">
+          <NavigationMenu className="w-full" style={{margin: '0px', padding: '0px'}}>
+            <NavigationMenuList className="flex items-center gap-4 z-10"  style={{margin: '0px', padding: '0px'}}>
+              {menuItems.map((item) => (
+                <NavigationMenuItem key={item.label} className="relative group">
                   {item.hasDropdown ? (
                     <>
-                      <NavigationMenuTrigger className="text-sm text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none whitespace-nowrap bg-transparent hover:bg-transparent">
+                      <NavigationMenuTrigger className="text-sm text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none whitespace-nowrap bg-transparent hover:bg-transparent relative after:content-[''] after:absolute after:bottom-[-20px] after:left-0 after:w-0 after:h-[2px] after:bg-white hover:after:w-full flex items-center h-12">
                         {item.label}
                       </NavigationMenuTrigger>
-                      <NavigationMenuContent className="backdrop-blur-md bg-black bg-transparent border border-gray-800 p-2 w-[800px] left-1/2 -translate-x-1/2 absolute">
-                        <div className="grid grid-cols-3 gap-2">
-                          {slots.map((game, index) => (
+                      <NavigationMenuContent className="backdrop-blur-md bg-black/95 animate-slideDown" style={{
+                        position: 'fixed',
+                        left: '0',
+                        right: '0',
+                        top: '90px',
+                        width: '100%',
+                        zIndex: 100,
+                        padding: '0px',
+                        margin: '0px',
+                        transform: 'none !important'
+                      }}>
+                        <div className="mx-auto px-8 pb-8 pt-4">
+                          <div className="flex justify-between items-center mb-6">
+                            <h2 className="text-2xl font-bold text-white">Multigames</h2>
                             <Link
-                              key={index}
-                              href={`/${item.dropdownType}/${game.slug}`}
-                              className="block"
-                              style={{
-                                opacity: 0,
-                                animation: 'fadeIn 0.3s ease-in-out forwards',
-                                animationDelay: `${index * 50}ms`
-                              }}
+                              href="/awp-multigames"
+                              className="text-white text-sm flex flex-row items-center cursor-pointer font-medium hover:text-vitalYellow transition-colors duration-300"
                             >
-                              <div className="rounded-lg h-48 w-42 overflow-hidden border border-gray-700 transition-all duration-200 hover:-translate-y-1">
-                                <div className="relative h-full">
-                                  <Image
-                                    src={game.image || "/placeholder.svg"}
-                                    alt={game.title}
-                                    fill
-                                    className="object-cover"
-                                  />
-                                </div>
-                                <div className="py-2 px-2 absolute rounded-b-lg backdrop-blur-md bg-black/30 bottom-0 left-0 right-0">
-                                  <h3 className="text-white font-bold text-xs mb-1">{game.title}</h3>
-                                </div>
-                              </div>
+                              View all Multigames
+                              <ChevronRight className="w-4 h-4 ml-2 text-white" />
                             </Link>
-                          ))}
-                        </div>
-
-                        <div
-                          className="mt-2 border-t border-gray-800 text-center w-[600px] pb-0"
-                          style={{ animationDelay: '200ms' }}
-                        >
-                          <Link
-                            href={item.href}
-                            className="text-white text-xs flex flex-row items-center cursor-pointer font-medium inline-flex items-center"
-                          >
-                            View all {item.label}
-                            <ChevronRight className="w-3 h-3 ml-1 text-white" />
-                          </Link>
+                          </div>
+                          <div className="grid grid-cols-4 gap-6">
+                            {multigames.map((game, index) => (
+                              <Link
+                                key={index}
+                                href={`/awp-multigames/${game.slug}`}
+                                className="block"
+                                style={{
+                                  opacity: 0,
+                                  animation: 'fadeIn 0.3s ease-out forwards',
+                                  animationDelay: `${index * 50}ms`
+                                }}
+                              >
+                                <div className="rounded-lg w-full overflow-hidden transition-all duration-200 hover:-translate-y-1">
+                                  <div className="relative aspect-[4/3]">
+                                    <Image
+                                      src={game.image || "/placeholder.svg"}
+                                      alt={game.title}
+                                      fill
+                                      className="object-cover"
+                                    />
+                                  </div>
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
                         </div>
                       </NavigationMenuContent>
                     </>
                   ) : (
                     <Link
                       href={item.href}
-                      className={`text-sm text-gray-300 hover:text-white transition-colors whitespace-nowrap duration-300 ${pathname === item.href ? "text-white" : ""
-                        }`}
+                      className={`text-sm text-gray-300 hover:text-white transition-colors whitespace-nowrap duration-300 relative after:content-[''] after:absolute after:bottom-[-20px] after:left-0 after:w-0 after:h-[2px] after:bg-white   hover:after:w-full flex items-center h-12 ${pathname === item.href ? "text-white after:w-full" : ""}`}
                     >
                       {item.label}
                     </Link>
                   )}
                 </NavigationMenuItem>
-              )}
-              )}
+              ))}
             </NavigationMenuList>
           </NavigationMenu>
         </div>
@@ -176,15 +176,15 @@ export default function Navbar() {
           {/* Language Selector */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+              <Button variant="ghost" size="icon" className="text-white hover:bg-white/5">
                 <Globe className="h-5 w-5" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md border border-gray-800">
+            <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md pb-0" style={{padding: '0px', margin: '0px'}}>
               {languages.map((language) => (
                 <DropdownMenuItem
                   key={language.code}
-                  className={`text-sm ${lang === language.code ? 'text-vitalYellow' : 'text-white'} hover:bg-white/10 cursor-pointer`}
+                  className={`text-sm ${lang === language.code ? 'text-vitalYellow' : 'text-white'} hover:opacity-8 hover:text-vitalYellow hover:bg-black cursor-pointer`}
                   onClick={() => {
                     const newPath = pathname.replace(/^\/[a-z]{2}/, `/${language.code}`);
                     window.location.href = newPath;
@@ -199,22 +199,22 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Navigation */}
-      <div className="md:hidden flex w-full px-4 py-3 items-center justify-between bg-black/30 backdrop-blur-md fixed top-0 left-0 right-0 z-[999]">
+      <div className="md:hidden flex w-full px-4 py-3 items-center justify-between bg-gradient-to-b from-black/90 to-transparent fixed top-0 left-0 right-0 z-[999]">
         <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild>
             <Button
               variant="ghost"
               size="icon"
-              className="text-white"
+              className="text-white  hover:bg-transparent"
             >
               <Menu size={24} />
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="w-full bg-black border-r border-gray-800 p-0">
+          <SheetContent side="left" className="w-full bg-black p-0">
             <DialogTitle></DialogTitle>
             <div className="flex flex-col h-full">
               {/* Header */}
-              <div className="p-4 border-b border-gray-800 flex items-center justify-between">
+              <div className="p-4 flex items-center justify-between">
                 <Link href="/" className="flex items-center">
                   <div className="relative h-10 w-16">
                     <Image
@@ -262,7 +262,7 @@ export default function Navbar() {
               </div>
 
               {/* Footer */}
-              <div className="p-6 border-t border-gray-800 space-y-4">
+              <div className="p-6 space-y-4">
                 <Button
                   asChild
                   className="bg-vitalYellow hover:bg-vitalYellow/90 text-black font-bold rounded-md px-3 py-2 w-full animate-fadeIn"
@@ -277,15 +277,15 @@ export default function Navbar() {
                 {/* <div className="ml-auto">
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+                      <Button variant="ghost" size="icon" className="text-white hover:bg-white/5">
                         <Globe className="h-5 w-5" />
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md border border-gray-800">
+                    <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md ">
                       {languages.map((language) => (
                         <DropdownMenuItem
                           key={language.code}
-                          className={`text-sm ${lang === language.code ? 'text-vitalYellow' : 'text-white'} hover:bg-white/10 cursor-pointer`}
+                          className={`text-sm ${lang === language.code ? 'text-vitalYellow' : 'text-white'} hover:bg-white/5 cursor-pointer`}
                           onClick={() => {
                             const newPath = pathname.replace(/^\/[a-z]{2}/, `/${language.code}`);
                             window.location.href = newPath;
@@ -318,15 +318,15 @@ export default function Navbar() {
           {/* Language Selector for Mobile Header */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+              <Button variant="ghost" size="icon" className="text-white hover:bg-white/5">
                 <Globe className="h-5 w-5" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md border border-gray-800">
+            <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md ">
               {languages.map((language) => (
                 <DropdownMenuItem
                   key={language.code}
-                  className={`text-sm ${lang === language.code ? 'text-vitalYellow' : 'text-white'} hover:bg-white/10 cursor-pointer`}
+                  className={`text-sm ${lang === language.code ? 'text-vitalYellow' : 'text-white'} hover:bg-white/5 cursor-pointer`}
                   onClick={() => {
                     const newPath = pathname.replace(/^\/[a-z]{2}/, `/${language.code}`);
                     window.location.href = newPath;

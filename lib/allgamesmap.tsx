@@ -249,6 +249,47 @@ import chef from '../public/allgames/LE CHEF.jpg'
 
 export const games = [
   {
+    name: 'Shark',
+    subtitle: 'Un\'avventura nel mondo del mare',
+    href: 'shark',
+    slug: 'shark',
+    coverImage: shark,
+    mainImage: shark,
+    images:[],
+    isComingSoon: true
+  },
+  {
+    name: 'Midnight Saloon',
+    subtitle: 'Un\'avventura nel mondo della notte',
+    href: 'midnight-saloon',
+    slug: 'midnight-saloon',
+    coverImage: midnightsaloon,
+    mainImage: midnightsaloon,
+    images:[],
+    isComingSoon: true
+  },
+  {
+    name: 'Cherry',
+    subtitle: 'Un\'avventura nel mondo della frutta',
+    href: 'cherry',
+    slug: 'cherry',
+    coverImage: cherry,
+    mainImage: cherry,
+    images:[],
+    isComingSoon: true
+  },
+  {
+    name: 'Le Chef',
+    subtitle: 'Un\'avventura nel mondo della cucina',
+    href: 'le-chef',
+    slug: 'le-chef',
+    coverImage: chef,
+    mainImage: chef,
+    images:[],
+    isComingSoon: true
+    
+  },
+  {
     name: 'Alieni',
     subtitle: 'Un\'avventura spaziale tra mondi sconosciuti',
     href: 'alieni',
@@ -258,7 +299,7 @@ export const games = [
     images: [ALIENI_PHOTO1, ALIENI_PHOTO2, ALIENI_PHOTO3, ALIENI_PHOTO4],
     description: 'Un gioco emozionante con alieni e avventure spaziali',
     featured: ['dragon', 'il-barone-rosso', 'nautilus', 'zombie'],
-    isComingSoon: true
+    
   },
   {
     name: 'Billionaire',
@@ -270,7 +311,7 @@ export const games = [
     images: [BILLIONAIRE_PHOTO1, BILLIONAIRE_PHOTO2, BILLIONAIRE_PHOTO3, BILLIONAIRE_PHOTO4],
     description: 'Vivi la vita da miliardario in questo gioco di fortuna',
     featured: ['fortune', 'golden-fruit', 'pepita-doro', 'lucky-8'],
-    isComingSoon: true
+    
   },
   {
     name: 'Book of Magic',
@@ -282,7 +323,7 @@ export const games = [
     images: [BOOK_OF_MAGIC_PHOTO1, BOOK_OF_MAGIC_PHOTO2, BOOK_OF_MAGIC_PHOTO3, BOOK_OF_MAGIC_PHOTO4],
     description: 'Un libro magico che ti porterà in un mondo di incantesimi e misteri',
     featured: ['la-scatola-magica', 'magic-diamond-2', 'elfi', 'eden'],
-    isComingSoon: true
+    
   },
   {
     name: 'Braccio di Ferro',
@@ -294,7 +335,7 @@ export const games = [
     images: [BRACCIO_DI_FERRO_PHOTO1, BRACCIO_DI_FERRO_PHOTO2, BRACCIO_DI_FERRO_PHOTO3, BRACCIO_DI_FERRO_PHOTO4],
     description: 'Un classico gioco di forza e abilità',
     featured: ['torero', 'scacco-matto', 'il-grillo', 'lo-struzzo'],
-    isComingSoon: true
+    
   },
   {
     name: 'Cowboy Revenge 2',
@@ -637,41 +678,5 @@ export const games = [
     images: [REGGAE_FROG_PHOTO1, REGGAE_FROG_PHOTO2, REGGAE_FROG_PHOTO3, REGGAE_FROG_PHOTO4],
     description: 'Balliamo con la rana reggae',
     featured: ['il-grillo', 'lo-struzzo', 'sonny-bono', 'striptease']
-  },
-  {
-    name: 'Cherry',
-    subtitle: 'Un\'avventura nel mondo della frutta',
-    href: 'cherry',
-    slug: 'cherry',
-    coverImage: cherry,
-    mainImage: cherry,
-    images:[]
-  },
-  {
-    name: 'Midnight Saloon',
-    subtitle: 'Un\'avventura nel mondo della notte',
-    href: 'midnight-saloon',
-    slug: 'midnight-saloon',
-    coverImage: midnightsaloon,
-    mainImage: midnightsaloon,
-    images:[]
-  },
-  {
-    name: 'Shark',
-    subtitle: 'Un\'avventura nel mondo del mare',
-    href: 'shark',
-    slug: 'shark',
-    coverImage: shark,
-    mainImage: shark,
-    images:[]
-  },
-  {
-    name: 'Le Chef',
-    subtitle: 'Un\'avventura nel mondo della cucina',
-    href: 'le-chef',
-    slug: 'le-chef',
-    coverImage: chef,
-    mainImage: chef,
-    images:[]
   }
 ]

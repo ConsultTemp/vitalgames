@@ -73,11 +73,10 @@ const games = [
 ]
 
 export default function GameCards() {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const { dictionary: dict } = useLanguage()
 
   return (
-    <section className="py-t md:pt-16 relative overflow-visible absolute bg-transparent">
+    <section className="py-16  relative overflow-visible absolute bg-transparent">
       <div className="absolute top-[-30px] right-0 md:right-10 z-[1] max-w-[200px] md:max-w-none opacity-80">
         <FloatingImage
           src={campana}
@@ -85,35 +84,26 @@ export default function GameCards() {
           className="w-48 sm:w-48 md:w-72 h-48 sm:h-48 md:h-72"
         />
       </div>
-      <div className="absolute bottom-[50px] left-[-20px] z-[1]">
-        <FloatingImage
-          src={squalo}
-          alt="Squalo"
-          className="w-64 md:w-72 h-32 sm:h-48 md:h-72 overflow-visible"
-        />
-      </div>
       <div className="container mx-auto px-4 relative z-10 pb-12 md:pb-36">
-        <div className="mb-6 md:mb-8 w-full flex flex-col items-center">
-          <SmoothReveal className="inline-block bg-vitalYellow text-black text-xs font-medium px-2 py-[3.5px] rounded mb-2">
-            {dict.home.gameCards.badge}
-          </SmoothReveal>
-          <SmoothReveal> <h2 className="text-center text-4xl md:text-7xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap px-4">{dict.home.gameCards.title}</h2></SmoothReveal>
+        <div className="flex flex-row items-center justify-between py-6">
+          <div className=" w-full flex flex-col items-start">
+            <SmoothReveal> <h2 className="text-center text-2xl md:text-4xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap">{dict.home.gameCards.title}</h2></SmoothReveal>
+          </div>
+          <Button variant={"outline"} className="border border-white rounded-full text-white bg-transparent px-4 py-2 hover:bg-vitalYellow hover:text-black hover:border-vitalYellow transition-all duration-300">Vedi tutto</Button>
         </div>
 
-        <div 
+        <div
           className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
-          onMouseLeave={() => setHoveredCard(null)}
         >
           {games.map((game) => (
-            <div 
+            <div
               key={game.id}
-              className={`transition hover:scale-[1.02] duration-300 ${hoveredCard !== null && hoveredCard !== game.id ? 'opacity-50' : 'opacity-100'}`}
-              onMouseEnter={() => setHoveredCard(game.id)}
+              className="transition-all duration-300 hover:scale-[1.02]"
             >
               <SmoothReveal>
-                <Link 
-                  href={`/allgames/${game.slug}`} 
-                  className="w-full aspect-[1080/1196] block group rounded-sm relative x"
+                <Link
+                  href={`/allgames/${game.slug}`}
+                  className={`w-full aspect-[1080/1196] block group rounded-sm relative transition-all duration-300 `}
                 >
                   <div className="w-full h-full">
                     <Image
@@ -126,11 +116,6 @@ export default function GameCards() {
               </SmoothReveal>
             </div>
           ))}
-        </div>
-        <div className="w-full flex flex-col items-center py-16">
-          <Button variant={"vitalYellow"} className="bg-vitalYellow px-8 text-sm text-black">
-            <Link href="/allgames">{dict.home.gameCards.viewAll}</Link>
-          </Button>
         </div>
       </div>
     </section>

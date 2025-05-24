@@ -42,13 +42,13 @@
   },
   "home": {
     "ageRestriction": {
-      "title": "Restrizione di Età +18",
-      "description": "Il gioco deve essere un divertimento sicuro. Promuoviamo il gioco responsabile e ricordiamo che i nostri prodotti sono destinati esclusivamente a maggiorenni (18+)."
+      "title": "Responsible gaming: +18!",
+      "description": "Il gioco è prima di tutto intrattenimento. Vitalgames si impegna affinché ogni giocatore viva un'esperienza divertente e consapevole. La promozione del gioco responsabile è alla base della nostra filosofia. Vietato ai minori di 18 anni."
     },
     "cabinet": {
-      "title": "SCOPRI",
-      "titleLine2": "LE NOSTRE",
-      "titleLine3": "CABINET VLT",
+      "title": "Scopri",
+      "titleLine2": "Le nostre",
+      "titleLine3": "Cabinet Vlt",
       "subtitle": "Vital games",
       "description": "Esplora la nostra selezione di cabinet VLT di alta qualità, progettati per offrire un'esperienza di gioco immersiva e coinvolgente.",
       "features": [
@@ -60,9 +60,16 @@
       ],
       "cta": "Scopri di più"
     },
+    "manhattan": {
+      "title": "MANHATTAN",
+      "comingSoon": "COMING SOON",
+      "description": "Vital Games presenta MultiGames Manhattan, un mix di 5 giochi unici: Shark, Midnight Saloon, Mister Diamond, Cherry e Le Chef, pensato per offrire un intrattenimento completo e coinvolgente.",
+      "ageRestriction": "Il gioco è vietato ai minori di 18 anni. Gioca responsabilmente"
+    },
     "technology": {
-      "title": "VITAL GAMES",
-      "subtitle": "TECNOLOGIA VINCENTE",
+      "title": "CHI SIAMO",
+      "subtitle": "L'evoluzione del gaming, made in Italy",
+      "description": "VitalGames è sinonimo di garanzia nel settore del gaming. Con radici profonde nel mercato AWP, abbiamo attraversato generazioni di giocatori, innovando costantemente senza mai perdere la nostra identità. Siamo parte integrante dell'evoluzione del gioco in Italia, punto di riferimento per chi cerca qualità, esperienza e una visione sempre proiettata al futuro.",
       "certification": {
         "title": "Qualità italiana certificata",
         "standard": "ISO 9001"
@@ -70,17 +77,23 @@
       "cta": "Lavora con noi"
     },
     "winningTechnology": {
-      "title": "TECNOLOGIA",
-      "titleLine2": "VINCENTE",
-      "subtitle": "Vital games",
-      "description": "I nostri giochi sono progettati con algoritmi avanzati per garantire un'esperienza di gioco equa ed emozionante.",
-      "features": [
-        "Generatori di numeri casuali certificati",
-        "Matematica bilanciata",
-        "Funzionalità bonus emozionanti",
-        "Jackpot progressivi"
-      ],
-      "cta": "Scopri le Nostre Funzionalità di Gioco"
+      "title": "L'evoluzione del gaming, made in Italy",
+      "description": "VitalGames è sinonimo di garanzia nel settore del gaming. Con radici profonde nel mercato AWP, abbiamo attraversato generazioni di giocatori, innovando costantemente senza mai perdere la nostra identità.",
+      "description2": "Siamo parte integrante dell'evoluzione del gioco in Italia, punto di riferimento per chi cerca qualità, esperienza e una visione sempre proiettata al futuro.",
+      "cards": {
+        "iso": {
+          "description": "Certificato <span className=\"font-bold\">ISO</span>, standard di <span className=\"font-bold\">qualità</span>"
+        },
+        "experience": {
+          "description": "<span className=\"font-bold\">25 anni</span> nel mercato del gaming"
+        },
+        "games": {
+          "description": "Più di <span className=\"font-bold\">40mila</span> titoli in <span className=\"font-bold\">Italia</span>"
+        },
+        "partners": {
+          "description": "<span className=\"font-bold\">Collaborazioni</span> con i principali operatori"
+        }
+      }
     },
     "magicDiamond": {
       "title": "ITALY'S TOP RATED",
@@ -91,21 +104,42 @@
       "gameTitle": "Magic Diamond™"
     },
     "multigames": {
-      "title": "SCOPRI I NOSTRI MULTIGAMES",
+      "title": "I NOSTRI",
+      "titleLine2": "MULTIGAMES",
       "subtitle": "Vital games",
-      "description": "I nostri sistemi multigame offrono una varietà di giochi su una singola macchina, massimizzando lo spazio e il divertimento.",
+      "description": "Oltre il semplice gioco: vivi i Multigames by Vital Games.",
       "features": [
         "Più giochi su una macchina",
         "Navigazione facile",
         "Aggiornamenti regolari",
         "Personalizzazione per operatori"
       ],
-      "cta": "Visualizza Opzioni Multigame"
+      "cta": "Scopri i Multigames",
+      "descriptions": {
+        "manhattan": "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
+        "champions-slot": "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
+        "fortune-ultralink": "Sistema multigame con 10 giochi a tema casinò classico, interfaccia elegante e jackpot progressivo.",
+        "diamante": "La nostra soluzione premium con 12 giochi esclusivi, grafica HD e funzionalità bonus avanzate.",
+        "piggy-gold": "Divertente sistema con 10 giochi a tema denaro e fortuna, perfetto per un pubblico giovane.",
+        "casino-royale": "Sistema multigame con 10 giochi a tema casinò classico, interfaccia elegante e jackpot progressivo.",
+        "circus": "Sistema divertente con 10 giochi a tema circo, perfetto per un pubblico giovane e dinamico.",
+        "rubino": "Multigame con 6 giochi premium, grafica vibrante e funzionalità bonus esclusive.",
+        "zaffiro": "Sistema elegante con 8 giochi a tema gemme, effetti visivi spettacolari e alta percentuale di vincita.",
+        "golden-club": "Esperienza VIP con 8 giochi selezionati, tema lussuoso e meccaniche di gioco innovative.",
+        "lucky-slot": "Sistema con 8 giochi a tema fortuna, grafica accattivante e funzionalità bonus esclusive."
+      }
     },
     "gameCards": {
       "badge": "All games",
-      "title": "TUTTI I GIOCHI BY VITAL GAMES",
-      "viewAll": "Guarda tutti i giochi"
+      "title": "I NOSTRI GIOCHI ONLINE",
+      "viewAll": "Guarda tutti i giochi",
+      "description": "Scopri un mondo di diamanti, misteri e jackpot esplosivi! Tra Bonus Diamond, giri gratuiti e simboli Link, ogni spin può sbloccare premi incredibili fino a 2000 volte la puntata.",
+      "features": [
+        "Vivi l'adrenalina con funzionalità extra come il Buy Bonus e l'autoplay.",
+        "25 anni di esperienza nel gaming italiano",
+        "Più di 40mila titoli installati",
+        "Collaborazioni con i principali operatori"
+      ]
     }
   },
   "vlt": {
@@ -114,7 +148,7 @@
     "hero": {
       "title": "Terminali di Video Lotteria",
       "subtitle": "Soluzioni di Gioco Avanzate",
-      "description": "I nostri sistemi VLT rappresentano l'apice della tecnologia di gioco, offrendo esperienze di gioco sicure e in rete con monitoraggio e controllo centralizzati."
+      "description": "Scopri le nostre cabinet VLT"
     },
     "features": {
       "title": "Caratteristiche VLT",
@@ -311,7 +345,8 @@
     "recommended": {
       "badge": "Giochi Consigliati",
       "title": "GIOCHI CONSIGLIATI"
-    }
+    },
+    "youMightAlsoLike": "Ti potrebbe interessare anche"
   },
   "gameDetail": {
     "info": {
@@ -385,7 +420,8 @@
     },
     "discover": {
       "title": "Scopri"
-    }
+    },
+    "partOf": "Fa parte di"
   },
   "contact": {
     "title": "Contattaci",
@@ -451,20 +487,16 @@
   },
   "footer": {
     "sections": {
-      "products": {
-        "title": "Prodotti",
+      "games": {
+        "title": "Giochi",
         "links": [
           {
-            "label": "Sistemi VLT",
-            "href": "/vlt"
-          },
-          {
-            "label": "AWP Multigames",
-            "href": "/awp-multigames"
-          },
-          {
-            "label": "Libreria di Giochi",
+            "label": "Tutti i giochi",
             "href": "/allgames"
+          },
+          {
+            "label": "Multigames",
+            "href": "/awp-multigames"
           },
           {
             "label": "Cabinet",
@@ -473,61 +505,33 @@
         ]
       },
       "company": {
-        "title": "Azienda",
+        "title": "Vital Games",
         "links": [
           {
-            "label": "Chi Siamo",
+            "label": "Chi siamo",
             "href": "/about"
           },
           {
-            "label": "Contatti",
+            "label": "Contattaci",
             "href": "/contact"
           },
           {
-            "label": "Carriere",
-            "href": "/careers"
-          },
-          {
-            "label": "News",
-            "href": "/news"
+            "label": "Instagram",
+            "href": "https://instagram.com/vitalgames"
           }
         ]
       },
-      "legal": {
-        "title": "Legale",
+      "usage": {
+        "title": "Utilizzo",
         "links": [
           {
-            "label": "Termini di Servizio",
-            "href": "/terms"
-          },
-          {
-            "label": "Privacy Policy",
+            "label": "Privacy & Policy",
             "href": "/privacy"
-          },
-          {
-            "label": "Gioco Responsabile",
-            "href": "/responsible-gaming"
-          },
-          {
-            "label": "Licenze",
-            "href": "/licenses"
           }
         ]
       }
     },
-    "games": "Giochi",
-    "allGames": "All games",
-    "multigames": "Tutti i multigames",
-    "cabinet": "Cabinet",
-    "onlineGames": "Giochi online",
-    "company": "Vital games",
-    "aboutUs": "Chi siamo",
-    "contactUs": "Contattaci",
-    "instagram": "Instagram",
-    "usage": "Utilizzo",
-    "privacyPolicies": "Privacy & Policies",
-    "copyright": "© 2025 Vital Games Project S.r.l©. Tutti i diritti riservati. P. IVA: 08160840966. Powered by DK",
-    "responsibleGaming": "Si prega di giocare responsabilmente. Il gioco d'azzardo dovrebbe essere un intrattenimento e non un modo per fare soldi. Ricorda che il gioco d'azzardo può creare dipendenza. Se hai bisogno di aiuto, contatta un'organizzazione di supporto al gioco."
+    "copyright": "Vital Games Project S.r.l© 2025. Tutti i diritti riservati. P. IVA: 08160840968. Powered by DK"
   },
   "common": {
     "buttons": {
@@ -559,5 +563,31 @@
     "learnMoreLink": "Maggiori informazioni",
     "showDetails": "Mostra dettagli",
     "hideDetails": "Nascondi dettagli"
+  },
+  "aboutUs": {
+    "title": "CHI SIAMO",
+    "description": "VitalGames rappresenta l'eccellenza nel settore del gaming italiano. Con una storia che affonda le radici nel mercato AWP, abbiamo accompagnato generazioni di giocatori attraverso l'evoluzione del settore, mantenendo sempre viva la nostra identità.",
+    "philosophy": {
+      "title": "La nostra filosofia",
+      "description": "Si basa su tre pilastri: qualità, innovazione e affidabilità. Utilizziamo tecnologie all'avanguardia e algoritmi certificati per garantire un'esperienza di gioco equa e coinvolgente."
+    },
+    "presence": {
+      "title": "La nostra presenza",
+      "description": "Sul territorio italiano è testimoniata da oltre 40.000 titoli installati e da una rete di collaborazioni consolidate con i principali operatori del settore."
+    },
+    "cards": {
+      "iso": {
+        "description": "Certificato <span className=\"font-bold\">ISO</span>, standard di <span className=\"font-bold\">qualità</span>"
+      },
+      "experience": {
+        "description": "Oltre <span className=\"font-bold\">25 anni di attività</span> nel mercato del gaming <span className=\"font-bold\">italiano</span>"
+      },
+      "games": {
+        "description": "Più di <span className=\"font-bold\">40mila</span> titoli in <span className=\"font-bold\">Italia</span>"
+      },
+      "partners": {
+        "description": "<span className=\"font-bold\">Collaborazioni consolidate</span> con i <span className=\"font-bold\">principali</span> operatori e concessionari del settore"
+      }
+    }
   }
 }

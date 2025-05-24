@@ -5,10 +5,16 @@ import Image from 'next/image'
 import { games } from '@/lib/allgamesmap'
 import { notFound } from 'next/navigation'
 import RecommendedGames from '@/components/allgames/recommended-games'
+import Multigame from './game-of'
+import SmoothReveal from '@/components/smooth-reveal'
+import { multigames } from '@/lib/multigames'
+import Link from 'next/link'
+import { useLanguage } from '@/components/language-provider'
 
 export default function GamePage() {
     const params = useParams()
     const gameId = params.gameId as string
+    const { dictionary: dict } = useLanguage()
 
     const game = games.find(g => g.slug === gameId)
 
@@ -30,14 +36,10 @@ export default function GamePage() {
                     />
                     <div className="absolute inset-0 bg-black/30" />
                     <div className="absolute left-0 top-0 h-full w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-                        <p className='text-vitalYellow border-white backdrop-blur-sm border border-1 border-white w-fit px-2 py-1 rounded-sm text-xs mb-4'>Game</p>
-                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-12">
+                        <h1 className="text-8xl md:text-9xl font-bold text-white dharma">
                             {game.name}
                         </h1>
-                        <h4 className="text-lg md:text-xl font-bold text-white/90 mb-4">
-                            {game.subtitle}
-                        </h4>
-                        <p className="text-xs font-light text-white">
+                        <p className="text-sm font-light text-white">
                             {game.description}
                         </p>
                     </div>
@@ -45,64 +47,102 @@ export default function GamePage() {
             </div>
 
             {/* Gallery Section */}
-            <div className="max-w-5xl mx-auto px-8 sm:px-16 lg:px-32 xl:px-48 py-12">
-                <div className="grid grid-cols-1 gap-4">
-                    {/* First image */}
-                    <div className="bg-[#171717] rounded-xl p-4 border border-1 border-[#3C3C3C]">
-                        <div className="relative w-full">
-                            <Image
-                                src={game.images[0]}
-                                alt={`${game.name} - Image 1`}
-                                width={1920}
-                                height={1080}
-                                className="w-full h-auto rounded-lg"
-                            />
-                        </div>
-                    </div>
-
-                    {/* Two images side by side */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="bg-[#171717] rounded-xl p-4 border border-1 border-[#3C3C3C]">
-                            <div className="relative w-full">
-                                <Image
-                                    src={game.images[1]}
-                                    alt={`${game.name} - Image 2`}
-                                    width={1920}
-                                    height={1080}
-                                    className="w-full h-auto rounded-lg"
-                                />
+            <div className="max-w-full mx-auto px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 pt-8 md:pt-12 overflow-hidden h-fit pb-0">
+                <div className="relative w-full h-[30vh] sm:h-[40vh] md:h-[60vh]">
+                    <div className="flex animate-infinite-scroll -ml-[1000px] sm:-ml-[1500px] md:-ml-[2000px]">
+                        {/* Left side images */}
+                        {game.images.map((image, index) => (
+                            <div key={`left-${index}`} className="flex-shrink-0 w-[250px] sm:w-[350px] md:w-[500px] mx-2 sm:mx-3 md:mx-4 h-full">
+                                <div className="bg-[#171717] rounded-xl p-2 sm:p-3 md:p-4 border border-1 border-[#3C3C3C] h-full">
+                                    <div className="relative w-full h-full">
+                                        <Image
+                                            src={image}
+                                            alt={`${game.name} - Image ${index + 1}`}
+                                            width={1920}
+                                            height={1080}
+                                            className="w-full h-full object-cover rounded-lg"
+                                        />
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div className="bg-[#171717] rounded-xl p-4 border border-1 border-[#3C3C3C]">
-                            <div className="relative w-full">
-                                <Image
-                                    src={game.images[2]}
-                                    alt={`${game.name} - Image 3`}
-                                    width={1920}
-                                    height={1080}
-                                    className="w-full h-auto rounded-lg"
-                                />
+                        ))}
+                        {/* Center images */}
+                        {game.images.map((image, index) => (
+                            <div key={`center-${index}`} className="flex-shrink-0 w-[250px] sm:w-[350px] md:w-[500px] mx-2 sm:mx-3 md:mx-4 h-full">
+                                <div className="bg-[#171717] rounded-xl p-2 sm:p-3 md:p-4 border border-1 border-[#3C3C3C] h-full">
+                                    <div className="relative w-full h-full">
+                                        <Image
+                                            src={image}
+                                            alt={`${game.name} - Image ${index + 1}`}
+                                            width={1920}
+                                            height={1080}
+                                            className="w-full h-full object-cover rounded-lg"
+                                        />
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-
-                    {/* Last image */}
-                    <div className="bg-[#171717] rounded-xl p-4 border border-1 border-[#3C3C3C]">
-                        <div className="relative w-full">
-                            <Image
-                                src={game.images[3]}
-                                alt={`${game.name} - Image 4`}
-                                width={1920}
-                                height={1080}
-                                className="w-full h-auto rounded-lg"
-                            />
-                        </div>
+                        ))}
+                        {/* Right side images */}
+                        {game.images.map((image, index) => (
+                            <div key={`right-${index}`} className="flex-shrink-0 w-[250px] sm:w-[350px] md:w-[500px] mx-2 sm:mx-3 md:mx-4 h-full">
+                                <div className="bg-[#171717] rounded-xl p-2 sm:p-3 md:p-4 border border-1 border-[#3C3C3C] h-full">
+                                    <div className="relative w-full h-full">
+                                        <Image
+                                            src={image}
+                                            alt={`${game.name} - Image ${index + 1}`}
+                                            width={1920}
+                                            height={1080}
+                                            className="w-full h-full object-cover rounded-lg"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
 
-            {/* Recommended Games Section */}
-            <RecommendedGames currentGame={game} />
+            <Multigame />
+            {/* RECOMMENDED GAMES SECTION */}
+            <section className="relative overflow-visible">
+                {/* Background with gradient and logo pattern */}
+                <div className="absolute inset-0 bg-gradient-to-br from-black via-black/50 to-transparent">
+                    <div className="absolute inset-0 bg-black"></div>
+                </div>
+
+                {/* Content */}
+                <div className="relative z-10">
+                    <div className="container mx-auto px-4">
+                        <div className="mb-8 w-full flex flex-col items-start">
+                            <SmoothReveal>
+                                <h2 className="text-start dharma text-4xl md:text-6xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap">
+                                    {dict.allGames.youMightAlsoLike}
+                                </h2>
+                            </SmoothReveal>
+                        </div>
+
+                        <div>
+                            <div className="absolute left-0 right-0 top-[0%] h-[50vh] bg-gradient-to-b from-transparent via-[#007bff]/20 to-transparent pointer-events-none" />
+
+                            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4 md:gap-6">
+                                {multigames.slice(0, 5).map((game) => (
+                                    <SmoothReveal key={game.id}>
+                                        <Link href={`/awp-multigames/${game.slug}`} className="block group rounded-lg overflow-hidden">
+                                            <Image
+                                                src={game.mainImage}
+                                                alt={game.title}
+                                                width={1080}
+                                                height={1196}
+                                                className="w-full h-auto object-contain rounded-lg transition-transform duration-300 group-hover:scale-105"
+                                            />
+                                        </Link>
+                                    </SmoothReveal>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     )
 }

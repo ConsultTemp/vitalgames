@@ -10,6 +10,10 @@ import MagicDiamonds from "@/components/home/magicdiamond"
 import AgeRestrictions from "@/components/home/age-restrictions"
 import Technology from "@/components/home/technology"
 import Multigames from "@/components/home/multigames"
+import ManhattanLanding from "@/components/home/manhatta"
+import { GameCarousel } from "@/components/home/game-carousel"
+import WinningTechnology from "@/components/home/winning-technology"
+import Partners from "@/components/home/partners"
 
 type Params = Promise<{ lang: Locale }>
 
@@ -100,15 +104,22 @@ export default async function Home(props: { params: Params }) {
           }),
         }}
       />
-      <Hero />
-      <Multigames />
-      <div className="cabinet-bg">
-        <CabinetSection />
+      <div className="bg-black">
+        <Hero />
+        <ManhattanLanding />
+        <Multigames />
+        <div className="cabinet-bg">
+          <CabinetSection />
+        </div>
+        <GameCarousel />
+        <GameCards />
+        <div className="technology-bg">
+          <WinningTechnology />
+        </div>
+        <Partners />
+        <AgeRestrictions />
+
       </div>
-      <MagicDiamonds />
-      <GameCards />
-      <AgeRestrictions />
-      <Technology />
     </>
   )
 }

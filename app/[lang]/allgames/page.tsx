@@ -1,15 +1,57 @@
+'use client'
 import type { Metadata } from "next"
 import { getDictionary } from "@/lib/dictionary"
 import type { Locale } from "@/i18n-config"
 import { productTypes, generateSEOMetadata } from "@/lib/seo-config"
 import Script from "next/script"
-import HeroAllgames from "@/components/allgames/hero"
+import Image from "next/image"
+import VideoHero from "@/components/VideoHero"
 import AllGamesList from "@/components/allgames/allgameslist"
 import { games } from "@/lib/allgamesmap"
+import Link from "next/link"
+import { useLanguage } from "@/components/language-provider"
+import casinoroyaleHover from "../../../public/multigames-cards/CASINO ROYALE_Converted.jpg"
+import diamanteHover from "../../../public/multigames-cards/DIAMANTE_Converted.jpg"
+import luckySlot from "../../../public/multigames-cards/lucky_slot.png"
+import fortuneUltralink from "../../../public/fortune_ultralink.png"
+import { use } from 'react'
+import FloatingImage from "@/components/bg-image-component"
+import campana from '../../../public/campana.png'
+
+export const multigames = [
+  {
+      id: 1,
+      slug: "casino-royale",
+      title: "Casino Royale",
+      image: casinoroyaleHover,
+  },
+  {
+      id: 2,
+      slug: "diamante",
+      title: "Diamante Multigame",
+      image: diamanteHover,
+  },
+  {
+      id: 3,
+      slug: "fortune-ultralink",
+      title: "Fortune Ultralink",
+      image: fortuneUltralink,
+  },
+  {
+      id: 4,
+      slug: "lucky-slot",
+      title: "Lucky Slot",
+      image: luckySlot,
+  },
+]
 
 type Params = Promise<{ lang: Locale }>
 
-export async function generateMetadata(props: { params: Params }): Promise<Metadata> {
+type PageParams = {
+  lang: Locale
+}
+
+async function generateMetadata(props: { params: Params }): Promise<Metadata> {
   const params = await props.params
   const seoData = generateSEOMetadata("allGames", params.lang)
 
@@ -52,7 +94,10 @@ export async function generateMetadata(props: { params: Params }): Promise<Metad
   }
 }
 
-export default function Home(props: { params: { lang: Locale } }) {
+export default function Home(props: { params: Promise<PageParams> }) {
+  const { dictionary: dict } = useLanguage()
+  const params = use(props.params)
+  
   return (
     <>
       <Script
@@ -76,7 +121,7 @@ export default function Home(props: { params: { lang: Locale } }) {
                 gamePlatform: ["AWP", "VLT", "Online"],
                 genre: "Slot Machine",
                 image: game.coverImage.src || game.mainImage.src,
-                url: `https://vitalgames.com/${props.params.lang}/allgames/${game.slug}`,
+                url: `https://vitalgames.com/${params.lang}/allgames/${game.slug}`,
                 provider: {
                   "@type": "Organization",
                   name: "Vitalgames",
@@ -88,8 +133,40 @@ export default function Home(props: { params: { lang: Locale } }) {
         }}
       />
       <div className="bg-black">
-        <HeroAllgames />
+        <VideoHero 
+          title={dict.allGames.hero.title}
+          subtitle={dict.allGames.hero.subtitle}
+          videoUrl="https://files.catbox.moe/gdaic4.mp4"
+        />
+        
         <AllGamesList />
+         {/* RECOMMENDED GAMES */}
+         <section className="relative min-h-[50vh]">
+         
+         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#007bff]/50 to-transparent pointer-events-none" />
+                <div className="px-4 md:px-8 lg:px-16 xl:px-24 relative z-10">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center dharma">Recommended Games</h2>
+                    <div className="flex flex-col md:flex-row gap-6">
+                        {multigames
+                            .slice(0, 3)
+                            .map((game, index) => (
+                            <div key={index} className="flex-1 hover:scale-[1.02] transition-all duration-300">
+                                <Link href={`/awp-multigames/${game.slug}`}>
+                                    <div className="rounded-lg overflow-hidden">
+                                        <Image
+                                            src={game.image}
+                                            alt={game.title}
+                                            className="w-full h-auto"
+                                            width={400}
+                                            height={300}
+                                        />
+                                    </div>
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
       </div>
     </>
   )

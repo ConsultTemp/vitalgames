@@ -2,7 +2,8 @@ import Image from "next/image"
 import Link from "next/link"
 import SmoothReveal from "../smooth-reveal"
 import { games } from "../../lib/allgamesmap"
-
+import FloatingImage from "../bg-image-component";
+import campana from '../../public/campana.png'
 export default function AllGamesList() {
   // Sort games to put coming soon games first
   const sortedGames = [...games].sort((a, b) => {
@@ -12,10 +13,15 @@ export default function AllGamesList() {
   });
 
   return (
-    <section className="py-t md:pt-16 relative overflow-hidden absolute bg-transparent">
+    <section className="py-16 md:pt-16 relative overflow-visible absolute bg-transparent px-4 ">
       
-      <div className="container mx-auto px-4 relative z-10 pb-12 md:pb-36">
-        
+      <div className="container mx-auto relative z-10 pb-12 md:pb-36 relative overflow-visible">
+      <div className="absolute inset-0 z-1 overflow-hidden pointer-events-none overflow-visible">
+              {/* Bottom left large diamond */}
+              <div className="absolute bottom-[-100px]  w-96 md:w-96 h-96 md:h-96 right-[-200px] animate-float-slow rotate-10">
+                <FloatingImage src={campana || "/placeholder.svg"} alt="Diamond" className="w-[160px] md:w-[384px] h-[160px] md:h-[384px]" />
+              </div>
+            </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {sortedGames.map((game) => (
@@ -24,7 +30,7 @@ export default function AllGamesList() {
                 <Image
                   src={game.mainImage}
                   alt={game.name}
-                  className={`object-cover] rounded-lg transition-transform duration-300 group-hover:scale-105 w-full h-full ${game.isComingSoon ? 'opacity-20' : ''}`}
+                  className={`object-cover] rounded-lg transition-transform duration-300 group-hover:scale-105 w-full h-full`}
                 />
                 {game.isComingSoon && (
                   <>

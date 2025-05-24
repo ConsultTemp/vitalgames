@@ -28,8 +28,23 @@
   }
 }
 
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-slideInRight {
   animation: slideInRight 0.4s ease-in-out forwards;
+}
+
+.animate-slideDown {
+  animation: slideDown 0.2s ease-out forwards;
 }
 
 @keyframes gradient-rotate {
@@ -119,6 +134,19 @@
 /* Classe che usa il font */
 .dharma {
   font-family: 'dharma', sans-serif;
+  color: #fff;
+}
+
+@font-face {
+  font-family: 'dharma-light'; /* Nome che userai nel CSS */
+  src: url('../fonts/dharmagothice-light-i.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Classe che usa il font */
+.dharmalight {
+  font-family: 'dharma-light', sans-serif;
   color: #fff;
 }
 
@@ -248,8 +276,37 @@ clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 96%);
   -webkit-mask-image: linear-gradient(to bottom right, rgba(0,0,0,1) 20%, transparent 80%);
 }
 
+.partners-bg{
+  background: url("../public/logovitalwhite.svg");
+  background-size: 60px;
+  background-repeat: repeat;
+  background-color: rgba(0, 0, 0, 0.03);
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+}
+
+
 .cabinet-bg{
   background: url("../public/cabinetbg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.contact-bg{
+  background: url("../public/contactbg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.technology-bg{
+  background: url("../public/techonologybg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -325,4 +382,15 @@ clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 96%);
   height: 100%;
   border-radius: 0.5rem;
   overflow: hidden;
+}
+
+@keyframes infinite-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@layer components {
+  .animate-infinite-scroll {
+    animation: infinite-scroll 50s linear infinite;
+  }
 }

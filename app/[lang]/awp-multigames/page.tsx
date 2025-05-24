@@ -2,10 +2,11 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
-import bgawp from "@/public/bgawp.png"
+import bgawp from "@/public/awpbg.png"
 import SmoothReveal from "@/components/smooth-reveal"
 import Head from "next/head"
 import { useLanguage } from "@/components/language-provider"
+import VideoHero from "@/components/VideoHero"
 
 // Importa qui le immagini dei giochi come in multigames.tsx
 import casinoroyale from "@/public/multigames-cards/CASINO ROYALE_Converted.jpg"
@@ -20,13 +21,32 @@ import pool4 from "@/public/multigames-cards/POOL 4_Converted.jpg"
 import champions from "@/public/multigames-cards/CHAMPIONS.png"
 import ipfum from "@/public/multigames-cards/IP FUM.png"
 import luckyslot from "@/public/multigames-cards/lucky_slot.png"
+import fortuneultralink from "@/public/multigames/Multigames/Fortune Ultralink/fortune_ultralink.jpg"
+import manhattan from "@/public/multigames/Multigames/Manhattan/MANHATTAN.jpg"
+import FloatingImage from "@/components/bg-image-component"
+import sevens from '../../../public/seven.png'
+import bar from '../../../public/bar.png'
 
 const multigames = [
   {
-    id: 1,
-    slug: "casino-royale",
-    title: "Casino Royale",
-    image: casinoroyale,
+    id: 14,
+    slug: "manhattan",
+    title: "Manhattan",
+    image: manhattan,
+    description: "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
+  },
+  {
+    id: 10,
+    slug: "champions",
+    title: "Champions",
+    image: champions,
+    description: "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
+  },
+  {
+    id: 13,
+    slug: "fortune-ultralink",
+    title: "Fortune Ultralink",
+    image: fortuneultralink,
     description: "Sistema multigame con 10 giochi a tema casinò classico, interfaccia elegante e jackpot progressivo.",
   },
   {
@@ -37,18 +57,25 @@ const multigames = [
     description: "La nostra soluzione premium con 12 giochi esclusivi, grafica HD e funzionalità bonus avanzate.",
   },
   {
-    id: 3,
-    slug: "golden-club",
-    title: "Golden Club",
-    image: goldenclub,
-    description: "Esperienza VIP con 8 giochi selezionati, tema lussuoso e meccaniche di gioco innovative.",
-  },
-  {
     id: 4,
     slug: "piggy-gold",
     title: "Piggy Gold Multigame",
     image: piggygold,
     description: "Divertente sistema con 10 giochi a tema denaro e fortuna, perfetto per un pubblico giovane.",
+  },
+  {
+    id: 1,
+    slug: "casino-royale",
+    title: "Casino Royale",
+    image: casinoroyale,
+    description: "Sistema multigame con 10 giochi a tema casinò classico, interfaccia elegante e jackpot progressivo.",
+  },
+  {
+    id: 8,
+    slug: "circus",
+    title: "Circus",
+    image: circus,
+    description: "Sistema divertente con 10 giochi a tema circo, perfetto per un pubblico giovane e dinamico.",
   },
   {
     id: 5,
@@ -65,39 +92,11 @@ const multigames = [
     description: "Sistema elegante con 8 giochi a tema gemme, effetti visivi spettacolari e alta percentuale di vincita.",
   },
   {
-    id: 7,
-    slug: "topazio",
-    title: "Topazio",
-    image: topazio,
-    description: "Multigame con 8 giochi premium, grafica raffinata e funzionalità bonus esclusive.",
-  },
-  {
-    id: 8,
-    slug: "circus",
-    title: "Circus",
-    image: circus,
-    description: "Sistema divertente con 10 giochi a tema circo, perfetto per un pubblico giovane e dinamico.",
-  },
-  {
-    id: 9,
-    slug: "pool-4",
-    title: "Pool 4",
-    image: pool4,
-    description: "Multigame con 8 giochi premium, grafica moderna e funzionalità bonus innovative.",
-  },
-  {
-    id: 10,
-    slug: "champions",
-    title: "Champions",
-    image: champions,
-    description: "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
-  },
-  {
-    id: 11,
-    slug: "ip-fum",
-    title: "IP FUM",
-    image: ipfum,
-    description: "Multigame con 8 giochi premium, grafica moderna e funzionalità bonus innovative.",
+    id: 3,
+    slug: "golden-club",
+    title: "Golden Club",
+    image: goldenclub,
+    description: "Esperienza VIP con 8 giochi selezionati, tema lussuoso e meccaniche di gioco innovative.",
   },
   {
     id: 12,
@@ -151,35 +150,22 @@ export default function AwpMultigamesPage() {
           })}
         </script>
       </Head>
-      <div>
+      <div className="w-screen">
         {/* HERO HEADER */}
-        <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-          <Image
-            src={bgawp || "/placeholder.svg"}
-            alt="AWP Multigames Background"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/50" />
-          <div className="relative z-10 flex flex-col items-start justify-center h-full w-full px-4 md:px-8 lg:px-16 xl:px-24">
-            <div className="max-w-2xl">
-              <h1 className="text-4xl md:text-6xl font-bold text-white dharma">{dict.awpMultigames.page.title}</h1>
-              <p className="text-sm text-white">
-                {dict.awpMultigames.page.subtitle}
-              </p>
-            </div>
-          </div>
-        </div>
+        <VideoHero
+          title={dict.awpMultigames.page.title}
+          subtitle={dict.awpMultigames.page.subtitle}
+          videoUrl="https://files.catbox.moe/bpgqmj.mp4"
+        />
 
         {/* MULTIGAMES CARDS SECTION */}
-        <section className="relative bg-transparent pt-16">
+        <section className="relative bg-black pt-16 flex flex-col items-center overflow-visible">
           {/* Side gradients */}
           <div
             className="absolute top-[60%] -translate-y-1/2 left-0 w-[500px] h-[1200px] pointer-events-none"
             style={{
               background:
-                "radial-gradient(circle at left center, rgba(255, 196, 0, 0.35) 0%, rgba(255, 196, 0, 0.2) 30%, rgba(255, 196, 0, 0.1) 50%, transparent 70%)",
+                "radial-gradient(circle at left center, rgba(255, 196, 0, 0.35) 0%, rgba(255, 196, 0, 0.2) 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%)",
             }}
           />
           <div
@@ -190,24 +176,18 @@ export default function AwpMultigamesPage() {
             }}
           />
 
-          <div className="container mx-auto px-4 relative z-10 pb-12 md:pb-36">
-            <div className="mb-6 md:mb-8 w-full flex flex-col items-center">
-              <SmoothReveal className="inline-block bg-vitalYellow text-black text-xs font-medium px-2 py-[3.5px] rounded mb-2">
-                {dict.awpMultigames.page.section.badge}
-              </SmoothReveal>
-              <SmoothReveal>
-                <h2 className="text-center text-4xl md:text-7xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap px-4">
-                  {dict.awpMultigames.page.section.title}
-                </h2>
-              </SmoothReveal>
-              <SmoothReveal>
-                <p className="text-center text-white/80 max-w-2xl mt-4">
-                  {dict.awpMultigames.page.section.description}
-                </p>
-              </SmoothReveal>
+          <div className="container mx-auto px-4 relative z-10 pb-12 md:pb-36 overflow-visible">
+            <div className="absolute inset-0 z-1 overflow-hidden pointer-events-none overflow-visible">
+              {/* Bottom left large diamond */}
+              <div className="absolute top-[-100px]  w-96 md:w-96 h-96 md:h-96 left-[-150px] animate-float-slow rotate-10">
+                <FloatingImage src={bar || "/placeholder.svg"} alt="Diamond" className="w-[160px] md:w-[384px] h-[160px] md:h-[384px]" />
+              </div>
+              <div className="absolute bottom-0   w-40 md:w-96 h-40 md:h-96 right-[-50px] md:right-0 animate-float-slow rotate-10">
+                <FloatingImage src={sevens || "/placeholder.svg"} alt="Diamond" className="w-[160px] md:w-[384px] h-[160px] md:h-[384px]" />
+              </div>
             </div>
             <div
-              className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6 px-0 sm:px-4 md:px-4 lg:px-8"
+              className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full"
               onMouseLeave={() => setHoveredCard(null)}
             >
               {multigames.map((game) => (
@@ -240,6 +220,45 @@ export default function AwpMultigamesPage() {
                   </SmoothReveal>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* RECOMMENDED GAMES SECTION */}
+        <section className="relative overflow-visible">
+          {/* Background with gradient and logo pattern */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-black/50 to-transparent">
+            <div className="absolute inset-0 bg-black"></div>
+          </div>
+
+          {/* Content */}
+          <div className="relative z-10">
+            <div className="container mx-auto px-4">
+              <div className="mb-8 w-full flex flex-col items-start">
+                <SmoothReveal>
+                  <h2 className="text-start dharma text-3xl md:text-5xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap">
+                    {dict.awpMultigames.page.section.title}
+                  </h2>
+                </SmoothReveal>
+              </div>
+
+              <div>
+                <div className="absolute left-0 right-0 top-[0%] h-[50vh] bg-gradient-to-b from-transparent via-[#007bff]/20 to-transparent pointer-events-none" />
+
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+                  {multigames.slice(0, 5).map((game) => (
+                    <SmoothReveal key={game.id}>
+                      <Link href={`/awp-multigames/${game.slug}`} className="w-full aspect-[1080/1196] block group rounded-lg overflow-hidden relative">
+                        <Image
+                          src={game.image}
+                          alt={game.title}
+                          className="object-cover rounded-lg w-full h-full"
+                        />
+                      </Link>
+                    </SmoothReveal>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>

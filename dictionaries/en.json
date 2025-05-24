@@ -42,20 +42,21 @@
   },
   "home": {
     "ageRestriction": {
-      "title": "Age Restriction +18",
-      "description": "Gaming should be safe entertainment. We promote responsible gaming and remind that our products are intended exclusively for adults (18+)."
+      "title": "Responsible gaming: +18!",
+      "description": "Gaming is first and foremost entertainment. Vitalgames is committed to ensuring that every player has a fun and conscious experience. The promotion of responsible gaming is at the core of our philosophy. Not allowed for minors under 18 years of age."
     },
     "cabinet": {
-      "title": "DISCOVER",
-      "titleLine2": "OUR",
-      "titleLine3": "VLT CABINETS",
+      "title": "Discover",
+      "titleLine2": "Our",
+      "titleLine3": "Vlt Cabinets",
       "subtitle": "Vitalgames",
       "description": "Explore our selection of high-quality VLT cabinets, designed to deliver an immersive and engaging gaming experience.",
       "cta": "Discover more"
     },
     "technology": {
-      "title": "VITAL GAMES",
-      "subtitle": "WINNING TECHNOLOGY",
+      "title": "WHO WE ARE",
+      "subtitle": "The evolution of gaming, made in Italy",
+      "description": "VitalGames is synonymous with reliability in the gaming industry. With deep roots in the AWP market, we have gone through generations of players, constantly innovating while never losing our identity. We are an integral part of the evolution of gaming in Italy, a reference point for those seeking quality, experience, and a vision always projected towards the future.",
       "certification": {
         "title": "Certified Italian Quality",
         "standard": "ISO 9001"
@@ -63,16 +64,23 @@
       "cta": "Work with us"
     },
     "winningTechnology": {
-      "title": "WINNING",
-      "titleLine2": "TECHNOLOGY",
-      "subtitle": "Vitalgames",
-      "description": "Our games are designed with advanced algorithms to ensure a fair and exciting gaming experience.",
-      "features": [
-        "Certified random number generators",
-        "Balanced mathematics",
-        "Exciting bonus features",
-        "Progressive jackpots"
-      ]
+      "title": "The evolution of gaming, made in Italy",
+      "description": "VitalGames is synonymous with reliability in the gaming industry. With deep roots in the AWP market, we have gone through generations of players, constantly innovating while never losing our identity.",
+      "description2": "We are an integral part of the evolution of gaming in Italy, a reference point for those seeking quality, experience, and a vision always projected towards the future.",
+      "cards": {
+        "iso": {
+          "description": "<span className=\"font-bold\">ISO</span> certified <span className=\"font-bold\">quality</span> standard"
+        },
+        "experience": {
+          "description": "<span className=\"font-bold\">25 years</span> in the gaming market"
+        },
+        "games": {
+          "description": "Over <span className=\"font-bold\">40,000</span> titles in <span className=\"font-bold\">Italy</span>"
+        },
+        "partners": {
+          "description": "<span className=\"font-bold\">Partnerships</span> with leading operators"
+        }
+      }
     },
     "magicDiamond": {
       "title": "ITALY'S TOP RATED",
@@ -83,16 +91,44 @@
       "gameTitle": "Magic Diamond™"
     },
     "multigames": {
-      "title": "DISCOVER OUR MULTIGAMES",
-      "subtitle": "Vitalgames",
-      "description": "Our multigame systems offer a variety of games on a single machine, maximizing floor space and fun.",
-      "features": ["Multiple games on one machine", "Easy navigation", "Regular updates", "Customization for operators"],
-      "cta": "View Multigame Options"
+      "title": "OUR",
+      "titleLine2": "MULTIGAMES",
+      "subtitle": "Vital games",
+      "description": "Beyond simple gaming: experience Multigames by Vital Games.",
+      "features": [
+        "Multiple games on one machine",
+        "Easy navigation",
+        "Regular updates",
+        "Customization for operators"
+      ],
+      "cta": "Discover Multigames",
+      "descriptions": {
+        "manhattan": "Sports system with 8 football-themed games, perfect for sports enthusiasts.",
+        "champions-slot": "Sports system with 8 football-themed games, perfect for sports enthusiasts.",
+        "fortune-ultralink": "Multigame system with 10 classic casino-themed games, elegant interface and progressive jackpot.",
+        "diamante": "Our premium solution with 12 exclusive games, HD graphics and advanced bonus features.",
+        "piggy-gold": "Fun system with 10 money and fortune-themed games, perfect for a young audience.",
+        "casino-royale": "Multigame system with 10 classic casino-themed games, elegant interface and progressive jackpot.",
+        "circus": "Entertaining system with 10 circus-themed games, perfect for a young and dynamic audience.",
+        "rubino": "Multigame with 6 premium games, vibrant graphics and exclusive bonus features.",
+        "zaffiro": "Elegant system with 8 gem-themed games, spectacular visual effects and high win rate.",
+        "golden-club": "VIP experience with 8 selected games, luxurious theme and innovative gameplay mechanics.",
+        "lucky-slot": "System with 8 fortune-themed games, attractive graphics and exclusive bonus features."
+      }
     },
     "gameCards": {
       "badge": "All games",
-      "title": "ALL GAMES BY VITAL GAMES",
+      "title": "ALL GAMES",
       "viewAll": "View all games"
+    },
+    "manhattan": {
+      "title": "MANHATTAN",
+      "comingSoon": "COMING SOON",
+      "description": "Vital Games presents MultiGames Manhattan, a mix of 5 unique games: Shark, Midnight Saloon, Mister Diamond, Cherry and Le Chef, designed to offer complete and engaging entertainment.",
+      "ageRestriction": "Gaming is prohibited for minors under 18 years. Play responsibly"
+    },
+    "partners": {
+      "title": "Our Partners"
     }
   },
   "vlt": {
@@ -101,7 +137,7 @@
     "hero": {
       "title": "Video Lottery Terminals",
       "subtitle": "Advanced Gaming Solutions",
-      "description": "Our VLT systems represent the pinnacle of gaming technology, offering secure, networked gaming experiences with central monitoring and control."
+      "description": "Discover our VLT cabinets"
     },
     "features": {
       "title": "VLT Features",
@@ -298,7 +334,8 @@
     "recommended": {
       "badge": "Recommended Games",
       "title": "RECOMMENDED GAMES"
-    }
+    },
+    "youMightAlsoLike": "You might also like"
   },
   "gameDetail": {
     "info": {
@@ -372,7 +409,8 @@
     },
     "discover": {
       "title": "Discover"
-    }
+    },
+    "partOf": "Part of"
   },
   "contact": {
     "title": "Contact Us",
@@ -437,84 +475,52 @@
     }
   },
   "footer": {
-    "games": "Games",
-    "allGames": "All games",
-    "multigames": "All multigames",
-    "cabinet": "Cabinet",
-    "onlineGames": "Online games",
-    "company": "Vital games",
-    "aboutUs": "About us",
-    "contactUs": "Contact us",
-    "instagram": "Instagram",
-    "usage": "Usage",
-    "privacyPolicies": "Privacy & Policies",
     "sections": {
-      "products": {
-        "title": "Products",
+      "games": {
+        "title": "Games",
         "links": [
           {
-            "label": "VLT Systems",
-            "href": "/vlt"
-          },
-          {
-            "label": "AWP Multigames",
-            "href": "/awp-multigames"
-          },
-          {
-            "label": "Game Library",
+            "label": "All games",
             "href": "/allgames"
           },
           {
-            "label": "Cabinets",
+            "label": "Multigames",
+            "href": "/awp-multigames"
+          },
+          {
+            "label": "Cabinet",
             "href": "/cabinets"
           }
         ]
       },
       "company": {
-        "title": "Company",
+        "title": "Vital Games",
         "links": [
           {
-            "label": "About Us",
+            "label": "About us",
             "href": "/about"
           },
           {
-            "label": "Contact",
+            "label": "Contact us",
             "href": "/contact"
           },
           {
-            "label": "Careers",
-            "href": "/careers"
-          },
-          {
-            "label": "News",
-            "href": "/news"
+            "label": "Instagram",
+            "href": "https://instagram.com/vitalgames"
           }
         ]
       },
-      "legal": {
-        "title": "Legal",
+      "usage": {
+        "title": "Usage",
         "links": [
           {
-            "label": "Terms of Service",
-            "href": "/terms"
-          },
-          {
-            "label": "Privacy Policy",
+            "label": "Privacy & Policy",
             "href": "/privacy"
-          },
-          {
-            "label": "Responsible Gaming",
-            "href": "/responsible-gaming"
-          },
-          {
-            "label": "Licenses",
-            "href": "/licenses"
           }
         ]
       }
     },
-    "copyright": "© 2025 Vital Games Project S.r.l©. All rights reserved. P. IVA: 08160840966. Powered by DK",
-    "responsibleGaming": "Please play responsibly. Gambling should be entertaining and not a way to make money. Remember that gambling can be addictive. If you need help, contact a gambling support organization."
+    "copyright": "Vital Games Project S.r.l© 2025. All rights reserved. P. IVA: 08160840968. Powered by DK"
   },
   "common": {
     "buttons": {
@@ -546,5 +552,31 @@
     "learnMoreLink": "Learn More",
     "showDetails": "Show details",
     "hideDetails": "Hide details"
+  },
+  "aboutUs": {
+    "title": "WHO WE ARE",
+    "description": "VitalGames represents excellence in the Italian gaming sector. With a history dating back to the AWP market, we have accompanied generations of players through the evolution of the sector, always keeping our identity alive.",
+    "philosophy": {
+      "title": "Our philosophy",
+      "description": "Is based on three pillars: quality, innovation, and reliability. We use cutting-edge technologies and certified algorithms to ensure a fair and engaging gaming experience."
+    },
+    "presence": {
+      "title": "Our presence",
+      "description": "In the Italian territory is evidenced by over 40,000 installed titles and a network of established collaborations with the main operators in the sector."
+    },
+    "cards": {
+      "iso": {
+        "description": "<span className=\"font-bold\">ISO</span> certified <span className=\"font-bold\">quality</span> standard"
+      },
+      "experience": {
+        "description": "Over <span className=\"font-bold\">25 years of activity</span> in the <span className=\"font-bold\">Italian</span> gaming market"
+      },
+      "games": {
+        "description": "Over <span className=\"font-bold\">40 thousand</span> titles in <span className=\"font-bold\">Italy</span>"
+      },
+      "partners": {
+        "description": "<span className=\"font-bold\">Established partnerships</span> with the <span className=\"font-bold\">leading</span> operators and concessionaires in the sector"
+      }
+    }
   }
 }

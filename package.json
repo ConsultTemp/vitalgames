@@ -1,5 +1,5 @@
 {
-  "name": "pattycar",
+  "name": "vitalgames",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -47,6 +47,7 @@
     "embla-carousel-react": "8.5.1",
     "framer-motion": "^12.9.2",
     "fs": "latest",
+    "gsap": "^3.13.0",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
     "negotiator": "^0.6.4",

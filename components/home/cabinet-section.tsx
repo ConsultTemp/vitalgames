@@ -3,11 +3,19 @@
 import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 import cabiner1 from "../../public/SLOT_2022_Alta.png"
 import cabiner2 from "../../public/SLOT_2022_Bassa.png"
 import cabiner3 from "../../public/Octagon LQ.png"
 import cabiner4 from "../../public/vlts/TRIOOCTAGON LQ.png"
 import cherry from "../../public/cherry.png"
+import overlayGif from "../../public/gifmrdiamond.gif"
 import FloatingImage from "../bg-image-component"
 import SmoothReveal from "../smooth-reveal"
 import Link from "next/link"
@@ -37,9 +45,7 @@ const cabinets = [
 ]
 
 export default function CabinetSection() {
-  const [currentIndex, setCurrentIndex] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
-  const carouselRef = useRef(null)
   const { dictionary, lang } = useLanguage()
   const { cabinet } = dictionary.home
 
@@ -47,16 +53,8 @@ export default function CabinetSection() {
     setIsLoaded(true)
   }, [])
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % cabinets.length)
-  }
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + cabinets.length) % cabinets.length)
-  }
-
   return (
-    <section className="relative overflow-hidden flex flex-row justify-center mx-auto px-6 sm:px-12 md:px-16 lg:px-16 py-16 mt-0">
+    <section className="relative overflow-visible flex flex-row justify-center mx-auto px-6 sm:px-12 md:px-16 lg:px-16 py-16 mt-0">
       {/* Background image centered */}
       <SmoothReveal className="absolute h-fit left-0 top-40 flex items-center justify-center z-0">
         <FloatingImage src={cherry} alt="Vital Logo" className="object-contain w-[200px] h-[200px]" />
@@ -66,19 +64,40 @@ export default function CabinetSection() {
         {/* Mobile Layout */}
         <div className="flex flex-col items-center md:hidden">
           <div className="w-full text-center mb-6">
-            <h2 className="text-5xl sm:text-6xl font-bold text-white dharma leading-tight">
-              <SmoothReveal>{cabinet.title}</SmoothReveal>
-              <SmoothReveal>{cabinet.titleLine2}</SmoothReveal>
+            <h2 className="text-8xl sm:text-6xl font-bold text-white dharma leading-tight">
+              <SmoothReveal>{cabinet.title} {cabinet.titleLine2}</SmoothReveal>
               <SmoothReveal>{cabinet.titleLine3}</SmoothReveal>
             </h2>
           </div>
 
-          <div className="w-full mb-12">
-            <Image 
-              src={cabiner4} 
-              alt={cabinets[3].name} 
-              className="w-full h-auto max-h-[600px] object-contain mx-auto" 
-            />
+          <div className="w-full mb-12 bg-black/20 backdrop-blur-sm rounded-md relative">
+            <Carousel 
+              className="w-full flex items-center justify-center rounded-lg p-4"
+              opts={{
+                loop: true
+              }}
+            >
+              <CarouselContent className="flex items-center">
+                {cabinets.map((cabinet) => (
+                  <CarouselItem key={cabinet.id} className="flex items-center justify-center">
+                    <Image 
+                      src={cabinet.image} 
+                      alt={cabinet.name} 
+                      className="w-full h-auto max-h-[400px] object-contain mx-auto" 
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-2" />
+              <CarouselNext className="right-2" />
+            </Carousel>
+            <div className="absolute bottom-[-140px] right-[-120px] md:right-[-200px] w-[350px] h-[350px] z-20">
+              <Image 
+                src={overlayGif} 
+                alt="Overlay animation" 
+                className="w-full h-full object-contain"
+              />
+            </div>
           </div>
 
           <Button variant="outline" className="rounded-full hover:bg-opacity-80 text-white border-white font-medium px-8 py-3 text-lg">
@@ -104,12 +123,32 @@ export default function CabinetSection() {
           </div>
 
           {/* Right side - Cabinet carousel */}
-          <div className="w-1/2 h-full relative rounded-lg">
-            <div ref={carouselRef} className="relative flex flex-col items-center h-full w-full justify-center">
+          <div className="w-5/12 h-full relative rounded-lg bg-black/20 backdrop-blur-md">
+            <Carousel 
+              className="w-full flex items-center justify-center rounded-lg p-4"
+              opts={{
+                loop: true
+              }}
+            >
+              <CarouselContent className="flex items-center">
+                {cabinets.map((cabinet) => (
+                  <CarouselItem key={cabinet.id} className="flex items-center justify-center">
+                    <Image 
+                      src={cabinet.image} 
+                      alt={cabinet.name} 
+                      className="w-full h-auto max-h-[600px] object-contain" 
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-2" />
+              <CarouselNext className="right-2" />
+            </Carousel>
+            <div className="absolute bottom-[-140px] right-[-120px] md:right-[-200px] w-[350px] h-[350px] z-20">
               <Image 
-                src={cabiner4} 
-                alt={cabinets[3].name} 
-                className="w-full h-auto max-h-[1000px] object-contain" 
+                src={overlayGif} 
+                alt="Overlay animation" 
+                className="w-full h-full object-contain"
               />
             </div>
           </div>

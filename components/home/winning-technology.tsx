@@ -1,85 +1,93 @@
-import React from 'react'
-import Image from 'next/image'
-import squalo from '../../public/squalo.png'
-import campana from '../../public/campana.png'
-import sprinter from '../../public/sprinter.png'
-import seven from '../../public/seven.png'
+'use client'
+import Image from "next/image"
+import { Card } from "@/components/ui/card"
+import logo from "../../public/logovital.svg"
+import iso from "../../public/isologo.svg"
+import star from "../../public/star1.png"
+import diamond from "../../public/diamante1.png"
+import coin from "../../public/coin2.png"
+import { useLanguage } from "@/components/language-provider"
+import FloatingImage from "../bg-image-component"
+import diamante from '../../public/diamond.png'
 
-interface WinningTechnologyProps {
-  className?: string
-}
+export default function WinningTechnology() {
+  const { dictionary: dict } = useLanguage()
 
-export function WinningTechnology({ className = '' }: WinningTechnologyProps) {
+  const cards = [
+    {
+      id: 1,
+      icon: iso,
+      alt: "ISO Certification",
+      description: dict.home.winningTechnology.cards.iso.description,
+    },
+    {
+      id: 2,
+      icon: star,
+      alt: "Star Icon",
+      description: dict.home.winningTechnology.cards.experience.description,
+    },
+    {
+      id: 3,
+      icon: diamond,
+      alt: "Diamond Icon",
+      description: dict.home.winningTechnology.cards.games.description,
+    },
+    {
+      id: 4,
+      icon: coin,
+      alt: "Coin Icon",
+      description: dict.home.winningTechnology.cards.partners.description,
+    },
+  ]
+
   return (
-    <section className={`relative min-h-screen overflow-hidden bg-black py-16 ${className}`}>
-      {/* Background decorative images */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Top right image */}
-        <div className="absolute top-[10%] right-[10%] w-72 h-72">
-          <Image 
-            src={squalo}
-            alt="Decorative element"
-            width={288}
-            height={288}
-            className="w-full h-auto opacity-20"
-          />
-        </div>
+    <div className="flex min-h-[80vh] flex-col items-center justify-center py-6 px-2 md:px-3 relative">
 
-        {/* Left middle image */}
-        <div className="absolute top-[40%] left-[5%] w-64 h-64">
-          <Image 
-            src={campana}
-            alt="Decorative element"
-            width={256}
-            height={256}
-            className="w-full h-auto opacity-20"
-          />
-        </div>
-
-        {/* Bottom center-left image */}
-        <div className="absolute bottom-[10%] left-[25%] w-80 h-80">
-          <Image 
-            src={sprinter}
-            alt="Decorative element"
-            width={320}
-            height={320}
-            className="w-full h-auto opacity-20"
-          />
-        </div>
-        
-        {/* Bottom right image that extends outside the container */}
-        <div className="absolute bottom-[-35%] right-[-15%] w-[600px] h-[600px]">
-          <Image 
-            src={seven}
-            alt="Decorative element"
-            width={600}
-            height={600}
-            className="w-full h-auto opacity-25"
-            priority
-          />
+      <div className="absolute inset-0 z-1 overflow-hidden pointer-events-none">
+        {/* Bottom left large diamond */}
+        <div className="absolute top-4   w-40 md:w-96 h-40 md:h-96 left-[-50px] md:left-[-150px] animate-float-slow rotate-10">
+          <FloatingImage src={diamante || "/placeholder.svg"} alt="Diamond" className="w-[160px] md:w-[384px] h-[160px] md:h-[384px]" />
         </div>
       </div>
+      <div className="max-w-6xl w-full flex flex-col items-center text-center z-2">
+        {/* Logo */}
+        <div className="w-32 h-32 md:w-40 md:h-40 relative mb-8">
+          <Image src={logo || "/placeholder.svg"} alt="Vital Games Logo" fill className="object-contain" priority />
+        </div>
 
-      {/* Content container */}
-      <div className="relative z-10 container mx-auto px-4">
-        <div className="flex flex-col items-center">
-          {/* Title placeholder */}
-          <h2 className="text-8xl font-bold text-white mb-12 text-center dharma">
-            WINNING
-            <br />
-            TECHNOLOGY
-          </h2>
+        {/* Main Title */}
+        <h1 className="text-2xl md:text-3xl font-bold mb-6 text-white">{dict.home.winningTechnology.title}</h1>
 
-          {/* Content placeholder - Will be filled later */}
-          <div className="max-w-4xl mx-auto">
-            <p className="text-gray-300 text-center mb-8">
-              Contenuto da aggiungere in seguito...
-            </p>
-          </div>
+        {/* First Text Block */}
+        <p className="text-sm md:text-sm mb-5 font-extralight text-white max-w-2xl">
+          {dict.home.winningTechnology.description}
+        </p>
+
+        {/* Second Text Block */}
+        <p className="text-sm md:text-sm mb-6 font-extralight text-white max-w-2xl">
+          {dict.home.winningTechnology.description2}
+        </p>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-1.5 w-full">
+          {cards.map((card) => (
+            <div key={card.id} className="aspect-[5/3]">
+              <Card className="h-full w-full flex flex-col items-center justify-center text-center p-4 bg-white/5 backdrop-blur-sm border-0 text-white">
+                <div className="h-14 sm:h-16 mb-3">
+                  <Image
+                    src={card.icon || "/placeholder.svg"}
+                    alt={card.alt}
+                    width={60}
+                    height={60}
+                    className="object-contain h-full w-auto"
+                  />
+                </div>
+                <p className="text-xs sm:text-xs">{card.description}</p>
+              </Card>
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+    </div>
   )
 }
-
-export default WinningTechnology 

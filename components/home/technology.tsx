@@ -71,16 +71,16 @@ export function Technology({ className = '' }: WinningTechnologyProps) {
                     <div className="flex flex-col items-center">
                         {/* Title placeholder */}
                         <SmoothReveal>
-                        <h2 className="text-8xl font-bold dharma text-white mb-12 text-center dharma">
-                            <span className='text-vitalYellow'>{dict.home.technology.title}</span>
-                            <br />
-                            {dict.home.technology.subtitle}
-                        </h2>
+                            <h2 className="text-8xl font-bold mb-12 text-center flex flex-col items-center">
+                                <span className=' dharma'>{dict.home.technology.title}</span>
+
+                                <span className="text-lg font-light text-vitalYellow">{dict.home.technology.subtitle}</span>
+                            </h2>
                         </SmoothReveal>
 
                         {/* Content placeholder - Will be filled later */}
                         <SmoothReveal className="max-w-4xl mx-auto mb-12">
-                            <Image src={certificate} alt="ISO"  width={300} height={500} />
+                            <p className='text-center text-sm font-light'>{dict.home.technology.description}</p>
                         </SmoothReveal>
                         <SmoothReveal className='p-6 rounded-lg border border-1 border-gray-800 flex flex-row items-center justify-center gap-4 backdrop-blur-md'>
                             <Image src={isologo} alt="ISO" width={50} height={50} />
@@ -90,11 +90,11 @@ export function Technology({ className = '' }: WinningTechnologyProps) {
                             </div>
                         </SmoothReveal>
                         <SmoothReveal className="flex flex-col md:flex-row gap-8 mt-16">
-                            <Image src={vitalhq} alt="Vital HQ" width={400} height={400} className="rounded-2xl w-full md:w-[400px]" />
-                            <Image src={vitalpres} alt="Vital HQ" width={400} height={400} className="rounded-2xl w-full md:w-[400px]" />
+                            <Image src={vitalhq} alt="Vital HQ" width={300} height={300} className="rounded-2xl" />
+                            <Image src={vitalpres} alt="Vital HQ" width={300} height={300} className="rounded-2xl" />
                         </SmoothReveal>
                         <SmoothReveal className="flex justify-center mt-12">
-                            <Link href="/contact" className="bg-vitalYellow text-black px-8 py-4 rounded-lg font-medium hover:bg-yellow-400 transition-colors">
+                            <Link href="/contact" className="bg-vitalYellow text-black px-8 py-3 rounded-lg font-medium hover:bg-yellow-400 transition-colors">
                                 {dict.home.technology.cta}
                             </Link>
                         </SmoothReveal>

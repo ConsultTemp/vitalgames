@@ -18,6 +18,7 @@ type LanguageContextType = {
   lang: Language;
   dictionary: typeof it;
   setLang: (lang: Language) => void;
+  isLoading: boolean;
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -25,17 +26,23 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const [lang, setLang] = useState<Language>('it');
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const pathLang = pathname.split('/')[1] as Language;
     if (pathLang && ['it', 'en', 'es'].includes(pathLang)) {
       setLang(pathLang);
     }
+    setIsLoading(false);
   }, [pathname]);
+
+  if (isLoading) {
+    return null;
+  }
 
   return (
     /* @ts-ignore */
-    <LanguageContext.Provider value={{ lang, dictionary: dictionaries[lang], setLang }}>
+    <LanguageContext.Provider value={{ lang, dictionary: dictionaries[lang], setLang, isLoading }}>
       {children}
     </LanguageContext.Provider>
   );
