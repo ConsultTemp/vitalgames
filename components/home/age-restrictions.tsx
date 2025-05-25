@@ -15,8 +15,8 @@ export default function AgeRestrictions({ className = '' }: AgeRestrictionsProps
   const { dictionary: dict } = useLanguage()
 
   return (
-    <div className={` relativew-full px-4 sm:px-8 md:px-16 lg:px-32 relative bg-black py-12 overflow-visible`}>
-      <div className="absolute inset-0 ovrflow-visible"></div>
+    <div className={` relativew-full px-4 sm:px-8 md:px-16 lg:px-32 relative bg-black`}>
+      <div className="absolute inset-0 ovrflow-hidden"></div>
         <div className='flex flex-col sm:flex-row items-center gap-4 justify-start p-4 sm:p-6 md:p-8 backdrop-blur-sm border border-1 border-white/10 rounded-lg'>
             <Image 
               src={responsible} 

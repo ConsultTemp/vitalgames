@@ -64,14 +64,18 @@ export default function CabinetSection() {
         {/* Mobile Layout */}
         <div className="flex flex-col items-center md:hidden">
           <div className="w-full text-center mb-6">
-            <h2 className="text-8xl sm:text-6xl font-bold text-white dharma leading-tight">
+            <h2 className="text-8xl sm:text-6xl font-bold text-white dharma leading-tight invisible h-0 md:h-fit md:visible">
               <SmoothReveal>{cabinet.title} {cabinet.titleLine2}</SmoothReveal>
               <SmoothReveal>{cabinet.titleLine3}</SmoothReveal>
+            </h2>
+
+            <h2 className="text-8xl sm:text-6xl font-bold text-white dharma leading-tight visible md:invisible">
+              CABINETS
             </h2>
           </div>
 
           <div className="w-full mb-12 bg-black/20 backdrop-blur-sm rounded-md relative">
-            <Carousel 
+            <Carousel
               className="w-full flex items-center justify-center rounded-lg p-4"
               opts={{
                 loop: true
@@ -80,10 +84,10 @@ export default function CabinetSection() {
               <CarouselContent className="flex items-center">
                 {cabinets.map((cabinet) => (
                   <CarouselItem key={cabinet.id} className="flex items-center justify-center">
-                    <Image 
-                      src={cabinet.image} 
-                      alt={cabinet.name} 
-                      className="w-full h-auto max-h-[400px] object-contain mx-auto" 
+                    <Image
+                      src={cabinet.image}
+                      alt={cabinet.name}
+                      className="w-full h-auto max-h-[400px] object-contain mx-auto"
                     />
                   </CarouselItem>
                 ))}
@@ -91,10 +95,10 @@ export default function CabinetSection() {
               <CarouselPrevious className="left-2" />
               <CarouselNext className="right-2" />
             </Carousel>
-            <div className="absolute bottom-[-140px] right-[-120px] md:right-[-200px] w-[350px] h-[350px] z-20">
-              <Image 
-                src={overlayGif} 
-                alt="Overlay animation" 
+            <div className="absolute bottom-[-160px] right-[-140px] md:right-[-200px] w-[350px] h-[350px] z-20">
+              <Image
+                src={overlayGif}
+                alt="Overlay animation"
                 className="w-full h-full object-contain"
               />
             </div>
@@ -124,7 +128,7 @@ export default function CabinetSection() {
 
           {/* Right side - Cabinet carousel */}
           <div className="w-5/12 h-full relative rounded-lg bg-black/20 backdrop-blur-md">
-            <Carousel 
+            <Carousel
               className="w-full flex items-center justify-center rounded-lg p-4"
               opts={{
                 loop: true
@@ -133,10 +137,10 @@ export default function CabinetSection() {
               <CarouselContent className="flex items-center">
                 {cabinets.map((cabinet) => (
                   <CarouselItem key={cabinet.id} className="flex items-center justify-center">
-                    <Image 
-                      src={cabinet.image} 
-                      alt={cabinet.name} 
-                      className="w-full h-auto max-h-[600px] object-contain" 
+                    <Image
+                      src={cabinet.image}
+                      alt={cabinet.name}
+                      className="w-full h-auto max-h-[600px] object-contain"
                     />
                   </CarouselItem>
                 ))}
@@ -145,9 +149,9 @@ export default function CabinetSection() {
               <CarouselNext className="right-2" />
             </Carousel>
             <div className="absolute bottom-[-140px] right-[-120px] md:right-[-200px] w-[350px] h-[350px] z-20">
-              <Image 
-                src={overlayGif} 
-                alt="Overlay animation" 
+              <Image
+                src={overlayGif}
+                alt="Overlay animation"
                 className="w-full h-full object-contain"
               />
             </div>

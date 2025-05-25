@@ -52,7 +52,7 @@ const games: Game[] = [
 function GameCard({ game }: { game: Game }) {
   return (
     <div className="aspect-square bg-gray-800/50 rounded-lg overflow-hidden transition-transform hover:scale-105">
-      <div className="relative w-full h-full">
+      <div className="relative w-full h-full overflow-hidden">
         <Image
           src={game.image || "/placeholder.svg"}
           alt={game.title}
@@ -90,12 +90,12 @@ export default function ManhattanLanding() {
         </div>
 
         {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center" style={{ marginTop: "0px" }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mt-6">
           <div className="max-w-2xl">
-            <p className="text-sm">{dict.home.manhattan.description}</p>
+            <p className="text-sm mb-8">{dict.home.manhattan.description}</p>
 
             <div className="">
-              <Image src={logo || "/placeholder.svg"} alt="Vital Games Logo" width={100} height={40} className="my-4" />
+              <Image src={logo || "/placeholder.svg"} alt="Vital Games Logo" width={60} height={30} className="mb-8" />
               <p className="text-sm text-gray-400">{dict.home.manhattan.ageRestriction}</p>
             </div>
           </div>
@@ -113,33 +113,10 @@ export default function ManhattanLanding() {
 
         {/* Game Thumbnails */}
         <div className="mt-12 md:mt-16 lg:mt-20">
-          {/* Desktop layout */}
-          <div className="hidden md:grid md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {games.map((game) => (
               <GameCard key={game.slug} game={game} />
             ))}
-          </div>
-
-          {/* Custom mobile layout: 2-1-2 */}
-          <div className="grid gap-4 md:hidden">
-            {/* First row - 2 cards */}
-            <div className="grid grid-cols-2 gap-4">
-              <GameCard game={games[0]} />
-              <GameCard game={games[1]} />
-            </div>
-
-            {/* Second row - 1 centered card */}
-            <div className="flex justify-center">
-              <div className="w-full max-w-[calc(50%-0.5rem)]">
-                <GameCard game={games[2]} />
-              </div>
-            </div>
-
-            {/* Third row - 2 cards */}
-            <div className="grid grid-cols-2 gap-4">
-              <GameCard game={games[3]} />
-              <GameCard game={games[4]} />
-            </div>
           </div>
         </div>
       </div>

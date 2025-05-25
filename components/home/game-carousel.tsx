@@ -91,7 +91,7 @@ export function GameCarousel() {
         return (
             <div className="w-full py-12 my-12 bg-black">
                 {gameSlides.map((slide) => (
-                    <div key={slide.id} className="rounded-lg overflow-hidden shadow-lg relative">
+                    <div key={slide.id} className="rounded-lg overflow-hidden shadow-lg relative -mb-16">
                         <div className="relative w-full">
                             <Image
                                 src={slide.mobileImageSrc || slide.imageSrc || "/placeholder.svg"}
@@ -100,7 +100,7 @@ export function GameCarousel() {
                             />
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent">
-                            <div className="h-full flex flex-col justify-end pb-24 items-center text-center max-w-[90%] mx-auto text-white">
+                            <div className="h-full flex flex-col justify-end pb-36 items-center text-center max-w-[90%] mx-auto text-white">
                                 <h2 className="text-xl font-bold mb-3">{slide.title}</h2>
                                 <p className="text-sm font-extralight mb-3" style={{fontWeight:"200"}}>{slide.description}</p>
                                 <div className="flex flex-row gap-2">

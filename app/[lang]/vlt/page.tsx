@@ -398,125 +398,33 @@ export default async function VLTPage({ params }: { params: Params }) {
 
         <main>
           {/* VLT Collection Section */}
-          <section className="mx-auto px-8 sm:px-16 lg:px-32 xl:px-48 py-32" aria-labelledby="vlt-collection-heading">
-            <div className="text-center mb-16">
-              <h1 id="vlt-collection-heading" className="text-4xl md:text-6xl font-bold text-white dharma mb-6">
-                Collezione Cabinet VLT
-              </h1>
-              <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-                Scopri la nostra gamma completa di cabinet VLT, dal modello Classic al top di gamma Platinum. Ogni
-                cabinet è progettato per offrire un'esperienza di gioco superiore e massimizzare i ricavi delle sale
-                VLT.
-              </p>
-            </div>
+          <div className="min-h-screen bg-black">
+            {/* Hero Section */}
+            <VideoHero
+              title="CABINET VLT"
+              subtitle={dict.vlt.hero.description}
+              videoUrl="https://files.catbox.moe/pvi9mx.mp4"
+            />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {vltCards.map((card, index) => (
-                <article
-                  key={card.id}
-                  className="bg-[#171717] rounded-xl p-6 border border-1 border-[#3C3C3C] hover:border-vitalYellow/50 transition-all duration-300 hover:transform hover:scale-[1.02]"
-                >
-                  <div className="relative aspect-square w-full mb-6">
-                    <Image
-                      src={card.image || "/placeholder.svg"}
-                      alt={`${card.name} - Cabinet VLT professionale con ${card.specifications.screen} e ${card.specifications.audio}`}
-                      fill
-                      className="object-contain rounded-lg"
-                      loading={index < 3 ? "eager" : "lazy"}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
+            {/* Cards Section */}
+            <div className="mx-auto px-8 sm:px-16 lg:px-32 xl:px-48 py-32">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {vltCards.map((card, index) => (
+                  <div key={index} className="bg-[#171717] rounded-xl p-4 border border-1 border-[#3C3C3C] aspect-square py-8">
+                    <div className="relative aspect-square w-full p-4 mb-8">
+                      <Image
+                        src={card.image || "/placeholder.svg"}
+                        alt={card.name}
+                        fill
+                        className="object-contain rounded-lg"
+                      />
+                    </div>
+                    <h3 className="text-xl font-bold text-white text-center">{card.name}</h3>
                   </div>
-
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <h2 className="text-2xl font-bold text-white dharma">{card.name}</h2>
-                        <p className="text-gray-400 text-sm">Modello: {card.model}</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-vitalYellow font-bold text-xl">{card.price}</p>
-                        <p className="text-gray-400 text-xs">IVA esclusa</p>
-                      </div>
-                    </div>
-
-                    <p className="text-gray-300 text-sm leading-relaxed">{card.description[lang]}</p>
-
-                    <div className="space-y-3">
-                      <h3 className="text-white font-semibold text-sm">Caratteristiche principali:</h3>
-                      <ul className="grid grid-cols-2 gap-2">
-                        {card.features.map((feature, idx) => (
-                          <li key={idx} className="text-gray-300 text-xs flex items-center">
-                            <span className="w-1.5 h-1.5 bg-vitalYellow rounded-full mr-2 flex-shrink-0"></span>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="border-t border-gray-600 pt-4 space-y-2">
-                      <h3 className="text-white font-semibold text-sm">Specifiche tecniche:</h3>
-                      <div className="grid grid-cols-1 gap-1 text-xs">
-                        <div className="flex justify-between">
-                          <span className="text-gray-400">Schermo:</span>
-                          <span className="text-gray-300">{card.specifications.screen}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-400">Audio:</span>
-                          <span className="text-gray-300">{card.specifications.audio}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-400">Certificazioni:</span>
-                          <span className="text-gray-300">{card.specifications.certification}</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex gap-3 pt-4">
-                      <button
-                        className="flex-1 bg-vitalYellow text-black font-semibold py-2 px-4 rounded-lg hover:bg-vitalYellow/90 transition-colors text-sm"
-                        aria-label={`Richiedi preventivo per ${card.name}`}
-                      >
-                        Richiedi Preventivo
-                      </button>
-                      <button
-                        className="flex-1 border border-white text-white font-semibold py-2 px-4 rounded-lg hover:bg-white/10 transition-colors text-sm"
-                        aria-label={`Maggiori informazioni su ${card.name}`}
-                      >
-                        Info Dettagliate
-                      </button>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            {/* CTA Section */}
-            <div className="text-center mt-16 bg-gradient-to-r from-vitalYellow/10 to-blue-500/10 rounded-2xl p-8">
-              <h2 className="text-3xl font-bold text-white dharma mb-4">
-                Hai bisogno di una consulenza personalizzata?
-              </h2>
-              <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-                I nostri esperti sono a tua disposizione per aiutarti a scegliere il cabinet VLT più adatto alle tue
-                esigenze e al tuo budget.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href={`/${lang}/contact`}
-                  className="bg-vitalYellow text-black font-semibold py-3 px-8 rounded-lg hover:bg-vitalYellow/90 transition-colors"
-                  aria-label="Contatta i nostri esperti VLT"
-                >
-                  Contatta i Nostri Esperti
-                </a>
-                <a
-                  href="tel:+390212345678"
-                  className="border border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white/10 transition-colors"
-                  aria-label="Chiama per consulenza VLT"
-                >
-                  Chiama Ora: +39 02 1234567
-                </a>
+                ))}
               </div>
             </div>
-          </section>
+          </div>
         </main>
       </div>
     </>

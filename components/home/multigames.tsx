@@ -191,7 +191,7 @@ export default function Multigames() {
                                 ease: "linear"
                             }}
                         >
-                            <div className="absolute top-[-120px] left-[300px] z-[1] max-w-[150px] opacity-80">
+                            <div className="absolute top-[-220px] left-[300px] z-[1] max-w-[150px] opacity-80">
                                 <FloatingImage
                                     src={floatingImage1}
                                     alt="Floating Image 1"
@@ -203,7 +203,7 @@ export default function Multigames() {
                                 <div className="text-vitalYellow text-xs font-medium py-[3.5px]">
                                     {dict.home.multigames.subtitle}
                                 </div>
-                                <h2 className="text-8xl md:text-7xl lg:text-[100px] font-bold text-white dharma">
+                                <h2 className="text-6xl md:text-7xl lg:text-[100px] font-bold text-white dharma">
                                     {dict.home.multigames.title} <br />
                                     {dict.home.multigames.titleLine2}
                                 </h2>
@@ -214,7 +214,7 @@ export default function Multigames() {
                                 <div>
                                     <Button
                                         variant={"vitalYellow"}
-                                        className="bg-vitalYellow text-sm text-black hover:opacity-90 px-8 w-fit"
+                                        className="bg-vitalYellow text-sm text-black hover:opacity-90 px-8 py-3 w-fit"
                                     >
                                         <Link href="/awp-multigames">{dict.home.multigames.cta}</Link>
                                     </Button>

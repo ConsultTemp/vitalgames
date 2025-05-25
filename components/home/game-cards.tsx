@@ -76,7 +76,7 @@ export default function GameCards() {
   const { dictionary: dict } = useLanguage()
 
   return (
-    <section className="py-16  relative overflow-visible absolute bg-transparent">
+    <section className="pb-16  relative overflow-visible absolute bg-transparent">
       <div className="absolute top-[-30px] right-0 md:right-10 z-[1] max-w-[200px] md:max-w-none opacity-80">
         <FloatingImage
           src={campana}
@@ -87,7 +87,7 @@ export default function GameCards() {
       <div className="container mx-auto px-4 relative z-10 pb-12 md:pb-36">
         <div className="flex flex-row items-center justify-between py-6">
           <div className=" w-full flex flex-col items-start">
-            <SmoothReveal> <h2 className="text-center text-2xl md:text-4xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap">{dict.home.gameCards.title}</h2></SmoothReveal>
+            <SmoothReveal> <h2 className="text-center text-5xl md:text-6xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap">{dict.home.gameCards.title}</h2></SmoothReveal>
           </div>
           <Button variant={"outline"} className="border border-white rounded-full text-white bg-transparent px-4 py-2 hover:bg-vitalYellow hover:text-black hover:border-vitalYellow transition-all duration-300">Vedi tutto</Button>
         </div>
