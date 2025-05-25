@@ -561,29 +561,27 @@
     "hideDetails": "Ocultar detalles"
   },
   "aboutUs": {
-    "title": "QUIÉNES SOMOS",
-    "description": "VitalGames representa la excelencia en el sector del gaming italiano. Con una historia que se remonta al mercado AWP, hemos acompañado a generaciones de jugadores a través de la evolución del sector, manteniendo siempre viva nuestra identidad.",
-    "philosophy": {
-      "title": "Nuestra filosofía",
-      "description": "Se basa en tres pilares: calidad, innovación y fiabilidad. Utilizamos tecnologías de vanguardia y algoritmos certificados para garantizar una experiencia de juego justa y atractiva."
-    },
-    "presence": {
-      "title": "Nuestra presencia",
-      "description": "En el territorio italiano está atestiguada por más de 40.000 títulos instalados y una red de colaboraciones consolidadas con los principales operadores del sector."
-    },
+    "title": "Quiénes Somos",
+    "description": "Vitalgames es líder en la industria gaming desde 1996, especializada en la producción de máquinas tragamonedas, VLT y sistemas multijuego. Con sede en Milán, servimos clientes en toda Europa con soluciones innovadoras y certificadas.",
     "cards": {
       "iso": {
-        "description": "Certificado <span className=\"font-bold\">ISO</span>, estándar de <span className=\"font-bold\">calidad</span>"
+        "description": "Sistema de gestión de calidad certificado ISO 9001 que garantiza excelencia en cada producto."
       },
       "experience": {
-        "description": "Más de <span className=\"font-bold\">25 años de actividad</span> en el mercado del gaming <span className=\"font-bold\">italiano</span>"
+        "description": "Más de 25 años de experiencia en la industria gaming con innovación continua."
       },
       "games": {
-        "description": "Más de <span className=\"font-bold\">40 mil</span> títulos en <span className=\"font-bold\">Italia</span>"
+        "description": "Cientos de juegos desarrollados y distribuidos en Europa con éxito comprobado."
       },
       "partners": {
-        "description": "<span className=\"font-bold\">Colaboraciones consolidadas</span> con los <span className=\"font-bold\">principales</span> operadores y concesionarios del sector"
+        "description": "Asociaciones confiables con operadores y distribuidores líderes en el sector gaming."
       }
+    },
+    "philosophy": {
+      "description": "Nuestra filosofía se basa en la innovación continua, la calidad del producto y la satisfacción del cliente. Invertimos constantemente en investigación y desarrollo para ofrecer soluciones gaming de vanguardia."
+    },
+    "presence": {
+      "description": "Con una fuerte presencia en el mercado europeo, continuamos expandiendo nuestro alcance manteniendo nuestro compromiso con la excelencia y el cumplimiento normativo en cada jurisdicción que servimos."
     }
   }
 }

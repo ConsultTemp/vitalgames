@@ -339,6 +339,53 @@ export function generateSEOMetadata(page: string, locale: Locale) {
         ],
       },
     },
+    contact: {
+      it: {
+        title: "Contatti Vitalgames | Produttore Slot Machine Milano | Assistenza Clienti",
+        description:
+          "Contatta Vitalgames, leader nella produzione di slot machine dal 1996. Sede a Milano, assistenza clienti dedicata, supporto tecnico specializzato per AWP, VLT e multigames.",
+        keywords: [
+          "contatti Vitalgames",
+          "Vitalgames Milano",
+          "sede Vitalgames",
+          "telefono Vitalgames",
+          "email Vitalgames",
+          "assistenza clienti Vitalgames",
+          "supporto tecnico slot machine",
+          "produttore slot machine Milano",
+        ],
+      },
+      en: {
+        title: "Contact Vitalgames | Slot Machine Manufacturer Milan | Customer Support",
+        description:
+          "Contact Vitalgames, leader in slot machine production since 1996. Based in Milan, dedicated customer service, specialized technical support for AWP, VLT and multigames.",
+        keywords: [
+          "Vitalgames contact",
+          "Vitalgames Milan",
+          "Vitalgames headquarters",
+          "Vitalgames phone",
+          "Vitalgames email",
+          "Vitalgames customer service",
+          "slot machine technical support",
+          "slot machine manufacturer Milan",
+        ],
+      },
+      es: {
+        title: "Contacto Vitalgames | Fabricante Máquinas Tragamonedas Milán | Soporte Cliente",
+        description:
+          "Contacta Vitalgames, líder en producción de máquinas tragamonedas desde 1996. Con sede en Milán, servicio al cliente dedicado, soporte técnico especializado para AWP, VLT y multijuegos.",
+        keywords: [
+          "contacto Vitalgames",
+          "Vitalgames Milán",
+          "sede Vitalgames",
+          "teléfono Vitalgames",
+          "email Vitalgames",
+          "servicio cliente Vitalgames",
+          "soporte técnico máquinas tragamonedas",
+          "fabricante máquinas tragamonedas Milán",
+        ],
+      },
+    },
     vlt: {
       it: {
         title: "Cabinet VLT | Videolottery di Alta Qualità | Vitalgames",
@@ -567,7 +614,12 @@ export function generateSEOMetadata(page: string, locale: Locale) {
     },
   }
 
-  return localizedPages[page as keyof typeof localizedPages][locale]
+  // Default to English if the page or locale is not found
+  const defaultLocale = "en"
+  const pageData = localizedPages[page as keyof typeof localizedPages] || localizedPages.home
+  const localeData = pageData[locale] || pageData[defaultLocale]
+
+  return localeData
 }
 
 // Generate JSON-LD structured data for the company

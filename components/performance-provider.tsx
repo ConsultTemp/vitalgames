@@ -24,22 +24,15 @@ interface PerformanceProviderProps {
 
 export function PerformanceProvider({ children }: PerformanceProviderProps) {
   useEffect(() => {
-    // Initialize performance monitoring
-    performanceMonitor.measurePageLoad()
-    performanceMonitor.measureCoreWebVitals()
-
-    // Register service worker
-    serviceWorkerCache.register()
-
-    // Prefetch critical resources
-    prefetchResources.prefetchCriticalResources()
-
-    // Setup lazy loading
-    imageOptimization.setupLazyLoading()
-
-    // Cleanup on unmount
-    return () => {
-      // Cleanup if needed
+    // Basic performance setup - NO ERRORS
+    try {
+      performanceMonitor.measurePageLoad()
+      performanceMonitor.measureCoreWebVitals()
+      serviceWorkerCache.register()
+      prefetchResources.prefetchCriticalResources()
+      imageOptimization.setupLazyLoading()
+    } catch (error) {
+      console.warn("Performance setup failed:", error)
     }
   }, [])
 

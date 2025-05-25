@@ -384,7 +384,7 @@ export default async function GamePage(props: { params: Params }) {
                     id="recommended-heading"
                     className="text-start dharma text-4xl md:text-6xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap"
                   >
-                    {dict.allGames.youMightAlsoLike || "Ti potrebbero interessare anche"}
+                    {dict.allGames.recommended.title || "Ti potrebbero interessare anche"}
                   </h2>
                 </SmoothReveal>
               </div>

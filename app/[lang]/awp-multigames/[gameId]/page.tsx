@@ -1,11 +1,11 @@
 import type { Metadata } from "next"
 import { getDictionary } from "@/lib/dictionary"
 import type { Locale } from "@/i18n-config"
-import { generateAdvancedSEOMetadata } from "@/lib/seo-config"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { multigames } from "@/lib/multigames"
+import { multigames as multigamesCards } from "@/components/home/multigames"
 import { notFound } from "next/navigation"
 import GameSection from "./awp-hero"
 
@@ -13,7 +13,20 @@ type Params = Promise<{ lang: Locale; gameId: string }>
 
 // Generate static params for all multigames
 export async function generateStaticParams() {
-  const multigamesList = multigames.map(m => m.slug)
+  const multigamesList = [
+    "manhattan",
+    "champions",
+    "fortune-ultralink",
+    "diamante",
+    "piggy-gold",
+    "casino-royale",
+    "circus",
+    "rubino",
+    "zaffiro",
+    "golden-club",
+    "lucky-slot",
+  ]
+
   const languages = ["en", "it", "es"]
 
   return languages.flatMap((lang) =>
@@ -37,23 +50,10 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     }
   }
 
-  type MultigameSlug = keyof typeof dict.home.multigames.descriptions
+  // FIXED: Safe access to descriptions
   const translatedDescription =
-    dict.home.multigames.descriptions[multigame.slug as MultigameSlug] || multigame.description
-
-  const seoData = generateAdvancedSEOMetadata(
-    "awpMultigame",
-    lang,
-    {
-      title: multigame.title,
-      description: translatedDescription,
-      gameData: {
-        category: "AWP Multigame",
-        features: [`${multigame.games.length} giochi`, "Sistema multigame", "AWP", "Bar e sale giochi"],
-        images: [multigame.mainImage.src, ...multigame.games.slice(0, 3).map((g) => g.mainImage.src)],
-      },
-    }
-  )
+    dict.home?.multigames?.descriptions?.[multigame.slug as keyof typeof dict.home.multigames.descriptions] ||
+    multigame.description
 
   const gameKeywords = [
     `${multigame.title} multigame`,
@@ -71,11 +71,11 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   ]
 
   return {
-    title: seoData.title,
-    description: seoData.description,
-    keywords: seoData.keywords ? [...seoData.keywords, ...gameKeywords].join(", ") : gameKeywords.join(", "),
+    title: `${multigame.title} | Sistema Multigame AWP | Vitalgames`,
+    description: translatedDescription,
+    keywords: gameKeywords.join(", "),
     authors: [{ name: "Vitalgames" }],
-    creator: "Vitalgames", 
+    creator: "Vitalgames",
     publisher: "Vitalgames",
     alternates: {
       canonical: `https://vitalgames.com/${lang}/awp-multigames/${gameId}`,
@@ -86,8 +86,11 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       },
     },
     openGraph: {
-      ...seoData.openGraph,
-      type: "video.other",
+      title: `${multigame.title} | Sistema Multigame AWP | Vitalgames`,
+      description: translatedDescription,
+      type: "website",
+      url: `https://vitalgames.com/${lang}/awp-multigames/${gameId}`,
+      siteName: "Vitalgames",
       images: [
         {
           url: `https://vitalgames.com${multigame.mainImage.src}`,
@@ -95,16 +98,12 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
           height: 630,
           alt: `${multigame.title} - Sistema multigame AWP Vitalgames`,
         },
-        ...multigame.games.slice(0, 3).map((game) => ({
-          url: `https://vitalgames.com${game.mainImage.src}`,
-          width: 800,
-          height: 600,
-          alt: `${game.name} - Gioco incluso in ${multigame.title}`,
-        })),
       ],
     },
     twitter: {
-      ...seoData.twitter,
+      card: "summary_large_image",
+      title: `${multigame.title} | Sistema Multigame AWP | Vitalgames`,
+      description: translatedDescription,
       images: [`https://vitalgames.com${multigame.mainImage.src}`],
     },
     robots: {
@@ -131,9 +130,10 @@ export default async function MultigamePage({ params }: { params: Params }) {
     notFound()
   }
 
-  type MultigameSlug = keyof typeof dict.home.multigames.descriptions
+  // FIXED: Safe access to descriptions
   const translatedDescription =
-    dict.home.multigames.descriptions[multigame.slug as MultigameSlug] || multigame.description
+    dict.home?.multigames?.descriptions?.[multigame.slug as keyof typeof dict.home.multigames.descriptions] ||
+    multigame.description
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -334,7 +334,7 @@ export default async function MultigamePage({ params }: { params: Params }) {
                 Altri Multigames Consigliati
               </h2>
               <div className="flex flex-col md:flex-row gap-6">
-                {multigames
+                {Array.isArray(multigamesCards) && multigamesCards
                   .filter((m) => m.slug !== multigame.slug)
                   .slice(0, 3)
                   .map((game, index) => (
@@ -345,7 +345,7 @@ export default async function MultigamePage({ params }: { params: Params }) {
                       >
                         <div className="rounded-lg overflow-hidden">
                           <Image
-                            src={game.mainImage || "/placeholder.svg"}
+                            src={game.image || "/placeholder.svg"}
                             alt={`${game.title} - Sistema multigame AWP alternativo`}
                             className="w-full h-auto"
                             width={400}

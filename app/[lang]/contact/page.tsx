@@ -10,6 +10,10 @@ type Params = Promise<{ lang: Locale }>
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { lang } = await params
+  const dict = await getDictionary(lang)
+
+  // Default to English if the language is not supported
+  const supportedLang = ["en", "it", "es"].includes(lang) ? lang : "en"
 
   const titles = {
     it: "Contatti Vitalgames | Produttore Slot Machine Milano | Assistenza Clienti",
@@ -86,10 +90,15 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     ],
   }
 
-  return generateAdvancedSEOMetadata("contact", lang, {
-    title: titles[lang],
-    description: descriptions[lang],
-    keywords: keywords[lang],
+  // Ensure we have valid data for the supported language
+  const title = titles[supportedLang] || titles.en
+  const description = descriptions[supportedLang] || descriptions.en
+  const keywordsList = keywords[supportedLang] || keywords.en
+
+  return generateAdvancedSEOMetadata("contact", supportedLang, {
+    title,
+    description,
+    keywords: keywordsList,
     image: "/contact-vitalgames-milano.jpg",
     additionalImages: ["/vitalgames-sede-milano.jpg", "/vitalgames-team-support.jpg"],
   })

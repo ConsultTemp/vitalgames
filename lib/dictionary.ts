@@ -1,17 +1,16 @@
 import "server-only"
 import type { Locale } from "@/i18n-config"
-import { cachedGetDictionary } from "./cache"
 
 export interface Dictionary {
   metadata: {
     title: string
     description: string
   }
-  navigation: {
+  navigation: Array<{
     key: string
     href: string
     label: string
-  }[]
+  }>
   header: {
     contactUs: string
   }
@@ -405,27 +404,33 @@ export interface Dictionary {
   }
 }
 
-const dictionaries = {
-  en: () => import("@/dictionaries/en.json").then((module) => module.default),
-  it: () => import("@/dictionaries/it.json").then((module) => module.default),
-  es: () => import("@/dictionaries/es.json").then((module) => module.default),
-} as const
+// Dictionary loading functions
+const loadDictionary = async (locale: Locale): Promise<Dictionary> => {
+  try {
+    const module = await import(`@/dictionaries/${locale}.json`)
+    return module.default
+  } catch (error) {
+    console.error(`Failed to load dictionary for locale ${locale}:`, error)
+    if (locale !== "en") {
+      const module = await import("@/dictionaries/en.json")
+      return module.default
+    }
+    throw error
+  }
+}
 
 export async function getDictionary(locale: Locale): Promise<Dictionary> {
   try {
-    const dictionary = await cachedGetDictionary(locale) as Dictionary
+    const dictionary = await loadDictionary(locale)
     if (!dictionary) {
       throw new Error(`Dictionary not found for locale: ${locale}`)
     }
     return dictionary
   } catch (error) {
     console.error(`Error loading dictionary for locale ${locale}:`, error)
-    // Fallback to English if the requested locale fails
     if (locale !== "en") {
-      return getDictionary("en")
+      return loadDictionary("en")
     }
     throw error
   }
 }
-
-export const getCachedDictionary = cachedGetDictionary
