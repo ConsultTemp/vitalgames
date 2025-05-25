@@ -17,6 +17,7 @@ export default function IntroVideo({
   const [isFading, setIsFading] = useState(false)
   const [isClient, setIsClient] = useState(false)
   const [videoLoaded, setVideoLoaded] = useState(false)
+  const [isPlaying, setIsPlaying] = useState(false)
   
   const videoRef = useRef<HTMLVideoElement>(null)
   const fadeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
@@ -24,6 +25,14 @@ export default function IntroVideo({
   // Gestione quando il video è pronto per il fade in
   const handleVideoCanPlay = useCallback(() => {
     setVideoLoaded(true)
+    const video = videoRef.current
+    if (video) {
+      video.play().then(() => {
+        setIsPlaying(true)
+      }).catch((error) => {
+        console.log("Autoplay blocked:", error.name)
+      })
+    }
   }, [])
   
   // Gestione del fade out quando il video finisce
@@ -39,6 +48,40 @@ export default function IntroVideo({
       onComplete?.()
     }, fadeOutDuration)
   }, [fadeOutDuration, onComplete])
+
+  // Gestione autoplay con interazione utente
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const handlePlay = () => {
+      setIsPlaying(true)
+    }
+
+    video.addEventListener('play', handlePlay)
+
+    let userInteracted = false
+    const handleAnyInteraction = () => {
+      if (!userInteracted && video && video.paused) {
+        userInteracted = true
+        video.play().catch(() => {})
+        document.removeEventListener('touchstart', handleAnyInteraction)
+        document.removeEventListener('click', handleAnyInteraction)
+        document.removeEventListener('scroll', handleAnyInteraction)
+      }
+    }
+
+    document.addEventListener('touchstart', handleAnyInteraction, { passive: true })
+    document.addEventListener('click', handleAnyInteraction)
+    document.addEventListener('scroll', handleAnyInteraction, { passive: true })
+
+    return () => {
+      video.removeEventListener('play', handlePlay)
+      document.removeEventListener('touchstart', handleAnyInteraction)
+      document.removeEventListener('click', handleAnyInteraction)
+      document.removeEventListener('scroll', handleAnyInteraction)
+    }
+  }, [])
   
   // Effetto per la gestione client-side
   useEffect(() => {
@@ -88,8 +131,9 @@ export default function IntroVideo({
         autoPlay
         muted
         playsInline
+        preload="metadata"
         className={`w-screen h-screen object-cover transition-opacity duration-500 ${
-          videoLoaded ? 'opacity-100' : 'opacity-0'
+          videoLoaded && isPlaying ? 'opacity-100' : 'opacity-0'
         }`}
         onCanPlay={handleVideoCanPlay}
         onEnded={handleVideoEnd}

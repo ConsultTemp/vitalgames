@@ -14,14 +14,14 @@ export default function AllGamesList() {
 
   return (
     <section className="py-16 md:pt-16 relative overflow-visible absolute bg-transparent px-4 ">
-      
+
       <div className="container mx-auto relative z-10 pb-12 md:pb-36 relative overflow-visible">
-      <div className="absolute inset-0 z-1 overflow-hidden pointer-events-none overflow-visible">
-              {/* Bottom left large diamond */}
-              <div className="absolute bottom-[-100px]  w-96 md:w-96 h-96 md:h-96 right-[-200px] animate-float-slow rotate-10">
-                <FloatingImage src={campana || "/placeholder.svg"} alt="Diamond" className="w-[160px] md:w-[384px] h-[160px] md:h-[384px]" />
-              </div>
-            </div>
+        <div className="absolute inset-0 z-1 overflow-hidden pointer-events-none overflow-visible">
+          {/* Bottom left large diamond */}
+          <div className="absolute bottom-[-100px]  w-96 md:w-96 h-96 md:h-96 right-[-200px] animate-float-slow rotate-10">
+            <FloatingImage src={campana || "/placeholder.svg"} alt="Diamond" className="w-[160px] md:w-[384px] h-[160px] md:h-[384px]" />
+          </div>
+        </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {sortedGames.map((game) => (

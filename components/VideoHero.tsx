@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 interface VideoHeroProps {
     title: string;
@@ -8,16 +8,68 @@ interface VideoHeroProps {
 }
 
 const VideoHero: React.FC<VideoHeroProps> = ({ title, subtitle, videoUrl }) => {
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [showVideo, setShowVideo] = useState(false);
+
+    useEffect(() => {
+        const video = videoRef.current;
+        if (!video) return;
+
+        const handlePlay = () => {
+            setIsPlaying(true);
+        };
+
+        const handleCanPlay = () => {
+            setShowVideo(true);
+            video.play().then(() => {
+                setIsPlaying(true);
+            }).catch((error) => {
+                console.log("Autoplay blocked:", error.name);
+            });
+        };
+
+        video.addEventListener('play', handlePlay);
+        video.addEventListener('canplay', handleCanPlay);
+
+        let userInteracted = false;
+        const handleAnyInteraction = () => {
+            if (!userInteracted && video && video.paused) {
+                userInteracted = true;
+                video.play().catch(() => {});
+                document.removeEventListener('touchstart', handleAnyInteraction);
+                document.removeEventListener('click', handleAnyInteraction);
+                document.removeEventListener('scroll', handleAnyInteraction);
+            }
+        };
+
+        document.addEventListener('touchstart', handleAnyInteraction, { passive: true });
+        document.addEventListener('click', handleAnyInteraction);
+        document.addEventListener('scroll', handleAnyInteraction, { passive: true });
+
+        return () => {
+            video?.removeEventListener('play', handlePlay);
+            video?.removeEventListener('canplay', handleCanPlay);
+            document.removeEventListener('touchstart', handleAnyInteraction);
+            document.removeEventListener('click', handleAnyInteraction);
+            document.removeEventListener('scroll', handleAnyInteraction);
+        };
+    }, []);
+
     return (
         <div className="relative w-full">
             <div className="relative min-h-[44vh] w-full">
                 <div className="absolute inset-0 overflow-hidden">
                     <video
+                        ref={videoRef}
                         autoPlay
                         loop
                         muted
                         playsInline
-                        className="absolute w-full h-full object-cover"
+                        preload="metadata"
+                        className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+                            showVideo && isPlaying ? 'opacity-100' : 'opacity-0'
+                        }`}
                         style={{
                             objectPosition: 'center center'
                         }}
