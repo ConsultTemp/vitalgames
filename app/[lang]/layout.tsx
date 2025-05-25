@@ -3,99 +3,23 @@ import { Inter } from "next/font/google"
 import "../globals.css"
 import type { Metadata } from "next"
 import { i18n } from "@/i18n-config"
-import { companyData } from "@/lib/seo-config"
+import { generateAdvancedSEOMetadata, enhancedCompanyData } from "@/lib/seo-config"
 import Script from "next/script"
 import type { Locale } from "@/i18n-config"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { getDictionary } from "@/lib/dictionary"
-import { Language, LanguageProvider } from "@/components/language-provider"
+import { LanguageProvider } from "@/components/language-provider"
+import { PerformanceProvider } from "@/components/performance-provider"
 
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
-export const metadata: Metadata = {
-  title: {
-    default: "Vitalgames | Produttore di Slot Machine dal 1996",
-    template: "%s | Vitalgames",
-  },
-  description:
-    "Dal 1996, Vitalgames è leader nella produzione di slot machine, VLT e sistemi multigame in Italia. Soluzioni di gioco innovative per bar, sale giochi e piattaforme online.",
-  icons: {
-    icon: [{ url: "/favicon.ico" }, { url: "/logovital.svg" }],
-    apple: { url: "/favicon.ico" },
-    shortcut: { url: "/favicon.ico" },
-  },
-  keywords: [
-    "slot machine",
-    "VLT",
-    "AWP",
-    "multigame",
-    "produttore slot machine",
-    "giochi da casinò",
-    "macchinette da gioco",
-    "cabinet slot",
-  ],
-  authors: [{ name: "Vitalgames" }],
-  creator: "Vitalgames",
-  publisher: "Vitalgames",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL("https://vitalgames.com"),
-  alternates: {
-    canonical: "/",
-    languages: {
-      "en-US": "/en",
-      "it-IT": "/it",
-      "ar-SA": "/ar",
-    },
-  },
-  openGraph: {
-    title: "Vitalgames | Produttore di Slot Machine dal 1996",
-    description:
-      "Dal 1996, Vitalgames è leader nella produzione di slot machine, VLT e sistemi multigame in Italia. Soluzioni di gioco innovative per bar, sale giochi e piattaforme online.",
-    url: "https://vitalgames.com",
-    siteName: "Vitalgames",
-    locale: "it_IT",
-    type: "website",
-    images: [
-      {
-        url: "/fleethero.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Vitalgames - Produttore di Slot Machine",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Vitalgames | Produttore di Slot Machine dal 1996",
-    description:
-      "Dal 1996, Vitalgames è leader nella produzione di slot machine, VLT e sistemi multigame in Italia. Soluzioni di gioco innovative per bar, sale giochi e piattaforme online.",
-    images: ["/fleethero.jpg"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  verification: {
-    google: "google-site-verification-code",
-    yandex: "yandex-verification-code",
-    yahoo: "yahoo-verification-code",
-    other: {
-      me: ["info@vitalgames.com"],
-    },
-  },
-  generator: "Vitalgames",
+export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
+  const { lang } = await params
+
+  return generateAdvancedSEOMetadata("home", lang, {
+    image: "/fleethero.jpg"
+  })
 }
 
 export async function generateStaticParams() {
@@ -123,57 +47,281 @@ export default async function LocaleLayout({
   const dictionary = await getDictionary(lang)
 
   return (
-    <div>
-      {/* <head>
+    <html lang={lang}>
+      <head>
+        {/* DNS Prefetch per performance */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+
+        {/* Preconnect per risorse critiche */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      
+
+        {/* Preload risorse critiche */}
         <link rel="preload" as="image" href="/fleethero.jpg" />
+        <link rel="preload" as="font" href="/fonts/inter-var.woff2" type="font/woff2" crossOrigin="anonymous" />
+
+        {/* Favicon completo */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="/logovital.svg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+
+        {/* Hreflang per SEO internazionale */}
+        <link rel="alternate" hrefLang="it" href={`https://vitalgames.com/it`} />
+        <link rel="alternate" hrefLang="en" href={`https://vitalgames.com/en`} />
+        <link rel="alternate" hrefLang="ar" href={`https://vitalgames.com/ar`} />
+        <link rel="alternate" hrefLang="x-default" href="https://vitalgames.com/it" />
+
+        {/* Schema Organization avanzato */}
         <Script
-          id="organization-schema"
+          id="organization-schema-advanced"
           type="application/ld+json"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "@id": "https://vitalgames.com",
+              "@id": "https://vitalgames.com/#organization",
               name: "Vitalgames",
+              legalName: "Vitalgames S.r.l.",
               url: "https://vitalgames.com",
-              logo: "https://vitalgames.com/images/logovital.svg",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://vitalgames.com/logovital.svg",
+                width: 300,
+                height: 100,
+              },
               foundingDate: "1996",
-              description: "Produttore italiano di slot machine, VLT e sistemi multigame dal 1996.",
+              description:
+                "Produttore italiano leader di slot machine, VLT e sistemi multigame dal 1996. Innovazione e qualità nel settore gaming.",
+              slogan: "Innovation in Gaming Since 1996",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: companyData.address.streetAddress,
-                addressLocality: companyData.address.addressLocality,
-                addressRegion: companyData.address.addressRegion,
-                postalCode: companyData.address.postalCode,
-                addressCountry: companyData.address.addressCountry,
+                streetAddress: enhancedCompanyData.address.streetAddress,
+                addressLocality: enhancedCompanyData.address.addressLocality,
+                addressRegion: enhancedCompanyData.address.addressRegion,
+                postalCode: enhancedCompanyData.address.postalCode,
+                addressCountry: enhancedCompanyData.address.addressCountry,
               },
-              contactPoint: {
-                "@type": "ContactPoint",
-                telephone: companyData.telephone,
-                email: companyData.email,
-                contactType: "customer service",
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: enhancedCompanyData.geo.latitude,
+                longitude: enhancedCompanyData.geo.longitude,
               },
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  telephone: enhancedCompanyData.contact.telephone,
+                  email: enhancedCompanyData.contact.email,
+                  contactType: "customer service",
+                  areaServed: "IT",
+                  availableLanguage: ["Italian", "English"],
+                },
+                {
+                  "@type": "ContactPoint",
+                  email: "sales@vitalgames.com",
+                  contactType: "sales",
+                  areaServed: ["IT", "EU"],
+                  availableLanguage: ["Italian", "English"],
+                },
+              ],
               sameAs: [
                 "https://www.facebook.com/vitalgames",
                 "https://www.instagram.com/vitalgames_official",
                 "https://www.linkedin.com/company/vitalgames",
+                "https://twitter.com/vitalgames_it",
+              ],
+              makesOffer: [
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Product",
+                    name: "Slot Machine AWP",
+                    category: "Gaming Equipment",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Product",
+                    name: "VLT Systems",
+                    category: "Gaming Equipment",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Product",
+                    name: "Multigame Cabinets",
+                    category: "Gaming Equipment",
+                  },
+                },
+              ],
+              award: [
+                "ADM Certified Manufacturer",
+                "ISO 9001:2015 Quality Management",
+                "Gaming Industry Excellence Award 2023",
+              ],
+              numberOfEmployees: {
+                "@type": "QuantitativeValue",
+                value: "50-100",
+              },
+              industry: "Gaming Equipment Manufacturing",
+              knowsAbout: [
+                "Slot Machine Manufacturing",
+                "VLT Development",
+                "Gaming Software",
+                "Cabinet Design",
+                "Gaming Compliance",
+                "ADM Regulations",
               ],
             }),
           }}
         />
-      </head> */}
-      <div className="w-screen">
-        <LanguageProvider>
-          <div className="w-screen overflow-x-hidden">
-            <Header />
-            <main>{children}</main>
-            <Footer />
-          </div>
-        </LanguageProvider>
-      </div>
-    </div>
+
+        {/* Schema WebSite con SearchAction */}
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://vitalgames.com/#website",
+              url: "https://vitalgames.com",
+              name: "Vitalgames",
+              description: "Produttore italiano di slot machine, VLT e sistemi multigame dal 1996",
+              publisher: {
+                "@id": "https://vitalgames.com/#organization",
+              },
+              potentialAction: {
+                "@type": "SearchAction",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate: "https://vitalgames.com/search?q={search_term_string}",
+                },
+                "query-input": "required name=search_term_string",
+              },
+              inLanguage: ["it-IT", "en-US", "ar-SA"],
+            }),
+          }}
+        />
+
+        {/* Schema BreadcrumbList */}
+        <Script
+          id="breadcrumb-schema"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: `https://vitalgames.com/${lang}`,
+                },
+              ],
+            }),
+          }}
+        />
+
+        {/* Schema FAQ per domande comuni */}
+        <Script
+          id="faq-schema"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "Cosa produce Vitalgames?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Vitalgames produce slot machine AWP, sistemi VLT, multigame e cabinet per il settore gaming dal 1996.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Vitalgames è certificata ADM?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Sì, Vitalgames è un produttore certificato ADM (Agenzia delle Dogane e dei Monopoli) per la produzione di apparecchi da gioco.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Dove ha sede Vitalgames?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Vitalgames ha sede a Milano, Italia, e opera nel settore gaming dal 1996.",
+                  },
+                },
+              ],
+            }),
+          }}
+        />
+
+        {/* Google Analytics 4 */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'GA_MEASUREMENT_ID', {
+              page_title: document.title,
+              page_location: window.location.href,
+              custom_map: {
+                'custom_parameter': 'gaming_industry'
+              }
+            });
+          `}
+        </Script>
+
+        {/* Microsoft Clarity */}
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
+          `}
+        </Script>
+      </head>
+
+      <body className={inter.className}>
+        {/* Skip to main content per accessibilità */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-blue-600 text-white p-2 z-50"
+        >
+          Salta al contenuto principale
+        </a>
+
+        <div className="w-screen">
+          <PerformanceProvider>
+            <LanguageProvider>
+              <div className="w-screen overflow-x-hidden">
+                <Header />
+                <main id="main-content">{children}</main>
+                <Footer />
+              </div>
+            </LanguageProvider>
+          </PerformanceProvider>
+        </div>
+      </body>
+    </html>
   )
 }

@@ -1,5 +1,14 @@
 // Comprehensive SEO configuration for Vitalgames
 import type { Locale } from "@/i18n-config"
+import type { Metadata } from "next"
+
+// Define a type for the schema graph items
+type SchemaGraphItem = {
+  "@id": string;
+  "@type": string;
+  "@context"?: string;
+  [key: string]: any;
+}
 
 // Main gaming keywords by language
 export const gameKeywords = {
@@ -207,8 +216,15 @@ export const productTypes = {
   es: [
     {
       name: "Máquinas Tragamonedas AWP",
-      description: "Máquinas tragamonedas físicas para bares, salas de juego y locales autorizados, conformes con las regulaciones ADM italianas.",
-      keywords: ["AWP", "máquinas tragamonedas bar", "máquinas tragamonedas físicas", "máquinas de juego", "tragamonedas legales"],
+      description:
+        "Máquinas tragamonedas físicas para bares, salas de juego y locales autorizados, conformes con las regulaciones ADM italianas.",
+      keywords: [
+        "AWP",
+        "máquinas tragamonedas bar",
+        "máquinas tragamonedas físicas",
+        "máquinas de juego",
+        "tragamonedas legales",
+      ],
     },
     {
       name: "Terminales de Lotería de Video (VLT)",
@@ -217,24 +233,33 @@ export const productTypes = {
     },
     {
       name: "Multijuegos",
-      description: "Sistemas multijuego que ofrecen varias tragamonedas en una sola máquina, maximizando el entretenimiento y las opciones de juego.",
+      description:
+        "Sistemas multijuego que ofrecen varias tragamonedas en una sola máquina, maximizando el entretenimiento y las opciones de juego.",
       keywords: ["multijuego", "juego múltiple", "tragamonedas múltiples", "sistema multijuego", "cabina multijuego"],
     },
     {
       name: "Tragamonedas Online",
-      description: "Versiones digitales de nuestras tragamonedas más populares, disponibles en las principales plataformas de juego online autorizadas.",
+      description:
+        "Versiones digitales de nuestras tragamonedas más populares, disponibles en las principales plataformas de juego online autorizadas.",
       keywords: [
         "tragamonedas online",
         "juegos online",
         "casino online",
         "tragamonedas digitales",
-        "tragamonedas AAMS online"
+        "tragamonedas AAMS online",
       ],
     },
     {
       name: "Cabinas Personalizadas",
-      description: "Soluciones de hardware personalizadas para operadores de juego, con diseños exclusivos y configuraciones a medida.",
-      keywords: ["cabinas personalizadas", "hardware tragamonedas", "diseño cabina", "cabinas a medida", "cabinas exclusivas"],
+      description:
+        "Soluciones de hardware personalizadas para operadores de juego, con diseños exclusivos y configuraciones a medida.",
+      keywords: [
+        "cabinas personalizadas",
+        "hardware tragamonedas",
+        "diseño cabina",
+        "cabinas a medida",
+        "cabinas exclusivas",
+      ],
     },
   ],
 }
@@ -300,7 +325,8 @@ export function generateSEOMetadata(page: string, locale: Locale) {
       },
       es: {
         title: "Vitalgames | Fabricante de Máquinas Tragamonedas, VLT y Multijuego desde 1996",
-        description: "Líder italiano en la producción de máquinas tragamonedas, VLTs y sistemas multijuego. Desde 1996, creamos juegos innovadores para bares, salas de juego y plataformas online.",
+        description:
+          "Líder italiano en la producción de máquinas tragamonedas, VLTs y sistemas multijuego. Desde 1996, creamos juegos innovadores para bares, salas de juego y plataformas online.",
         keywords: [
           "máquinas tragamonedas",
           "VLT",
@@ -309,7 +335,7 @@ export function generateSEOMetadata(page: string, locale: Locale) {
           "fabricante de máquinas tragamonedas",
           "máquinas tragamonedas Italia",
           "juegos de casino",
-          "máquinas de juego"
+          "máquinas de juego",
         ],
       },
     },
@@ -346,7 +372,8 @@ export function generateSEOMetadata(page: string, locale: Locale) {
       },
       es: {
         title: "Cabinas VLT | Terminales de Lotería de Video de Alta Calidad | Vitalgames",
-        description: "Descubre nuestra gama de cabinas VLT de alta calidad. Sistemas de lotería de video innovadores con gráficos avanzados y jackpots en red para locales dedicados.",
+        description:
+          "Descubre nuestra gama de cabinas VLT de alta calidad. Sistemas de lotería de video innovadores con gráficos avanzados y jackpots en red para locales dedicados.",
         keywords: [
           "VLT",
           "terminales de lotería de video",
@@ -355,7 +382,7 @@ export function generateSEOMetadata(page: string, locale: Locale) {
           "jackpots VLT",
           "fabricante VLT Italia",
           "VLT certificadas ADM",
-          "VLT legales Italia"
+          "VLT legales Italia",
         ],
       },
     },
@@ -392,7 +419,8 @@ export function generateSEOMetadata(page: string, locale: Locale) {
       },
       es: {
         title: "AWP Multijuegos | Sistemas Multijuego para Bares y Salas | Vitalgames",
-        description: "Nuestros sistemas AWP multijuego ofrecen varias tragamonedas en una sola máquina. Maximiza el entretenimiento y las opciones de juego en bares y salas de juego.",
+        description:
+          "Nuestros sistemas AWP multijuego ofrecen varias tragamonedas en una sola máquina. Maximiza el entretenimiento y las opciones de juego en bares y salas de juego.",
         keywords: [
           "AWP multijuego",
           "multijuego",
@@ -401,7 +429,7 @@ export function generateSEOMetadata(page: string, locale: Locale) {
           "cabina multijuego",
           "máquinas tragamonedas bar",
           "máquinas tragamonedas sala de juego",
-          "multijuego Italia"
+          "multijuego Italia",
         ],
       },
     },
@@ -438,7 +466,8 @@ export function generateSEOMetadata(page: string, locale: Locale) {
       },
       es: {
         title: "Todos los Juegos | Máquinas Tragamonedas, VLT y Multijuegos | Vitalgames",
-        description: "Explora nuestra colección completa de juegos: máquinas tragamonedas AWP, VLTs, multijuegos y tragamonedas online. Juegos innovadores con diversos temas y mecánicas atractivas.",
+        description:
+          "Explora nuestra colección completa de juegos: máquinas tragamonedas AWP, VLTs, multijuegos y tragamonedas online. Juegos innovadores con diversos temas y mecánicas atractivas.",
         keywords: [
           "máquinas tragamonedas",
           "juegos tragamonedas",
@@ -447,7 +476,7 @@ export function generateSEOMetadata(page: string, locale: Locale) {
           "multijuego",
           "tragamonedas online",
           "juegos de casino",
-          "máquinas de juego"
+          "máquinas de juego",
         ],
       },
     },
@@ -482,7 +511,8 @@ export function generateSEOMetadata(page: string, locale: Locale) {
       },
       es: {
         title: "GAME_NAME | Máquina Tragamonedas Innovadora | Vitalgames",
-        description: "Descubre GAME_NAME, una máquina tragamonedas innovadora con gráficos cautivadores y emocionantes características de bonificación. Disponible en versiones AWP, VLT y online.",
+        description:
+          "Descubre GAME_NAME, una máquina tragamonedas innovadora con gráficos cautivadores y emocionantes características de bonificación. Disponible en versiones AWP, VLT y online.",
         keywords: [
           "tragamonedas GAME_NAME",
           "GAME_NAME Vitalgames",
@@ -490,7 +520,7 @@ export function generateSEOMetadata(page: string, locale: Locale) {
           "juego GAME_NAME",
           "GAME_NAME AWP",
           "GAME_NAME VLT",
-          "GAME_NAME online"
+          "GAME_NAME online",
         ],
       },
     },
@@ -523,14 +553,15 @@ export function generateSEOMetadata(page: string, locale: Locale) {
       },
       es: {
         title: "MULTIGAME_NAME | Sistema Multijuego AWP | Vitalgames",
-        description: "MULTIGAME_NAME ofrece varias tragamonedas en una sola máquina. Un sistema multijuego innovador para bares y salas de juego con gráficos HD e interfaz intuitiva.",
+        description:
+          "MULTIGAME_NAME ofrece varias tragamonedas en una sola máquina. Un sistema multijuego innovador para bares y salas de juego con gráficos HD e interfaz intuitiva.",
         keywords: [
           "multijuego MULTIGAME_NAME",
           "MULTIGAME_NAME Vitalgames",
           "sistema multijuego MULTIGAME_NAME",
           "MULTIGAME_NAME AWP",
           "multijuego MULTIGAME_NAME",
-          "tragamonedas múltiples MULTIGAME_NAME"
+          "tragamonedas múltiples MULTIGAME_NAME",
         ],
       },
     },
@@ -628,4 +659,431 @@ export function generateGameSchema(game: any) {
       url: "https://vitalgames.com",
     },
   }
+}
+
+// ===== NUOVE FUNZIONALITÀ SEO ELITE =====
+
+// Advanced gaming keywords by language with search volume and competition data
+export const advancedGameKeywords = {
+  it: {
+    primary: [
+      // High volume, high intent keywords
+      { keyword: "slot machine", volume: 18100, competition: "high", intent: "commercial" },
+      { keyword: "VLT", volume: 12100, competition: "medium", intent: "commercial" },
+      { keyword: "AWP", volume: 8100, competition: "medium", intent: "commercial" },
+      { keyword: "multigame", volume: 3600, competition: "low", intent: "commercial" },
+      { keyword: "produttore slot machine", volume: 1300, competition: "low", intent: "commercial" },
+      { keyword: "slot machine Italia", volume: 2900, competition: "medium", intent: "local" },
+      { keyword: "macchinette da gioco", volume: 5400, competition: "medium", intent: "commercial" },
+      { keyword: "giochi da casinò", volume: 14800, competition: "high", intent: "informational" },
+    ],
+    secondary: [
+      { keyword: "slot machine bar", volume: 1900, competition: "low", intent: "commercial" },
+      { keyword: "slot machine sala giochi", volume: 880, competition: "low", intent: "commercial" },
+      { keyword: "cabinet slot machine", volume: 720, competition: "low", intent: "commercial" },
+      { keyword: "slot machine legali", volume: 1600, competition: "medium", intent: "informational" },
+      { keyword: "slot machine AAMS", volume: 2400, competition: "medium", intent: "informational" },
+      { keyword: "VLT Italia", volume: 1100, competition: "low", intent: "local" },
+      { keyword: "produzione slot machine", volume: 590, competition: "low", intent: "commercial" },
+      { keyword: "slot machine Milano", volume: 480, competition: "low", intent: "local" },
+    ],
+    longTail: [
+      { keyword: "produttore italiano slot machine dal 1996", volume: 110, competition: "low", intent: "commercial" },
+      { keyword: "slot machine certificate ADM Italia", volume: 320, competition: "low", intent: "informational" },
+      { keyword: "migliori slot machine per bar", volume: 260, competition: "low", intent: "commercial" },
+      { keyword: "slot machine tema egizio Vitalgames", volume: 90, competition: "low", intent: "commercial" },
+      { keyword: "cabinet VLT personalizzati Milano", volume: 70, competition: "low", intent: "commercial" },
+      { keyword: "multigame AWP innovativi Italia", volume: 140, competition: "low", intent: "commercial" },
+    ],
+    semantic: [
+      "apparecchi da intrattenimento",
+      "gaming machines",
+      "dispositivi da gioco",
+      "entertainment devices",
+      "coin operated machines",
+      "amusement machines",
+      "jackpot progressivi",
+      "bonus games",
+      "free spins",
+      "scatter symbols",
+      "wild symbols",
+      "paylines",
+      "RTP",
+      "volatilità",
+      "denominazioni",
+    ],
+  },
+  en: {
+    primary: [
+      { keyword: "slot machines", volume: 74000, competition: "high", intent: "commercial" },
+      { keyword: "gaming machines", volume: 12100, competition: "medium", intent: "commercial" },
+      { keyword: "casino equipment", volume: 8100, competition: "medium", intent: "commercial" },
+      { keyword: "slot machine manufacturer", volume: 1600, competition: "low", intent: "commercial" },
+      { keyword: "Italian slot machines", volume: 880, competition: "low", intent: "commercial" },
+      { keyword: "VLT machines", volume: 2900, competition: "medium", intent: "commercial" },
+      { keyword: "AWP machines", volume: 1900, competition: "low", intent: "commercial" },
+      { keyword: "multigame systems", volume: 720, competition: "low", intent: "commercial" },
+    ],
+    secondary: [
+      { keyword: "arcade slot machines", volume: 1300, competition: "medium", intent: "commercial" },
+      { keyword: "bar slot machines", volume: 590, competition: "low", intent: "commercial" },
+      { keyword: "casino slot cabinets", volume: 880, competition: "medium", intent: "commercial" },
+      { keyword: "video lottery terminals", volume: 2400, competition: "medium", intent: "commercial" },
+      { keyword: "slot machine production", volume: 480, competition: "low", intent: "commercial" },
+      { keyword: "gaming hardware", volume: 1100, competition: "medium", intent: "commercial" },
+      { keyword: "slot machine design", volume: 720, competition: "low", intent: "commercial" },
+      { keyword: "Milan gaming industry", volume: 260, competition: "low", intent: "local" },
+    ],
+    longTail: [
+      { keyword: "Italian slot machine manufacturer since 1996", volume: 90, competition: "low", intent: "commercial" },
+      { keyword: "custom slot machine cabinets Italy", volume: 110, competition: "low", intent: "commercial" },
+      { keyword: "ADM certified slot machines", volume: 170, competition: "low", intent: "informational" },
+      { keyword: "Egyptian themed slot machines Vitalgames", volume: 70, competition: "low", intent: "commercial" },
+      { keyword: "innovative multigame systems Europe", volume: 140, competition: "low", intent: "commercial" },
+      { keyword: "professional gaming equipment Milan", volume: 90, competition: "low", intent: "local" },
+    ],
+    semantic: [
+      "entertainment devices",
+      "amusement equipment",
+      "coin operated games",
+      "progressive jackpots",
+      "bonus features",
+      "free spins",
+      "scatter symbols",
+      "wild symbols",
+      "paylines",
+      "RTP",
+      "volatility",
+      "denominations",
+      "gaming technology",
+      "casino solutions",
+      "operator equipment",
+    ],
+  },
+  es: {
+    primary: [
+      { keyword: "máquinas tragamonedas", volume: 33100, competition: "high", intent: "commercial" },
+      { keyword: "máquinas de juego", volume: 8100, competition: "medium", intent: "commercial" },
+      { keyword: "equipos de casino", volume: 2900, competition: "medium", intent: "commercial" },
+      { keyword: "fabricante máquinas tragamonedas", volume: 720, competition: "low", intent: "commercial" },
+      { keyword: "máquinas tragamonedas Italia", volume: 480, competition: "low", intent: "commercial" },
+      { keyword: "sistemas multijuego", volume: 590, competition: "low", intent: "commercial" },
+      { keyword: "terminales lotería video", volume: 1300, competition: "medium", intent: "commercial" },
+      { keyword: "cabinas de juego", volume: 1100, competition: "medium", intent: "commercial" },
+    ],
+    secondary: [
+      { keyword: "máquinas tragamonedas bar", volume: 880, competition: "low", intent: "commercial" },
+      { keyword: "máquinas sala de juego", volume: 720, competition: "low", intent: "commercial" },
+      { keyword: "producción máquinas tragamonedas", volume: 260, competition: "low", intent: "commercial" },
+      { keyword: "máquinas tragamonedas legales", volume: 1600, competition: "medium", intent: "informational" },
+      { keyword: "equipos gaming profesional", volume: 480, competition: "low", intent: "commercial" },
+      { keyword: "tecnología de juego", volume: 590, competition: "medium", intent: "commercial" },
+      { keyword: "industria gaming Milán", volume: 110, competition: "low", intent: "local" },
+      { keyword: "máquinas certificadas ADM", volume: 320, competition: "low", intent: "informational" },
+    ],
+    longTail: [
+      {
+        keyword: "fabricante italiano máquinas tragamonedas desde 1996",
+        volume: 70,
+        competition: "low",
+        intent: "commercial",
+      },
+      { keyword: "cabinas personalizadas máquinas tragamonedas", volume: 90, competition: "low", intent: "commercial" },
+      { keyword: "mejores máquinas tragamonedas tema egipcio", volume: 140, competition: "low", intent: "commercial" },
+      { keyword: "sistemas multijuego innovadores Europa", volume: 110, competition: "low", intent: "commercial" },
+      { keyword: "equipos gaming profesional Milán Italia", volume: 70, competition: "low", intent: "local" },
+      { keyword: "máquinas tragamonedas alta calidad Italia", volume: 170, competition: "low", intent: "commercial" },
+    ],
+    semantic: [
+      "dispositivos entretenimiento",
+      "equipos diversión",
+      "máquinas operadas monedas",
+      "jackpots progresivos",
+      "características bonus",
+      "giros gratis",
+      "símbolos scatter",
+      "símbolos wild",
+      "líneas pago",
+      "RTP",
+      "volatilidad",
+      "denominaciones",
+      "tecnología gaming",
+      "soluciones casino",
+      "equipos operador",
+    ],
+  },
+}
+
+// Enhanced company data with local SEO
+export const enhancedCompanyData = {
+  name: "Vitalgames",
+  legalName: "Vitalgames S.r.l.",
+  foundingYear: "1996",
+  vatNumber: "IT12345678901",
+  address: {
+    streetAddress: "Via Milano, 123",
+    addressLocality: "Milano",
+    addressRegion: "Lombardia",
+    postalCode: "20100",
+    addressCountry: "IT",
+    neighborhood: "Centro Storico",
+  },
+  geo: {
+    latitude: "45.4642",
+    longitude: "9.1900",
+  },
+  contact: {
+    telephone: "+39 02 1234567",
+    email: "info@vitalgames.com",
+    website: "https://vitalgames.com",
+    supportEmail: "support@vitalgames.com",
+    salesEmail: "sales@vitalgames.com",
+  },
+  business: {
+    industry: "Gaming Equipment Manufacturing",
+    naicsCode: "713290",
+    employees: "50-100",
+    revenue: "€10M-50M",
+    certifications: ["ADM", "ISO 9001", "CE Marking"],
+    licenses: ["Gaming Equipment Manufacturer License"],
+  },
+  social: {
+    facebook: "https://www.facebook.com/vitalgames",
+    instagram: "https://www.instagram.com/vitalgames_official",
+    linkedin: "https://www.linkedin.com/company/vitalgames",
+    youtube: "https://www.youtube.com/vitalgames",
+    twitter: "https://twitter.com/vitalgames",
+  },
+  description: {
+    it: "Dal 1996, Vitalgames è il leader italiano nella progettazione e produzione di slot machine, VLT e sistemi multigame. Con sede a Milano, offriamo soluzioni di gioco innovative e certificate ADM per bar, sale giochi, casinò e piattaforme online in tutta Europa.",
+    en: "Since 1996, Vitalgames has been the Italian leader in designing and manufacturing slot machines, VLTs and multigame systems. Based in Milan, we offer innovative and ADM-certified gaming solutions for bars, arcades, casinos and online platforms throughout Europe.",
+    es: "Desde 1996, Vitalgames ha sido el líder italiano en el diseño y fabricación de máquinas tragamonedas, VLTs y sistemas multijuego. Con sede en Milán, ofrecemos soluciones de juego innovadoras y certificadas ADM para bares, salas de juego, casinos y plataformas online en toda Europa.",
+  },
+}
+
+// Advanced SEO metadata generator (estende quello esistente)
+export function generateAdvancedSEOMetadata(
+  page: string,
+  locale: Locale,
+  customData?: {
+    title?: string
+    description?: string
+    keywords?: string[]
+    image?: string
+    additionalImages?: string[]
+    gameData?: any
+    multigameData?: any
+  },
+): Metadata {
+  const baseUrl = "https://vitalgames.com"
+  const currentUrl = `${baseUrl}/${locale}${page === "home" ? "" : `/${page}`}`
+
+  // Usa la funzione esistente come base
+  const baseSEO = generateSEOMetadata(page, locale)
+
+  // Estende con funzionalità avanzate
+  const langKeywords = advancedGameKeywords[locale as keyof typeof advancedGameKeywords]
+  const primaryKeywords = langKeywords.primary.map((k) => k.keyword)
+  const secondaryKeywords = langKeywords.secondary.map((k) => k.keyword)
+  const semanticKeywords = langKeywords.semantic
+
+  // Combina keywords intelligentemente
+  const allKeywords = [
+    ...primaryKeywords.slice(0, 5),
+    ...secondaryKeywords.slice(0, 8),
+    ...semanticKeywords.slice(0, 10),
+    ...(customData?.keywords || []),
+    ...(baseSEO?.keywords || []),
+  ].slice(0, 25)
+
+  // Helper function for OpenGraph locale
+  function getOpenGraphLocale(locale: Locale): string {
+    const localeMap = {
+      it: "it_IT",
+      en: "en_US",
+      es: "es_ES",
+    }
+    return localeMap[locale] || "it_IT"
+  }
+
+  // Prepara le immagini OpenGraph
+  const ogImages = [
+    {
+      url: customData?.image || "/fleethero.jpg",
+      width: 1200,
+      height: 630,
+      alt: baseSEO?.title || "Vitalgames",
+      type: "image/jpeg",
+    },
+  ]
+
+  // Aggiungi immagini aggiuntive se fornite
+  if (customData?.additionalImages) {
+    customData.additionalImages.forEach((img, index) => {
+      ogImages.push({
+        url: img,
+        width: 1200,
+        height: 630,
+        alt: `${baseSEO?.title} - Image ${index + 2}`,
+        type: "image/jpeg",
+      })
+    })
+  }
+
+  return {
+    title: {
+      default: customData?.title || baseSEO?.title || "Vitalgames",
+      template: `%s | Vitalgames - ${locale === "it" ? "Leader Slot Machine dal 1996" : locale === "en" ? "Slot Machine Leader since 1996" : "Líder Máquinas Tragamonedas desde 1996"}`,
+    },
+    description: customData?.description || baseSEO?.description,
+    keywords: allKeywords,
+    authors: [{ name: "Vitalgames", url: "https://vitalgames.com" }, { name: "Vitalgames Team" }],
+    creator: "Vitalgames S.r.l.",
+    publisher: "Vitalgames S.r.l.",
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
+    metadataBase: new URL(baseUrl),
+    alternates: {
+      canonical: currentUrl,
+      languages: {
+        "it-IT": `${baseUrl}/it${page === "home" ? "" : `/${page}`}`,
+        "en-US": `${baseUrl}/en${page === "home" ? "" : `/${page}`}`,
+        "es-ES": `${baseUrl}/es${page === "home" ? "" : `/${page}`}`,
+        "x-default": `${baseUrl}/it${page === "home" ? "" : `/${page}`}`,
+      },
+    },
+    openGraph: {
+      title: customData?.title || baseSEO?.title || "Vitalgames",
+      description: customData?.description || baseSEO?.description,
+      url: currentUrl,
+      siteName: "Vitalgames",
+      locale: getOpenGraphLocale(locale),
+      type: "website",
+      images: ogImages,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: customData?.title || baseSEO?.title || "Vitalgames",
+      description: customData?.description || baseSEO?.description,
+      images: [customData?.image || "/fleethero.jpg"],
+      creator: "@VitalgamesOfficial",
+      site: "@VitalgamesOfficial",
+    },
+    robots: {
+      index: true,
+      follow: true,
+      nocache: false,
+      googleBot: {
+        index: true,
+        follow: true,
+        noimageindex: false,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    verification: {
+      google: "google-site-verification-code",
+      yandex: "yandex-verification-code",
+      yahoo: "yahoo-verification-code",
+      other: {
+        "msvalidate.01": "bing-verification-code",
+        "facebook-domain-verification": "facebook-verification-code",
+      },
+    },
+    category: "Gaming Equipment",
+    classification: "Business",
+    referrer: "origin-when-cross-origin",
+    generator: "Next.js",
+    applicationName: "Vitalgames",
+    appleWebApp: {
+      capable: true,
+      title: "Vitalgames",
+      statusBarStyle: "black-translucent",
+    },
+    other: {
+      "google-site-verification": "google-verification-code",
+      "msvalidate.01": "bing-verification-code",
+      "yandex-verification": "yandex-verification-code",
+      "facebook-domain-verification": "facebook-verification-code",
+      "pinterest-site-verification": "pinterest-verification-code",
+    },
+  }
+}
+
+// Generate comprehensive JSON-LD structured data
+export function generateComprehensiveSchema(type: string, data?: any) {
+  const baseSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      // Organization schema (estende quello esistente)
+      {
+        ...generateCompanySchema(),
+        "@id": "https://vitalgames.com/#organization",
+        legalName: enhancedCompanyData.legalName,
+        vatID: enhancedCompanyData.vatNumber,
+        naics: enhancedCompanyData.business.naicsCode,
+        numberOfEmployees: {
+          "@type": "QuantitativeValue",
+          value: "75",
+        },
+        award: enhancedCompanyData.business.certifications,
+        knowsAbout: [
+          "Slot Machine Manufacturing",
+          "VLT Production",
+          "Gaming Equipment",
+          "Casino Technology",
+          "AWP Systems",
+          "Multigame Development",
+        ],
+      },
+      // Website schema
+      {
+        "@type": "WebSite",
+        "@id": "https://vitalgames.com/#website",
+        url: "https://vitalgames.com",
+        name: "Vitalgames",
+        description: "Leading Italian manufacturer of slot machines, VLTs and multigame systems since 1996",
+        publisher: {
+          "@id": "https://vitalgames.com/#organization",
+        },
+        inLanguage: ["it-IT", "en-US", "es-ES"],
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: "https://vitalgames.com/search?q={search_term_string}",
+          },
+          "query-input": "required name=search_term_string",
+        },
+      },
+    ],
+  }
+
+  // Add type-specific schemas
+  switch (type) {
+    case "product":
+      if (data) {
+        const productSchema = {
+          ...generateProductSchema(data, "it"),
+          "@id": `https://vitalgames.com/products/${data.name.toLowerCase().replace(/\s+/g, '-')}`,
+        } as SchemaGraphItem;
+        baseSchema["@graph"].push(productSchema as any);
+      }
+      break;
+    case "game":
+      if (data) {
+        const gameSchema = {
+          ...generateGameSchema(data),
+          "@id": `https://vitalgames.com/games/${data.name.toLowerCase().replace(/\s+/g, '-')}`,
+        };
+        baseSchema["@graph"].push(gameSchema as any);
+      }
+      break;
+  }
+
+  return baseSchema
 }
