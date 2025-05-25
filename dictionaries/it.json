@@ -82,16 +82,16 @@
       "description2": "Siamo parte integrante dell'evoluzione del gioco in Italia, punto di riferimento per chi cerca qualità, esperienza e una visione sempre proiettata al futuro.",
       "cards": {
         "iso": {
-          "description": "Certificato <span className=\"font-bold\">ISO</span>, standard di <span className=\"font-bold\">qualità</span>"
+          "description": "Certificato ISO, standard di qualità"
         },
         "experience": {
-          "description": "<span className=\"font-bold\">25 anni</span> nel mercato del gaming"
+          "description": "25 anni nel mercato del gaming"
         },
         "games": {
-          "description": "Più di <span className=\"font-bold\">40mila</span> titoli in <span className=\"font-bold\">Italia</span>"
+          "description": "Più di 40mila titoli in Italia"
         },
         "partners": {
-          "description": "<span className=\"font-bold\">Collaborazioni</span> con i principali operatori"
+          "description": "Collaborazioni con i principali operatori"
         }
       }
     },

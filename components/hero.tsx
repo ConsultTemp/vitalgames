@@ -83,8 +83,6 @@ export default function HeroSection() {
             <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
           </div>
         )}
-
-        <div className="absolute inset-0 bg-black/30" />
         
         {/* Tap to play hint per mobile (solo se video non in play) */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none">
@@ -96,7 +94,7 @@ export default function HeroSection() {
 
       {/* Coming soon text - positioned at bottom left */}
       <div className="absolute bottom-8 left-8 z-20">
-        <div className="inline-block text-yellow-400 text-sm font-medium rounded">
+        <div className="inline-block text-vitalYellow text-sm font-medium rounded">
           Coming soon...
         </div>
       </div>

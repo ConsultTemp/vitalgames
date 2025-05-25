@@ -69,16 +69,16 @@
       "description2": "We are an integral part of the evolution of gaming in Italy, a reference point for those seeking quality, experience, and a vision always projected towards the future.",
       "cards": {
         "iso": {
-          "description": "<span className=\"font-bold\">ISO</span> certified <span className=\"font-bold\">quality</span> standard"
+          "description": "ISO certified quality standard"
         },
         "experience": {
-          "description": "<span className=\"font-bold\">25 years</span> in the gaming market"
+          "description": "25 years in the gaming market"
         },
         "games": {
-          "description": "Over <span className=\"font-bold\">40,000</span> titles in <span className=\"font-bold\">Italy</span>"
+          "description": "Over 40,000 titles in Italy"
         },
         "partners": {
-          "description": "<span className=\"font-bold\">Partnerships</span> with leading operators"
+          "description": "Partnerships with leading operators"
         }
       }
     },
