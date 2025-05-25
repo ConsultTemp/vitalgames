@@ -71,7 +71,7 @@ export function GameCarousel({ games, onGameClick, type }: GameCarouselProps) {
                       alt={game.title} 
                       width={250}
                       height={250}
-                      className="object-contain w-full h-auto" 
+                      className="object-contain w-full h-full" 
                     />
                   </div>
                 </div>
