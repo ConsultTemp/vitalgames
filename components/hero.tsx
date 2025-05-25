@@ -3,81 +3,111 @@ import { useEffect, useRef, useState } from "react"
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null)
-  const [videoLoaded, setVideoLoaded] = useState(false)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [showVideo, setShowVideo] = useState(false)
 
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
 
-    const tryPlay = async () => {
-      try {
-        video.muted = true
-        video.volume = 0
-        await video.play()
-      } catch (error) {
-        // Riprova dopo mezzo secondo
-        setTimeout(async () => {
-          try {
-            await video.play()
-          } catch (e) {
-            // Se fallisce ancora, pazienza
-          }
-        }, 500)
-      }
+    // Listener per quando il video inizia davvero
+    const handlePlay = () => {
+      setIsPlaying(true)
     }
 
     const handleCanPlay = () => {
-      setVideoLoaded(true)
-      tryPlay()
+      setShowVideo(true)
+      // Tentativo aggressivo di play
+      video.play().then(() => {
+        setIsPlaying(true)
+      }).catch((error) => {
+        console.log("Autoplay blocked:", error.name)
+        // Non mostriamo errori, il video è pronto per il click
+      })
     }
 
+    video.addEventListener('play', handlePlay)
     video.addEventListener('canplay', handleCanPlay)
-    video.addEventListener('loadeddata', () => setVideoLoaded(true))
-    
-    // Carica il video
-    video.load()
+
+    // Listener globale per QUALSIASI interazione che sblocca l'audio
+    let userInteracted = false
+    const handleAnyInteraction = () => {
+      if (!userInteracted && video && video.paused) {
+        userInteracted = true
+        video.play().catch(() => {})
+        // Rimuovi listener dopo primo utilizzo
+        document.removeEventListener('touchstart', handleAnyInteraction)
+        document.removeEventListener('click', handleAnyInteraction)
+        document.removeEventListener('scroll', handleAnyInteraction)
+      }
+    }
+
+    document.addEventListener('touchstart', handleAnyInteraction, { passive: true })
+    document.addEventListener('click', handleAnyInteraction)
+    document.addEventListener('scroll', handleAnyInteraction, { passive: true })
 
     return () => {
+      video?.removeEventListener('play', handlePlay)
       video?.removeEventListener('canplay', handleCanPlay)
+      document.removeEventListener('touchstart', handleAnyInteraction)
+      document.removeEventListener('click', handleAnyInteraction)
+      document.removeEventListener('scroll', handleAnyInteraction)
     }
   }, [])
 
-  // Handler per primo click che sblocca autoplay mobile
-  const handleFirstClick = () => {
-    const video = videoRef.current
-    if (video && video.paused) {
-      video.play().catch(() => {})
-    }
-  }
-
   return (
-    <section className="relative w-full h-screen bg-black" onClick={handleFirstClick}>
+    <section className="relative w-full h-screen bg-black overflow-hidden">
       <div className="relative w-full h-full">
+        {/* Poster image che simula il video */}
+        {!isPlaying && (
+          <div 
+            className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
+            style={{
+              backgroundImage: `linear-gradient(45deg, 
+                rgba(15, 23, 42, 0.8) 0%, 
+                rgba(30, 41, 59, 0.6) 50%, 
+                rgba(15, 23, 42, 0.9) 100%
+              )`
+            }}
+          >
+            {/* Effetto movimento simulato */}
+            <div className="absolute inset-0 opacity-30">
+              <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute bottom-1/3 right-1/4 w-48 h-48 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+              <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-teal-500/20 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
+            </div>
+          </div>
+        )}
+
+        {/* Video vero */}
         <video
           ref={videoRef}
-          src="https://files.catbox.moe/1bluzo.mp4"
-          className={`w-full h-full object-cover transition-opacity duration-500 ${
-            videoLoaded ? 'opacity-100' : 'opacity-0'
+          src="https://files.catbox.moe/9muvk1.webm"
+          className={`w-full h-full object-cover transition-opacity duration-1000 ${
+            showVideo && isPlaying ? 'opacity-100' : 'opacity-0'
           }`}
           autoPlay
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
         />
-        
-        {!videoLoaded && (
-          <div className="absolute inset-0 bg-black flex items-center justify-center">
-            <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-          </div>
-        )}
 
+        {/* Overlay sempre presente */}
         <div className="absolute inset-0 bg-black/30" />
       </div>
 
+      {/* Coming soon text */}
       <div className="absolute bottom-8 left-8 z-20">
-        <div className="inline-block text-yellow-400 text-sm font-medium rounded">
+        <div className="inline-block text-vitalYellow text-sm font-medium px-4 py-2 rounded-lg">
           Coming soon...
+        </div>
+      </div>
+
+      {/* Subtle hint - solo sui mobile */}
+      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10 md:hidden">
+        <div className="text-transparent text-xs text-center animate-bounce">
+          Tap anywhere to start
         </div>
       </div>
     </section>
