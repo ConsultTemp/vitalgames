@@ -64,14 +64,13 @@ export function GameCarousel({ games, onGameClick, type }: GameCarouselProps) {
           {games.map((game) => (
             <div key={game.id} className="min-w-[250px] snap-start">
               <Link href={`/${type}/${game.slug}`} onClick={onGameClick}>
-                <div className="bg-black rounded-lg overflow-hidden border border-gray-700 hover:border-vitalYellow transition-colors">
-                  <div className="relative w-[250px]">
+                <div className="bg-black rounded-lg overflow-hidden border border-gray-700 hover:border-vitalYellow transition-colors aspect-[12/9]">
+                  <div className="relative w-full h-full">
                     <Image 
                       src={game.image || "/placeholder.svg"} 
                       alt={game.title} 
-                      width={250}
-                      height={250}
-                      className="object-contain w-full h-full" 
+                      fill
+                      className="object-contain" 
                     />
                   </div>
                 </div>
