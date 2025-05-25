@@ -399,12 +399,6 @@ export default async function VLTPage({ params }: { params: Params }) {
         <main>
           {/* VLT Collection Section */}
           <div className="min-h-screen bg-black">
-            {/* Hero Section */}
-            <VideoHero
-              title="CABINET VLT"
-              subtitle={dict.vlt.hero.description}
-              videoUrl="https://files.catbox.moe/pvi9mx.mp4"
-            />
 
             {/* Cards Section */}
             <div className="mx-auto px-8 sm:px-16 lg:px-32 xl:px-48 py-32">
