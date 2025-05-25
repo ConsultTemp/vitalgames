@@ -411,9 +411,21 @@ const dictionaries = {
   es: () => import("@/dictionaries/es.json").then((module) => module.default),
 } as const
 
-export const getDictionary = async (locale: Locale) => {
-  const dictionary = dictionaries[locale] || dictionaries.en
-  return dictionary()
+export async function getDictionary(locale: Locale): Promise<Dictionary> {
+  try {
+    const dictionary = await cachedGetDictionary(locale) as Dictionary
+    if (!dictionary) {
+      throw new Error(`Dictionary not found for locale: ${locale}`)
+    }
+    return dictionary
+  } catch (error) {
+    console.error(`Error loading dictionary for locale ${locale}:`, error)
+    // Fallback to English if the requested locale fails
+    if (locale !== "en") {
+      return getDictionary("en")
+    }
+    throw error
+  }
 }
 
 export const getCachedDictionary = cachedGetDictionary

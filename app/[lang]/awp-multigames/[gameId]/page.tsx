@@ -6,7 +6,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { multigames } from "@/lib/multigames"
-import { multigames as multigamesCards } from "@/components/home/multigames"
 import { notFound } from "next/navigation"
 import GameSection from "./awp-hero"
 
@@ -14,20 +13,7 @@ type Params = Promise<{ lang: Locale; gameId: string }>
 
 // Generate static params for all multigames
 export async function generateStaticParams() {
-  const multigamesList = [
-    "manhattan",
-    "champions",
-    "fortune-ultralink",
-    "diamante",
-    "piggy-gold",
-    "casino-royale",
-    "circus",
-    "rubino",
-    "zaffiro",
-    "golden-club",
-    "lucky-slot",
-  ]
-
+  const multigamesList = multigames.map(m => m.slug)
   const languages = ["en", "it", "es"]
 
   return languages.flatMap((lang) =>
@@ -348,7 +334,7 @@ export default async function MultigamePage({ params }: { params: Params }) {
                 Altri Multigames Consigliati
               </h2>
               <div className="flex flex-col md:flex-row gap-6">
-                {multigamesCards
+                {multigames
                   .filter((m) => m.slug !== multigame.slug)
                   .slice(0, 3)
                   .map((game, index) => (
@@ -359,7 +345,7 @@ export default async function MultigamePage({ params }: { params: Params }) {
                       >
                         <div className="rounded-lg overflow-hidden">
                           <Image
-                            src={game.image || "/placeholder.svg"}
+                            src={game.mainImage || "/placeholder.svg"}
                             alt={`${game.title} - Sistema multigame AWP alternativo`}
                             className="w-full h-auto"
                             width={400}

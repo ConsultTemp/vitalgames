@@ -199,11 +199,11 @@ export const bundleOptimization = {
     if (cached) return cached
 
     try {
-      const component = await import(componentPath)
-      memoryCache.set(cacheKey, component, 1800000) // 30 minutes
+      const component = await import(`@/components/${componentPath}`)
+      memoryCache.set(cacheKey, component, 300000) // 5 minutes
       return component
     } catch (error) {
-      console.warn("Failed to load component:", error)
+      console.warn(`Failed to load component ${componentPath}:`, error)
       return null
     }
   },
