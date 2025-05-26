@@ -34,6 +34,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { motion, AnimatePresence } from "framer-motion"
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -210,96 +211,123 @@ export default function Navbar() {
               <Menu size={24} />
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="w-full bg-black p-0">
-            <DialogTitle></DialogTitle>
-            <div className="flex flex-col h-full">
-              {/* Header */}
-              <div className="p-4 flex items-center justify-between">
-                <Link href="/" className="flex items-center">
-                  <div className="relative h-10 w-16">
-                    <Image
-                      src={logo}
-                      alt="Vital Games"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </Link>
-              </div>
-
-              {/* Content */}
-              <div className="flex flex-col p-6 space-y-8 overflow-y-auto flex-grow">
-                {menuItems.map((item, index) =>{ 
-                  const slots = item.dropdownType === "awp-multigames" ? multigames : games
-                  return(
-                  <div
-                    key={item.label}
-                    className="animate-slideInRight"
-                    style={{
-                      animationDuration: '0.4s',
-                      animationDelay: `${index * 50 + 100}ms`,
-                      animationFillMode: 'both',
-                      margin: '0px'
-                    }}
-                  >
-                    <Link
-                      href={item.href}
-                      onClick={() => setIsSheetOpen(false)}
-                      className={`block text-base font-medium text-gray-300 hover:text-white transition-colors duration-300 mb-3 ${pathname === item.href ? "text-white" : ""
-                        }`}
-                    >
-                      {item.label}
-                    </Link>
-
-                    {/* Game carousel for mobile */}
-                    {item.hasDropdown && item.dropdownType == "awp-multigames" && (
-                      <div className="mt-3 pb-2">
-                        <GameCarousel  games={slots} onGameClick={() => setIsSheetOpen(false)} type={item.dropdownType ? item.dropdownType : "allgames"} />
-                      </div>
-                    )}
-                  </div>
-                )})}
-              </div>
-
-              {/* Footer */}
-              <div className="p-6 space-y-4">
-                <Button
-                  asChild
-                  className="bg-vitalYellow hover:bg-vitalYellow/90 text-black font-bold rounded-md px-3 py-2 w-full animate-fadeIn"
-                  style={{ animationDuration: '0.5s', animationDelay: '400ms', animationFillMode: 'both' }}
+          <AnimatePresence>
+            {isSheetOpen && (
+              <>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1.5, ease: "easeOut" }}
+                  className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[1000]"
+                  onClick={() => setIsSheetOpen(false)}
+                />
+                <motion.div
+                  initial={{ x: "-100%" }}
+                  animate={{ x: 0 }}
+                  exit={{ x: "-100%" }}
+                  transition={{ duration: 1.2, ease: "easeOut" }}
+                  className="fixed left-0 top-0 h-full w-full bg-black z-[1001]"
                 >
-                  <Link href="/contact" onClick={() => setIsSheetOpen(false)}>
-                    {dict.header.contactUs}
-                  </Link>
-                </Button>
-
-                {/* Language Selector for Mobile */}
-                {/* <div className="ml-auto">
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" size="icon" className="text-white hover:bg-white/5">
-                        <Globe className="h-5 w-5" />
+                  <div className="flex flex-col h-full">
+                    {/* Header */}
+                    <div className="p-4 flex items-center justify-between">
+                      <Link href="/" className="flex items-center">
+                        <div className="relative h-10 w-16">
+                          <Image
+                            src={logo}
+                            alt="Vital Games"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      </Link>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="text-white hover:bg-transparent"
+                        onClick={() => setIsSheetOpen(false)}
+                      >
+                        <X size={24} />
                       </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md ">
-                      {languages.map((language) => (
-                        <DropdownMenuItem
-                          key={language.code}
-                          className={`text-sm ${lang === language.code ? 'text-vitalYellow' : 'text-white'} hover:bg-white/5 cursor-pointer`}
-                          onClick={() => {
-                            const newPath = pathname.replace(/^\/[a-z]{2}/, `/${language.code}`);
-                            window.location.href = newPath;
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex flex-col p-6 space-y-8 overflow-y-auto flex-grow">
+                      {menuItems.map((item, index) =>{ 
+                        const slots = item.dropdownType === "awp-multigames" ? multigames : games
+                        return(
+                        <div
+                          key={item.label}
+                          className="animate-slideInRight"
+                          style={{
+                            animationDuration: '0.4s',
+                            animationDelay: `${index * 50 + 100}ms`,
+                            animationFillMode: 'both',
+                            margin: '0px'
                           }}
                         >
-                          {language.label}
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                </div> */}
-              </div>
-            </div>
-          </SheetContent>
+                          <Link
+                            href={item.href}
+                            onClick={() => setIsSheetOpen(false)}
+                            className={`block text-base font-medium text-gray-300 hover:text-white transition-colors duration-300 mb-3 ${pathname === item.href ? "text-white" : ""
+                              }`}
+                          >
+                            {item.label}
+                          </Link>
+
+                          {/* Game carousel for mobile */}
+                          {item.hasDropdown && item.dropdownType == "awp-multigames" && (
+                            <div className="mt-3 pb-2">
+                              <GameCarousel  games={slots} onGameClick={() => setIsSheetOpen(false)} type={item.dropdownType ? item.dropdownType : "allgames"} />
+                            </div>
+                          )}
+                        </div>
+                      )})}
+                    </div>
+
+                    {/* Footer */}
+                    <div className="p-6 space-y-4">
+                      <Button
+                        asChild
+                        className="bg-vitalYellow hover:bg-vitalYellow/90 text-black font-bold rounded-md px-3 py-2 w-full animate-fadeIn"
+                        style={{ animationDuration: '0.5s', animationDelay: '400ms', animationFillMode: 'both' }}
+                      >
+                        <Link href="/contact" onClick={() => setIsSheetOpen(false)}>
+                          {dict.header.contactUs}
+                        </Link>
+                      </Button>
+
+                      {/* Language Selector for Mobile */}
+                      {/* <div className="ml-auto">
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button variant="ghost" size="icon" className="text-white hover:bg-white/5">
+                              <Globe className="h-5 w-5" />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md ">
+                            {languages.map((language) => (
+                              <DropdownMenuItem
+                                key={language.code}
+                                className={`text-sm ${lang === language.code ? 'text-vitalYellow' : 'text-white'} hover:bg-white/5 cursor-pointer`}
+                                onClick={() => {
+                                  const newPath = pathname.replace(/^\/[a-z]{2}/, `/${language.code}`);
+                                  window.location.href = newPath;
+                                }}
+                              >
+                                {language.label}
+                              </DropdownMenuItem>
+                            ))}
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      </div> */}
+                    </div>
+                  </div>
+                </motion.div>
+              </>
+            )}
+          </AnimatePresence>
         </Sheet>
 
         {/* Right side with Logo and Language Selector */}

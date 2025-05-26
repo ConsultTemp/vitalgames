@@ -69,8 +69,8 @@ export default function CabinetSection() {
               <SmoothReveal>{cabinet.titleLine3}</SmoothReveal>
             </h2>
 
-            <h2 className="text-8xl sm:text-6xl font-bold text-white dharma leading-tight visible md:invisible">
-              CABINETS
+            <h2 className="text-5xl sm:text-6xl font-bold text-white dharma leading-tight visible md:invisible">
+              Cabinets
             </h2>
           </div>
 
@@ -104,7 +104,7 @@ export default function CabinetSection() {
             </div>
           </div>
 
-          <Button variant="outline" className="rounded-full hover:bg-opacity-80 text-white border-white font-medium px-8 py-3 text-lg">
+          <Button variant="outline" className="rounded-full hover:bg-opacity-80 text-white border-white font-medium px-3 py-1 text-base cursor-pointer">
             <Link href={`/${lang}/vlt`}>{cabinet.cta}</Link>
           </Button>
         </div>
@@ -114,14 +114,14 @@ export default function CabinetSection() {
           {/* Left side - Text content */}
           <div className="w-1/2 pr-8">
             <div className={`transition-all duration-700 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-              <h2 className="text-4xl lg:text-8xl flex flex-col items-start font-bold text-white mb-6 dharma">
+              <h2 className="text-5xl lg:text-8xl flex flex-col items-start font-bold text-white mb-6 dharma invisible md:visible">
                 <SmoothReveal>{cabinet.title}</SmoothReveal>
                 <SmoothReveal>{cabinet.titleLine2}</SmoothReveal>
                 <SmoothReveal>{cabinet.titleLine3}</SmoothReveal>
               </h2>
 
-              <Button variant="outline" className="rounded-full hover:bg-opacity-80 text-white border-white font-medium px-6 py-2">
-                <Link href={`/${lang}/vlt`}>{cabinet.cta}</Link>
+              <Button variant="outline" className="rounded-full hover:bg-opacity-80 text-white border-white font-medium px-3 py-1 text-base cursor-pointer">
+                <Link href={`/vlt`}>{cabinet.cta}</Link>
               </Button>
             </div>
           </div>

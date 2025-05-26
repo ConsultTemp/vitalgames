@@ -5,6 +5,18 @@ export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [showVideo, setShowVideo] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.matchMedia('(max-width: 768px)').matches)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   useEffect(() => {
     const video = videoRef.current
@@ -56,7 +68,7 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section className="relative w-full h-screen bg-black overflow-hidden">
+    <section className="relative w-full h-fit bg-black overflow-hidden">
       <div className="relative w-full h-full">
         {/* Poster image che simula il video */}
         {!isPlaying && (
@@ -82,10 +94,10 @@ export default function HeroSection() {
         {/* Video vero */}
         <video
           ref={videoRef}
-          src="https://files.catbox.moe/9muvk1.webm"
-          className={`w-full h-full object-cover transition-opacity duration-1000 ${
+          src={isMobile ? "https://files.catbox.moe/8oznbj.webm" : "https://files.catbox.moe/9muvk1.webm"}
+          className={`w-full transition-opacity duration-1000 ${
             showVideo && isPlaying ? 'opacity-100' : 'opacity-0'
-          }`}
+          } ${isMobile ? 'h-auto' : 'h-full object-cover'}`}
           autoPlay
           loop
           muted
@@ -93,16 +105,9 @@ export default function HeroSection() {
           preload="metadata"
         />
 
-        {/* Overlay sempre presente */}
-        <div className="absolute inset-0 bg-black/30" />
       </div>
 
-      {/* Coming soon text */}
-      <div className="absolute bottom-8 left-8 z-20">
-        <div className="inline-block text-vitalYellow text-sm font-medium px-4 py-2 rounded-lg">
-          Coming soon...
-        </div>
-      </div>
+    
 
       {/* Subtle hint - solo sui mobile */}
       <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10 md:hidden">

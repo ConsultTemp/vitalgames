@@ -45,12 +45,12 @@ export default function Footer() {
           {/* Mobile grid for the rest of the content */}
           <div className="grid grid-cols-2 md:contents">
             {/* Column 1 - Games */}
-            <div className="flex flex-col items-center">
-              <h3 className="font-bold text-base mb-4">{dict.footer.sections.games.title}</h3>
-              <ul className="space-y-2 flex flex-col items-center">
+            <div className="flex flex-col items-start">
+              <h3 className="font-bold text-base mb-4 w-fit">{dict.footer.sections.games.title}</h3>
+              <ul className="space-y-2 flex flex-col items-start">
                 {dict.footer.sections.games.links.map((link: FooterLink, index: number) => (
                   <li key={index}>
-                    <Link href={link.href} className="hover:text-vitalYellow transition-colors font-extralight text-sm">
+                    <Link href={link.href} className="hover:text-vitalYellow transition-colors font-extralight text-sm w-fit">
                       {link.label}
                     </Link>
                   </li>
@@ -59,12 +59,12 @@ export default function Footer() {
             </div>
 
             {/* Column 2 - Company */}
-            <div className="flex flex-col items-center">
-              <h3 className="font-bold text-base mb-4">{dict.footer.sections.company.title}</h3>
-              <ul className="space-y-2 flex flex-col items-center">
+            <div className="flex flex-col items-start">
+              <h3 className="font-bold text-base mb-4 w-fit">{dict.footer.sections.company.title}</h3>
+              <ul className="space-y-2 flex flex-col items-start">
                 {dict.footer.sections.company.links.map((link: FooterLink, index: number) => (
                   <li key={index}>
-                    <Link href={link.href} className="hover:text-vitalYellow transition-colors font-extralight text-sm">
+                    <Link href={link.href} className="hover:text-vitalYellow transition-colors font-extralight text-sm w-fit">
                       {link.label}
                     </Link>
                   </li>
@@ -72,12 +72,12 @@ export default function Footer() {
               </ul>
 
               {/* Usage - shown under Company on mobile */}
-              <div className="md:hidden mt-8">
-                <h3 className="font-bold text-base mb-4">{dict.footer.sections.usage.title}</h3>
-                <ul className="space-y-2 flex flex-col items-center">
+              <div className="md:hidden mt-8 flex flex-col items-start">
+                <h3 className="font-bold text-base mb-4 w-fit">{dict.footer.sections.usage.title}</h3>
+                <ul className="space-y-2 flex flex-col items-start">
                   {dict.footer.sections.usage.links.map((link: FooterLink, index: number) => (
                     <li key={index}>
-                      <Link href={link.href} className="hover:text-vitalYellow transition-colors font-extralight text-sm">
+                      <Link href={link.href} className="hover:text-vitalYellow transition-colors w-fit font-extralight text-sm">
                         {link.label}
                       </Link>
                     </li>

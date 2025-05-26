@@ -169,7 +169,7 @@ export default function Multigames() {
     }
 
     return (
-        <section ref={containerRef} className="relative bg-transparent mb-16 mt-36">
+        <section ref={containerRef} className="relative bg-transparent mb-16 mt-16">
             <div className="absolute bottom-[0px] right-[50px] z-[1] max-w-[120px]">
                 <FloatingImage
                     src={floatingImage2}
@@ -203,21 +203,20 @@ export default function Multigames() {
                                 <div className="text-vitalYellow text-xs font-medium py-[3.5px]">
                                     {dict.home.multigames.subtitle}
                                 </div>
-                                <h2 className="text-6xl md:text-7xl lg:text-[100px] font-bold text-white dharma">
+                                <h2 className="text-5xl md:text-5xl lg:text-[80px] font-bold text-white dharma">
                                     {dict.home.multigames.title} <br />
                                     {dict.home.multigames.titleLine2}
                                 </h2>
-                                <p className="mb-8">
+                                <p className="mb-8 w-3/4">
                                     {dict.home.multigames.description}
                                 </p>
 
                                 <div>
-                                    <Button
-                                        variant={"vitalYellow"}
-                                        className="bg-vitalYellow text-sm text-black hover:opacity-90 px-8 py-3 w-fit"
+                                    <button
+                                        className="bg-black  text-sm text-white rounded-full w-fit border border-1 border-white hover:bg-black hover:opacity-90 py-2 px-4"
                                     >
                                         <Link href="/awp-multigames">{dict.home.multigames.cta}</Link>
-                                    </Button>
+                                    </button>
                                 </div>
                             </div>
                         </motion.div>
