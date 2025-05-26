@@ -35,6 +35,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { motion, AnimatePresence } from "framer-motion"
+import ita from '../public/IT.svg'
+import esp from '../public/ES.svg'
+import eng from '../public/EN.svg'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -65,9 +68,9 @@ export default function Navbar() {
   ]
 
   const languages = [
-    { code: 'it', label: 'Italiano' },
-    { code: 'en', label: 'English' },
-    { code: 'es', label: 'Español' }
+    { code: 'it', label: 'IT', flag: ita },
+    { code: 'en', label: 'EN', flag: eng },
+    { code: 'es', label: 'ES', flag: esp }
   ]
 
   return (
@@ -177,21 +180,35 @@ export default function Navbar() {
           {/* Language Selector */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/5">
-                <Globe className="h-5 w-5" />
+              <Button variant="ghost" className="text-white flex items-center gap-1 px-2 py-1 rounded-md">
+                <Image
+                  src={languages.find(l => l.code === lang)?.flag || eng}
+                  alt={languages.find(l => l.code === lang)?.label || 'EN'}
+                  width={16}
+                  height={16}
+                  className="object-contain rounded-sm"
+                />
+                <span className="text-sm font-medium">{languages.find(l => l.code === lang)?.label || 'EN'} <ChevronDown className="w-2 h-2 text-white" /></span>
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md pb-0" style={{padding: '0px', margin: '0px'}}>
               {languages.map((language) => (
                 <DropdownMenuItem
                   key={language.code}
-                  className={`text-sm ${lang === language.code ? 'text-vitalYellow' : 'text-white'} hover:opacity-8 hover:text-vitalYellow hover:bg-black cursor-pointer`}
+                  className={`text-sm ${lang === language.code ? 'text-vitalYellow' : 'text-white'} hover:opacity-8 hover:text-vitalYellow hover:bg-black cursor-pointer flex items-center gap-2`}
                   onClick={() => {
                     const newPath = pathname.replace(/^\/[a-z]{2}/, `/${language.code}`);
                     window.location.href = newPath;
                   }}
                 >
-                  {language.label}
+                  <Image
+                    src={language.flag}
+                    alt={language.label}
+                    width={20}
+                    height={20}
+                    className="object-contain"
+                  />
+                  <span>{language.label}</span>
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
@@ -201,14 +218,66 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       <div className="md:hidden flex w-full px-4 py-3 items-center justify-between bg-gradient-to-b from-black/90 to-transparent fixed top-0 left-0 right-0 z-[999]">
+        
+
+        {/* Right side with Logo and Language Selector */}
+        <div className="flex flex-1 items-center justify-between gap-2 z-[1002]">
+          <Link href="/" className="flex items-center">
+            <div className="relative h-10 w-16">
+              <Image
+                src={logo}
+                alt="Vital Games"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </Link>
+
+          {/* Language Selector for Mobile Header */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className="text-white hover:bg-white/5 flex items-center gap-1 px-4 py-1.5 bg-black/30 backdrop-blur-sm rounded-md">
+                <Image
+                  src={languages.find(l => l.code === lang)?.flag || eng}
+                  alt={languages.find(l => l.code === lang)?.label || 'EN'}
+                  width={16}
+                  height={16}
+                  className="object-contain"
+                />
+                <span className="text-sm font-medium">{languages.find(l => l.code === lang)?.label || 'EN'}</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md z-[1003]">
+              {languages.map((language) => (
+                <DropdownMenuItem
+                  key={language.code}
+                  className={`text-sm ${lang === language.code ? 'text-vitalYellow' : 'text-white'} hover:bg-white/5 cursor-pointer flex items-center gap-2`}
+                  onClick={() => {
+                    const newPath = pathname.replace(/^\/[a-z]{2}/, `/${language.code}`);
+                    window.location.href = newPath;
+                  }}
+                >
+                  <Image
+                    src={language.flag}
+                    alt={language.label}
+                    width={20}
+                    height={20}
+                    className="object-contain"
+                  />
+                  <span>{language.label}</span>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
         <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild>
             <Button
               variant="ghost"
               size="icon"
-              className="text-white  hover:bg-transparent"
+              className="text-white hover:bg-transparent z-[1002]"
             >
-              <Menu size={24} />
+              {isSheetOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>
           </SheetTrigger>
           <AnimatePresence>
@@ -226,34 +295,17 @@ export default function Navbar() {
                   initial={{ x: "-100%" }}
                   animate={{ x: 0 }}
                   exit={{ x: "-100%" }}
-                  transition={{ duration: 1.2, ease: "easeOut" }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                   className="fixed left-0 top-0 h-full w-full bg-black z-[1001]"
                 >
                   <div className="flex flex-col h-full">
                     {/* Header */}
-                    <div className="p-4 flex items-center justify-between">
-                      <Link href="/" className="flex items-center">
-                        <div className="relative h-10 w-16">
-                          <Image
-                            src={logo}
-                            alt="Vital Games"
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                      </Link>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        className="text-white hover:bg-transparent"
-                        onClick={() => setIsSheetOpen(false)}
-                      >
-                        <X size={24} />
-                      </Button>
+                    <div className="p-4 flex h-24 items-center justify-between">
+                      
                     </div>
 
                     {/* Content */}
-                    <div className="flex flex-col p-6 space-y-8 overflow-y-auto flex-grow">
+                    <div className="flex flex-col p-6 space-y-8 overflow-y-auto flex-grow mt-16">
                       {menuItems.map((item, index) =>{ 
                         const slots = item.dropdownType === "awp-multigames" ? multigames : games
                         return(
@@ -329,43 +381,6 @@ export default function Navbar() {
             )}
           </AnimatePresence>
         </Sheet>
-
-        {/* Right side with Logo and Language Selector */}
-        <div className="flex items-center gap-2">
-          <Link href="/" className="flex items-center">
-            <div className="relative h-10 w-16">
-              <Image
-                src={logo}
-                alt="Vital Games"
-                fill
-                className="object-contain"
-              />
-            </div>
-          </Link>
-
-          {/* Language Selector for Mobile Header */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/5">
-                <Globe className="h-5 w-5" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md ">
-              {languages.map((language) => (
-                <DropdownMenuItem
-                  key={language.code}
-                  className={`text-sm ${lang === language.code ? 'text-vitalYellow' : 'text-white'} hover:bg-white/5 cursor-pointer`}
-                  onClick={() => {
-                    const newPath = pathname.replace(/^\/[a-z]{2}/, `/${language.code}`);
-                    window.location.href = newPath;
-                  }}
-                >
-                  {language.label}
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
       </div>
     </header>
   )

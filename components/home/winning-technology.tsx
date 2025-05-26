@@ -41,7 +41,7 @@ export default function WinningTechnology() {
   ]
 
   return (
-    <div className="flex min-h-[80vh] flex-col items-center justify-center py-6 px-2 md:px-3 relative">
+    <div className="flex min-h-[80vh] flex-col items-center justify-center py-6 px-4 md:px-3 relative">
 
       <div className="absolute inset-0 z-1 overflow-hidden pointer-events-none">
         {/* Bottom left large diamond */}

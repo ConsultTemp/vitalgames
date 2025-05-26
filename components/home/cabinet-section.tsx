@@ -70,7 +70,7 @@ export default function CabinetSection() {
             </h2>
 
             <h2 className="text-5xl sm:text-6xl font-bold text-white dharma leading-tight visible md:invisible">
-              Cabinets
+              {cabinet.mobileTitle}
             </h2>
           </div>
 

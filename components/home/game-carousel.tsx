@@ -89,7 +89,7 @@ export function GameCarousel() {
     if (!isDesktop) {
         // Versione mobile: card impilate verticalmente
         return (
-            <div className="w-full py-12 my-12 bg-black">
+            <div className="w-full py-12 mt-12 bg-black">
                 {gameSlides.map((slide) => (
                     <div key={slide.id} className="rounded-lg overflow-hidden shadow-lg relative -mb-16">
                         <div className="relative w-full">

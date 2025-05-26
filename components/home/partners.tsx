@@ -46,7 +46,7 @@ export default function Partners() {
         <div className="partners-bg absolute inset-0 opacity-[0.03]"></div>
         <div className="relative">
           {/* @ts-ignore */}
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white dharma">{dict.home.partners.title}</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-white dharmalight">{dict.home.partners.title}</h2>
 
           <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
             {partners.map((partner) => (

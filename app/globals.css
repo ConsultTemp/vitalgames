@@ -133,7 +133,7 @@
 
 /* Classe che usa il font */
 .dharma {
-  font-family: 'dharma', sans-serif;
+  font-family: 'dharma';
   color: #fff;
 }
 
@@ -146,7 +146,7 @@
 
 /* Classe che usa il font */
 .dharmalight {
-  font-family: 'dharmalight', sans-serif;
+  font-family: 'dharmalight';
 }
 
 @font-face {

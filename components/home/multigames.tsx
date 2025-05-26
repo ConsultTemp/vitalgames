@@ -14,7 +14,6 @@ import casinoroyaleHover from "../../public/multigames-cards/CASINO ROYALE_Conve
 import diamanteHover from "../../public/multigames-cards/DIAMANTE_Converted.jpg"
 import luckySlot from "../../public/multigames-cards/lucky_slot.png"
 import floatingImage1 from "../../public/squalorosa.png"
-import floatingImage2 from "../../public/squaloarancione.png"
 import fortuneUltralink from "../../public/fortune_ultralink.png"
 
 export const multigames = [
@@ -170,14 +169,6 @@ export default function Multigames() {
 
     return (
         <section ref={containerRef} className="relative bg-transparent mb-16 mt-16">
-            <div className="absolute bottom-[0px] right-[50px] z-[1] max-w-[120px]">
-                <FloatingImage
-                    src={floatingImage2}
-                    alt="Floating Image 2"
-                    className="w-72 h-32 md:w-72 md:h-72"
-                />
-            </div>
-
             <div className="container mx-auto px-4 relative z-10">
                 <div className="flex flex-col md:flex-row">
                     {/* Contenuto sinistro con pin effect smooth */}
@@ -203,7 +194,7 @@ export default function Multigames() {
                                 <div className="text-vitalYellow text-xs font-medium py-[3.5px]">
                                     {dict.home.multigames.subtitle}
                                 </div>
-                                <h2 className="text-5xl md:text-5xl lg:text-[80px] font-bold text-white dharma">
+                                <h2 className="text-7xl md:text-7xl lg:text-[80px] font-bold text-white dharma">
                                     {dict.home.multigames.title} <br />
                                     {dict.home.multigames.titleLine2}
                                 </h2>
