@@ -78,7 +78,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 `}
     >
       {/* Desktop Navigation */}
-      <div className="hidden md:flex w-screen mx-auto px-8 py-3 overflow-visible items-center relative bg-gradient-to-b from-black/90 to-transparent" style={{height: "90px"}}>
+      <div className="hidden md:flex w-screen mx-auto px-8 py-3 overflow-visible items-center relative bg-gradient-to-b from-black/90 to-transparent" style={{ height: "90px" }}>
         {/* Logo - Left */}
         <div className="flex-1 flex justify-start">
           <Link href="/" className="flex items-center z-10">
@@ -95,8 +95,8 @@ export default function Navbar() {
 
         {/* Navigation - Center */}
         <div className="flex-1 flex justify-center">
-          <NavigationMenu className="w-full" style={{margin: '0px', padding: '0px'}}>
-            <NavigationMenuList className="flex items-center gap-4 z-10"  style={{margin: '0px', padding: '0px'}}>
+          <NavigationMenu className="w-full" style={{ margin: '0px', padding: '0px' }}>
+            <NavigationMenuList className="flex items-center gap-4 z-10" style={{ margin: '0px', padding: '0px' }}>
               {menuItems.map((item) => (
                 <NavigationMenuItem key={item.label} className="relative group">
                   {item.hasDropdown ? (
@@ -180,22 +180,22 @@ export default function Navbar() {
           {/* Language Selector */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="text-white flex items-center gap-1 px-2 py-1 rounded-md">
+              <Button variant="ghost" className="text-white flex items-center gap-1 px-2 py-1 backdrop-blur-sm rounded-md">
                 <Image
                   src={languages.find(l => l.code === lang)?.flag || eng}
                   alt={languages.find(l => l.code === lang)?.label || 'EN'}
                   width={16}
                   height={16}
-                  className="object-contain rounded-sm"
+                  className="object-contain"
                 />
-                <span className="text-sm font-medium">{languages.find(l => l.code === lang)?.label || 'EN'} <ChevronDown className="w-2 h-2 text-white" /></span>
+                <span className="text-sm font-medium">{languages.find(l => l.code === lang)?.label || 'EN'}</span>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md pb-0" style={{padding: '0px', margin: '0px'}}>
+            <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md z-[1003]">
               {languages.map((language) => (
                 <DropdownMenuItem
                   key={language.code}
-                  className={`text-sm ${lang === language.code ? 'text-vitalYellow' : 'text-white'} hover:opacity-8 hover:text-vitalYellow hover:bg-black cursor-pointer flex items-center gap-2`}
+                  className={`text-sm ${lang === language.code ? 'text-vitalYellow' : 'text-white'} hover:bg-white/5 cursor-pointer flex items-center gap-2`}
                   onClick={() => {
                     const newPath = pathname.replace(/^\/[a-z]{2}/, `/${language.code}`);
                     window.location.href = newPath;
@@ -218,7 +218,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       <div className="md:hidden flex w-full px-4 py-3 items-center justify-between bg-gradient-to-b from-black/90 to-transparent fixed top-0 left-0 right-0 z-[999]">
-        
+
 
         {/* Right side with Logo and Language Selector */}
         <div className="flex flex-1 items-center justify-between gap-2 z-[1002]">
@@ -236,7 +236,7 @@ export default function Navbar() {
           {/* Language Selector for Mobile Header */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="text-white hover:bg-white/5 flex items-center gap-1 px-4 py-1.5 bg-black/30 backdrop-blur-sm rounded-md">
+              <Button variant="ghost" className="text-white flex items-center gap-1 px-2 py-1 backdrop-blur-sm rounded-md">
                 <Image
                   src={languages.find(l => l.code === lang)?.flag || eng}
                   alt={languages.find(l => l.code === lang)?.label || 'EN'}
@@ -301,41 +301,42 @@ export default function Navbar() {
                   <div className="flex flex-col h-full">
                     {/* Header */}
                     <div className="p-4 flex h-24 items-center justify-between">
-                      
+
                     </div>
 
                     {/* Content */}
                     <div className="flex flex-col p-6 space-y-8 overflow-y-auto flex-grow mt-16">
-                      {menuItems.map((item, index) =>{ 
+                      {menuItems.map((item, index) => {
                         const slots = item.dropdownType === "awp-multigames" ? multigames : games
-                        return(
-                        <div
-                          key={item.label}
-                          className="animate-slideInRight"
-                          style={{
-                            animationDuration: '0.4s',
-                            animationDelay: `${index * 50 + 100}ms`,
-                            animationFillMode: 'both',
-                            margin: '0px'
-                          }}
-                        >
-                          <Link
-                            href={item.href}
-                            onClick={() => setIsSheetOpen(false)}
-                            className={`block text-base font-medium text-gray-300 hover:text-white transition-colors duration-300 mb-3 ${pathname === item.href ? "text-white" : ""
-                              }`}
+                        return (
+                          <div
+                            key={item.label}
+                            className="animate-slideInRight"
+                            style={{
+                              animationDuration: '0.4s',
+                              animationDelay: `${index * 50 + 100}ms`,
+                              animationFillMode: 'both',
+                              margin: '0px'
+                            }}
                           >
-                            {item.label}
-                          </Link>
+                            <Link
+                              href={item.href}
+                              onClick={() => setIsSheetOpen(false)}
+                              className={`block text-base font-medium text-gray-300 hover:text-white transition-colors duration-300 mb-3 ${pathname === item.href ? "text-white" : ""
+                                }`}
+                            >
+                              {item.label}
+                            </Link>
 
-                          {/* Game carousel for mobile */}
-                          {item.hasDropdown && item.dropdownType == "awp-multigames" && (
-                            <div className="mt-3 pb-2">
-                              <GameCarousel  games={slots} onGameClick={() => setIsSheetOpen(false)} type={item.dropdownType ? item.dropdownType : "allgames"} />
-                            </div>
-                          )}
-                        </div>
-                      )})}
+                            {/* Game carousel for mobile */}
+                            {item.hasDropdown && item.dropdownType == "awp-multigames" && (
+                              <div className="mt-3 pb-2">
+                                <GameCarousel games={slots} onGameClick={() => setIsSheetOpen(false)} type={item.dropdownType ? item.dropdownType : "allgames"} />
+                              </div>
+                            )}
+                          </div>
+                        )
+                      })}
                     </div>
 
                     {/* Footer */}
