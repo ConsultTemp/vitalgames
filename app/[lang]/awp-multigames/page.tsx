@@ -22,6 +22,7 @@ import champions from "@/public/multigames-cards/CHAMPIONS.png"
 import luckyslot from "@/public/multigames-cards/lucky_slot.png"
 import fortuneultralink from "@/public/multigames/Multigames/Fortune Ultralink/fortune_ultralink.jpg"
 import manhattan from "@/public/multigames/Multigames/Manhattan/MANHATTAN.jpg"
+import { games } from "@/lib/allgames"
 
 const multigames = [
   {
@@ -291,7 +292,7 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <div className="w-screen">
+      <div className="w-screen bg-black">
         <header>
           <VideoHero
             title={dict.awpMultigames.page.title}
@@ -303,7 +304,7 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
         <main>
           {/* MULTIGAMES CARDS SECTION */}
           <section
-            className="relative bg-black pt-16 flex flex-col items-center overflow-visible"
+            className="relative bg-black pt-8 flex flex-col items-center overflow-visible"
             aria-labelledby="multigames-heading"
           >
             {/* Side gradients */}
@@ -330,14 +331,14 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
                 aria-hidden="true"
               >
                 {/* Floating decorative elements */}
-                <div className="absolute top-[-100px] w-96 md:w-96 h-96 md:h-96 left-[-150px] animate-float-slow rotate-10">
+                <div className="absolute top-[-100px] w-96 md:w-96 h-96 md:h-96 left-[-150px] animate-float-slow rotate-10 overflow-visible">
                   <FloatingImage
                     src={bar || "/placeholder.svg"}
                     alt=""
                     className="w-[160px] md:w-[384px] h-[160px] md:h-[384px]"
                   />
                 </div>
-                <div className="absolute bottom-0 w-40 md:w-96 h-40 md:h-96 right-[-50px] md:right-0 animate-float-slow rotate-10">
+                <div className="absolute bottom-0 w-40 md:w-96 h-40 md:h-96 right-[-50px] md:right-0 animate-float-slow rotate-10 overflow-visible">
                   <FloatingImage
                     src={sevens || "/placeholder.svg"}
                     alt=""
@@ -379,13 +380,7 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
 
           {/* RECOMMENDED GAMES SECTION */}
           <section className="relative overflow-visible" aria-labelledby="recommended-heading">
-            {/* Background with gradient */}
-            <div
-              className="absolute inset-0 bg-gradient-to-br from-black via-black/50 to-transparent"
-              aria-hidden="true"
-            >
-              <div className="absolute inset-0 bg-black"></div>
-            </div>
+            
 
             {/* Content */}
             <div className="relative z-10">
@@ -394,7 +389,7 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
                   <SmoothReveal>
                     <h2
                       id="recommended-heading"
-                      className="text-start dharma text-3xl md:text-5xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap"
+                      className="text-start dharmalight text-3xl md:text-5xl font-bold text-white whitespace-normal md:whitespace-nowrap"
                     >
                       {dict.awpMultigames.page.section.title}
                     </h2>
@@ -403,12 +398,12 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
 
                 <div>
                   <div
-                    className="absolute left-0 right-0 top-[0%] h-[50vh] bg-gradient-to-b from-transparent via-[#007bff]/20 to-transparent pointer-events-none"
+                    className="absolute left-0 right-0 top-[0%] h-[50vh] bg-transparent pointer-events-none"
                     aria-hidden="true"
                   />
 
                   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-                    {multigames.slice(0, 5).map((game) => (
+                    {games.slice(0, 5).map((game) => (
                       <SmoothReveal key={game.id}>
                         <Link
                           href={`/${lang}/awp-multigames/${game.slug}`}
@@ -417,7 +412,7 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
                         >
                           <Image
                             src={game.image || "/placeholder.svg"}
-                            alt={`${game.title} - ${game.description}`}
+                            alt={`${game.title}`}
                             className="object-cover rounded-lg w-full h-full transition-transform duration-300 group-hover:scale-105"
                             width={1080}
                             height={1196}

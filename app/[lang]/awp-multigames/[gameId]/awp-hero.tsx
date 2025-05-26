@@ -25,10 +25,10 @@ export default function GameSection({ imageUrl, videoUrl, title, description }: 
   return (
     <div className="relative w-full overflow-hidden text-white py-16">
       {/* Background image as actual img tag with lower z-index */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <Image src={imageUrl || "/placeholder.svg"} alt="" className="w-full h-full object-cover" />
         {/* Gradient overlay - CORREZIONE QUI */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black h-full"></div>
       </div>
 
       {/* Content container */}
@@ -69,7 +69,7 @@ export default function GameSection({ imageUrl, videoUrl, title, description }: 
         {/* Text content */}
         <div className="text-center max-w-3xl">
           <p className="text-vitalYellow font-medium mb-2">Multigames</p>
-          <h2 className="text-7xl md:text-8xl font-bold uppercase tracking-wider dharma">{title}</h2>
+          <h2 className="text-7xl md:text-8xl font-bold uppercase dharma">{title}</h2>
           <p className="text-gray-400 text-xs md:text-base max-w-2xl mx-auto">
             {description}
           </p>

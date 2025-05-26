@@ -305,7 +305,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Content */}
-                    <div className="flex flex-col p-6 space-y-8 overflow-y-auto flex-grow mt-16">
+                    <div className="flex flex-col p-6 space-y-8 overflow-y-auto flex-grow">
                       {menuItems.map((item, index) => {
                         const slots = item.dropdownType === "awp-multigames" ? multigames : games
                         return (
@@ -316,13 +316,14 @@ export default function Navbar() {
                               animationDuration: '0.4s',
                               animationDelay: `${index * 50 + 100}ms`,
                               animationFillMode: 'both',
-                              margin: '0px'
+                              marginTop: '10px',
+                              marginBottom: '10px'
                             }}
                           >
                             <Link
                               href={item.href}
                               onClick={() => setIsSheetOpen(false)}
-                              className={`block text-base font-medium text-gray-300 hover:text-white transition-colors duration-300 mb-3 ${pathname === item.href ? "text-white" : ""
+                              className={`block text-lg ${item.hasDropdown && item.dropdownType == "awp-multigames" ? "invisible" : ""} font-semibold text-white transition-colors duration-300 ${pathname === item.href ? "text-white" : ""
                                 }`}
                             >
                               {item.label}

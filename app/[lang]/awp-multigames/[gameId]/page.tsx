@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { multigames } from "@/lib/multigames"
-import { multigames as multigamesCards } from "@/components/home/multigames"
+import { multigames as multigamesCards } from "@/lib/multigames"
 import { notFound } from "next/navigation"
 import GameSection from "./awp-hero"
 
@@ -270,7 +270,7 @@ export default async function MultigamePage({ params }: { params: Params }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <div>
-        <header>
+        <header className="h-fit">
           <GameSection
             imageUrl={multigame.mainImage}
             videoUrl={multigame.video}
@@ -279,11 +279,11 @@ export default async function MultigamePage({ params }: { params: Params }) {
           />
         </header>
 
-        <main>
+        <main className="px-4">
           {/* GAMES CARDS SECTION */}
           <section className="py-8 md:py-12 bg-black" aria-labelledby="games-heading">
             <div className="px-4 md:px-8 lg:px-16 xl:px-24">
-              <h1 id="games-heading" className="sr-only">
+              <h1 className="text-4xl dharma text-white mb-4">
                 Giochi inclusi in {multigame.title}
               </h1>
 
@@ -297,15 +297,15 @@ export default async function MultigamePage({ params }: { params: Params }) {
                       src={game.mainImage || "/placeholder.svg"}
                       alt={`${game.name} - Slot machine inclusa nel sistema ${multigame.title}`}
                       className="h-full w-full object-cover rounded-lg"
-                      width={800}
-                      height={600}
+                      width={400}
+                      height={400}
                       loading="lazy"
                     />
                   </div>
-                  <div className="text-center md:text-left p-3 md:p-6 md:w-3/5 lg:w-2/3">
-                    <div className="rounded-xl bg-black/50 p-3 md:p-4 max-w-2xl mx-8">
-                      <h2 className="text-6xl md:text-7xl font-bold text-white mb-3 md:mb-4 dharma">{game.name}</h2>
-                      <p className="text-gray-400 text-sm leading-relaxed mb-3 md:mb-4 max-w-xl mx-auto md:mx-0 text-[#989898]">
+                  <div className="text-left md:text-left p-3 px-0 md:p-6 w-full">
+                    <div className="rounded-xl bg-black/50 p-3 px-0 md:p-4 md:px-0 w-full">
+                      <h2 className="text-3xl md:text-4xl text-white mb-1 dharma">{game.name}</h2>
+                      <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-xl mx-auto md:mx-0 text-[#989898]">
                         {game.subtitle}
                       </p>
                       <Link href={`/${lang}/allgames/${game.slug}`} className="inline-block">
@@ -329,24 +329,25 @@ export default async function MultigamePage({ params }: { params: Params }) {
             <div className="px-4 md:px-8 lg:px-16 xl:px-24">
               <h2
                 id="recommended-games-heading"
-                className="text-4xl md:text-5xl font-bold text-white mb-8 text-center dharma"
+                className="text-3xl md:text-4xl text-white mb-4 dharma text-left"
               >
-                Altri Multigames Consigliati
+                {dict.allGames.recommended.otherMultigames}
               </h2>
               <div className="flex flex-col md:flex-row gap-6">
-                {Array.isArray(multigamesCards) && multigamesCards
-                  .filter((m) => m.slug !== multigame.slug)
+                {Array.isArray(multigame.recommended) && multigame.recommended
                   .slice(0, 3)
-                  .map((game, index) => (
+                  .map((game, index) => {
+                    const multigame = multigamesCards.find((m) => m.slug === game)
+                    return multigame?.id ?(
                     <article key={index} className="flex-1 hover:scale-[1.02] transition-all duration-300">
                       <Link
-                        href={`/${lang}/awp-multigames/${game.slug}`}
-                        aria-label={`Scopri ${game.title} - Sistema multigame AWP`}
+                        href={`/${lang}/awp-multigames/${multigame.slug}`}
+                        aria-label={`Scopri ${multigame.title} - Sistema multigame AWP`}
                       >
                         <div className="rounded-lg overflow-hidden">
                           <Image
-                            src={game.image || "/placeholder.svg"}
-                            alt={`${game.title} - Sistema multigame AWP alternativo`}
+                            src={multigame.mainImage || "/placeholder.svg"}
+                            alt={`${multigame.title} - Sistema multigame AWP alternativo`}
                             className="w-full h-auto"
                             width={400}
                             height={300}
@@ -355,7 +356,8 @@ export default async function MultigamePage({ params }: { params: Params }) {
                         </div>
                       </Link>
                     </article>
-                  ))}
+                  ) : null
+                })}
               </div>
             </div>
           </section>

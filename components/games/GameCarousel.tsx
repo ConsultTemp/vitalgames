@@ -3,7 +3,7 @@
 import { useRef } from "react"
 import Image, { StaticImageData } from "next/image"
 import Link from "next/link"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 
 interface Game {
@@ -33,26 +33,13 @@ export function GameCarousel({ games, onGameClick, type }: GameCarouselProps) {
   }
 
   return (
-    <div className="relative">
-      <div className="flex items-center justify-between mb-2">
-        <h3 className="text-sm font-medium text-gray-400">{dict.allGames.recommended.title}</h3>
-        <div className="flex space-x-1">
-          <button
-            onClick={() => scroll("left")}
-            className="h-7 w-7 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700 text-white"
-            aria-label="Scroll left"
-          >
-            <ChevronLeft className="h-4 w-4" />
-          </button>
-          <button
-            onClick={() => scroll("right")}
-            className="h-7 w-7 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700 text-white"
-            aria-label="Scroll right"
-          >
-            <ChevronRight className="h-4 w-4" />
-          </button>
+    <div className="relative" onClick={onGameClick}>
+      <Link href="/awp-multigames" className="flex items-end justify-between mb-4">
+        <h3 className="text-2xl font-semibold text-white">Multigames</h3>
+        <div className="flex space-x-1 flex flex-row items-center gap-1 text-white whitespace-nowrap text-xs">
+          <div className="text-sm font-medium text-white">{dict.allGames.recommended.viewAll} </div><ArrowRight className="w-4 h-4" />
         </div>
-      </div>
+      </Link>
 
       {/* Carousel container with fade effect */}
       <div className="relative overflow-hidden">
@@ -63,8 +50,15 @@ export function GameCarousel({ games, onGameClick, type }: GameCarouselProps) {
         >
           {games.map((game) => (
             <div key={game.id} className="min-w-[250px] snap-start">
-              <Link href={`/${type}/${game.slug}`} onClick={onGameClick}>
-                <div className="bg-black rounded-lg overflow-hidden border border-gray-700 hover:border-vitalYellow transition-colors aspect-[12/9]">
+              <Link 
+                href={`/${type}/${game.slug}`} 
+                onClick={(e) => {
+                  if (onGameClick) {
+                    onGameClick();
+                  }
+                }}
+              >
+                <div className="bg-black rounded-lg overflow-hidden transition-colors aspect-[12/9]">
                   <div className="relative w-full h-full">
                     <Image 
                       src={game.image || "/placeholder.svg"} 

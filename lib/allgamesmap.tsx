@@ -250,7 +250,7 @@ import chef from '../public/allgames/LE CHEF.jpg'
 export const games = [
   {
     name: 'Shark',
-    subtitle: 'Un\'avventura nel mondo del mare',
+    subtitle: 'The Weird Family ti aspetta con simboli misteriosi, bonus inquietanti e colpi di scena ad ogni spin. Tra risate dark e funzionalità speciali, entra in un gioco dove il bizzarro è solo l\'inizio.',
     href: 'shark',
     slug: 'shark',
     coverImage: shark,
@@ -260,7 +260,7 @@ export const games = [
   },
   {
     name: 'Midnight Saloon',
-    subtitle: 'Un\'avventura nel mondo della notte',
+    subtitle: 'The Weird Family ti aspetta con simboli misteriosi, bonus inquietanti e colpi di scena ad ogni spin. Tra risate dark e funzionalità speciali, entra in un gioco dove il bizzarro è solo l\'inizio.',
     href: 'midnight-saloon',
     slug: 'midnight-saloon',
     coverImage: midnightsaloon,
@@ -270,7 +270,7 @@ export const games = [
   },
   {
     name: 'Cherry',
-    subtitle: 'Un\'avventura nel mondo della frutta',
+    subtitle: 'The Weird Family ti aspetta con simboli misteriosi, bonus inquietanti e colpi di scena ad ogni spin. Tra risate dark e funzionalità speciali, entra in un gioco dove il bizzarro è solo l\'inizio.',
     href: 'cherry',
     slug: 'cherry',
     coverImage: cherry,
@@ -280,7 +280,7 @@ export const games = [
   },
   {
     name: 'Le Chef',
-    subtitle: 'Un\'avventura nel mondo della cucina',
+    subtitle: 'The Weird Family ti aspetta con simboli misteriosi, bonus inquietanti e colpi di scena ad ogni spin. Tra risate dark e funzionalità speciali, entra in un gioco dove il bizzarro è solo l\'inizio.',
     href: 'le-chef',
     slug: 'le-chef',
     coverImage: chef,
@@ -291,7 +291,7 @@ export const games = [
   },
   {
     name: 'Alieni',
-    subtitle: 'Un\'avventura spaziale tra mondi sconosciuti',
+    subtitle: 'The Weird Family ti aspetta con simboli misteriosi, bonus inquietanti e colpi di scena ad ogni spin. Tra risate dark e funzionalità speciali, entra in un gioco dove il bizzarro è solo l\'inizio.',
     href: 'alieni',
     slug: 'alieni',
     coverImage: ALIENI,
@@ -505,7 +505,7 @@ export const games = [
   },
   {
     name: 'Magic Diamond 2',
-    subtitle: 'Cerca il diamante più prezioso del mondo',
+    subtitle: 'The Weird Family ti aspetta con simboli misteriosi, bonus inquietanti e colpi di scena ad ogni spin. Tra risate dark e funzionalità speciali, entra in un gioco dove il bizzarro è solo l\'inizio.',
     href: 'magic-diamond-2',
     slug: 'magic-diamond-2',
     coverImage: MAGIC_DIAMOND_2,

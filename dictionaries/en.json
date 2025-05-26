@@ -105,7 +105,7 @@
       "cta": "Discover Multigames",
       "descriptions": {
         "manhattan": "Sports system with 8 football-themed games, perfect for sports enthusiasts.",
-        "champions-slot": "Sports system with 8 football-themed games, perfect for sports enthusiasts.",
+        "champions": "Sports system with 8 football-themed games, perfect for sports enthusiasts.",
         "fortune-ultralink": "Multigame system with 10 classic casino-themed games, elegant interface and progressive jackpot.",
         "diamante": "Our premium solution with 12 exclusive games, HD graphics and advanced bonus features.",
         "piggy-gold": "Fun system with 10 money and fortune-themed games, perfect for a young audience.",
@@ -295,11 +295,11 @@
       ]
     },
     "page": {
-      "title": "AWP MULTIGAMES",
+      "title": "AWP MultiGames",
       "subtitle": "Discover our selection of multigame systems for bars and gaming halls",
       "section": {
         "badge": "AWP MULTIGAMES",
-        "title": "DISCOVER OUR MULTIGAMES",
+        "title": "Discover our Games",
         "description": "Innovative multigame systems that offer multiple slots in a single machine, ideal for bars and gaming halls looking to maximize entertainment offerings"
       }
     }
@@ -335,7 +335,9 @@
     "loadMore": "Load More Games",
     "recommended": {
       "badge": "Recommended Games",
-      "title": "RECOMMENDED GAMES"
+      "title": "RECOMMENDED GAMES",
+      "viewAll": "View all",
+      "otherMultigames": "Other recommended multigames"
     },
     "youMightAlsoLike": "You might also like"
   },

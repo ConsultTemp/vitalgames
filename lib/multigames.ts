@@ -45,7 +45,7 @@ export const multigames = [
     },
     {
         id: 10,
-        slug: "champions-slot",
+        slug: "champions",
         title: "Champions",
         coverImage: bgmultigamopen,
         logo: multigamelogo,
@@ -66,7 +66,8 @@ export const multigames = [
             games.find(g => g.slug === 'shark')!,
             games.find(g => g.slug === 'cherry')!,
             games.find(g => g.slug === 'midnight-saloon')!
-        ],        recommended: ["casino-royale", "diamante", "golden-club"]
+        ],        
+        recommended: ["casino-royale", "diamante", "golden-club"]
     },
     {
         id: 13,
@@ -91,7 +92,8 @@ export const multigames = [
             games.find(g => g.slug === 'shark')!,
             games.find(g => g.slug === 'cherry')!,
             games.find(g => g.slug === 'midnight-saloon')!
-        ],        recommended: ["casino-royale", "diamante", "golden-club"]
+        ],        
+        recommended: ["casino-royale", "diamante", "golden-club"]
     },
     {
         id: 2,

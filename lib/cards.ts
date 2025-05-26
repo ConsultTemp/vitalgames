@@ -33,7 +33,7 @@ export const games = [
 export const multigames = [
     {
         id: 3,
-        slug: 'champions-slot',
+        slug: 'champions',
         title: 'Champions Slot',
         description: 'Reggaefrog is a fun and addictive game that challenges your reflexes and timing.',
         image: champions,

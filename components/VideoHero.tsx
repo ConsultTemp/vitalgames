@@ -82,7 +82,7 @@ const VideoHero: React.FC<VideoHeroProps> = ({ title, subtitle, videoUrl }) => {
                 <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
                 <div className="absolute bottom-[-50px] left-0 right-0 p-8 md:p-12">
                     <div className="max-w-5xl mx-auto text-center">
-                        <h1 className="text-4xl md:text-8xl dharma font-bold text-white">{title}</h1>
+                        <h1 className="text-4xl md:text-8xl dharmalight font-bold text-white">{title}</h1>
                         <p className="text-sm font-light text-white/80 max-w-2xl mx-auto">
                             {subtitle}
                         </p>

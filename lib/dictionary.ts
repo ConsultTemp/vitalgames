@@ -400,7 +400,27 @@ export interface Dictionary {
   }
   aboutUs: {
     title: string
-    description: string
+    description: string,
+    philosophy: {
+      description: string
+    },
+    presence: {
+      description: string
+    },
+    cards: {
+      iso: {
+        description: string
+      }
+      experience: {
+        description: string
+      }
+      games: {
+        description: string
+      }
+      partners: {
+        description: string
+      }
+    }
   }
 }
 
@@ -413,7 +433,7 @@ const loadDictionary = async (locale: Locale): Promise<Dictionary> => {
     console.error(`Failed to load dictionary for locale ${locale}:`, error)
     if (locale !== "en") {
       const module = await import("@/dictionaries/en.json")
-      return module.default
+      return module.default as any
     }
     throw error
   }

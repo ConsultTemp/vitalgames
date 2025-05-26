@@ -91,7 +91,7 @@ export function GameCarousel() {
         return (
             <div className="w-full py-12 mt-12 bg-black px-4">
                 {gameSlides.map((slide) => (
-                    <div key={slide.id} className="rounded-lg overflow-hidden shadow-lg relative">
+                    <div key={slide.id} className="rounded-lg overflow-hidden shadow-lg relative mb-8">
                         <div className="relative w-full">
                             <Image
                                 src={slide.mobileImageSrc || slide.imageSrc || "/placeholder.svg"}
@@ -99,18 +99,20 @@ export function GameCarousel() {
                                 className="w-full h-auto object-cover"
                             />
                         </div>
-                        <div className={`absolute inset-0 mt-72`}>
-                            <div className={`h-fit flex flex-col justify-end items-center text-center max-w-[90%] mx-auto text-white`}>
-                                <h2 className="text-xl font-bold mb-3">{slide.title}</h2>
-                                <p className="text-sm font-extralight mb-3" style={{fontWeight:"200"}}>{slide.description}</p>
-                                <div className="flex flex-row gap-2">
-                                    <Button className="bg-white text-black hover:bg-gray-100 flex items-center gap-2 text-sm py-1 rounded-full">
-                                        <Play className="h-3 w-3" />
-                                        Avvia demo
-                                    </Button>
-                                    <Button variant="outline" className="border-white text-white hover:bg-white/5 text-sm py-1 rounded-full">
-                                        Scopri di più
-                                    </Button>
+                        <div className="absolute inset-0 flex flex-col justify-end">
+                            <div className="bg-gradient-to-t from-black via-black/80 to-transparent pt-32 pb-6">
+                                <div className="flex flex-col justify-end items-center text-center max-w-[90%] mx-auto text-white">
+                                    <h2 className="text-xl font-bold mb-3">{slide.title}</h2>
+                                    <p className="text-sm font-extralight mb-3" style={{fontWeight:"200"}}>{slide.description}</p>
+                                    <div className="flex flex-row gap-2">
+                                        <Button className="bg-white text-black hover:bg-gray-100 flex items-center gap-2 text-sm py-1 rounded-full">
+                                            <Play className="h-3 w-3" />
+                                            Avvia demo
+                                        </Button>
+                                        <Button variant="outline" className="border-white text-white hover:bg-white/5 text-sm py-1 rounded-full">
+                                            Scopri di più
+                                        </Button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

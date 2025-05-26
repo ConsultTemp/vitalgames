@@ -120,7 +120,7 @@
       "cta": "Scopri i Multigames",
       "descriptions": {
         "manhattan": "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
-        "champions-slot": "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
+        "champions": "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
         "fortune-ultralink": "Sistema multigame con 10 giochi a tema casinò classico, interfaccia elegante e jackpot progressivo.",
         "diamante": "La nostra soluzione premium con 12 giochi esclusivi, grafica HD e funzionalità bonus avanzate.",
         "piggy-gold": "Divertente sistema con 10 giochi a tema denaro e fortuna, perfetto per un pubblico giovane.",
@@ -310,11 +310,11 @@
       ]
     },
     "page": {
-      "title": "AWP MULTIGAMES",
+      "title": "AWP MultiGames",
       "subtitle": "Scopri la nostra selezione di sistemi multigame per bar e sale giochi",
       "section": {
         "badge": "AWP MULTIGAMES",
-        "title": "SCOPRI I NOSTRI MULTIGAMES",
+        "title": "Scopri i nostri giochi",
         "description": "Sistemi multigame innovativi che offrono diverse slot in un'unica macchina, ideali per bar e sale giochi che vogliono massimizzare l'offerta di intrattenimento"
       }
     }
@@ -350,7 +350,9 @@
     "loadMore": "Carica Altri Giochi",
     "recommended": {
       "badge": "Giochi Consigliati",
-      "title": "GIOCHI CONSIGLIATI"
+      "title": "GIOCHI CONSIGLIATI",
+      "viewAll": "Vedi tutto",
+      "otherMultigames": "Altri multigames consigliati"
     },
     "youMightAlsoLike": "Ti potrebbe interessare anche"
   },
