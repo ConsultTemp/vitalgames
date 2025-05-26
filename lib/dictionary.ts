@@ -203,6 +203,7 @@ export interface Dictionary {
     recommended: {
       badge: string
       title: string
+      otherMultigames: string
     }
   }
   gameDetail: {
