@@ -138,15 +138,15 @@
 }
 
 @font-face {
-  font-family: 'dharma-light'; /* Nome che userai nel CSS */
+  font-family: 'dharmalight'; /* Nome che userai nel CSS */
   src: url('../fonts/dharmalight.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 /* Classe che usa il font */
-.dharma-light {
-  font-family: 'dharma-light', sans-serif;
+.dharmalight {
+  font-family: 'dharmalight', sans-serif;
 }
 
 @font-face {

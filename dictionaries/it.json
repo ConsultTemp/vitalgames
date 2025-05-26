@@ -92,7 +92,8 @@
           "description": "Più di 40mila titoli in Italia"
         },
         "partners": {
-          "description": "Collaborazioni con i principali operatori"
+          "description": "Collaborazioni con i principali operatori",
+          "title": "Partners"
         }
       }
     },
@@ -141,6 +142,9 @@
         "Più di 40mila titoli installati",
         "Collaborazioni con i principali operatori"
       ]
+    },
+    "partners": {
+      "title": "Partners"
     }
   },
   "vlt": {

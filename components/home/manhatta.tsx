@@ -106,7 +106,7 @@ export default function ManhattanLanding() {
 
         {/* Game Thumbnails */}
         <div className="mt-12 md:mt-16 lg:mt-20">
-          <h2 className="text-4xl text-white dharma-italic font-bold mb-6">{dict.home.manhattan.partOfManhattan}</h2>
+          <h2 className="text-4xl text-white dharmalight font-bold mb-6">{dict.home.manhattan.partOfManhattan}</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {games.map((game) => (
               <GameCard key={game.slug} game={game} />
