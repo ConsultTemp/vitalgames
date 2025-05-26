@@ -11,7 +11,7 @@ import type { CarouselApi } from "@/components/ui/carousel"
 import mrDiamondImage from "../../public/misterdiamondbg.png"
 import mrDiamondMobileImage from "../../public/mr_diamond_mobile.png"
 import luckyCharmsImage from "../../public/lostruzzobg.png"
-import luckyCharmsMobileImage from "../../public/lostruzzomobile.png"
+import luckyCharmsMobileImage from "../../public/lo_struzzo_mobile.png"
 import pirateTreasureImage from "../../public/reggaefrogbg.png"
 import pirateTreasureMobileImage from "../../public/reggae_frog_mobile.png"
 
@@ -89,9 +89,9 @@ export function GameCarousel() {
     if (!isDesktop) {
         // Versione mobile: card impilate verticalmente
         return (
-            <div className="w-full py-12 mt-12 bg-black">
+            <div className="w-full py-12 mt-12 bg-black px-4">
                 {gameSlides.map((slide) => (
-                    <div key={slide.id} className="rounded-lg overflow-hidden shadow-lg relative -mb-16">
+                    <div key={slide.id} className="rounded-lg overflow-hidden shadow-lg relative">
                         <div className="relative w-full">
                             <Image
                                 src={slide.mobileImageSrc || slide.imageSrc || "/placeholder.svg"}
@@ -99,8 +99,8 @@ export function GameCarousel() {
                                 className="w-full h-auto object-cover"
                             />
                         </div>
-                        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent">
-                            <div className="h-full flex flex-col justify-end pb-36 items-center text-center max-w-[90%] mx-auto text-white">
+                        <div className={`absolute inset-0 mt-72`}>
+                            <div className={`h-fit flex flex-col justify-end items-center text-center max-w-[90%] mx-auto text-white`}>
                                 <h2 className="text-xl font-bold mb-3">{slide.title}</h2>
                                 <p className="text-sm font-extralight mb-3" style={{fontWeight:"200"}}>{slide.description}</p>
                                 <div className="flex flex-row gap-2">

@@ -180,7 +180,7 @@ export default function Navbar() {
           {/* Language Selector */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="text-white flex items-center gap-1 px-2 py-1 backdrop-blur-sm rounded-md">
+              <Button variant="ghost" className="text-white flex items-center gap-1 px-2 py-1 backdrop-blur-sm rounded-m  hover:bg-black-5 transition-all duration-300d">
                 <Image
                   src={languages.find(l => l.code === lang)?.flag || eng}
                   alt={languages.find(l => l.code === lang)?.label || 'EN'}
@@ -236,18 +236,18 @@ export default function Navbar() {
           {/* Language Selector for Mobile Header */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="text-white flex items-center gap-1 px-2 py-1 backdrop-blur-sm rounded-md">
+              <Button variant="ghost" className="text-white flex items-center gap-1 px-2 py-1 backdrop-blur-sm rounded-md mx-4 hover:bg-black-5 transition-all duration-300">
                 <Image
                   src={languages.find(l => l.code === lang)?.flag || eng}
                   alt={languages.find(l => l.code === lang)?.label || 'EN'}
                   width={16}
                   height={16}
-                  className="object-contain"
+                  className="object-contain rounded-sm"
                 />
                 <span className="text-sm font-medium">{languages.find(l => l.code === lang)?.label || 'EN'}</span>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md z-[1003]">
+            <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md z-[1003] rounded-sm">
               {languages.map((language) => (
                 <DropdownMenuItem
                   key={language.code}
@@ -262,7 +262,7 @@ export default function Navbar() {
                     alt={language.label}
                     width={20}
                     height={20}
-                    className="object-contain"
+                    className="object-contain rounded-sm"
                   />
                   <span>{language.label}</span>
                 </DropdownMenuItem>
@@ -275,9 +275,9 @@ export default function Navbar() {
             <Button
               variant="ghost"
               size="icon"
-              className="text-white hover:bg-transparent z-[1002]"
+              className="text-white px-2 py-1  rounded-full backdrop-blur-sm hover:bg-transparent z-[1002]"
             >
-              {isSheetOpen ? <X size={24} /> : <Menu size={24} />}
+              {isSheetOpen ? <X size={30} /> : <Menu size={30} />}
             </Button>
           </SheetTrigger>
           <AnimatePresence>
