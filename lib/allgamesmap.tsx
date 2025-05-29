@@ -208,6 +208,45 @@ import REGGAE_FROG_PHOTO2 from '../public/games-images/REGGAE FROG/PHOTO-2024-05
 import REGGAE_FROG_PHOTO3 from '../public/games-images/REGGAE FROG/PHOTO-2024-05-10-10-57-57 3.jpg'
 import REGGAE_FROG_PHOTO4 from '../public/games-images/REGGAE FROG/PHOTO-2024-05-10-10-58-01.jpg'
 
+import SHARK from '../public/games-images/SHARK/SHARK.jpg'
+
+import CRAZY_CIRCUS from '../public/games-images/CRAZY CIRCUS/CRAZY CIRCUS.jpg'
+
+import CHERRY from '../public/games-images/CHERRY/CHERRY.jpg'
+
+import MIDNIGHT__SALOON from '../public/games-images/MIDNIGHT SALOON/THE MIDNIGHT SALOON.jpg'
+
+import LE_CHEF from '../public/games-images/LE CHEF/LE CHEF.jpg'
+
+import DOLPHINS from '../public/games-images/DOLPHINS/DOLPHINS.jpg'
+import DOLPHINS_PHOTO1 from '../public/games-images/DOLPHINS/PHOTO-2024-05-10-15-34-30 4.jpg'
+import DOLPHINS_PHOTO2 from '../public/games-images/DOLPHINS/PHOTO-2024-05-10-15-34-32 4.jpg'
+import DOLPHINS_PHOTO3 from '../public/games-images/DOLPHINS/PHOTO-2024-05-10-15-34-32 5.jpg'
+import DOLPHINS_PHOTO4 from '../public/games-images/DOLPHINS/PHOTO-2024-05-10-15-34-34 2.jpg'
+
+import EXCALIBUR from '../public/games-images/EXCALIBUR/EXCALIBUR.jpg'
+import EXCALIBUR_PHOTO2 from '../public/games-images/EXCALIBUR/PHOTO-2024-05-10-15-34-27.jpg'
+import EXCALIBUR_PHOTO3 from '../public/games-images/EXCALIBUR/PHOTO-2024-05-10-15-34-29.jpg'
+import EXCALIBUR_PHOTO4 from '../public/games-images/EXCALIBUR/PHOTO-2024-05-10-15-34-30.jpg'
+import EXCALIBUR_PHOTO5 from '../public/games-images/EXCALIBUR/PHOTO-2024-05-10-15-34-32.jpg'
+
+import GOLDEN_SLOT from '../public/games-images/GOLDEN SLOT/GOLDEN SLOT.jpg'
+import GOLDEN_SLOT_PHOTO2 from '../public/games-images/GOLDEN SLOT/PHOTO-2024-05-15-11-28-16 4.jpg'
+import GOLDEN_SLOT_PHOTO3 from '../public/games-images/GOLDEN SLOT/PHOTO-2024-05-15-11-28-16 5.jpg'
+import GOLDEN_SLOT_PHOTO4 from '../public/games-images/GOLDEN SLOT/PHOTO-2024-05-15-11-28-20 4.jpg'
+
+import HOT_PEPPER from '../public/games-images/HOT PEPPER/HOT PEPPER.jpg'
+import HOT_PEPPER_PHOTO2 from '../public/games-images/HOT PEPPER/PHOTO-2024-05-13-11-20-37 2.jpg'
+import HOT_PEPPER_PHOTO3 from '../public/games-images/HOT PEPPER/PHOTO-2024-05-13-11-20-37 3.jpg'
+import HOT_PEPPER_PHOTO4 from '../public/games-images/HOT PEPPER/PHOTO-2024-05-13-11-20-37.jpg'
+import HOT_PEPPER_PHOTO5 from '../public/games-images/HOT PEPPER/PHOTO-2024-05-13-11-20-38.jpg'
+
+import MINOTAURUS from '../public/games-images/MINOTAURUS/MINOTAURUS.jpg'
+import MINOTAURUS_PHOTO2 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-29 4.jpg'
+import MINOTAURUS_PHOTO3 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-31.jpg'
+import MINOTAURUS_PHOTO4 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-33 3.jpg'
+import MINOTAURUS_PHOTO5 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-34.jpg'
+
 import alieni from '../public/allgames-webp/ALIENI.webp'
 import braccio from '../public/allgames-webp/BRACCIO DI FERRO.webp'
 import dragon from '../public/allgames-webp/DRAGON.webp'
@@ -246,6 +285,57 @@ import cherry from '../public/allgames-webp/CHERRY.webp'
 import midnightsaloon from '../public/allgames-webp/THE MIDNIGHT SALOON.webp'
 import shark from '../public/allgames-webp/SHARK.webp'
 import chef from '../public/allgames-webp/LE CHEF.webp'
+import dolphins from '../public/allgames-webp/DOLPHINS.webp'
+import excalibur from '../public/allgames-webp/EXCALIBUR.webp'
+import hot_pepper from '../public/allgames-webp/HOT PEPPER.webp'
+import golden_slot from '../public/allgames-webp/GOLDEN SLOT.webp'
+import minotaurus from '../public/allgames-webp/MINOTAURUS.webp'
+import crazyCircus from '../public/allgames-webp/CRAZY CIRCUS.webp'
+
+import alieni_mobile_hero from '../public/allgames-mobile-hero/ALIENI_mobile.webp'
+import braccio_mobile_hero from '../public/allgames-mobile-hero/BRACCIO DI FERRO.webp'
+import dragon_mobile_hero from '../public/allgames-mobile-hero/DRAGON_mobile.webp'
+import eden_mobile_hero from '../public/allgames-mobile-hero/EDEN_mobile.webp'
+import golden_mobile_hero from '../public/allgames-mobile-hero/GOLDEN FRUIT_mobile.webp'
+import barone_mobile_hero from '../public/allgames-mobile-hero/IL BARONE ROSSO_mobile.webp'
+import cuoco_mobile_hero from '../public/allgames-mobile-hero/IL CUOCO_mobile.webp'
+import giullare_mobile_hero from '../public/allgames-mobile-hero/IL GIULLARE_mobile.webp'
+import grillo_mobile_hero from '../public/allgames-mobile-hero/IL GRILLO_mobile.webp'
+import julio_mobile_hero from '../public/allgames-mobile-hero/JULIO_mobile.webp'
+import fortune_mobile_hero from '../public/allgames-mobile-hero/FORTUNE_mobile.webp'
+import jungle_mobile_hero from '../public/allgames-mobile-hero/JUNGLE_mobile.webp'
+import scatola_mobile_hero from '../public/allgames-mobile-hero/LA SCATOLA MAGICA_mobile.webp'
+import magic_mobile_hero from '../public/allgames-mobile-hero/MAGIC DIAMOND 2_mobile.webp'
+import mohamed_mobile_hero from '../public/allgames-mobile-hero/MOHAMED_mobile.webp'
+import nautilus_mobile_hero from '../public/allgames-mobile-hero/NAUTILUS_mobile.webp'
+import reggae_mobile_hero from '../public/allgames-mobile-hero/REGGAE FROG_mobile.webp'
+import scacco_mobile_hero from '../public/allgames-mobile-hero/SCACCO MATTO_mobile.webp'
+import sonny_mobile_hero from '../public/allgames-mobile-hero/SONNY BONO_mobile.webp'
+import striptease_mobile_hero from '../public/allgames-mobile-hero/STRIPTEASE_mobile.webp'
+import time_mobile_hero from '../public/allgames-mobile-hero/TIME_mobile.webp'
+import torero_mobile_hero from '../public/allgames-mobile-hero/TORERO_mobile.webp'
+import vampiro_mobile_hero from '../public/allgames-mobile-hero/VAMPIRO_mobile.webp'
+import zombie_mobile_hero from '../public/allgames-mobile-hero/ZOMBIE_mobile.webp'
+import billionaire_mobile_hero from '../public/allgames-mobile-hero/LUXURY_mobile.webp'
+import pirates_mobile_hero from '../public/allgames-mobile-hero/DARK PIRATES_mobile.webp'
+import mexican_mobile_hero from '../public/allgames-mobile-hero/MEXICAN_mobile.webp'
+import family_mobile_hero from '../public/allgames-mobile-hero/THE WEIRD FAMILY_mobile.webp'
+import elfi_mobile_hero from '../public/allgames-mobile-hero/ELFI_mobile.webp'
+import cowboy_mobile_hero from '../public/allgames-mobile-hero/COWBOY REVENGE_mobile.webp'
+import struzzo_mobile_hero from '../public/allgames-mobile-hero/LO STRUZZO_mobile.webp'
+import lucky8_mobile_hero from '../public/allgames-mobile-hero/LUCKY 8.webp'
+import pablito_mobile_hero from '../public/allgames-mobile-hero/PABLITO_mobile.webp'
+import pepita_mobile_hero from '../public/allgames-mobile-hero/PEPITA D\'ORO_mobile.webp'
+import cherry_mobile_hero from '../public/allgames-mobile-hero/CHERRY_mobile.webp'
+import midnightsaloon_mobile_hero from '../public/allgames-mobile-hero/MIDNIGHT SALOON_mobile.webp'
+import shark_mobile_hero from '../public/allgames-mobile-hero/SHARK_mobile.webp'
+import chef_mobile_hero from '../public/allgames-mobile-hero/LE CHEF_mobile.webp'
+import dolphins_mobile_hero from '../public/allgames-mobile-hero/DOLPHINS_mobile.webp'
+import excalibur_mobile_hero from '../public/allgames-mobile-hero/EXCALIBUR_mobile.webp'
+import hot_pepper_mobile_hero from '../public/allgames-mobile-hero/HOT PEPPER_mobile.webp'
+import golden_slot_mobile_hero from '../public/allgames-mobile-hero/GOLDEN SLOT_mobile.webp'
+import minotaurus_mobile_hero from '../public/allgames-mobile-hero/MINOTAURUS_mobile.webp'
+import crazyCircus_mobile_hero from '../public/allgames-mobile-hero/CRAZY CIRCUS_mobile.webp'
 
 export const games = [
   {
@@ -253,40 +343,55 @@ export const games = [
     subtitle: 'The Weird Family ti aspetta con simboli misteriosi, bonus inquietanti e colpi di scena ad ogni spin. Tra risate dark e funzionalità speciali, entra in un gioco dove il bizzarro è solo l\'inizio.',
     href: 'shark',
     slug: 'shark',
-    coverImage: shark,
+    coverImage: SHARK,
     mainImage: shark,
     images:[],
-    isComingSoon: true
+    isComingSoon: true,
+    mobileBg: shark_mobile_hero
+  },
+  {
+    name: 'Crazy Circus',
+    subtitle: 'The Weird Family ti aspetta con simboli misteriosi, bonus inquietanti e colpi di scena ad ogni spin. Tra risate dark e funzionalità speciali, entra in un gioco dove il bizzarro è solo l\'inizio.',
+    href: 'crazy-circus',
+    slug: 'crazy-circus',
+    coverImage: CRAZY_CIRCUS,
+    mainImage: crazyCircus,
+    images:[],
+    isComingSoon: true,
+    mobileBg: crazyCircus_mobile_hero
   },
   {
     name: 'Midnight Saloon',
     subtitle: 'The Weird Family ti aspetta con simboli misteriosi, bonus inquietanti e colpi di scena ad ogni spin. Tra risate dark e funzionalità speciali, entra in un gioco dove il bizzarro è solo l\'inizio.',
     href: 'midnight-saloon',
     slug: 'midnight-saloon',
-    coverImage: midnightsaloon,
+    coverImage: MIDNIGHT__SALOON,
     mainImage: midnightsaloon,
     images:[],
-    isComingSoon: true
+    isComingSoon: true,
+    mobileBg: midnightsaloon_mobile_hero
   },
   {
     name: 'Cherry',
     subtitle: 'The Weird Family ti aspetta con simboli misteriosi, bonus inquietanti e colpi di scena ad ogni spin. Tra risate dark e funzionalità speciali, entra in un gioco dove il bizzarro è solo l\'inizio.',
     href: 'cherry',
     slug: 'cherry',
-    coverImage: cherry,
+    coverImage: CHERRY,
     mainImage: cherry,
     images:[],
-    isComingSoon: true
+    isComingSoon: true,
+    mobileBg: cherry_mobile_hero
   },
   {
     name: 'Le Chef',
     subtitle: 'The Weird Family ti aspetta con simboli misteriosi, bonus inquietanti e colpi di scena ad ogni spin. Tra risate dark e funzionalità speciali, entra in un gioco dove il bizzarro è solo l\'inizio.',
     href: 'le-chef',
     slug: 'le-chef',
-    coverImage: chef,
+    coverImage: LE_CHEF,
     mainImage: chef,
     images:[],
-    isComingSoon: true
+    isComingSoon: true,
+    mobileBg: chef_mobile_hero
     
   },
   {
@@ -299,6 +404,7 @@ export const games = [
     images: [ALIENI_PHOTO1, ALIENI_PHOTO2, ALIENI_PHOTO3, ALIENI_PHOTO4],
     description: 'Un gioco emozionante con alieni e avventure spaziali',
     featured: ['dragon', 'il-barone-rosso', 'nautilus', 'zombie'],
+    mobileBg: alieni_mobile_hero
     
   },
   {
@@ -311,6 +417,7 @@ export const games = [
     images: [BILLIONAIRE_PHOTO1, BILLIONAIRE_PHOTO2, BILLIONAIRE_PHOTO3, BILLIONAIRE_PHOTO4],
     description: 'Vivi la vita da miliardario in questo gioco di fortuna',
     featured: ['fortune', 'golden-fruit', 'pepita-doro', 'lucky-8'],
+    mobileBg: billionaire_mobile_hero
     
   },
   {
@@ -323,6 +430,7 @@ export const games = [
     images: [BOOK_OF_MAGIC_PHOTO1, BOOK_OF_MAGIC_PHOTO2, BOOK_OF_MAGIC_PHOTO3, BOOK_OF_MAGIC_PHOTO4],
     description: 'Un libro magico che ti porterà in un mondo di incantesimi e misteri',
     featured: ['la-scatola-magica', 'magic-diamond-2', 'elfi', 'eden'],
+    mobileBg: magic_mobile_hero
     
   },
   {
@@ -335,6 +443,7 @@ export const games = [
     images: [BRACCIO_DI_FERRO_PHOTO1, BRACCIO_DI_FERRO_PHOTO2, BRACCIO_DI_FERRO_PHOTO3, BRACCIO_DI_FERRO_PHOTO4],
     description: 'Un classico gioco di forza e abilità',
     featured: ['torero', 'scacco-matto', 'il-grillo', 'lo-struzzo'],
+    mobileBg: braccio_mobile_hero
     
   },
   {
@@ -346,7 +455,8 @@ export const games = [
     mainImage: cowboy,
     images: [COWBOY_REVENGE_2_PHOTO1, COWBOY_REVENGE_2_PHOTO2, COWBOY_REVENGE_2_PHOTO3, COWBOY_REVENGE_2_PHOTO4],
     description: 'Rivivi l\'epoca del selvaggio west in questa avventura western',
-    featured: ['pepita-doro', 'mexican', 'julio', 'dark-pirates']
+    featured: ['pepita-doro', 'mexican', 'julio', 'dark-pirates'],
+    mobileBg: cowboy_mobile_hero
   },
   {
     name: 'Dragon',
@@ -357,7 +467,8 @@ export const games = [
     mainImage: dragon,
     images: [DRAGON_PHOTO1, DRAGON_PHOTO2, DRAGON_PHOTO3, DRAGON_PHOTO4],
     description: 'Un\'avventura epica nel mondo dei draghi',
-    featured: ['alieni', 'vampiro', 'zombie', 'dark-pirates']
+    featured: ['alieni', 'vampiro', 'zombie', 'dark-pirates'],
+    mobileBg: dragon_mobile_hero
   },
   {
     name: 'Eden',
@@ -368,7 +479,8 @@ export const games = [
     mainImage: eden,
     images: [EDEN_PHOTO1, EDEN_PHOTO2, EDEN_PHOTO3, EDEN_PHOTO4],
     description: 'Esplora il paradiso terrestre in questo gioco magico',
-    featured: ['elfi', 'book-of-magic', 'la-scatola-magica', 'magic-diamond-2']
+    featured: ['elfi', 'book-of-magic', 'la-scatola-magica', 'magic-diamond-2'],
+    mobileBg: eden_mobile_hero
   },
   {
     name: 'Elfi',
@@ -379,7 +491,8 @@ export const games = [
     coverImage: ELFI,
     images: [ELFI_PHOTO1, ELFI_PHOTO2, ELFI_PHOTO3, ELFI_PHOTO4],
     description: 'Entra nel mondo magico degli elfi',
-    featured: ['eden', 'book-of-magic', 'la-scatola-magica', 'magic-diamond-2']
+    featured: ['eden', 'book-of-magic', 'la-scatola-magica', 'magic-diamond-2'],
+    mobileBg: elfi_mobile_hero
   },
   {
     name: 'Fortune',
@@ -390,7 +503,8 @@ export const games = [
     mainImage: fortune,
     images: [FORTUNE_PHOTO1, FORTUNE_PHOTO2, FORTUNE_PHOTO3, FORTUNE_PHOTO4],
     description: 'Metti alla prova la tua fortuna in questo gioco emozionante',
-    featured: ['billionaire', 'golden-fruit', 'pepita-doro', 'lucky-8']
+    featured: ['billionaire', 'golden-fruit', 'pepita-doro', 'lucky-8'],
+    mobileBg: fortune_mobile_hero
   },
   {
     name: 'Golden Fruit',
@@ -401,7 +515,8 @@ export const games = [
     mainImage: golden,
     images: [GOLDEN_FRUIT_PHOTO1, GOLDEN_FRUIT_PHOTO2, GOLDEN_FRUIT_PHOTO3, GOLDEN_FRUIT_PHOTO4],
     description: 'Raccogli i frutti d\'oro in questo gioco colorato',
-    featured: ['fortune', 'billionaire', 'pepita-doro', 'lucky-8']
+    featured: ['fortune', 'billionaire', 'pepita-doro', 'lucky-8'],
+    mobileBg: golden_mobile_hero
   },
   {
     name: 'Il Barone Rosso',
@@ -412,7 +527,8 @@ export const games = [
     mainImage: barone,
     images: [IL_BARONE_ROSSO_PHOTO1, IL_BARONE_ROSSO_PHOTO2, IL_BARONE_ROSSO_PHOTO3, IL_BARONE_ROSSO_PHOTO4],
     description: 'Vola nei cieli con il leggendario Barone Rosso',
-    featured: ['alieni', 'dragon', 'nautilus', 'il-cuoco']
+    featured: ['alieni', 'dragon', 'nautilus', 'il-cuoco'],
+    mobileBg: barone_mobile_hero
   },
   {
     name: 'Il Cuoco',
@@ -423,7 +539,8 @@ export const games = [
     mainImage: cuoco,
     images: [IL_CUOCO_PHOTO1, IL_CUOCO_PHOTO2, IL_CUOCO_PHOTO3, IL_CUOCO_PHOTO4],
     description: 'Diventa uno chef stellato in questo gioco culinario',
-    featured: ['il-giullare', 'il-grillo', 'pablito', 'sonny-bono']
+    featured: ['il-giullare', 'il-grillo', 'pablito', 'sonny-bono'],
+    mobileBg: cuoco_mobile_hero
   },
   {
     name: 'Il Giullare',
@@ -434,7 +551,8 @@ export const games = [
     mainImage: giullare,
     images: [IL_GIULLARE_PHOTO1, IL_GIULLARE_PHOTO2, IL_GIULLARE_PHOTO3, IL_GIULLARE_PHOTO4],
     description: 'Divertiti con il giullare più famoso del regno',
-    featured: ['il-cuoco', 'il-grillo', 'pablito', 'sonny-bono']
+    featured: ['il-cuoco', 'il-grillo', 'pablito', 'sonny-bono'],
+    mobileBg: giullare_mobile_hero
   },
   {
     name: 'Il Grillo',
@@ -445,7 +563,8 @@ export const games = [
     mainImage: grillo,
     images: [IL_GRILLO_PHOTO1, IL_GRILLO_PHOTO2, IL_GRILLO_PHOTO3, IL_GRILLO_PHOTO4],
     description: 'Salta e canta con il grillo più allegro del bosco',
-    featured: ['il-cuoco', 'il-giullare', 'pablito', 'sonny-bono']
+    featured: ['il-cuoco', 'il-giullare', 'pablito', 'sonny-bono'],
+    mobileBg: grillo_mobile_hero
   },
   {
     name: 'Julio',
@@ -456,7 +575,8 @@ export const games = [
     mainImage: julio,
     images: [JULIO_PHOTO1, JULIO_PHOTO2, JULIO_PHOTO3, JULIO_PHOTO4],
     description: 'Un\'avventura latina con Julio',
-    featured: ['mexican', 'cowboy-revenge-2', 'torero', 'reggae-frog']
+    featured: ['mexican', 'cowboy-revenge-2', 'torero', 'reggae-frog'],
+    mobileBg: julio_mobile_hero
   },
   {
     name: 'Jungle',
@@ -467,7 +587,8 @@ export const games = [
     mainImage: jungle,
     images: [JUNGLE_PHOTO1, JUNGLE_PHOTO2, JUNGLE_PHOTO3, JUNGLE_PHOTO4],
     description: 'Esplora la giungla in cerca di tesori nascosti',
-    featured: ['eden', 'elfi', 'nautilus', 'dark-pirates']
+    featured: ['eden', 'elfi', 'nautilus', 'dark-pirates'],
+    mobileBg: jungle_mobile_hero
   },
   {
     name: 'La Scatola Magica',
@@ -476,10 +597,10 @@ export const games = [
     slug: 'la-scatola-magica',
     coverImage: LA_SCATOLA_MAGICA,
     mainImage: scatola,
-
     images: [LA_SCATOLA_MAGICA_PHOTO1, LA_SCATOLA_MAGICA_PHOTO2, LA_SCATOLA_MAGICA_PHOTO3, LA_SCATOLA_MAGICA_PHOTO4],
     description: 'Scopri i segreti della scatola magica',
-    featured: ['book-of-magic', 'magic-diamond-2', 'elfi', 'eden']
+    featured: ['book-of-magic', 'magic-diamond-2', 'elfi', 'eden'],
+    mobileBg: scatola_mobile_hero
   },
   {
     name: 'Lo Struzzo',
@@ -490,7 +611,8 @@ export const games = [
     coverImage: LO_STRUZZO,
     images: [LO_STRUZZO_PHOTO1, LO_STRUZZO_PHOTO2, LO_STRUZZO_PHOTO3, LO_STRUZZO_PHOTO4],
     description: 'Corri veloce come uno struzzo in questo gioco divertente',
-    featured: ['il-grillo', 'pablito', 'sonny-bono', 'reggae-frog']
+    featured: ['il-grillo', 'pablito', 'sonny-bono', 'reggae-frog'],
+    mobileBg: struzzo_mobile_hero
   },
   {
     name: 'Lucky 8',
@@ -501,7 +623,8 @@ export const games = [
     coverImage: LUCKY_8,
     images: [LUCKY_8_PHOTO1, LUCKY_8_PHOTO2, LUCKY_8_PHOTO3, LUCKY_8_PHOTO4],
     description: 'Il numero della fortuna ti aspetta in questo gioco',
-    featured: ['fortune', 'billionaire', 'golden-fruit', 'pepita-doro']
+    featured: ['fortune', 'billionaire', 'golden-fruit', 'pepita-doro'],
+    mobileBg: lucky8_mobile_hero
   },
   {
     name: 'Magic Diamond 2',
@@ -512,7 +635,8 @@ export const games = [
     mainImage: magic,
     images: [MAGIC_DIAMOND_2_PHOTO1, MAGIC_DIAMOND_2_PHOTO2, MAGIC_DIAMOND_2_PHOTO3, MAGIC_DIAMOND_2_PHOTO4],
     description: 'Cerca il diamante magico in questa nuova avventura',
-    featured: ['book-of-magic', 'la-scatola-magica', 'elfi', 'eden']
+    featured: ['book-of-magic', 'la-scatola-magica', 'elfi', 'eden'],
+    mobileBg: magic_mobile_hero
   },
   {
     name: 'Mohamed',
@@ -523,7 +647,8 @@ export const games = [
     mainImage: mohamed,
     images: [MOHAMED_PHOTO1, MOHAMED_PHOTO2, MOHAMED_PHOTO3, MOHAMED_PHOTO4],
     description: 'Un\'avventura nel deserto con Mohamed',
-    featured: ['mexican', 'julio', 'torero', 'dark-pirates']
+    featured: ['mexican', 'julio', 'torero', 'dark-pirates'],
+    mobileBg: mohamed_mobile_hero
   },
   {
     name: 'Nautilus',
@@ -534,7 +659,8 @@ export const games = [
     mainImage: nautilus,
     images: [NAUTILUS_PHOTO1, NAUTILUS_PHOTO2, NAUTILUS_PHOTO3, NAUTILUS_PHOTO4],
     description: 'Esplora gli abissi marini con il Nautilus',
-    featured: ['alieni', 'dragon', 'il-barone-rosso', 'dark-pirates']
+    featured: ['alieni', 'dragon', 'il-barone-rosso', 'dark-pirates'],
+    mobileBg: nautilus_mobile_hero
   },
   {
     name: 'Pablito',
@@ -545,7 +671,8 @@ export const games = [
     coverImage: PABLITO,
     images: [PABLITO_PHOTO1, PABLITO_PHOTO2, PABLITO_PHOTO3, PABLITO_PHOTO4],
     description: 'Divertiti con Pablito in questa avventura colorata',
-    featured: ['il-cuoco', 'il-giullare', 'il-grillo', 'sonny-bono']
+    featured: ['il-cuoco', 'il-giullare', 'il-grillo', 'sonny-bono'],
+    mobileBg: pablito_mobile_hero
   },
   {
     name: 'Pepita d\'Oro',
@@ -556,7 +683,8 @@ export const games = [
     coverImage: PEPITA_DORO,
     images: [PEPITA_DORO_PHOTO1, PEPITA_DORO_PHOTO2, PEPITA_DORO_PHOTO3, PEPITA_DORO_PHOTO4],
     description: 'Cerca la pepita d\'oro in questa avventura western',
-    featured: ['cowboy-revenge-2', 'fortune', 'billionaire', 'golden-fruit']
+    featured: ['cowboy-revenge-2', 'fortune', 'billionaire', 'golden-fruit'],
+    mobileBg: pepita_mobile_hero
   },
   {
     name: 'Scacco Matto',
@@ -567,7 +695,8 @@ export const games = [
     mainImage: scacco,
     images: [SCACCO_MATTO_PHOTO1, SCACCO_MATTO_PHOTO2, SCACCO_MATTO_PHOTO3, SCACCO_MATTO_PHOTO4],
     description: 'Un gioco di strategia e abilità',
-    featured: ['braccio-di-ferro', 'torero', 'il-grillo', 'lo-struzzo']
+    featured: ['braccio-di-ferro', 'torero', 'il-grillo', 'lo-struzzo'],
+    mobileBg: scacco_mobile_hero
   },
   {
     name: 'Sonny Bono',
@@ -578,7 +707,8 @@ export const games = [
     mainImage: sonny,
     images: [SONNY_BONO_PHOTO1, SONNY_BONO_PHOTO2, SONNY_BONO_PHOTO3, SONNY_BONO_PHOTO4],
     description: 'Un gioco musicale con Sonny Bono',
-    featured: ['il-cuoco', 'il-giullare', 'il-grillo', 'pablito']
+    featured: ['il-cuoco', 'il-giullare', 'il-grillo', 'pablito'],
+    mobileBg: sonny_mobile_hero
   },
   {
     name: 'Striptease',
@@ -589,7 +719,8 @@ export const games = [
     mainImage: striptease,
     images: [STRIPTEASE_PHOTO1, STRIPTEASE_PHOTO2, STRIPTEASE_PHOTO3, STRIPTEASE_PHOTO4],
     description: 'Un gioco di intrattenimento e spettacolo',
-    featured: ['il-giullare', 'sonny-bono', 'reggae-frog', 'the-time']
+    featured: ['il-giullare', 'sonny-bono', 'reggae-frog', 'the-time'],
+    mobileBg: striptease_mobile_hero
   },
   {
     name: 'The Time',
@@ -600,7 +731,8 @@ export const games = [
     mainImage: time,
     images: [THE_TIME_PHOTO1, THE_TIME_PHOTO2, THE_TIME_PHOTO3, THE_TIME_PHOTO4],
     description: 'Viaggia nel tempo in questa avventura',
-    featured: ['il-barone-rosso', 'cowboy-revenge-2', 'mexican', 'dark-pirates']
+    featured: ['il-barone-rosso', 'cowboy-revenge-2', 'mexican', 'dark-pirates'],
+    mobileBg: time_mobile_hero
   },
   {
     name: 'The Weird Family',
@@ -611,7 +743,8 @@ export const games = [
     mainImage: family,
     images: [THE_WEIRD_FAMILY_PHOTO1, THE_WEIRD_FAMILY_PHOTO2, THE_WEIRD_FAMILY_PHOTO3, THE_WEIRD_FAMILY_PHOTO4],
     description: 'Conosci la famiglia più strana del mondo',
-    featured: ['il-giullare', 'pablito', 'sonny-bono', 'reggae-frog']
+    featured: ['il-giullare', 'pablito', 'sonny-bono', 'reggae-frog'],
+    mobileBg: family_mobile_hero
   },
   {
     name: 'Torero',
@@ -622,7 +755,8 @@ export const games = [
     mainImage: torero,
     images: [TORERO_PHOTO1, TORERO_PHOTO2, TORERO_PHOTO3, TORERO_PHOTO4],
     description: 'Diventa un torero in questa avventura spagnola',
-    featured: ['julio', 'mexican', 'braccio-di-ferro', 'scacco-matto']
+    featured: ['julio', 'mexican', 'braccio-di-ferro', 'scacco-matto'],
+    mobileBg: torero_mobile_hero
   },
   {
     name: 'Vampiro',
@@ -633,7 +767,8 @@ export const games = [
     mainImage: vampiro,
     images: [VAMPIRO_PHOTO1, VAMPIRO_PHOTO2, VAMPIRO_PHOTO3, VAMPIRO_PHOTO4],
     description: 'Un\'avventura nel mondo dei vampiri',
-    featured: ['dragon', 'zombie', 'dark-pirates', 'alieni']
+    featured: ['dragon', 'zombie', 'dark-pirates', 'alieni'],
+    mobileBg: vampiro_mobile_hero
   },
   {
     name: 'Zombie',
@@ -644,7 +779,8 @@ export const games = [
     mainImage: zombie,
     images: [ZOMBIE_PHOTO1, ZOMBIE_PHOTO2, ZOMBIE_PHOTO3, ZOMBIE_PHOTO4],
     description: 'Sopravvivi all\'apocalisse zombie',
-    featured: ['vampiro', 'dragon', 'dark-pirates', 'alieni']
+    featured: ['vampiro', 'dragon', 'dark-pirates', 'alieni'],
+    mobileBg: zombie_mobile_hero
   },
   {
     name: 'Dark Pirates',
@@ -655,7 +791,8 @@ export const games = [
     mainImage: pirates,
     images: [DARK_PIRATES_PHOTO1, DARK_PIRATES_PHOTO2, DARK_PIRATES_PHOTO3, DARK_PIRATES_PHOTO4],
     description: 'Naviga con i pirati più temibili',
-    featured: ['cowboy-revenge-2', 'nautilus', 'vampiro', 'zombie']
+    featured: ['cowboy-revenge-2', 'nautilus', 'vampiro', 'zombie'],
+    mobileBg: pirates_mobile_hero
   },
   {
     name: 'Mexican',
@@ -666,7 +803,8 @@ export const games = [
     mainImage: mexican,
     images: [MEXICAN_PHOTO1, MEXICAN_PHOTO2, MEXICAN_PHOTO3, MEXICAN_PHOTO4],
     description: 'Un\'avventura messicana colorata',
-    featured: ['julio', 'torero', 'cowboy-revenge-2', 'the-time']
+    featured: ['julio', 'torero', 'cowboy-revenge-2', 'the-time'],
+    mobileBg: mexican_mobile_hero
   },
   {
     name: 'Reggae Frog',
@@ -677,6 +815,67 @@ export const games = [
     mainImage: reggae,
     images: [REGGAE_FROG_PHOTO1, REGGAE_FROG_PHOTO2, REGGAE_FROG_PHOTO3, REGGAE_FROG_PHOTO4],
     description: 'Balliamo con la rana reggae',
-    featured: ['il-grillo', 'lo-struzzo', 'sonny-bono', 'striptease']
+    featured: ['il-grillo', 'lo-struzzo', 'sonny-bono', 'striptease'],
+    mobileBg: reggae_mobile_hero
+  },
+  {
+    name: 'Dolphins',
+    subtitle: 'Un\'avventura nel mondo della notte',
+    href: 'dolphins',
+    slug: 'dolphins',
+    coverImage: DOLPHINS,
+    mainImage: dolphins,
+    images: [DOLPHINS_PHOTO1, DOLPHINS_PHOTO2, DOLPHINS_PHOTO3, DOLPHINS_PHOTO4],
+    description: 'Un\'avventura nel mondo dei vampiri',
+    featured: ['dragon', 'zombie', 'dark-pirates', 'alieni'],
+    mobileBg: dolphins_mobile_hero
+  },
+  {
+    name: 'Hot Pepper',
+    subtitle: 'Sopravvivi all\'apocalisse degli zombie',
+    href: 'hot-pepper',
+    slug: 'hot-pepper',
+    coverImage: HOT_PEPPER,
+    mainImage: hot_pepper,
+    images: [HOT_PEPPER_PHOTO2, HOT_PEPPER_PHOTO3, HOT_PEPPER_PHOTO4, HOT_PEPPER_PHOTO5],
+    description: 'Sopravvivi all\'apocalisse zombie',
+    featured: ['vampiro', 'dragon', 'dark-pirates', 'alieni'],
+    mobileBg: hot_pepper_mobile_hero
+  },
+  {
+    name: 'Excalibur',
+    subtitle: 'Naviga con i pirati più temibili',
+    href: 'excalibur',
+    slug: 'excalibur',
+    coverImage: EXCALIBUR,
+    mainImage: excalibur,
+    images: [EXCALIBUR_PHOTO2, EXCALIBUR_PHOTO3, EXCALIBUR_PHOTO4, EXCALIBUR_PHOTO5],
+    description: 'Naviga con i pirati più temibili',
+    featured: ['cowboy-revenge-2', 'nautilus', 'vampiro', 'zombie'],
+    mobileBg: excalibur_mobile_hero
+  },
+  {
+    name: 'Minotaurus',
+    subtitle: 'Un\'avventura messicana colorata',
+    href: 'minotaurus',
+    slug: 'minotaurus',
+    coverImage: MINOTAURUS,
+    mainImage: minotaurus,
+    images: [MINOTAURUS_PHOTO2, MINOTAURUS_PHOTO3, MINOTAURUS_PHOTO4, MINOTAURUS_PHOTO5],
+    description: 'Un\'avventura messicana colorata',
+    featured: ['julio', 'torero', 'cowboy-revenge-2', 'the-time'],
+    mobileBg: minotaurus_mobile_hero
+  },
+  {
+    name: 'Golden Slot',
+    subtitle: 'Balliamo con la rana più cool',
+    href: 'golden-slot',
+    slug: 'golden-slot',
+    coverImage: GOLDEN_SLOT,
+    mainImage: golden_slot,
+    images: [GOLDEN_SLOT_PHOTO2, GOLDEN_SLOT_PHOTO3, GOLDEN_SLOT_PHOTO4],
+    description: 'Balliamo con la rana reggae',
+    featured: ['il-grillo', 'lo-struzzo', 'sonny-bono', 'striptease'],
+    mobileBg: golden_slot_mobile_hero
   }
 ]

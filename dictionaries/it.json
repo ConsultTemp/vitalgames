@@ -119,17 +119,21 @@
       ],
       "cta": "Scopri i Multigames",
       "descriptions": {
-        "manhattan": "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
-        "champions": "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
-        "fortune-ultralink": "Sistema multigame con 10 giochi a tema casinò classico, interfaccia elegante e jackpot progressivo.",
-        "diamante": "La nostra soluzione premium con 12 giochi esclusivi, grafica HD e funzionalità bonus avanzate.",
-        "piggy-gold": "Divertente sistema con 10 giochi a tema denaro e fortuna, perfetto per un pubblico giovane.",
-        "casino-royale": "Sistema multigame con 10 giochi a tema casinò classico, interfaccia elegante e jackpot progressivo.",
-        "circus": "Sistema divertente con 10 giochi a tema circo, perfetto per un pubblico giovane e dinamico.",
-        "rubino": "Multigame con 6 giochi premium, grafica vibrante e funzionalità bonus esclusive.",
-        "zaffiro": "Sistema elegante con 8 giochi a tema gemme, effetti visivi spettacolari e alta percentuale di vincita.",
-        "golden-club": "Esperienza VIP con 8 giochi selezionati, tema lussuoso e meccaniche di gioco innovative.",
-        "lucky-slot": "Sistema con 8 giochi a tema fortuna, grafica accattivante e funzionalità bonus esclusive."
+        "manhattan": "Grattacieli, luci e lusso: Manhattan è il multigame d’élite. Dalle acque con Shark al sapore western di Midnight Saloon, fino alla raffinatezza di Le Chef e alle scintille di Cherry e Mister Diamond. Il cuore del gioco pulsa qui.",
+        "champions": "Un’arena di campioni dove ogni spin è una sfida al podio. Con titoli vincenti come Crazy Circus, Pepita d’Oro, Fortune, Dolphins e Luxury, questo multigame unisce adrenalina, fascino e divertimento. Solo i veri campioni conquistano il jackpot.",
+        "fortune-ultralink": "Dove il destino si accende con un click! Fortune Ultralink è un’esplosione di stili e personalità: dal mistero di The Weird Family alla ricchezza sfrenata di Billionaire, dai pirati alle atmosfere messicane. Premi il pulsante rosso e lasciati sorprendere.",
+        "diamante": "Luce, fortuna e leggenda si incontrano in Diamante, il multigame che splende di avventure uniche. Dall’ironia de Lo Struzzo al brivido di Vampiro, passando per il carisma di Cowboy Revenge 2 e le magie di Magic Diamond 2, ogni gioco è un tesoro da scoprire.",
+        "piggy-gold": "Ricchezza, ironia e fantasia si fondono in Piggy Gold. Un cast variopinto – dall’elfo fortunato allo scatenato Mexican, dalla seduzione di Striptease alla forza di Dragon – fa di questo multigame un vero e proprio show della fortuna.",
+        "casino-royale": "Un tavolo esclusivo ti aspetta con una selezione di giochi d’élite: vivi l'avventura con Book of Magic, esplora i fondali con Nautilus, cerca l’oro con Pepita D’Oro, affronta la giungla in Jungle e goditi il sapore della frutta con Golden Fruit. L’esperienza da vero casinò di classe, tutta in un unico multigame.",
+        "circus": "Benvenuti sotto il tendone del divertimento! Circus è un multigame eccentrico e sorprendente, popolato da personaggi fuori dal comune: Il Clown, Donna Gatto, Robin Wood, Igor e i pazzi frutti di Crazy Fruit. Un carosello di emozioni tra risate e colpi di scena.",
+        "rubino": "Un mix prezioso di fascino, mistero e colpi di scena. Rubino ti porta in un universo brillante tra alieni, illusionisti e partite a scacchi. Gioca con Striptease, Alieni, Il Giullare, Scacco Matto e La Scatola Magica.",
+        "pool-4": "Un tavolo da biliardo, quattro personaggi e una sola regola: divertirsi. Pool 4 unisce stile, umorismo e sfide a colpi di jackpot con titoli iconici come Pablito, Il Grillo, Julio e Lucky 8. Un multigame che punta dritto al centro!",
+        "zaffiro": "Un'eleganza glaciale nasconde l’adrenalina di giochi esplosivi. Zaffiro è il multigame dove la fortuna incontra la leggenda con titoli come The Time, Il Barone Rosso, Il Cuoco, Mohamed e Dragon.",
+        "topazio": "Topazio è il regno dei personaggi fuori dalle righe e delle sorprese esplosive. Tra un’operazione segreta e un frutteto di vincite, puoi scegliere tra Topo Loco, Warrior, Cherry, Ghostplay e BIB - Bet In Black.",
+        "golden-club-argento": "Un viaggio tra storia, ingegno e avventura. Golden Club Argento è un multigame che mescola divertimento e cultura, con giochi come Magic America, La Lira e Sfinge 2. Non mancano ilarità e leggerezza con Twist e l’esplorazione selvaggia con Monkey.",
+        "golden-club-oro": "Il fascino intramontabile del gioco in un mix esplosivo. Golden Club Oro ti porta da Pablito alla seducente Hot Pepper, dal braccio forte di Braccio di Ferro all’oscuro mondo di Zombie e l’intramontabile Lucky 8. Oro su rulli.",
+        "golden-club-platino": "Il lusso prende forma in Golden Club Platino. Con titoli fiabeschi come Il Grillo, Eden e Golden Slot, e personaggi leggendari come Torero e Sonny Bono, questo multigame è un concentrato di eleganza e colpi di scena.",
+        "lucky-slot": "Un quadrifoglio porta fortuna, ma qui ogni gioco è un amuleto. Lucky Slot è il multigame che unisce epica, magia e divertimento: Ave Cesare, Excalibur, Minotaurus, Magic Mirror e Dolphins compongono un’offerta da veri fortunati."
       }
     },
     "gameCards": {
@@ -356,6 +360,54 @@
     },
     "youMightAlsoLike": "Ti potrebbe interessare anche"
   },
+  "allGamesDescriptions": {
+    "alieni": "Strani segnali dallo spazio animano Alieni, una slot fuori dagli schemi dove ogni spin può attivare sorprese intergalattiche. Tra navicelle, simboli misteriosi e colpi di scena cosmici, preparati a un viaggio dove l'imprevisto è la regola.",
+    "book-of-magic": "Un antico libro, una scoperta leggendaria. Book of Magic ti accompagna in un viaggio tra simboli arcani e misteri nascosti, dove ogni spin può svelare poteri dimenticati e funzioni speciali tutte da scoprire.",
+    "braccio-di-ferro": "Icone senza tempo e sfide all'ultimo spin. Braccio di ferro porta in scena un cast leggendario tra muscoli, rivalità e premi sorprendenti. Energia, ironia e colpi di scena: questa slot non va certo per il sottile.",
+    "cherry": "Simboli classici, ritmo veloce e premi sempre freschi. Cherry richiama l'essenza delle slot più iconiche, con frutti brillanti, campane d'oro e il fascino senza tempo del 7. Un grande classico, pronto a regalare soddisfazioni ad ogni spin.",
+    "cowboy-revenge-2": "Il Far West non dimentica. Cowboy Revenge 2 ti riporta tra polvere, duelli e vendette a colpi di spin. Tra personaggi decisi, atmosfere infuocate e bonus pronti a colpire, qui la legge è solo una: quella della fortuna.",
+    "crazy-circus": "Benvenuto nel tendone più folle del mondo slot. Crazy Circus mescola colori, personaggi eccentrici e colpi di scena degni di uno show senza regole. Qui, la sorpresa è sempre dietro il sipario.",
+    "dark-pirates": "In Dark Pirates ogni spin è un'abbordata. Tesori sommersi, simboli misteriosi e pirati pronti a tutto: sali a bordo e scopri cosa si cela nei forzieri del destino.",
+    "dolphins": "Un tuffo nella spensieratezza con Dolphins, dove creature marine e simboli colorati accompagnano ogni giro in un mondo acquatico leggero, ma pieno di sorprese.",
+    "eden": "Tra mele proibite e simboli ancestrali, Eden ti porta là dove tutto è iniziato. Un giardino rigoglioso nasconde bonus imprevedibili e un'atmosfera dal fascino primordiale.",
+    "elfi": "Scopri il bosco incantato di Elfi, dove ogni spin può svelare oro nascosto, funzioni magiche e incontri fortunati. Una favola tutta da giocare.",
+    "excalibur": "Solo i più audaci possono impugnare la leggenda. In Excalibur cavalieri, simboli regali e colpi fortunati si intrecciano in un'avventura dal sapore epico.",
+    "fortune": "Eleganza e intuizione si incontrano in Fortune, la slot che porta il fascino del casinò in ogni spin. Tra carte, roulette e simboli d'élite, la fortuna qui si veste in smoking.",
+    "golden-fruit": "Frutti lucenti e simboli da sala classica si fondono in Golden Fruit, una slot che unisce tradizione e raffinatezza. Un gusto vintage, con premi decisamente attuali.",
+    "golden-slot": "Minimal nel design, ricca nel potenziale. Golden Slot è un omaggio all'essenza delle slot machine: simboli chiari, ritmo veloce e vincite brillanti, senza fronzoli.",
+    "hot-pepper": "Sensuale e audace, Hot Pepper accende lo schermo con simboli piccanti e atmosfere provocanti. Una slot per chi cerca un'esperienza fuori dagli schemi.",
+    "il-barone-rosso": "Prendi quota con Il Barone Rosso, una slot ad alta tensione dove ogni spin è una missione. Tra biplani, acrobazie e simboli da caccia, il cielo non è mai stato così vicino.",
+    "il-cuoco": "In Il Cuoco, la cucina si fa gioco. Ingredienti gustosi, simboli fumanti e premi da chef stellato: ogni spin è un piatto pronto da servire… con un pizzico di fortuna.",
+    "il-giullare": "Tra palazzi reali e risate fuori copione, Il Giullare anima la corte con simboli irriverenti e bonus imprevedibili. Gioca con l'imprevisto e lascia che sia lui a farti divertire.",
+    "il-grillo": "Un piccolo consiglio può cambiare tutto. Il Grillo ti accompagna tra mondi fatati, bonus brillanti e sorprese giocose, dove la magia parla con voce gentile.",
+    "julio": "Luci accese, riflettori puntati: Julio è in scena. Una slot elegante e teatrale, tra simboli da gran soirée e funzioni che fanno cantare la fortuna.",
+    "jungle": "Benvenuto nella giungla. In Jungle, animali carismatici e simboli tribali si sfidano a ritmo di spin. Solo chi ha istinto saprà conquistare i premi della natura selvaggia.",
+    "la-scatola-magica": "Nulla è come sembra in La Scatola Magica. Ispirato ai mondi delle fiabe, ogni spin può rivelare sorprese incantate e funzioni misteriose. Curioso di scoprire cosa contiene?",
+    "le-chef": "Un tocco francese, una cucina impeccabile. Le Chef mescola raffinatezza e fortuna in una slot gustosa, dove ogni simbolo è un ingrediente per grandi vincite.",
+    "lo-struzzo": "Con Lo Struzzo si gioca a colpi di uova d'oro. Simpatico e imprevedibile, questo volatile porta con sé bonus insoliti e una corsa esilarante verso la fortuna.",
+    "lucky-8": "Precisione, stile e un pizzico di destino. Lucky 8 ti immerge in un'atmosfera da sala giochi retrò, dove ogni spin è una giocata da vero fuoriclasse.",
+    "dragon": "Un viaggio tra bambù e leggende d'oriente. Draghi, amuleti e simboli antichi aprono le porte a vincite mistiche e colpi di fortuna infuocati.",
+    "luxury": "Champagne, auto di lusso e ambienti esclusivi. Ogni spin è un passo dentro l'élite, dove eleganza e ricchezza brillano a ogni giro.",
+    "magic-diamond-2": "Il ritorno del diamante incantato. Tra scintille e magia, questa nuova avventura svela bonus nascosti e premi dal taglio prezioso.",
+    "mexican": "Un'esplosione di colori, tequila e ritmo latino. Accompagnato da un anfitrione travolgente, ogni spin è una festa piena di sorprese piccanti.",
+    "midnight-saloon": "Luci al neon e atmosfere da saloon notturno. Tra motociclisti, bellezze sensuali e misteri del deserto, ogni giro può diventare leggenda.",
+    "minotaurus": "Nel cuore del labirinto si scatena la furia del Minotauro. Forza brutale e simboli mitologici si scontrano per premi epici.",
+    "mohamed": "Sul ring sale una leggenda. Ogni colpo sferrato tra luci e applausi può trasformarsi in una vittoria da campione del mondo.",
+    "nautilus": "Un capitano coraggioso guida l'esplorazione nelle profondità marine. Tra rovine sommerse e tesori nascosti, l'avventura è appena iniziata.",
+    "pablito": "Un personaggio scaltro e spensierato tra lusso, spiagge e foglie verdi. Ogni spin è un colpo di scena in stile Colombia.",
+    "pepita-d-oro": "Nel cuore della miniera si nascondono pepite preziose. Segui il vecchio cercatore d'oro e scava premi ricchi a ogni giro.",
+    "piggy-gold": "Due maialini in abiti da gala ti accolgono nel loro regno dorato. Lusso, ironia e vincite scintillanti si fondono in questa slot tutta da scoprire.",
+    "reggae-frog": "Un'ambientazione tropicale, ritmo rilassato e un protagonista davvero fuori dagli schemi. Un gioco dallo spirito libero e irriverente.",
+    "scacco-matto": "Il re e la regina si sfidano tra pedine preziose e mosse strategiche. Un mondo fantasy ispirato al gioco più nobile di sempre.",
+    "shark": "Colorati, feroci e sorridenti: i protagonisti di questa avventura sottomarina sono squali pronti a farti sgranare gli occhi... e i premi.",
+    "sonny-bono": "Un boss d'altri tempi, sigaro in bocca e sguardo deciso. Tra fumo, luci soffuse e atmosfere retrò, la scena è tutta sua.",
+    "striptease": "Sipario rosso, riflettori puntati e tre protagoniste mozzafiato. L'eleganza incontra la seduzione in un palco pieno di sorprese.",
+    "the-weird-family": "Una famiglia eccentrica, una villa misteriosa e uno stile gotico-cartoon irresistibile. Entra se hai coraggio... e senso dell'umorismo.",
+    "the-time": "Un anziano custode del tempo tiene tra le mani un segreto prezioso. Ogni giro è un viaggio tra ingranaggi e meraviglie d'altri tempi.",
+    "torero": "Forza, fierezza e passione si fondono nell'arena. Il torero affronta il suo destino sotto gli occhi di un pubblico in attesa del colpo perfetto.",
+    "vampiro": "Luna piena, castello oscuro e creature della notte. In questo regno gotico, il vampiro è pronto a colpire... e premiare.",
+    "zombie": "Una città in rovina, orde di non-morti e una protagonista pronta a tutto. In questa slot adrenalinica, la sopravvivenza vale oro."
+  },
   "gameDetail": {
     "info": {
       "releaseDate": "Data di Rilascio",
@@ -508,7 +560,7 @@
           },
           {
             "label": "Cabinet",
-            "href": "/cabinets"
+            "href": "/vlt"
           }
         ]
       },
@@ -517,7 +569,7 @@
         "links": [
           {
             "label": "Chi siamo",
-            "href": "/about"
+            "href": "/about-us"
           },
           {
             "label": "Contattaci",
@@ -595,5 +647,11 @@
     "presence": {
       "description": "Con una forte presenza nel mercato europeo, continuiamo ad espandere la nostra portata mantenendo il nostro impegno per l'eccellenza e la conformità normativa in ogni giurisdizione che serviamo."
     }
+  },
+  "ageVerificationModal": {
+    "title": "Verifica dell'età",
+    "description": "Questi contenuti sono destinati ad un pubblico adulto, si prega di confermare il requisito dell'età legale per continuare",
+    "confirm": "Confermo di avere 18+ anni",
+    "decline": "Non ho 18 anni"
   }
 }

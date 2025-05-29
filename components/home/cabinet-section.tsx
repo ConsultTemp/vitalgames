@@ -18,7 +18,7 @@ import cherry from "../../public/cherry.png"
 import overlayGif from "../../public/gifmrdiamond.gif"
 import FloatingImage from "../bg-image-component"
 import SmoothReveal from "../smooth-reveal"
-import Link from "next/link"
+import { OptimizedLink as Link } from "@/components/optimized-link"
 import { useLanguage } from "@/components/language-provider"
 import OptimizedVideo from "../OptimizedVideo"
 

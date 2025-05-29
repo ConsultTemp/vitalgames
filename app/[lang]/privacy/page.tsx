@@ -1,7 +1,7 @@
 import { getDictionary } from "@/lib/dictionary"
 import type { Locale } from "@/i18n-config"
 import type { Metadata } from "next"
-import Link from "next/link"
+import { OptimizedLink as Link } from "@/components/optimized-link"
 
 type Params = Promise<{ lang: Locale }>
 

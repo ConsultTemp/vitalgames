@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { getDictionary } from "@/lib/dictionary"
 import type { Locale } from "@/i18n-config"
 import Image from "next/image"
-import Link from "next/link"
+import { OptimizedLink as Link } from "@/components/optimized-link"
 import { Button } from "@/components/ui/button"
 import { multigames } from "@/lib/multigames"
 import { multigames as multigamesCards } from "@/lib/multigames"
@@ -306,7 +306,7 @@ export default async function MultigamePage({ params }: { params: Params }) {
                     <div className="rounded-xl bg-black/50 p-3 px-0 md:p-4 md:px-0 w-full">
                       <h2 className="text-3xl md:text-4xl text-white mb-1 dharma">{game.name}</h2>
                       <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-xl mx-auto md:mx-0 text-[#989898]">
-                        {game.subtitle}
+                        {dict.allGamesDescriptions?.[game.slug]}
                       </p>
                       <Link href={`/${lang}/allgames/${game.slug}`} className="inline-block">
                         <Button

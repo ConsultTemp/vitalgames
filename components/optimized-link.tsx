@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { usePerformance } from "./performance-provider"
 import type { ReactNode, MouseEvent } from "react"
+import { usePathname, useRouter } from "next/navigation"
 
 interface OptimizedLinkProps {
   href: string
@@ -22,27 +23,49 @@ export function OptimizedLink({
   ...props
 }: OptimizedLinkProps) {
   const { prefetchPage } = usePerformance()
+  const pathname = usePathname()
+  const router = useRouter()
+
+  // Prendi la lingua dalla pathname
+  const pathLang = pathname.split('/')[1]
+  const validLangs = ['it', 'en', 'es']
+  const currentLang = validLangs.includes(pathLang) ? pathLang : 'it'
+
+  // Costruisci href con la lingua attuale
+  let finalHref = href
+  if (!href.startsWith(`/${currentLang}`)) {
+    if (href.startsWith('/')) {
+      finalHref = `/${currentLang}${href}`
+    } else {
+      finalHref = `/${currentLang}/${href}`
+    }
+  }
 
   const handleMouseEnter = () => {
     if (prefetch) {
-      prefetchPage(href)
+      prefetchPage(finalHref)
     }
   }
 
   const handleClick = (e: MouseEvent) => {
     if (preload) {
-      // Preload the page immediately on click
-      prefetchPage(href)
+      prefetchPage(finalHref)
     }
-
-    // Call original onClick if provided
+    e.preventDefault()
+    router.push(finalHref)
     if (props.onClick) {
       props.onClick(e)
     }
   }
 
   return (
-    <Link href={href} className={className} onMouseEnter={handleMouseEnter} onClick={handleClick} {...props}>
+    <Link
+      href={finalHref}
+      className={className}
+      onMouseEnter={handleMouseEnter}
+      onClick={handleClick}
+      {...props}
+    >
       {children}
     </Link>
   )

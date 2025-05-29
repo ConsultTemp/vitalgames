@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image"
-import Link from "next/link"
+import { OptimizedLink as Link } from "@/components/optimized-link"
 import SmoothReveal from "../smooth-reveal"
 import { games } from "../../lib/allgamesmap"
 import { useLanguage } from "@/components/language-provider"

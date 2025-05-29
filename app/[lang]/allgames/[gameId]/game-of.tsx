@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation"
 import Image from "next/image"
-import Link from "next/link"
+import { OptimizedLink as Link } from "@/components/optimized-link"
 import { multigames } from "@/lib/multigames"
 import { notFound } from "next/navigation"
 import { useLanguage } from "@/components/language-provider"
@@ -40,7 +40,8 @@ export default function Multigame() {
 
         <div className="w-full md:w-7/12 flex flex-col justify-center">
         <h4 className="text-4xl md:text-7xl font-bold mb-3 dharma">{game.title}</h4>
-          <p className="text-sm mb-8 text-gray-300">{game.description}</p>
+        {/* @ts-ignore */}
+          <p className="text-sm mb-8 text-gray-300">{dict.home.multigames.descriptions?.[game.slug]}</p>
           <div>
             <Link
               href={`/awp-multigames/${game.slug}`}

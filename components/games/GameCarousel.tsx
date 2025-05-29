@@ -2,7 +2,7 @@
 
 import { useRef } from "react"
 import Image, { StaticImageData } from "next/image"
-import Link from "next/link"
+import { OptimizedLink as Link } from "@/components/optimized-link"
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 

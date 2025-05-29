@@ -13,6 +13,9 @@ export interface Dictionary {
   }>
   header: {
     contactUs: string
+  },
+  allGamesDescriptions: {
+    [key: string]: string
   }
   hero: {
     title: string

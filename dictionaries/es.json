@@ -118,17 +118,21 @@
       ],
       "cta": "Descubre Multigames",
       "descriptions": {
-        "manhattan": "Sistema deportivo con 8 juegos temáticos de fútbol, perfecto para los amantes del deporte.",
-        "champions": "Sistema deportivo con 8 juegos temáticos de fútbol, perfecto para los amantes del deporte.",
-        "fortune-ultralink": "Sistema multigame con 10 juegos temáticos de casino clásico, interfaz elegante y jackpot progresivo.",
-        "diamante": "Nuestra solución premium con 12 juegos exclusivos, gráficos HD y funciones de bonificación avanzadas.",
-        "piggy-gold": "Sistema divertido con 10 juegos temáticos de dinero y fortuna, perfecto para un público joven.",
-        "casino-royale": "Sistema multigame con 10 juegos temáticos de casino clásico, interfaz elegante y jackpot progresivo.",
-        "circus": "Sistema entretenido con 10 juegos temáticos de circo, perfecto para un público joven y dinámico.",
-        "rubino": "Multigame con 6 juegos premium, gráficos vibrantes y funciones de bonificación exclusivas.",
-        "zaffiro": "Sistema elegante con 8 juegos temáticos de gemas, efectos visuales espectaculares y alta tasa de ganancia.",
-        "golden-club": "Experiencia VIP con 8 juegos seleccionados, tema lujoso y mecánicas de juego innovadoras.",
-        "lucky-slot": "Sistema con 8 juegos temáticos de fortuna, gráficos atractivos y funciones de bonificación exclusivas."
+        "manhattan": "Rascacielos, luces y lujo: Manhattan es el multijuego de élite. Desde las aguas con Shark hasta el sabor western de Midnight Saloon, pasando por el refinamiento de Le Chef y las chispas de Cherry y Mister Diamond. El corazón del juego late aquí.",
+        "champions": "Una arena de campeones donde cada giro es un desafío por el podio. Con títulos premiados como Crazy Circus, Nugget d'Oro, Fortune, Dolphins y Luxury, este multijuego combina adrenalina, encanto y diversión. Sólo los verdaderos campeones ganan el premio gordo.",
+        "fortune-ultralink": "¡Donde el destino se ilumina con un clic! Fortune Ultralink es una explosión de estilos y personalidades: desde el misterio de The Weird Family hasta la riqueza desenfrenada de Billionaire, desde piratas hasta atmósferas mexicanas. Pulsa el botón rojo y sorpréndete.",
+        "diamante": "La luz, la fortuna y la leyenda se encuentran en Diamante, el multijuego que brilla con aventuras únicas. Desde la ironía de The Ostrich hasta la emoción de Vampire, pasando por el carisma de Cowboy Revenge 2 y la magia de Magic Diamond 2, cada juego es un tesoro por descubrir.",
+        "piggy-gold": "La riqueza, la ironía y la fantasía se unen en Piggy Gold. Un elenco colorido, desde el elfo afortunado hasta el mexicano salvaje, desde la seducción del Striptease hasta la fuerza del Dragón, hacen de este multijuego un verdadero espectáculo de suerte.",
+        "casino-royale": "Te espera una mesa exclusiva con una selección de juegos de élite: vive la aventura con Book of Magic, explora el fondo marino con Nautilus, busca oro con Pepita D'Oro, enfréntate a la jungla en Jungle y disfruta del sabor de la fruta con Golden Fruit. La verdadera experiencia de casino con clase, todo en un solo multijuego.",
+        "circus": "B¡Bienvenido a la carpa de la diversión! Circus es un multijuego excéntrico y sorprendente, poblado por personajes inusuales: El Payaso, Cat Woman, Robin Wood, Igor y las locas frutas de Crazy Fruit. Un carrusel de emociones entre risas y giros.",
+        "rubino": "Una preciosa mezcla de encanto, misterio y giros. Ruby te lleva a un brillante universo de extraterrestres, ilusionistas y juegos de ajedrez. Juega a Striptease, Aliens, El Bufón, Jaque Mate y La Caja Mágica.",
+        "pool-4": "Una mesa de billar, cuatro personajes y una regla: divertirse. Pool 4 combina estilo, humor y desafíos de jackpot con títulos icónicos como Pablito, Il Grillo, Julio y Lucky 8. ¡Un multijuego que va directo al centro!",
+        "zaffiro": "Una elegancia glacial esconde la adrenalina de juegos explosivos. Sapphire es el multijuego donde la fortuna se encuentra con la leyenda con títulos como The Time, The Red Baron, The Chef, Mohamed y Dragon.",
+        "topazio": "Topaz es el reino de los personajes poco convencionales y las sorpresas explosivas. Entre una operación secreta y un huerto de ganancias, puedes elegir entre Topo Loco, Warrior, Cherry, Ghostplay y BIB - Bet In Black.",
+        "golden-club-argento": "Un viaje a través de la historia, el ingenio y la aventura. Golden Club Argento es un multijuego que mezcla diversión y cultura, con juegos como Magic America, La Lira y Sfinge 2. No faltan la hilaridad y la alegría con Twist y la exploración salvaje con Monkey.",
+        "golden-club-oro": "El encanto atemporal del juego en una mezcla explosiva. Golden Club Oro te lleva desde Pablito hasta el seductor Hot Pepper, desde el brazo fuerte de Popeye hasta el oscuro mundo de Zombies y el eterno Lucky 8. Oro en los carretes.",
+        "golden-club-platino": "El lujo toma forma en Golden Club Platino. Con títulos de cuentos de hadas como Il Grillo, Eden y Golden Slot, y personajes legendarios como Torero y Sonny Bono, este multijuego es una concentración de elegancia y giros.",
+        "lucky-slot": "Un trébol de cuatro hojas trae buena suerte, pero aquí cada juego es un amuleto. Lucky Slot es el multijuego que combina épica, magia y diversión: Ave Cesare, Excalibur, Minotaurus, Magic Mirror y Dolphins conforman una oferta para los verdaderamente afortunados."
       }
     },
     "gameCards": {
@@ -348,6 +352,54 @@
     },
     "youMightAlsoLike": "También te podría interesar"
   },
+  "allGamesDescriptions": {
+    "alieni": "Extrañas señales del espacio animan a Aliens, una tragamonedas innovadora en la que cada giro puede desencadenar sorpresas intergalácticas. Entre naves espaciales, símbolos misteriosos y giros cósmicos, prepárate para un viaje donde lo inesperado es la regla.",
+    "book-of-magic": "Un libro antiguo, un descubrimiento legendario. Book of Magic te lleva en un viaje a través de símbolos arcanos y misterios ocultos, donde cada giro puede revelar poderes olvidados y características especiales que esperan ser descubiertas.",
+    "braccio-di-ferro": "Iconos atemporales y desafíos hasta el último giro. Popeye trae al escenario un elenco legendario con fuerza, rivalidades y premios sorprendentes. Energía, ironía y giros: esta tragamonedas no se anda con rodeos.",
+    "cherry": "Símbolos clásicos, ritmo rápido y premios siempre nuevos. Cherry recuerda la esencia de las tragamonedas más icónicas, con frutas brillantes, campanas doradas y el encanto atemporal del 7. Un gran clásico, listo para brindar satisfacción en cada giro.",
+    "cowboy-revenge-2": "El salvaje oeste no olvida. Cowboy Revenge 2 te lleva de vuelta al polvo, los duelos y la venganza con giros. Entre personajes decididos, atmósferas encendidas y bonificaciones listas para atacar, aquí solo hay una ley: la de la suerte.",
+    "crazy-circus": "Bienvenido a la carpa más loca del mundo de las tragamonedas. Crazy Circus mezcla colores, personajes excéntricos y giros dignos de un espectáculo sin reglas. Aquí la sorpresa está siempre detrás del telón.",
+    "dark-pirates": "En Dark Pirates cada giro es un abordaje. Tesoros hundidos, símbolos misteriosos y piratas dispuestos a todo: sube a bordo y descubre lo que se esconde en los cofres del destino.",
+    "dolphins": "Una inmersión en la ligereza con Delfines, donde criaturas marinas y símbolos coloridos acompañan cada giro en un mundo acuático alegre, pero lleno de sorpresas.",
+    "eden": "Entre manzanas prohibidas y símbolos ancestrales, Edén te lleva a donde todo comenzó. Un exuberante jardín esconde bonificaciones impredecibles y una atmósfera de encanto primordial.",
+    "elfi": "Descubre el bosque encantado de los Elfos, donde cada giro puede revelar oro oculto, características mágicas y encuentros afortunados. Un cuento de hadas para ser jugado.",
+    "excalibur": "Sólo los más audaces pueden manejar la leyenda. En Excalibur Knights, los símbolos reales y los tiros afortunados se entrelazan en una aventura épica.",
+    "fortune": "La elegancia y la intuición se unen en Fortune, la tragamonedas que lleva el encanto del casino a cada giro. Entre cartas, ruleta y símbolos de élite, la suerte aquí se viste de esmoquin.",
+    "golden-fruit": "Frutas brillantes y símbolos arcade clásicos se unen en Golden Fruit, una tragamonedas que combina tradición y sofisticación. Un sabor vintage, con premios decididamente modernos.",
+    "golden-slot": "De diseño minimalista y rico en potencial. Golden Slot es un homenaje a la esencia de las máquinas tragamonedas: símbolos claros, ritmo rápido y ganancias brillantes, sin florituras.",
+    "hot-pepper": "Sensual y atrevida, Hot Pepper ilumina la pantalla con símbolos picantes y atmósferas provocativas. Un espacio para aquellos que buscan una experiencia fuera de lo común.",
+    "il-barone-rosso": "Vuela con The Red Baron, una tragamonedas de alto octanaje donde cada giro es una misión. Entre biplanos, acrobacias y símbolos de cazas, el cielo nunca ha estado tan cerca.",
+    "il-cuoco": "En The Chef, cocinar se convierte en un juego. Ingredientes sabrosos, símbolos humeantes y premios de chefs destacados: cada giro es un plato listo para ser servido… con una pizca de suerte.",
+    "il-giullare": "Entre palacios reales y risas improvisadas, El Bufón anima la corte con símbolos irreverentes y bonificaciones impredecibles. Juega con lo inesperado y deja que te entretenga.",
+    "il-grillo": "Un pequeño consejo puede cambiarlo todo. Cricket te lleva a través de mundos de hadas, bonificaciones brillantes y sorpresas divertidas, donde la magia habla con una voz suave.",
+    "julio": "Luces encendidas, focos encendidos: Julio está en el escenario. Una tragamonedas elegante y teatral, con símbolos de gran velada y características que hacen cantar a la fortuna.",
+    "jungle": "Bienvenido a la jungla. En Jungle, animales carismáticos y símbolos tribales se desafían entre sí al ritmo de los giros. Sólo aquellos con instinto podrán conquistar las recompensas de lo salvaje.",
+    "la-scatola-magica": "Nada es lo que parece en La Caja Mágica. Inspirado en mundos de cuentos de hadas, cada giro puede revelar sorpresas encantadoras y características misteriosas. ¿Tienes curiosidad por saber qué hay dentro?",
+    "le-chef": "Un toque francés, cocina impecable. Le Chef mezcla sofisticación y suerte en un sabroso slot, donde cada símbolo es un ingrediente para conseguir grandes premios.",
+    "lo-struzzo": "Con Lo Ostrich juegas con huevos de oro. Lindo e impredecible, este pájaro trae consigo bonificaciones inusuales y una emocionante carrera hacia la suerte.",
+    "lucky-8": "Precisión, estilo y una pizca de destino. Lucky 8 te sumerge en una atmósfera arcade retro, donde cada giro es una jugada verdaderamente de clase mundial.",
+    "dragon": "Un viaje a través del bambú y las leyendas orientales. Dragones, amuletos y símbolos antiguos abren las puertas a victorias místicas y golpes de suerte ardientes.",
+    "luxury": "Champán, coches de lujo y entornos exclusivos. Cada giro es un paso hacia la élite, donde la elegancia y la riqueza brillan en cada giro.",
+    "magic-diamond-2": "El regreso del diamante encantado. Entre chispas y magia, esta nueva aventura revela bonificaciones ocultas y valiosos premios.",
+    "mexican": "Una explosión de colores, tequila y ritmo latino. Acompañado por un anfitrión entusiasta, cada giro es una fiesta llena de sorpresas picantes.",
+    "midnight-saloon": "Luces de neón y ambiente de salón nocturno. Entre motociclistas, bellezas sensuales y misterios del desierto, cada recorrido puede convertirse en una leyenda.",
+    "minotaurus": "En el corazón del laberinto se desata la furia del Minotauro. La fuerza brutal y los símbolos mitológicos chocan para obtener recompensas épicas.",
+    "mohamed": "Una leyenda sube al ring. Cada golpe lanzado entre luces y aplausos puede convertirse en la victoria de un campeón del mundo.",
+    "nautilus": "Un valiente capitán lidera la exploración de las profundidades del océano. Entre ruinas sumergidas y tesoros ocultos, la aventura acaba de comenzar.",
+    "pablito": "Un personaje astuto y despreocupado entre lujo, playas y hojas verdes. Cada giro es un giro al estilo colombiano.",
+    "pepita-d-oro": "En el corazón de la mina se esconden pepitas preciosas. Sigue al viejo buscador de oro y descubre ricos premios con cada giro.",
+    "piggy-gold": "Dos cerditos disfrazados te dan la bienvenida a su reino dorado. Lujo, ironía y brillantes ganancias se unen en esta tragamonedas esperando ser descubierta.",
+    "reggae-frog": "Un entorno tropical, un ritmo relajado y un protagonista realmente poco convencional. Un juego con espíritu libre e irreverente.",
+    "scacco-matto": "El rey y la reina se desafían entre sí con preciosos peones y movimientos estratégicos. Un mundo de fantasía inspirado en el juego más noble de todos los tiempos.",
+    "shark": "Coloridos, feroces y sonrientes: los protagonistas de esta aventura submarina son tiburones dispuestos a hacerte saltar los ojos... y tus premios.",
+    "sonny-bono": "Un jefe de otros tiempos, cigarro en la boca y mirada decidida. Entre humo, luces tenues y atmósferas retro, la escena es toda suya.",
+    "striptease": "Telón rojo, focos y tres protagonistas impresionantes. La elegancia se encuentra con la seducción en un escenario lleno de sorpresas.",
+    "the-weird-family": "Una familia excéntrica, una villa misteriosa y un estilo gótico-caricatura irresistible. Entra si tienes coraje...y sentido del humor.",
+    "the-time": "Un anciano guardián del tiempo guarda un preciado secreto en sus manos. Cada vuelta es un viaje a través de los engranajes y las maravillas de tiempos pasados.",
+    "torero": "Fuerza, orgullo y pasión se unen en la arena. El torero se enfrenta a su destino ante la mirada de un público que espera el disparo perfecto.",
+    "vampiro": "Luna llena, castillo oscuro y criaturas de la noche. En este reino gótico, el vampiro está listo para atacar... y recompensar.",
+    "zombie": "Una ciudad en ruinas, hordas de no muertos y un protagonista dispuesto a todo. En este juego de tragamonedas lleno de adrenalina, la supervivencia vale su peso en oro."
+  },
   "gameDetail": {
     "info": {
       "releaseDate": "Fecha de Lanzamiento",
@@ -500,7 +552,7 @@
           },
           {
             "label": "Cabinet",
-            "href": "/cabinets"
+            "href": "/vlt"
           }
         ]
       },
@@ -509,7 +561,7 @@
         "links": [
           {
             "label": "Quiénes somos",
-            "href": "/about"
+            "href": "/about-us"
           },
           {
             "label": "Contáctanos",
@@ -587,5 +639,11 @@
     "presence": {
       "description": "Con una fuerte presencia en el mercado europeo, continuamos expandiendo nuestro alcance manteniendo nuestro compromiso con la excelencia y el cumplimiento normativo en cada jurisdicción que servimos."
     }
+  },
+  "ageVerificationModal": {
+    "title": "Verificación de edad",
+    "description": "Este contenido está destinado a un público adulto, por favor confirma que cumples con el requisito de edad legal para continuar.",
+    "confirm": "Confirmo que tengo 18+ años",
+    "decline": "No tengo 18 años"
   }
 }

@@ -104,17 +104,21 @@
       ],
       "cta": "Discover Multigames",
       "descriptions": {
-        "manhattan": "Sports system with 8 football-themed games, perfect for sports enthusiasts.",
-        "champions": "Sports system with 8 football-themed games, perfect for sports enthusiasts.",
-        "fortune-ultralink": "Multigame system with 10 classic casino-themed games, elegant interface and progressive jackpot.",
-        "diamante": "Our premium solution with 12 exclusive games, HD graphics and advanced bonus features.",
-        "piggy-gold": "Fun system with 10 money and fortune-themed games, perfect for a young audience.",
-        "casino-royale": "Multigame system with 10 classic casino-themed games, elegant interface and progressive jackpot.",
-        "circus": "Entertaining system with 10 circus-themed games, perfect for a young and dynamic audience.",
-        "rubino": "Multigame with 6 premium games, vibrant graphics and exclusive bonus features.",
-        "zaffiro": "Elegant system with 8 gem-themed games, spectacular visual effects and high win rate.",
-        "golden-club": "VIP experience with 8 selected games, luxurious theme and innovative gameplay mechanics.",
-        "lucky-slot": "System with 8 fortune-themed games, attractive graphics and exclusive bonus features."
+        "manhattan": "Skyscrapers, lights and luxury: Manhattan is the elite multigame. From the waters with Shark to the western flavor of Midnight Saloon, to the refinement of Le Chef and the sparks of Cherry and Mister Diamond. The heart of the game beats here.",
+        "champions": "An arena of champions where every spin is a challenge to the podium. With winning titles such as Crazy Circus, Nugget d'Oro, Fortune, Dolphins and Luxury, this multigame combines adrenaline, charm and fun. Only true champions conquer the jackpot.",
+        "fortune-ultralink": "Where destiny lights up with a click! Fortune Ultralink is an explosion of styles and personalities: from the mystery of The Weird Family to the unbridled wealth of Billionaire, from pirates to Mexican atmospheres. Press the red button and let yourself be surprised.",
+        "diamante": "Light, fortune and legend meet in Diamante, the multigame that shines with unique adventures. From the irony of Lo Ostrich to the thrill of Vampiro, passing through the charisma of Cowboy Revenge 2 and the magic of Magic Diamond 2, each game is a treasure to be discovered.",
+        "piggy-gold": "Wealth, irony and fantasy come together in Piggy Gold. A colorful cast – from the lucky elf to the wild Mexican, from the seduction of Striptease to the strength of Dragon – makes this multigame a real show of luck.",
+        "casino-royale": "An exclusive table awaits you with a selection of elite games: live the adventure with Book of Magic, explore the seabed with Nautilus, search for gold with Pepita D'Oro, face the jungle in Jungle and enjoy the taste of fruit with Golden Fruit. The experience of a real classy casino, all in a single multigame.",
+        "circus": "Welcome to the fun tent! Circus is an eccentric and surprising multigame, populated by unusual characters: The Clown, Cat Woman, Robin Wood, Igor and the crazy fruits of Crazy Fruit. A carousel of emotions between laughter and twists.",
+        "rubino": "A precious mix of charm, mystery and twists. Rubino takes you to a brilliant universe of aliens, illusionists and chess games. Play with Striptease, Aliens, The Jester, Checkmate and The Magic Box.",
+        "pool-4": "One pool table, four characters and one rule: have fun. Pool 4 combines style, humor and jackpot challenges with iconic titles such as Pablito, Il Grillo, Julio and Lucky 8. A multigame that goes straight to the center!",
+        "zaffiro": "A glacial elegance hides the adrenaline of explosive games. Zaffiro is the multigame where fortune meets legend with titles such as The Time, The Red Baron, The Chef, Mohamed and Dragon.",
+        "topazio": "Topazio is the kingdom of out-of-the-box characters and explosive surprises. Between a secret operation and an orchard of winnings, you can choose between Topo Loco, Warrior, Cherry, Ghostplay and BIB - Bet In Black.",
+        "golden-club-argento": "A journey through history, ingenuity and adventure. Golden Club Argento is a multigame that mixes fun and culture, with games like Magic America, La Lira and Sfinge 2. There is no shortage of hilarity and lightness with Twist and wild exploration with Monkey.",
+        "golden-club-oro": "The timeless charm of the game in an explosive mix. Golden Club Oro takes you from Pablito to the seductive Hot Pepper, from the strong arm of Popeye to the dark world of Zombies and the timeless Lucky 8. Gold on reels.",
+        "golden-club-platino": "Luxury takes shape in Golden Club Platino. With fairy-tale titles like Il Grillo, Eden and Golden Slot, and legendary characters like Torero and Sonny Bono, this multigame is a concentration of elegance and twists.",
+        "lucky-slot": "A four-leaf clover brings good luck, but here every game is an amulet. Lucky Slot is the multigame that combines epic, magic and fun: Ave Cesare, Excalibur, Minotaurus, Magic Mirror and Dolphins make up an offer for truly lucky people."
       }
     },
     "gameCards": {
@@ -341,6 +345,54 @@
     },
     "youMightAlsoLike": "You might also like"
   },
+  "allGamesDescriptions": {
+    "alieni": "Strange signals from space animate Aliens, an unconventional slot where every spin can trigger intergalactic surprises. Between spaceships, mysterious symbols and cosmic twists, prepare for a journey where the unexpected is the rule.",
+    "book-of-magic": "An ancient book, a legendary discovery. Book of Magic takes you on a journey through arcane symbols and hidden mysteries, where every spin can reveal forgotten powers and special features waiting to be discovered.",
+    "braccio-di-ferro": "Timeless icons and challenges to the last spin. Popeye brings a legendary cast to the stage with muscles, rivalries and surprising prizes. Energy, irony and twists: this slot certainly doesn't mince words.",
+    "cherry": "Classic symbols, fast pace and always fresh prizes. Cherry recalls the essence of the most iconic slots, with bright fruits, golden bells and the timeless charm of the 7. A great classic, ready to give satisfaction with every spin.",
+    "cowboy-revenge-2": "The Far West does not forget. Cowboy Revenge 2 brings you back to dust, duels and revenge with spins. Among determined characters, fiery atmospheres and bonuses ready to strike, here the law is only one: that of luck.",
+    "crazy-circus": "Welcome to the craziest tent in the world of slots. Crazy Circus mixes colors, eccentric characters and plot twists worthy of a show without rules. Here, the surprise is always behind the curtain.",
+    "dark-pirates": "In Dark Pirates, every spin is a boarding. Sunken treasures, mysterious symbols and pirates ready for anything: climb aboard and discover what lies in the chests of destiny.",
+    "dolphins": "A dive into lightheartedness with Dolphins, where sea creatures and colorful symbols accompany each spin in a light-hearted aquatic world, but full of surprises.",
+    "eden": "Between forbidden apples and ancestral symbols, Eden takes you back to where it all began. A lush garden hides unpredictable bonuses and an atmosphere of primordial charm.",
+    "elfi": "Discover the enchanted forest of Elfi, where every spin can reveal hidden gold, magical features and lucky encounters. A fairytale to play.",
+    "excalibur": "Only the most daring can wield the legend. In Excalibur knights, regal symbols and lucky shots intertwine in an adventure with an epic flavor.",
+    "fortune": "Elegance and intuition meet in Fortune, the slot that brings the charm of the casino to every spin. Between cards, roulette and elite symbols, fortune here dresses in a tuxedo.",
+    "golden-fruit": "Shiny fruits and classic hall symbols blend together in Golden Fruit, a slot that combines tradition and sophistication. A vintage taste, with decidedly modern prizes.",
+    "golden-slot": "Minimal in design, rich in potential. Golden Slot is a tribute to the essence of slot machines: clear symbols, fast pace and brilliant wins, without frills.",
+    "hot-pepper": "Sensual and bold, Hot Pepper lights up the screen with spicy symbols and provocative atmospheres. A slot for those looking for an experience outside the box.",
+    "il-barone-rosso": "Take flight with The Red Baron, a high-voltage slot where every spin is a mission. Between biplanes, acrobatics and fighter symbols, the sky has never been so close.",
+    "il-cuoco": "In Il Cuoco, cooking becomes a game. Tasty ingredients, steaming symbols and starred chef prizes: each spin is a dish ready to serve… with a pinch of luck.",
+    "il-giullare": "Between royal palaces and unscripted laughter, The Jester animates the court with irreverent symbols and unpredictable bonuses. Play with the unexpected and let it entertain you.",
+    "il-grillo": "A little advice can change everything. The Cricket takes you through fairy worlds, brilliant bonuses and playful surprises, where magic speaks with a gentle voice.",
+    "julio": "Lights on, spotlights on: Julio is on stage. An elegant and theatrical slot, with grand soirée symbols and features that make fortune sing.",
+    "jungle": "Welcome to the jungle. In Jungle, charismatic animals and tribal symbols compete to the rhythm of spins. Only those with instinct will know how to conquer the rewards of the wild.",
+    "la-scatola-magica": "Nothing is as it seems in The Magic Box. Inspired by fairy tale worlds, every spin can reveal enchanting surprises and mysterious functions. Curious to find out what's inside?",
+    "le-chef": "A French touch, impeccable cuisine. Le Chef mixes refinement and luck in a tasty slot, where each symbol is an ingredient for big wins.",
+    "lo-struzzo": "With The Ostrich you play with golden eggs. Friendly and unpredictable, this bird brings with it unusual bonuses and an exhilarating race towards fortune.",
+    "lucky-8": "Precision, style and a pinch of fate. Lucky 8 immerses you in a retro arcade atmosphere, where every spin is a true champion's play.",
+    "dragon": "A journey through bamboo and oriental legends. Dragons, amulets and ancient symbols open the doors to mystical wins and fiery strokes of luck.",
+    "luxury": "Champagne, luxury cars and exclusive environments. Each spin is a step into the elite, where elegance and wealth shine at every turn.",
+    "magic-diamond-2": "The Return of the Enchanted Diamond. Sparkling with magic, this new adventure reveals hidden bonuses and prizes with a precious cut.",
+    "mexican": "An explosion of colors, tequila and Latin rhythm. Accompanied by an overwhelming host, each spin is a party full of spicy surprises.",
+    "midnight-saloon": "Neon lights and a night-time saloon atmosphere. Between bikers, sensual beauties and desert mysteries, every ride can become a legend.",
+    "minotaurus": "In the heart of the labyrinth, the fury of the Minotaur is unleashed. Brutal strength and mythological symbols collide for epic rewards.",
+    "mohamed": "A legend steps into the ring. Every blow thrown amidst lights and applause can turn into a world champion's victory.",
+    "nautilus": "A brave captain leads the exploration into the depths of the sea. Among sunken ruins and hidden treasures, the adventure has just begun.",
+    "pablito": "A shrewd and carefree character among luxury, beaches and green leaves. Each spin is a Colombian-style twist.",
+    "pepita-d-oro": "In the heart of the mine, precious nuggets are hidden. Follow the old gold digger and dig up rich prizes with every spin.",
+    "piggy-gold": "Two pigs in gala attire welcome you to their golden kingdom. Luxury, irony and sparkling wins come together in this slot waiting to be discovered.",
+    "reggae-frog": "A tropical setting, a relaxed pace and a protagonist who is truly out of the ordinary. A game with a free and irreverent spirit.",
+    "scacco-matto": "The king and queen challenge each other between precious pawns and strategic moves. A fantasy world inspired by the noblest game ever.",
+    "shark": "Colorful, fierce and smiling: the protagonists of this underwater adventure are sharks ready to make your eyes pop out... and your prizes.",
+    "sonny-bono": "A boss from another era, cigar in mouth and determined look. Between smoke, soft lights and retro atmospheres, the scene is all his.",
+    "striptease": "Red curtain, spotlights and three breathtaking protagonists. Elegance meets seduction on a stage full of surprises.",
+    "the-weird-family": "An eccentric family, a mysterious villa and an irresistible gothic-cartoon style. Enter if you have courage... and a sense of humor.",
+    "the-time": "An old guardian of time holds a precious secret in his hands. Each turn is a journey through gears and wonders of times gone by.",
+    "torero": "Strength, pride and passion come together in the arena. The bullfighter faces his destiny before the eyes of an audience waiting for the perfect shot.",
+    "vampiro": "Full moon, dark castle and creatures of the night. In this gothic kingdom, the vampire is ready to strike... and reward.",
+    "zombie": "A city in ruins, hordes of undead and a protagonist ready for anything. In this adrenaline-filled slot, survival is worth its weight in gold."
+  },
   "gameDetail": {
     "info": {
       "releaseDate": "Release Date",
@@ -493,7 +545,7 @@
           },
           {
             "label": "Cabinet",
-            "href": "/cabinets"
+            "href": "/vlt"
           }
         ]
       },
@@ -502,7 +554,7 @@
         "links": [
           {
             "label": "About us",
-            "href": "/about"
+            "href": "/about-us"
           },
           {
             "label": "Contact us",
@@ -580,5 +632,11 @@
     "presence": {
       "description": "With a strong presence in the European market, we continue to expand our reach while maintaining our commitment to excellence and regulatory compliance in every jurisdiction we serve."
     }
+  },
+  "ageVerificationModal": {
+    "title": "Age Verification",
+    "description": "This content is intended for adults. Please confirm you meet the legal age requirement to continue.",
+    "confirm": "I confirm I am 18+ years old",
+    "decline": "I am not 18 years old"
   }
 }

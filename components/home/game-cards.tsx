@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image"
-import Link from "next/link"
+import { OptimizedLink as Link } from "@/components/optimized-link"
 import { Play } from "lucide-react"
 import struzzo from "../../public/struzzo.jpg"
 import pepitadoro from "../../public/pepitadoro.jpg"

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Link from "next/link"
+import { OptimizedLink as Link } from "@/components/optimized-link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Menu, ChevronDown, X, ChevronRight, Globe } from 'lucide-react'

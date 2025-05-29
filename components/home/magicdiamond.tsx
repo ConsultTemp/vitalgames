@@ -7,7 +7,7 @@ import { Play } from "lucide-react"
 import FloatingImage from "../bg-image-component"
 import SmoothReveal from "../smooth-reveal"
 import { useLanguage } from "@/components/language-provider"
-import Link from "next/link"
+import { OptimizedLink as Link } from "@/components/optimized-link"
 import misterdiamond from "../../public/misterdiamond.jpeg"
 
 // Import slot machine symbols

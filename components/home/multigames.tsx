@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import Link from "next/link"
+import { OptimizedLink as Link } from "@/components/optimized-link"
 import FloatingImage from "../bg-image-component"
 import SmoothReveal from "../smooth-reveal"
 import { useLanguage } from "@/components/language-provider"

@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Link from "next/link"
+import { OptimizedLink as Link } from "@/components/optimized-link"
 
 interface Game {
   id: number

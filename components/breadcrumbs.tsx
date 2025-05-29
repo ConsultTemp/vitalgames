@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import { OptimizedLink as Link } from "@/components/optimized-link"
 import { ChevronRight, Home } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 

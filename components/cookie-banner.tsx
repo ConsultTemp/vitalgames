@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useLanguage } from "@/components/language-provider"
-import Link from "next/link"
+import { OptimizedLink as Link } from "@/components/optimized-link"
 
 export default function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false)
