@@ -100,7 +100,7 @@ export default function CabinetSection() {
     return (
       <div className="w-full h-full relative">
         <OptimizedVideo
-          src="/videos/overlay.mp4"
+          src="https://files.catbox.moe/2t2qgh.webm"
           className="absolute inset-0 w-full h-full object-contain"
           containerClassName="w-full h-full absolute inset-0"
           muted
