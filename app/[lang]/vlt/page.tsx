@@ -297,12 +297,12 @@ export default async function AboutUs(props: { params: Params }) {
         <main>
           {/* VLT Collection Section */}
           <div className="relative">
-          <div className="absolute inset-0 z-1 overflow-hidden pointer-events-none overflow-visible">
-          {/* Bottom left large diamond */}
-          <div className="absolute bottom-[-100px]  w-96 md:w-96 h-96 md:h-96 right-[-200px] animate-float-slow rotate-10">
-            <FloatingImage src={diamante || "/placeholder.svg"} alt="Diamond" className="w-[225px] md:w-[384px] h-[160px] md:h-[384px]" />
-          </div>
-        </div>
+            <div className="absolute inset-0 z-1 overflow-hidden pointer-events-none overflow-visible bg-gradient-to-b from-transparent via-[#007bff]/50 to-transparent">
+              {/* Bottom left large diamond */}
+              <div className="absolute bottom-[-100px]  w-96 md:w-96 h-96 md:h-96 right-[-200px] animate-float-slow rotate-10">
+                <FloatingImage src={diamante || "/placeholder.svg"} alt="Diamond" className="w-[225px] md:w-[384px] h-[160px] md:h-[384px]" />
+              </div>
+            </div>
 
             {/* Cards Section */}
             <div className="mx-auto px-3 sm:px-16 lg:px-32 xl:px-48 py-32">

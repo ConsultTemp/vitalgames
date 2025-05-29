@@ -5,12 +5,14 @@ import OptimizedVideo from "../../components/OptimizedVideo"
 
 interface IntroVideoProps {
   videoUrl?: string
+  mobileVideoUrl?: string
   onComplete?: () => void
   fadeOutDuration?: number
 }
 
 export default function IntroVideo({
-  videoUrl = "https://files.catbox.moe/mwyvxd.mp4",
+  videoUrl = "https://files.catbox.moe/5cot3t.webm",
+  mobileVideoUrl = "https://files.catbox.moe/k71za8.webm",
   onComplete,
   fadeOutDuration = 1000,
 }: IntroVideoProps) {
@@ -79,6 +81,7 @@ export default function IntroVideo({
     >
       <OptimizedVideo
         src={videoUrl}
+        mobileSrc={mobileVideoUrl}
         containerClassName="w-screen h-screen"
         className="w-screen h-screen object-cover"
         autoPlay={true}
