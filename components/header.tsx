@@ -174,7 +174,7 @@ export default function Navbar() {
             asChild
             className="bg-vitalYellow hover:bg-vitalYellow/90 px-8 text-black font-medium rounded-md py-2 text-sm"
           >
-            <Link href="/contact">{dict.header.contactUs}</Link>
+            <Link href="/about-us#about-us-contact">{dict.header.contactUs}</Link>
           </Button>
 
           {/* Language Selector */}
@@ -347,7 +347,7 @@ export default function Navbar() {
                         className="bg-vitalYellow hover:bg-vitalYellow/90 text-black font-bold rounded-md px-3 py-2 w-full animate-fadeIn"
                         style={{ animationDuration: '0.5s', animationDelay: '400ms', animationFillMode: 'both' }}
                       >
-                        <Link href="/contact" onClick={() => setIsSheetOpen(false)}>
+                        <Link href="/about-us#about-us-contact" onClick={() => setIsSheetOpen(false)}>
                           {dict.header.contactUs}
                         </Link>
                       </Button>

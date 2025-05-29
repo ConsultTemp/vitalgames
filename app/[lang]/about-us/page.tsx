@@ -481,7 +481,7 @@ export default async function AboutUs(props: { params: Params }) {
         <Partners />
 
         {/* Contact Section */}
-        <section className="relative min-h-screen contact-bg" aria-labelledby="contact-section">
+        <section className="relative min-h-screen contact-bg" aria-labelledby="contact-section" id="about-us-contact">
           <div className="container mx-auto px-4 py-48 relative z-10">
             <div className="grid md:grid-cols-5 gap-8 max-w-6xl mx-auto">
               {/* Left Side - Contact Information */}

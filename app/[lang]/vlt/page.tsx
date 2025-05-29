@@ -296,8 +296,8 @@ export default async function AboutUs(props: { params: Params }) {
 
         <main>
           {/* VLT Collection Section */}
-          <div className="relative">
-            <div className="absolute inset-0 z-1 overflow-hidden pointer-events-none overflow-visible bg-gradient-to-b from-transparent via-[#007bff]/50 to-transparent">
+          <div className="relative  bg-gradient-to-b from-transparent via-[#007bff]/30 to-transparent">
+            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none overflow-visible">
               {/* Bottom left large diamond */}
               <div className="absolute bottom-[-100px]  w-96 md:w-96 h-96 md:h-96 right-[-200px] animate-float-slow rotate-10">
                 <FloatingImage src={diamante || "/placeholder.svg"} alt="Diamond" className="w-[225px] md:w-[384px] h-[160px] md:h-[384px]" />
@@ -312,11 +312,11 @@ export default async function AboutUs(props: { params: Params }) {
                     key={index}
                     className={
                       index === 2
-                        ? "bg-black rounded-xl p-2 border border-1 border-[#3C3C3C] w-full h-80 flex flex-col justify-self-center"
-                        : "bg-black rounded-xl p-2 border border-1 border-[#3C3C3C] w-full h-80 flex flex-col"
+                        ? "bg-transparent rounded-xl py-6 border border-1 border-[#3C3C3C] w-full h-80 flex flex-col items-center justify-self-center"
+                        : "bg-transparent rounded-xl py-6 border border-1 border-[#3C3C3C] w-full h-80 flex flex-col gap-4 items-center justify-self-center"
                     }
                   >
-                    <div className="relative w-full flex-1 p-2 mb-4 flex items-center justify-center">
+                    <div className="relative w-4/5 flex-1 flex flex-col items-center justify-center">
                       <Image
                         src={card.image || "/placeholder.svg"}
                         alt={card.name}

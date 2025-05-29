@@ -26,7 +26,7 @@
     },
     {
       "key": "contact",
-      "href": "/contact",
+      "href": "/about-us#about-us-contact",
       "label": "Contact"
     }
   ],
@@ -506,7 +506,7 @@
           },
           {
             "label": "Contact us",
-            "href": "/contact"
+            "href": "/about-us#about-us-contact"
           },
           {
             "label": "Instagram",

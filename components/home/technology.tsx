@@ -94,7 +94,7 @@ export function Technology({ className = '' }: WinningTechnologyProps) {
                             <Image src={vitalpres} alt="Vital HQ" width={300} height={300} className="rounded-2xl" />
                         </SmoothReveal>
                         <SmoothReveal className="flex justify-center mt-12">
-                            <Link href="/contact" className="bg-vitalYellow text-black px-8 py-3 rounded-lg font-medium hover:bg-yellow-400 transition-colors">
+                            <Link href="/about-us#about-us-contact" className="bg-vitalYellow text-black px-8 py-3 rounded-lg font-medium hover:bg-yellow-400 transition-colors">
                                 {dict.home.technology.cta}
                             </Link>
                         </SmoothReveal>

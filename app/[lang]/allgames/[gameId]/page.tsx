@@ -272,29 +272,28 @@ export default async function GamePage(props: { params: Params }) {
       <main className="min-h-screen bg-black">
         {/* Hero Section */}
         <header className="relative w-full">
-          <div className="relative w-full min-h-[100vh]">
+          <div className="relative w-full h-[90vh]">
             <Image
               src={game.coverImage || game.mainImage}
               alt={`${game.name} - Slot machine innovativa Vitalgames con grafica HD e bonus game`}
               fill
               className="object-cover"
               priority
-              sizes="100vw"
             />
-            <div className="absolute inset-0 bg-black/30" />
-            <div className="absolute left-0 top-0 h-full w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-              <h1 className="text-8xl md:text-9xl font-bold text-white dharma">{game.name}</h1>
-              <p className="text-sm font-light text-white mt-4">
+            <div className="absolute inset-0" />
+            <div className="absolute left-0 top-24 md:top-0 h-full w-full md:w-1/2 p-4 pt-8 md:p-12 flex flex-col items-center md:items-start justify-start md:justify-center text-center md:text-left">
+              <h1 className="text-6xl sm:text-7xl md:text-9xl font-bold text-white dharma">{game.name}</h1>
+              <p className="text-md font-bold text-white mt-2 max-w-xl">
                 {game.description ||
                   `${game.name} - Slot machine innovativa con grafica HD, bonus game emozionanti e jackpot progressivi. Disponibile in versione AWP, VLT e online.`}
               </p>
-            </div>
+            </div> 
           </div>
         </header>
 
         {/* Gallery Section */}
         <section
-          className="max-w-full mx-auto px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 pt-8 md:pt-12 overflow-hidden h-fit pb-0"
+          className="max-w-full mx-auto px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 md:pt-12 overflow-hidden h-fit pb-0"
           aria-labelledby="gallery-heading"
         >
           <h2 id="gallery-heading" className="sr-only">
@@ -306,16 +305,14 @@ export default async function GamePage(props: { params: Params }) {
               {game.images?.map((image, index) => (
                 <div
                   key={`left-${index}`}
-                  className="flex-shrink-0 w-[250px] sm:w-[350px] md:w-[500px] mx-2 sm:mx-3 md:mx-4 h-full"
+                  className="flex-shrink-0 h-[175px] sm:h-[275px] md:h-[375px] mx-2 sm:mx-3 md:mx-4 h-full"
                 >
-                  <div className="bg-[#171717] rounded-xl p-2 sm:p-3 md:p-4 border border-1 border-[#3C3C3C] h-full">
-                    <div className="relative w-full h-full">
+                  <div className="bg-[#171717] rounded-xl  p-2 sm:p-3 md:p-4 border border-1 border-[#3C3C3C] h-full">
+                    <div className="relative h-full">
                       <Image
                         src={image || "/placeholder.svg"}
                         alt={`${game.name} - Screenshot ${index + 1} della slot machine con interfaccia di gioco e simboli`}
-                        width={1920}
-                        height={1080}
-                        className="w-full h-full object-cover rounded-lg"
+                        className="h-full w-auto object-contain rounded-lg"
                         loading="lazy"
                       />
                     </div>
@@ -406,7 +403,7 @@ export default async function GamePage(props: { params: Params }) {
                             alt={`${multigame.title} - Sistema multigame Vitalgames con multiple slot machine`}
                             width={1080}
                             height={1196}
-                            className="w-full h-auto object-contain rounded-lg transition-transform duration-300 group-hover:scale-105"
+                            className="w-full h-auto object-contain rounded-lg"
                             loading="lazy"
                           />
                         </Link>

@@ -166,7 +166,7 @@ import THE_TIME_PHOTO2 from '../public/games-images/STRIPTEASE/PHOTO-2024-05-12-
 import THE_TIME_PHOTO3 from '../public/games-images/STRIPTEASE/PHOTO-2024-05-12-20-06-25 3.jpg'
 import THE_TIME_PHOTO4 from '../public/games-images/STRIPTEASE/PHOTO-2024-05-12-20-06-26.jpg'
 
-import THE_WEIRD_FAMILY from '../public/games-images/THE WEIRD FAMILY/THE WEIRD FAMILY.jpg'
+import THE_WEIRD_FAMILY from '../public/games-images/THE WEIRD FAMILY/THE WEIRD FAMILY_mobile.webp'
 import THE_WEIRD_FAMILY_PHOTO1 from '../public/games-images/THE WEIRD FAMILY/PHOTO-2024-05-10-16-35-38 3.jpg'
 import THE_WEIRD_FAMILY_PHOTO2 from '../public/games-images/THE WEIRD FAMILY/PHOTO-2024-05-10-16-35-40.jpg'
 import THE_WEIRD_FAMILY_PHOTO3 from '../public/games-images/THE WEIRD FAMILY/PHOTO-2024-05-10-16-35-41 2.jpg'
