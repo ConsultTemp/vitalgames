@@ -25,7 +25,7 @@ export function generateCompleteSitemap(): SitemapEntry[] {
     { path: "/awp-multigames", priority: 0.9, changeFreq: "monthly" as const },
     { path: "/allgames", priority: 0.8, changeFreq: "weekly" as const },
     { path: "/about-us", priority: 0.7, changeFreq: "monthly" as const },
-    { path: "/about-us#about-us-contact, priority: 0.6, changeFreq: "monthly" as const },
+    { path: "/contact", priority: 0.6, changeFreq: "monthly" as const },
     { path: "/privacy", priority: 0.3, changeFreq: "yearly" as const },
   ]
 
