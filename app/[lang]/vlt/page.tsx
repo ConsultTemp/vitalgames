@@ -10,6 +10,8 @@ import VLT_CARD3 from "@/public/Up Right 22\"\" touch.webp"
 import { Button } from "@/components/ui/button"
 import SmoothReveal from "@/components/smooth-reveal"
 import { Mail, MapPin, Phone } from "lucide-react"
+import diamante from '../../../public/diamond.png'
+import FloatingImage from "@/components/bg-image-component"
 
 const vltCards = [
   {
@@ -287,56 +289,32 @@ export default async function AboutUs(props: { params: Params }) {
             title="CABINET VLT"
             subtitle={dictionary.vlt.hero.description}
             videoUrl="https://files.catbox.moe/5ov0r3.webm"
+            objectFit="cover"
+            objectPosition="center top"
           />
         </header>
 
         <main>
           {/* VLT Collection Section */}
-          <div className=" bg-black">
+          <div className="relative">
+          <div className="absolute inset-0 z-1 overflow-hidden pointer-events-none overflow-visible">
+          {/* Bottom left large diamond */}
+          <div className="absolute bottom-[-100px]  w-96 md:w-96 h-96 md:h-96 right-[-200px] animate-float-slow rotate-10">
+            <FloatingImage src={diamante || "/placeholder.svg"} alt="Diamond" className="w-[225px] md:w-[384px] h-[160px] md:h-[384px]" />
+          </div>
+        </div>
 
             {/* Cards Section */}
             <div className="mx-auto px-3 sm:px-16 lg:px-32 xl:px-48 py-32">
-              {/* MOBILE/TABLET: prime due card in griglia, terza card centrata con flex */}
-              {/* DESKTOP: tutte e tre in una sola griglia */}
-              <div className="block lg:hidden">
-                <div className="grid grid-cols-2 gap-2 sm:gap-6">
-                  {vltCards.slice(0, 2).map((card, index) => (
-                    <div
-                      key={index}
-                      className="bg-black rounded-xl p-2 border border-1 border-[#3C3C3C] w-full h-80 flex flex-col"
-                    >
-                      <div className="relative w-full flex-1 p-2 mb-4 flex items-center justify-center">
-                        <Image
-                          src={card.image || "/placeholder.svg"}
-                          alt={card.name}
-                          fill
-                          className="object-contain rounded-lg"
-                        />
-                      </div>
-                      <h3 className="text-lg font-bold text-white text-center">{card.name}</h3>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex justify-center mt-2 sm:mt-6">
-                  <div className="bg-black rounded-xl p-2 border border-1 border-[#3C3C3C] w-full max-w-[calc(50%-0.25rem)] h-80 flex flex-col">
-                    <div className="relative w-full flex-1 p-2 mb-4 flex items-center justify-center">
-                      <Image
-                        src={vltCards[2].image || "/placeholder.svg"}
-                        alt={vltCards[2].name}
-                        fill
-                        className="object-contain rounded-lg"
-                      />
-                    </div>
-                    <h3 className="text-lg font-bold text-white text-center">{vltCards[2].name}</h3>
-                  </div>
-                </div>
-              </div>
-              {/* DESKTOP: tutte e tre in una sola riga */}
-              <div className="hidden lg:grid grid-cols-3 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-6">
                 {vltCards.map((card, index) => (
                   <div
                     key={index}
-                    className="bg-black rounded-xl p-2 border border-1 border-[#3C3C3C] w-full h-80 flex flex-col"
+                    className={
+                      index === 2
+                        ? "bg-black rounded-xl p-2 border border-1 border-[#3C3C3C] w-full h-80 flex flex-col justify-self-center"
+                        : "bg-black rounded-xl p-2 border border-1 border-[#3C3C3C] w-full h-80 flex flex-col"
+                    }
                   >
                     <div className="relative w-full flex-1 p-2 mb-4 flex items-center justify-center">
                       <Image
@@ -353,163 +331,163 @@ export default async function AboutUs(props: { params: Params }) {
             </div>
           </div>
           {/* Contact Section */}
-        <section className="relative min-h-screen contact-bg" aria-labelledby="contact-section">
-          <div className="container mx-auto px-4 py-48 relative z-10">
-            <div className="grid md:grid-cols-5 gap-8 max-w-6xl mx-auto">
-              {/* Left Side - Contact Information */}
-              <aside className="bg-white/5 backdrop-blur-sm rounded-sm p-8 h-full md:col-span-2">
-                <div className="space-y-8">
-                  <SmoothReveal className="mb-8">
-                    <h2 id="contact-section" className="text-4xl md:text-6xl font-bold text-white dharma mb-4">
-                      {params.lang === "it"
-                        ? "I nostri contatti"
-                        : params.lang === "en"
-                          ? "Our contacts"
-                          : "Nuestros contactos"}
-                    </h2>
+          <section className="relative min-h-screen contact-bg" aria-labelledby="contact-section">
+            <div className="container mx-auto px-4 py-12 md:py-24 lg:py-48 relative z-10">
+              <div className="grid md:grid-cols-5 gap-8 max-w-6xl mx-auto">
+                {/* Left Side - Contact Information */}
+                <aside className="bg-white/5 backdrop-blur-sm rounded-sm p-8 h-full md:col-span-2">
+                  <div className="space-y-8">
+                    <SmoothReveal className="mb-4 md:mb-8">
+                      <h2 id="contact-section" className="text-4xl md:text-6xl font-bold text-white dharma mb-2 md:mb-4">
+                        {params.lang === "it"
+                          ? "I nostri contatti"
+                          : params.lang === "en"
+                            ? "Our contacts"
+                            : "Nuestros contactos"}
+                      </h2>
+                    </SmoothReveal>
+
+                    <SmoothReveal>
+                      <div className="flex items-center space-x-4">
+                        <Phone className="text-white" size={20} aria-hidden="true" />
+                        <div className="space-y-2">
+                          <div className="flex items-center space-x-2">
+                            <h3 className="text-white font-semibold">{dictionary.contact.info.phone.title}</h3>
+                          </div>
+                          <p className="text-gray-300 text-sm">{dictionary.contact.info.phone.value}</p>
+                        </div>
+                      </div>
+                    </SmoothReveal>
+
+                    <SmoothReveal>
+                      <div className="flex items-center space-x-4">
+                        <Mail className="text-white" size={20} aria-hidden="true" />
+                        <div className="space-y-2">
+                          <div className="flex items-center space-x-2">
+                            <h3 className="text-white font-semibold">{dictionary.contact.info.email.title}</h3>
+                          </div>
+                          <p className="text-gray-300 text-sm">{dictionary.contact.info.email.value}</p>
+                        </div>
+                      </div>
+                    </SmoothReveal>
+
+                    <SmoothReveal>
+                      <div className="flex items-center space-x-4">
+                        <MapPin className="text-white" size={20} aria-hidden="true" />
+                        <div className="space-y-2">
+                          <div className="flex items-center space-x-2">
+                            <h3 className="text-white font-semibold">{dictionary.contact.info.address.title}</h3>
+                          </div>
+                          <p className="text-gray-300 text-sm">{dictionary.contact.info.address.value}</p>
+                        </div>
+                      </div>
+                    </SmoothReveal>
+                  </div>
+                </aside>
+
+                {/* Right Side - Title and Form */}
+                <div className="flex flex-col h-full md:col-span-3">
+                  <SmoothReveal className="mt-2 md:mt-8">
+                    <h2 className="text-4xl md:text-6xl font-bold text-white dharma mb-t md:mt-4">{dictionary.contact.title}</h2>
                   </SmoothReveal>
 
-                  <SmoothReveal>
-                    <div className="flex items-center space-x-4">
-                      <Phone className="text-white" size={20} aria-hidden="true" />
-                      <div className="space-y-2">
-                        <div className="flex items-center space-x-2">
-                          <h3 className="text-white font-semibold">{dictionary.contact.info.phone.title}</h3>
-                        </div>
-                        <p className="text-gray-300 text-sm">{dictionary.contact.info.phone.value}</p>
-                      </div>
-                    </div>
-                  </SmoothReveal>
+                  <SmoothReveal className="flex-grow">
+                    <form
+                      action="https://formsubmit.co/info@vitalgames.com"
+                      method="POST"
+                      className="space-y-6"
+                      aria-label={
+                        params.lang === "it"
+                          ? "Modulo di contatto"
+                          : params.lang === "en"
+                            ? "Contact form"
+                            : "Formulario de contacto"
+                      }
+                    >
+                      <input type="hidden" name="_captcha" value="false" />
+                      <input type="hidden" name="_next" value={`https://vitalgames.com/${params.lang}/thank-you`} />
 
-                  <SmoothReveal>
-                    <div className="flex items-center space-x-4">
-                      <Mail className="text-white" size={20} aria-hidden="true" />
-                      <div className="space-y-2">
-                        <div className="flex items-center space-x-2">
-                          <h3 className="text-white font-semibold">{dictionary.contact.info.email.title}</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <label htmlFor="name" className="block text-white mb-2">
+                            {dictionary.contact.form.name.label}
+                          </label>
+                          <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            placeholder={dictionary.contact.form.name.placeholder}
+                            className="w-full px-4 py-2 bg-white/5 backdrop-blur-sm border border-white rounded-sm text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                            aria-describedby="name-help"
+                          />
+                          <span id="name-help" className="sr-only">
+                            {params.lang === "it"
+                              ? "Inserisci il tuo nome completo"
+                              : params.lang === "en"
+                                ? "Enter your full name"
+                                : "Ingresa tu nombre completo"}
+                          </span>
                         </div>
-                        <p className="text-gray-300 text-sm">{dictionary.contact.info.email.value}</p>
-                      </div>
-                    </div>
-                  </SmoothReveal>
 
-                  <SmoothReveal>
-                    <div className="flex items-center space-x-4">
-                      <MapPin className="text-white" size={20} aria-hidden="true" />
-                      <div className="space-y-2">
-                        <div className="flex items-center space-x-2">
-                          <h3 className="text-white font-semibold">{dictionary.contact.info.address.title}</h3>
+                        <div>
+                          <label htmlFor="email" className="block text-white mb-2">
+                            {dictionary.contact.info.email.title}
+                          </label>
+                          <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            placeholder={dictionary.contact.form.email.placeholder}
+                            className="w-full px-4 py-2 bg-white/5 backdrop-blur-sm border border-white rounded-sm text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                            aria-describedby="email-help"
+                          />
+                          <span id="email-help" className="sr-only">
+                            {params.lang === "it"
+                              ? "Inserisci un indirizzo email valido"
+                              : params.lang === "en"
+                                ? "Enter a valid email address"
+                                : "Ingresa una dirección de email válida"}
+                          </span>
                         </div>
-                        <p className="text-gray-300 text-sm">{dictionary.contact.info.address.value}</p>
                       </div>
-                    </div>
+
+                      <div>
+                        <label htmlFor="message" className="block text-white mb-2">
+                          {dictionary.contact.form.message.label}
+                        </label>
+                        <textarea
+                          id="message"
+                          name="message"
+                          required
+                          rows={4}
+                          placeholder={dictionary.contact.form.message.placeholder}
+                          className="w-full px-4 py-2 bg-white/5 backdrop-blur-sm border border-white rounded-sm text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                          aria-describedby="message-help"
+                        ></textarea>
+                        <span id="message-help" className="sr-only">
+                          {params.lang === "it"
+                            ? "Descrivi la tua richiesta o domanda"
+                            : params.lang === "en"
+                              ? "Describe your request or question"
+                              : "Describe tu solicitud o pregunta"}
+                        </span>
+                      </div>
+
+                      <Button
+                        type="submit"
+                        variant="vitalYellow"
+                        className="w-full bg-vitalYellow text-black hover:opacity-90 focus:ring-2 focus:ring-yellow-400"
+                      >
+                        {dictionary.contact.form.submit}
+                      </Button>
+                    </form>
                   </SmoothReveal>
                 </div>
-              </aside>
-
-              {/* Right Side - Title and Form */}
-              <div className="flex flex-col h-full md:col-span-3">
-                <SmoothReveal className="mb-8">
-                  <h2 className="text-4xl md:text-6xl font-bold text-white dharma mb-4">{dictionary.contact.title}</h2>
-                </SmoothReveal>
-
-                <SmoothReveal className="flex-grow">
-                  <form
-                    action="https://formsubmit.co/info@vitalgames.com"
-                    method="POST"
-                    className="space-y-6"
-                    aria-label={
-                      params.lang === "it"
-                        ? "Modulo di contatto"
-                        : params.lang === "en"
-                          ? "Contact form"
-                          : "Formulario de contacto"
-                    }
-                  >
-                    <input type="hidden" name="_captcha" value="false" />
-                    <input type="hidden" name="_next" value={`https://vitalgames.com/${params.lang}/thank-you`} />
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label htmlFor="name" className="block text-white mb-2">
-                          {dictionary.contact.form.name.label}
-                        </label>
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          required
-                          placeholder={dictionary.contact.form.name.placeholder}
-                          className="w-full px-4 py-2 bg-white/5 backdrop-blur-sm border border-white rounded-sm text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                          aria-describedby="name-help"
-                        />
-                        <span id="name-help" className="sr-only">
-                          {params.lang === "it"
-                            ? "Inserisci il tuo nome completo"
-                            : params.lang === "en"
-                              ? "Enter your full name"
-                              : "Ingresa tu nombre completo"}
-                        </span>
-                      </div>
-
-                      <div>
-                        <label htmlFor="email" className="block text-white mb-2">
-                          {dictionary.contact.info.email.title}
-                        </label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          required
-                          placeholder={dictionary.contact.form.email.placeholder}
-                          className="w-full px-4 py-2 bg-white/5 backdrop-blur-sm border border-white rounded-sm text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                          aria-describedby="email-help"
-                        />
-                        <span id="email-help" className="sr-only">
-                          {params.lang === "it"
-                            ? "Inserisci un indirizzo email valido"
-                            : params.lang === "en"
-                              ? "Enter a valid email address"
-                              : "Ingresa una dirección de email válida"}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="message" className="block text-white mb-2">
-                        {dictionary.contact.form.message.label}
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        required
-                        rows={4}
-                        placeholder={dictionary.contact.form.message.placeholder}
-                        className="w-full px-4 py-2 bg-white/5 backdrop-blur-sm border border-white rounded-sm text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                        aria-describedby="message-help"
-                      ></textarea>
-                      <span id="message-help" className="sr-only">
-                        {params.lang === "it"
-                          ? "Descrivi la tua richiesta o domanda"
-                          : params.lang === "en"
-                            ? "Describe your request or question"
-                            : "Describe tu solicitud o pregunta"}
-                      </span>
-                    </div>
-
-                    <Button
-                      type="submit"
-                      variant="vitalYellow"
-                      className="w-full bg-vitalYellow text-black hover:opacity-90 focus:ring-2 focus:ring-yellow-400"
-                    >
-                      {dictionary.contact.form.submit}
-                    </Button>
-                  </form>
-                </SmoothReveal>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
         </main>
       </div>
     </>
