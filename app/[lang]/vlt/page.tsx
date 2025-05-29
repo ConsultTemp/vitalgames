@@ -4,128 +4,29 @@ import type { Locale } from "@/i18n-config"
 import { generateAdvancedSEOMetadata } from "@/lib/seo-config"
 import Image from "next/image"
 import VideoHero from "@/components/VideoHero"
-import VLT_CARD1 from "@/public/vlts/SLOT_2022_Alta 1.png"
-import VLT_CARD2 from "@/public/vlts/SLOT_2022_Alta.png"
-import VLT_CARD3 from "@/public/vlts/SLOT_2022_Bassa.png"
-import VLT_CARD4 from "@/public/vlts/Sidney LQ 1.png"
-import VLT_CARD5 from "@/public/vlts/Octagon LQ 1.png"
-import VLT_CARD6 from "@/public/vlts/TRIOOCTAGON LQ.png"
+import VLT_CARD1 from "@/public/Up Right 27\" touch.webp"
+import VLT_CARD2 from "@/public/Slant Top 27\"\" touch.webp"
+import VLT_CARD3 from "@/public/Up Right 22\"\" touch.webp"
+import { Button } from "@/components/ui/button"
+import SmoothReveal from "@/components/smooth-reveal"
+import { Mail, MapPin, Phone } from "lucide-react"
 
 const vltCards = [
   {
     id: 1,
-    name: "VLT Classic",
-    model: "VLT-CL-2024",
-    image: VLT_CARD1,
-    price: "€12,500",
-    features: ["Design elegante", "Interfaccia intuitiva", "Schermo 22''", "Audio stereo"],
-    description: {
-      it: "Cabinet VLT classico con design elegante e interfaccia intuitiva, ideale per sale giochi tradizionali. Schermo HD 22 pollici e sistema audio stereo per un'esperienza coinvolgente.",
-      en: "Classic VLT cabinet with elegant design and intuitive interface, ideal for traditional gaming halls. 22-inch HD screen and stereo audio system for an engaging experience.",
-      es: "Cabinet VLT clásico con diseño elegante e interfaz intuitiva, ideal para salas de juego tradicionales. Pantalla HD de 22 pulgadas y sistema de audio estéreo para una experiencia atractiva.",
-    },
-    specifications: {
-      screen: "22'' HD LED",
-      audio: "Sistema stereo 2.1",
-      connectivity: "Ethernet, WiFi",
-      certification: "ADM, CE",
-    },
+    name: "Up Right 27\"\" touch",
+    image: VLT_CARD1
   },
   {
     id: 2,
-    name: "VLT Pro",
-    model: "VLT-PR-2024",
-    image: VLT_CARD2,
-    price: "€15,800",
-    features: ["Schermo HD", "Audio avanzato", "LED personalizzabili", "Ergonomia premium"],
-    description: {
-      it: "Versione professionale con schermo HD e sistema audio avanzato per un'esperienza di gioco immersiva. Illuminazione LED personalizzabile e design ergonomico.",
-      en: "Professional version with HD screen and advanced audio system for an immersive gaming experience. Customizable LED lighting and ergonomic design.",
-      es: "Versión profesional con pantalla HD y sistema de audio avanzado para una experiencia de juego inmersiva. Iluminación LED personalizable y diseño ergonómico.",
-    },
-    specifications: {
-      screen: "24'' Full HD LED",
-      audio: "Sistema surround 5.1",
-      connectivity: "Ethernet, WiFi, Bluetooth",
-      certification: "ADM, CE, ISO",
-    },
+    name: "Slant Top 27\"\" touch",
+    image: VLT_CARD2
   },
   {
     id: 3,
-    name: "VLT Deluxe",
-    model: "VLT-DX-2024",
+    name: "Up Right 22\"\" touch",
     image: VLT_CARD3,
-    price: "€18,900",
-    features: ["Finiture premium", "Tecnologia avanzata", "Design esclusivo", "Comfort superiore"],
-    description: {
-      it: "Cabinet di lusso con finiture premium e tecnologia all'avanguardia per sale VLT esclusive. Materiali di alta qualità e comfort superiore per i giocatori.",
-      en: "Luxury cabinet with premium finishes and cutting-edge technology for exclusive VLT halls. High-quality materials and superior comfort for players.",
-      es: "Cabinet de lujo con acabados premium y tecnología de vanguardia para salas VLT exclusivas. Materiales de alta calidad y comodidad superior para los jugadores.",
-    },
-    specifications: {
-      screen: "27'' 4K LED",
-      audio: "Sistema premium 7.1",
-      connectivity: "Ethernet, WiFi, Bluetooth, NFC",
-      certification: "ADM, CE, ISO, Energy Star",
-    },
-  },
-  {
-    id: 4,
-    name: "VLT Premium",
-    model: "VLT-PM-2024",
-    image: VLT_CARD4,
-    price: "€22,500",
-    features: ["Doppio schermo", "LED personalizzabili", "Design innovativo", "Massima attrattiva"],
-    description: {
-      it: "Soluzione premium con doppio schermo e illuminazione LED personalizzabile per massimizzare l'attrattiva. Design innovativo e tecnologia di ultima generazione.",
-      en: "Premium solution with dual screen and customizable LED lighting to maximize appeal. Innovative design and latest generation technology.",
-      es: "Solución premium con doble pantalla e iluminación LED personalizable para maximizar el atractivo. Diseño innovador y tecnología de última generación.",
-    },
-    specifications: {
-      screen: "Dual 24'' Full HD + 10'' Touch",
-      audio: "Sistema premium 7.1 con subwoofer",
-      connectivity: "Ethernet, WiFi, Bluetooth, NFC, 5G",
-      certification: "ADM, CE, ISO, Energy Star, RoHS",
-    },
-  },
-  {
-    id: 5,
-    name: "VLT Gold",
-    model: "VLT-GD-2024",
-    image: VLT_CARD5,
-    price: "€28,900",
-    features: ["Design ottagonale", "Grafica 4K", "Jackpot collegato", "Vincite emozionanti"],
-    description: {
-      it: "Design ottagonale distintivo con grafica 4K e sistema di jackpot collegato per vincite più emozionanti. Esperienza di gioco unica e coinvolgente.",
-      en: "Distinctive octagonal design with 4K graphics and linked jackpot system for more exciting wins. Unique and engaging gaming experience.",
-      es: "Diseño octogonal distintivo con gráficos 4K y sistema de jackpot vinculado para ganancias más emocionantes. Experiencia de juego única y atractiva.",
-    },
-    specifications: {
-      screen: "32'' 4K OLED Curved",
-      audio: "Sistema immersivo 9.1 con vibrazione",
-      connectivity: "Ethernet, WiFi 6, Bluetooth 5.0, NFC, 5G",
-      certification: "ADM, CE, ISO, Energy Star, RoHS, FCC",
-    },
-  },
-  {
-    id: 6,
-    name: "VLT Platinum",
-    model: "VLT-PT-2024",
-    image: VLT_CARD6,
-    price: "€35,500",
-    features: ["Triplo schermo", "Effetti straordinari", "Comfort ergonomico", "Top di gamma"],
-    description: {
-      it: "La nostra soluzione top di gamma con triplo schermo, effetti visivi straordinari e comfort ergonomico. L'eccellenza assoluta nel mondo VLT.",
-      en: "Our top-of-the-line solution with triple screen, extraordinary visual effects and ergonomic comfort. Absolute excellence in the VLT world.",
-      es: "Nuestra solución de gama alta con triple pantalla, efectos visuales extraordinarios y confort ergonómico. Excelencia absoluta en el mundo VLT.",
-    },
-    specifications: {
-      screen: "Triple 27'' 4K OLED + 15'' Control Touch",
-      audio: "Sistema cinematografico 11.1 con effetti 3D",
-      connectivity: "Ethernet, WiFi 6E, Bluetooth 5.2, NFC, 5G, Satellite",
-      certification: "ADM, CE, ISO, Energy Star, RoHS, FCC, UL",
-    },
-  },
+  }
 ]
 
 type Params = Promise<{ lang: Locale }>
@@ -235,9 +136,10 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   })
 }
 
-export default async function VLTPage({ params }: { params: Params }) {
-  const { lang } = await params
-  const dict = await getDictionary(lang)
+export default async function AboutUs(props: { params: Params }) {
+  const params = await props.params
+  const dictionary = await getDictionary(params.lang)
+  const lang = params.lang
 
   // Comprehensive JSON-LD for VLT page
   const jsonLd = {
@@ -284,10 +186,7 @@ export default async function VLTPage({ params }: { params: Params }) {
           position: index + 1,
           item: {
             "@type": "Product",
-            "@id": `https://vitalgames.com/${lang}/vlt/${vlt.model.toLowerCase()}`,
             name: vlt.name,
-            model: vlt.model,
-            description: vlt.description[lang],
             category: "Video Lottery Terminal",
             brand: {
               "@type": "Brand",
@@ -308,7 +207,6 @@ export default async function VLTPage({ params }: { params: Params }) {
             },
             offers: {
               "@type": "Offer",
-              price: vlt.price.replace("€", "").replace(",", ""),
               priceCurrency: "EUR",
               availability: "https://schema.org/InStock",
               seller: {
@@ -328,22 +226,18 @@ export default async function VLTPage({ params }: { params: Params }) {
               {
                 "@type": "PropertyValue",
                 name: "Schermo",
-                value: vlt.specifications.screen,
               },
               {
                 "@type": "PropertyValue",
                 name: "Audio",
-                value: vlt.specifications.audio,
               },
               {
                 "@type": "PropertyValue",
                 name: "Connettività",
-                value: vlt.specifications.connectivity,
               },
               {
                 "@type": "PropertyValue",
                 name: "Certificazioni",
-                value: vlt.specifications.certification,
               },
             ],
             review: [
@@ -391,21 +285,60 @@ export default async function VLTPage({ params }: { params: Params }) {
         <header>
           <VideoHero
             title="CABINET VLT"
-            subtitle={dict.vlt.hero.description}
-            videoUrl="https://files.catbox.moe/pvi9mx.mp4"
+            subtitle={dictionary.vlt.hero.description}
+            videoUrl="https://files.catbox.moe/5ov0r3.webm"
           />
         </header>
 
         <main>
           {/* VLT Collection Section */}
-          <div className="min-h-screen bg-black">
+          <div className=" bg-black">
 
             {/* Cards Section */}
-            <div className="mx-auto px-8 sm:px-16 lg:px-32 xl:px-48 py-32">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="mx-auto px-3 sm:px-16 lg:px-32 xl:px-48 py-32">
+              {/* MOBILE/TABLET: prime due card in griglia, terza card centrata con flex */}
+              {/* DESKTOP: tutte e tre in una sola griglia */}
+              <div className="block lg:hidden">
+                <div className="grid grid-cols-2 gap-2 sm:gap-6">
+                  {vltCards.slice(0, 2).map((card, index) => (
+                    <div
+                      key={index}
+                      className="bg-black rounded-xl p-2 border border-1 border-[#3C3C3C] w-full h-80 flex flex-col"
+                    >
+                      <div className="relative w-full flex-1 p-2 mb-4 flex items-center justify-center">
+                        <Image
+                          src={card.image || "/placeholder.svg"}
+                          alt={card.name}
+                          fill
+                          className="object-contain rounded-lg"
+                        />
+                      </div>
+                      <h3 className="text-lg font-bold text-white text-center">{card.name}</h3>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex justify-center mt-2 sm:mt-6">
+                  <div className="bg-black rounded-xl p-2 border border-1 border-[#3C3C3C] w-full max-w-[calc(50%-0.25rem)] h-80 flex flex-col">
+                    <div className="relative w-full flex-1 p-2 mb-4 flex items-center justify-center">
+                      <Image
+                        src={vltCards[2].image || "/placeholder.svg"}
+                        alt={vltCards[2].name}
+                        fill
+                        className="object-contain rounded-lg"
+                      />
+                    </div>
+                    <h3 className="text-lg font-bold text-white text-center">{vltCards[2].name}</h3>
+                  </div>
+                </div>
+              </div>
+              {/* DESKTOP: tutte e tre in una sola riga */}
+              <div className="hidden lg:grid grid-cols-3 gap-6">
                 {vltCards.map((card, index) => (
-                  <div key={index} className="bg-[#171717] rounded-xl p-4 border border-1 border-[#3C3C3C] aspect-square py-8">
-                    <div className="relative aspect-square w-full p-4 mb-8">
+                  <div
+                    key={index}
+                    className="bg-black rounded-xl p-2 border border-1 border-[#3C3C3C] w-full h-80 flex flex-col"
+                  >
+                    <div className="relative w-full flex-1 p-2 mb-4 flex items-center justify-center">
                       <Image
                         src={card.image || "/placeholder.svg"}
                         alt={card.name}
@@ -413,12 +346,170 @@ export default async function VLTPage({ params }: { params: Params }) {
                         className="object-contain rounded-lg"
                       />
                     </div>
-                    <h3 className="text-xl font-bold text-white text-center">{card.name}</h3>
+                    <h3 className="text-lg font-bold text-white text-center">{card.name}</h3>
                   </div>
                 ))}
               </div>
             </div>
           </div>
+          {/* Contact Section */}
+        <section className="relative min-h-screen contact-bg" aria-labelledby="contact-section">
+          <div className="container mx-auto px-4 py-48 relative z-10">
+            <div className="grid md:grid-cols-5 gap-8 max-w-6xl mx-auto">
+              {/* Left Side - Contact Information */}
+              <aside className="bg-white/5 backdrop-blur-sm rounded-sm p-8 h-full md:col-span-2">
+                <div className="space-y-8">
+                  <SmoothReveal className="mb-8">
+                    <h2 id="contact-section" className="text-4xl md:text-6xl font-bold text-white dharma mb-4">
+                      {params.lang === "it"
+                        ? "I nostri contatti"
+                        : params.lang === "en"
+                          ? "Our contacts"
+                          : "Nuestros contactos"}
+                    </h2>
+                  </SmoothReveal>
+
+                  <SmoothReveal>
+                    <div className="flex items-center space-x-4">
+                      <Phone className="text-white" size={20} aria-hidden="true" />
+                      <div className="space-y-2">
+                        <div className="flex items-center space-x-2">
+                          <h3 className="text-white font-semibold">{dictionary.contact.info.phone.title}</h3>
+                        </div>
+                        <p className="text-gray-300 text-sm">{dictionary.contact.info.phone.value}</p>
+                      </div>
+                    </div>
+                  </SmoothReveal>
+
+                  <SmoothReveal>
+                    <div className="flex items-center space-x-4">
+                      <Mail className="text-white" size={20} aria-hidden="true" />
+                      <div className="space-y-2">
+                        <div className="flex items-center space-x-2">
+                          <h3 className="text-white font-semibold">{dictionary.contact.info.email.title}</h3>
+                        </div>
+                        <p className="text-gray-300 text-sm">{dictionary.contact.info.email.value}</p>
+                      </div>
+                    </div>
+                  </SmoothReveal>
+
+                  <SmoothReveal>
+                    <div className="flex items-center space-x-4">
+                      <MapPin className="text-white" size={20} aria-hidden="true" />
+                      <div className="space-y-2">
+                        <div className="flex items-center space-x-2">
+                          <h3 className="text-white font-semibold">{dictionary.contact.info.address.title}</h3>
+                        </div>
+                        <p className="text-gray-300 text-sm">{dictionary.contact.info.address.value}</p>
+                      </div>
+                    </div>
+                  </SmoothReveal>
+                </div>
+              </aside>
+
+              {/* Right Side - Title and Form */}
+              <div className="flex flex-col h-full md:col-span-3">
+                <SmoothReveal className="mb-8">
+                  <h2 className="text-4xl md:text-6xl font-bold text-white dharma mb-4">{dictionary.contact.title}</h2>
+                </SmoothReveal>
+
+                <SmoothReveal className="flex-grow">
+                  <form
+                    action="https://formsubmit.co/info@vitalgames.com"
+                    method="POST"
+                    className="space-y-6"
+                    aria-label={
+                      params.lang === "it"
+                        ? "Modulo di contatto"
+                        : params.lang === "en"
+                          ? "Contact form"
+                          : "Formulario de contacto"
+                    }
+                  >
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_next" value={`https://vitalgames.com/${params.lang}/thank-you`} />
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="name" className="block text-white mb-2">
+                          {dictionary.contact.form.name.label}
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          required
+                          placeholder={dictionary.contact.form.name.placeholder}
+                          className="w-full px-4 py-2 bg-white/5 backdrop-blur-sm border border-white rounded-sm text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                          aria-describedby="name-help"
+                        />
+                        <span id="name-help" className="sr-only">
+                          {params.lang === "it"
+                            ? "Inserisci il tuo nome completo"
+                            : params.lang === "en"
+                              ? "Enter your full name"
+                              : "Ingresa tu nombre completo"}
+                        </span>
+                      </div>
+
+                      <div>
+                        <label htmlFor="email" className="block text-white mb-2">
+                          {dictionary.contact.info.email.title}
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          required
+                          placeholder={dictionary.contact.form.email.placeholder}
+                          className="w-full px-4 py-2 bg-white/5 backdrop-blur-sm border border-white rounded-sm text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                          aria-describedby="email-help"
+                        />
+                        <span id="email-help" className="sr-only">
+                          {params.lang === "it"
+                            ? "Inserisci un indirizzo email valido"
+                            : params.lang === "en"
+                              ? "Enter a valid email address"
+                              : "Ingresa una dirección de email válida"}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label htmlFor="message" className="block text-white mb-2">
+                        {dictionary.contact.form.message.label}
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        required
+                        rows={4}
+                        placeholder={dictionary.contact.form.message.placeholder}
+                        className="w-full px-4 py-2 bg-white/5 backdrop-blur-sm border border-white rounded-sm text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                        aria-describedby="message-help"
+                      ></textarea>
+                      <span id="message-help" className="sr-only">
+                        {params.lang === "it"
+                          ? "Descrivi la tua richiesta o domanda"
+                          : params.lang === "en"
+                            ? "Describe your request or question"
+                            : "Describe tu solicitud o pregunta"}
+                      </span>
+                    </div>
+
+                    <Button
+                      type="submit"
+                      variant="vitalYellow"
+                      className="w-full bg-vitalYellow text-black hover:opacity-90 focus:ring-2 focus:ring-yellow-400"
+                    >
+                      {dictionary.contact.form.submit}
+                    </Button>
+                  </form>
+                </SmoothReveal>
+              </div>
+            </div>
+          </div>
+        </section>
         </main>
       </div>
     </>

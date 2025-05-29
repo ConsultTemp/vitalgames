@@ -9,134 +9,8 @@ import VideoHero from "@/components/VideoHero"
 import FloatingImage from "@/components/bg-image-component"
 import sevens from "../../../public/seven.png"
 import bar from "../../../public/bar.png"
-
-// Import multigame images
-import casinoroyale from "@/public/multigames-cards/CASINO ROYALE_Converted.jpg"
-import diamante from "@/public/multigames-cards/DIAMANTE_Converted.jpg"
-import goldenclub from "@/public/multigames-cards/GOLDEN CLUB ORO_Converted.jpg"
-import piggygold from "@/public/multigames-cards/PIGGY GOLD MULTIGAME_Converted.jpg"
-import rubino from "@/public/multigames-cards/RUBINO_Converted.jpg"
-import zaffiro from "@/public/multigames-cards/ZAFFIRO_Converted.jpg"
-import circus from "@/public/multigames-cards/CIRCUS_Converted.jpg"
-import champions from "@/public/multigames-cards/CHAMPIONS.png"
-import luckyslot from "@/public/multigames-cards/lucky_slot.png"
-import fortuneultralink from "@/public/multigames/Multigames/Fortune Ultralink/fortune_ultralink.jpg"
-import manhattan from "@/public/multigames/Multigames/Manhattan/MANHATTAN.jpg"
 import { games } from "@/lib/allgames"
-
-const multigames = [
-  {
-    id: 14,
-    slug: "manhattan",
-    title: "Manhattan",
-    image: manhattan,
-    description: "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
-    category: "Sport",
-    gameCount: 8,
-    features: ["Tema calcio", "8 giochi", "Sistema sportivo", "Grafica HD"],
-  },
-  {
-    id: 10,
-    slug: "champions",
-    title: "Champions",
-    image: champions,
-    description: "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
-    category: "Sport",
-    gameCount: 8,
-    features: ["Tema calcio", "8 giochi", "Sistema sportivo", "Jackpot progressivo"],
-  },
-  {
-    id: 13,
-    slug: "fortune-ultralink",
-    title: "Fortune Ultralink",
-    image: fortuneultralink,
-    description: "Sistema multigame con 10 giochi a tema casinò classico, interfaccia elegante e jackpot progressivo.",
-    category: "Casino",
-    gameCount: 10,
-    features: ["Tema casinò", "10 giochi", "Jackpot progressivo", "Interfaccia elegante"],
-  },
-  {
-    id: 2,
-    slug: "diamante",
-    title: "Diamante Multigame",
-    image: diamante,
-    description: "La nostra soluzione premium con 12 giochi esclusivi, grafica HD e funzionalità bonus avanzate.",
-    category: "Premium",
-    gameCount: 12,
-    features: ["12 giochi esclusivi", "Grafica HD", "Bonus avanzati", "Soluzione premium"],
-  },
-  {
-    id: 4,
-    slug: "piggy-gold",
-    title: "Piggy Gold Multigame",
-    image: piggygold,
-    description: "Divertente sistema con 10 giochi a tema denaro e fortuna, perfetto per un pubblico giovane.",
-    category: "Fortuna",
-    gameCount: 10,
-    features: ["Tema denaro", "10 giochi", "Pubblico giovane", "Grafica divertente"],
-  },
-  {
-    id: 1,
-    slug: "casino-royale",
-    title: "Casino Royale",
-    image: casinoroyale,
-    description: "Sistema multigame con 10 giochi a tema casinò classico, interfaccia elegante e jackpot progressivo.",
-    category: "Casino",
-    gameCount: 10,
-    features: ["Tema casinò classico", "10 giochi", "Jackpot progressivo", "Interfaccia elegante"],
-  },
-  {
-    id: 8,
-    slug: "circus",
-    title: "Circus",
-    image: circus,
-    description: "Sistema divertente con 10 giochi a tema circo, perfetto per un pubblico giovane e dinamico.",
-    category: "Divertimento",
-    gameCount: 10,
-    features: ["Tema circo", "10 giochi", "Pubblico giovane", "Sistema dinamico"],
-  },
-  {
-    id: 5,
-    slug: "rubino",
-    title: "Rubino",
-    image: rubino,
-    description: "Multigame con 6 giochi premium, grafica vibrante e funzionalità bonus esclusive.",
-    category: "Premium",
-    gameCount: 6,
-    features: ["6 giochi premium", "Grafica vibrante", "Bonus esclusivi", "Alta qualità"],
-  },
-  {
-    id: 6,
-    slug: "zaffiro",
-    title: "Zaffiro",
-    image: zaffiro,
-    description:
-      "Sistema elegante con 8 giochi a tema gemme, effetti visivi spettacolari e alta percentuale di vincita.",
-    category: "Gemme",
-    gameCount: 8,
-    features: ["Tema gemme", "8 giochi", "Effetti spettacolari", "Alta percentuale vincita"],
-  },
-  {
-    id: 3,
-    slug: "golden-club",
-    title: "Golden Club",
-    image: goldenclub,
-    description: "Esperienza VIP con 8 giochi selezionati, tema lussuoso e meccaniche di gioco innovative.",
-    category: "VIP",
-    gameCount: 8,
-    features: ["Esperienza VIP", "8 giochi selezionati", "Tema lussuoso", "Meccaniche innovative"],
-  },
-  {
-    id: 12,
-    slug: "lucky-slot",
-    title: "Lucky Slot",
-    image: luckyslot,
-    description: "Sistema con 8 giochi a tema fortuna, grafica accattivante e funzionalità bonus esclusive.",
-    category: "Fortuna",
-    gameCount: 8,
-    features: ["Tema fortuna", "8 giochi", "Grafica accattivante", "Bonus esclusivi"],
-  },
-]
+import { multigames } from "@/lib/multigames"
 
 type Params = Promise<{ lang: Locale }>
 
@@ -214,7 +88,7 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
           "@id": `https://vitalgames.com/${lang}/awp-multigames/${game.slug}`,
           name: game.title,
           description: game.description,
-          category: `AWP Multigame ${game.category}`,
+          category: `AWP Multigame ${game.slug}`,
           brand: {
             "@type": "Brand",
             name: "Vitalgames",
@@ -227,7 +101,7 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
           },
           image: {
             "@type": "ImageObject",
-            url: `https://vitalgames.com${game.image.src}`,
+            url: `https://vitalgames.com${game.coverImage}`,
             width: 1080,
             height: 1196,
           },
@@ -244,12 +118,10 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
             {
               "@type": "PropertyValue",
               name: "Numero Giochi",
-              value: game.gameCount,
             },
             {
               "@type": "PropertyValue",
               name: "Categoria",
-              value: game.category,
             },
             {
               "@type": "PropertyValue",
@@ -297,7 +169,7 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
           <VideoHero
             title={dict.awpMultigames.page.title}
             subtitle={dict.awpMultigames.page.subtitle}
-            videoUrl="https://files.catbox.moe/bpgqmj.mp4"
+            videoUrl="https://files.catbox.moe/ikjbno.webm"
           />
         </header>
 
@@ -325,7 +197,7 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
               aria-hidden="true"
             />
 
-            <div className="container mx-auto px-4 relative z-10 pb-12 md:pb-36 overflow-visible">
+            <div className="container mx-auto px-3 relative z-10 pb-12 md:pb-36 overflow-visible">
               <div
                 className="absolute inset-0 z-1 overflow-hidden pointer-events-none overflow-visible"
                 aria-hidden="true"
@@ -351,7 +223,7 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
                 Collezione AWP Multigames Vitalgames
               </h1>
 
-              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full">
+              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 w-full">
                 {multigames.map((game) => (
                   <article key={game.id} className="transition-all duration-300">
                     <SmoothReveal>
@@ -362,8 +234,8 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
                       >
                         <div className="w-full h-full relative">
                           <Image
-                            src={game.image || "/placeholder.svg"}
-                            alt={`${game.title} - Sistema multigame AWP con ${game.gameCount} giochi`}
+                            src={game.mainImage || "/placeholder.svg"}
+                            alt={`${game.title} - Sistema multigame AWP con 5 giochi`}
                             className="object-cover w-full h-full"
                             width={1080}
                             height={1196}
@@ -384,7 +256,7 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
 
             {/* Content */}
             <div className="relative z-10">
-              <div className="container mx-auto px-4">
+              <div className="container mx-auto px-3">
                 <div className="mb-8 w-full flex flex-col items-start">
                   <SmoothReveal>
                     <h2
@@ -402,7 +274,7 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
                     aria-hidden="true"
                   />
 
-                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5  gap-3 md:gap-4">
                     {games.slice(0, 5).map((game) => (
                       <SmoothReveal key={game.id}>
                         <Link

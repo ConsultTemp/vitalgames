@@ -8,38 +8,38 @@ import FloatingImage from "../bg-image-component"
 import SmoothReveal from "../smooth-reveal"
 import { useLanguage } from "@/components/language-provider"
 import { Button } from "../ui/button"
+import champions from '../../public/multigames-pagis/Card/Champions Slot.webp'
+import diamante from '../../public/multigames-pagis/Card/Diamante.webp'
+import fortune from '../../public/multigames-pagis/Card/Fortune.webp'
+import casinoroyale from '../../public/multigames-pagis/Card/Casino Royale.webp'
 
-// Import delle immagini
-import casinoroyaleHover from "../../public/multigames-cards/CASINO ROYALE_Converted.jpg"
-import diamanteHover from "../../public/multigames-cards/DIAMANTE_Converted.jpg"
-import luckySlot from "../../public/multigames-cards/lucky_slot.png"
+
 import floatingImage1 from "../../public/squalorosa.png"
-import fortuneUltralink from "../../public/fortune_ultralink.png"
 
 export const multigames = [
     {
         id: 1,
-        slug: "casino-royale",
-        title: "Casino Royale",
-        image: casinoroyaleHover,
+        slug: "champions",
+        title: "Champions Slot",
+        image: champions,
     },
     {
         id: 2,
         slug: "diamante",
         title: "Diamante Multigame",
-        image: diamanteHover,
+        image: diamante,
     },
     {
         id: 3,
         slug: "fortune-ultralink",
         title: "Fortune Ultralink",
-        image: fortuneUltralink,
+        image: fortune,
     },
     {
         id: 4,
-        slug: "lucky-slot",
-        title: "Lucky Slot",
-        image: luckySlot,
+        slug: "casino-royale",
+        title: "Casino Royale",
+        image: casinoroyale,
     },
 ]
 
@@ -191,9 +191,6 @@ export default function Multigames() {
                             </div>
                             
                             <div className="relative z-[1] pb-12 md:pb-0">
-                                <div className="text-vitalYellow text-xs font-medium py-[3.5px]">
-                                    {dict.home.multigames.subtitle}
-                                </div>
                                 <h2 className="text-7xl md:text-7xl lg:text-[80px] font-bold text-white dharma">
                                     {dict.home.multigames.title} <br />
                                     {dict.home.multigames.titleLine2}

@@ -232,7 +232,7 @@ export default async function AllGamesPage(props: { params: Params }) {
           <VideoHero
             title={dict.allGames.hero.title}
             subtitle={dict.allGames.hero.subtitle}
-            videoUrl="https://files.catbox.moe/gdaic4.mp4"
+            videoUrl="https://files.catbox.moe/mggdk0.webm"
           />
         </header>
 
@@ -253,7 +253,7 @@ export default async function AllGamesPage(props: { params: Params }) {
             >
               {dict.allGames.recommended.title || "Recommended Games"}
             </h2>
-            <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex flex-col md:flex-row gap-3 md:gap-4">
               {multigames.slice(0, 3).map((game, index) => (
                 <article key={game.id} className="flex-1 hover:scale-[1.02] transition-all duration-300">
                   <Link

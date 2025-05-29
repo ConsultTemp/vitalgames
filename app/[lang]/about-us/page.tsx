@@ -363,7 +363,7 @@ export default async function AboutUs(props: { params: Params }) {
       />
 
       <div className="relative">
-        <VideoHero title={""} subtitle={""} videoUrl="https://files.catbox.moe/gdaic4.mp4" />
+        <VideoHero title={""} subtitle={""} videoUrl="https://files.catbox.moe/mggdk0.webm" />
 
         {/* First Section */}
         <section className="relative min-h-screen overflow-visible pt-8">

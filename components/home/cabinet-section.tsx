@@ -20,6 +20,7 @@ import FloatingImage from "../bg-image-component"
 import SmoothReveal from "../smooth-reveal"
 import Link from "next/link"
 import { useLanguage } from "@/components/language-provider"
+import OptimizedVideo from "../OptimizedVideo"
 
 const cabinets = [
   {
@@ -46,12 +47,98 @@ const cabinets = [
 
 export default function CabinetSection() {
   const [isLoaded, setIsLoaded] = useState(false)
+  const [isSafari, setIsSafari] = useState(false)
   const { dictionary, lang } = useLanguage()
   const { cabinet } = dictionary.home
 
+  // Funzione per rilevare Safari
+  const detectSafari = () => {
+    if (typeof window !== 'undefined') {
+      const userAgent = window.navigator.userAgent.toLowerCase()
+      const vendor = window.navigator.vendor.toLowerCase()
+
+      // Safari ha 'safari' nell'user agent E 'apple computer' nel vendor
+      // E NON ha 'chrome' nell'user agent (per escludere Chrome)
+      const isSafariBrowser =
+        userAgent.includes('safari') &&
+        vendor.includes('apple') &&
+        !userAgent.includes('chrome') &&
+        !userAgent.includes('chromium')
+
+      return isSafariBrowser
+    }
+    return false
+  }
+
   useEffect(() => {
     setIsLoaded(true)
+    const safariDetected = detectSafari()
+    setIsSafari(safariDetected)
+
+    // Debug log per verificare il rilevamento
+    console.log('Browser detection:', {
+      userAgent: window.navigator.userAgent,
+      vendor: window.navigator.vendor,
+      isSafari: safariDetected
+    })
   }, [])
+
+  // Componente per il contenuto overlay (video o immagine)
+  const OverlayContent = ({ className }: { className: string }) => {
+    if (isSafari) {
+      return (
+        <Image
+          src={overlayGif}
+          alt="Overlay animation"
+          className={className}
+          fill
+          style={{ objectFit: 'contain' }}
+        />
+      )
+    }
+
+    return (
+      <div className="w-full h-full relative">
+        <OptimizedVideo
+          src="/videos/overlay.mp4"
+          className="absolute inset-0 w-full h-full object-contain"
+          containerClassName="w-full h-full absolute inset-0"
+          muted
+          autoPlay
+          loop
+          playsInline
+          showControls={false}
+        />
+      </div>
+    )
+  }
+
+  // Componente per il contenuto overlay desktop
+  const OverlayContentDesktop = ({ className }: { className: string }) => {
+    if (isSafari) {
+      return (
+        <Image
+          src={overlayGif}
+          alt="Overlay animation"
+          className={className}
+          fill
+          style={{ objectFit: 'contain' }}
+        />
+      )
+    }
+
+    return (
+      <OptimizedVideo
+        src="https://files.catbox.moe/2t2qgh.webm"
+        className={className}
+        muted
+        autoPlay
+        loop
+        playsInline
+        showControls={false}
+      />
+    )
+  }
 
   return (
     <section className="relative overflow-visible flex flex-row justify-center mx-auto px-6 sm:px-12 md:px-16 lg:px-16 py-16 mt-0">
@@ -96,11 +183,7 @@ export default function CabinetSection() {
               <CarouselNext className="right-2" />
             </Carousel>
             <div className="absolute bottom-[-160px] right-[-140px] md:right-[-200px] w-[350px] h-[350px] z-20">
-              <Image
-                src={overlayGif}
-                alt="Overlay animation"
-                className="w-full h-full object-contain"
-              />
+              <OverlayContent className="w-full h-full object-contain" />
             </div>
           </div>
 
@@ -148,12 +231,8 @@ export default function CabinetSection() {
               <CarouselPrevious className="left-2" />
               <CarouselNext className="right-2" />
             </Carousel>
-            <div className="absolute bottom-[-140px] right-[-120px] md:right-[-200px] w-[350px] h-[350px] z-20">
-              <Image
-                src={overlayGif}
-                alt="Overlay animation"
-                className="w-full h-full object-contain"
-              />
+            <div className="absolute bottom-[-100px] right-[-120px] md:right-[-200px] w-[300px] h-[300px] z-20">
+              <OverlayContentDesktop className="w-full h-full object-contain bg-red" />
             </div>
           </div>
         </div>

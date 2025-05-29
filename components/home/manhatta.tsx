@@ -89,11 +89,9 @@ export default function ManhattanLanding() {
               </span>
             </h1>
             <p className="text-sm">{dict.home.manhattan.description}</p>
-            <Image src={logo || "/placeholder.svg"} alt="Vital Games Logo" width={60} height={30} />
-            <p className="text-sm text-gray-400">{dict.home.manhattan.ageRestriction}</p>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center invisible h-0 lg:h-fit lg:visible">
             <Image
               src={squaloblu || "/placeholder.svg"}
               alt="Shark Character"

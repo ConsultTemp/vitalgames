@@ -274,7 +274,7 @@ export default async function LocaleLayout({
 
       </head>
 
-      <body className={inter.className}>
+      <body className={`${inter.className} antialiased`}>
         {/* Skip to main content per accessibilità */}
         <a
           href="#main-content"

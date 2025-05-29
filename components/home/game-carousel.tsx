@@ -8,12 +8,12 @@ import { ChevronLeft, ChevronRight, Play } from "lucide-react"
 import type { CarouselApi } from "@/components/ui/carousel"
 
 // Import images
-import mrDiamondImage from "../../public/misterdiamondbg.png"
-import mrDiamondMobileImage from "../../public/mr_diamond_mobile.png"
-import luckyCharmsImage from "../../public/lostruzzobg.png"
-import luckyCharmsMobileImage from "../../public/lo_struzzo_mobile.png"
-import pirateTreasureImage from "../../public/reggaefrogbg.png"
-import pirateTreasureMobileImage from "../../public/reggae_frog_mobile.png"
+import mrDiamondImage from "../../public/mrdiamondbg.webp"
+import mrDiamondMobileImage from "../../public/mr_diamond_mobile.webp"
+import luckyCharmsImage from "../../public/lostruzzo.webp"
+import luckyCharmsMobileImage from "../../public/lo_struzzo_mobile.webp"
+import pirateTreasureImage from "../../public/reggaefrogbg.webp"
+import pirateTreasureMobileImage from "../../public/reggae_frog_mobile.webp"
 
 // Hook per il responsive design
 function useMediaQuery(query: string): boolean {
@@ -47,6 +47,7 @@ const gameSlides = [
         imageSrc: mrDiamondImage,
         mobileImageSrc: mrDiamondMobileImage,
         imageAlt: "Mr Diamond Ultra Link game character with green hat",
+        demoUrl:"https://server.vitalgam.es:32160/SLOT/MrDiamond/?demo=true"
     },
     {
         id: 2,
@@ -57,6 +58,7 @@ const gameSlides = [
         imageSrc: luckyCharmsImage,
         mobileImageSrc: luckyCharmsMobileImage,
         imageAlt: "Lucky Charms slot game",
+        demoUrl:"https://server.vitalgam.es:32160/SLOT/LoStruzzo/?demo=true/"
     },
     {
         id: 3,
@@ -66,6 +68,7 @@ const gameSlides = [
         imageSrc: pirateTreasureImage,
         mobileImageSrc: pirateTreasureMobileImage,
         imageAlt: "Pirate Treasure slot game",
+        demoUrl: "https://server.vitalgam.es:32160/SLOT/ReggaeFrog/?demo=true"
     },
 ]
 
