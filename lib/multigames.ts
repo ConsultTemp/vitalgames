@@ -203,7 +203,7 @@ export const multigames = [
         coverImage: bgmultigamopen,
         logo: multigamelogo,
         mainImage: championsMain,
-        video: "https://files.catbox.moe/e8dqw8.mp4",
+        video: "https://files.catbox.moe/bajs3j.mp4",
         description: "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
         videos: [
             "https://example.com/video1.mp4",

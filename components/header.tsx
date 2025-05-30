@@ -104,7 +104,7 @@ export default function Navbar() {
                       <NavigationMenuTrigger className="text-sm text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none whitespace-nowrap bg-transparent hover:bg-transparent relative after:content-[''] after:absolute after:bottom-[-20px] after:left-0 after:w-0 after:h-[2px] after:bg-white hover:after:w-full flex items-center h-12">
                         {item.label}
                       </NavigationMenuTrigger>
-                      <NavigationMenuContent className="backdrop-blur-md bg-black/95 animate-slideDown" style={{
+                      <NavigationMenuContent className="backdrop-blur-md bg-transparent animate-slideDown" style={{
                         position: 'fixed',
                         left: '0',
                         right: '0',
