@@ -65,7 +65,7 @@ export const multigames = [
         ],
         games: [
             games.find(g => g.slug === 'lo-struzzo')!,
-            games.find(g => g.slug === 'cowboy-revenge')!,
+            games.find(g => g.slug === 'cowboy-revenge-2')!,
             games.find(g => g.slug === 'magic-diamond-2')!,
             games.find(g => g.slug === 'vampiro')!,
             games.find(g => g.slug === 'reggae-frog')!
