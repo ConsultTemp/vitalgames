@@ -1,30 +1,49 @@
-import alieni from '../public/allgames/ALIENI.jpg'
-import braccio from '../public/allgames/BRACCIO DI FERRO.jpg'
-import dragon from '../public/allgames/DRAGON.jpg'
-import eden from '../public/allgames/EDEN.jpg'
-import golden from '../public/allgames/GOLDEN FRUIT.jpg'
-import barone from '../public/allgames/IL BARONE ROSSO.jpg'
-import cuoco from '../public/allgames/IL CUOCO.jpg'
-import giullare from '../public/allgames/IL GIULLARE.jpg'
-import grillo from '../public/allgames/IL GRILLO.jpg'
-import julio from '../public/allgames/JULIO.jpg'
-import jungle from '../public/allgames/JUNGLE.jpg'
-import scatola from '../public/allgames/LA SCATOLA MAGICA.jpg'
-import magic from '../public/allgames/MAGIC DIAMOND 2.jpg'
-import mohamed from '../public/allgames/MOHAMED.jpg'
-import nautilus from '../public/allgames/NAUTILUS.jpg'
-import reggae from '../public/allgames/REGGAE FROG.jpg'
-import scacco from '../public/allgames/SCACCO MATTO.jpg'
-import sonny from '../public/allgames/SONNY BONO.jpg'
-import striptease from '../public/allgames/STRIPTEASE.jpg'
-import time from '../public/allgames/THE TIME.jpg'
-import torero from '../public/allgames/TORERO.jpg'
-import vampiro from '../public/allgames/VAMPIRO.jpg'
-import zombie from '../public/allgames/ZOMBIE.jpg'
-import billionaire from '../public/allgames/Billionaire.jpg'
-import pirates from '../public/allgames/DARK PIRATES.jpg'
-import fortune from '../public/allgames/FORTUNE.jpg'
-import family from '../public/allgames/THE WEIRD FAMILY.jpg'
+import alieni from '../public/allgames-webp/ALIENI.webp'
+import braccio from '../public/allgames-webp/BRACCIO DI FERRO.webp'
+import dragon from '../public/allgames-webp/DRAGON.webp'
+import eden from '../public/allgames-webp/EDEN.webp'
+import golden from '../public/allgames-webp/GOLDEN FRUIT.webp'
+import barone from '../public/allgames-webp/IL BARONE ROSSO.webp'
+import cuoco from '../public/allgames-webp/IL CUOCO.webp'
+import giullare from '../public/allgames-webp/IL GIULLARE.webp'
+import grillo from '../public/allgames-webp/IL GRILLO.webp'
+import julio from '../public/allgames-webp/JULIO.webp'
+import jungle from '../public/allgames-webp/JUNGLE.webp'
+import scatola from '../public/allgames-webp/LA SCATOLA MAGICA.webp'
+import magic from '../public/allgames-webp/MAGIC DIAMOND 2.webp'
+import mohamed from '../public/allgames-webp/MOHAMED.webp'
+import nautilus from '../public/allgames-webp/NAUTILUS.webp'
+import reggae from '../public/allgames-webp/REGGAE FROG.webp'
+import scacco from '../public/allgames-webp/SCACCO MATTO.webp'
+import sonny from '../public/allgames-webp/SONNY BONO.webp'
+import striptease from '../public/allgames-webp/STRIPTEASE.webp'
+import time from '../public/allgames-webp/THE TIME.webp'
+import torero from '../public/allgames-webp/TORERO.webp'
+import vampiro from '../public/allgames-webp/VAMPIRO.webp'
+import zombie from '../public/allgames-webp/ZOMBIE.webp'
+import pirates from '../public/allgames-webp/DARK PIRATES.webp'
+import fortune from '../public/allgames-webp/FORTUNE.webp'
+import family from '../public/allgames-webp/THE WEIRD FAMILY.webp'
+import elfi from '../public/allgames-webp/ELFI.webp'
+import cowboy from '../public/allgames-webp/COWBOY REVENGE.webp'
+import struzzo from '../public/allgames-webp/LO STRUZZO.webp'
+import lucky8 from '../public/allgames-webp/LUCKY8.webp'
+import pablito from '../public/allgames-webp/PABLITO.webp'
+import pepita from '../public/allgames-webp/PEPITA D\'ORO.webp'
+import cherry from '../public/allgames-webp/CHERRY.webp'
+import midnightsaloon from '../public/allgames-webp/THE MIDNIGHT SALOON.webp'
+import shark from '../public/allgames-webp/SHARK.webp'
+import chef from '../public/allgames-webp/LE CHEF.webp'
+import dolphins from '../public/allgames-webp/DOLPHINS.webp'
+import excalibur from '../public/allgames-webp/EXCALIBUR.webp'
+import hot_pepper from '../public/allgames-webp/HOT PEPPER.webp'
+import golden_slot from '../public/allgames-webp/GOLDEN SLOT.webp'
+import minotaurus from '../public/allgames-webp/MINOTAURUS.webp'
+import crazyCircus from '../public/allgames-webp/CRAZY CIRCUS.webp'
+import mexican from '../public/allgames-webp/MEXICAN.webp'
+import bookOfMagic from '../public/allgames-webp/BOOK OF MAGIC.webp'
+import piggyGold from '../public/allgames-webp/PIGGY GOLD.webp'
+import luxury from '../public/allgames-webp/LUXURY.webp'
 
 export const games = [
   {
@@ -171,26 +190,141 @@ export const games = [
   },
   {
     id: 24,
-    slug: "billionaire",
-    title: "Billionaire",
-    image: billionaire,
-  },
-  {
-    id: 25,
     slug: "dark-pirates",
     title: "Dark Pirates",
     image: pirates,
   },
   {
-    id: 26,
+    id: 25,
     slug: "fortune",
     title: "Fortune",
     image: fortune,
   },
   {
-    id: 27,
+    id: 26,
     slug: "the-weird-family",
     title: "The Weird Family",
     image: family,
-  }
+  },
+  {
+    id: 27,
+    slug: "elfi",
+    title: "Elfi",
+    image: elfi,
+  },
+  {
+    id: 28,
+    slug: "cowboy-revenge",
+    title: "Cowboy Revenge",
+    image: cowboy,
+  },
+  {
+    id: 29,
+    slug: "lo-struzzo",
+    title: "Lo Struzzo",
+    image: struzzo,
+  },
+  {
+    id: 30,
+    slug: "lucky-8",
+    title: "Lucky 8",
+    image: lucky8,
+  },
+  {
+    id: 31,
+    slug: "pablito",
+    title: "Pablito",
+    image: pablito,
+  },
+  {
+    id: 32,
+    slug: "pepita-doro",
+    title: "Pepita d'Oro",
+    image: pepita,
+  },
+  {
+    id: 33,
+    slug: "cherry",
+    title: "Cherry",
+    image: cherry,
+  },
+  {
+    id: 34,
+    slug: "the-midnight-saloon",
+    title: "The Midnight Saloon",
+    image: midnightsaloon,
+  },
+  {
+    id: 35,
+    slug: "shark",
+    title: "Shark",
+    image: shark,
+  },
+  {
+    id: 36,
+    slug: "le-chef",
+    title: "Le Chef",
+    image: chef,
+  },
+  {
+    id: 37,
+    slug: "dolphins",
+    title: "Dolphins",
+    image: dolphins,
+  },
+  {
+    id: 38,
+    slug: "excalibur",
+    title: "Excalibur",
+    image: excalibur,
+  },
+  {
+    id: 39,
+    slug: "hot-pepper",
+    title: "Hot Pepper",
+    image: hot_pepper,
+  },
+  {
+    id: 40,
+    slug: "golden-slot",
+    title: "Golden Slot",
+    image: golden_slot,
+  },
+  {
+    id: 41,
+    slug: "minotaurus",
+    title: "Minotaurus",
+    image: minotaurus,
+  },
+  {
+    id: 42,
+    slug: "crazy-circus",
+    title: "Crazy Circus",
+    image: crazyCircus,
+  },
+  {
+    id: 43,
+    slug: "mexican",
+    title: "Mexican",
+    image: mexican,
+  },
+  {
+    id: 44,
+    slug: "book-of-magic",
+    title: "Book of Magic",
+    image: bookOfMagic,
+  },
+  {
+    id: 45,
+    slug: "piggy-gold",
+    title: "Piggy Gold",
+    image: piggyGold,
+  },
+  {
+    id: 46,
+    slug: "luxury",
+    title: "Luxury",
+    image: luxury,
+  },
+  { id: 47, slug: "dolphins", title: "Dolphins", image: dolphins },
 ]

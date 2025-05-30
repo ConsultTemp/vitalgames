@@ -23,7 +23,6 @@ interface OptimizedVideoProps {
   containerClassName?: string
   width?: string | number
   height?: string | number
-  objectFit?: "cover" | "contain" | "fill" | "scale-down" | "none"
   objectPosition?: string
 
   // Responsive
@@ -77,7 +76,6 @@ export default function OptimizedVideo({
   containerClassName,
   width,
   height,
-  objectFit = "cover",
   objectPosition = "center center",
   aspectRatio,
   minHeight,
@@ -248,7 +246,6 @@ export default function OptimizedVideo({
 
   // Video styles
   const videoStyles = {
-    objectFit,
     objectPosition,
   }
 

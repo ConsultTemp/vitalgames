@@ -271,7 +271,7 @@ import time from '../public/allgames-webp/THE TIME.webp'
 import torero from '../public/allgames-webp/TORERO.webp'
 import vampiro from '../public/allgames-webp/VAMPIRO.webp'
 import zombie from '../public/allgames-webp/ZOMBIE.webp'
-import billionaire from '../public/allgames-webp/LUXURY.webp'
+import luxury from '../public/allgames-webp/LUXURY.webp'
 import pirates from '../public/allgames-webp/DARK PIRATES.webp'
 import mexican from '../public/allgames-webp/MEXICAN.webp'
 import family from '../public/allgames-webp/THE WEIRD FAMILY.webp'
@@ -316,7 +316,7 @@ import time_mobile_hero from '../public/allgames-mobile-hero/TIME_mobile.webp'
 import torero_mobile_hero from '../public/allgames-mobile-hero/TORERO_mobile.webp'
 import vampiro_mobile_hero from '../public/allgames-mobile-hero/VAMPIRO_mobile.webp'
 import zombie_mobile_hero from '../public/allgames-mobile-hero/ZOMBIE_mobile.webp'
-import billionaire_mobile_hero from '../public/allgames-mobile-hero/LUXURY_mobile.webp'
+import luxury_mobile_hero from '../public/allgames-mobile-hero/LUXURY_mobile.webp'
 import pirates_mobile_hero from '../public/allgames-mobile-hero/DARK PIRATES_mobile.webp'
 import mexican_mobile_hero from '../public/allgames-mobile-hero/MEXICAN_mobile.webp'
 import family_mobile_hero from '../public/allgames-mobile-hero/THE WEIRD FAMILY_mobile.webp'
@@ -408,16 +408,16 @@ export const games = [
     
   },
   {
-    name: 'Billionaire',
+    name: 'Luxury',
     subtitle: 'Vivi il sogno di una vita da miliardario',
-    href: 'billionaire',
-    slug: 'billionaire',
+    href: 'luxury',
+    slug: 'luxury',
     coverImage: BILLIONAIRE,
-    mainImage: billionaire,
+    mainImage: luxury,
     images: [BILLIONAIRE_PHOTO1, BILLIONAIRE_PHOTO2, BILLIONAIRE_PHOTO3, BILLIONAIRE_PHOTO4],
     description: 'Vivi la vita da miliardario in questo gioco di fortuna',
     featured: ['fortune', 'golden-fruit', 'pepita-doro', 'lucky-8'],
-    mobileBg: billionaire_mobile_hero
+    mobileBg: luxury_mobile_hero
     
   },
   {
@@ -503,7 +503,7 @@ export const games = [
     mainImage: fortune,
     images: [FORTUNE_PHOTO1, FORTUNE_PHOTO2, FORTUNE_PHOTO3, FORTUNE_PHOTO4],
     description: 'Metti alla prova la tua fortuna in questo gioco emozionante',
-    featured: ['billionaire', 'golden-fruit', 'pepita-doro', 'lucky-8'],
+    featured: ['luxury', 'golden-fruit', 'pepita-doro', 'lucky-8'],
     mobileBg: fortune_mobile_hero
   },
   {
@@ -515,7 +515,7 @@ export const games = [
     mainImage: golden,
     images: [GOLDEN_FRUIT_PHOTO1, GOLDEN_FRUIT_PHOTO2, GOLDEN_FRUIT_PHOTO3, GOLDEN_FRUIT_PHOTO4],
     description: 'Raccogli i frutti d\'oro in questo gioco colorato',
-    featured: ['fortune', 'billionaire', 'pepita-doro', 'lucky-8'],
+    featured: ['fortune', 'luxury', 'pepita-doro', 'lucky-8'],
     mobileBg: golden_mobile_hero
   },
   {
@@ -623,7 +623,7 @@ export const games = [
     coverImage: LUCKY_8,
     images: [LUCKY_8_PHOTO1, LUCKY_8_PHOTO2, LUCKY_8_PHOTO3, LUCKY_8_PHOTO4],
     description: 'Il numero della fortuna ti aspetta in questo gioco',
-    featured: ['fortune', 'billionaire', 'golden-fruit', 'pepita-doro'],
+    featured: ['fortune', 'luxury', 'golden-fruit', 'pepita-doro'],
     mobileBg: lucky8_mobile_hero
   },
   {
@@ -683,7 +683,7 @@ export const games = [
     coverImage: PEPITA_DORO,
     images: [PEPITA_DORO_PHOTO1, PEPITA_DORO_PHOTO2, PEPITA_DORO_PHOTO3, PEPITA_DORO_PHOTO4],
     description: 'Cerca la pepita d\'oro in questa avventura western',
-    featured: ['cowboy-revenge-2', 'fortune', 'billionaire', 'golden-fruit'],
+    featured: ['cowboy-revenge-2', 'fortune', 'luxury', 'golden-fruit'],
     mobileBg: pepita_mobile_hero
   },
   {

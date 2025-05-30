@@ -293,13 +293,6 @@ export default async function MultigamePage({ params }: { params: Params }) {
           <section className="py-8 md:py-12  relative" aria-labelledby="games-heading">
             {/* Floating Images Overlay */}
             <div className="absolute inset-0 overflow-visible z-10 overflow-hidden pointer-events-none">
-              {/* Sinistra */}
-              <div className="absolute top-[-3%] left-[10px] w-40 md:w-64 h-40 md:h-64 animate-float-slow rotate-6">
-                <FloatingImage src={sevens || "/placeholder.svg"} alt="" className="w-full h-full" />
-              </div>
-              <div className="absolute bottom-[18%] left-[-40px] w-60 md:w-72 h-40 md:h-64 lg:w-96 lg:h-80 animate-float-slow-reverse rotate-[-8deg] opacity-90">
-                <FloatingImage src={bar || "/placeholder.svg"} alt="" className="w-full h-full" />
-              </div>
               <div className="absolute top-[30%] left-[-32px] w-32 md:w-48 h-32 md:h-48 animate-float-slow rotate-12 opacity-80">
                 <FloatingImage src={cherry || "/placeholder.svg"} alt="" className="w-full h-full" />
               </div>

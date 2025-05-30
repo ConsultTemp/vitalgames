@@ -4,23 +4,26 @@ import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
 
 // Importa direttamente i loghi
-import sisalLogo from "../../public/partners/Sisal Logo 1.svg"
-import lottomaticaLogo from "../../public/partners/Lottomatica_Logo 2.svg"
-import bet365Logo from "../../public/partners/Bet 365 logo 1.svg"
-import goldBetLogo from "../../public/partners/Goldbet Logo 1.svg"
-import admLogo from "../../public/partners/ADM Logo_white 1.svg"
-import eurobetLogo from "../../public/partners/Eurobet-logo-light 1.svg"
-import admiralLogo from "../../public/partners/Admiral Logo 1.svg"
-import gamenetLogo from "../../public/partners/Gamenet logo 1.svg"
-import flutterLogo from "../../public/partners/Flutter logo 3.svg"
-import casinoManiaLogo from "../../public/partners/CasinoMania Logo 1.svg"
-import nLogo from "../../public/partners/Novamatic logo_white 1.svg"
-import bmmTestlabsLogo from "../../public/partners/Bmm Testlabs_white 1.svg"
-import titogamingLogo from "../../public/partners/Logo Trtgraphic 1.svg"
-import isoLogo from "../../public/partners/iso-31 2.svg"
+import sisalLogo from "../../public/partners/Sisal.webp"
+import lottomaticaLogo from "../../public/partners/Lottomatica.webp"
+import bet365Logo from "../../public/partners/Bet 365.webp"
+import goldBetLogo from "../../public/partners/Goldbet.webp"
+import admLogo from "../../public/partners/ADM.webp"
+import eurobetLogo from "../../public/partners/Eurobet.webp"
+import admiralLogo from "../../public/partners/Admiral.webp"
+import gamenetLogo from "../../public/partners/Gamenet.webp"
+import flutterLogo from "../../public/partners/Flutter.webp"
+import nLogo from "../../public/partners/Novamatic.webp"
+import bmmTestlabsLogo from "../../public/partners/Bmm Testlabs.webp"
+import titogamingLogo from "../../public/partners/Trtgraphic.webp"
+import isoLogo from "../../public/partners/ISO9001.webp"
+import cirsaLogo from "../../public/partners/Cirsa.webp"
+import betflagLogo from "../../public/partners/Betflag.webp"
+import setLogo from "../../public/partners/Set.webp"
 
 // Dati dei partner con i loghi importati
 const partners = [
+  { id: 16, name: "Set", logo: setLogo },
   { id: 1, name: "Sisal", logo: sisalLogo },
   { id: 2, name: "Lottomatica", logo: lottomaticaLogo },
   { id: 3, name: "Bet365", logo: bet365Logo },
@@ -30,11 +33,12 @@ const partners = [
   { id: 7, name: "Admiral", logo: admiralLogo },
   { id: 8, name: "Gamenet", logo: gamenetLogo },
   { id: 9, name: "Flutter", logo: flutterLogo },
-  { id: 10, name: "Casino Mania", logo: casinoManiaLogo },
-  { id: 11, name: "N", logo: nLogo },
-  { id: 12, name: "BMM Testlabs", logo: bmmTestlabsLogo },
-  { id: 13, name: "Titogaming", logo: titogamingLogo },
-  { id: 14, name: "ISO", logo: isoLogo },
+  { id: 10, name: "Novamatic", logo: nLogo },
+  { id: 11, name: "BMM Testlabs", logo: bmmTestlabsLogo },
+  { id: 12, name: "Titogaming", logo: titogamingLogo },
+  { id: 13, name: "ISO 9001", logo: isoLogo },
+  { id: 14, name: "Cirsa", logo: cirsaLogo },
+  { id: 15, name: "Betflag", logo: betflagLogo }
 ]
 
 export default function Partners() {
@@ -59,7 +63,7 @@ export default function Partners() {
                     <Image
                       src={partner.logo || "/placeholder.svg"}
                       alt={partner.name}
-                      fill
+                      
                       className="object-contain"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />

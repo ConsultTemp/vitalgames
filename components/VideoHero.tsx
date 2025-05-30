@@ -6,11 +6,10 @@ interface VideoHeroProps {
   title: string
   subtitle: string
   videoUrl: string
-  objectFit?: "cover" | "contain" | "fill" | "scale-down" | "none"
   objectPosition?: string
 }
 
-const VideoHero: React.FC<VideoHeroProps> = ({ title, subtitle, videoUrl, objectFit, objectPosition }) => {
+const VideoHero: React.FC<VideoHeroProps> = ({ title, subtitle, videoUrl, objectPosition }) => {
   return (
     <div className="relative w-full">
       <div className="relative min-h-[44vh] w-full">
@@ -18,7 +17,6 @@ const VideoHero: React.FC<VideoHeroProps> = ({ title, subtitle, videoUrl, object
           src={videoUrl}
           containerClassName="absolute inset-0"
           className="w-full h-full object-cover"
-          objectFit={objectFit}
           objectPosition={objectPosition}
           autoPlay={true}
           loop={true}

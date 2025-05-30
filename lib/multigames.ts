@@ -38,11 +38,11 @@ export const multigames = [
             "https://example.com/video6.mp4"
         ],
         games: [
-            games.find(g => g.slug === 'fortune')!,
-            games.find(g => g.slug === 'billionaire')!,
-            games.find(g => g.slug === 'golden-fruit')!,
+            games.find(g => g.slug === 'book-of-magic')!,
+            games.find(g => g.slug === 'nautilus')!,
             games.find(g => g.slug === 'pepita-doro')!,
-            games.find(g => g.slug === 'lucky-8')!
+            games.find(g => g.slug === 'jungle')!,
+            games.find(g => g.slug === 'golden-fruit')!
         ],
         recommended: ["diamante", "golden-club", "piggy-gold"]
     },
@@ -64,11 +64,11 @@ export const multigames = [
             "https://files.catbox.moe/duq7o3.mp4"
         ],
         games: [
+            games.find(g => g.slug === 'lo-struzzo')!,
+            games.find(g => g.slug === 'cowboy-revenge')!,
             games.find(g => g.slug === 'magic-diamond-2')!,
-            games.find(g => g.slug === 'le-chef')!,
-            games.find(g => g.slug === 'shark')!,
-            games.find(g => g.slug === 'cherry')!,
-            games.find(g => g.slug === 'midnight-saloon')!
+            games.find(g => g.slug === 'vampiro')!,
+            games.find(g => g.slug === 'reggae-frog')!
         ],
         recommended: ["casino-royale", "golden-club", "piggy-gold"]
     },
@@ -90,11 +90,11 @@ export const multigames = [
             "https://example.com/video6.mp4"
         ],
         games: [
-            games.find(g => g.slug === 'il-barone-rosso')!,
-            games.find(g => g.slug === 'dragon')!,
-            games.find(g => g.slug === 'alieni')!,
-            games.find(g => g.slug === 'nautilus')!,
-            games.find(g => g.slug === 'zombie')!
+            games.find(g => g.slug === 'pablito')!,
+            games.find(g => g.slug === 'hot-pepper')!,
+            games.find(g => g.slug === 'braccio-di-ferro')!,
+            games.find(g => g.slug === 'zombie')!,
+            games.find(g => g.slug === 'lucky-8')!
         ],
         recommended: ["casino-royale", "diamante", "piggy-gold"]
     },
@@ -116,11 +116,11 @@ export const multigames = [
             "https://example.com/video6.mp4"
         ],
         games: [
-            games.find(g => g.slug === 'il-cuoco')!,
-            games.find(g => g.slug === 'il-giullare')!,
-            games.find(g => g.slug === 'il-grillo')!,
-            games.find(g => g.slug === 'pablito')!,
-            games.find(g => g.slug === 'sonny-bono')!
+            games.find(g => g.slug === 'elfi')!,
+            games.find(g => g.slug === 'piggy-gold')!,
+            games.find(g => g.slug === 'mexican')!,
+            games.find(g => g.slug === 'striptease')!,
+            games.find(g => g.slug === 'dragon')!
         ],
         recommended: ["casino-royale", "diamante", "golden-club"]
     },
@@ -142,11 +142,11 @@ export const multigames = [
             "https://example.com/video6.mp4"
         ],
         games: [
-            games.find(g => g.slug === 'cowboy-revenge-2')!,
-            games.find(g => g.slug === 'mexican')!,
-            games.find(g => g.slug === 'julio')!,
-            games.find(g => g.slug === 'torero')!,
-            games.find(g => g.slug === 'dark-pirates')!
+            games.find(g => g.slug === 'striptease')!,
+            games.find(g => g.slug === 'alieni')!,
+            games.find(g => g.slug === 'il-giullare')!,
+            games.find(g => g.slug === 'scacco-matto')!,
+            games.find(g => g.slug === 'la-scatola-magica')!
         ],
         recommended: ["casino-royale", "diamante", "golden-club"]
     },
@@ -168,11 +168,11 @@ export const multigames = [
             "https://example.com/video6.mp4"
         ],
         games: [
-            games.find(g => g.slug === 'braccio-di-ferro')!,
-            games.find(g => g.slug === 'scacco-matto')!,
-            games.find(g => g.slug === 'lo-struzzo')!,
-            games.find(g => g.slug === 'reggae-frog')!,
-            games.find(g => g.slug === 'striptease')!
+            games.find(g => g.slug === 'the-time')!,
+            games.find(g => g.slug === 'il-barone-rosso')!,
+            games.find(g => g.slug === 'il-cuoco')!,
+            games.find(g => g.slug === 'mohamed')!,
+            games.find(g => g.slug === 'dragon')!
         ],
         recommended: ["casino-royale", "diamante", "golden-club"]
     },
@@ -193,13 +193,7 @@ export const multigames = [
             "https://example.com/video5.mp4",
             "https://example.com/video6.mp4"
         ],
-        games: [
-            games.find(g => g.slug === 'magic-diamond-2')!,
-            games.find(g => g.slug === 'le-chef')!,
-            games.find(g => g.slug === 'shark')!,
-            games.find(g => g.slug === 'cherry')!,
-            games.find(g => g.slug === 'midnight-saloon')!
-        ],
+        games: [],
         recommended: ["casino-royale", "diamante", "golden-club"]
     },
     {
@@ -220,11 +214,11 @@ export const multigames = [
             "https://example.com/video6.mp4"
         ],
         games: [
-            games.find(g => g.slug === 'magic-diamond-2')!,
-            games.find(g => g.slug === 'le-chef')!,
-            games.find(g => g.slug === 'shark')!,
-            games.find(g => g.slug === 'cherry')!,
-            games.find(g => g.slug === 'midnight-saloon')!
+            games.find(g => g.slug === 'circus')!,
+            games.find(g => g.slug === 'pepita-doro')!,
+            games.find(g => g.slug === 'fortune')!,
+            games.find(g => g.slug === 'dolphins')!,
+            games.find(g => g.slug === 'luxury')!,
         ],
         recommended: ["casino-royale", "diamante", "golden-club"]
     },
@@ -246,11 +240,9 @@ export const multigames = [
             "https://example.com/video6.mp4"
         ],
         games: [
-            games.find(g => g.slug === 'magic-diamond-2')!,
-            games.find(g => g.slug === 'le-chef')!,
-            games.find(g => g.slug === 'shark')!,
-            games.find(g => g.slug === 'cherry')!,
-            games.find(g => g.slug === 'midnight-saloon')!
+            games.find(g => g.slug === 'excalibur')!,
+            games.find(g => g.slug === 'minotaurus')!,
+            games.find(g => g.slug === 'dolphins')!,
         ],
         recommended: ["casino-royale", "diamante", "golden-club"]
     },
@@ -272,11 +264,11 @@ export const multigames = [
             "https://example.com/video6.mp4"
         ],
         games: [
-            games.find(g => g.slug === 'magic-diamond-2')!,
-            games.find(g => g.slug === 'le-chef')!,
-            games.find(g => g.slug === 'shark')!,
-            games.find(g => g.slug === 'cherry')!,
-            games.find(g => g.slug === 'midnight-saloon')!
+            games.find(g => g.slug === 'the-weird-family')!,
+            games.find(g => g.slug === 'dark-pirates')!,
+            games.find(g => g.slug === 'luxury')!,
+            games.find(g => g.slug === 'fortune')!,
+            games.find(g => g.slug === 'mexican')!
         ],
         recommended: ["casino-royale", "diamante", "golden-club"]
     },
@@ -298,9 +290,9 @@ export const multigames = [
             "https://example.com/video6.mp4"
         ],
         games: [
-            games.find(g => g.slug === 'magic-diamond-2')!,
-            games.find(g => g.slug === 'le-chef')!,
             games.find(g => g.slug === 'shark')!,
+            games.find(g => g.slug === 'le-chef')!,
+            games.find(g => g.slug === 'magic-diamond-2')!,
             games.find(g => g.slug === 'cherry')!,
             games.find(g => g.slug === 'midnight-saloon')!
         ],
@@ -322,13 +314,7 @@ export const multigames = [
             "https://example.com/video5.mp4",
             "https://example.com/video6.mp4"
         ],
-        games: [
-            games.find(g => g.slug === 'magic-diamond-2')!,
-            games.find(g => g.slug === 'le-chef')!,
-            games.find(g => g.slug === 'shark')!,
-            games.find(g => g.slug === 'cherry')!,
-            games.find(g => g.slug === 'midnight-saloon')!
-        ],
+        games: [],
         recommended: ["casino-royale", "diamante", "golden-club"]
     },
     {
@@ -348,11 +334,11 @@ export const multigames = [
             "https://example.com/video6.mp4"
         ],
         games: [
-            games.find(g => g.slug === 'magic-diamond-2')!,
-            games.find(g => g.slug === 'le-chef')!,
-            games.find(g => g.slug === 'shark')!,
-            games.find(g => g.slug === 'cherry')!,
-            games.find(g => g.slug === 'midnight-saloon')!
+            games.find(g => g.slug === 'eden')!,
+            games.find(g => g.slug === 'torero')!,
+            games.find(g => g.slug === 'sonny-bono')!,
+            games.find(g => g.slug === 'golden-slot')!,
+            games.find(g => g.slug === 'il-grillo')!
         ],
         recommended: ["casino-royale", "diamante", "golden-club"]
     },
@@ -373,11 +359,10 @@ export const multigames = [
             "https://example.com/video6.mp4"
         ],
         games: [
-            games.find(g => g.slug === 'magic-diamond-2')!,
-            games.find(g => g.slug === 'le-chef')!,
-            games.find(g => g.slug === 'shark')!,
-            games.find(g => g.slug === 'cherry')!,
-            games.find(g => g.slug === 'midnight-saloon')!
+            games.find(g => g.slug === 'pablito')!,
+            games.find(g => g.slug === 'il-grillo')!,
+            games.find(g => g.slug === 'julio')!,
+            games.find(g => g.slug === 'lucky-8')!
         ],
         recommended: ["casino-royale", "diamante", "golden-club"]
     }
