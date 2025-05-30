@@ -214,7 +214,7 @@ export const multigames = [
             "https://example.com/video6.mp4"
         ],
         games: [
-            games.find(g => g.slug === 'circus')!,
+            games.find(g => g.slug === 'crazy-circus')!,
             games.find(g => g.slug === 'pepita-doro')!,
             games.find(g => g.slug === 'fortune')!,
             games.find(g => g.slug === 'dolphins')!,
