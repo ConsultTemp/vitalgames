@@ -317,7 +317,7 @@
   },
   "allGames": {
     "hero": {
-      "title": "Nuestra Biblioteca de Juegos",
+      "title": "Nuestra colecciòn de juegos",
       "subtitle": "Experiencias de Juego Diversas",
       "description": "Explora nuestra extensa colección de juegos, desde las clásicas máquinas de frutas hasta las innovadoras video slots con características de bono inmersivas.",
       "discoverAll": "Descubre todos nuestros juegos"
@@ -346,9 +346,9 @@
     "loadMore": "Cargar Más Juegos",
     "recommended": {
       "badge": "Juegos Recomendados",
-      "title": "JUEGOS RECOMENDADOS",
+      "title": "Juegos recomendados",
       "viewAll": "Ver todo",
-      "otherMultigames": "Otros multigames recomendados"
+      "otherMultigames": ""
     },
     "youMightAlsoLike": "También te podría interesar"
   },
@@ -593,7 +593,7 @@
       "contactUs": "Contáctanos",
       "backToHome": "Volver al Inicio",
       "backToGames": "Volver a los Juegos",
-      "playNow": "Jugar Ahora",
+      "playNow": "Descubre mas",
       "downloadBrochure": "Descargar Folleto"
     },
     "loading": "Cargando...",
@@ -645,5 +645,6 @@
     "description": "Este contenido está destinado a un público adulto, por favor confirma que cumples con el requisito de edad legal para continuar.",
     "confirm": "Confirmo que tengo 18+ años",
     "decline": "No tengo 18 años"
-  }
+  },
+  "includedGamesIn": "Juegos incluidos en"
 }

@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { OptimizedLink as Link } from "@/components/optimized-link"
+import Link from "next/link"
 import SmoothReveal from "../smooth-reveal"
 import { games } from "../../lib/allgamesmap"
 import FloatingImage from "../bg-image-component";

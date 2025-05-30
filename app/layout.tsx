@@ -225,7 +225,7 @@ export default function RootLayout({
         <style dangerouslySetInnerHTML={{
           __html: `
             /* Critical CSS for immediate rendering */
-            body { margin: 0; font-family: Inter, system-ui, sans-serif; }
+            body { margin: 0; font-family: Inter, system-ui; }
             .hero-section { min-height: 100vh; background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%); }
             .loading-spinner { display: none; }
           `

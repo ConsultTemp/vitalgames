@@ -458,8 +458,8 @@ export default async function AboutUs(props: { params: Params }) {
               {/* Cards Grid */}
               <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-1.5 w-full">
                 {cards.map((card) => (
-                  <article key={card.id} className="aspect-[5/3]">
-                    <Card className="h-full w-full flex flex-col items-center justify-center text-center p-4 bg-white/5 backdrop-blur-sm border-0 text-white">
+                  <article key={card.id} className="">
+                    <Card className="h-full w-full flex flex-col items-center justify-center text-center p-4 bg-white/5 backdrop-blur-sm border-0 text-white py-4">
                       <div className="h-14 sm:h-16 mb-3">
                         <Image
                           src={card.icon || "/placeholder.svg"}

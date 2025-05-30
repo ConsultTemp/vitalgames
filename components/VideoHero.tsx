@@ -26,9 +26,10 @@ const VideoHero: React.FC<VideoHeroProps> = ({ title, subtitle, videoUrl, object
           playsInline={true}
           priority={true}
           overlay={true}
-          overlayColor="black"
-          overlayOpacity={30}
+          overlayOpacity={0}
           gradient={true}
+          overlayColor="transparent"
+          
           gradientDirection="to-t"
         />
 

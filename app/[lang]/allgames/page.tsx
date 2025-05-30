@@ -7,7 +7,7 @@ import Image from "next/image"
 import VideoHero from "@/components/VideoHero"
 import AllGamesList from "@/components/allgames/allgameslist"
 import { games } from "@/lib/allgamesmap"
-import { OptimizedLink as Link } from "@/components/optimized-link"
+import Link from "next/link"
 import casinoroyaleHover from "../../../public/multigames-cards/CASINO ROYALE_Converted.jpg"
 import diamanteHover from "../../../public/multigames-cards/DIAMANTE_Converted.jpg"
 import luckySlot from "../../../public/multigames-cards/lucky_slot.png"
@@ -249,7 +249,7 @@ export default async function AllGamesPage(props: { params: Params }) {
           <div className="px-4 md:px-8 lg:px-16 xl:px-24 relative z-10">
             <h2
               id="recommended-games-heading"
-              className="text-4xl md:text-5xl font-bold text-white mb-8 text-center dharma"
+              className="text-4xl md:text-5xl font-bold text-white mb-8 text-left dharma"
             >
               {dict.allGames.recommended.title || "Recommended Games"}
             </h2>

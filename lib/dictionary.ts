@@ -426,6 +426,7 @@ export interface Dictionary {
       }
     }
   }
+  includedGamesIn?: string;
 }
 
 // Dictionary loading functions

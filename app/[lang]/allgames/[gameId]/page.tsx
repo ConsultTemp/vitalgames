@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import Image from "next/image"
-import { OptimizedLink as Link } from "@/components/optimized-link"
+import Link from "next/link"
 import Script from "next/script"
 import type { Metadata } from "next"
 import { games } from "@/lib/allgamesmap"
@@ -272,7 +272,7 @@ export default async function GamePage(props: { params: Params }) {
       <main className="min-h-screen bg-black">
         {/* Hero Section */}
         <header className="relative w-full">
-          <div className="relative w-full h-[90vh]">
+          <div className="relative w-full h-[80vh]">
             {/* Mobile image */}
             <Image
               src={game.mobileBg || game.coverImage || game.mainImage}
@@ -290,9 +290,9 @@ export default async function GamePage(props: { params: Params }) {
               priority
             />
             <div className="absolute inset-0" />
-            <div className="absolute left-0 top-24 md:top-0 h-full w-full md:w-1/2 p-4 pt-8 md:p-12 flex flex-col items-center md:items-start justify-start md:justify-center text-center md:text-left">
+            <div className="absolute left-0 top-16 md:top-0 h-full w-full md:w-1/2 p-4 pt-8 md:p-12 flex flex-col items-center md:items-start justify-start md:justify-center text-center md:text-left">
               <h1 className="text-6xl sm:text-7xl md:text-9xl font-bold text-white dharma">{game.name}</h1>
-              <p className="text-md font-bold text-white mt-2 max-w-xl">
+              <p className="text-xs text-white mt-2 max-w-xl">
                 {dict.allGamesDescriptions[game.slug]}</p>
             </div> 
           </div>

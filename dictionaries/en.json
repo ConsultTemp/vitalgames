@@ -310,7 +310,7 @@
   },
   "allGames": {
     "hero": {
-      "title": "Our Game Library",
+      "title": "Our game library",
       "subtitle": "Diverse Gaming Experiences",
       "description": "Explore our extensive collection of games, from classic fruit machines to innovative video slots with immersive bonus features.",
       "discoverAll": "Discover all our games"
@@ -338,8 +338,8 @@
     "noGames": "No games found matching your criteria.",
     "loadMore": "Load More Games",
     "recommended": {
-      "badge": "Recommended Games",
-      "title": "RECOMMENDED GAMES",
+      "badge": "Recommended games",
+      "title": "Recommended games",
       "viewAll": "View all",
       "otherMultigames": "Other recommended multigames"
     },
@@ -586,7 +586,7 @@
       "contactUs": "Contact Us",
       "backToHome": "Back to Home",
       "backToGames": "Back to Games",
-      "playNow": "Play Now",
+      "playNow": "Discover more",
       "downloadBrochure": "Download Brochure"
     },
     "loading": "Loading...",
@@ -614,16 +614,16 @@
     "description": "Vitalgames has been a leader in the gaming industry since 1996, specializing in the production of slot machines, VLTs and multigame systems. Based in Milan, we serve customers throughout Europe with innovative and certified solutions.",
     "cards": {
       "iso": {
-        "description": "ISO 9001 certified quality management system ensuring excellence in every product."
+        "description": "ISO 9001 certified."
       },
       "experience": {
-        "description": "Over 25 years of experience in the gaming industry with continuous innovation."
+        "description": "Over 25 years of experience in the gaming industry."
       },
       "games": {
-        "description": "Hundreds of games developed and distributed across Europe with proven success."
+        "description": "Over 40 thousand titles in Italy."
       },
       "partners": {
-        "description": "Trusted partnerships with leading operators and distributors in the gaming sector."
+        "description": "Consolidated collaborations with the main operators and dealers in the sector"
       }
     },
     "philosophy": {
@@ -638,5 +638,6 @@
     "description": "This content is intended for adults. Please confirm you meet the legal age requirement to continue.",
     "confirm": "I confirm I am 18+ years old",
     "decline": "I am not 18 years old"
-  }
+  },
+  "includedGamesIn": "Included games in"
 }

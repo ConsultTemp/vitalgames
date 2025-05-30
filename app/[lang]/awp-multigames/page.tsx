@@ -3,7 +3,7 @@ import { getDictionary } from "@/lib/dictionary"
 import type { Locale } from "@/i18n-config"
 import { generateAdvancedSEOMetadata } from "@/lib/seo-config"
 import Image from "next/image"
-import { OptimizedLink as Link } from "@/components/optimized-link"
+import Link from "next/link"
 import SmoothReveal from "@/components/smooth-reveal"
 import VideoHero from "@/components/VideoHero"
 import FloatingImage from "@/components/bg-image-component"
@@ -202,14 +202,6 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
                 className="absolute inset-0 z-1 overflow-hidden pointer-events-none overflow-visible"
                 aria-hidden="true"
               >
-                {/* Floating decorative elements */}
-                <div className="absolute top-[-100px] w-96 md:w-96 h-96 md:h-96 left-[-150px] animate-float-slow rotate-10 overflow-visible">
-                  <FloatingImage
-                    src={bar || "/placeholder.svg"}
-                    alt=""
-                    className="w-[160px] md:w-[384px] h-[160px] md:h-[384px]"
-                  />
-                </div>
                 <div className="absolute bottom-0 w-40 md:w-96 h-40 md:h-96 right-[-50px] md:right-0 animate-float-slow rotate-10 overflow-visible">
                   <FloatingImage
                     src={sevens || "/placeholder.svg"}
@@ -292,7 +284,7 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
                           />
                         </Link>
                       </SmoothReveal>
-                    ))}
+                    ))} 
                   </div>
                 </div>
               </div>
