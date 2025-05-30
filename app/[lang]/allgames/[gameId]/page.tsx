@@ -272,13 +272,14 @@ export default async function GamePage(props: { params: Params }) {
       <main className="min-h-screen bg-black">
         {/* Hero Section */}
         <header className="relative w-full">
-          <div className="relative w-full h-[80vh]">
+          <div className="relative w-full">
             {/* Mobile image */}
             <Image
               src={game.mobileBg || game.coverImage || game.mainImage}
               alt={`${game.name} - Slot machine innovativa Vitalgames versione mobile`}
-              fill
-              className="object-cover block md:hidden"
+              width={600}
+              height={800}
+              className="object-contain w-full h-auto block md:hidden"
               priority
             />
             {/* Desktop image */}
