@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     // Primary keywords
     "slot machine",
     "VLT",
-    "AWP", 
+    "AWP",
     "multigame",
     "produttore slot machine",
     "slot machine Italia",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "gaming equipment",
     // Location-specific
     "slot machine Milano",
-    "produttore slot machine Italia", 
+    "produttore slot machine Italia",
     "VLT Italia",
     "slot machine Lombardia",
     // Brand-specific
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     canonical: "https://vitalgames.com",
     languages: {
       "it-IT": "https://vitalgames.com/it",
-      "en-US": "https://vitalgames.com/en", 
+      "en-US": "https://vitalgames.com/en",
       "es-ES": "https://vitalgames.com/es",
       "x-default": "https://vitalgames.com/it",
     },
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
         type: "image/jpeg",
       },
       {
-        url: "https://vitalgames.com/images/og-vitalgames-logo.png", 
+        url: "https://vitalgames.com/images/og-vitalgames-logo.png",
         width: 800,
         height: 600,
         alt: "Vitalgames Logo - Produttore Slot Machine",
@@ -101,7 +101,7 @@ export const metadata: Metadata = {
       {
         url: "https://vitalgames.com/images/og-vitalgames-products.jpg",
         width: 1200,
-        height: 630, 
+        height: 630,
         alt: "Slot Machine VLT AWP Multigame Vitalgames",
         type: "image/jpeg",
       },
@@ -130,7 +130,7 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "vitalgames-google-verification-code",
-    yandex: "vitalgames-yandex-verification-code", 
+    yandex: "vitalgames-yandex-verification-code",
     yahoo: "vitalgames-yahoo-verification-code",
     other: {
       "msvalidate.01": "vitalgames-bing-verification-code",
@@ -170,7 +170,7 @@ export const metadata: Metadata = {
         media: "(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)",
       },
       {
-        url: "/apple-startup-750x1334.png", 
+        url: "/apple-startup-750x1334.png",
         media: "(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)",
       },
     ],
@@ -210,7 +210,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
         <link rel="dns-prefetch" href="//connect.facebook.net" />
         <link rel="dns-prefetch" href="//platform.twitter.com" />
-        
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
@@ -220,7 +220,7 @@ export default function RootLayout({
         <link rel="preload" as="image" href="/images/vitalgames-hero.jpg" />
         <link rel="preload" as="image" href="/images/vitalgames-logo.svg" />
         <link rel="preload" as="font" href="/fonts/inter-var.woff2" type="font/woff2" crossOrigin="anonymous" />
-        
+
         {/* Critical CSS for above-the-fold content */}
         <style dangerouslySetInnerHTML={{
           __html: `
@@ -231,15 +231,15 @@ export default function RootLayout({
           `
         }} />
 
-       
 
-        
+
+
 
         {/* Critical Resource Hints */}
         <link rel="prefetch" href="/images/slot-machines-gallery.jpg" />
         <link rel="prefetch" href="/images/vlt-cabinets.jpg" />
         <link rel="prefetch" href="/images/multigames-systems.jpg" />
-        
+
         {/* Canonical and Hreflang will be handled by individual pages */}
       </head>
       <body className={`${inter.className} antialiased`} suppressHydrationWarning>
@@ -254,17 +254,20 @@ export default function RootLayout({
         </noscript>
 
         {/* Skip to main content for accessibility */}
-        <a 
-          href="#main-content" 
+        <a
+          href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50"
         >
           Vai al contenuto principale
         </a>
 
-        <IntroVideo />
+        <div className="intro-video-wrapper">
+          <IntroVideo />
+        </div>
         <main id="main-content">
           {children}
         </main>
+
       </body>
     </html>
   )

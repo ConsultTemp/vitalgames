@@ -289,7 +289,6 @@ export default async function AboutUs(props: { params: Params }) {
             title="CABINET VLT"
             subtitle={dictionary.vlt.hero.description}
             videoUrl="https://files.catbox.moe/5ov0r3.webm"
-            objectFit="cover"
             objectPosition="center top"
           />
         </header>

@@ -11,6 +11,7 @@ import Footer from "@/components/footer"
 import { getDictionary } from "@/lib/dictionary"
 import { LanguageProvider } from "@/components/language-provider"
 import { PerformanceProvider } from "@/components/performance-provider"
+import CookieBanner from "@/components/cookie-banner"
 
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
@@ -288,8 +289,11 @@ export default async function LocaleLayout({
             <LanguageProvider>
               <div className="w-screen overflow-x-hidden">
                 <Header />
-                <main id="main-content">{children}</main>
+                <main id="main-content">
+                  {children}
+                  </main>
                 <Footer />
+                <CookieBanner lang={lang} />
               </div>
             </LanguageProvider>
           </PerformanceProvider>

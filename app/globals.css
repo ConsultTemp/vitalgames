@@ -405,3 +405,18 @@ clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 96%);
     animation: infinite-scroll 50s linear infinite;
   }
 }
+
+.intro-video-wrapper {
+  position: fixed; /* o absolute se preferisci */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  pointer-events: none; /* se vuoi che clicchi passino sotto */
+}
+
+#main-content {
+  position: relative;
+  z-index: 1;
+}

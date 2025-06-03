@@ -24,6 +24,97 @@ export interface Dictionary {
     ctaButton: string
     bottomText: string
   }
+  privacy: {
+    title: string
+    sections: {
+      introduction: {
+        title: string
+        content: string
+      },
+      dataCollection: {
+        title: string
+        dataLocation: {
+          title: string
+          content: string
+        }
+        registrationData: {
+          title: string
+          content: string
+        }
+        contactForm: {
+          title: string
+          content: string
+        }
+        googleAnalytics: {
+          title: string
+          content: string
+        }
+        useCases: {
+          title: string
+          content: string
+          list: string[]
+        }
+      },
+      embeddedContent: {
+        title: string
+        intro: string
+        description: string
+        facebook: {
+          title: string
+          content: string
+        }
+        twitter: {
+          title: string
+          content: string
+        }
+      },
+      cookies: {
+        title: string
+        content: string
+        essential: {
+          title: string
+          phpsessid: string
+        }
+      },
+      dataAccess: {
+        title: string
+        intro: string
+        registered: string
+        list: string[]
+      },
+      dataRetention: {
+        title: string
+        support: string
+        registration: string
+      },
+      security: {
+        title: string
+        ssl: string
+        breach: string
+      },
+      dataRights: {
+        title: string
+        general: {
+          title: string
+          content: string
+        }
+        gdpr: {
+          title: string
+          content: string
+        }
+      },
+      thirdPartyWebsites: {
+        title: string
+        content: string
+        disclaimer: string
+      },
+      legalDisclosure: {
+        title: string
+        content: string
+        compliance: string
+      }
+    }
+  },
   home: {
     ageRestriction: {
       title: string

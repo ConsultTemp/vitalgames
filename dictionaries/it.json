@@ -654,5 +654,106 @@
     "confirm": "Confermo di avere 18+ anni",
     "decline": "Non ho 18 anni"
   },
-  "includedGamesIn": "Giochi inclusi in"
+  "includedGamesIn": "Giochi inclusi in",
+  "privacy": {
+  "title": "Informativa sulla Privacy",
+  "sections": {
+    "introduction": {
+      "title": "1. Introduzione",
+      "content": "Vital Games apprezza la vostra fiducia. Vi invitiamo a leggere la presente Informativa sulla privacy, fornendo il consenso a entrambi i documenti per avere l'autorizzazione a utilizzare i nostri servizi."
+    },
+    "dataCollection": {
+      "title": "2. Dati raccolti",
+      "dataLocation": {
+        "title": "Luogo di conservazione dei dati",
+        "content": "Siamo una società con sede in Italia e gestiamo il server web ospitato in Europa."
+      },
+      "registrationData": {
+        "title": "Dati di registrazione",
+        "content": "Se vi registrate sul nostro sito web, memorizziamo il nome utente scelto e l'indirizzo e-mail e qualsiasi altra informazione personale aggiunta al vostro profilo utente. L'utente può vedere, modificare o cancellare i propri dati personali in qualsiasi momento (ad eccezione della modifica del nome utente). Anche gli amministratori del sito web possono vedere e modificare queste informazioni."
+      },
+      "contactForm": {
+        "title": "Contact Form",
+        "content": "Le informazioni inviate tramite il modulo di contatto sul nostro sito vengono inviate alla nostra e-mail aziendale. Questi dati vengono conservati solo per scopi di assistenza clienti e non vengono mai utilizzati per scopi di marketing o condivisi con terze parti."
+      },
+      "googleAnalytics": {
+        "title": "Google Analytics",
+        "content": "Sul nostro sito utilizziamo Google Analytics per la segnalazione anonima dell'utilizzo del sito. Non vengono quindi memorizzati dati personalizzati. Se desiderate rinunciare al monitoraggio del vostro comportamento sul nostro sito da parte di Google Analytics, utilizzate questo link: Google Analytics Opt-out."
+      },
+      "useCases": {
+        "title": "Casi di utilizzo dei dati personali",
+        "content": "Utilizziamo le vostre informazioni personali nei seguenti casi:",
+        "list": [
+          "Verifica/identificazione dell'utente durante l'utilizzo del sito web",
+          "Fornitura di assistenza tecnica",
+          "Invio di aggiornamenti ai nostri utenti con informazioni importanti per informarli su novità/cambiamenti",
+          "Controllo dell'attività dei conti per prevenire transazioni fraudolente e garantire la sicurezza delle informazioni personali dei clienti",
+          "Personalizzare il sito web per rendere la vostra esperienza più personale e coinvolgente",
+          "Garantire le prestazioni complessive e il corretto svolgimento delle funzioni amministrative"
+        ]
+      }
+    },
+    "embeddedContent": {
+      "title": "3. Contenuto incorporato",
+      "intro": "Le pagine di questo sito possono includere contenuti incorporati, come ad esempio i video di YouTube. I contenuti incorporati di altri siti web si comportano esattamente come se l'utente visitasse l'altro sito web.",
+      "description": "Questi siti web possono raccogliere dati sull'utente, utilizzare cookie, incorporare un ulteriore tracciamento di terze parti e monitorare l'interazione dell'utente con il contenuto incorporato, compreso il tracciamento dell'interazione dell'utente con il contenuto incorporato se dispone di un account e ha effettuato l'accesso al sito web in questione. Di seguito è riportato un elenco dei servizi che utilizziamo:",
+      "facebook": {
+        "title": "Facebook",
+        "content": "Il plugin della pagina Facebook viene utilizzato per visualizzare la timeline di Facebook sul nostro sito. Facebook ha le proprie politiche sui cookie e sulla privacy sulle quali non abbiamo alcun controllo. Non vengono installati cookie da Facebook e il vostro IP non viene inviato a un server di Facebook finché non acconsentite. Consulta la loro politica sulla privacy qui: Facebook Privacy Policy."
+      },
+      "twitter": {
+        "title": "Twitter",
+        "content": "Utilizziamo l'API di Twitter per visualizzare la timeline dei nostri tweet sul nostro sito. Twitter ha le proprie politiche sui cookie e sulla privacy sulle quali non abbiamo alcun controllo. Il vostro IP non viene inviato a un server di Twitter fino a quando non acconsentite a farlo: Twitter Privacy Policy."
+      }
+    },
+    "cookies": {
+      "title": "4. Cookies",
+      "content": "Questo sito utilizza i cookie, piccoli file di testo che vengono depositati sul computer dell'utente per aiutarlo a migliorare la sua esperienza. In generale, i cookie vengono utilizzati per conservare le preferenze dell'utente, memorizzare le informazioni relative ad esempio ai carrelli della spesa e fornire dati di tracciamento anonimizzati ad applicazioni di terze parti come Google Analytics. In generale, i cookie servono a migliorare l'esperienza di navigazione dell'utente. Tuttavia, è possibile che l'utente preferisca disabilitare i cookie su questo sito e su altri. Il modo più efficace per farlo è disabilitare i cookie nel proprio browser. Si consiglia di consultare la sezione di aiuto del proprio browser.",
+      "essential": {
+        "title": "Cookies Fondamentali",
+        "phpsessid": "PHPSESSID: Per identificare la vostra sessione unica sul sito web."
+      }
+    },
+    "dataAccess": {
+      "title": "5. Chi ha accesso ai vostri dati",
+      "intro": "Se l'utente non è un cliente registrato del nostro sito, non è possibile conservare o visualizzare i suoi dati personali.",
+      "registered": "Se siete un cliente con un account registrato, i vostri dati personali possono essere consultati da:",
+      "list": [
+        "I nostri amministratori di sistema",
+        "I nostri fornitori quando (per fornire assistenza) hanno bisogno di ottenere le informazioni sugli account e sugli accessi dei clienti"
+      ]
+    },
+    "dataRetention": {
+      "title": "6. Per quanto tempo conserviamo i vostri dati",
+      "support": "Quando inviate un ticket di assistenza o un commento, i relativi metadati vengono conservati fino a quando (se) ci dite di rimuoverli. Utilizziamo questi dati per potervi riconoscere e approvare automaticamente i vostri commenti invece di trattenerli per la moderazione.",
+      "registration": "Se vi registrate sul nostro sito web, memorizziamo anche le informazioni personali che ci fornite nel vostro profilo utente. L'utente può vedere, modificare o cancellare le proprie informazioni personali in qualsiasi momento (ad eccezione della modifica del nome utente). Anche gli amministratori del sito web possono vedere e modificare tali informazioni."
+    },
+    "security": {
+      "title": "7. Misure di sicurezza",
+      "ssl": "Utilizziamo il protocollo SSL/HTTPS in tutto il nostro sito. Questo protocollo cripta le comunicazioni dei nostri utenti con i server, in modo che le informazioni di identificazione personale non vengano catturate/dirottate da terzi senza autorizzazione.",
+      "breach": "In caso di violazione dei dati, gli amministratori di sistema prenderanno immediatamente tutte le misure necessarie per garantire l'integrità del sistema, contatteranno gli utenti interessati e tenteranno di reimpostare le password, se necessario."
+    },
+    "dataRights": {
+      "title": "8. I vostri diritti sui dati",
+      "general": {
+        "title": "Diritti generali",
+        "content": "Se avete un account registrato su questo sito web o avete lasciato commenti, potete richiedere un file esportato dei dati personali che conserviamo, compresi eventuali dati aggiuntivi che ci avete fornito. Potete anche richiedere la cancellazione dei dati personali che abbiamo memorizzato. Ciò non include i dati che siamo obbligati a conservare per scopi amministrativi, legali o di sicurezza. In breve, non possiamo cancellare i dati che sono fondamentali per essere un cliente attivo (ad esempio, le informazioni di base sull'account, come l'indirizzo e-mail). Se desiderate che tutti i vostri dati vengano cancellati, non saremo più in grado di offrirvi assistenza o altri servizi relativi al prodotto."
+      },
+      "gdpr": {
+        "title": "GDPR",
+        "content": "La vostra privacy è di fondamentale importanza per noi. Per quanto riguarda il GDPR, il nostro obiettivo è quello di sostenere gli standard del GDPR. AxiomThemes consente ai residenti dell'Unione Europea di utilizzare il proprio Servizio. Pertanto, è intenzione di AxiomThemes rispettare il Regolamento generale europeo sulla protezione dei dati. Per maggiori dettagli, consultare qui: Portale informativo sul GDPR. EU GDPR Information Portal."
+      }
+    },
+    "thirdPartyWebsites": {
+      "title": "9. Siti web di terze parti",
+      "content": "Vital Games può pubblicare su questo sito dei link a siti web di terzi. Questi siti web di terzi non sono controllati da AxiomThemes per quanto riguarda la conformità alla privacy o alla sicurezza e l'utente ci esonera da qualsiasi responsabilità per la condotta di questi siti web di terzi. Tutti i link di condivisione dei social media, visualizzati come link testuali o icone dei social media, non collegano l'utente a nessuna delle terze parti associate, a meno che non si faccia esplicitamente clic su di essi.",
+      "disclaimer": "Si ricorda che la presente Informativa sulla privacy e le altre politiche in vigore, oltre a eventuali modifiche, non creano diritti azionabili da terzi né richiedono la divulgazione di informazioni personali relative ai membri del Servizio o del Sito. AxiomThemes non si assume alcuna responsabilità per le informazioni raccolte o utilizzate da qualsiasi inserzionista o sito web di terzi. Si prega di consultare l'informativa sulla privacy e i termini di servizio di ogni sito visitato tramite link di terze parti."
+    },
+    "legalDisclosure": {
+      "title": "10. Rilascio dei dati dell'utente per scopi legali",
+      "content": "A volte potrebbe essere necessario o auspicabile per AxiomThemes, per scopi legali, divulgare i dati dell'utente in risposta a una richiesta di un'agenzia governativa o di una parte in causa privata. L'utente accetta che AxiomThemes possa divulgare le sue informazioni a terzi qualora ritenga, in buona fede, che sia opportuno farlo ai fini di un'azione civile, di un'indagine penale o di un'altra questione legale. Nel caso in cui ricevessimo una citazione in giudizio che riguardi la vostra privacy, potremmo decidere di informarvi per darvi l'opportunità di presentare una mozione per annullare la citazione, oppure potremmo tentare di annullarla noi stessi, ma non siamo obbligati a farlo. Possiamo anche segnalarvi in modo proattivo e rilasciare le vostre informazioni a terzi, qualora riteniamo che sia prudente farlo per motivi legali, come ad esempio la convinzione che abbiate intrapreso attività fraudolente. L'utente ci esonera da qualsiasi danno che possa derivare o essere correlato al rilascio delle sue informazioni a seguito di una richiesta da parte delle forze dell'ordine o di controversie private.",
+      "compliance": "Qualsiasi trasmissione di dati personali per scopi legali avverrà solo in conformità alle leggi del paese in cui risiedete."
+    }
+  }
+}
 }
