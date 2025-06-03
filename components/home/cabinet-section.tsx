@@ -203,9 +203,13 @@ export default function CabinetSection() {
                 <SmoothReveal>{cabinet.titleLine3}</SmoothReveal>
               </h2>
 
-              <Button variant="outline" className="rounded-full hover:bg-opacity-80 text-white border-white font-medium px-3 py-1 text-base cursor-pointer">
-                <Link href={`/vlt`}>{cabinet.cta}</Link>
-              </Button>
+              <Link
+                href="/vlt"
+                className="rounded-full hover:bg-opacity-80 text-white border-white font-medium px-3 py-1 text-base cursor-pointer border inline-block text-center"
+              >
+                {cabinet.cta}
+              </Link>
+
             </div>
           </div>
 

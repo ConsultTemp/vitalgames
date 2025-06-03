@@ -286,7 +286,7 @@ export default async function GamePage(props: { params: Params }) {
             <Image
               src={game.coverImage || game.mainImage}
               alt={`${game.name} - Slot machine innovativa Vitalgames con grafica HD e bonus game`}
-              fill
+              
               className="object-contain hidden md:block"
               priority
             />
