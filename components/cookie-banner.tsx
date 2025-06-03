@@ -162,7 +162,7 @@ export default function CookieBanner({ lang }: CookieBannerProps) {
               <button
                 id="customize-btn"
                 type="button"
-                className="px-6 py-3 bg-slate-700 hover:bg-slate-600 rounded-lg font-medium transition-colors flex items-center gap-2 text-white"
+                className="px-6 py-3 bg-slate-700 hover:bg-slate-600 rounded-lg font-medium transition-colors flex items-center gap-2 text-white flex flex-row items-center justify-center"
               >
                 <span>{t.customize}</span>
                 <ChevronDown size={16} id="customize-icon" />
