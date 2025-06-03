@@ -62,12 +62,6 @@ const games = [
     slug: "pepita-doro",
     title: "Pepita d'oro",
     image: pepitadoro,
-  },
-  {
-    id: 8,
-    slug: "piggy-gold",
-    title: "Piggy gold",
-    image: piggy1,
   }
 
 ]

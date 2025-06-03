@@ -270,7 +270,7 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
                     {games.slice(0, 5).map((game) => (
                       <SmoothReveal key={game.id}>
                         <Link
-                          href={`/${lang}/awp-multigames/${game.slug}`}
+                          href={`/${lang}/allgames/${game.slug}`}
                           className="w-full aspect-[1080/1196] block group rounded-lg overflow-hidden relative"
                           aria-label={`Vai a ${game.title}`}
                         >
