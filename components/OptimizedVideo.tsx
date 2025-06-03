@@ -1,127 +1,63 @@
 "use client"
 
-import type React from "react"
-
 import { useEffect, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
 
-interface OptimizedVideoProps {
-  // Video sources
-  src: string
-  mobileSrc?: string
-  posterImage?: string
-
-  // Behavior
-  autoPlay?: boolean
-  loop?: boolean
-  muted?: boolean
-  playsInline?: boolean
-  preload?: "none" | "metadata" | "auto"
-
-  // Styling & Layout
+interface OptimizedCloudflareVideoProps {
+  videoId: string
+  mobileId?: string
   className?: string
   containerClassName?: string
   width?: string | number
   height?: string | number
   objectPosition?: string
-
-  // Responsive
   aspectRatio?: string
   minHeight?: string
+  ratio: "intro" | "hero" | "games"
   maxHeight?: string
-
-  // Loading & Performance
   lazy?: boolean
-  priority?: boolean
-  quality?: "low" | "medium" | "high"
-
-  // Overlays & Effects
   overlay?: boolean
   overlayColor?: string
   overlayOpacity?: number
   gradient?: boolean
   gradientDirection?: "to-t" | "to-b" | "to-l" | "to-r"
-
-  // Custom poster/fallback
-  customPoster?: React.ReactNode
-  showAnimatedPoster?: boolean
-
-  // Events
-  onLoadStart?: () => void
-  onCanPlay?: () => void
-  onPlay?: () => void
-  onPause?: () => void
-  onEnded?: () => void
-  onError?: (error: Event) => void
-
-  // Fallback
   fallbackComponent?: React.ReactNode
-  showControls?: boolean
-  showMobileHint?: boolean
-
-  // Mobile specific
-  mobileBreakpoint?: number
 }
 
-export default function OptimizedVideo({
-  src,
-  mobileSrc,
-  posterImage,
-  autoPlay = true,
-  loop = true,
-  muted = true,
-  playsInline = true,
-  preload = "metadata",
+export default function OptimizedCloudflareVideo({
+  videoId,
+  mobileId,
   className,
   containerClassName,
-  width,
-  height,
+  width = "100%",
+  height = "auto",
   objectPosition = "center center",
   aspectRatio,
   minHeight,
+  ratio,
   maxHeight,
   lazy = false,
-  priority = false,
-  quality = "high",
   overlay = false,
   overlayColor = "black",
   overlayOpacity = 30,
   gradient = false,
   gradientDirection = "to-t",
-  customPoster,
-  showAnimatedPoster = false,
-  onLoadStart,
-  onCanPlay,
-  onPlay,
-  onPause,
-  onEnded,
-  onError,
   fallbackComponent,
-  showControls = false,
-  showMobileHint = true,
-  mobileBreakpoint = 768,
-}: OptimizedVideoProps) {
-  const videoRef = useRef<HTMLVideoElement>(null)
+}: OptimizedCloudflareVideoProps) {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [isLoaded, setIsLoaded] = useState(false)
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [showVideo, setShowVideo] = useState(false)
-  const [hasError, setHasError] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
   const [isInView, setIsInView] = useState(!lazy)
+  const [isMobile, setIsMobile] = useState(false)
 
-  // Detect mobile
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.matchMedia(`(max-width: ${mobileBreakpoint}px)`).matches)
+      setIsMobile(window.innerWidth <= 768)
     }
 
     checkMobile()
     window.addEventListener("resize", checkMobile)
     return () => window.removeEventListener("resize", checkMobile)
-  }, [mobileBreakpoint])
+  }, [])
 
-  // Intersection Observer for lazy loading
   useEffect(() => {
     if (!lazy || isInView) return
 
@@ -132,10 +68,7 @@ export default function OptimizedVideo({
           observer.disconnect()
         }
       },
-      {
-        threshold: 0.1,
-        rootMargin: "50px",
-      },
+      { threshold: 0.1, rootMargin: "50px" }
     )
 
     if (containerRef.current) {
@@ -145,174 +78,61 @@ export default function OptimizedVideo({
     return () => observer.disconnect()
   }, [lazy, isInView])
 
-  // Aggressive autoplay handling - integrata la logica del tuo componente hero
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video || !isInView) return
+  const activeId = isMobile && mobileId ? mobileId : videoId
+  const iframeSrc = `https://customer-vkies7d79pqqk1lg.cloudflarestream.com/${activeId}/iframe?autoplay=true&muted=true&controls=false&loop=true&preload=auto`
 
-    // Listener per quando il video inizia davvero
-    const handlePlay = () => {
-      setIsPlaying(true)
-      onPlay?.()
-    }
-
-    const handleCanPlay = () => {
-      setIsLoaded(true)
-      setShowVideo(true)
-      onCanPlay?.()
-
-      if (autoPlay) {
-        // Tentativo aggressivo di play come nel tuo componente
-        video
-          .play()
-          .then(() => {
-            setIsPlaying(true)
-          })
-          .catch((error) => {
-            console.log("Autoplay blocked:", error.name)
-            // Non mostriamo errori, il video è pronto per il click
-          })
-      }
-    }
-
-    const handlePause = () => {
-      setIsPlaying(false)
-      onPause?.()
-    }
-
-    const handleEnded = () => {
-      setIsPlaying(false)
-      onEnded?.()
-    }
-
-    const handleError = (error: Event) => {
-      setHasError(true)
-      onError?.(error)
-    }
-
-    const handleLoadStart = () => {
-      onLoadStart?.()
-    }
-
-    video.addEventListener("play", handlePlay)
-    video.addEventListener("canplay", handleCanPlay)
-    video.addEventListener("pause", handlePause)
-    video.addEventListener("ended", handleEnded)
-    video.addEventListener("error", handleError)
-    video.addEventListener("loadstart", handleLoadStart)
-
-    // Listener globale per QUALSIASI interazione che sblocca l'audio
-    // Questa è la tecnica chiave del tuo componente hero
-    let userInteracted = false
-    const handleAnyInteraction = () => {
-      if (!userInteracted && video && video.paused && autoPlay) {
-        userInteracted = true
-        video.play().catch(() => {})
-        // Rimuovi listener dopo primo utilizzo
-        document.removeEventListener("touchstart", handleAnyInteraction)
-        document.removeEventListener("click", handleAnyInteraction)
-        document.removeEventListener("scroll", handleAnyInteraction)
-      }
-    }
-
-    document.addEventListener("touchstart", handleAnyInteraction, { passive: true })
-    document.addEventListener("click", handleAnyInteraction)
-    document.addEventListener("scroll", handleAnyInteraction, { passive: true })
-
-    return () => {
-      video?.removeEventListener("play", handlePlay)
-      video?.removeEventListener("canplay", handleCanPlay)
-      video?.removeEventListener("pause", handlePause)
-      video?.removeEventListener("ended", handleEnded)
-      video?.removeEventListener("error", handleError)
-      video?.removeEventListener("loadstart", handleLoadStart)
-      document.removeEventListener("touchstart", handleAnyInteraction)
-      document.removeEventListener("click", handleAnyInteraction)
-      document.removeEventListener("scroll", handleAnyInteraction)
-    }
-  }, [isInView, autoPlay, onPlay, onCanPlay, onPause, onEnded, onError, onLoadStart])
-
-  // Video source selection
-  const videoSrc = isMobile && mobileSrc ? mobileSrc : src
-
-  // Container styles
-  const containerStyles = {
-    width,
-    height,
-    aspectRatio,
-    minHeight,
-    maxHeight,
+  // Costruisci lo stile del container usando solo le proprietà necessarie
+  const containerStyles: React.CSSProperties = {
+    width: width || "100%",
+    height: height || "auto",
+    ...(aspectRatio && { aspectRatio }),
+    ...(minHeight && { minHeight }),
+    ...(maxHeight && { maxHeight }),
   }
 
-  // Video styles
-  const videoStyles = {
+  // Stile per l'iframe - identico al container per riempire completamente
+  const iframeStyles: React.CSSProperties = {
+    width: "100vw",
+    height: isMobile ? "125vw" : ratio === "hero" ? "46.296vw" :  ratio === "intro"  ? "56.25vw" : "26.32vw",
+    objectFit: "cover",
     objectPosition,
   }
 
-  // Quality settings
-  const getQualityProps = () => {
-    switch (quality) {
-      case "low":
-        return { preload: "none" as const }
-      case "medium":
-        return { preload: "metadata" as const }
-      case "high":
-        return { preload: "auto" as const }
-      default:
-        return { preload }
-    }
-  }
-
-  if (hasError && fallbackComponent) {
-    return <div className={containerClassName}>{fallbackComponent}</div>
-  }
-
   return (
-    <div ref={containerRef} className={cn("relative overflow-hidden", containerClassName)} style={containerStyles}>
-      <div className="relative w-full h-full">
+    <div
+      ref={containerRef}
+      className={cn("relative", containerClassName)}
+      style={containerStyles}
+    >
+      {isInView && (
+        <iframe
+          src={iframeSrc}
+          loading="lazy"
+          style={iframeStyles}
+          allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+          allowFullScreen
+          className={cn("block border-0 m-0 p-0", className)}
+        />
+      )}
 
-        {/* Video element */}
-        {isInView && (
-          <video
-            ref={videoRef}
-            src={videoSrc}
-            autoPlay={autoPlay}
-            loop={loop}
-            muted={muted}
-            playsInline={playsInline}
-            controls={showControls}
-            className={cn(
-              "w-full",
-              isMobile ? "h-auto" : "h-full object-cover",
-              className,
-            )}
-            style={videoStyles}
-            {...getQualityProps()}
-          />
-        )}
+      {overlay && (
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundColor: overlayColor,
+            opacity: overlayOpacity / 100,
+          }}
+        />
+      )}
 
-        {/* Overlay */}
-        {overlay && (
-          <div className={cn("absolute inset-0 pointer-events-none", `bg-${overlayColor}/${overlayOpacity}`)} />
-        )}
-
-        {/* Gradient */}
-        {gradient && (
-          <div
-            className={cn(
-              "absolute inset-0 pointer-events-none",
-              `bg-gradient-${gradientDirection}`,
-              "from-black/50 to-transparent",
-            )}
-          />
-        )}
-      </div>
-
-      {/* Mobile hint - come nel tuo componente hero */}
-      {showMobileHint && isMobile && !isPlaying && (
-        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10 md:hidden">
-          <div className="text-transparent text-xs text-center animate-bounce">Tap anywhere to start</div>
-        </div>
+      {gradient && (
+        <div
+          className={cn(
+            "absolute inset-0 pointer-events-none",
+            `bg-gradient-${gradientDirection}`,
+            "from-black/50 to-transparent"
+          )}
+        />
       )}
     </div>
   )

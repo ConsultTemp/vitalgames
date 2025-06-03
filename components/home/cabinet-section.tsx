@@ -99,16 +99,10 @@ export default function CabinetSection() {
 
     return (
       <div className="w-full h-full relative">
-        <OptimizedVideo
-          src="https://files.catbox.moe/2t2qgh.webm"
-          className="absolute inset-0 w-full h-full object-contain"
-          containerClassName="w-full h-full absolute inset-0"
-          muted
-          autoPlay
-          loop
-          playsInline
-          showControls={false}
-        />
+       <OptimizedVideo
+        videoId="4c5580c357f91fd1c56276f74d731709"
+        className="absolute inset-0 w-full h-full object-contain"
+      />
       </div>
     )
   }
@@ -129,13 +123,8 @@ export default function CabinetSection() {
 
     return (
       <OptimizedVideo
-        src="https://files.catbox.moe/2t2qgh.webm"
+        videoId="4c5580c357f91fd1c56276f74d731709"
         className={className}
-        muted
-        autoPlay
-        loop
-        playsInline
-        showControls={false}
       />
     )
   }

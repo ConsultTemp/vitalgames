@@ -203,6 +203,10 @@ export default function RootLayout({
   return (
     <html lang={lang} suppressHydrationWarning>
       <head>
+      <Script
+          src="https://embed.videodelivery.net/embed/sdk.latest.js"
+          strategy="beforeInteractive"
+        />
         {/* DNS Prefetch and Preconnect for Performance */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />

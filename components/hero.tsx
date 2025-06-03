@@ -3,24 +3,13 @@ import OptimizedVideo from "./OptimizedVideo"
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-fit bg-black overflow-hidden">
+    <section className="relative w-full bg-black">
       <OptimizedVideo
-        src="https://files.catbox.moe/vtza20.webm"
-        mobileSrc="https://files.catbox.moe/99ij7f.webm"
-        containerClassName="w-full h-full"
-        className="w-full h-full object-cover"
-        autoPlay={true}
-        loop={true}
-        muted={true}
-        playsInline={true}
-        priority={true}
-        quality="high"
+        ratio="hero"
+        videoId="1882591ec6b6173e792aa38691a3e742"
+        mobileId="0fd5f233bf57bdd4903b68cd63420efa"
+        width="100vw"
         overlay={false}
-        fallbackComponent={
-          <div className="w-full h-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center">
-            
-          </div>
-        }
       />
     </section>
   )

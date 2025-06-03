@@ -6,35 +6,32 @@ interface VideoHeroProps {
   title: string
   subtitle: string
   videoUrl: string
-  objectPosition?: string
 }
 
-const VideoHero: React.FC<VideoHeroProps> = ({ title, subtitle, videoUrl, objectPosition }) => {
+const VideoHero: React.FC<VideoHeroProps> = ({ title, subtitle, videoUrl }) => {
   return (
-    <div className="relative w-full">
-      <div className="relative min-h-[44vh] w-full">
+    <div className="w-full">
+      {/* Video a schermo pieno */}
+      <div className="relative w-full">
         <OptimizedVideo
-          src={videoUrl}
-          containerClassName="absolute inset-0"
+          videoId={videoUrl}
+          ratio="games"
+          width="100vw"
+          height="56.25vw" // 16:9 aspect ratio (9/16 * 100)
+          containerClassName="w-full"
           className="w-full h-full object-cover"
-          objectPosition={objectPosition}
-          autoPlay={true}
-          loop={true}
-          muted={true}
-          playsInline={true}
-          priority={true}
           overlay={true}
           overlayOpacity={0}
-          gradient={true}
           overlayColor="transparent"
-          
+          gradient={true}
           gradientDirection="to-t"
         />
 
-        <div className="absolute bottom-[-50px] left-0 right-0 p-8 md:p-12 z-10">
-          <div className="max-w-5xl mx-auto text-center">
+        {/* Testo sovrapposto */}
+        <div className="absolute inset-0 flex items-end justify-center p-8 md:p-12">
+          <div className="max-w-5xl text-center mb-8">
             <h1 className="text-4xl md:text-8xl dharmalight font-bold text-white">{title}</h1>
-            <p className="text-sm font-light text-white/80 max-w-2xl mx-auto">{subtitle}</p>
+            <p className="text-sm font-light text-white/80 max-w-2xl mx-auto mt-4">{subtitle}</p>
           </div>
         </div>
       </div>

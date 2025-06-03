@@ -11,8 +11,8 @@ interface IntroVideoProps {
 }
 
 export default function IntroVideo({
-  videoUrl = "https://files.catbox.moe/5cot3t.webm",
-  mobileVideoUrl = "https://files.catbox.moe/k71za8.webm",
+  videoUrl = "0dac21e83263ea993143b4815bd5dc43", // ⚠️ Cambia con l'ID Cloudflare
+  mobileVideoUrl = "91b585031374ff0479cd52adee927aa5",
   onComplete,
   fadeOutDuration = 1000,
 }: IntroVideoProps) {
@@ -22,7 +22,6 @@ export default function IntroVideo({
 
   const fadeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
-  // Gestione del fade out quando il video finisce
   const handleVideoEnd = useCallback(() => {
     setIsFading(true)
 
@@ -36,30 +35,26 @@ export default function IntroVideo({
     }, fadeOutDuration)
   }, [fadeOutDuration, onComplete])
 
-  // Effetto per la gestione client-side
   useEffect(() => {
     setIsClient(true)
   }, [])
 
-  // Effetto per il controllo della sessione
   useEffect(() => {
     if (!isClient) return
 
     try {
       const videoSeen = sessionStorage.getItem("videoSeen")
-
       if (!videoSeen) {
         sessionStorage.setItem("videoSeen", "true")
-        setHasSeenVideo(false) // Mostra il video
+        setHasSeenVideo(false)
       } else {
-        setHasSeenVideo(true) // Non mostrare il video
+        setHasSeenVideo(true)
       }
-    } catch (error) {
-      setHasSeenVideo(false) // Fallback: mostra il video
+    } catch {
+      setHasSeenVideo(false)
     }
   }, [isClient])
 
-  // Cleanup degli effetti
   useEffect(() => {
     return () => {
       if (fadeTimeoutRef.current) {
@@ -68,10 +63,7 @@ export default function IntroVideo({
     }
   }, [])
 
-  // Non renderizzare se non siamo client-side o se il video è già stato visto
-  if (!isClient || hasSeenVideo === null || hasSeenVideo === true) {
-    return null
-  }
+  if (!isClient || hasSeenVideo === null || hasSeenVideo === true) return null
 
   return (
     <div
@@ -80,17 +72,11 @@ export default function IntroVideo({
       }`}
     >
       <OptimizedVideo
-        src={videoUrl}
-        mobileSrc={mobileVideoUrl}
+      ratio="intro"
         containerClassName="w-screen h-screen"
-        className="w-screen h-screen object-cover"
-        autoPlay={true}
-        loop={false}
-        muted={true}
-        playsInline={true}
-        priority={true}
-        quality="high"
-        onEnded={handleVideoEnd}
+        className="w-screen h-screen object-cover" 
+        videoId={videoUrl}   
+        mobileId={mobileVideoUrl}  
       />
     </div>
   )
