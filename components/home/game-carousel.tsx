@@ -50,7 +50,7 @@ function useMediaQuery(query: string): boolean {
 const gameSlides = [
   {
     id: 1,
-    title: "Scopri un mondo di diamanti, misteri e jackpot esplosivi!",
+    title: "Mr Diamond Ultra link",
     slug: "magic-diamond-2",
     description:
       "Tra Bonus Diamond, giri gratuiti e simboli Link, ogni spin può sbloccare premi incredibili fino a 2000 volte la puntata.",
@@ -62,7 +62,7 @@ const gameSlides = [
   },
   {
     id: 2,
-    title: "Esplora il mondo di Lucky Charms",
+    title: "Lo struzzo",
     slug: "lo-struzzo",
     description:
       "Con simboli magici e bonus speciali, ogni giro può portare a vincite straordinarie fino a 5000 volte la puntata.",
@@ -74,7 +74,7 @@ const gameSlides = [
   },
   {
     id: 3,
-    title: "Avventurati nel Tesoro dei Pirati",
+    title: "Reggae frog",
     slug: "reggae-frog",
     description: "Cerca il tesoro nascosto con simboli Wild e Scatter per vincite fino a 3000 volte la tua scommessa.",
     features: ["Attiva la modalità Caccia al Tesoro per premi garantiti e giri bonus."],
