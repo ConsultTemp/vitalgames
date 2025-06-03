@@ -2,7 +2,6 @@ import Link from "next/link"
 import { X, ChevronDown, Cookie, Shield, Info } from "lucide-react"
 import Script from "next/script"
 
-// Traduzioni direttamente nel file
 const translations = {
   it: {
     title: "Informativa sui Cookie",
@@ -67,86 +66,86 @@ export default function CookieBanner({ lang }: CookieBannerProps) {
 
   return (
     <>
-      {/* Banner sempre visibile di default */}
+      {/* Banner compresso e più piccolo */}
       <div
         id="cookie-banner"
-        className="fixed inset-x-0 bottom-0 z-[9999] bg-black text-white shadow-2xl border-t-4 border-vitalYellow"
+        className="fixed inset-x-0 bottom-0 z-[9999] bg-black text-white shadow-2xl border-t-4 border-vitalYellow py-4"
       >
-        <div className="container mx-auto p-4 md:p-6 max-w-7xl">
+        <div className="container mx-auto p-2 md:p-3 max-w-7xl">
           <div className="relative">
 
             {/* Intestazione */}
-            <div className="flex items-center gap-3 mb-4">
-              <div className="bg-vitalYellow p-2 rounded-full flex-shrink-0">
-                <Cookie size={24} className="text-black" />
+            <div className="flex items-center gap-2 mb-2">
+              <div className="bg-vitalYellow p-1.5 rounded-full flex-shrink-0">
+                <Cookie size={20} className="text-black" />
               </div>
-              <h2 className="text-xl font-bold">{t.title}</h2>
+              <h2 className="text-lg font-bold">{t.title}</h2>
             </div>
 
             {/* Descrizione */}
-            <p className="mb-6 text-gray-300 max-w-4xl leading-relaxed">{t.description}</p>
+            <p className="mb-3 text-gray-300 max-w-4xl leading-tight text-sm">{t.description}</p>
 
             {/* Pannello di personalizzazione */}
-            <div id="customize-panel" className="mb-6 bg-slate-800 rounded-lg p-4 border border-slate-700 hidden">
-              <div className="space-y-4">
+            <div id="customize-panel" className="mb-4 bg-slate-800 rounded-lg p-3 border border-slate-700 hidden">
+              <div className="space-y-3">
                 {/* Cookie essenziali */}
-                <div className="flex items-center justify-between pb-3 border-b border-slate-700">
-                  <div className="flex items-start gap-3">
-                    <div className="mt-1 bg-green-500/20 p-1.5 rounded-full">
-                      <Shield size={16} className="text-green-500" />
+                <div className="flex items-center justify-between pb-2 border-b border-slate-700">
+                  <div className="flex items-start gap-2">
+                    <div className="mt-0.5 bg-green-500/20 p-1 rounded-full">
+                      <Shield size={14} className="text-green-500" />
                     </div>
                     <div>
-                      <h3 className="font-medium">{t.essentialTitle}</h3>
-                      <p className="text-sm text-gray-400">{t.essentialDesc}</p>
+                      <h3 className="font-medium text-sm">{t.essentialTitle}</h3>
+                      <p className="text-xs text-gray-400">{t.essentialDesc}</p>
                     </div>
                   </div>
-                  <div className="bg-green-500/20 px-3 py-1 rounded-full text-xs text-green-500 font-medium">
+                  <div className="bg-green-500/20 px-2 py-0.5 rounded-full text-xs text-green-500 font-medium">
                     {t.active}
                   </div>
                 </div>
 
                 {/* Cookie analitici */}
-                <div className="flex items-center justify-between pb-3 border-b border-slate-700">
-                  <div className="flex items-start gap-3">
-                    <div className="mt-1 bg-vitalYellow/20 p-1.5 rounded-full">
-                      <Info size={16} className="text-vitalYellow" />
+                <div className="flex items-center justify-between pb-2 border-b border-slate-700">
+                  <div className="flex items-start gap-2">
+                    <div className="mt-0.5 bg-vitalYellow/20 p-1 rounded-full">
+                      <Info size={14} className="text-vitalYellow" />
                     </div>
                     <div>
-                      <h3 className="font-medium">{t.analyticsTitle}</h3>
-                      <p className="text-sm text-gray-400">{t.analyticsDesc}</p>
+                      <h3 className="font-medium text-sm">{t.analyticsTitle}</h3>
+                      <p className="text-xs text-gray-400">{t.analyticsDesc}</p>
                     </div>
                   </div>
                   <label className="relative inline-flex items-center cursor-pointer">
                     <input type="checkbox" id="analytics-toggle" className="sr-only peer" />
-                    <div className="w-11 h-6 bg-slate-700 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-vitalYellow rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-vitalYellow"></div>
+                    <div className="w-9 h-5 bg-slate-700 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-vitalYellow rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-vitalYellow"></div>
                   </label>
                 </div>
 
                 {/* Cookie di marketing */}
                 <div className="flex items-center justify-between">
-                  <div className="flex items-start gap-3">
-                    <div className="mt-1 bg-purple-500/20 p-1.5 rounded-full">
-                      <Cookie size={16} className="text-purple-500" />
+                  <div className="flex items-start gap-2">
+                    <div className="mt-0.5 bg-purple-500/20 p-1 rounded-full">
+                      <Cookie size={14} className="text-purple-500" />
                     </div>
                     <div>
-                      <h3 className="font-medium">{t.marketingTitle}</h3>
-                      <p className="text-sm text-gray-400">{t.marketingDesc}</p>
+                      <h3 className="font-medium text-sm">{t.marketingTitle}</h3>
+                      <p className="text-xs text-gray-400">{t.marketingDesc}</p>
                     </div>
                   </div>
                   <label className="relative inline-flex items-center cursor-pointer">
                     <input type="checkbox" id="marketing-toggle" className="sr-only peer" />
-                    <div className="w-11 h-6 bg-slate-700 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-purple-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-purple-600"></div>
+                    <div className="w-9 h-5 bg-slate-700 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-purple-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-purple-600"></div>
                   </label>
                 </div>
               </div>
             </div>
 
-            {/* Pulsanti */}
-            <div className="flex flex-col sm:flex-row gap-3 mt-4">
+            {/* Pulsanti con padding e testo più piccoli */}
+            <div className="flex flex-col sm:flex-row gap-2 mt-3">
               <button
                 id="accept-all"
                 type="button"
-                className="px-6 py-3 bg-vitalYellow hover:opacity-80 rounded-lg font-medium transition-colors text-black"
+                className="px-3 py-2 bg-vitalYellow hover:opacity-80 rounded-lg font-medium transition-colors text-black text-sm"
               >
                 {t.acceptAll}
               </button>
@@ -154,7 +153,7 @@ export default function CookieBanner({ lang }: CookieBannerProps) {
               <button
                 id="accept-essential"
                 type="button"
-                className="px-6 py-3 bg-slate-700 hover:bg-slate-600 rounded-lg font-medium transition-colors text-white"
+                className="px-3 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg font-medium transition-colors text-white text-sm"
               >
                 {t.acceptEssential}
               </button>
@@ -162,23 +161,23 @@ export default function CookieBanner({ lang }: CookieBannerProps) {
               <button
                 id="customize-btn"
                 type="button"
-                className="px-6 py-3 bg-slate-700 hover:bg-slate-600 rounded-lg font-medium transition-colors flex items-center gap-2 text-white flex flex-row items-center justify-center"
+                className="px-3 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg font-medium transition-colors flex items-center gap-1 text-white text-sm justify-center"
               >
                 <span>{t.customize}</span>
-                <ChevronDown size={16} id="customize-icon" />
+                <ChevronDown size={14} id="customize-icon" />
               </button>
 
               <button
                 id="save-preferences"
                 type="button"
-                className="px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg font-medium transition-colors hidden text-white"
+                className="px-3 py-2 bg-green-600 hover:bg-green-700 rounded-lg font-medium transition-colors hidden text-white text-sm"
               >
                 {t.save}
               </button>
 
               <Link
                 href={`/${validLang}/privacy`}
-                className="px-6 py-3 text-gray-300 hover:text-white rounded-lg font-medium transition-colors sm:ml-auto text-center"
+                className="px-3 py-2 text-gray-300 hover:text-white rounded-lg font-medium transition-colors sm:ml-auto text-center text-sm"
               >
                 {t.moreInfo}
               </Link>
@@ -187,7 +186,6 @@ export default function CookieBanner({ lang }: CookieBannerProps) {
         </div>
       </div>
 
-      {/* Script esterno con Next.js Script component */}
       <Script
         id="cookie-banner-script"
         strategy="afterInteractive"
@@ -349,7 +347,6 @@ export default function CookieBanner({ lang }: CookieBannerProps) {
               }
             };
 
-            // Inizializza quando il DOM è pronto
             if (document.readyState === 'loading') {
               document.addEventListener('DOMContentLoaded', function() {
                 window.CookieBanner.init();
