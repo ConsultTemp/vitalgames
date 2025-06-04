@@ -22,6 +22,7 @@ interface OptimizedCloudflareVideoProps {
   gradient?: boolean
   gradientDirection?: "to-t" | "to-b" | "to-l" | "to-r"
   fallbackComponent?: React.ReactNode
+  onIframeLoad?: () => void // Nuovo callback
 }
 
 export default function OptimizedCloudflareVideo({
@@ -43,6 +44,7 @@ export default function OptimizedCloudflareVideo({
   gradient = false,
   gradientDirection = "to-t",
   fallbackComponent,
+  onIframeLoad, // Nuovo prop
 }: OptimizedCloudflareVideoProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isInView, setIsInView] = useState(!lazy)
@@ -91,6 +93,14 @@ export default function OptimizedCloudflareVideo({
 
     return () => observer.disconnect()
   }, [lazy, isInView, isClient])
+
+  // Handler per il caricamento dell'iframe
+  const handleLoad = () => {
+    // Aggiungi un piccolo delay per compensare il tempo di avvio del video
+    setTimeout(() => {
+      onIframeLoad?.()
+    }, 200) // Delay di 200ms per permettere al video di iniziare
+  }
 
   // Non renderizzare nulla finché non abbiamo determinato se siamo su mobile
   if (!isClient || isMobile === null) {
@@ -145,6 +155,7 @@ export default function OptimizedCloudflareVideo({
           allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
           allowFullScreen
           className={cn("block border-0 m-0 p-0", className)}
+          onLoad={handleLoad} // Aggiungi l'event handler
         />
       )}
     </div>

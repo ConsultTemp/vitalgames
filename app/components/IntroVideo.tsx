@@ -38,6 +38,22 @@ export default function IntroVideo({
     }, fadeOutDuration)
   }, [fadeOutDuration, onComplete, isFading])
 
+  // Callback chiamato quando l'iframe è caricato
+  const handleIframeLoad = useCallback(() => {
+    if (isFading) return
+
+    // Cancella eventuali timer precedenti
+    if (autoFadeTimeoutRef.current) {
+      clearTimeout(autoFadeTimeoutRef.current)
+    }
+
+    // Avvia il timer dei 3.1 secondi da quando l'iframe è caricato
+    // (stima approssimativa di quando il video inizia)
+    autoFadeTimeoutRef.current = setTimeout(() => {
+      handleVideoEnd()
+    }, 3100) // 3.1 secondi dal caricamento iframe
+  }, [isFading, handleVideoEnd])
+
   useEffect(() => {
     setIsClient(true)
   }, [])
@@ -57,21 +73,6 @@ export default function IntroVideo({
       setHasSeenVideo(false)
     }
   }, [isClient])
-
-  // Auto-fade dopo 3.1 secondi
-  useEffect(() => {
-    if (hasSeenVideo === false && !isFading) {
-      autoFadeTimeoutRef.current = setTimeout(() => {
-        handleVideoEnd()
-      }, 3100) // 3.1 secondi
-    }
-
-    return () => {
-      if (autoFadeTimeoutRef.current) {
-        clearTimeout(autoFadeTimeoutRef.current)
-      }
-    }
-  }, [hasSeenVideo, isFading, handleVideoEnd])
 
   useEffect(() => {
     return () => {
@@ -98,6 +99,7 @@ export default function IntroVideo({
         className="w-screen object-cover"
         videoId={videoUrl}
         mobileId={mobileVideoUrl}
+        onIframeLoad={handleIframeLoad}
       />
     </div>
   )

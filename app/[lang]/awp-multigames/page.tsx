@@ -170,7 +170,7 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
             title={dict.awpMultigames.page.title}
             subtitle={dict.awpMultigames.page.subtitle}
             videoUrl="c3a44e7596a884d647b47061eb149065"
-            mobileVideoUrl="cf2584b7f309f8b270cf75ccc28c080f"
+            mobileVideoUrl="de888b721a6b9a120f87d728e16d0168"
           />
         </header>
 
