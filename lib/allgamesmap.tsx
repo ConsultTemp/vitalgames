@@ -41,10 +41,6 @@ import EDEN_PHOTO3 from '../public/games-images/EDEN/PHOTO-2024-05-15-11-28-16 3
 import EDEN_PHOTO4 from '../public/games-images/EDEN/PHOTO-2024-05-15-11-28-17 3.jpg'
 
 import ELFI from '../public/games-images/ELFI/ELFI.jpg'
-import ELFI_PHOTO1 from '../public/games-images/EDEN/PHOTO-2024-05-15-11-28-15.jpg'
-import ELFI_PHOTO2 from '../public/games-images/EDEN/PHOTO-2024-05-15-11-28-16 2.jpg'
-import ELFI_PHOTO3 from '../public/games-images/EDEN/PHOTO-2024-05-15-11-28-16 3.jpg'
-import ELFI_PHOTO4 from '../public/games-images/EDEN/PHOTO-2024-05-15-11-28-17 3.jpg'
 
 import FORTUNE from '../public/games-images/FORTUNE/FORTUNE.jpg'
 import FORTUNE_PHOTO1 from '../public/games-images/FORTUNE/WhatsApp Image 2024-05-16 at 12.34.32.jpeg'
@@ -502,7 +498,7 @@ export const games = [
     slug: 'elfi',
     mainImage: elfi,
     coverImage: ELFI,
-    images: [ELFI_PHOTO1, ELFI_PHOTO2, ELFI_PHOTO3, ELFI_PHOTO4],
+    images: [],
     description: 'Entra nel mondo magico degli elfi',
     featured: ['eden', 'book-of-magic', 'la-scatola-magica', 'magic-diamond-2'],
     mobileBg: elfi_mobile_hero
