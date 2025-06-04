@@ -285,6 +285,7 @@ import pirates from '../public/allgames-webp/DARK PIRATES.webp'
 import mexican from '../public/allgames-webp/MEXICAN.webp'
 import family from '../public/allgames-webp/THE WEIRD FAMILY.webp'
 import elfi from '../public/allgames-webp/ELFI.webp'
+import bookofmagic from '../public/allgames-webp/BOOK OF MAGIC.webp'
 import cowboy from '../public/allgames-webp/COWBOY REVENGE.webp'
 import struzzo from '../public/allgames-webp/LO STRUZZO.webp'
 import lucky8 from '../public/allgames-webp/LUCKY8.webp'
@@ -316,6 +317,7 @@ import fortune_mobile_hero from '../public/allgames-mobile-hero/FORTUNE_mobile.w
 import jungle_mobile_hero from '../public/allgames-mobile-hero/JUNGLE_mobile.webp'
 import scatola_mobile_hero from '../public/allgames-mobile-hero/LA SCATOLA MAGICA_mobile.webp'
 import magic_mobile_hero from '../public/allgames-mobile-hero/BOOK OF MAGIC_mobile.webp'
+import magic_diamond_mobile_hero from '../public/allgames-mobile-hero/MAGIC DIAMOND 2_mobile.webp'
 import mohamed_mobile_hero from '../public/allgames-mobile-hero/MOHAMED_mobile.webp'
 import nautilus_mobile_hero from '../public/allgames-mobile-hero/NAUTILUS_mobile.webp'
 import reggae_mobile_hero from '../public/allgames-mobile-hero/REGGAE FROG_mobile.webp'
@@ -437,7 +439,7 @@ export const games = [
     href: 'book-of-magic',
     slug: 'book-of-magic',
     coverImage: BOOK_OF_MAGIC,
-    mainImage: magic,
+    mainImage: bookofmagic,
     images: [BOOK_OF_MAGIC_PHOTO1, BOOK_OF_MAGIC_PHOTO2, BOOK_OF_MAGIC_PHOTO3, BOOK_OF_MAGIC_PHOTO4],
     description: 'Un libro magico che ti porterà in un mondo di incantesimi e misteri',
     featured: ['la-scatola-magica', 'magic-diamond-2', 'elfi', 'eden'],
@@ -647,7 +649,7 @@ export const games = [
     images: [MAGIC_DIAMOND_2_PHOTO1, MAGIC_DIAMOND_2_PHOTO2, MAGIC_DIAMOND_2_PHOTO3, MAGIC_DIAMOND_2_PHOTO4],
     description: 'Cerca il diamante magico in questa nuova avventura',
     featured: ['book-of-magic', 'la-scatola-magica', 'elfi', 'eden'],
-    mobileBg: magic_mobile_hero
+    mobileBg: magic_diamond_mobile_hero
   },
   {
     name: 'Mohamed',

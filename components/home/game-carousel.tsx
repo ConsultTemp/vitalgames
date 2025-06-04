@@ -61,18 +61,6 @@ const gameSlides = [
     demoUrl: "https://server.vitalgam.es:32160/SLOT/MrDiamond/?demo=true",
   },
   {
-    id: 2,
-    title: "Lo struzzo",
-    slug: "lo-struzzo",
-    description:
-      "Con simboli magici e bonus speciali, ogni giro può portare a vincite straordinarie fino a 5000 volte la puntata.",
-    features: ["Goditi funzionalità uniche come Free Spins e Moltiplicatori progressivi."],
-    imageSrc: luckyCharmsImage,
-    mobileImageSrc: luckyCharmsMobileImage,
-    imageAlt: "Lucky Charms slot game",
-    demoUrl: "https://server.vitalgam.es:32160/SLOT/LoStruzzo/?demo=true/",
-  },
-  {
     id: 3,
     title: "Reggae frog",
     slug: "reggae-frog",
@@ -83,6 +71,18 @@ const gameSlides = [
     imageAlt: "Pirate Treasure slot game",
     demoUrl: "https://server.vitalgam.es:32160/SLOT/ReggaeFrog/?demo=true",
   },
+  {
+    id: 2,
+    title: "Lo struzzo",
+    slug: "lo-struzzo",
+    description:
+      "Con simboli magici e bonus speciali, ogni giro può portare a vincite straordinarie fino a 5000 volte la puntata.",
+    features: ["Goditi funzionalità uniche come Free Spins e Moltiplicatori progressivi."],
+    imageSrc: luckyCharmsImage,
+    mobileImageSrc: luckyCharmsMobileImage,
+    imageAlt: "Lucky Charms slot game",
+    demoUrl: "https://server.vitalgam.es:32160/SLOT/LoStruzzo/?demo=true/",
+  }
 ]
 
 export function GameCarousel() {
