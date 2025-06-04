@@ -161,14 +161,22 @@ export default function CabinetSection() {
               <CarouselPrevious className="left-2" />
               <CarouselNext className="right-2" />
             </Carousel>
-            <div className="absolute bottom-[-160px] right-[-140px] md:right-[-200px] w-[350px] h-[350px] z-20">
+            <div className="absolute bottom-[-160px] right-[-140px] md:right-[-200px] w-[350px] h-[350px] z-10 pointer-events-none">
               <OverlayContent className="w-full h-full object-contain" />
             </div>
+
           </div>
 
-          <Button variant="outline" className="rounded-full hover:bg-opacity-80 text-white border-white font-medium px-3 py-1 text-base cursor-pointer">
-            <Link href={`/vlt`}>{cabinet.cta}</Link>
-          </Button>
+          {/* Bottone sovrapposto sopra l’overlay */}
+          <div className="relative w-full flex justify-center items-center z-30">
+            <Button
+              variant="outline"
+              className="rounded-full hover:bg-opacity-80 text-white border-white focus:bg-black font-medium px-3 py-1 text-base cursor-pointer z-30"
+            >
+              <Link href={`/vlt`}>{cabinet.cta}</Link>
+            </Button>
+          </div>
+
         </div>
 
         {/* Desktop Layout */}

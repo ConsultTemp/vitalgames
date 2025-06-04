@@ -17,7 +17,7 @@ const config: Config = {
         secondary: "#ffffff",
         darkGray: '#7B8487',
         vitalYellow: "#FFFF00",
-        accent: "#b91c1c", // red-700 for the red highlights
+        accent: "black", // red-700 for the red highlights
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
