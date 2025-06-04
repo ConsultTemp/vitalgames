@@ -289,7 +289,7 @@ export default async function AboutUs(props: { params: Params }) {
             title="CABINET VLT"
             subtitle={dictionary.vlt.hero.description}
             videoUrl="ab514172f1d524215552f7b53c87ef8f"
-            mobileVideoUrl="2ec336e25d6e7e2b5867ecdb8b2ebed0"
+            mobileVideoUrl="cbcee7e30bc29ad2100326030876cd16"
           />
         </header>
 
