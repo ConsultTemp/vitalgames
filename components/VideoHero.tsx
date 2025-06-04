@@ -28,8 +28,8 @@ const VideoHero: React.FC<VideoHeroProps> = ({ title, subtitle, videoUrl, mobile
           gradientDirection="to-t"
         />
 
-        {/* Testo sovrapposto */}
-        <div className="relative flex items-end justify-center p-8 md:p-12">
+        {/* Testo sovrapposto - posizionato assolutamente per coprire il video */}
+        <div className="absolute inset-0 flex items-end justify-center p-8 md:p-12 z-10">
           <div className="max-w-5xl text-center mb-8">
             <h1 className="text-4xl md:text-8xl dharmalight font-bold text-white">{title}</h1>
             <p className="text-sm font-light text-white/80 max-w-2xl mx-auto mt-4">{subtitle}</p>
