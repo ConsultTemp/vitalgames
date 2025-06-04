@@ -137,6 +137,25 @@
       "title": "Our Partners"
     }
   },
+  "contactForm": {
+    "title": "Contact Us",
+    "name": "Name",
+    "namePlaceholder": "Enter your full name",
+    "email": "Email",
+    "emailPlaceholder": "your-email@example.com",
+    "message": "Message",
+    "messagePlaceholder": "Describe your request...",
+    "captchaTitle": "Security Check",
+    "captchaInstructions": "Type the characters you see in the image",
+    "captchaPlaceholder": "Enter the 4 characters",
+    "successMessage": "✅ Message sent successfully!",
+    "errorMessage": "❌ There was an error sending the message. Please try again later.",
+    "cancel": "Cancel",
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "requiredFields": "* Required fields",
+    "captchaError": "Incorrect code. Please try again with the new code."
+  },
   "vlt": {
     "title": "VLT CABINETS",
     "description": "Discover our high-quality VLT cabinets, designed to deliver a superior gaming experience in dedicated venues",
@@ -637,104 +656,104 @@
   },
   "includedGamesIn": "Included games in",
   "privacy": {
-  "title": "Privacy Policy",
-  "sections": {
-    "introduction": {
-      "title": "1. Introduction",
-      "content": "Vital Games values your trust. We invite you to read this Privacy Policy, providing consent to both documents to have authorization to use our services."
-    },
-    "dataCollection": {
-      "title": "2. Data Collection",
-      "dataLocation": {
-        "title": "Data Storage Location",
-        "content": "We are a company based in Italy and manage the web server hosted in Europe."
+    "title": "Privacy Policy",
+    "sections": {
+      "introduction": {
+        "title": "1. Introduction",
+        "content": "Vital Games values your trust. We invite you to read this Privacy Policy, providing consent to both documents to have authorization to use our services."
       },
-      "registrationData": {
-        "title": "Registration Data",
-        "content": "If you register on our website, we store your chosen username and email address and any other personal information added to your user profile. You can view, edit or delete your personal data at any time (except for changing your username). Website administrators can also view and edit this information."
+      "dataCollection": {
+        "title": "2. Data Collection",
+        "dataLocation": {
+          "title": "Data Storage Location",
+          "content": "We are a company based in Italy and manage the web server hosted in Europe."
+        },
+        "registrationData": {
+          "title": "Registration Data",
+          "content": "If you register on our website, we store your chosen username and email address and any other personal information added to your user profile. You can view, edit or delete your personal data at any time (except for changing your username). Website administrators can also view and edit this information."
+        },
+        "contactForm": {
+          "title": "Contact Form",
+          "content": "Information submitted through the contact form on our site is sent to our business email. This data is kept only for customer support purposes and is never used for marketing purposes or shared with third parties."
+        },
+        "googleAnalytics": {
+          "title": "Google Analytics",
+          "content": "We use Google Analytics on our site for anonymous reporting of site usage. Therefore, no personalized data is stored. If you want to opt out of tracking your behavior on our site by Google Analytics, use this link: Google Analytics Opt-out."
+        },
+        "useCases": {
+          "title": "Personal Data Usage Cases",
+          "content": "We use your personal information in the following cases:",
+          "list": [
+            "User verification/identification when using the website",
+            "Providing technical support",
+            "Sending updates to our users with important information to inform them about news/changes",
+            "Monitoring account activity to prevent fraudulent transactions and ensure the security of customers' personal information",
+            "Personalizing the website to make your experience more personal and engaging",
+            "Ensuring overall performance and proper functioning of administrative functions"
+          ]
+        }
       },
-      "contactForm": {
-        "title": "Contact Form",
-        "content": "Information submitted through the contact form on our site is sent to our business email. This data is kept only for customer support purposes and is never used for marketing purposes or shared with third parties."
+      "embeddedContent": {
+        "title": "3. Embedded Content",
+        "intro": "Pages on this site may include embedded content, such as YouTube videos. Embedded content from other websites behaves exactly as if you visited the other website.",
+        "description": "These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with embedded content, including tracking your interaction with embedded content if you have an account and are logged into that website. Below is a list of services we use:",
+        "facebook": {
+          "title": "Facebook",
+          "content": "The Facebook page plugin is used to display the Facebook timeline on our site. Facebook has its own cookie and privacy policies over which we have no control. No cookies are installed by Facebook and your IP is not sent to a Facebook server until you consent. See their privacy policy here: Facebook Privacy Policy."
+        },
+        "twitter": {
+          "title": "Twitter",
+          "content": "We use the Twitter API to display our tweet timeline on our site. Twitter has its own cookie and privacy policies over which we have no control. Your IP is not sent to a Twitter server until you consent to do so: Twitter Privacy Policy."
+        }
       },
-      "googleAnalytics": {
-        "title": "Google Analytics",
-        "content": "We use Google Analytics on our site for anonymous reporting of site usage. Therefore, no personalized data is stored. If you want to opt out of tracking your behavior on our site by Google Analytics, use this link: Google Analytics Opt-out."
+      "cookies": {
+        "title": "4. Cookies",
+        "content": "This site uses cookies, small text files that are stored on your computer to help improve your experience. In general, cookies are used to retain user preferences, store information such as shopping carts, and provide anonymized tracking data to third-party applications like Google Analytics. In general, cookies serve to improve the user's browsing experience. However, you may prefer to disable cookies on this site and others. The most effective way to do this is to disable cookies in your browser. We recommend consulting your browser's help section.",
+        "essential": {
+          "title": "Essential Cookies",
+          "phpsessid": "PHPSESSID: To identify your unique session on the website."
+        }
       },
-      "useCases": {
-        "title": "Personal Data Usage Cases",
-        "content": "We use your personal information in the following cases:",
+      "dataAccess": {
+        "title": "5. Who Has Access to Your Data",
+        "intro": "If you are not a registered customer of our site, we cannot store or view your personal data.",
+        "registered": "If you are a customer with a registered account, your personal data may be accessed by:",
         "list": [
-          "User verification/identification when using the website",
-          "Providing technical support",
-          "Sending updates to our users with important information to inform them about news/changes",
-          "Monitoring account activity to prevent fraudulent transactions and ensure the security of customers' personal information",
-          "Personalizing the website to make your experience more personal and engaging",
-          "Ensuring overall performance and proper functioning of administrative functions"
+          "Our system administrators",
+          "Our suppliers when (to provide assistance) they need to obtain information about customer accounts and access"
         ]
-      }
-    },
-    "embeddedContent": {
-      "title": "3. Embedded Content",
-      "intro": "Pages on this site may include embedded content, such as YouTube videos. Embedded content from other websites behaves exactly as if you visited the other website.",
-      "description": "These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with embedded content, including tracking your interaction with embedded content if you have an account and are logged into that website. Below is a list of services we use:",
-      "facebook": {
-        "title": "Facebook",
-        "content": "The Facebook page plugin is used to display the Facebook timeline on our site. Facebook has its own cookie and privacy policies over which we have no control. No cookies are installed by Facebook and your IP is not sent to a Facebook server until you consent. See their privacy policy here: Facebook Privacy Policy."
       },
-      "twitter": {
-        "title": "Twitter",
-        "content": "We use the Twitter API to display our tweet timeline on our site. Twitter has its own cookie and privacy policies over which we have no control. Your IP is not sent to a Twitter server until you consent to do so: Twitter Privacy Policy."
-      }
-    },
-    "cookies": {
-      "title": "4. Cookies",
-      "content": "This site uses cookies, small text files that are stored on your computer to help improve your experience. In general, cookies are used to retain user preferences, store information such as shopping carts, and provide anonymized tracking data to third-party applications like Google Analytics. In general, cookies serve to improve the user's browsing experience. However, you may prefer to disable cookies on this site and others. The most effective way to do this is to disable cookies in your browser. We recommend consulting your browser's help section.",
-      "essential": {
-        "title": "Essential Cookies",
-        "phpsessid": "PHPSESSID: To identify your unique session on the website."
-      }
-    },
-    "dataAccess": {
-      "title": "5. Who Has Access to Your Data",
-      "intro": "If you are not a registered customer of our site, we cannot store or view your personal data.",
-      "registered": "If you are a customer with a registered account, your personal data may be accessed by:",
-      "list": [
-        "Our system administrators",
-        "Our suppliers when (to provide assistance) they need to obtain information about customer accounts and access"
-      ]
-    },
-    "dataRetention": {
-      "title": "6. How Long We Keep Your Data",
-      "support": "When you submit a support ticket or comment, the related metadata is kept until (if) you tell us to remove it. We use this data to be able to recognize you and automatically approve your comments instead of holding them for moderation.",
-      "registration": "If you register on our website, we also store the personal information you provide in your user profile. You can view, edit or delete your personal information at any time (except for changing your username). Website administrators can also view and edit this information."
-    },
-    "security": {
-      "title": "7. Security Measures",
-      "ssl": "We use SSL/HTTPS protocol throughout our site. This protocol encrypts our users' communications with servers, so that personally identifiable information is not captured/hijacked by unauthorized third parties.",
-      "breach": "In case of a data breach, system administrators will immediately take all necessary measures to ensure system integrity, contact affected users and attempt to reset passwords if necessary."
-    },
-    "dataRights": {
-      "title": "8. Your Data Rights",
-      "general": {
-        "title": "General Rights",
-        "content": "If you have a registered account on this website or have left comments, you can request an exported file of the personal data we hold, including any additional data you have provided to us. You can also request deletion of personal data we have stored. This does not include data we are required to keep for administrative, legal or security purposes. In short, we cannot delete data that is fundamental to being an active customer (e.g., basic account information, such as email address). If you want all your data to be deleted, we will no longer be able to offer you assistance or other product-related services."
+      "dataRetention": {
+        "title": "6. How Long We Keep Your Data",
+        "support": "When you submit a support ticket or comment, the related metadata is kept until (if) you tell us to remove it. We use this data to be able to recognize you and automatically approve your comments instead of holding them for moderation.",
+        "registration": "If you register on our website, we also store the personal information you provide in your user profile. You can view, edit or delete your personal information at any time (except for changing your username). Website administrators can also view and edit this information."
       },
-      "gdpr": {
-        "title": "GDPR",
-        "content": "Your privacy is of paramount importance to us. Regarding GDPR, our goal is to support GDPR standards. AxiomThemes allows European Union residents to use our Service. Therefore, it is AxiomThemes' intention to comply with the European General Data Protection Regulation. For more details, see here: GDPR Information Portal. EU GDPR Information Portal."
+      "security": {
+        "title": "7. Security Measures",
+        "ssl": "We use SSL/HTTPS protocol throughout our site. This protocol encrypts our users' communications with servers, so that personally identifiable information is not captured/hijacked by unauthorized third parties.",
+        "breach": "In case of a data breach, system administrators will immediately take all necessary measures to ensure system integrity, contact affected users and attempt to reset passwords if necessary."
+      },
+      "dataRights": {
+        "title": "8. Your Data Rights",
+        "general": {
+          "title": "General Rights",
+          "content": "If you have a registered account on this website or have left comments, you can request an exported file of the personal data we hold, including any additional data you have provided to us. You can also request deletion of personal data we have stored. This does not include data we are required to keep for administrative, legal or security purposes. In short, we cannot delete data that is fundamental to being an active customer (e.g., basic account information, such as email address). If you want all your data to be deleted, we will no longer be able to offer you assistance or other product-related services."
+        },
+        "gdpr": {
+          "title": "GDPR",
+          "content": "Your privacy is of paramount importance to us. Regarding GDPR, our goal is to support GDPR standards. AxiomThemes allows European Union residents to use our Service. Therefore, it is AxiomThemes' intention to comply with the European General Data Protection Regulation. For more details, see here: GDPR Information Portal. EU GDPR Information Portal."
+        }
+      },
+      "thirdPartyWebsites": {
+        "title": "9. Third Party Websites",
+        "content": "Vital Games may publish links to third party websites on this site. These third party websites are not controlled by AxiomThemes regarding privacy or security compliance and you release us from any liability for the conduct of these third party websites. All social media sharing links, displayed as text links or social media icons, do not connect you to any of the associated third parties unless you explicitly click on them.",
+        "disclaimer": "Please note that this Privacy Policy and other policies in effect, as well as any changes, do not create actionable rights by third parties nor require disclosure of personal information relating to members of the Service or Site. AxiomThemes assumes no responsibility for information collected or used by any advertiser or third party website. Please consult the privacy policy and terms of service of each site visited through third party links."
+      },
+      "legalDisclosure": {
+        "title": "10. Release of User Data for Legal Purposes",
+        "content": "Sometimes it may be necessary or desirable for AxiomThemes, for legal purposes, to disclose user data in response to a request from a government agency or private party. You agree that AxiomThemes may disclose your information to third parties when it believes, in good faith, that it is appropriate to do so for the purposes of civil action, criminal investigation or other legal matter. In the event we receive a subpoena regarding your privacy, we may decide to inform you to give you the opportunity to file a motion to quash the subpoena, or we may attempt to quash it ourselves, but we are not obligated to do so. We may also proactively report you and release your information to third parties, should we believe it is prudent to do so for legal reasons, such as believing you have engaged in fraudulent activities. You release us from any damages that may arise from or be related to the release of your information following a request from law enforcement or private disputes.",
+        "compliance": "Any transmission of personal data for legal purposes will occur only in compliance with the laws of the country in which you reside."
       }
-    },
-    "thirdPartyWebsites": {
-      "title": "9. Third Party Websites",
-      "content": "Vital Games may publish links to third party websites on this site. These third party websites are not controlled by AxiomThemes regarding privacy or security compliance and you release us from any liability for the conduct of these third party websites. All social media sharing links, displayed as text links or social media icons, do not connect you to any of the associated third parties unless you explicitly click on them.",
-      "disclaimer": "Please note that this Privacy Policy and other policies in effect, as well as any changes, do not create actionable rights by third parties nor require disclosure of personal information relating to members of the Service or Site. AxiomThemes assumes no responsibility for information collected or used by any advertiser or third party website. Please consult the privacy policy and terms of service of each site visited through third party links."
-    },
-    "legalDisclosure": {
-      "title": "10. Release of User Data for Legal Purposes",
-      "content": "Sometimes it may be necessary or desirable for AxiomThemes, for legal purposes, to disclose user data in response to a request from a government agency or private party. You agree that AxiomThemes may disclose your information to third parties when it believes, in good faith, that it is appropriate to do so for the purposes of civil action, criminal investigation or other legal matter. In the event we receive a subpoena regarding your privacy, we may decide to inform you to give you the opportunity to file a motion to quash the subpoena, or we may attempt to quash it ourselves, but we are not obligated to do so. We may also proactively report you and release your information to third parties, should we believe it is prudent to do so for legal reasons, such as believing you have engaged in fraudulent activities. You release us from any damages that may arise from or be related to the release of your information following a request from law enforcement or private disputes.",
-      "compliance": "Any transmission of personal data for legal purposes will occur only in compliance with the laws of the country in which you reside."
     }
   }
-}
 }

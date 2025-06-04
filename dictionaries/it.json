@@ -152,6 +152,25 @@
       "title": "Partners"
     }
   },
+  "contactForm": {
+    "title": "Contattaci",
+    "name": "Nome",
+    "namePlaceholder": "Il tuo nome completo",
+    "email": "Email",
+    "emailPlaceholder": "la-tua-email@esempio.com",
+    "message": "Messaggio",
+    "messagePlaceholder": "Descrivi la tua richiesta...",
+    "captchaTitle": "Verifica di sicurezza",
+    "captchaInstructions": "Trascrivi i caratteri che vedi nell'immagine",
+    "captchaPlaceholder": "Inserisci i 4 caratteri",
+    "successMessage": "✅ Messaggio inviato con successo!",
+    "errorMessage": "❌ Errore nell'invio del messaggio. Riprova più tardi.",
+    "cancel": "Annulla",
+    "submit": "Invia Messaggio",
+    "sending": "Invio in corso...",
+    "requiredFields": "* Campi obbligatori",
+    "captchaError": "Codice errato. Riprova con il nuovo codice."
+  },
   "vlt": {
     "title": "CABINET VLT",
     "description": "Scopri le nostre cabinet VLT di alta qualità, progettate per offrire un'esperienza di gioco superiore nelle sale dedicate",

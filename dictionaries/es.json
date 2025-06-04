@@ -144,6 +144,25 @@
       "title": "Nuestros Partners"
     }
   },
+  "contactForm": {
+    "title": "Contáctanos",
+    "name": "Nombre",
+    "namePlaceholder": "Introduce tu nombre completo",
+    "email": "Email",
+    "emailPlaceholder": "tu-email@ejemplo.com",
+    "message": "Mensaje",
+    "messagePlaceholder": "Describe tu solicitud...",
+    "captchaTitle": "Verificación de seguridad",
+    "captchaInstructions": "Escribe los caracteres que ves en la imagen",
+    "captchaPlaceholder": "Introduce los 4 caracteres",
+    "successMessage": "✅ ¡Mensaje enviado con éxito!",
+    "errorMessage": "❌ Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.",
+    "cancel": "Cancelar",
+    "submit": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "requiredFields": "* Campos obligatorios",
+    "captchaError": "Código incorrecto. Intenta de nuevo con el nuevo código."
+  },
   "vlt": {
     "title": "GABINETES VLT",
     "description": "Descubre nuestros gabinetes VLT de alta calidad, diseñados para ofrecer una experiencia de juego superior en salas dedicadas",

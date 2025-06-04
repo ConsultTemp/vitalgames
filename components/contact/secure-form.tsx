@@ -4,6 +4,82 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import { Phone, Mail, MapPin, RefreshCw } from "lucide-react"
 
+// Translations for the contact form
+const translations = {
+  it: {
+    contactForm: {
+      title: "Contattaci",
+      phone: "Telefono",
+      emailLabel: "Email",
+      address: "Indirizzo",
+      successMessage: "Messaggio inviato con successo!",
+      errorMessage: "Si è verificato un errore durante l'invio.",
+      captchaTitle: "Verifica CAPTCHA",
+      captchaInstructions: "Inserisci il codice mostrato sopra.",
+      captchaPlaceholder: "Codice CAPTCHA",
+      captchaError: "Il codice CAPTCHA non è corretto.",
+      cancel: "Annulla",
+      confirm: "Conferma",
+      requiredFields: "I campi contrassegnati con * sono obbligatori",
+      name: "Nome",
+      namePlaceholder: "Inserisci il tuo nome",
+      email: "Email",
+      emailPlaceholder: "Inserisci la tua email",
+      message: "Messaggio",
+      messagePlaceholder: "Scrivi il tuo messaggio",
+      sending: "Invio in corso...",
+    },
+  },
+  en: {
+    contactForm: {
+      title: "Contact Us",
+      phone: "Phone",
+      emailLabel: "Email",
+      address: "Address",
+      successMessage: "Message sent successfully!",
+      errorMessage: "There was an error sending the message.",
+      captchaTitle: "CAPTCHA Verification",
+      captchaInstructions: "Please enter the code shown above.",
+      captchaPlaceholder: "CAPTCHA Code",
+      captchaError: "The CAPTCHA code is incorrect.",
+      cancel: "Cancel",
+      confirm: "Confirm",
+      requiredFields: "Fields marked with * are required",
+      name: "Name",
+      namePlaceholder: "Enter your name",
+      email: "Email",
+      emailPlaceholder: "Enter your email",
+      message: "Message",
+      messagePlaceholder: "Write your message",
+      sending: "Sending...",
+    },
+  },
+  es: {
+    contactForm: {
+      title: "Contáctanos",
+      phone: "Teléfono",
+      emailLabel: "Correo Electrónico",
+      address: "Dirección",
+      successMessage: "¡Mensaje enviado con éxito!",
+      errorMessage: "Hubo un error al enviar el mensaje.",
+      captchaTitle: "Verificación CAPTCHA",
+      captchaInstructions: "Por favor, ingresa el código que se muestra arriba.",
+      captchaPlaceholder: "Código CAPTCHA",
+      captchaError: "El código CAPTCHA es incorrecto.",
+      cancel: "Cancelar",
+      confirm: "Confirmar",
+      requiredFields: "Los campos marcados con * son obligatorios",
+      name: "Nombre",
+      namePlaceholder: "Ingresa tu nombre",
+      email: "Correo Electrónico",
+      emailPlaceholder: "Ingresa tu correo electrónico",
+      message: "Mensaje",
+      messagePlaceholder: "Escribe tu mensaje",
+      sending: "Enviando...",
+    },
+  },
+}
+
 // Interfacce TypeScript
 interface FormData {
   name: string
@@ -18,7 +94,6 @@ interface CaptchaData {
 }
 
 interface FormErrors {
-    //@ts-ignore
   [key: string]: string
   //@ts-ignore
   name?: string
@@ -34,7 +109,9 @@ interface FormErrors {
 
 type SubmitStatus = "idle" | "success" | "error"
 
-const SecureContactForm: React.FC = () => {
+const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
+  const dictionary = translations[lang].contactForm;
+
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -50,7 +127,10 @@ const SecureContactForm: React.FC = () => {
   const [showCaptchaConfirmation, setShowCaptchaConfirmation] = useState<boolean>(false)
   const [captchaError, setCaptchaError] = useState<boolean>(false)
 
-  // Genera captcha con 4 caratteri alfanumerici
+  useEffect(() => {
+    generateCaptcha()
+  }, [])
+
   const generateCaptcha = (): void => {
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
     let code = ""
@@ -60,10 +140,6 @@ const SecureContactForm: React.FC = () => {
     setCaptcha({ code })
   }
 
-  useEffect(() => {
-    generateCaptcha()
-  }, [])
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     const { name, value } = e.target
     setFormData((prev) => ({
@@ -71,7 +147,6 @@ const SecureContactForm: React.FC = () => {
       [name]: value,
     }))
 
-    // Rimuovi errore quando l'utente inizia a digitare
     if (errors[name]) {
       setErrors((prev) => ({
         ...prev,
@@ -83,25 +158,23 @@ const SecureContactForm: React.FC = () => {
   const validateForm = (): FormErrors => {
     const newErrors: FormErrors = {}
 
-    // Controllo honeypot - se compilato è un bot
     if (formData.honeypot) {
       newErrors.bot = "Bot rilevato"
       return newErrors
     }
 
-    // Validazione campi obbligatori
     if (!formData.name.trim()) {
-      newErrors.name = "Il nome è obbligatorio"
+      newErrors.name = dictionary.name + " è obbligatorio"
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "L'email è obbligatoria"
+      newErrors.email = dictionary.email + " è obbligatorio"
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Inserisci un'email valida"
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = "Il messaggio è obbligatorio"
+      newErrors.message = dictionary.message + " è obbligatorio"
     }
 
     return newErrors
@@ -135,13 +208,12 @@ const SecureContactForm: React.FC = () => {
       return
     }
 
-    // Mostra il CAPTCHA dopo la prima validazione
     setShowCaptchaConfirmation(true)
   }
 
   const handleCaptchaSubmit = async (): Promise<void> => {
     if (!validateCaptcha()) {
-      refreshCaptcha() // Rigenera captcha se sbagliato
+      refreshCaptcha()
       return
     }
 
@@ -149,7 +221,6 @@ const SecureContactForm: React.FC = () => {
     setSubmitStatus("idle")
 
     try {
-      // Prepara i dati per FormSubmit
       const submitData = new FormData()
       submitData.append("name", formData.name)
       submitData.append("email", formData.email)
@@ -190,22 +261,19 @@ const SecureContactForm: React.FC = () => {
   }
 
   return (
-    <section
-      className="relative min-h-screen contact-bg"
-    >
+    <section className="relative min-h-screen contact-bg">
       <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="grid md:grid-cols-5 gap-8 max-w-6xl mx-auto">
-          {/* Left Side - Contact Information */}
           <aside className="bg-white/5 backdrop-blur-sm rounded-lg p-8 h-full md:col-span-2">
             <div className="space-y-8">
               <div className="mb-8">
-                <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 dharmalight">I nostri contatti</h2>
+                <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 dharmalight">{dictionary.title}</h2>
               </div>
 
               <div className="flex items-center space-x-4">
                 <Phone className="text-white" size={20} />
                 <div className="space-y-2">
-                  <h3 className="text-white font-semibold">Telefono</h3>
+                  <h3 className="text-white font-semibold">{dictionary.phone}</h3>
                   <p className="text-gray-300 text-sm">+39 02 1234567</p>
                 </div>
               </div>
@@ -213,7 +281,7 @@ const SecureContactForm: React.FC = () => {
               <div className="flex items-center space-x-4">
                 <Mail className="text-white" size={20} />
                 <div className="space-y-2">
-                  <h3 className="text-white font-semibold">Email</h3>
+                  <h3 className="text-white font-semibold">{dictionary.emailLabel}</h3>
                   <p className="text-gray-300 text-sm">info@vitalgames.com</p>
                 </div>
               </div>
@@ -221,36 +289,34 @@ const SecureContactForm: React.FC = () => {
               <div className="flex items-center space-x-4">
                 <MapPin className="text-white" size={20} />
                 <div className="space-y-2">
-                  <h3 className="text-white font-semibold">Indirizzo</h3>
+                  <h3 className="text-white font-semibold">{dictionary.address}</h3>
                   <p className="text-gray-300 text-sm">Milano, Lombardia, Italia</p>
                 </div>
               </div>
             </div>
           </aside>
-
-          {/* Right Side - Form */}
           <div className="flex flex-col h-full md:col-span-3">
             <div className="mb-8">
-              <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 dharmalight">Contattaci</h2>
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 dharmalight">{dictionary.title}</h2>
             </div>
 
             <div className="flex-grow">
               {submitStatus === "success" && (
                 <div className="mb-6 p-4 bg-green-500/20 border border-green-500 rounded-lg text-green-300">
-                  ✅ Messaggio inviato con successo!
+                  ✅ {dictionary.successMessage}
                 </div>
               )}
 
               {submitStatus === "error" && (
                 <div className="mb-6 p-4 bg-red-500/20 border border-red-500 rounded-lg text-red-300">
-                  ❌ Errore nell'invio del messaggio. Riprova più tardi.
+                  ❌ {dictionary.errorMessage}
                 </div>
               )}
 
               {showCaptchaConfirmation ? (
                 <div className="p-8 bg-white/5 backdrop-blur-sm rounded-lg text-center">
-                  <h3 className="text-xl mb-4 text-white">Verifica di sicurezza</h3>
-                  <p className="text-gray-300 mb-6">Trascrivi i caratteri che vedi nell'immagine</p>
+                  <h3 className="text-xl mb-4 text-white">{dictionary.captchaTitle}</h3>
+                  <p className="text-gray-300 mb-6">{dictionary.captchaInstructions}</p>
 
                   <div className="mb-6 flex flex-col items-center">
                     <div className="relative bg-gradient-to-br from-gray-200 to-gray-300 p-6 rounded-md mb-4 select-none border-2 border-gray-400">
@@ -278,7 +344,6 @@ const SecureContactForm: React.FC = () => {
                         ))}
                       </div>
 
-                      {/* Linee di disturbo */}
                       <div className="absolute inset-0 pointer-events-none">
                         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
                           <line x1="0" y1="30" x2="100" y2="25" stroke="rgba(0,0,0,0.2)" strokeWidth="1" />
@@ -304,17 +369,16 @@ const SecureContactForm: React.FC = () => {
                         name="captcha"
                         value={formData.captcha}
                         onChange={handleInputChange}
-                        placeholder="Inserisci i 4 caratteri"
+                        placeholder={dictionary.captchaPlaceholder}
                         maxLength={4}
-                        className={`w-full px-4 py-2 bg-white/10 backdrop-blur-sm border rounded-lg text-white text-center text-lg tracking-widest focus:outline-none focus:ring-2 ${
-                          captchaError ? "border-red-500 focus:ring-red-400" : "border-white"
-                        }`}
+                        className={`w-full px-4 py-2 bg-white/10 backdrop-blur-sm border rounded-lg text-white text-center text-lg tracking-widest focus:outline-none focus:ring-2 ${captchaError ? "border-red-500 focus:ring-red-400" : "border-white"
+                          }`}
                         disabled={isSubmitting}
                         autoFocus
                         style={{ textTransform: "uppercase" }}
                       />
                       {captchaError && (
-                        <p className="text-red-400 text-sm mt-2">Codice errato. Riprova con il nuovo codice.</p>
+                        <p className="text-red-400 text-sm mt-2">{dictionary.captchaError}</p>
                       )}
                     </div>
                   </div>
@@ -326,17 +390,16 @@ const SecureContactForm: React.FC = () => {
                       className="px-6 py-2 bg-gray-600 hover:bg-gray-500 text-white rounded-lg transition-colors"
                       disabled={isSubmitting}
                     >
-                      Annulla
+                      {dictionary.cancel}
                     </button>
                     <button
                       type="button"
                       onClick={handleCaptchaSubmit}
                       disabled={isSubmitting || formData.captcha.length !== 4}
-                      className={`px-6 py-2 rounded-lg font-semibold transition-all duration-200 ${
-                        isSubmitting || formData.captcha.length !== 4
+                      className={`px-6 py-2 rounded-lg font-semibold transition-all duration-200 ${isSubmitting || formData.captcha.length !== 4
                           ? "bg-gray-400 text-gray-600 cursor-not-allowed"
                           : "bg-vitalYellow hover:opacity-80 text-black"
-                      }`}
+                        }`}
                     >
                       {isSubmitting ? (
                         <span className="flex items-center">
@@ -360,17 +423,16 @@ const SecureContactForm: React.FC = () => {
                               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                             />
                           </svg>
-                          Invio...
+                          {dictionary.sending}
                         </span>
                       ) : (
-                        "Conferma Invio"
+                        dictionary.confirm
                       )}
                     </button>
                   </div>
                 </div>
               ) : (
                 <div className="space-y-6">
-                  {/* Campo honeypot nascosto */}
                   <input
                     type="text"
                     name="honeypot"
@@ -391,7 +453,7 @@ const SecureContactForm: React.FC = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-white mb-2">
-                        Nome *
+                        {dictionary.name} *
                       </label>
                       <input
                         type="text"
@@ -399,10 +461,9 @@ const SecureContactForm: React.FC = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        placeholder="Il tuo nome completo"
-                        className={`w-full px-4 py-2 bg-white/5 backdrop-blur-sm border rounded-lg text-white focus:outline-none focus:ring-2 ${
-                          errors.name ? "border-red-500 focus:ring-red-400" : "border-white"
-                        }`}
+                        placeholder={dictionary.namePlaceholder}
+                        className={`w-full px-4 py-2 bg-white/5 backdrop-blur-sm border rounded-lg text-white focus:outline-none focus:ring-2 ${errors.name ? "border-red-500 focus:ring-red-400" : "border-white"
+                          }`}
                         disabled={isSubmitting}
                       />
                       {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name}</p>}
@@ -410,7 +471,7 @@ const SecureContactForm: React.FC = () => {
 
                     <div>
                       <label htmlFor="email" className="block text-white mb-2">
-                        Email *
+                        {dictionary.email} *
                       </label>
                       <input
                         type="email"
@@ -418,10 +479,9 @@ const SecureContactForm: React.FC = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        placeholder="la-tua-email@esempio.com"
-                        className={`w-full px-4 py-2 bg-white/5 backdrop-blur-sm border rounded-lg text-white focus:outline-none focus:ring-2 ${
-                          errors.email ? "border-red-500 focus:ring-red-400" : "border-white"
-                        }`}
+                        placeholder={dictionary.emailPlaceholder}
+                        className={`w-full px-4 py-2 bg-white/5 backdrop-blur-sm border rounded-lg text-white focus:outline-none focus:ring-2 ${errors.email ? "border-red-500 focus:ring-red-400" : "border-white"
+                          }`}
                         disabled={isSubmitting}
                       />
                       {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
@@ -430,7 +490,7 @@ const SecureContactForm: React.FC = () => {
 
                   <div>
                     <label htmlFor="message" className="block text-white mb-2">
-                      Messaggio *
+                      {dictionary.message} *
                     </label>
                     <textarea
                       id="message"
@@ -438,10 +498,9 @@ const SecureContactForm: React.FC = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={4}
-                      placeholder="Descrivi la tua richiesta..."
-                      className={`w-full px-4 py-2 bg-white/5 backdrop-blur-sm border rounded-lg text-white focus:outline-none focus:ring-2 resize-vertical ${
-                        errors.message ? "border-red-500 focus:ring-red-400" : "border-white"
-                      }`}
+                      placeholder={dictionary.messagePlaceholder}
+                      className={`w-full px-4 py-2 bg-white/5 backdrop-blur-sm border rounded-lg text-white focus:outline-none focus:ring-2 resize-vertical ${errors.message ? "border-red-500 focus:ring-red-400" : "border-white"
+                        }`}
                       disabled={isSubmitting}
                     />
                     {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message}</p>}
@@ -451,11 +510,10 @@ const SecureContactForm: React.FC = () => {
                     type="button"
                     onClick={handleInitialSubmit}
                     disabled={isSubmitting}
-                    className={`w-full py-3 px-6 rounded-lg font-semibold text-black transition-all duration-200 ${
-                      isSubmitting
+                    className={`w-full py-3 px-6 rounded-lg font-semibold text-black transition-all duration-200 ${isSubmitting
                         ? "bg-gray-400 cursor-not-allowed"
                         : "bg-vitalYellow hover:opacity-80"
-                    }`}
+                      }`}
                   >
                     {isSubmitting ? (
                       <span className="flex items-center justify-center">
@@ -472,14 +530,14 @@ const SecureContactForm: React.FC = () => {
                             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                           />
                         </svg>
-                        Invio in corso...
+                        {dictionary.sending}
                       </span>
                     ) : (
-                      "Invia Messaggio"
+                      dictionary.confirm
                     )}
                   </button>
 
-                  <p className="text-gray-400 text-xs text-center">* Campi obbligatori</p>
+                  <p className="text-gray-400 text-xs text-center">* {dictionary.requiredFields}</p>
                 </div>
               )}
             </div>

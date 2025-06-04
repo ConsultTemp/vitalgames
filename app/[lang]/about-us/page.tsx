@@ -481,7 +481,7 @@ export default async function AboutUs(props: { params: Params }) {
         <Partners />
 
         {/* Contact Section */}
-        <SecureContactForm/>
+        <SecureContactForm lang={params.lang}/>
       </div>
     </>
   )
