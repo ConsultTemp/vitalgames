@@ -46,9 +46,13 @@ export default function OptimizedCloudflareVideo({
 }: OptimizedCloudflareVideoProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isInView, setIsInView] = useState(!lazy)
-  const [isMobile, setIsMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState<boolean | null>(null) // null = non ancora determinato
+  const [isClient, setIsClient] = useState(false)
 
+  // Rileva se siamo sul client
   useEffect(() => {
+    setIsClient(true)
+    
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768)
     }
@@ -67,10 +71,9 @@ export default function OptimizedCloudflareVideo({
     if (!isMobile && ratio === "games") return "26.32vw";
     return "0"; // fallback se la combinazione è sconosciuta
   };
-  
 
   useEffect(() => {
-    if (!lazy || isInView) return
+    if (!lazy || isInView || !isClient) return
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -87,7 +90,26 @@ export default function OptimizedCloudflareVideo({
     }
 
     return () => observer.disconnect()
-  }, [lazy, isInView])
+  }, [lazy, isInView, isClient])
+
+  // Non renderizzare nulla finché non abbiamo determinato se siamo su mobile
+  if (!isClient || isMobile === null) {
+    return (
+      <div
+        ref={containerRef}
+        className={cn("relative flex flex-col items-center", containerClassName)}
+        style={{
+          width: width || "100%",
+          height: height || "auto",
+          ...(aspectRatio && { aspectRatio }),
+          ...(minHeight && { minHeight }),
+          ...(maxHeight && { maxHeight }),
+        }}
+      >
+        {fallbackComponent || <div className="w-full h-64 bg-gray-200 animate-pulse" />}
+      </div>
+    )
+  }
 
   const activeId = isMobile && mobileId ? mobileId : videoId
   const iframeSrc = `https://customer-vkies7d79pqqk1lg.cloudflarestream.com/${activeId}/iframe?autoplay=true&muted=true&controls=false&loop=true&preload=auto`
@@ -103,7 +125,7 @@ export default function OptimizedCloudflareVideo({
 
   // Stile per l'iframe - identico al container per riempire completamente
   const iframeStyles: React.CSSProperties = {
-    width: isMobile && ratio === "intro" ? "121.5vh" :  "100vw",
+    width: isMobile && ratio === "intro" ? "121.5vh" : "100vw",
     height: getHeight(isMobile, ratio),
     objectFit: "cover",
     objectPosition,
@@ -125,8 +147,6 @@ export default function OptimizedCloudflareVideo({
           className={cn("block border-0 m-0 p-0", className)}
         />
       )}
-
-      
     </div>
   )
 }
