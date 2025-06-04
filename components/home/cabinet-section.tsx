@@ -85,7 +85,7 @@ export default function CabinetSection() {
 
   // Componente per il contenuto overlay (video o immagine)
   const OverlayContent = ({ className }: { className: string }) => {
-    if (isSafari) {
+    
       return (
         <Image
           src={overlayGif}
@@ -95,21 +95,11 @@ export default function CabinetSection() {
           style={{ objectFit: 'contain' }}
         />
       )
-    }
-
-    return (
-      <div className="w-full h-full relative">
-       <OptimizedVideo
-        videoId="4c5580c357f91fd1c56276f74d731709"
-        className="absolute inset-0 w-full h-full object-contain"
-      />
-      </div>
-    )
   }
 
   // Componente per il contenuto overlay desktop
   const OverlayContentDesktop = ({ className }: { className: string }) => {
-    if (isSafari) {
+    
       return (
         <Image
           src={overlayGif}
@@ -119,14 +109,9 @@ export default function CabinetSection() {
           style={{ objectFit: 'contain' }}
         />
       )
-    }
+    
 
-    return (
-      <OptimizedVideo
-        videoId="4c5580c357f91fd1c56276f74d731709"
-        className={className}
-      />
-    )
+    
   }
 
   return (

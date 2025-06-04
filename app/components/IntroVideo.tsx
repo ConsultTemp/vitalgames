@@ -21,8 +21,11 @@ export default function IntroVideo({
   const [isClient, setIsClient] = useState(false)
 
   const fadeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const autoFadeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const handleVideoEnd = useCallback(() => {
+    if (isFading) return // Evita doppio trigger
+    
     setIsFading(true)
 
     if (fadeTimeoutRef.current) {
@@ -33,7 +36,7 @@ export default function IntroVideo({
       setHasSeenVideo(true)
       onComplete?.()
     }, fadeOutDuration)
-  }, [fadeOutDuration, onComplete])
+  }, [fadeOutDuration, onComplete, isFading])
 
   useEffect(() => {
     setIsClient(true)
@@ -55,10 +58,28 @@ export default function IntroVideo({
     }
   }, [isClient])
 
+  // Auto-fade dopo 3.1 secondi
+  useEffect(() => {
+    if (hasSeenVideo === false && !isFading) {
+      autoFadeTimeoutRef.current = setTimeout(() => {
+        handleVideoEnd()
+      }, 3100) // 3.1 secondi
+    }
+
+    return () => {
+      if (autoFadeTimeoutRef.current) {
+        clearTimeout(autoFadeTimeoutRef.current)
+      }
+    }
+  }, [hasSeenVideo, isFading, handleVideoEnd])
+
   useEffect(() => {
     return () => {
       if (fadeTimeoutRef.current) {
         clearTimeout(fadeTimeoutRef.current)
+      }
+      if (autoFadeTimeoutRef.current) {
+        clearTimeout(autoFadeTimeoutRef.current)
       }
     }
   }, [])
@@ -72,11 +93,11 @@ export default function IntroVideo({
       }`}
     >
       <OptimizedVideo
-      ratio="intro"
-        containerClassName="w-screen h-screen"
-        className="w-screen h-screen object-cover" 
-        videoId={videoUrl}   
-        mobileId={mobileVideoUrl}  
+        ratio="intro"
+        containerClassName="w-screen"
+        className="w-screen object-cover"
+        videoId={videoUrl}
+        mobileId={mobileVideoUrl}
       />
     </div>
   )

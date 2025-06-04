@@ -58,6 +58,17 @@ export default function OptimizedCloudflareVideo({
     return () => window.removeEventListener("resize", checkMobile)
   }, [])
 
+  const getHeight = (isMobile: boolean, ratio: "hero" | "games" | "intro") => {
+    if (isMobile && ratio === "hero")   return "125vw";
+    if (isMobile && ratio === "games")  return "125vw";
+    if (isMobile && ratio === "intro")  return "100vh";
+    if (!isMobile && ratio === "hero")  return "46.296vw";
+    if (!isMobile && ratio === "intro") return "56.25vw";
+    if (!isMobile && ratio === "games") return "26.32vw";
+    return "0"; // fallback se la combinazione è sconosciuta
+  };
+  
+
   useEffect(() => {
     if (!lazy || isInView) return
 
@@ -92,8 +103,8 @@ export default function OptimizedCloudflareVideo({
 
   // Stile per l'iframe - identico al container per riempire completamente
   const iframeStyles: React.CSSProperties = {
-    width: "100vw",
-    height: isMobile ? "125vw" : ratio === "hero" ? "46.296vw" :  ratio === "intro"  ? "56.25vw" : "26.32vw",
+    width: isMobile && ratio === "intro" ? "121.5vh" :  "100vw",
+    height: getHeight(isMobile, ratio),
     objectFit: "cover",
     objectPosition,
   }
@@ -101,7 +112,7 @@ export default function OptimizedCloudflareVideo({
   return (
     <div
       ref={containerRef}
-      className={cn("relative", containerClassName)}
+      className={cn("relative flex flex-col items-center", containerClassName)}
       style={containerStyles}
     >
       {isInView && (
@@ -115,25 +126,7 @@ export default function OptimizedCloudflareVideo({
         />
       )}
 
-      {overlay && (
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundColor: overlayColor,
-            opacity: overlayOpacity / 100,
-          }}
-        />
-      )}
-
-      {gradient && (
-        <div
-          className={cn(
-            "absolute inset-0 pointer-events-none",
-            `bg-gradient-${gradientDirection}`,
-            "from-black/50 to-transparent"
-          )}
-        />
-      )}
+      
     </div>
   )
 }
