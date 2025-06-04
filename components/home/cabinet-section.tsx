@@ -161,9 +161,9 @@ export default function CabinetSection() {
               <CarouselPrevious className="left-2" />
               <CarouselNext className="right-2" />
             </Carousel>
-            <div className="absolute bottom-[-160px] right-[-140px] md:right-[-200px] w-[350px] h-[350px] z-10 pointer-events-none">
+            {/* <div className="absolute bottom-[-160px] right-[-140px] md:right-[-200px] w-[350px] h-[350px] z-10 pointer-events-none">
               <OverlayContent className="w-full h-full object-contain" />
-            </div>
+            </div> */}
 
           </div>
 
@@ -222,9 +222,9 @@ export default function CabinetSection() {
               <CarouselPrevious className="left-2" />
               <CarouselNext className="right-2" />
             </Carousel>
-            <div className="absolute bottom-[-100px] right-[-120px] md:right-[-200px] w-[300px] h-[300px] z-20">
+            {/* <div className="absolute bottom-[-100px] right-[-120px] md:right-[-200px] w-[300px] h-[300px] z-20">
               <OverlayContentDesktop className="w-full h-full object-contain bg-red" />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
