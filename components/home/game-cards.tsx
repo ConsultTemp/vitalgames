@@ -76,7 +76,7 @@ export default function GameCards() {
 
   return (
     <section className="pb-16  relative overflow-visible absolute bg-transparent">
-      <div className="absolute top-[-150px] right-0 md:right-10 z-[1] max-w-[160px] md:max-w-none opacity-80">
+      <div className="absolute top-[-75px] right-0 md:right-10 z-[1] max-w-[160px] md:max-w-none opacity-80">
         <FloatingImage
           src={campana}
           alt="Campana"
