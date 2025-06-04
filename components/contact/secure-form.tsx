@@ -110,7 +110,7 @@ interface FormErrors {
 type SubmitStatus = "idle" | "success" | "error"
 
 const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
-  const dictionary = translations[lang].contactForm;
+  const dictionary = translations[lang as keyof typeof translations].contactForm;
 
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -274,7 +274,7 @@ const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
                 <Phone className="text-white" size={20} />
                 <div className="space-y-2">
                   <h3 className="text-white font-semibold">{dictionary.phone}</h3>
-                  <p className="text-gray-300 text-sm">+39 02 1234567</p>
+                  <p className="text-gray-300 text-sm">+39 02 3282352</p>
                 </div>
               </div>
 
@@ -282,7 +282,7 @@ const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
                 <Mail className="text-white" size={20} />
                 <div className="space-y-2">
                   <h3 className="text-white font-semibold">{dictionary.emailLabel}</h3>
-                  <p className="text-gray-300 text-sm">info@vitalgames.com</p>
+                  <p className="text-gray-300 text-sm">info@vitalgames.it</p>
                 </div>
               </div>
 
@@ -290,7 +290,7 @@ const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
                 <MapPin className="text-white" size={20} />
                 <div className="space-y-2">
                   <h3 className="text-white font-semibold">{dictionary.address}</h3>
-                  <p className="text-gray-300 text-sm">Milano, Lombardia, Italia</p>
+                  <p className="text-gray-300 text-sm">Via Cusago 160,Milano, Lombardia, Italia</p>
                 </div>
               </div>
             </div>
