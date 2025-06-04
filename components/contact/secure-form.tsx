@@ -157,7 +157,7 @@ const SecureContactForm: React.FC = () => {
       submitData.append("_captcha", "false")
       submitData.append("_next", "https://vitalgames.com/it/thank-you")
 
-      const response = await fetch("https://formsubmit.co/mattia@vitalgames.it", {
+      const response = await fetch("https://formsubmit.co/amministrazione@vitalgames.it", {
         method: "POST",
         body: submitData,
       })
