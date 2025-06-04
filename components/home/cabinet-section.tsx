@@ -85,8 +85,12 @@ export default function CabinetSection() {
 
   // Componente per il contenuto overlay (video o immagine)
   const OverlayContent = ({ className }: { className: string }) => {
-    
-      return (
+    if (isSafari) {
+      return null
+    }
+
+    return (
+      <div className="w-full h-full relative">
         <Image
           src={overlayGif}
           alt="Overlay animation"
@@ -94,24 +98,25 @@ export default function CabinetSection() {
           fill
           style={{ objectFit: 'contain' }}
         />
-      )
+      </div>
+    )
   }
 
   // Componente per il contenuto overlay desktop
   const OverlayContentDesktop = ({ className }: { className: string }) => {
-    
-      return (
-        <Image
-          src={overlayGif}
-          alt="Overlay animation"
-          className={className}
-          fill
-          style={{ objectFit: 'contain' }}
-        />
-      )
-    
+    if (isSafari) {
+      return null
+    }
 
-    
+    return (
+      <Image
+        src={overlayGif}
+        alt="Overlay animation"
+        className={className}
+        fill
+        style={{ objectFit: 'contain' }}
+      />
+    )
   }
 
   return (

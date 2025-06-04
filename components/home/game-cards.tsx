@@ -5,7 +5,7 @@ import { Play } from "lucide-react"
 import struzzo from "../../public/struzzo.jpg"
 import pepitadoro from "../../public/pepitadoro.jpg"
 import lucky8 from "../../public/lucky8.jpg"
-import piggy1 from "../../public/piggy1.jpg"
+import piggy1 from "../../public/allgames-webp/PIGGY GOLD.webp"
 import mexican from "../../public/mexican.jpg"
 import reggae from "../../public/allgames/REGGAE FROG.jpg"
 import elfi from "../../public/elfi.jpg"
@@ -62,8 +62,13 @@ const games = [
     slug: "pepita-doro",
     title: "Pepita d'oro",
     image: pepitadoro,
+  },
+  {
+    id: 8,
+    slug: "piggy-gold",
+    title: "Piggy Gold",
+    image: piggy1,
   }
-
 ]
 
 export default function GameCards() {

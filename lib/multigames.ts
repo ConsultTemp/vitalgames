@@ -119,7 +119,8 @@ export const multigames = [
             games.find(g => g.slug === 'elfi')!,
             games.find(g => g.slug === 'mexican')!,
             games.find(g => g.slug === 'striptease')!,
-            games.find(g => g.slug === 'dragon')!
+            games.find(g => g.slug === 'dragon')!,
+            games.find(g => g.slug === 'piggy-gold')!
         ],
         recommended: ["casino-royale", "diamante", "golden-club"]
     },

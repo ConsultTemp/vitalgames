@@ -247,6 +247,13 @@ import MINOTAURUS_PHOTO3 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-1
 import MINOTAURUS_PHOTO4 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-33 3.jpg'
 import MINOTAURUS_PHOTO5 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-34.jpg'
 
+/* import PIGGY_GOLD from '../public/games-images/p'
+import PIGGY_GOLD_PHOTO2 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-29 4.jpg'
+import PIGGY_GOLD_PHOTO3 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-31.jpg'
+import PIGGY_GOLD_PHOTO4 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-33 3.jpg'
+import PIGGY_GOLD_PHOTO5 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-34.jpg' */
+
+
 import alieni from '../public/allgames-webp/ALIENI.webp'
 import braccio from '../public/allgames-webp/BRACCIO DI FERRO.webp'
 import dragon from '../public/allgames-webp/DRAGON.webp'
@@ -291,6 +298,7 @@ import hot_pepper from '../public/allgames-webp/HOT PEPPER.webp'
 import golden_slot from '../public/allgames-webp/GOLDEN SLOT.webp'
 import minotaurus from '../public/allgames-webp/MINOTAURUS.webp'
 import crazyCircus from '../public/allgames-webp/CRAZY CIRCUS.webp'
+import piggyGold from '../public/allgames-webp/PIGGY GOLD.webp'
 
 import alieni_mobile_hero from '../public/allgames-mobile-hero/ALIENI_mobile.webp'
 import braccio_mobile_hero from '../public/allgames-mobile-hero/BRACCIO DI FERRO.webp'
@@ -320,6 +328,7 @@ import luxury_mobile_hero from '../public/allgames-mobile-hero/LUXURY_mobile.web
 import pirates_mobile_hero from '../public/allgames-mobile-hero/DARK PIRATES_mobile.webp'
 import mexican_mobile_hero from '../public/allgames-mobile-hero/MEXICAN_mobile.webp'
 import family_mobile_hero from '../public/allgames-mobile-hero/THE WEIRD FAMILY_mobile.webp'
+import piggyGold_mobile_hero from '../public/allgames-mobile-hero/HOT PEPPER_mobile.webp'
 import elfi_mobile_hero from '../public/allgames-mobile-hero/ELFI_mobile.webp'
 import cowboy_mobile_hero from '../public/allgames-mobile-hero/COWBOY REVENGE_mobile.webp'
 import struzzo_mobile_hero from '../public/allgames-mobile-hero/LO STRUZZO_mobile.webp'
@@ -877,5 +886,17 @@ export const games = [
     description: 'Balliamo con la rana reggae',
     featured: ['il-grillo', 'lo-struzzo', 'sonny-bono', 'striptease'],
     mobileBg: golden_slot_mobile_hero
+  },
+  {
+    name: 'Piggy Gold',
+    subtitle: 'Balliamo con la rana più cool',
+    href: 'piggy-gold',
+    slug: 'piggy-gold',
+    coverImage: piggyGold,
+    mainImage: piggyGold,
+    images: [],
+    description: 'Balliamo con la rana reggae',
+    featured: ['il-grillo', 'lo-struzzo', 'sonny-bono', 'striptease'],
+    mobileBg: piggyGold_mobile_hero
   }
 ]
