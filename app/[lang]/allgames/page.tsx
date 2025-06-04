@@ -232,7 +232,7 @@ export default async function AllGamesPage(props: { params: Params }) {
           <VideoHero
             title={dict.allGames.hero.title}
             subtitle={dict.allGames.hero.subtitle}
-            videoUrl="b8dd70059493995fc0486f6bb4fda8c5"
+            videoUrl="c07afde42ff64ee4a56f5fdd41a57122"
             mobileVideoUrl="2882a8027280f1e3603708b425071eeb"
           />
         </header>
