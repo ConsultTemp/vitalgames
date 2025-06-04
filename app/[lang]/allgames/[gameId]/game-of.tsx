@@ -22,7 +22,7 @@ export default function Multigame() {
   }
 
   return (
-    <section className="container mx-auto flex flex-col gap-8 bg-black text-white pb-24 px-4">
+    <section className="container mx-auto flex flex-col gap-8 bg-black text-white pb-24 px-4 py-16">
       
       <div className="flex flex-col md:flex-row gap-8">
         <div className="w-full md:w-5/12 flex flex-col justify-center">

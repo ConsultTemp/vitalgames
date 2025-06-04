@@ -307,7 +307,7 @@ export default async function GamePage(props: { params: Params }) {
           <h2 id="gallery-heading" className="sr-only">
             Galleria immagini {game.name}
           </h2>
-          <div className="relative w-full h-[30vh] sm:h-[40vh] md:h-[60vh]">
+          <div className={`relative w-full h-[${game.images?.length < 1 ? "0vh" : "30vh"}] sm:h-[${game.images?.length < 1 ? "0vh" : "40vh"}] md:h-[${game.images?.length < 1 ? "0vh" : "60vh"}]`}>
             <div className="flex animate-infinite-scroll -ml-[1000px] sm:-ml-[1500px] md:-ml-[2000px]">
               {/* Left side images */}
               {game.images?.map((image, index) => (
