@@ -208,6 +208,8 @@ import REGGAE_FROG_PHOTO2 from '../public/games-images/REGGAE FROG/PHOTO-2024-05
 import REGGAE_FROG_PHOTO3 from '../public/games-images/REGGAE FROG/PHOTO-2024-05-10-10-57-57 3.jpg'
 import REGGAE_FROG_PHOTO4 from '../public/games-images/REGGAE FROG/PHOTO-2024-05-10-10-58-01.jpg'
 
+import PIGGY_GOLD from '../public/games-images/PIGGY GOLD/PIGGY GOLD.jpg'
+
 import SHARK from '../public/games-images/SHARK/SHARK.jpg'
 
 import CRAZY_CIRCUS from '../public/games-images/CRAZY CIRCUS/CRAZY CIRCUS.jpg'
@@ -892,7 +894,7 @@ export const games = [
     subtitle: 'Balliamo con la rana più cool',
     href: 'piggy-gold',
     slug: 'piggy-gold',
-    coverImage: piggyGold,
+    coverImage: PIGGY_GOLD,
     mainImage: piggyGold,
     images: [],
     description: 'Balliamo con la rana reggae',
