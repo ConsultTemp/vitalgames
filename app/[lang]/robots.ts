@@ -25,10 +25,10 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: [
-      "https://vitalgames.com/sitemap.xml",
-      "https://vitalgames.com/sitemap-games.xml",
-      "https://vitalgames.com/sitemap-multigames.xml",
-      "https://vitalgames.com/sitemap-static.xml",
+      "https://www.vitalgamesdigital.com/sitemap.xml",
+      "https://www.vitalgamesdigital.com/sitemap-games.xml",
+      "https://www.vitalgamesdigital.com/sitemap-multigames.xml",
+      "https://www.vitalgamesdigital.com/sitemap-static.xml",
     ],
   }
 }

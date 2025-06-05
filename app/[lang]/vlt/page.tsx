@@ -151,13 +151,13 @@ export default async function AboutUs(props: { params: Params }) {
       // Main collection page
       {
         "@type": "CollectionPage",
-        "@id": `https://vitalgames.com/${lang}/vlt#page`,
-        url: `https://vitalgames.com/${lang}/vlt`,
+        "@id": `https://www.vitalgamesdigital.com/${lang}/vlt#page`,
+        url: `https://www.vitalgamesdigital.com/${lang}/vlt`,
         name: "Cabinet VLT Vitalgames",
         description: "Collezione completa di cabinet VLT e videolottery di alta qualità",
         inLanguage: lang,
         isPartOf: {
-          "@id": "https://vitalgames.com/#website",
+          "@id": "https://www.vitalgamesdigital.com/#website",
         },
         breadcrumb: {
           "@type": "BreadcrumbList",
@@ -166,13 +166,13 @@ export default async function AboutUs(props: { params: Params }) {
               "@type": "ListItem",
               position: 1,
               name: "Home",
-              item: `https://vitalgames.com/${lang}`,
+              item: `https://www.vitalgamesdigital.com/${lang}`,
             },
             {
               "@type": "ListItem",
               position: 2,
               name: "Cabinet VLT",
-              item: `https://vitalgames.com/${lang}/vlt`,
+              item: `https://www.vitalgamesdigital.com/${lang}/vlt`,
             },
           ],
         },
@@ -180,7 +180,7 @@ export default async function AboutUs(props: { params: Params }) {
       // Product collection
       {
         "@type": "ItemList",
-        "@id": `https://vitalgames.com/${lang}/vlt#collection`,
+        "@id": `https://www.vitalgamesdigital.com/${lang}/vlt#collection`,
         name: "Collezione Cabinet VLT Vitalgames",
         description: "Gamma completa di cabinet VLT dal Classic al Platinum",
         numberOfItems: vltCards.length,
@@ -194,16 +194,16 @@ export default async function AboutUs(props: { params: Params }) {
             brand: {
               "@type": "Brand",
               name: "Vitalgames",
-              url: "https://vitalgames.com",
+              url: "https://www.vitalgamesdigital.com",
             },
             manufacturer: {
               "@type": "Organization",
               name: "Vitalgames S.r.l.",
-              url: "https://vitalgames.com",
+              url: "https://www.vitalgamesdigital.com",
             },
             image: {
               "@type": "ImageObject",
-              url: `https://vitalgames.com${vlt.image.src}`,
+              url: `https://www.vitalgamesdigital.com${vlt.image.src}`,
               width: 800,
               height: 600,
               caption: `${vlt.name} - Cabinet VLT professionale`,
@@ -264,10 +264,10 @@ export default async function AboutUs(props: { params: Params }) {
       // Organization reference
       {
         "@type": "Organization",
-        "@id": "https://vitalgames.com/#organization",
+        "@id": "https://www.vitalgamesdigital.com/#organization",
         name: "Vitalgames",
-        url: "https://vitalgames.com",
-        logo: "https://vitalgames.com/logo.png",
+        url: "https://www.vitalgamesdigital.com",
+        logo: "https://www.vitalgamesdigital.com/logo.png",
         makesOffer: {
           "@type": "Offer",
           itemOffered: {

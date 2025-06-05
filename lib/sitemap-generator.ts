@@ -14,7 +14,7 @@ export interface SitemapEntry {
 
 // Generate comprehensive sitemap with all pages
 export function generateCompleteSitemap(): SitemapEntry[] {
-  const baseUrl = "https://vitalgames.com"
+  const baseUrl = "https://www.vitalgamesdigital.com"
   const currentDate = new Date()
   const sitemap: SitemapEntry[] = []
 
@@ -174,7 +174,7 @@ ${alternateLinks}
 
 // Generate robots.txt content
 export function generateRobotsTxt(): string {
-  const baseUrl = "https://vitalgames.com"
+  const baseUrl = "https://www.vitalgamesdigital.com"
 
   return `# Vitalgames Robots.txt - Elite SEO Configuration
 User-agent: *

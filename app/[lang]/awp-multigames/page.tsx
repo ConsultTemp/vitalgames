@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     creator: "Vitalgames",
     publisher: "Vitalgames",
     alternates: {
-      canonical: `https://vitalgames.com/${lang}/awp-multigames`,
+      canonical: `https://www.vitalgamesdigital.com/${lang}/awp-multigames`,
       languages: {
         "en-US": "/en/awp-multigames",
         "it-IT": "/it/awp-multigames",
@@ -74,7 +74,7 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
     "@type": "CollectionPage",
     name: dict.awpMultigames.page.title,
     description: dict.awpMultigames.page.subtitle,
-    url: `https://vitalgames.com/${lang}/awp-multigames`,
+    url: `https://www.vitalgamesdigital.com/${lang}/awp-multigames`,
     mainEntity: {
       "@type": "ItemList",
       name: "AWP Multigames Collection",
@@ -85,23 +85,23 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
         position: index + 1,
         item: {
           "@type": "Product",
-          "@id": `https://vitalgames.com/${lang}/awp-multigames/${game.slug}`,
+          "@id": `https://www.vitalgamesdigital.com/${lang}/awp-multigames/${game.slug}`,
           name: game.title,
           description: game.description,
           category: `AWP Multigame ${game.slug}`,
           brand: {
             "@type": "Brand",
             name: "Vitalgames",
-            url: "https://vitalgames.com",
+            url: "https://www.vitalgamesdigital.com",
           },
           manufacturer: {
             "@type": "Organization",
             name: "Vitalgames",
-            url: "https://vitalgames.com",
+            url: "https://www.vitalgamesdigital.com",
           },
           image: {
             "@type": "ImageObject",
-            url: `https://vitalgames.com${game.coverImage}`,
+            url: `https://www.vitalgamesdigital.com${game.coverImage}`,
             width: 1080,
             height: 1196,
           },
@@ -139,23 +139,23 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: `https://vitalgames.com/${lang}`,
+          item: `https://www.vitalgamesdigital.com/${lang}`,
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "AWP Multigames",
-          item: `https://vitalgames.com/${lang}/awp-multigames`,
+          item: `https://www.vitalgamesdigital.com/${lang}/awp-multigames`,
         },
       ],
     },
     publisher: {
       "@type": "Organization",
       name: "Vitalgames",
-      url: "https://vitalgames.com",
+      url: "https://www.vitalgamesdigital.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://vitalgames.com/logo.png",
+        url: "https://www.vitalgamesdigital.com/logo.png",
       },
     },
   }

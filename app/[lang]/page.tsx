@@ -34,7 +34,7 @@ export async function generateMetadata(props: { params: Params }): Promise<Metad
     },
     openGraph: {
       ...advancedSEO.openGraph,
-      url: `https://vitalgames.com/${params.lang}`,
+      url: `https://www.vitalgamesdigital.com/${params.lang}`,
       locale: params.lang === "it" ? "it_IT" : params.lang === "en" ? "en_US" : "ar_SA",
       images: [
         {

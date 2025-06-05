@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     "casino equipment Italy"
   ],
   authors: [
-    { name: "Vitalgames", url: "https://vitalgames.com" },
+    { name: "Vitalgames", url: "https://www.vitalgamesdigital.com" },
     { name: "Vitalgames Team" },
     { name: "Gaming Equipment Experts" }
   ],
@@ -63,43 +63,43 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://vitalgames.com"),
+  metadataBase: new URL("https://.vitalgamesdigital.com/"),
   alternates: {
-    canonical: "https://vitalgames.com",
+    canonical: "https://www.vitalgamesdigital.com",
     languages: {
-      "it-IT": "https://vitalgames.com/it",
-      "en-US": "https://vitalgames.com/en",
-      "es-ES": "https://vitalgames.com/es",
-      "x-default": "https://vitalgames.com/it",
+      "it-IT": "https://www.vitalgamesdigital.com/it",
+      "en-US": "https://www.vitalgamesdigital.com/en",
+      "es-ES": "https://www.vitalgamesdigital.com/es",
+      "x-default": "https://www.vitalgamesdigital.com/it",
     },
     types: {
-      "application/rss+xml": "https://vitalgames.com/rss.xml",
+      "application/rss+xml": "https://www.vitalgamesdigital.com/rss.xml",
     },
   },
   openGraph: {
     title: "Vitalgames | Leader Produzione Slot Machine, VLT e Multigame dal 1996",
     description: "🎰 Dal 1996, Vitalgames è il leader italiano nella produzione di slot machine, VLT e sistemi multigame. Soluzioni certificate ADM per bar, sale giochi e casinò. Sede Milano.",
-    url: "https://vitalgames.com",
+    url: "https://www.vitalgamesdigital.com",
     siteName: "Vitalgames",
     locale: "it_IT",
     type: "website",
     images: [
       {
-        url: "https://vitalgames.com/images/og-vitalgames-hero.jpg",
+        url: "https://www.vitalgamesdigital.com.com/bgcabinet.png",
         width: 1200,
         height: 630,
         alt: "Vitalgames - Leader Slot Machine Italia dal 1996",
         type: "image/jpeg",
       },
       {
-        url: "https://vitalgames.com/images/og-vitalgames-logo.png",
+        url: "https://www.vitalgamesdigital.com.com/og-vitalgames-logo.png",
         width: 800,
         height: 600,
         alt: "Vitalgames Logo - Produttore Slot Machine",
         type: "image/png",
       },
       {
-        url: "https://vitalgames.com/images/og-vitalgames-products.jpg",
+        url: "https://www.vitalgamesdigital.com.com/og-vitalgames-products.jpg",
         width: 1200,
         height: 630,
         alt: "Slot Machine VLT AWP Multigame Vitalgames",
@@ -111,7 +111,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Vitalgames | Leader Slot Machine Italia dal 1996",
     description: "🎰 Produttore leader di slot machine, VLT e multigame. Soluzioni certificate ADM per bar, sale giochi e casinò. Milano.",
-    images: ["https://vitalgames.com/images/twitter-vitalgames-hero.jpg"],
+    images: ["https://www.vitalgamesdigital.com.com/twitter-vitalgames-hero.jpg"],
     creator: "@VitalgamesOfficial",
     site: "@VitalgamesOfficial",
   },
@@ -203,10 +203,6 @@ export default function RootLayout({
   return (
     <html lang={lang} suppressHydrationWarning>
       <head>
-      <Script
-          src="https://embed.videodelivery.net/embed/sdk.latest.js"
-          strategy="beforeInteractive"
-        />
         {/* DNS Prefetch and Preconnect for Performance */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -221,9 +217,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
 
         {/* Preload Critical Assets */}
-        <link rel="preload" as="image" href="/images/vitalgames-hero.jpg" />
-        <link rel="preload" as="image" href="/images/vitalgames-logo.svg" />
-        <link rel="preload" as="font" href="/fonts/inter-var.woff2" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" as="image" href="/bgcabinet.png" />
+        <link rel="preload" as="image" href="/logovital.svg" />
 
         {/* Critical CSS for above-the-fold content */}
         <style dangerouslySetInnerHTML={{
@@ -239,10 +234,7 @@ export default function RootLayout({
 
 
 
-        {/* Critical Resource Hints */}
-        <link rel="prefetch" href="/images/slot-machines-gallery.jpg" />
-        <link rel="prefetch" href="/images/vlt-cabinets.jpg" />
-        <link rel="prefetch" href="/images/multigames-systems.jpg" />
+
 
         {/* Canonical and Hreflang will be handled by individual pages */}
       </head>

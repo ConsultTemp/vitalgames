@@ -135,13 +135,13 @@ export default async function AboutUs(props: { params: Params }) {
       // Organization detailed schema
       {
         "@type": "Organization",
-        "@id": "https://vitalgames.com/#organization",
+        "@id": "https://www.vitalgamesdigital.com/#organization",
         name: enhancedCompanyData.name,
         legalName: enhancedCompanyData.legalName,
-        url: "https://vitalgames.com",
+        url: "https://www.vitalgamesdigital.com",
         logo: {
           "@type": "ImageObject",
-          url: "https://vitalgames.com/logovital.svg",
+          url: "https://www.vitalgamesdigital.com/logovital.svg",
           width: 300,
           height: 100,
         },
@@ -216,8 +216,8 @@ export default async function AboutUs(props: { params: Params }) {
       // AboutPage schema
       {
         "@type": "AboutPage",
-        "@id": `https://vitalgames.com/${params.lang}/about-us#aboutpage`,
-        url: `https://vitalgames.com/${params.lang}/about-us`,
+        "@id": `https://www.vitalgamesdigital.com/${params.lang}/about-us#aboutpage`,
+        url: `https://www.vitalgamesdigital.com/${params.lang}/about-us`,
         name:
           params.lang === "it"
             ? "Chi Siamo - Vitalgames"
@@ -226,18 +226,18 @@ export default async function AboutUs(props: { params: Params }) {
               : "Quiénes Somos - Vitalgames",
         description: enhancedCompanyData.description[params.lang],
         mainEntity: {
-          "@id": "https://vitalgames.com/#organization",
+          "@id": "https://www.vitalgamesdigital.com/#organization",
         },
         inLanguage: params.lang === "it" ? "it-IT" : params.lang === "en" ? "en-US" : "es-ES",
         isPartOf: {
           "@type": "WebSite",
-          "@id": "https://vitalgames.com/#website",
+          "@id": "https://www.vitalgamesdigital.com/#website",
         },
       },
       // Company history as CreativeWork
       {
         "@type": "CreativeWork",
-        "@id": `https://vitalgames.com/${params.lang}/about-us#history`,
+        "@id": `https://www.vitalgamesdigital.com/${params.lang}/about-us#history`,
         name:
           params.lang === "it"
             ? "Storia di Vitalgames"
@@ -251,7 +251,7 @@ export default async function AboutUs(props: { params: Params }) {
               ? "Vitalgames history from 1996 to today: 25+ years of innovation in gaming industry"
               : "Historia de Vitalgames desde 1996 hasta hoy: 25+ años de innovación en la industria gaming",
         author: {
-          "@id": "https://vitalgames.com/#organization",
+          "@id": "https://www.vitalgamesdigital.com/#organization",
         },
         dateCreated: "1996-01-01",
         dateModified: new Date().toISOString().split("T")[0],
@@ -265,7 +265,7 @@ export default async function AboutUs(props: { params: Params }) {
       // FAQ Schema for common questions
       {
         "@type": "FAQPage",
-        "@id": `https://vitalgames.com/${params.lang}/about-us#faq`,
+        "@id": `https://www.vitalgamesdigital.com/${params.lang}/about-us#faq`,
         mainEntity: [
           {
             "@type": "Question",
@@ -350,13 +350,13 @@ export default async function AboutUs(props: { params: Params }) {
                 "@type": "ListItem",
                 position: 1,
                 name: "Home",
-                item: `https://vitalgames.com/${params.lang}`,
+                item: `https://www.vitalgamesdigital.com/${params.lang}`,
               },
               {
                 "@type": "ListItem",
                 position: 2,
                 name: params.lang === "it" ? "Chi Siamo" : params.lang === "en" ? "About Us" : "Quiénes Somos",
-                item: `https://vitalgames.com/${params.lang}/about-us`,
+                item: `https://www.vitalgamesdigital.com/${params.lang}/about-us`,
               },
             ],
           }),

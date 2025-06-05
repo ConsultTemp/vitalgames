@@ -148,7 +148,7 @@ export default async function GamePage(props: { params: Params }) {
       // Main game schema
       {
         "@type": "Game",
-        "@id": `https://vitalgames.com/${params.lang}/allgames/${game.slug}#game`,
+        "@id": `https://www.vitalgamesdigital.com/${params.lang}/allgames/${game.slug}#game`,
         name: game.name,
         description:
           game.description ||
@@ -160,16 +160,16 @@ export default async function GamePage(props: { params: Params }) {
         gamePlatform: ["AWP", "VLT", "Online"],
         genre: "Slot Machine",
         image: [game.coverImage?.src || game.mainImage?.src, ...(game.images?.slice(0, 5).map((img) => img.src) || [])],
-        url: `https://vitalgames.com/${params.lang}/allgames/${game.slug}`,
+        url: `https://www.vitalgamesdigital.com/${params.lang}/allgames/${game.slug}`,
         provider: {
           "@type": "Organization",
-          "@id": "https://vitalgames.com/#organization",
+          "@id": "https://www.vitalgamesdigital.com/#organization",
           name: "Vitalgames",
-          url: "https://vitalgames.com",
+          url: "https://www.vitalgamesdigital.com",
         },
         manufacturer: {
           "@type": "Organization",
-          "@id": "https://vitalgames.com/#organization",
+          "@id": "https://www.vitalgamesdigital.com/#organization",
           name: "Vitalgames",
         },
         offers: {
@@ -178,7 +178,7 @@ export default async function GamePage(props: { params: Params }) {
           category: "Gaming Equipment",
           seller: {
             "@type": "Organization",
-            "@id": "https://vitalgames.com/#organization",
+            "@id": "https://www.vitalgamesdigital.com/#organization",
             name: "Vitalgames",
           },
         },
@@ -193,7 +193,7 @@ export default async function GamePage(props: { params: Params }) {
       // Product schema
       {
         "@type": "Product",
-        "@id": `https://vitalgames.com/${params.lang}/allgames/${game.slug}#product`,
+        "@id": `https://www.vitalgamesdigital.com/${params.lang}/allgames/${game.slug}#product`,
         name: `${game.name} Slot Machine`,
         description: `Professional ${game.name} slot machine by Vitalgames. Available in AWP, VLT and online versions with HD graphics and bonus features.`,
         brand: {
@@ -202,7 +202,7 @@ export default async function GamePage(props: { params: Params }) {
         },
         manufacturer: {
           "@type": "Organization",
-          "@id": "https://vitalgames.com/#organization",
+          "@id": "https://www.vitalgamesdigital.com/#organization",
           name: "Vitalgames",
         },
         category: "Gaming Equipment",
@@ -216,44 +216,44 @@ export default async function GamePage(props: { params: Params }) {
       // Breadcrumb schema
       {
         "@type": "BreadcrumbList",
-        "@id": `https://vitalgames.com/${params.lang}/allgames/${game.slug}#breadcrumb`,
+        "@id": `https://www.vitalgamesdigital.com/${params.lang}/allgames/${game.slug}#breadcrumb`,
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: `https://vitalgames.com/${params.lang}`,
+            item: `https://www.vitalgamesdigital.com/${params.lang}`,
           },
           {
             "@type": "ListItem",
             position: 2,
             name: dict.allGames.hero.title,
-            item: `https://vitalgames.com/${params.lang}/allgames`,
+            item: `https://www.vitalgamesdigital.com/${params.lang}/allgames`,
           },
           {
             "@type": "ListItem",
             position: 3,
             name: game.name,
-            item: `https://vitalgames.com/${params.lang}/allgames/${game.slug}`,
+            item: `https://www.vitalgamesdigital.com/${params.lang}/allgames/${game.slug}`,
           },
         ],
       },
       // WebPage schema
       {
         "@type": "WebPage",
-        "@id": `https://vitalgames.com/${params.lang}/allgames/${game.slug}#webpage`,
-        url: `https://vitalgames.com/${params.lang}/allgames/${game.slug}`,
+        "@id": `https://www.vitalgamesdigital.com/${params.lang}/allgames/${game.slug}#webpage`,
+        url: `https://www.vitalgamesdigital.com/${params.lang}/allgames/${game.slug}`,
         name: `${game.name} | Vitalgames`,
         description: game.description || `${game.name} slot machine by Vitalgames`,
         inLanguage: params.lang,
         isPartOf: {
-          "@id": "https://vitalgames.com/#website",
+          "@id": "https://www.vitalgamesdigital.com/#website",
         },
         breadcrumb: {
-          "@id": `https://vitalgames.com/${params.lang}/allgames/${game.slug}#breadcrumb`,
+          "@id": `https://www.vitalgamesdigital.com/${params.lang}/allgames/${game.slug}#breadcrumb`,
         },
         mainEntity: {
-          "@id": `https://vitalgames.com/${params.lang}/allgames/${game.slug}#game`,
+          "@id": `https://www.vitalgamesdigital.com/${params.lang}/allgames/${game.slug}#game`,
         },
       },
     ],

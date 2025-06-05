@@ -290,7 +290,7 @@ export const companyData = {
 
 // Generate SEO metadata for each page
 export function generateSEOMetadata(page: string, locale: Locale) {
-  const baseUrl = "https://vitalgames.com"
+  const baseUrl = "https://www.vitalgamesdigital.com"
   const localizedPages = {
     home: {
       it: {
@@ -627,10 +627,10 @@ export function generateCompanySchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://vitalgames.com",
+    "@id": "https://www.vitalgamesdigital.com",
     name: companyData.name,
-    url: "https://vitalgames.com",
-    logo: "https://vitalgames.com/images/logo.png",
+    url: "https://www.vitalgamesdigital.com",
+    logo: "https://www.vitalgamesdigital.com.com/logo.png",
     foundingDate: companyData.foundingYear,
     description: companyData.description.en,
     address: {
@@ -677,7 +677,7 @@ export function generateProductSchema(product: any, locale: Locale) {
       },
     },
     category: "Gaming Machines",
-    image: product.image || "https://vitalgames.com/images/products/default.jpg",
+    image: product.image || "https://www.vitalgamesdigital.com.com/products/default.jpg",
   }
 }
 
@@ -708,7 +708,7 @@ export function generateGameSchema(game: any) {
     provider: {
       "@type": "Organization",
       name: "Vitalgames",
-      url: "https://vitalgames.com",
+      url: "https://www.vitalgamesdigital.com",
     },
   }
 }
@@ -887,7 +887,7 @@ export const enhancedCompanyData = {
   contact: {
     telephone: "+39 02 1234567",
     email: "info@vitalgames.com",
-    website: "https://vitalgames.com",
+    website: "https://www.vitalgamesdigital.com",
     supportEmail: "support@vitalgames.com",
     salesEmail: "sales@vitalgames.com",
   },
@@ -927,7 +927,7 @@ export function generateAdvancedSEOMetadata(
     multigameData?: any
   },
 ): Metadata {
-  const baseUrl = "https://vitalgames.com"
+  const baseUrl = "https://www.vitalgamesdigital.com"
   const currentUrl = `${baseUrl}/${locale}${page === "home" ? "" : `/${page}`}`
 
   // Usa la funzione esistente come base
@@ -989,7 +989,7 @@ export function generateAdvancedSEOMetadata(
     },
     description: customData?.description || baseSEO?.description,
     keywords: allKeywords,
-    authors: [{ name: "Vitalgames", url: "https://vitalgames.com" }, { name: "Vitalgames Team" }],
+    authors: [{ name: "Vitalgames", url: "https://www.vitalgamesdigital.com" }, { name: "Vitalgames Team" }],
     creator: "Vitalgames S.r.l.",
     publisher: "Vitalgames S.r.l.",
     formatDetection: {
@@ -1074,7 +1074,7 @@ export function generateComprehensiveSchema(type: string, data?: any) {
       // Organization schema (estende quello esistente)
       {
         ...generateCompanySchema(),
-        "@id": "https://vitalgames.com/#organization",
+        "@id": "https://www.vitalgamesdigital.com/#organization",
         legalName: enhancedCompanyData.legalName,
         vatID: enhancedCompanyData.vatNumber,
         naics: enhancedCompanyData.business.naicsCode,
@@ -1095,19 +1095,19 @@ export function generateComprehensiveSchema(type: string, data?: any) {
       // Website schema
       {
         "@type": "WebSite",
-        "@id": "https://vitalgames.com/#website",
-        url: "https://vitalgames.com",
+        "@id": "https://www.vitalgamesdigital.com/#website",
+        url: "https://www.vitalgamesdigital.com",
         name: "Vitalgames",
         description: "Leading Italian manufacturer of slot machines, VLTs and multigame systems since 1996",
         publisher: {
-          "@id": "https://vitalgames.com/#organization",
+          "@id": "https://www.vitalgamesdigital.com/#organization",
         },
         inLanguage: ["it-IT", "en-US", "es-ES"],
         potentialAction: {
           "@type": "SearchAction",
           target: {
             "@type": "EntryPoint",
-            urlTemplate: "https://vitalgames.com/search?q={search_term_string}",
+            urlTemplate: "https://www.vitalgamesdigital.com/search?q={search_term_string}",
           },
           "query-input": "required name=search_term_string",
         },
@@ -1121,7 +1121,7 @@ export function generateComprehensiveSchema(type: string, data?: any) {
       if (data) {
         const productSchema = {
           ...generateProductSchema(data, "it"),
-          "@id": `https://vitalgames.com/products/${data.name.toLowerCase().replace(/\s+/g, '-')}`,
+          "@id": `https://www.vitalgamesdigital.com/products/${data.name.toLowerCase().replace(/\s+/g, '-')}`,
         } as SchemaGraphItem;
         baseSchema["@graph"].push(productSchema as any);
       }
@@ -1130,7 +1130,7 @@ export function generateComprehensiveSchema(type: string, data?: any) {
       if (data) {
         const gameSchema = {
           ...generateGameSchema(data),
-          "@id": `https://vitalgames.com/games/${data.name.toLowerCase().replace(/\s+/g, '-')}`,
+          "@id": `https://www.vitalgamesdigital.com/games/${data.name.toLowerCase().replace(/\s+/g, '-')}`,
         };
         baseSchema["@graph"].push(gameSchema as any);
       }
