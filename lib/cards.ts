@@ -2,7 +2,7 @@ import reggaefrog from '../public/reggaefrog.png'
 import magicdiamond2 from '../public/magicdiamond2.png'
 import struzzo from '../public/struzzo.png'
 import diamante from '../public/multigames-cards/DIAMANTE_Converted.jpg'
-import casinoRoyale from '../public/multigames-cards/CASINO ROYALE_Converted.jpg'
+import casinoRoyale from '../public/multigames-pagis/Card/casinoroyale.jpg'
 import fortune from '../public/multigames/Multigames/Fortune Ultralink/fortune_ultralink.jpg'
 import champions from '../public/multigames-cards/CHAMPIONS.png'
 

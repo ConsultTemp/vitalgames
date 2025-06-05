@@ -11,7 +11,7 @@ import { Button } from "../ui/button"
 import champions from '../../public/multigames-pagis/Card/Champions Slot.webp'
 import diamante from '../../public/multigames-pagis/Card/Diamante.webp'
 import fortune from '../../public/multigames-pagis/Card/Fortune.webp'
-import casinoroyale from '../../public/multigames-pagis/Card/Casino Royale.webp'
+import casinoroyale from '../../public/multigames-pagis/Card/casinoroyale.jpg'
 
 
 import floatingImage1 from "../../public/squalorosa.png"
