@@ -21,13 +21,65 @@ import { games } from './allgamesmap'
 
 export const multigames = [
     {
-        id: 1,
-        slug: "casino-royale",
-        title: "Casino Royale",
+        id: 11,
+        slug: "manhattan",
+        title: "Manhattan",
         coverImage: bgmultigamopen,
         logo: multigamelogo,
-        mainImage: casinoRoyaleMain,
-        video: "https://files.catbox.moe/u2755e.mp4",
+        mainImage: manhattanMain,
+        video: "https://files.catbox.moe/6d4v6k.mp4",
+        description: "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
+        videos: [
+            "https://example.com/video1.mp4",
+            "https://example.com/video2.mp4",
+            "https://example.com/video3.mp4",
+            "https://example.com/video4.mp4",
+            "https://example.com/video5.mp4",
+            "https://example.com/video6.mp4"
+        ],
+        games: [
+            games.find(g => g.slug === 'shark')!,
+            games.find(g => g.slug === 'le-chef')!,
+            games.find(g => g.slug === 'magic-diamond-2')!,
+            games.find(g => g.slug === 'cherry')!,
+            games.find(g => g.slug === 'midnight-saloon')!
+        ],
+        recommended: ["casino-royale", "diamante", "golden-club"]
+    },
+    {
+        id: 8,
+        slug: "champions",
+        title: "Champions",
+        coverImage: bgmultigamopen,
+        logo: multigamelogo,
+        mainImage: championsMain,
+        video: "https://files.catbox.moe/bajs3j.mp4",
+        description: "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
+        videos: [
+            "https://example.com/video1.mp4",
+            "https://example.com/video2.mp4",
+            "https://example.com/video3.mp4",
+            "https://example.com/video4.mp4",
+            "https://example.com/video5.mp4",
+            "https://example.com/video6.mp4"
+        ],
+        games: [
+            games.find(g => g.slug === 'crazy-circus')!,
+            games.find(g => g.slug === 'pepita-doro')!,
+            games.find(g => g.slug === 'fortune')!,
+            games.find(g => g.slug === 'dolphins')!,
+            games.find(g => g.slug === 'luxury')!,
+        ],
+        recommended: ["casino-royale", "diamante", "golden-club"]
+    },
+    {
+        id: 10,
+        slug: "fortune-ultralink",
+        title: "Fortune Ultralink",
+        coverImage: bgmultigamopen,
+        logo: multigamelogo,
+        mainImage: fortuneUltralinkMain,
+        video: "https://files.catbox.moe/ktlzt8.mp4",
         description: "Sistema multigame con 10 giochi a tema casinò classico, interfaccia elegante e jackpot progressivo.",
         videos: [
             "https://example.com/video1.mp4",
@@ -38,13 +90,13 @@ export const multigames = [
             "https://example.com/video6.mp4"
         ],
         games: [
-            games.find(g => g.slug === 'book-of-magic')!,
-            games.find(g => g.slug === 'nautilus')!,
-            games.find(g => g.slug === 'pepita-doro')!,
-            games.find(g => g.slug === 'jungle')!,
-            games.find(g => g.slug === 'golden-fruit')!
+            games.find(g => g.slug === 'the-weird-family')!,
+            games.find(g => g.slug === 'dark-pirates')!,
+            games.find(g => g.slug === 'luxury')!,
+            games.find(g => g.slug === 'fortune')!,
+            games.find(g => g.slug === 'mexican')!
         ],
-        recommended: ["diamante", "golden-club", "piggy-gold"]
+        recommended: ["casino-royale", "diamante", "golden-club"]
     },
     {
         id: 2,
@@ -73,14 +125,14 @@ export const multigames = [
         recommended: ["casino-royale", "golden-club", "piggy-gold"]
     },
     {
-        id: 3,
-        slug: "golden-club",
-        title: "Golden Club",
+        id: 1,
+        slug: "casino-royale",
+        title: "Casino Royale",
         coverImage: bgmultigamopen,
         logo: multigamelogo,
-        mainImage: goldenClubMain,
-        video: "https://files.catbox.moe/yr12je.mp4",
-        description: "Esperienza VIP con 8 giochi selezionati, tema lussuoso e meccaniche di gioco innovative.",
+        mainImage: casinoRoyaleMain,
+        video: "https://files.catbox.moe/u2755e.mp4",
+        description: "Sistema multigame con 10 giochi a tema casinò classico, interfaccia elegante e jackpot progressivo.",
         videos: [
             "https://example.com/video1.mp4",
             "https://example.com/video2.mp4",
@@ -90,13 +142,13 @@ export const multigames = [
             "https://example.com/video6.mp4"
         ],
         games: [
-            games.find(g => g.slug === 'pablito')!,
-            games.find(g => g.slug === 'hot-pepper')!,
-            games.find(g => g.slug === 'braccio-di-ferro')!,
-            games.find(g => g.slug === 'zombie')!,
-            games.find(g => g.slug === 'lucky-8')!
+            games.find(g => g.slug === 'book-of-magic')!,
+            games.find(g => g.slug === 'nautilus')!,
+            games.find(g => g.slug === 'pepita-doro')!,
+            games.find(g => g.slug === 'jungle')!,
+            games.find(g => g.slug === 'golden-fruit')!
         ],
-        recommended: ["casino-royale", "diamante", "piggy-gold"]
+        recommended: ["diamante", "golden-club", "piggy-gold"]
     },
     {
         id: 4,
@@ -177,52 +229,6 @@ export const multigames = [
         recommended: ["casino-royale", "diamante", "golden-club"]
     },
     {
-        id: 7,
-        slug: "circus",
-        title: "Circus",
-        coverImage: bgmultigamopen,
-        logo: multigamelogo,
-        mainImage: circusMain,
-        video: "https://files.catbox.moe/609t67.mp4",
-        description: "Sistema divertente con 10 giochi a tema circo, perfetto per un pubblico giovane e dinamico.",
-        videos: [
-            "https://example.com/video1.mp4",
-            "https://example.com/video2.mp4",
-            "https://example.com/video3.mp4",
-            "https://example.com/video4.mp4",
-            "https://example.com/video5.mp4",
-            "https://example.com/video6.mp4"
-        ],
-        games: [],
-        recommended: ["casino-royale", "diamante", "golden-club"]
-    },
-    {
-        id: 8,
-        slug: "champions",
-        title: "Champions",
-        coverImage: bgmultigamopen,
-        logo: multigamelogo,
-        mainImage: championsMain,
-        video: "https://files.catbox.moe/bajs3j.mp4",
-        description: "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
-        videos: [
-            "https://example.com/video1.mp4",
-            "https://example.com/video2.mp4",
-            "https://example.com/video3.mp4",
-            "https://example.com/video4.mp4",
-            "https://example.com/video5.mp4",
-            "https://example.com/video6.mp4"
-        ],
-        games: [
-            games.find(g => g.slug === 'crazy-circus')!,
-            games.find(g => g.slug === 'pepita-doro')!,
-            games.find(g => g.slug === 'fortune')!,
-            games.find(g => g.slug === 'dolphins')!,
-            games.find(g => g.slug === 'luxury')!,
-        ],
-        recommended: ["casino-royale", "diamante", "golden-club"]
-    },
-    {
         id: 9,
         slug: "lucky-slot",
         title: "Lucky Slot",
@@ -247,14 +253,14 @@ export const multigames = [
         recommended: ["casino-royale", "diamante", "golden-club"]
     },
     {
-        id: 10,
-        slug: "fortune-ultralink",
-        title: "Fortune Ultralink",
+        id: 3,
+        slug: "golden-club",
+        title: "Golden Club",
         coverImage: bgmultigamopen,
         logo: multigamelogo,
-        mainImage: fortuneUltralinkMain,
-        video: "https://files.catbox.moe/ktlzt8.mp4",
-        description: "Sistema multigame con 10 giochi a tema casinò classico, interfaccia elegante e jackpot progressivo.",
+        mainImage: goldenClubMain,
+        video: "https://files.catbox.moe/yr12je.mp4",
+        description: "Esperienza VIP con 8 giochi selezionati, tema lussuoso e meccaniche di gioco innovative.",
         videos: [
             "https://example.com/video1.mp4",
             "https://example.com/video2.mp4",
@@ -264,40 +270,16 @@ export const multigames = [
             "https://example.com/video6.mp4"
         ],
         games: [
-            games.find(g => g.slug === 'the-weird-family')!,
-            games.find(g => g.slug === 'dark-pirates')!,
-            games.find(g => g.slug === 'luxury')!,
-            games.find(g => g.slug === 'fortune')!,
-            games.find(g => g.slug === 'mexican')!
+            games.find(g => g.slug === 'pablito')!,
+            games.find(g => g.slug === 'hot-pepper')!,
+            games.find(g => g.slug === 'braccio-di-ferro')!,
+            games.find(g => g.slug === 'zombie')!,
+            games.find(g => g.slug === 'lucky-8')!
         ],
-        recommended: ["casino-royale", "diamante", "golden-club"]
+        recommended: ["casino-royale", "diamante", "piggy-gold"]
     },
-    {
-        id: 11,
-        slug: "manhattan",
-        title: "Manhattan",
-        coverImage: bgmultigamopen,
-        logo: multigamelogo,
-        mainImage: manhattanMain,
-        video: "https://files.catbox.moe/6d4v6k.mp4",
-        description: "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
-        videos: [
-            "https://example.com/video1.mp4",
-            "https://example.com/video2.mp4",
-            "https://example.com/video3.mp4",
-            "https://example.com/video4.mp4",
-            "https://example.com/video5.mp4",
-            "https://example.com/video6.mp4"
-        ],
-        games: [
-            games.find(g => g.slug === 'shark')!,
-            games.find(g => g.slug === 'le-chef')!,
-            games.find(g => g.slug === 'magic-diamond-2')!,
-            games.find(g => g.slug === 'cherry')!,
-            games.find(g => g.slug === 'midnight-saloon')!
-        ],
-        recommended: ["casino-royale", "diamante", "golden-club"]
-    },
+   
+   
     {
         id: 12,
         slug: "golden-club-argento",
@@ -365,5 +347,25 @@ export const multigames = [
             games.find(g => g.slug === 'lucky-8')!
         ],
         recommended: ["casino-royale", "diamante", "golden-club"]
-    }
+    },
+    {
+        id: 7,
+        slug: "circus",
+        title: "Circus",
+        coverImage: bgmultigamopen,
+        logo: multigamelogo,
+        mainImage: circusMain,
+        video: "https://files.catbox.moe/609t67.mp4",
+        description: "Sistema divertente con 10 giochi a tema circo, perfetto per un pubblico giovane e dinamico.",
+        videos: [
+            "https://example.com/video1.mp4",
+            "https://example.com/video2.mp4",
+            "https://example.com/video3.mp4",
+            "https://example.com/video4.mp4",
+            "https://example.com/video5.mp4",
+            "https://example.com/video6.mp4"
+        ],
+        games: [],
+        recommended: ["casino-royale", "diamante", "golden-club"]
+    },
 ]
