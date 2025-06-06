@@ -61,7 +61,7 @@ interface CookieBannerProps {
 }
 
 export default function CookieBanner({ lang }: CookieBannerProps) {
-  const validLang = ["it", "es", "en"].includes(lang) ? lang : "en"
+  const validLang = ["it", "es", "en"].includes(lang) ? lang : "it"
   const t = translations[validLang as keyof typeof translations]
 
   return (

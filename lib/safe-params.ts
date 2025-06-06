@@ -7,7 +7,7 @@ import type { Locale } from "@/i18n-config"
 export function getSafeLocale(params: any): Locale {
   if (!params || !params.lang) {
     // Return default locale if params or params.lang is undefined
-    return "en" as Locale
+    return "it" as Locale
   }
 
   return params.lang as Locale

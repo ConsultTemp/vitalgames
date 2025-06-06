@@ -14,7 +14,7 @@ function getLocale(request: NextRequest): string {
   const languages = new Negotiator({ headers: negotiatorHeaders }).languages()
   // @ts-ignore locales are readonly
   const locales: string[] = i18n.locales
-  return "en"
+  return "it"
 }
 
 export function middleware(request: NextRequest) {

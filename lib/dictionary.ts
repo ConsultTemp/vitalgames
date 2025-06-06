@@ -527,7 +527,7 @@ const loadDictionary = async (locale: Locale): Promise<Dictionary> => {
     return module.default
   } catch (error) {
     console.error(`Failed to load dictionary for locale ${locale}:`, error)
-    if (locale !== "en") {
+    if (locale !== "it") {
       const module = await import("@/dictionaries/en.json")
       return module.default as any
     }
@@ -544,8 +544,8 @@ export async function getDictionary(locale: Locale): Promise<Dictionary> {
     return dictionary
   } catch (error) {
     console.error(`Error loading dictionary for locale ${locale}:`, error)
-    if (locale !== "en") {
-      return loadDictionary("en")
+    if (locale !== "it") {
+      return loadDictionary("it")
     }
     throw error
   }
