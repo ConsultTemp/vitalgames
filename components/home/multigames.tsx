@@ -12,34 +12,46 @@ import champions from '../../public/multigames-pagis/Card/Champions Slot.webp'
 import diamante from '../../public/multigames-pagis/Card/Diamante.webp'
 import fortune from '../../public/multigames-pagis/Card/Fortune.webp'
 import casinoroyale from '../../public/multigames-pagis/Card/casinoroyale.jpg'
+import fortuneGold from '../../public/multigames/Multigames/Fortune Gold/fortune_gold.webp'
 
 
 import floatingImage1 from "../../public/squalorosa.png"
 
 export const multigames = [
     {
+        id: 0,
+        slug: "fortune-gold",
+        title: "Fortune Gold",
+        image: fortuneGold,
+        isComingSoon: true
+    },
+    {
         id: 1,
         slug: "champions",
         title: "Champions Slot",
         image: champions,
+        isComingSoon: false
     },
     {
         id: 2,
         slug: "diamante",
         title: "Diamante Multigame",
         image: diamante,
+        isComingSoon: false
     },
     {
         id: 3,
         slug: "fortune-ultralink",
         title: "Fortune Ultralink",
         image: fortune,
+        isComingSoon: false
     },
     {
         id: 4,
         slug: "casino-royale",
         title: "Casino Royale",
         image: casinoroyale,
+        isComingSoon: false
     },
 ]
 
@@ -48,7 +60,7 @@ export default function Multigames() {
     const containerRef = useRef<HTMLElement>(null)
     const leftContentRef = useRef<HTMLDivElement>(null)
     const rightContentRef = useRef<HTMLDivElement>(null)
-    
+
     const [scrollState, setScrollState] = useState({
         containerTop: 0,
         containerBottom: 0,
@@ -62,17 +74,17 @@ export default function Multigames() {
     useEffect(() => {
         const updateDimensions = () => {
             if (!containerRef.current || !leftContentRef.current || !rightContentRef.current) return
-            
+
             const containerHeight = containerRef.current.offsetHeight
             const leftHeight = leftContentRef.current.offsetHeight
             const rightHeight = rightContentRef.current.offsetHeight
-            
+
             // Ottieni le dimensioni della colonna sinistra, non del container
             const leftColumn = leftContentRef.current.parentElement
             const leftColumnRect = leftColumn?.getBoundingClientRect()
-            
-            setScrollState(prev => ({ 
-                ...prev, 
+
+            setScrollState(prev => ({
+                ...prev,
                 containerHeight,
                 leftColumnLeft: leftColumnRect?.left || 0,
                 leftColumnWidth: leftColumn?.offsetWidth || 0,
@@ -88,11 +100,11 @@ export default function Multigames() {
             if (!containerRef.current) return
 
             const containerRect = containerRef.current.getBoundingClientRect()
-            
+
             // Aggiorna anche le dimensioni della colonna sinistra ad ogni scroll
             const leftColumn = leftContentRef.current?.parentElement
             const leftColumnRect = leftColumn?.getBoundingClientRect()
-            
+
             setScrollState(prev => ({
                 ...prev,
                 containerTop: containerRect.top,
@@ -124,18 +136,18 @@ export default function Multigames() {
 
         const { containerTop, containerBottom, leftColumnLeft, leftColumnWidth, leftHeight } = scrollState
         const windowHeight = window.innerHeight
-        
+
         // Punto in cui il contenuto sarebbe centrato nello schermo
         const centerPoint = (windowHeight - leftHeight) / 2
-        
+
         // CONDIZIONI SIMMETRICHE per scroll up e down:
-        
+
         // FASE 1: Inizio pin - quando il top del container raggiunge il punto di centratura
         const shouldStartPin = containerTop <= centerPoint
-        
+
         // FASE 3: Fine pin - quando il bottom del container - altezza contenuto raggiunge il punto di centratura  
         const shouldEndPin = containerBottom <= centerPoint + leftHeight
-        
+
         if (!shouldStartPin) {
             // Prima del pin - scroll normale
             return {
@@ -144,7 +156,7 @@ export default function Multigames() {
                 transform: 'none'
             }
         }
-        
+
         if (shouldEndPin) {
             // Dopo il pin - scroll normale alla fine
             // Posizionare in modo che sia allineato al bottom del container
@@ -155,7 +167,7 @@ export default function Multigames() {
                 marginTop: 'auto' // Questo lo spinge verso il basso nel flex container
             }
         }
-        
+
         // FASE 2: Pin attivo - fixed al centro con posizione e larghezza corrette
         return {
             position: 'fixed' as const,
@@ -173,10 +185,10 @@ export default function Multigames() {
                 <div className="flex flex-col md:flex-row">
                     {/* Contenuto sinistro con pin effect smooth */}
                     <div className="w-full md:w-1/2 lg:w-1/2 md:pr-8 lg:pr-16 relative flex flex-col">
-                        <motion.div 
+                        <motion.div
                             ref={leftContentRef}
                             style={getLeftContentStyle()}
-                            transition={{ 
+                            transition={{
                                 type: "tween",
                                 duration: 0.1,
                                 ease: "linear"
@@ -189,7 +201,7 @@ export default function Multigames() {
                                     className="w-64 h-32 md:w-72 md:h-72"
                                 />
                             </div>
-                            
+
                             <div className="relative z-[1] pb-12 md:pb-0">
                                 <h2 className="text-7xl md:text-7xl lg:text-[80px] font-bold text-white dharma">
                                     {dict.home.multigames.title} <br />
@@ -211,7 +223,7 @@ export default function Multigames() {
                     </div>
 
                     {/* Cards container - parte destra che scorre */}
-                    <div 
+                    <div
                         ref={rightContentRef}
                         className="w-full md:w-1/2 lg:w-1/2 flex flex-col gap-4"
                     >
@@ -220,18 +232,23 @@ export default function Multigames() {
                                 key={game.id}
                                 initial={{ opacity: 0, y: 100 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ 
-                                    duration: 0.6, 
+                                transition={{
+                                    duration: 0.6,
                                     delay: index * 0.1,
-                                    ease: "easeOut" 
+                                    ease: "easeOut"
                                 }}
                                 viewport={{ once: true, margin: "-50px" }}
                             >
                                 <Link
                                     href={`/awp-multigames/${game.slug}`}
                                     className="w-full block group rounded-sm relative transition-all duration-300"
+                                    onClick={(e: { preventDefault: () => void }) => {
+                                        if (game.isComingSoon) {
+                                            e.preventDefault(); // Previene il comportamento di default
+                                        }
+                                    }}
                                 >
-                                    <motion.div 
+                                    <motion.div
                                         className="w-full relative rounded-sm aspect-[12/9]"
                                         whileHover={{ scale: 1.02 }}
                                         transition={{ duration: 0.3 }}
@@ -242,6 +259,14 @@ export default function Multigames() {
                                             className="object-cover w-full h-full rounded-sm"
                                             fill
                                         />
+                                        {game.isComingSoon && (
+                                            <>
+                                                <div className="absolute inset-0 border-4 border-red-500 rounded-sm" />
+                                                <div className="absolute w-full top-0 left-0 right-0 flex flex-col items-center text-center font-bold">
+                                                    <p className="bg-red-500 text-white w-fit px-2 py-1 text-base rounded-b-md">COMING SOON</p>
+                                                </div>
+                                            </>
+                                        )}
                                     </motion.div>
                                 </Link>
                             </motion.div>

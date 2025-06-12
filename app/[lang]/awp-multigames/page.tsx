@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next"
 import { getDictionary } from "@/lib/dictionary"
 import type { Locale } from "@/i18n-config"
@@ -221,7 +222,7 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
                   <article key={game.id} className="transition-all duration-300">
                     <SmoothReveal>
                       <Link
-                        href={`/${lang}/awp-multigames/${game.slug}`}
+                        href={ game.isComingSoon && game.slug == "fortune-gold" ? `/${lang}/awp-multigames` : `/${lang}/awp-multigames/${game.slug}`}
                         className="w-full block group rounded-lg relative overflow-hidden hover:scale-105 transition-all duration-300"
                         aria-label={`Scopri ${game.title} - ${game.description}`}
                       >
@@ -235,6 +236,14 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
                             loading="lazy"
                           />
                         </div>
+                        {game.isComingSoon && (
+                          <>
+                            <div className="absolute inset-0 border-4 border-red-500 rounded-md" />
+                            <div className="absolute w-full top-0 left-0 right-0 flex flex-col items-center text-center font-bold">
+                              <p className="bg-red-500 text-white w-fit px-2 py-1 text-xs rounded-b-md">COMING SOON</p>
+                            </div>
+                          </>
+                        )}
                       </Link>
                     </SmoothReveal>
                   </article>
@@ -245,7 +254,7 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
 
           {/* RECOMMENDED GAMES SECTION */}
           <section className="relative overflow-visible" aria-labelledby="recommended-heading">
-            
+
 
             {/* Content */}
             <div className="relative z-10">
@@ -285,7 +294,7 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
                           />
                         </Link>
                       </SmoothReveal>
-                    ))} 
+                    ))}
                   </div>
                 </div>
               </div>

@@ -14,6 +14,7 @@ import luckySlotMain from '../public/multigames-pagis/Card/Lucky Slots.webp'
 import pool4 from '../public/multigames-pagis/Card/Pool4.webp'
 import goldenArgento from '../public/multigames-pagis/Card/Golden Club - Argento.webp'
 import goldenPlatino from '../public/multigames-pagis/Card/Golden Club - Platino.webp'
+import fortunegold from '../public/multigames/Multigames/Fortune Gold/fortune_gold.webp'
 
 
 
@@ -27,6 +28,7 @@ export const multigames = [
         coverImage: bgmultigamopen,
         logo: multigamelogo,
         mainImage: manhattanMain,
+        isComingSoon: true,
         video: "https://files.catbox.moe/6d4v6k.mp4",
         description: "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
         videos: [
@@ -47,12 +49,25 @@ export const multigames = [
         recommended: ["casino-royale", "diamante", "golden-club"]
     },
     {
+        id: 21,
+        slug: "fortune-gold",
+        title: "Fortune Gold",
+        coverImage: bgmultigamopen,
+        logo: multigamelogo,
+        mainImage: fortunegold,
+        isComingSoon: true,
+        video: "https://files.catbox.moe/6d4v6k.mp4",
+        description: "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
+        recommended: ["casino-royale", "diamante", "golden-club"]
+    },
+    {
         id: 8,
         slug: "champions",
         title: "Champions",
         coverImage: bgmultigamopen,
         logo: multigamelogo,
         mainImage: championsMain,
+        isComingSoon: false,
         video: "https://files.catbox.moe/bajs3j.mp4",
         description: "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
         videos: [
@@ -76,6 +91,7 @@ export const multigames = [
         id: 10,
         slug: "fortune-ultralink",
         title: "Fortune Ultralink",
+        isComingSoon: false,
         coverImage: bgmultigamopen,
         logo: multigamelogo,
         mainImage: fortuneUltralinkMain,
@@ -103,6 +119,7 @@ export const multigames = [
         slug: "diamante",
         title: "Diamante Multigame",
         coverImage: bgmultigamopen,
+        isComingSoon: false,
         logo: multigamelogo,
         mainImage: diamanteMain,
         video: "https://files.catbox.moe/du9st4.mp4",
@@ -129,6 +146,7 @@ export const multigames = [
         slug: "casino-royale",
         title: "Casino Royale",
         coverImage: bgmultigamopen,
+        isComingSoon: false,
         logo: multigamelogo,
         mainImage: casinoRoyaleMain,
         video: "https://files.catbox.moe/u2755e.mp4",
@@ -156,6 +174,7 @@ export const multigames = [
         title: "Piggy Gold Multigame",
         coverImage: bgmultigamopen,
         logo: multigamelogo,
+        isComingSoon: false,
         mainImage: piggyGoldMain,
         video: "https://files.catbox.moe/wwptcc.mp4",
         description: "Divertente sistema con 10 giochi a tema denaro e fortuna, perfetto per un pubblico giovane.",
@@ -182,6 +201,7 @@ export const multigames = [
         title: "Rubino",
         coverImage: bgmultigamopen,
         logo: multigamelogo,
+        isComingSoon: false,
         mainImage: rubinoMain,
         video: "https://files.catbox.moe/c7g4z7.mp4",
         description: "Multigame con 6 giochi premium, grafica vibrante e funzionalità bonus esclusive.",
@@ -208,6 +228,7 @@ export const multigames = [
         title: "Zaffiro",
         coverImage: bgmultigamopen,
         logo: multigamelogo,
+        isComingSoon: false,
         mainImage: zaffiroMain,
         video: "https://files.catbox.moe/73mdoy.mp4",
         description: "Sistema elegante con 8 giochi a tema gemme, effetti visivi spettacolari e alta percentuale di vincita.",
@@ -233,6 +254,7 @@ export const multigames = [
         slug: "lucky-slot",
         title: "Lucky Slot",
         coverImage: bgmultigamopen,
+        isComingSoon: false,
         logo: multigamelogo,
         mainImage: luckySlotMain,
         video: "https://files.catbox.moe/qc006a.mp4",
@@ -258,6 +280,7 @@ export const multigames = [
         title: "Golden Club",
         coverImage: bgmultigamopen,
         logo: multigamelogo,
+        isComingSoon: false,
         mainImage: goldenClubMain,
         video: "https://files.catbox.moe/yr12je.mp4",
         description: "Esperienza VIP con 8 giochi selezionati, tema lussuoso e meccaniche di gioco innovative.",
@@ -286,6 +309,7 @@ export const multigames = [
         title: "Golden CLub Argento",
         coverImage: goldenArgento,
         logo: multigamelogo,
+        isComingSoon: false,
         mainImage: goldenArgento,
         description: "Sistema premium con 10 giochi esclusivi, grafica HD e funzionalità bonus avanzate.",
         videos: [
@@ -306,6 +330,7 @@ export const multigames = [
         coverImage: goldenPlatino,
         logo: multigamelogo,
         mainImage: goldenPlatino,
+        isComingSoon: false,
         description: "Sistema premium con 10 giochi esclusivi, grafica HD e funzionalità bonus avanzate.",
         videos: [
             "https://example.com/video1.mp4",
@@ -331,6 +356,7 @@ export const multigames = [
         coverImage: pool4,
         logo: multigamelogo,
         mainImage: pool4,
+        isComingSoon: false,
         description: "Sistema con 8 giochi a tema gemme, effetti visivi spettacolari e alta percentuale di vincita.",
         videos: [
             "https://example.com/video1.mp4",
@@ -353,6 +379,7 @@ export const multigames = [
         slug: "circus",
         title: "Circus",
         coverImage: bgmultigamopen,
+        isComingSoon: false,
         logo: multigamelogo,
         mainImage: circusMain,
         video: "https://files.catbox.moe/609t67.mp4",
