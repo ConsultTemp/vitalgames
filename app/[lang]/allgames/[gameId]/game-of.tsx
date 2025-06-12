@@ -14,7 +14,7 @@ export default function Multigame() {
   console.log(gameId)
 
   // Cerca il gioco corrispondente nel multigames object
-  const game = multigames.find((m) => m.games.some((g) => g.slug === gameId))      
+  const game = multigames.find((m) => m?.games && m.games.some((g) => g.slug === gameId))      
 
   // Se non trova il gioco, mostra 404
   if (!game) {
