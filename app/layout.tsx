@@ -257,9 +257,9 @@ export default function RootLayout({
           Vai al contenuto principale
         </a>
 
-        <div className="intro-video-wrapper">
+        {/* <div className="intro-video-wrapper">
           <IntroVideo />
-        </div>
+        </div> */}
         <main id="main-content">
           {children}
         </main>
