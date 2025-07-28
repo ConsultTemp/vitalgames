@@ -23,7 +23,8 @@ export const multigames = [
         slug: "fortune-gold",
         title: "Fortune Gold",
         image: fortuneGold,
-        isComingSoon: true
+        isComingSoon: false,
+        isAvailableNow: true
     },
     {
         id: 1,
@@ -259,14 +260,21 @@ export default function Multigames() {
                                             className="object-cover w-full h-full rounded-sm"
                                             fill
                                         />
-                                        {game.isComingSoon && (
+                                        {game.isComingSoon ? (
                                             <>
                                                 <div className="absolute inset-0 border-4 border-red-500 rounded-sm" />
                                                 <div className="absolute w-full top-0 left-0 right-0 flex flex-col items-center text-center font-bold">
-                                                    <p className="bg-red-500 text-white w-fit px-2 py-1 text-base rounded-b-md">COMING SOON</p>
+                                                    <p className="bg-red-500 text-white w-fit px-2 py-1 text-base rounded-b-md">{dict.common.comingSoon}</p>
                                                 </div>
                                             </>
-                                        )}
+                                        ) : game.isAvailableNow ? (
+                                            <>
+                                                <div className="absolute inset-0 border-4 border-green-500 rounded-sm" />
+                                                <div className="absolute w-full top-0 left-0 right-0 flex flex-col items-center text-center font-bold">
+                                                    <p className="bg-green-500 text-white w-fit px-2 py-1 text-base rounded-b-md">{dict.common.availableNow}</p>
+                                                </div>
+                                            </>
+                                        ) : null}
                                     </motion.div>
                                 </Link>
                             </motion.div>

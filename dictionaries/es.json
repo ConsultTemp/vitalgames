@@ -614,6 +614,8 @@
     },
     "loading": "Cargando...",
     "error": "Se ha producido un error. Por favor, inténtalo de nuevo.",
+    "availableNow": "DISPONIBLE AHORA",
+    "comingSoon": "PRÓXIMAMENTE",
     "notFound": {
       "title": "Página No Encontrada",
       "message": "La página que estás buscando no existe o ha sido movida.",

@@ -28,7 +28,7 @@ export const multigames = [
         coverImage: bgmultigamopen,
         logo: multigamelogo,
         mainImage: manhattanMain,
-        isComingSoon: true,
+        isComingSoon: false,
         video: "https://files.catbox.moe/6d4v6k.mp4",
         description: "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
         videos: [
@@ -55,10 +55,15 @@ export const multigames = [
         coverImage: bgmultigamopen,
         logo: multigamelogo,
         mainImage: fortunegold,
-        isComingSoon: true,
-        video: "https://files.catbox.moe/6d4v6k.mp4",
+        isComingSoon: false,
         description: "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
-        recommended: ["casino-royale", "diamante", "golden-club"]
+        recommended: ["casino-royale", "diamante", "golden-club"],
+        games: [
+            games.find(g => g.slug === 'book-of-magic')!,
+            games.find(g => g.slug === 'luxury')!,
+            games.find(g => g.slug === 'fortune')!,
+            games.find(g => g.slug === 'mexican')!,
+        ],
     },
     {
         id: 8,

@@ -606,6 +606,8 @@
     },
     "loading": "Loading...",
     "error": "An error occurred. Please try again.",
+    "availableNow": "AVAILABLE NOW",
+    "comingSoon": "COMING SOON",
     "notFound": {
       "title": "Page Not Found",
       "message": "The page you are looking for does not exist or has been moved.",

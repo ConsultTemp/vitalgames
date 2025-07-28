@@ -621,6 +621,8 @@
     },
     "loading": "Caricamento...",
     "error": "Si è verificato un errore. Riprova.",
+    "availableNow": "DISPONIBILE ORA",
+    "comingSoon": "COMING SOON",
     "notFound": {
       "title": "Pagina Non Trovata",
       "message": "La pagina che stai cercando non esiste o è stata spostata.",
