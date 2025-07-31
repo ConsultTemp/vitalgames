@@ -85,7 +85,7 @@ export default function ManhattanLanding() {
               <span className="text-white">{dict.home.manhattan.title}</span>{" "}
               <span className="">
                 {" "}<br className="visible md:hidden"/>
-                <span className="text-vitalYellow dharma-italic">{dict.home.manhattan.comingSoon}</span>
+                <span className="text-vitalYellow dharma-italic">OUT NOW...</span>
               </span>
             </h1>
             <p className="text-sm">{dict.home.manhattan.description}</p>

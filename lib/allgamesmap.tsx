@@ -355,7 +355,7 @@ export const games = [
     coverImage: SHARK,
     mainImage: shark,
     images:[],
-    isComingSoon: true,
+    isComingSoon: false,
     mobileBg: shark_mobile_hero
   },
   {
@@ -366,7 +366,7 @@ export const games = [
     coverImage: CRAZY_CIRCUS,
     mainImage: crazyCircus,
     images:[],
-    isComingSoon: true,
+    isComingSoon: false,
     mobileBg: crazyCircus_mobile_hero
   },
   {
@@ -377,7 +377,7 @@ export const games = [
     coverImage: MIDNIGHT__SALOON,
     mainImage: midnightsaloon,
     images:[],
-    isComingSoon: true,
+    isComingSoon: false,
     mobileBg: midnightsaloon_mobile_hero
   },
   {
@@ -388,7 +388,7 @@ export const games = [
     coverImage: CHERRY,
     mainImage: cherry,
     images:[],
-    isComingSoon: true,
+    isComingSoon: false,
     mobileBg: cherry_mobile_hero
   },
   {
@@ -399,7 +399,7 @@ export const games = [
     coverImage: LE_CHEF,
     mainImage: chef,
     images:[],
-    isComingSoon: true,
+    isComingSoon: false,
     mobileBg: chef_mobile_hero
     
   },
