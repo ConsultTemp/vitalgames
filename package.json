@@ -50,6 +50,7 @@
     "framer-motion": "^12.9.2",
     "fs": "latest",
     "gsap": "^3.13.0",
+    "hls.js": "^1.6.13",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
     "negotiator": "^0.6.4",

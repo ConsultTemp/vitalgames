@@ -146,21 +146,21 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
         {(!isPlaying || isHovering) && (
           <button
             onClick={handlePlayPause}
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/80 hover:scale-110 transition-all duration-300 shadow-2xl"
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/80 hover:scale-110 transition-all duration-300 shadow-2xl"
             aria-label={isPlaying ? "Pause" : "Play"}
           >
             {isPlaying ? (
-              <Pause className="w-10 h-10 text-white" />
+              <Pause className="w-8 h-8 md:w-10 md:h-10 text-white" />
             ) : (
-              <Play className="w-10 h-10 text-white ml-1" />
+              <Play className="w-8 h-8 md:w-10 md:h-10 text-white ml-1" />
             )}
           </button>
         )}
 
         {/* Bottom Controls Bar */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent">
+        <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6 bg-gradient-to-t from-black/90 to-transparent">
           {/* Timeline Scrubber */}
-          <div className="mb-4">
+          <div className="mb-2 md:mb-4">
             <input
               type="range"
               min="0"
@@ -173,23 +173,23 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
 
           {/* Control Buttons Row */}
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-3 md:space-x-6">
               {/* Play/Pause */}
               <button
                 onClick={handlePlayPause}
-                className="text-white hover:text-gray-200 transition-colors p-2 hover:bg-white/10 rounded-full"
+                className="text-white hover:text-gray-200 transition-colors p-1 md:p-2 hover:bg-white/10 rounded-full"
                 aria-label={isPlaying ? "Pause" : "Play"}
               >
                 {isPlaying ? (
-                  <Pause className="w-6 h-6" />
+                  <Pause className="w-4 h-4 md:w-6 md:h-6" />
                 ) : (
-                  <Play className="w-6 h-6" />
+                  <Play className="w-4 h-4 md:w-6 md:h-6" />
                 )}
               </button>
 
 
               {/* Time Display */}
-              <div className="text-white text-sm font-medium tracking-wide">
+              <div className="text-white text-xs md:text-sm font-medium tracking-wide">
                 {formatTime(currentTime)} / {formatTime(duration)}
               </div>
             </div>
@@ -197,10 +197,10 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
             {/* Fullscreen Button */}
             <button
               onClick={handleFullscreen}
-              className="text-white hover:text-gray-200 transition-colors p-2 hover:bg-white/10 rounded-full"
+              className="text-white hover:text-gray-200 transition-colors p-1 md:p-2 hover:bg-white/10 rounded-full"
               aria-label="Fullscreen"
             >
-              <Maximize className="w-5 h-5" />
+              <Maximize className="w-4 h-4 md:w-5 md:h-5" />
             </button>
           </div>
         </div>
