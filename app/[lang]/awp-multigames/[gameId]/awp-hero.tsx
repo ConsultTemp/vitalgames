@@ -3,15 +3,17 @@
 import { useState, useRef } from "react"
 import { Play } from "lucide-react"
 import Image, { StaticImageData } from "next/image"
+import SimpleVideoWithControls from "@/components/SimpleVideoWithControls"
 
 interface GameSectionProps {
     imageUrl: StaticImageData;
     videoUrl?: string;
+    videoId?: string;
     title: string;
     description: string;
 }
 
-export default function GameSection({ imageUrl, videoUrl, title, description }: GameSectionProps) {
+export default function GameSection({ imageUrl, videoUrl, videoId, title, description }: GameSectionProps) {
   console.log(videoUrl)
   console.log(!!videoUrl)
   const [isPlaying, setIsPlaying] = useState(false)
@@ -37,8 +39,15 @@ export default function GameSection({ imageUrl, videoUrl, title, description }: 
 
       {/* Content container */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-16 flex flex-col items-center">
-        {/* Video section - only show if videoUrl is present and valid */}
-        {videoUrl && typeof videoUrl === 'string' && videoUrl.trim() !== '' && (
+        {/* Video section - show OptimizedVideoWithControls if videoId is present, fallback to old video if only videoUrl */}
+        {videoId && videoId.trim() !== '' ? (
+          <div className="w-full max-w-4xl mb-12 relative rounded-lg overflow-hidden">
+            <SimpleVideoWithControls
+              videoId={videoId}
+              className="rounded-lg"
+            />
+          </div>
+        ) : videoUrl && typeof videoUrl === 'string' && videoUrl.trim() !== '' ? (
           <div className="w-full max-w-4xl mb-12 relative rounded-lg overflow-hidden">
             <video
               ref={videoRef}
@@ -70,7 +79,7 @@ export default function GameSection({ imageUrl, videoUrl, title, description }: 
               </button>
             )}
           </div>
-        )}
+        ) : null}
 
         {/* Text content */}
         <div className="text-center max-w-3xl">

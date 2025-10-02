@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
+import { Stream } from "@cloudflare/stream-react"
 
 interface OptimizedCloudflareVideoProps {
   videoId: string
@@ -22,7 +23,7 @@ interface OptimizedCloudflareVideoProps {
   gradient?: boolean
   gradientDirection?: "to-t" | "to-b" | "to-l" | "to-r"
   fallbackComponent?: React.ReactNode
-  onIframeLoad?: () => void // Nuovo callback
+  onVideoLoad?: () => void // Callback per quando il video è caricato
 }
 
 export default function OptimizedCloudflareVideo({
@@ -44,7 +45,7 @@ export default function OptimizedCloudflareVideo({
   gradient = false,
   gradientDirection = "to-t",
   fallbackComponent,
-  onIframeLoad, // Nuovo prop
+  onVideoLoad, // Callback prop
 }: OptimizedCloudflareVideoProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isInView, setIsInView] = useState(!lazy)
@@ -94,11 +95,10 @@ export default function OptimizedCloudflareVideo({
     return () => observer.disconnect()
   }, [lazy, isInView, isClient])
 
-  // Handler per il caricamento dell'iframe
-  const handleLoad = () => {
-    // Aggiungi un piccolo delay per compensare il tempo di avvio del video
+  // Handler per il caricamento del video
+  const handleVideoLoad = () => {
     setTimeout(() => {
-      onIframeLoad?.()
+      onVideoLoad?.()
     }, 200) // Delay di 200ms per permettere al video di iniziare
   }
 
@@ -122,7 +122,6 @@ export default function OptimizedCloudflareVideo({
   }
 
   const activeId = isMobile && mobileId ? mobileId : videoId
-  const iframeSrc = `https://customer-vkies7d79pqqk1lg.cloudflarestream.com/${activeId}/iframe?autoplay=true&muted=true&controls=false&loop=true&preload=auto`
 
   // Costruisci lo stile del container usando solo le proprietà necessarie
   const containerStyles: React.CSSProperties = {
@@ -133,8 +132,8 @@ export default function OptimizedCloudflareVideo({
     ...(maxHeight && { maxHeight }),
   }
 
-  // Stile per l'iframe - identico al container per riempire completamente
-  const iframeStyles: React.CSSProperties = {
+  // Stile per il video Stream
+  const videoStyles: React.CSSProperties = {
     width: isMobile && ratio === "intro" ? "121.5vh" : "100vw",
     height: getHeight(isMobile, ratio),
     objectFit: "cover",
@@ -148,15 +147,17 @@ export default function OptimizedCloudflareVideo({
       style={containerStyles}
     >
       {isInView && (
-        <iframe
-          src={iframeSrc}
-          loading="lazy"
-          style={iframeStyles}
-          allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
-          allowFullScreen
-          className={cn("block border-0 m-0 p-0", className)}
-          onLoad={handleLoad} // Aggiungi l'event handler
-        />
+        <div style={videoStyles}>
+          <Stream
+            src={activeId}
+            autoplay
+            muted
+            loop
+            controls={false}
+            className={cn("w-full h-full object-cover", className)}
+            onLoadStart={handleVideoLoad}
+          />
+        </div>
       )}
     </div>
   )

@@ -283,6 +283,7 @@ export default async function MultigamePage({ params }: { params: Params }) {
           <GameSection
             imageUrl={multigame.mainImage}
             videoUrl={multigame.video && typeof multigame.video === 'string' && multigame.video.trim() !== '' ? multigame.video : undefined}
+            videoId={multigame.videoId && multigame.videoId.trim() !== '' ? multigame.videoId : undefined}
             title={multigame.title}
             description={translatedDescription}
           />
