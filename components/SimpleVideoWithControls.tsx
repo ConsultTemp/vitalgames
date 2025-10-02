@@ -19,6 +19,7 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
   const [duration, setDuration] = useState(0)
   const [showControls, setShowControls] = useState(true)
   const [isHovering, setIsHovering] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
   // Initialize HLS video
   useEffect(() => {
@@ -62,12 +63,12 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
     }
 
     const handlePlay = () => {
-      console.log('Video playing')
+      console.log('Video playing - isPlaying will be true')
       setIsPlaying(true)
     }
     
     const handlePause = () => {
-      console.log('Video paused')
+      console.log('Video paused - isPlaying will be false')
       setIsPlaying(false)
     }
 
@@ -89,6 +90,17 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
       }
     }
   }, [videoId])
+
+  // Detect mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   // Video control handlers
   const handlePlayPause = () => {
@@ -127,8 +139,14 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
   return (
     <div 
       className="relative w-full h-full"
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
+      onMouseEnter={() => {
+        console.log('Mouse enter - setting hover true')
+        setIsHovering(true)
+      }}
+      onMouseLeave={() => {
+        console.log('Mouse leave - setting hover false')  
+        setIsHovering(false)
+      }}
     >
       <video
         ref={videoRef}
@@ -136,14 +154,14 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
         muted
         loop
         controls={false}
-        className={`w-full h-full object-cover ${className}`}
+        className={`w-full h-full object-contain ${className}`}
         playsInline
       />
       
       {/* Custom Controls Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
         {/* Play/Pause Button - Center - Show always when paused, only on hover when playing */}
-        {(!isPlaying || isHovering) && (
+        {(!isPlaying || (isPlaying && isHovering)) && (
           <button
             onClick={handlePlayPause}
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/80 hover:scale-110 transition-all duration-300 shadow-2xl"
@@ -157,8 +175,9 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
           </button>
         )}
 
-        {/* Bottom Controls Bar */}
-        <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6 bg-gradient-to-t from-black/90 to-transparent">
+        {/* Bottom Controls Bar - Show only when hovering or video is paused */}
+        {(!isPlaying || (isPlaying && isHovering)) && (
+          <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6 bg-gradient-to-t from-black/90 to-transparent">
           {/* Timeline Scrubber */}
           <div className="mb-2 md:mb-4">
             <input
@@ -194,16 +213,19 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
               </div>
             </div>
 
-            {/* Fullscreen Button */}
-            <button
-              onClick={handleFullscreen}
-              className="text-white hover:text-gray-200 transition-colors p-1 md:p-2 hover:bg-white/10 rounded-full"
-              aria-label="Fullscreen"
-            >
-              <Maximize className="w-4 h-4 md:w-5 md:h-5" />
-            </button>
+            {/* Fullscreen Button - Hidden on mobile */}
+            {!isMobile && (
+              <button
+                onClick={handleFullscreen}
+                className="text-white hover:text-gray-200 transition-colors p-1 md:p-2 hover:bg-white/10 rounded-full"
+                aria-label="Fullscreen"
+              >
+                <Maximize className="w-4 h-4 md:w-5 md:h-5" />
+              </button>
+            )}
           </div>
         </div>
+        )}
       </div>
       
       {/* Custom CSS for sliders */}

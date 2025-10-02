@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
 import { Stream } from "@cloudflare/stream-react"
+import { Play, Pause } from "lucide-react"
 
 interface OptimizedCloudflareVideoProps {
   videoId: string
@@ -48,9 +49,11 @@ export default function OptimizedCloudflareVideo({
   onVideoLoad, // Callback prop
 }: OptimizedCloudflareVideoProps) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const streamRef = useRef<any>(null)
   const [isInView, setIsInView] = useState(!lazy)
   const [isMobile, setIsMobile] = useState<boolean | null>(null) // null = non ancora determinato
   const [isClient, setIsClient] = useState(false)
+  const [isPlaying, setIsPlaying] = useState(true) // Default playing since autoplay is on
 
   // Rileva se siamo sul client
   useEffect(() => {
@@ -102,6 +105,25 @@ export default function OptimizedCloudflareVideo({
     }, 200) // Delay di 200ms per permettere al video di iniziare
   }
 
+  // Handle play/pause toggle
+  const handlePlayPause = () => {
+    if (streamRef.current) {
+      try {
+        if (isPlaying) {
+          streamRef.current.pause()
+          setIsPlaying(false)
+        } else {
+          streamRef.current.play()
+          setIsPlaying(true)
+        }
+      } catch (error) {
+        console.log('Play/pause error:', error)
+        // Fallback: just toggle state
+        setIsPlaying(!isPlaying)
+      }
+    }
+  }
+
   // Non renderizzare nulla finché non abbiamo determinato se siamo su mobile
   if (!isClient || isMobile === null) {
     return (
@@ -147,7 +169,7 @@ export default function OptimizedCloudflareVideo({
       style={containerStyles}
     >
       {isInView && (
-        <div style={videoStyles}>
+        <div style={videoStyles} className="relative">
           <Stream
             src={activeId}
             autoplay
@@ -156,7 +178,22 @@ export default function OptimizedCloudflareVideo({
             controls={false}
             className={cn("w-full h-full object-cover", className)}
             onLoadStart={handleVideoLoad}
+            streamRef={streamRef}
           />
+          
+          {/* Play/Pause Button - Bottom Right */}
+          <button
+            onClick={handlePlayPause}
+            className="absolute bottom-4 right-4 w-12 h-12 md:w-14 md:h-14 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/80 transition-all duration-200 shadow-lg"
+            style={{ zIndex: 999999, position: 'absolute' }}
+            aria-label={isPlaying ? "Pause video" : "Play video"}
+          >
+            {isPlaying ? (
+              <Pause className="w-5 h-5 md:w-6 md:h-6 text-white" />
+            ) : (
+              <Play className="w-5 h-5 md:w-6 md:h-6 text-white ml-0.5" />
+            )}
+          </button>
         </div>
       )}
     </div>
