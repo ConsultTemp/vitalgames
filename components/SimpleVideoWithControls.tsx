@@ -138,7 +138,7 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
 
   return (
     <div 
-      className="relative w-full h-full"
+      className="relative w-full"
       onMouseEnter={() => {
         console.log('Mouse enter - setting hover true')
         setIsHovering(true)
@@ -154,7 +154,7 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
         muted
         loop
         controls={false}
-        className={`w-full h-full object-contain ${className}`}
+        className={`w-full h-auto object-cover ${className}`}
         playsInline
       />
       
