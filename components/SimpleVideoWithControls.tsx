@@ -20,6 +20,7 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
   const [showControls, setShowControls] = useState(true)
   const [isHovering, setIsHovering] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [aspectRatio, setAspectRatio] = useState<number | null>(null)
 
   // Initialize HLS video
   useEffect(() => {
@@ -56,6 +57,13 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
     const handleLoadedMetadata = () => {
       console.log('Video metadata loaded, duration:', video.duration)
       setDuration(video.duration || 0)
+      
+      // Calculate aspect ratio from video dimensions
+      if (video.videoWidth && video.videoHeight) {
+        const ratio = video.videoWidth / video.videoHeight
+        setAspectRatio(ratio)
+        console.log('Video aspect ratio:', ratio, `(${video.videoWidth}x${video.videoHeight})`)
+      }
     }
 
     const handleTimeUpdate = () => {
@@ -138,7 +146,7 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
 
   return (
     <div 
-      className="relative w-full"
+      className="relative h-max flex flex-column items-center justify-center"
       onMouseEnter={() => {
         console.log('Mouse enter - setting hover true')
         setIsHovering(true)
@@ -154,12 +162,13 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
         muted
         loop
         controls={false}
-        className={`w-full h-auto object-cover ${className}`}
+        className={``}
         playsInline
+        style={{ height: '100%' , borderRadius: '0px'}}
       />
       
       {/* Custom Controls Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+      <div className="absolute h-full w-full inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
         {/* Play/Pause Button - Center - Show always when paused, only on hover when playing */}
         {(!isPlaying || (isPlaying && isHovering)) && (
           <button

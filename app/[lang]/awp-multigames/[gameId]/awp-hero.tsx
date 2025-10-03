@@ -41,7 +41,7 @@ export default function GameSection({ imageUrl, videoUrl, videoId, title, descri
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-16 flex flex-col items-center">
         {/* Video section - show OptimizedVideoWithControls if videoId is present, fallback to old video if only videoUrl */}
         {videoId && videoId.trim() !== '' ? (
-          <div className="w-full max-w-4xl mb-12 relative rounded-lg overflow-hidden aspect-video">
+          <div className="w-full max-w-4xl mb-12 relative rounded-lg overflow-hidden ">
             <SimpleVideoWithControls
               videoId={videoId}
               className="rounded-lg"

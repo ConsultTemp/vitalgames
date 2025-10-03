@@ -279,7 +279,7 @@ export default async function MultigamePage({ params }: { params: Params }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <div className="bg-black">
-        <header className="h-fit">
+        <header className="h-full">
           <GameSection
             imageUrl={multigame.mainImage}
             videoUrl={multigame.video && typeof multigame.video === 'string' && multigame.video.trim() !== '' ? multigame.video : undefined}
