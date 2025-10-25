@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Play, Pause, Maximize } from "lucide-react"
+import { Play, Pause, Maximize, VolumeX, Volume1, Volume2 } from "lucide-react"
 import Hls from "hls.js"
 
 interface SimpleVideoWithControlsProps {
@@ -21,6 +21,12 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
   const [isHovering, setIsHovering] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const [aspectRatio, setAspectRatio] = useState<number | null>(null)
+  
+  // Volume controls state
+  const [volume, setVolume] = useState(1.0)
+  const [isMuted, setIsMuted] = useState(false)
+  const [previousVolume, setPreviousVolume] = useState(1.0)
+  const [showVolumeSlider, setShowVolumeSlider] = useState(false)
 
   // Initialize HLS video
   useEffect(() => {
@@ -84,6 +90,10 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
     video.addEventListener('timeupdate', handleTimeUpdate)
     video.addEventListener('play', handlePlay)
     video.addEventListener('pause', handlePause)
+    
+    // Initialize video volume
+    video.volume = volume
+    video.muted = isMuted
 
     // Cleanup function
     return () => {
@@ -97,7 +107,7 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
         hlsRef.current = null
       }
     }
-  }, [videoId])
+  }, [videoId, volume, isMuted])
 
   // Detect mobile
   useEffect(() => {
@@ -142,6 +152,44 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
     const minutes = Math.floor(time / 60)
     const seconds = Math.floor(time % 60)
     return `${minutes}:${seconds.toString().padStart(2, '0')}`
+  }
+
+  // Volume control handlers
+  const handleVolumeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newVolume = parseFloat(event.target.value)
+    setVolume(newVolume)
+    setIsMuted(newVolume === 0)
+    
+    if (videoRef.current) {
+      videoRef.current.volume = newVolume
+      videoRef.current.muted = newVolume === 0
+    }
+  }
+
+  const handleMuteToggle = () => {
+    if (videoRef.current) {
+      if (isMuted) {
+        // Unmute: restore previous volume
+        const volumeToRestore = previousVolume > 0 ? previousVolume : 0.5
+        setVolume(volumeToRestore)
+        setIsMuted(false)
+        videoRef.current.volume = volumeToRestore
+        videoRef.current.muted = false
+      } else {
+        // Mute: save current volume and set to 0
+        setPreviousVolume(volume)
+        setVolume(0)
+        setIsMuted(true)
+        videoRef.current.volume = 0
+        videoRef.current.muted = true
+      }
+    }
+  }
+
+  const getVolumeIcon = () => {
+    if (isMuted || volume === 0) return VolumeX
+    if (volume < 0.5) return Volume1
+    return Volume2
   }
 
   return (
@@ -220,6 +268,43 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
               <div className="text-white text-xs md:text-sm font-medium tracking-wide">
                 {formatTime(currentTime)} / {formatTime(duration)}
               </div>
+
+              {/* Volume Control */}
+              <div className="relative">
+                <button
+                  onClick={handleMuteToggle}
+                  onMouseEnter={() => setShowVolumeSlider(true)}
+                  onMouseLeave={() => setShowVolumeSlider(false)}
+                  className="text-white hover:text-gray-200 transition-colors p-1 md:p-2 hover:bg-white/10 rounded-full"
+                  aria-label={isMuted ? "Unmute" : "Mute"}
+                >
+                  {(() => {
+                    const VolumeIcon = getVolumeIcon()
+                    return <VolumeIcon className="w-4 h-4 md:w-6 md:h-6" />
+                  })()}
+                </button>
+
+                {/* Volume Slider Popup */}
+                {showVolumeSlider && (
+                  <div 
+                    className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 bg-black/90 backdrop-blur-sm rounded-lg p-2 volume-slider-container"
+                    onMouseEnter={() => setShowVolumeSlider(true)}
+                    onMouseLeave={() => setShowVolumeSlider(false)}
+                  >
+                    <input
+                      type="range"
+                      min="0"
+                      max="1"
+                      step="0.01"
+                      value={volume}
+                      onChange={handleVolumeChange}
+                      className="volume-slider h-20 w-1 bg-white/30 rounded-full appearance-none cursor-pointer"
+                      style={{ writingMode: 'vertical-lr' as const, WebkitAppearance: 'slider-vertical' }}
+                      aria-label="Volume"
+                    />
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Fullscreen Button - Hidden on mobile */}
@@ -265,6 +350,53 @@ export default function SimpleVideoWithControls({ videoId, className }: SimpleVi
           background: transparent;
           height: 4px;
           border-radius: 2px;
+        }
+        
+        /* Volume Slider Styles */
+        .volume-slider {
+          writing-mode: vertical-lr;
+          -webkit-appearance: slider-vertical; /* WebKit */
+          background: linear-gradient(to top, white 0%, white ${volume * 100}%, rgba(255,255,255,0.3) ${volume * 100}%, rgba(255,255,255,0.3) 100%);
+        }
+        
+        .volume-slider::-webkit-slider-thumb {
+          appearance: none;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: white;
+          cursor: pointer;
+          border: none;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+          transition: all 0.2s ease;
+        }
+        
+        .volume-slider:hover::-webkit-slider-thumb {
+          width: 16px;
+          height: 16px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+        }
+        
+        .volume-slider::-webkit-slider-track {
+          background: transparent;
+          width: 4px;
+          border-radius: 2px;
+        }
+        
+        .volume-slider-container {
+          animation: fadeInUp 0.2s ease-out;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(10px) translateX(-50%);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) translateX(-50%);
+          }
         }
         
       `}</style>
