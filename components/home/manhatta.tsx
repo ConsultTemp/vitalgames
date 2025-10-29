@@ -6,7 +6,7 @@ import { useLanguage } from "@/components/language-provider"
 // Importazione diretta delle immagini
 import sharkImage from "@/public/allgames/SHARK.jpg"
 import midnightSaloonImage from "@/public/allgames/MIDNIGHT SALOON.jpg"
-import misterDiamondImage from "@/public/allgames/MAGIC DIAMOND 2.jpg"
+import misterDiamondImage from "@/public/misterdiamond.jpeg"
 import cherryImage from "@/public/allgames/CHERRY.jpg"
 import leChefImage from "@/public/allgames/LE CHEF.jpg"
 import logo from "../../public/logovitalwhite2.svg"

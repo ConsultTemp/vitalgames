@@ -44,6 +44,7 @@ import mexican from '../public/allgames-webp/MEXICAN.webp'
 import bookOfMagic from '../public/allgames-webp/BOOK OF MAGIC.webp'
 import piggyGold from '../public/allgames-webp/PIGGY GOLD.webp'
 import luxury from '../public/allgames-webp/LUXURY.webp'
+import misterdiamond from '../public/misterdiamond.jpeg'
 
 export const games = [
   {
@@ -128,6 +129,12 @@ export const games = [
     title: "Magic Diamond 2",
     image: magic,
   },
+  /* {
+    id: 13,
+    slug: "mister-diamond",
+    title: "Mister Diamond",
+    image: misterdiamond,
+  }, */
   {
     id: 14,
     slug: "mohamed",

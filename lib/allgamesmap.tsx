@@ -250,7 +250,9 @@ import PIGGY_GOLD_PHOTO2 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-1
 import PIGGY_GOLD_PHOTO3 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-31.jpg'
 import PIGGY_GOLD_PHOTO4 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-33 3.jpg'
 import PIGGY_GOLD_PHOTO5 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-34.jpg' */
-
+import misterdiamond from '../public/misterdiamond.jpeg'
+import MR_DIAMOND from '../public/misterdiamond.jpeg'
+import MR_DIAMOND_MOBILE from '../public/misterdiamond.jpeg'
 
 import alieni from '../public/allgames-webp/ALIENI.webp'
 import braccio from '../public/allgames-webp/BRACCIO DI FERRO.webp'
@@ -403,6 +405,17 @@ export const games = [
     mobileBg: chef_mobile_hero
     
   },
+  /* {
+    name: 'Mister Diamond',
+    subtitle: 'Scopri i segreti di un antico libro magico',
+    href: 'mister-diamond',
+    slug: 'mister-diamond',
+    coverImage: MR_DIAMOND,
+    mainImage: misterdiamond,
+    images: [],
+    isComingSoon: false,
+    mobileBg: MR_DIAMOND_MOBILE
+  }, */
   {
     name: 'Alieni',
     subtitle: 'The Weird Family ti aspetta con simboli misteriosi, bonus inquietanti e colpi di scena ad ogni spin. Tra risate dark e funzionalità speciali, entra in un gioco dove il bizzarro è solo l\'inizio.',

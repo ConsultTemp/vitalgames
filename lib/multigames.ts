@@ -41,11 +41,12 @@ export const multigames = [
             "https://example.com/video6.mp4"
         ],
         games: [
+            //games.find(g => g.slug === 'mister-diamond')!,
             games.find(g => g.slug === 'shark')!,
             games.find(g => g.slug === 'le-chef')!,
-            games.find(g => g.slug === 'magic-diamond-2')!,
             games.find(g => g.slug === 'cherry')!,
-            games.find(g => g.slug === 'midnight-saloon')!
+            games.find(g => g.slug === 'midnight-saloon')!,
+            
         ],
         recommended: ["casino-royale", "diamante", "golden-club"]
     },
