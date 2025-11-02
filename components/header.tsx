@@ -306,7 +306,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Content */}
-                    <div className="flex flex-col p-6 space-y-8 overflow-y-auto flex-grow">
+                    <div className="flex flex-col p-6 space-y-4 overflow-y-auto flex-grow">
                       {menuItems.map((item, index) => {
                         const slots = item.dropdownType === "awp-multigames" ? multigames : games
                         // Skip Online Games in mobile menu items loop (we'll add it separately)

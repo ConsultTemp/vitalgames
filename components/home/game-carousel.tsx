@@ -127,9 +127,9 @@ export function GameCarousel() {
       <>
         <div className="w-full py-12 mt-12 bg-black px-4">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-white text-3xl font-bold dharma">{dict.home.onlineGames.title}</h2>
+            <h2 className="text-white text-3xl dharma">{dict.home.onlineGames.title}</h2>
             <Link href="/onlinegames">
-              <Button className="bg-vitalYellow text-black hover:bg-yellow-400 text-sm rounded-md">
+              <Button className="bg-none text-white rounded-full border border-white hover:border-vitalYellow hover:bg-vitalYellow hover:text-black text-sm">
                 {dict.home.onlineGames.viewAll}
               </Button>
             </Link>
@@ -211,14 +211,14 @@ export function GameCarousel() {
           <h2 className="text-white text-5xl font-bold dharma">{dict.home.onlineGames.title}</h2>
           <div className="flex items-center space-x-3 z-10">
             <Link href="/onlinegames">
-              <Button className="bg-vitalYellow text-black hover:bg-yellow-400 text-sm rounded-md">
+              <Button className="text-sm text-white rounded-full border border-white hover:border-vitalYellow hover:bg-vitalYellow hover:text-black">
                 {dict.home.onlineGames.viewAll}
               </Button>
             </Link>
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full hover:bg-black hover:opacity-80"
+              className="rounded-full hover:bg-black"
               onClick={() => api?.scrollPrev()}
             >
               <ChevronLeft className="h-5 w-5" />

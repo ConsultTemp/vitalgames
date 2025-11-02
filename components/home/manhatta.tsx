@@ -80,12 +80,12 @@ export default function ManhattanLanding() {
       <div className="max-w-7xl mx-auto space-y-4 relative z-10 mt-4">
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          <div className="max-w-2xl flex flex-col gap-8 pb-4">
+          <div className="max-w-2xl flex flex-col gap-4 pb-4 md:gap-4 md:pb-4">
             <h1 className="text-7xl md:text-6xl lg:text-7xl font-extrabold tracking-tight dharma w-fit">
               <span className="text-white">{dict.home.manhattan.title}</span>{" "}
               <span className="">
                 {" "}<br className="visible md:hidden"/>
-                <span className="text-vitalYellow dharma-italic">OUT NOW...</span>
+                <span className="text-vitalYellow dharma-bold">OUT NOW.</span>
               </span>
             </h1>
             <p className="text-sm">{dict.home.manhattan.description}</p>
