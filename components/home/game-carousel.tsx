@@ -126,6 +126,14 @@ export function GameCarousel() {
     return (
       <>
         <div className="w-full py-12 mt-12 bg-black px-4">
+          <div className="flex justify-between items-center mb-8">
+            <h2 className="text-white text-3xl font-bold dharma">{dict.home.onlineGames.title}</h2>
+            <Link href="/onlinegames">
+              <Button className="bg-vitalYellow text-black hover:bg-yellow-400 text-sm rounded-md">
+                {dict.home.onlineGames.viewAll}
+              </Button>
+            </Link>
+          </div>
           {gameSlides.map((slide) => (
             <div key={slide.id} className="rounded-lg overflow-hidden shadow-lg relative mb-8">
               <div className="relative w-full">
@@ -198,10 +206,15 @@ export function GameCarousel() {
   // Versione desktop: carosello
   return (
     <>
-      <div className="relative w-full max-w-7xl mx-auto my-36 bg-black">
+      <div className="relative w-full max-w-7xl mx-auto my-36 bg-black pb-24">
         <div className="flex absolute right-0 w-full -top-12 flex-row items-center justify-between">
-          <h2 className="text-white text-5xl font-bold dharma">I nostri giochi online</h2>
-          <div className="flex space-x-2 z-10">
+          <h2 className="text-white text-5xl font-bold dharma">{dict.home.onlineGames.title}</h2>
+          <div className="flex items-center space-x-3 z-10">
+            <Link href="/onlinegames">
+              <Button className="bg-vitalYellow text-black hover:bg-yellow-400 text-sm rounded-md">
+                {dict.home.onlineGames.viewAll}
+              </Button>
+            </Link>
             <Button
               variant="outline"
               size="icon"

@@ -126,6 +126,14 @@
       "title": "All games",
       "viewAll": "View all games"
     },
+    "onlineGames": {
+      "title": "Our online games",
+      "viewAll": "View all",
+      "hero": {
+        "title": "Online Games",
+        "subtitle": "Try our online slot machines. Free demos available!"
+      }
+    },
     "manhattan": {
       "title": "MANHATTAN",
       "comingSoon": "COMING SOON",
@@ -554,6 +562,10 @@
       "games": {
         "title": "Games",
         "links": [
+          {
+            "label": "Online Games",
+            "href": "/onlinegames"
+          },
           {
             "label": "All games",
             "href": "/allgames"

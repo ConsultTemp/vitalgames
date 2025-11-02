@@ -140,6 +140,14 @@
       "title": "All games",
       "viewAll": "Ver todos los juegos"
     },
+    "onlineGames": {
+      "title": "Nuestros juegos online",
+      "viewAll": "Ver todos",
+      "hero": {
+        "title": "Juegos Online",
+        "subtitle": "Prueba nuestras máquinas tragamonedas online. ¡Demos gratuitas disponibles!"
+      }
+    },
     "partners": {
       "title": "Nuestros Partners"
     }
@@ -562,6 +570,10 @@
       "games": {
         "title": "Juegos",
         "links": [
+          {
+            "label": "Juegos Online",
+            "href": "/onlinegames"
+          },
           {
             "label": "Todos los juegos",
             "href": "/allgames"

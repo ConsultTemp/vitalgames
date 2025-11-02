@@ -61,6 +61,7 @@ export default function Navbar() {
 
   // Menu items based on the image
   const menuItems = [
+    { label: "Online Games", href: "/onlinegames", hasDropdown: false },
     { label: "Multigames", href: "/awp-multigames", hasDropdown: true, dropdownType: "awp-multigames" },
     { label: "All games", href: "/allgames", hasDropdown: false },
     { label: "Cabinet", href: "/vlt", hasDropdown: false },
@@ -308,31 +309,57 @@ export default function Navbar() {
                     <div className="flex flex-col p-6 space-y-8 overflow-y-auto flex-grow">
                       {menuItems.map((item, index) => {
                         const slots = item.dropdownType === "awp-multigames" ? multigames : games
+                        // Skip Online Games in mobile menu items loop (we'll add it separately)
+                        if (item.label === "Online Games") return null;
+                        
                         return (
-                          <div
-                            key={item.label}
-                            className="animate-slideInRight"
-                            style={{
-                              animationDuration: '0.4s',
-                              animationDelay: `${index * 50 + 100}ms`,
-                              animationFillMode: 'both',
-                              marginTop: '10px',
-                              marginBottom: '10px'
-                            }}
-                          >
-                            <Link
-                              href={item.href}
-                              onClick={() => setIsSheetOpen(false)}
-                              className={`block text-lg ${item.hasDropdown && item.dropdownType == "awp-multigames" ? "invisible" : ""} font-semibold text-white transition-colors duration-300 ${pathname === item.href ? "text-white" : ""
-                                }`}
+                          <div key={item.label}>
+                            <div
+                              className="animate-slideInRight"
+                              style={{
+                                animationDuration: '0.4s',
+                                animationDelay: `${index * 50 + 100}ms`,
+                                animationFillMode: 'both',
+                                marginTop: '10px',
+                                marginBottom: '10px'
+                              }}
                             >
-                              {item.label}
-                            </Link>
+                              <Link
+                                href={item.href}
+                                onClick={() => setIsSheetOpen(false)}
+                                className={`block text-lg ${item.hasDropdown && item.dropdownType == "awp-multigames" ? "invisible" : ""} font-semibold text-white transition-colors duration-300 ${pathname === item.href ? "text-white" : ""
+                                  }`}
+                              >
+                                {item.label}
+                              </Link>
 
-                            {/* Game carousel for mobile */}
+                              {/* Game carousel for mobile */}
+                              {item.hasDropdown && item.dropdownType == "awp-multigames" && (
+                                <div className="mt-3 pb-2">
+                                  <GameCarousel games={slots} onGameClick={() => setIsSheetOpen(false)} type={item.dropdownType ? item.dropdownType : "allgames"} />
+                                </div>
+                              )}
+                            </div>
+                            
+                            {/* Add Online Games link after Multigames */}
                             {item.hasDropdown && item.dropdownType == "awp-multigames" && (
-                              <div className="mt-3 pb-2">
-                                <GameCarousel games={slots} onGameClick={() => setIsSheetOpen(false)} type={item.dropdownType ? item.dropdownType : "allgames"} />
+                              <div
+                                className="animate-slideInRight"
+                                style={{
+                                  animationDuration: '0.4s',
+                                  animationDelay: `${(index + 1) * 50 + 100}ms`,
+                                  animationFillMode: 'both',
+                                  marginTop: '20px',
+                                  marginBottom: '10px'
+                                }}
+                              >
+                                <Link
+                                  href="/onlinegames"
+                                  onClick={() => setIsSheetOpen(false)}
+                                  className={`block text-lg font-semibold text-white transition-colors duration-300 ${pathname === "/onlinegames" ? "text-white" : ""}`}
+                                >
+                                  Online Games
+                                </Link>
                               </div>
                             )}
                           </div>

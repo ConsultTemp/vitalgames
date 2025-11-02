@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
+import { Dictionary } from '@/lib/dictionary';
 import it from '@/dictionaries/it.json';
 import en from '@/dictionaries/en.json';
 import es from '@/dictionaries/es.json';
@@ -16,7 +17,7 @@ const dictionaries = {
 
 type LanguageContextType = {
   lang: Language;
-  dictionary: typeof it;
+  dictionary: Dictionary;
   setLang: (lang: Language) => void;
   isLoading: boolean;
 };
@@ -41,8 +42,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }
 
   return (
-    /* @ts-ignore */
-    <LanguageContext.Provider value={{ lang, dictionary: dictionaries[lang], setLang, isLoading }}>
+    <LanguageContext.Provider value={{ lang, dictionary: dictionaries[lang] as Dictionary, setLang, isLoading }}>
       {children}
     </LanguageContext.Provider>
   );

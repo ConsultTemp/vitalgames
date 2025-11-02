@@ -191,6 +191,14 @@ export interface Dictionary {
     partners: {
       title: string
     }
+    onlineGames: {
+      title: string
+      viewAll: string
+      hero: {
+        title: string
+        subtitle: string
+      }
+    }
   }
   vlt: {
     title: string
@@ -516,6 +524,12 @@ export interface Dictionary {
         description: string
       }
     }
+  }
+  ageVerificationModal: {
+    title: string
+    description: string
+    confirm: string
+    decline: string
   }
   includedGamesIn?: string;
 }

@@ -79,11 +79,12 @@ export default async function Home(props: { params: Params }) {
       <div className="bg-black">
         <Hero />
         <ManhattanLanding />
+        <GameCarousel />
         <Multigames />
         <div className="cabinet-bg">
           <CabinetSection />
         </div>
-        <GameCarousel />
+        
         <GameCards />
         <div className="technology-bg">
           <WinningTechnology />

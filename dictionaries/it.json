@@ -148,6 +148,14 @@
         "Collaborazioni con i principali operatori"
       ]
     },
+    "onlineGames": {
+      "title": "I nostri giochi online",
+      "viewAll": "Vedi tutti",
+      "hero": {
+        "title": "Giochi Online",
+        "subtitle": "Prova le nostre slot machine online. Demo gratuite disponibili!"
+      }
+    },
     "partners": {
       "title": "Partners"
     }
@@ -569,6 +577,10 @@
       "games": {
         "title": "Giochi",
         "links": [
+          {
+            "label": "Giochi Online",
+            "href": "/onlinegames"
+          },
           {
             "label": "Tutti i giochi",
             "href": "/allgames"
