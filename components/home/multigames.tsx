@@ -41,13 +41,6 @@ export const multigames = [
         isComingSoon: false
     },
     {
-        id: 3,
-        slug: "fortune-ultralink",
-        title: "Fortune Ultralink",
-        image: fortune,
-        isComingSoon: false
-    },
-    {
         id: 4,
         slug: "casino-royale",
         title: "Casino Royale",

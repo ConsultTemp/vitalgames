@@ -27,12 +27,6 @@ export const multigames = [
     image: diamanteHover,
   },
   {
-    id: 3,
-    slug: "fortune-ultralink",
-    title: "Fortune Ultralink",
-    image: fortuneUltralink,
-  },
-  {
     id: 4,
     slug: "lucky-slot",
     title: "Lucky Slot",

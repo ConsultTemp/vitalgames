@@ -1,11 +1,17 @@
 import Image from "next/image"
+import Link from "next/link"
 import SmoothReveal from "../smooth-reveal"
 import { onlineGames } from "../../lib/onlinegames"
 import FloatingImage from "../bg-image-component";
 import campana from '../../public/campana.png'
 import { PlayIcon } from "lucide-react";
+import type { Locale } from "../../i18n-config"
 
-export default function AllOnlineGamesList() {
+interface AllOnlineGamesListProps {
+  lang: Locale
+}
+
+export default function AllOnlineGamesList({ lang }: AllOnlineGamesListProps) {
   return (
     <section className="py-16 md:pt-16 relative overflow-visible absolute bg-transparent py-4 px-4">
 
@@ -43,15 +49,13 @@ export default function AllOnlineGamesList() {
                   </p>
                   
                   {/* Play Demo Button */}
-                  <a
+                  <Link
                     href={game.demoLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="inline-block w-full bg-none border border-white text-vitalYellow hover:border-vitalYellow hover:bg-vitalYellow hover:text-black font-medium py-2 px-6 rounded-full transition-colors duration-300 text-md md:text-lg whitespace-nowrap flex items-center justify-center gap-2"
                   >
                     <PlayIcon className="w-4 h-4" fill="currentColor"/>
-                    Play demo
-                  </a>
+                    Gioca ora
+                  </Link>
                 </div>
               </div>
             </SmoothReveal>

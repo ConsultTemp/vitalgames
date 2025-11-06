@@ -97,34 +97,6 @@ export const multigames = [
         recommended: ["casino-royale", "diamante", "golden-club"]
     },
     {
-        id: 10,
-        slug: "fortune-ultralink",
-        title: "Fortune Ultralink",
-        isComingSoon: false,
-        coverImage: bgmultigamopen,
-        logo: multigamelogo,
-        mainImage: fortuneUltralinkMain,
-        video: "https://files.catbox.moe/ktlzt8.mp4",
-        videoId: "7af6905aada0dfd1f50df73636d13cfd",
-        description: "Sistema multigame con 10 giochi a tema casinò classico, interfaccia elegante e jackpot progressivo.",
-        videos: [
-            "https://example.com/video1.mp4",
-            "https://example.com/video2.mp4",
-            "https://example.com/video3.mp4",
-            "https://example.com/video4.mp4",
-            "https://example.com/video5.mp4",
-            "https://example.com/video6.mp4"
-        ],
-        games: [
-            games.find(g => g.slug === 'the-weird-family')!,
-            games.find(g => g.slug === 'dark-pirates')!,
-            games.find(g => g.slug === 'luxury')!,
-            games.find(g => g.slug === 'fortune')!,
-            games.find(g => g.slug === 'mexican')!
-        ],
-        recommended: ["casino-royale", "diamante", "golden-club"]
-    },
-    {
         id: 2,
         slug: "diamante",
         title: "Diamante Multigame",

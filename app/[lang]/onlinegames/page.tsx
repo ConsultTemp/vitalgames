@@ -27,12 +27,6 @@ export const multigames = [
     image: diamanteHover,
   },
   {
-    id: 3,
-    slug: "fortune-ultralink",
-    title: "Fortune Ultralink",
-    image: fortuneUltralink,
-  },
-  {
     id: 4,
     slug: "lucky-slot",
     title: "Lucky Slot",
@@ -243,7 +237,7 @@ export default async function OnlineGamesPage(props: { params: Params }) {
           <h2 id="games-list-heading" className="sr-only">
             {dict.home.onlineGames.hero.title}
           </h2>
-          <AllOnlineGamesList />
+          <AllOnlineGamesList lang={params.lang} />
         </section>
 
         {/* RECOMMENDED GAMES */}

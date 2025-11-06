@@ -25,7 +25,6 @@ export async function generateStaticParams() {
   const multigamesList = [
     "manhattan",
     "champions",
-    "fortune-ultralink",
     "diamante",
     "piggy-gold",
     "casino-royale",

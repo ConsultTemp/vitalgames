@@ -196,22 +196,10 @@ export const games = [
     image: zombie,
   },
   {
-    id: 24,
-    slug: "dark-pirates",
-    title: "Dark Pirates",
-    image: pirates,
-  },
-  {
     id: 25,
     slug: "fortune",
     title: "Fortune",
     image: fortune,
-  },
-  {
-    id: 26,
-    slug: "the-weird-family",
-    title: "The Weird Family",
-    image: family,
   },
   {
     id: 27,

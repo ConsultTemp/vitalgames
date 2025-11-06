@@ -483,6 +483,8 @@ export interface Dictionary {
     }
     loading: string
     error: string
+    availableNow: string
+    comingSoon: string
     notFound: {
       title: string
       message: string

@@ -175,30 +175,30 @@ export function GameCarousel() {
         </div>
 
         <Dialog open={isAgeVerificationOpen} onOpenChange={setIsAgeVerificationOpen}>
-        <DialogContent className="max-w-[90%] sm:max-w-md bg-black  text-white rounded-sm">
-          <DialogHeader className="text-center">
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-yellow-500/10">
-              <AlertTriangle className="h-6 w-6 text-vitalYellow" />
-            </div>
-            <DialogTitle className="text-xl font-bold text-white">{dict.ageVerificationModal.title}</DialogTitle>
-            <DialogDescription className="text-gray-300 text-left">
-            {dict.ageVerificationModal.description}
-            </DialogDescription>
-          </DialogHeader>
-          <DialogFooter className="flex flex-col gap-2 sm:flex-row sm:justify-center">
-            <Button onClick={handleAgeConfirmation} className="bg-vitalYellow text-black hover:bg-gray-100 font-medium">
-              {dict.ageVerificationModal.confirm}
-            </Button>
-            <Button
-              variant="outline"
-              onClick={handleAgeDecline}
-              className="border-gray-600 text-gray-300 hover:bg-gray-800"
-            >
-              {dict.ageVerificationModal.decline}
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+          <DialogContent className="max-w-[90%] sm:max-w-md bg-black  text-white rounded-sm">
+            <DialogHeader className="text-center">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-yellow-500/10">
+                <AlertTriangle className="h-6 w-6 text-vitalYellow" />
+              </div>
+              <DialogTitle className="text-xl font-bold text-white">{dict.ageVerificationModal.title}</DialogTitle>
+              <DialogDescription className="text-gray-300 text-left">
+                {dict.ageVerificationModal.description}
+              </DialogDescription>
+            </DialogHeader>
+            <DialogFooter className="flex flex-col gap-2 sm:flex-row sm:justify-center">
+              <Button onClick={handleAgeConfirmation} className="bg-vitalYellow text-black hover:bg-gray-100 font-medium">
+                {dict.ageVerificationModal.confirm}
+              </Button>
+              <Button
+                variant="outline"
+                onClick={handleAgeDecline}
+                className="border-gray-600 text-gray-300 hover:bg-gray-800"
+              >
+                {dict.ageVerificationModal.decline}
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </>
     )
   }
@@ -310,7 +310,7 @@ export function GameCarousel() {
             </div>
             <DialogTitle className="text-xl font-bold text-white">{dict.ageVerificationModal.title}</DialogTitle>
             <DialogDescription className="text-gray-300 text-left">
-            {dict.ageVerificationModal.description}
+              {dict.ageVerificationModal.description}
             </DialogDescription>
           </DialogHeader>
           <DialogFooter className="flex flex-col gap-2 sm:flex-row sm:justify-center">
