@@ -51,6 +51,7 @@ export default function AllOnlineGamesList({ lang }: AllOnlineGamesListProps) {
                   {/* Play Demo Button */}
                   <Link
                     href={game.demoLink}
+                    target="_blank"
                     className="inline-block w-full bg-none border border-white text-vitalYellow hover:border-vitalYellow hover:bg-vitalYellow hover:text-black font-medium py-2 px-6 rounded-full transition-colors duration-300 text-md md:text-lg whitespace-nowrap flex items-center justify-center gap-2"
                   >
                     <PlayIcon className="w-4 h-4" fill="currentColor"/>
