@@ -294,9 +294,12 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
                     src={game.demoLink}
                     title={`${game.title} - Demo gratuita`}
                     className="w-full h-full border-0"
-                    allow="autoplay; encrypted-media"
+                    allow="autoplay; encrypted-media; fullscreen"
+                    allowFullScreen
                     loading="lazy"
-                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation"
+                    {...(!isMobile && {
+                      sandbox: "allow-scripts allow-same-origin allow-forms allow-popups allow-presentation"
+                    })}
                     style={{
                       width: '100%',
                       height: '100%'
