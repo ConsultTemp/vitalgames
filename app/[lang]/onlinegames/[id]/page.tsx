@@ -55,7 +55,7 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
     }
 
     try {
-      const element = gameContainerRef.current
+      const element = gameContainerRef.current as any
       const doc = document as any
       
       // Verifica se è già in fullscreen
@@ -67,19 +67,28 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
       )
 
       if (!isCurrentlyFullscreen) {
-        // Entra in fullscreen
-        const elem = element as any
-        if (element.requestFullscreen) {
+        // Prova tutti i metodi fullscreen disponibili in sequenza
+        try {
           await element.requestFullscreen()
-        } else if (elem.webkitRequestFullscreen) {
-          await elem.webkitRequestFullscreen()
-        } else if (elem.mozRequestFullScreen) {
-          await elem.mozRequestFullScreen()
-        } else if (elem.msRequestFullscreen) {
-          await elem.msRequestFullscreen()
-        } else {
-          console.error('Fullscreen API not supported')
-          alert('Fullscreen non supportato dal tuo browser')
+        } catch (err1) {
+          try {
+            await element.webkitRequestFullscreen()
+          } catch (err2) {
+            try {
+              await element.webkitEnterFullscreen()
+            } catch (err3) {
+              try {
+                await element.mozRequestFullScreen()
+              } catch (err4) {
+                try {
+                  await element.msRequestFullscreen()
+                } catch (err5) {
+                  console.error('All fullscreen methods failed:', err5)
+                  throw err5
+                }
+              }
+            }
+          }
         }
       } else {
         // Esci da fullscreen
@@ -93,10 +102,10 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
           await doc.msExitFullscreen()
         }
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error toggling fullscreen:', error)
-      // Non mostrare alert per errori comuni come ESC premuto dall'utente
-      if (error instanceof Error && !error.message.includes('user')) {
+      // Mostra l'errore solo se non è un errore di permesso utente
+      if (error && !error.message?.includes('user') && !error.message?.includes('permission')) {
         console.error('Fullscreen error details:', error)
       }
     }
