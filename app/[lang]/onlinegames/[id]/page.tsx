@@ -63,6 +63,24 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
     }
   }, [])
 
+  // Nascondi la navbar quando è in fullscreen
+  useEffect(() => {
+    const header = document.querySelector('header')
+    if (header) {
+      if (isFullscreen) {
+        header.style.display = 'none'
+      } else {
+        header.style.display = ''
+      }
+    }
+    return () => {
+      const header = document.querySelector('header')
+      if (header) {
+        header.style.display = ''
+      }
+    }
+  }, [isFullscreen])
+
   const handleFullscreen = async (e?: React.MouseEvent) => {
     e?.preventDefault()
     e?.stopPropagation()
