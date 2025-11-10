@@ -22,28 +22,83 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
 
   useEffect(() => {
     const handleFullscreenChange = () => {
-      setIsFullscreen(!!document.fullscreenElement)
+      const isFullscreenActive = !!(
+        document.fullscreenElement ||
+        (document as any).webkitFullscreenElement ||
+        (document as any).mozFullScreenElement ||
+        (document as any).msFullscreenElement
+      )
+      setIsFullscreen(isFullscreenActive)
     }
 
+    // Aggiungi listener per tutti i prefissi browser
     document.addEventListener('fullscreenchange', handleFullscreenChange)
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange)
+    document.addEventListener('mozfullscreenchange', handleFullscreenChange)
+    document.addEventListener('MSFullscreenChange', handleFullscreenChange)
+    
     return () => {
       document.removeEventListener('fullscreenchange', handleFullscreenChange)
+      document.removeEventListener('webkitfullscreenchange', handleFullscreenChange)
+      document.removeEventListener('mozfullscreenchange', handleFullscreenChange)
+      document.removeEventListener('MSFullscreenChange', handleFullscreenChange)
     }
   }, [])
 
-  const handleFullscreen = async () => {
-    if (!gameContainerRef.current) return
+  const handleFullscreen = async (e?: React.MouseEvent) => {
+    e?.preventDefault()
+    e?.stopPropagation()
+    
+    if (!gameContainerRef.current) {
+      console.error('Game container ref not available')
+      return
+    }
 
     try {
-      if (!document.fullscreenElement) {
-        await gameContainerRef.current.requestFullscreen()
-        setIsFullscreen(true)
+      const element = gameContainerRef.current
+      const doc = document as any
+      
+      // Verifica se è già in fullscreen
+      const isCurrentlyFullscreen = !!(
+        document.fullscreenElement ||
+        doc.webkitFullscreenElement ||
+        doc.mozFullScreenElement ||
+        doc.msFullscreenElement
+      )
+
+      if (!isCurrentlyFullscreen) {
+        // Entra in fullscreen
+        const elem = element as any
+        if (element.requestFullscreen) {
+          await element.requestFullscreen()
+        } else if (elem.webkitRequestFullscreen) {
+          await elem.webkitRequestFullscreen()
+        } else if (elem.mozRequestFullScreen) {
+          await elem.mozRequestFullScreen()
+        } else if (elem.msRequestFullscreen) {
+          await elem.msRequestFullscreen()
+        } else {
+          console.error('Fullscreen API not supported')
+          alert('Fullscreen non supportato dal tuo browser')
+        }
       } else {
-        await document.exitFullscreen()
-        setIsFullscreen(false)
+        // Esci da fullscreen
+        if (document.exitFullscreen) {
+          await document.exitFullscreen()
+        } else if (doc.webkitExitFullscreen) {
+          await doc.webkitExitFullscreen()
+        } else if (doc.mozCancelFullScreen) {
+          await doc.mozCancelFullScreen()
+        } else if (doc.msExitFullscreen) {
+          await doc.msExitFullscreen()
+        }
       }
     } catch (error) {
       console.error('Error toggling fullscreen:', error)
+      // Non mostrare alert per errori comuni come ESC premuto dall'utente
+      if (error instanceof Error && !error.message.includes('user')) {
+        console.error('Fullscreen error details:', error)
+      }
     }
   }
 
