@@ -219,9 +219,15 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
         }}
       />
 
-      <div className={`bg-black ${isFullscreen && isMobile ? 'fixed inset-0 z-[99999]' : 'h-[80vh]'}`}>
+      <div 
+        className={`bg-black ${isFullscreen ? 'fixed inset-0' : 'h-[80vh]'}`}
+        style={{ zIndex: isFullscreen ? 999999 : 'auto' }}
+      >
         {/* Game iframe container */}
-        <section className={`flex-1 ${isFullscreen && isMobile ? 'fixed inset-0 z-[99999] p-0' : 'py-24 px-6 md:py-32 md:px-12 lg:px-16 h-[80vh]'}`}>
+        <section 
+          className={`flex-1 ${isFullscreen ? 'fixed inset-0 p-0' : 'py-24 px-6 md:py-32 md:px-12 lg:px-16 h-[80vh]'}`}
+          style={{ zIndex: isFullscreen ? 999999 : 'auto' }}
+        >
           <div className="flex justify-center items-center h-full">
             <div className={`w-full ${isFullscreen && isMobile ? 'h-full' : 'max-w-5xl mx-auto h-full'} flex flex-col`}>
               {/* Bottone fullscreen sotto il gioco */}
@@ -250,9 +256,9 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
                 {isFullscreen && (
                   <button
                     onClick={handleFullscreen}
-                    className="absolute top-4 right-4 bg-vitalYellow text-black hover:bg-gray-100 font-medium flex items-center justify-center rounded-full w-12 h-12 p-0 shadow-lg z-[99999]"
+                    className="absolute top-4 right-4 bg-vitalYellow text-black hover:bg-gray-100 font-medium flex items-center justify-center rounded-full w-12 h-12 p-0 shadow-lg"
                     aria-label="Esci da Fullscreen"
-                    style={{ zIndex: 99999 }}
+                    style={{ zIndex: 9999999 }}
                   >
                     <X className="w-6 h-6" />
                   </button>
