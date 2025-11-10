@@ -17,7 +17,7 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
   const [isFullscreen, setIsFullscreen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const gameContainerRef = useRef<HTMLDivElement>(null)
-  
+
   const gameId = parseInt(resolvedParams.id)
   const game = onlineGames.find(g => g.id === gameId)
 
@@ -52,7 +52,7 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
     document.addEventListener('webkitfullscreenchange', handleFullscreenChange)
     document.addEventListener('mozfullscreenchange', handleFullscreenChange)
     document.addEventListener('MSFullscreenChange', handleFullscreenChange)
-    
+
     return () => {
       document.removeEventListener('fullscreenchange', handleFullscreenChange)
       document.removeEventListener('webkitfullscreenchange', handleFullscreenChange)
@@ -84,7 +84,7 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
   const handleFullscreen = async (e?: React.MouseEvent) => {
     e?.preventDefault()
     e?.stopPropagation()
-    
+
     if (!gameContainerRef.current) {
       return
     }
@@ -104,7 +104,7 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
     try {
       const element = gameContainerRef.current as any
       const doc = document as any
-      
+
       // Verifica se è già in fullscreen
       const isCurrentlyFullscreen = !!(
         document.fullscreenElement ||
@@ -237,12 +237,12 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
         }}
       />
 
-      <div 
+      <div
         className={`bg-black ${isFullscreen ? 'fixed inset-0' : isMobile ? 'h-[50vh]' : 'h-screen'}`}
         style={{ zIndex: isFullscreen ? 999999 : 'auto' }}
       >
-        {/* Game iframe container */}   
-        <section 
+        {/* Game iframe container */}
+        <section
           className={`flex-1 ${isFullscreen ? 'fixed inset-0 p-0' : isMobile ? 'py-24 px-6' : 'py-24 px-6 md:py-32 md:px-12 lg:px-16 h-screen'}`}
           style={{ zIndex: isFullscreen ? 999999 : 'auto' }}
         >
@@ -253,17 +253,17 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
                 <div className="flex w-full justify-center flex-shrink-0 px-[2.1px] md:px-0 mb-4">
                   <Button
                     onClick={handleFullscreen}
-                    className="w-full bg-vitalYellow text-black hover:bg-gray-100 font-medium flex items-center gap-2 !py-1 text-xs rounded-none h-8"
+                    className="w-full bg-vitalYellow hover:bg-vitalYellow/95 text-black font-medium flex items-center gap-2 !py-1 text-xs rounded-none h-8 transition-colors"
                   >
                     <Maximize className="w-3 h-3" />
                     Fullscreen
                   </Button>
                 </div>
               )}
-              <div 
+              <div
                 ref={gameContainerRef}
                 className={`rounded-xl shadow-2xl relative overflow-visible w-full ${isFullscreen && isMobile ? 'rounded-none flex-1' : isMobile ? '' : 'flex-1'} ${isFullscreen && isMobile ? 'rounded-none' : ''}`}
-                style={{ 
+                style={{
                   backgroundColor: '#1f2937',
                   borderRadius: isFullscreen && isMobile ? '0' : '0.75rem',
                   height: isFullscreen ? (isMobile ? '100vh' : '90vh') : (isMobile ? 'auto' : '100%'),
@@ -275,15 +275,16 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
                 {isFullscreen && (
                   <button
                     onClick={handleFullscreen}
-                    className="absolute top-1 right-1 bg-vitalYellow text-black hover:bg-gray-100 font-medium flex items-center justify-center rounded-full p-2"
+                    className="w-full absolute bg-black border border-1 border-white hover:bg-gray-100 font-medium flex items-center justify-center rounded-none p-2 text-white hover:text-black flex flex-row gap-2"
                     aria-label="Esci da Fullscreen"
                     style={{ zIndex: 9999999 }}
                   >
-                    <X className="w-4 h-4" />
+                    <X className="w-6 h-6" />
+                    Close Fullscreen
                   </button>
                 )}
                 {/* Desktop: più basso e stretto, Mobile: più alto */}
-                <div 
+                <div
                   className="h-full w-full relative overflow-hidden"
                   style={{
                     borderRadius: isFullscreen && isMobile ? '0' : '0.75rem'
@@ -296,18 +297,17 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
                     allow="autoplay; encrypted-media"
                     loading="lazy"
                     sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation"
-                    style={{ 
-                      transformOrigin: 'center',
+                    style={{
                       width: '100%',
                       height: '100%'
                     }}
                   />
                 </div>
-                
-                
+
+
               </div>
-              
-              
+
+
             </div>
           </div>
         </section>
