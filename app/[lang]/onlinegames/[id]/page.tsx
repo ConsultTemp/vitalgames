@@ -238,16 +238,16 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
       />
 
       <div 
-        className={`bg-black ${isFullscreen ? 'fixed inset-0' : 'h-[80vh]'}`}
+        className={`bg-black ${isFullscreen ? 'fixed inset-0' : isMobile ? 'min-h-screen' : 'h-[80vh]'}`}
         style={{ zIndex: isFullscreen ? 999999 : 'auto' }}
       >
         {/* Game iframe container */}
         <section 
-          className={`flex-1 ${isFullscreen ? 'fixed inset-0 p-0' : 'py-24 px-6 md:py-32 md:px-12 lg:px-16 h-[80vh]'}`}
+          className={`flex-1 ${isFullscreen ? 'fixed inset-0 p-0' : isMobile ? 'py-24 px-6' : 'py-24 px-6 md:py-32 md:px-12 lg:px-16 h-[80vh]'}`}
           style={{ zIndex: isFullscreen ? 999999 : 'auto' }}
         >
-          <div className="flex justify-center items-center h-full">
-            <div className={`w-full ${isFullscreen && isMobile ? 'h-full' : 'max-w-5xl mx-auto h-full'} flex flex-col`}>
+          <div className={`flex justify-center ${isMobile && !isFullscreen ? 'items-start py-8' : 'items-center h-full'}`}>
+            <div className={`w-full ${isFullscreen && isMobile ? 'h-full' : isMobile ? 'max-w-5xl mx-auto' : 'max-w-5xl mx-auto h-full'} flex flex-col`}>
               {/* Bottone fullscreen sotto il gioco */}
               {!isFullscreen && (
                 <div className="flex w-full justify-center flex-shrink-0 px-[3px] md:px-0 mb-4">
@@ -262,12 +262,13 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
               )}
               <div 
                 ref={gameContainerRef}
-                className={`rounded-xl shadow-2xl relative overflow-visible flex-1 w-full ${isFullscreen && isMobile ? 'rounded-none' : ''}`}
+                className={`rounded-xl shadow-2xl relative overflow-visible w-full ${isFullscreen && isMobile ? 'rounded-none flex-1' : isMobile ? '' : 'flex-1'} ${isFullscreen && isMobile ? 'rounded-none' : ''}`}
                 style={{ 
                   backgroundColor: '#1f2937',
                   borderRadius: isFullscreen && isMobile ? '0' : '0.75rem',
-                  height: isFullscreen ? (isMobile ? '100vh' : '90vh') : '100%',
-                  minHeight: isFullscreen ? (isMobile ? '100vh' : '90vh') : 'calc(100vh - 200px)'
+                  height: isFullscreen ? (isMobile ? '100vh' : '90vh') : (isMobile ? 'auto' : '100%'),
+                  minHeight: isFullscreen ? (isMobile ? '100vh' : '90vh') : (isMobile ? 'auto' : 'calc(100vh - 200px)'),
+                  aspectRatio: isMobile && !isFullscreen ? '16/9' : undefined
                 }}
               >
                 {/* Bottone in alto a destra - dentro il contenitore fullscreen */}
