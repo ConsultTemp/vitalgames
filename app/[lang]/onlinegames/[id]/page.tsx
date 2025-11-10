@@ -15,10 +15,23 @@ interface OnlineGamePageProps {
 export default function OnlineGamePage({ params }: OnlineGamePageProps) {
   const resolvedParams = use(params)
   const [isFullscreen, setIsFullscreen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const gameContainerRef = useRef<HTMLDivElement>(null)
   
   const gameId = parseInt(resolvedParams.id)
   const game = onlineGames.find(g => g.id === gameId)
+
+  useEffect(() => {
+    // Rileva se è mobile
+    const checkMobile = () => {
+      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+        (typeof window !== 'undefined' && window.innerWidth < 768)
+      setIsMobile(isMobileDevice)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   useEffect(() => {
     const handleFullscreenChange = () => {
@@ -29,6 +42,9 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
         (document as any).msFullscreenElement
       )
       setIsFullscreen(isFullscreenActive)
+      if (!isFullscreenActive) {
+        document.body.style.overflow = ''
+      }
     }
 
     // Aggiungi listener per tutti i prefissi browser
@@ -42,6 +58,8 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
       document.removeEventListener('webkitfullscreenchange', handleFullscreenChange)
       document.removeEventListener('mozfullscreenchange', handleFullscreenChange)
       document.removeEventListener('MSFullscreenChange', handleFullscreenChange)
+      // Cleanup: ripristina overflow quando il componente viene smontato
+      document.body.style.overflow = ''
     }
   }, [])
 
@@ -50,7 +68,18 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
     e?.stopPropagation()
     
     if (!gameContainerRef.current) {
-      console.error('Game container ref not available')
+      return
+    }
+
+    // Su mobile, usa fallback CSS invece dell'API fullscreen
+    if (isMobile) {
+      setIsFullscreen(!isFullscreen)
+      // Previeni scroll del body quando è in fullscreen
+      if (!isFullscreen) {
+        document.body.style.overflow = 'hidden'
+      } else {
+        document.body.style.overflow = ''
+      }
       return
     }
 
@@ -83,8 +112,9 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
                 try {
                   await element.msRequestFullscreen()
                 } catch (err5) {
-                  console.error('All fullscreen methods failed:', err5)
-                  throw err5
+                  // Se fallisce tutto, usa fallback CSS anche su desktop
+                  setIsFullscreen(true)
+                  document.body.style.overflow = 'hidden'
                 }
               }
             }
@@ -101,12 +131,15 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
         } else if (doc.msExitFullscreen) {
           await doc.msExitFullscreen()
         }
+        document.body.style.overflow = ''
       }
     } catch (error: any) {
-      console.error('Error toggling fullscreen:', error)
-      // Mostra l'errore solo se non è un errore di permesso utente
-      if (error && !error.message?.includes('user') && !error.message?.includes('permission')) {
-        console.error('Fullscreen error details:', error)
+      // Se fallisce, usa fallback CSS
+      setIsFullscreen(!isFullscreen)
+      if (!isFullscreen) {
+        document.body.style.overflow = 'hidden'
+      } else {
+        document.body.style.overflow = ''
       }
     }
   }
@@ -186,11 +219,11 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
         }}
       />
 
-      <div className="bg-black h-[80vh]">
+      <div className={`bg-black ${isFullscreen && isMobile ? 'fixed inset-0 z-[99999]' : 'h-[80vh]'}`}>
         {/* Game iframe container */}
-        <section className="flex-1 py-24 px-6 md:py-32 md:px-12 lg:px-16 h-[80vh]">
+        <section className={`flex-1 ${isFullscreen && isMobile ? 'fixed inset-0 z-[99999] p-0' : 'py-24 px-6 md:py-32 md:px-12 lg:px-16 h-[80vh]'}`}>
           <div className="flex justify-center items-center h-full">
-            <div className="w-full max-w-5xl mx-auto h-full flex flex-col">
+            <div className={`w-full ${isFullscreen && isMobile ? 'h-full' : 'max-w-5xl mx-auto h-full'} flex flex-col`}>
               {/* Bottone fullscreen sotto il gioco */}
               {!isFullscreen && (
                 <div className="flex w-full justify-center flex-shrink-0">
@@ -205,12 +238,12 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
               )}
               <div 
                 ref={gameContainerRef}
-                className="rounded-xl shadow-2xl relative overflow-visible flex-1 w-full" 
+                className={`rounded-xl shadow-2xl relative overflow-visible flex-1 w-full ${isFullscreen && isMobile ? 'rounded-none' : ''}`}
                 style={{ 
                   backgroundColor: '#1f2937',
-                  borderRadius: '0.75rem',
-                  height: isFullscreen ? '90vh' : '100%',
-                  minHeight: isFullscreen ? '90vh' : 'calc(100vh - 200px)'
+                  borderRadius: isFullscreen && isMobile ? '0' : '0.75rem',
+                  height: isFullscreen ? (isMobile ? '100vh' : '90vh') : '100%',
+                  minHeight: isFullscreen ? (isMobile ? '100vh' : '90vh') : 'calc(100vh - 200px)'
                 }}
               >
                 {/* Bottone in alto a destra - dentro il contenitore fullscreen */}
@@ -228,7 +261,7 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
                 <div 
                   className="h-full w-full relative overflow-hidden"
                   style={{
-                    borderRadius: '0.75rem'
+                    borderRadius: isFullscreen && isMobile ? '0' : '0.75rem'
                   }}
                 >
                   <iframe
