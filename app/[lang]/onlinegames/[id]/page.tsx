@@ -250,7 +250,7 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
             <div className={`w-full ${isFullscreen && isMobile ? 'h-full' : 'max-w-5xl mx-auto h-full'} flex flex-col`}>
               {/* Bottone fullscreen sotto il gioco */}
               {!isFullscreen && (
-                <div className="flex w-full justify-center flex-shrink-0 px-2 md:px-0">
+                <div className="flex w-full justify-center flex-shrink-0 px-[3px] md:px-0 mb-4">
                   <Button
                     onClick={handleFullscreen}
                     className="w-full bg-vitalYellow text-black hover:bg-gray-100 font-medium flex items-center gap-2 !py-1 text-xs rounded-none h-8"
