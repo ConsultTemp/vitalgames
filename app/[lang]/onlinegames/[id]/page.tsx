@@ -238,19 +238,19 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
       />
 
       <div 
-        className={`bg-black ${isFullscreen ? 'fixed inset-0' : isMobile ? 'min-h-screen' : 'h-[80vh]'}`}
+        className={`bg-black ${isFullscreen ? 'fixed inset-0' : isMobile ? 'h-[50vh]' : 'h-screen'}`}
         style={{ zIndex: isFullscreen ? 999999 : 'auto' }}
       >
-        {/* Game iframe container */}
+        {/* Game iframe container */}   
         <section 
-          className={`flex-1 ${isFullscreen ? 'fixed inset-0 p-0' : isMobile ? 'py-24 px-6' : 'py-24 px-6 md:py-32 md:px-12 lg:px-16 h-[80vh]'}`}
+          className={`flex-1 ${isFullscreen ? 'fixed inset-0 p-0' : isMobile ? 'py-24 px-6' : 'py-24 px-6 md:py-32 md:px-12 lg:px-16 h-screen'}`}
           style={{ zIndex: isFullscreen ? 999999 : 'auto' }}
         >
           <div className={`flex justify-center ${isMobile && !isFullscreen ? 'items-start py-8' : 'items-center h-full'}`}>
             <div className={`w-full ${isFullscreen && isMobile ? 'h-full' : isMobile ? 'max-w-5xl mx-auto' : 'max-w-5xl mx-auto h-full'} flex flex-col`}>
               {/* Bottone fullscreen sotto il gioco */}
               {!isFullscreen && (
-                <div className="flex w-full justify-center flex-shrink-0 px-[3px] md:px-0 mb-4">
+                <div className="flex w-full justify-center flex-shrink-0 px-[2.5px] md:px-0 mb-4">
                   <Button
                     onClick={handleFullscreen}
                     className="w-full bg-vitalYellow text-black hover:bg-gray-100 font-medium flex items-center gap-2 !py-1 text-xs rounded-none h-8"
@@ -275,11 +275,11 @@ export default function OnlineGamePage({ params }: OnlineGamePageProps) {
                 {isFullscreen && (
                   <button
                     onClick={handleFullscreen}
-                    className="absolute top-4 right-4 bg-vitalYellow text-black hover:bg-gray-100 font-medium flex items-center justify-center rounded-full w-12 h-12 p-0 shadow-lg"
+                    className="absolute top-2 right-2 bg-vitalYellow text-black hover:bg-gray-100 font-medium flex items-center justify-center rounded-full w-12 h-12 p-0 shadow-lg"
                     aria-label="Esci da Fullscreen"
                     style={{ zIndex: 9999999 }}
                   >
-                    <X className="w-6 h-6" />
+                    <X className="w-4 h-4" />
                   </button>
                 )}
                 {/* Desktop: più basso e stretto, Mobile: più alto */}
