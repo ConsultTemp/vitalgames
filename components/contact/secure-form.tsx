@@ -282,7 +282,7 @@ const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
                 <Mail className="text-white" size={20} />
                 <div className="space-y-2">
                   <h3 className="text-white font-semibold">{dictionary.emailLabel}</h3>
-                  <p className="text-gray-300 text-sm">info@vitalgames.it</p>
+                  <p className="text-gray-300 text-sm">amministrazione@vitalgames.it</p>
                 </div>
               </div>
 
