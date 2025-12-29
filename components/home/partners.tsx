@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
+import { useState } from "react"
 
 // Importa direttamente i loghi
 import sisalLogo from "../../public/partners/Sisal.webp"
@@ -43,37 +44,72 @@ const partners = [
 
 export default function Partners() {
   const { dictionary: dict } = useLanguage()
+  const [hoveredPartner, setHoveredPartner] = useState<number | null>(null)
+  const [clickedPartner, setClickedPartner] = useState<number | null>(null)
+
+  // Duplica i partner per il loop infinito (3 volte per garantire continuità)
+  const duplicatedPartners = [...partners, ...partners, ...partners]
 
   return (
-    <main className=" bg-black text-white p-4 pt-0 pb-24">
+    <main className="bg-black text-white p-4 pt-0 pb-24">
       <section className="py-16 px-0 sm:px-0 md:px-12 lg:px-16 relative">
-        <div className="partners-bg absolute inset-0 opacity-[0.03]"></div>
         <div className="relative">
           {/* @ts-ignore */}
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-white dharmalight">{dict.home.partners.title}</h2>
+          <h2 className="text-6xl md:text-7xl font-bold text-center mb-8 text-white dharmalight">{dict.home.partners.title}</h2>
 
-          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-            {partners.map((partner) => (
-              <div
-                key={partner.id}
-                className="relative bg-white/5 backdrop-blur-sm rounded-lg overflow-hidden aspect-[4/3] flex items-center justify-center p-2"
-              >
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <div className="w-full max-w-[120px] h-[60px] relative flex items-center justify-center">
-                    <Image
-                      src={partner.logo || "/placeholder.svg"}
-                      alt={partner.name}
-                      
-                      className="object-contain"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
+          <div className="overflow-hidden relative">
+            {/* Sfumatura sinistra */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+            {/* Sfumatura destra */}
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
+            
+            <div className="flex animate-scroll-infinite">
+              {duplicatedPartners.map((partner, index) => {
+                const isActive = hoveredPartner === partner.id || clickedPartner === partner.id
+                return (
+                  <div
+                    key={`${partner.id}-${index}`}
+                    className="flex-shrink-0 flex items-center justify-center px-3"
+                    onMouseEnter={() => setHoveredPartner(partner.id)}
+                    onMouseLeave={() => setHoveredPartner(null)}
+                    onClick={() => setClickedPartner(clickedPartner === partner.id ? null : partner.id)}
+                  >
+                    <div className="relative flex items-center justify-center">
+                      <div className="w-[270px] h-[135px] relative flex items-center justify-center">
+                        <Image
+                          src={partner.logo || "/placeholder.svg"}
+                          alt={partner.name}
+                          fill
+                          className={`object-contain transition-opacity duration-300 ${
+                            isActive ? 'opacity-100' : 'opacity-40'
+                          }`}
+                          sizes="270px"
+                        />
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                )
+              })}
+            </div>
           </div>
         </div>
       </section>
+
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes scroll-infinite {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-${(partners.length * 276)}px);
+            }
+          }
+          .animate-scroll-infinite {
+            animation: scroll-infinite 40s linear infinite;
+          }
+        `
+      }} />
     </main>
   )
 }

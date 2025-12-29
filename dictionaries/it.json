@@ -118,6 +118,7 @@
         "Personalizzazione per operatori"
       ],
       "cta": "Scopri i Multigames",
+      "viewAll": "Tutti i Multigames",
       "descriptions": {
         "manhattan": "Grattacieli, luci e lusso: Manhattan è il multigame d'élite. Dalle acque con Shark al sapore western di Midnight Saloon, fino alla raffinatezza di Le Chef e alle scintille di Cherry e Mister Diamond. Il cuore del gioco pulsa qui.",
         "champions": "Un'arena di campioni dove ogni spin è una sfida al podio. Con titoli vincenti come Crazy Circus, Pepita d'Oro, Fortune, Dolphins e Luxury, questo multigame unisce adrenalina, fascino e divertimento. Solo i veri campioni conquistano il jackpot.",
@@ -151,10 +152,16 @@
     "onlineGames": {
       "title": "I nostri giochi online",
       "viewAll": "Vedi tutti",
+      "playDemo": "Play demo",
       "hero": {
         "title": "Giochi Online",
         "subtitle": "Prova le nostre slot machine online. Demo gratuite disponibili!"
       }
+    },
+    "newsletter": {
+      "title": "JOIN THE MOVEMENT!!",
+      "description": "Contatta Vitalgames. Operatori, rivenditori e piattaforme, scriveteci per informazioni e proposte commerciali.",
+      "emailPlaceholder": "Email"
     },
     "partners": {
       "title": "Partners"

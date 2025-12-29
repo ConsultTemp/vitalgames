@@ -19,7 +19,6 @@ import { Button } from "@/components/ui/button"
 import FloatingImage from "@/components/bg-image-component"
 import campana from "../../../public/campana.png"
 import diamante from "../../../public/diamond.png"
-import SecureContactForm from "@/components/contact/secure-form"
 
 type Params = Promise<{ lang: Locale }>
 
@@ -479,9 +478,6 @@ export default async function AboutUs(props: { params: Params }) {
         </section>
 
         <Partners />
-
-        {/* Contact Section */}
-        <SecureContactForm lang={params.lang}/>
       </div>
     </>
   )

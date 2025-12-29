@@ -61,11 +61,10 @@ export default function Navbar() {
 
   // Menu items based on the image
   const menuItems = [
-    { label: "Online Games", href: "/onlinegames", hasDropdown: false },
     { label: "Multigames", href: "/awp-multigames", hasDropdown: true, dropdownType: "awp-multigames" },
-    { label: "All games", href: "/allgames", hasDropdown: false },
     { label: "Cabinet", href: "/vlt", hasDropdown: false },
     { label: "About us", href: "/about-us", hasDropdown: false },
+    { label: "Contact us", href: "/contact-us", hasDropdown: false },
   ]
 
   const languages = [
@@ -171,12 +170,6 @@ export default function Navbar() {
 
         {/* Right side buttons */}
         <div className="flex-1 flex justify-end items-center gap-4">
-          <Button
-            asChild
-            className="bg-vitalYellow hover:bg-vitalYellow/90 px-8 text-black font-medium rounded-md py-2 text-sm"
-          >
-            <Link href="/about-us#about-us-contact">{dict.header.contactUs}</Link>
-          </Button>
 
           {/* Language Selector */}
           <DropdownMenu>
@@ -309,8 +302,6 @@ export default function Navbar() {
                     <div className="flex flex-col p-6 space-y-4 overflow-y-auto flex-grow">
                       {menuItems.map((item, index) => {
                         const slots = item.dropdownType === "awp-multigames" ? multigames : games
-                        // Skip Online Games in mobile menu items loop (we'll add it separately)
-                        if (item.label === "Online Games") return null;
                         
                         return (
                           <div key={item.label}>
@@ -340,28 +331,6 @@ export default function Navbar() {
                                 </div>
                               )}
                             </div>
-                            
-                            {/* Add Online Games link after Multigames */}
-                            {item.hasDropdown && item.dropdownType == "awp-multigames" && (
-                              <div
-                                className="animate-slideInRight"
-                                style={{
-                                  animationDuration: '0.4s',
-                                  animationDelay: `${(index + 1) * 50 + 100}ms`,
-                                  animationFillMode: 'both',
-                                  marginTop: '20px',
-                                  marginBottom: '10px'
-                                }}
-                              >
-                                <Link
-                                  href="/onlinegames"
-                                  onClick={() => setIsSheetOpen(false)}
-                                  className={`block text-lg font-semibold text-white transition-colors duration-300 ${pathname === "/onlinegames" ? "text-white" : ""}`}
-                                >
-                                  Online Games
-                                </Link>
-                              </div>
-                            )}
                           </div>
                         )
                       })}
@@ -369,15 +338,6 @@ export default function Navbar() {
 
                     {/* Footer */}
                     <div className="p-6 space-y-4">
-                      <Button
-                        asChild
-                        className="bg-vitalYellow hover:bg-vitalYellow/90 text-black font-bold rounded-md px-3 py-2 w-full animate-fadeIn"
-                        style={{ animationDuration: '0.5s', animationDelay: '400ms', animationFillMode: 'both' }}
-                      >
-                        <Link href="/about-us#about-us-contact" onClick={() => setIsSheetOpen(false)}>
-                          {dict.header.contactUs}
-                        </Link>
-                      </Button>
 
                       {/* Language Selector for Mobile */}
                       {/* <div className="ml-auto">
