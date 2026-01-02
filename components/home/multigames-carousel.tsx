@@ -132,7 +132,7 @@ export function MultigamesCarousel() {
                     <p className="text-sm lg:text-md opacity-90 !m-0 !mb-3 w-full">
                       {getDescription(multigame.slug)}
                     </p>
-                    <Link href={`/${lang}/awp-multigames`} className="!m-0">
+                    <Link href={`/${lang}/games?type=awp-multigames`} className="!m-0">
                       <Button 
                         variant="vitalYellow" 
                         className="px-8 py-6 text-xl lg:text-2xl !text-black dharma w-fit"
@@ -161,7 +161,7 @@ export function MultigamesCarousel() {
                       {getDescription(multigame.slug)}
                     </p>
                     <div className="flex justify-start">
-                      <Link href={`/${lang}/awp-multigames`}>
+                      <Link href={`/${lang}/games?type=awp-multigames`}>
                         <Button 
                           variant="vitalYellow" 
                           className="px-8 py-6 text-lg !text-black dharma"

@@ -139,7 +139,10 @@
     "newsletter": {
       "title": "JOIN THE MOVEMENT!!",
       "description": "Contact Vitalgames. Operators, resellers and platforms, write to us for information and commercial proposals.",
-      "emailPlaceholder": "Email"
+      "emailPlaceholder": "Email",
+      "successMessage": "Successfully subscribed to newsletter!",
+      "errorMessage": "An error occurred. Please try again.",
+      "sending": "Sending..."
     },
     "manhattan": {
       "title": "MANHATTAN",
@@ -367,7 +370,16 @@
         "bonus": "Bonus Games",
         "jackpot": "Jackpots",
         "multiplier": "Multipliers"
-      }
+      },
+      "all": "All",
+      "onlineGames": "Online Games",
+      "awpMultigames": "AWP Multigames",
+      "allGames": "All Games"
+    },
+    "sections": {
+      "awpMultigames": "AWP Multigames",
+      "allGames": "All Games",
+      "onlineGames": "Online Games"
     },
     "noGames": "No games found matching your criteria.",
     "loadMore": "Load More Games",
@@ -569,15 +581,15 @@
         "links": [
           {
             "label": "Online Games",
-            "href": "/onlinegames"
+            "href": "/games?type=online-games"
           },
           {
             "label": "All games",
-            "href": "/allgames"
+            "href": "/games?type=all-games"
           },
           {
             "label": "Multigames",
-            "href": "/awp-multigames"
+            "href": "/games?type=awp-multigames"
           },
           {
             "label": "Cabinet",

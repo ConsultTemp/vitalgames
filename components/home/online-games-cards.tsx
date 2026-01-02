@@ -30,7 +30,7 @@ export default function OnlineGamesCards() {
               </h2>
             </SmoothReveal>
           </div>
-          <Link href={`/${lang}/onlinegames`}>
+          <Link href={`/${lang}/games?type=online-games`}>
             <Button 
               variant={"outline"} 
               className="border border-white rounded-full text-white bg-transparent px-4 py-2 hover:bg-vitalYellow hover:text-black hover:border-vitalYellow transition-all duration-300"

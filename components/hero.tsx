@@ -23,7 +23,7 @@ export default function HeroSection() {
         <h1 className="text-white text-5xl md:text-6xl lg:text-7xl font-bold dharma text-center mb-8 px-16 uppercase">
           JOIN OUR WORLD OF GAMES
         </h1>
-        <Link href={`/${lang}/allgames`}>
+        <Link href={`/${lang}/games`}>
           <Button 
             variant="vitalYellow" 
             className="px-8 py-6 text-3xl !text-black dharma"

@@ -4,29 +4,15 @@ import { useState, useEffect } from "react"
 import { OptimizedLink as Link } from "@/components/optimized-link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Menu, ChevronDown, X, ChevronRight, Globe } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { Button } from "@/components/ui/button"
-import { GameCarousel } from "@/components/games/GameCarousel"
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuList,
-  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarHeader,
-  SidebarFooter,
-  SidebarProvider,
-  SidebarTrigger,
-  useSidebar,
-} from "@/components/ui/sidebar"
 import logo from '../public/logovital.svg'
-import { games, multigames } from '../lib/cards'
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { DialogTitle } from "@radix-ui/react-dialog"
+import { Sheet, SheetTrigger } from "@/components/ui/sheet"
 import { useLanguage } from "@/components/language-provider"
 import {
   DropdownMenu,
@@ -61,7 +47,7 @@ export default function Navbar() {
 
   // Menu items based on the image
   const menuItems = [
-    { label: "Multigames", href: "/awp-multigames", hasDropdown: true, dropdownType: "awp-multigames" },
+    { label: "Games", href: "/games", hasDropdown: false },
     { label: "Cabinet", href: "/vlt", hasDropdown: false },
     { label: "About us", href: "/about-us", hasDropdown: false },
     { label: "Contact us", href: "/contact-us", hasDropdown: false },
@@ -99,69 +85,12 @@ export default function Navbar() {
             <NavigationMenuList className="flex items-center gap-4 z-10" style={{ margin: '0px', padding: '0px' }}>
               {menuItems.map((item) => (
                 <NavigationMenuItem key={item.label} className="relative group">
-                  {item.hasDropdown ? (
-                    <>
-                      <NavigationMenuTrigger className="text-sm text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none whitespace-nowrap bg-transparent hover:bg-transparent relative after:content-[''] after:absolute after:bottom-[-20px] after:left-0 after:w-0 after:h-[2px] after:bg-white hover:after:w-full flex items-center h-12">
-                        {item.label}
-                      </NavigationMenuTrigger>
-                      <NavigationMenuContent className="backdrop-blur-md bg-transparent animate-slideDown" style={{
-                        position: 'fixed',
-                        left: '0',
-                        right: '0',
-                        top: '90px',
-                        width: '100%',
-                        zIndex: 100,
-                        padding: '0px',
-                        margin: '0px',
-                        transform: 'none !important'
-                      }}>
-                        <div className="mx-auto px-8 pb-8 pt-4">
-                          <div className="flex justify-between items-center mb-6">
-                            <h2 className="text-2xl font-bold text-white">Multigames</h2>
-                            <Link
-                              href="/awp-multigames"
-                              className="text-white text-sm flex flex-row items-center cursor-pointer font-medium hover:text-vitalYellow transition-colors duration-300"
-                            >
-                              View all Multigames
-                              <ChevronRight className="w-4 h-4 ml-2 text-white" />
-                            </Link>
-                          </div>
-                          <div className="grid grid-cols-4 gap-6">
-                            {multigames.map((game, index) => (
-                              <Link
-                                key={index}
-                                href={`/awp-multigames/${game.slug}`}
-                                className="block"
-                                style={{
-                                  opacity: 0,
-                                  animation: 'fadeIn 0.3s ease-out forwards',
-                                  animationDelay: `${index * 50}ms`
-                                }}
-                              >
-                                <div className="rounded-lg w-full overflow-hidden transition-all duration-200 hover:-translate-y-1">
-                                  <div className="relative aspect-[4/3]">
-                                    <Image
-                                      src={game.image || "/placeholder.svg"}
-                                      alt={game.title}
-                                      fill
-                                      className="object-cover"
-                                    />
-                                  </div>
-                                </div>
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      </NavigationMenuContent>
-                    </>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      className={`text-sm text-gray-300 hover:text-white transition-colors whitespace-nowrap duration-300 relative after:content-[''] after:absolute after:bottom-[-20px] after:left-0 after:w-0 after:h-[2px] after:bg-white   hover:after:w-full flex items-center h-12 ${pathname === item.href ? "text-white after:w-full" : ""}`}
-                    >
-                      {item.label}
-                    </Link>
-                  )}
+                  <Link
+                    href={item.href}
+                    className={`text-sm text-gray-300 hover:text-white transition-colors whitespace-nowrap duration-300 relative after:content-[''] after:absolute after:bottom-[-20px] after:left-0 after:w-0 after:h-[2px] after:bg-white   hover:after:w-full flex items-center h-12 ${pathname === item.href ? "text-white after:w-full" : ""}`}
+                  >
+                    {item.label}
+                  </Link>
                 </NavigationMenuItem>
               ))}
             </NavigationMenuList>
@@ -300,40 +229,28 @@ export default function Navbar() {
 
                     {/* Content */}
                     <div className="flex flex-col p-6 space-y-4 overflow-y-auto flex-grow">
-                      {menuItems.map((item, index) => {
-                        const slots = item.dropdownType === "awp-multigames" ? multigames : games
-                        
-                        return (
-                          <div key={item.label}>
-                            <div
-                              className="animate-slideInRight"
-                              style={{
-                                animationDuration: '0.4s',
-                                animationDelay: `${index * 50 + 100}ms`,
-                                animationFillMode: 'both',
-                                marginTop: '10px',
-                                marginBottom: '10px'
-                              }}
+                      {menuItems.map((item, index) => (
+                        <div key={item.label}>
+                          <div
+                            className="animate-slideInRight"
+                            style={{
+                              animationDuration: '0.4s',
+                              animationDelay: `${index * 50 + 100}ms`,
+                              animationFillMode: 'both',
+                              marginTop: '10px',
+                              marginBottom: '10px'
+                            }}
+                          >
+                            <Link
+                              href={item.href}
+                              onClick={() => setIsSheetOpen(false)}
+                              className={`block text-lg font-semibold text-white transition-colors duration-300 ${pathname === item.href ? "text-white" : ""}`}
                             >
-                              <Link
-                                href={item.href}
-                                onClick={() => setIsSheetOpen(false)}
-                                className={`block text-lg ${item.hasDropdown && item.dropdownType == "awp-multigames" ? "invisible" : ""} font-semibold text-white transition-colors duration-300 ${pathname === item.href ? "text-white" : ""
-                                  }`}
-                              >
-                                {item.label}
-                              </Link>
-
-                              {/* Game carousel for mobile */}
-                              {item.hasDropdown && item.dropdownType == "awp-multigames" && (
-                                <div className="mt-3 pb-2">
-                                  <GameCarousel games={slots} onGameClick={() => setIsSheetOpen(false)} type={item.dropdownType ? item.dropdownType : "allgames"} />
-                                </div>
-                              )}
-                            </div>
+                              {item.label}
+                            </Link>
                           </div>
-                        )
-                      })}
+                        </div>
+                      ))}
                     </div>
 
                     {/* Footer */}

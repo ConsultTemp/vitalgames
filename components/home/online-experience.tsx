@@ -28,7 +28,7 @@ export default function OnlineExperience() {
             <h2 className="text-white text-4xl md:text-5xl font-bold dharma uppercase">
               OUR EXPERIENCE APPLIED TO THE ONLINE WORLD
             </h2>
-            <Link href={`/${lang}/onlinegames`}>
+            <Link href={`/${lang}/games?type=online-games`}>
               <Button 
                 variant="vitalYellow" 
                 className="px-8 py-6 text-xl md:text-2xl !text-black dharma"
@@ -53,7 +53,7 @@ export default function OnlineExperience() {
             <h2 className="text-white text-5xl lg:text-6xl xl:text-7xl font-bold dharma uppercase text-right">
               OUR EXPERIENCE APPLIED TO THE ONLINE WORLD
             </h2>
-            <Link href={`/${lang}/onlinegames`}>
+            <Link href={`/${lang}/games?type=online-games`}>
               <Button 
                 variant="vitalYellow" 
                 className="px-8 py-6 text-4xl lg:text-5xl !text-black dharma h-16"

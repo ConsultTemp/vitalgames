@@ -161,7 +161,10 @@
     "newsletter": {
       "title": "JOIN THE MOVEMENT!!",
       "description": "Contatta Vitalgames. Operatori, rivenditori e piattaforme, scriveteci per informazioni e proposte commerciali.",
-      "emailPlaceholder": "Email"
+      "emailPlaceholder": "Email",
+      "successMessage": "Iscrizione alla newsletter completata con successo!",
+      "errorMessage": "Si è verificato un errore. Riprova.",
+      "sending": "Invio in corso..."
     },
     "partners": {
       "title": "Partners"
@@ -382,7 +385,16 @@
         "bonus": "Giochi Bonus",
         "jackpot": "Jackpot",
         "multiplier": "Moltiplicatori"
-      }
+      },
+      "all": "Tutti",
+      "onlineGames": "Online Games",
+      "awpMultigames": "AWP Multigames",
+      "allGames": "All Games"
+    },
+    "sections": {
+      "awpMultigames": "AWP Multigames",
+      "allGames": "All Games",
+      "onlineGames": "Online Games"
     },
     "noGames": "Nessun gioco trovato che corrisponda ai tuoi criteri.",
     "loadMore": "Carica Altri Giochi",
@@ -584,15 +596,15 @@
         "links": [
           {
             "label": "Giochi Online",
-            "href": "/onlinegames"
+            "href": "/games?type=online-games"
           },
           {
             "label": "Tutti i giochi",
-            "href": "/allgames"
+            "href": "/games?type=all-games"
           },
           {
             "label": "Multigames",
-            "href": "/awp-multigames"
+            "href": "/games?type=awp-multigames"
           },
           {
             "label": "Cabinet",
