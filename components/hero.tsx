@@ -11,7 +11,7 @@ export default function HeroSection() {
     <section className="relative w-full bg-black">
       <OptimizedVideo
         ratio="hero"
-        videoId="1882591ec6b6173e792aa38691a3e742"
+        videoId="2a8fbc891422d4e0ccea488a6709d001"
         mobileId="0fd5f233bf57bdd4903b68cd63420efa"
         width="100vw"
         overlay={false}
@@ -19,7 +19,7 @@ export default function HeroSection() {
       {/* Overlay nero trasparente */}
       <div className="absolute inset-0 bg-black/30 z-5"></div>
       {/* Overlay con testo e bottone */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+     {/*  <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
         <h1 className="text-white text-5xl md:text-6xl lg:text-7xl font-bold dharma text-center mb-8 px-16 uppercase">
           JOIN OUR WORLD OF GAMES
         </h1>
@@ -31,7 +31,7 @@ export default function HeroSection() {
             OUR GAMES
           </Button>
         </Link>
-      </div>
+      </div> */}
     </section>
   )
 }

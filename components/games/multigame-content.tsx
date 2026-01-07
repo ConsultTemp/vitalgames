@@ -164,3 +164,4 @@ export default async function MultigameContent({ multigame, lang }: MultigameCon
   )
 }
 
+

@@ -67,7 +67,7 @@ export default function OnlineGamesCards() {
                     >
                       <Button
                         variant="vitalYellow"
-                        className="px-6 py-3 text-lg !text-black dharma flex items-center gap-2"
+                        className="px-6 py-3 text-base !text-black rounded-full flex items-center gap-2"
                       >
                         <Play className="h-5 w-5" />
                         {(dict.home.onlineGames as any).playDemo || "Play demo"}
@@ -100,7 +100,7 @@ export default function OnlineGamesCards() {
                     >
                       <Button
                         variant="vitalYellow"
-                        className="px-6 py-3 text-lg !text-black dharma flex items-center gap-2"
+                        className="px-6 py-3 text-base !text-black rounded-full flex items-center gap-2"
                       >
                         <Play className="h-5 w-5" />
                         {(dict.home.onlineGames as any).playDemo || "Play demo"}

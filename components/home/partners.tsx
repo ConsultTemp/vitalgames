@@ -81,7 +81,7 @@ export default function Partners() {
                           alt={partner.name}
                           fill
                           className={`object-contain transition-opacity duration-300 ${
-                            isActive ? 'opacity-100' : 'opacity-40'
+                            isActive ? 'opacity-100' : 'opacity-50'
                           }`}
                           sizes="270px"
                         />

@@ -72,7 +72,7 @@ export default function OptimizedCloudflareVideo({
     if (isMobile && ratio === "hero")   return "125vw";
     if (isMobile && ratio === "games")  return "125vw";
     if (isMobile && ratio === "intro")  return "100vh";
-    if (!isMobile && ratio === "hero")  return "46.296vw";
+    if (!isMobile && ratio === "hero")  return "56.25vw"; // 16/9 aspect ratio (100vw * 9/16)
     if (!isMobile && ratio === "intro") return "56.25vw";
     if (!isMobile && ratio === "games") return "26.32vw";
     return "0"; // fallback se la combinazione è sconosciuta
@@ -154,11 +154,17 @@ export default function OptimizedCloudflareVideo({
     ...(maxHeight && { maxHeight }),
   }
 
+  // Determina objectFit: "contain" per hero su desktop (16/9 senza zoom), "cover" per gli altri casi
+  const getObjectFit = () => {
+    if (!isMobile && ratio === "hero") return "contain"
+    return "cover"
+  }
+
   // Stile per il video Stream
   const videoStyles: React.CSSProperties = {
     width: isMobile && ratio === "intro" ? "121.5vh" : "100vw",
     height: getHeight(isMobile, ratio),
-    objectFit: "cover",
+    objectFit: getObjectFit(),
     objectPosition,
   }
 
@@ -176,7 +182,7 @@ export default function OptimizedCloudflareVideo({
             muted
             loop
             controls={false}
-            className={cn("w-full h-full object-cover", className)}
+            className={cn("w-full h-full", !isMobile && ratio === "hero" ? "object-contain" : "object-cover", className)}
             onLoadStart={handleVideoLoad}
             streamRef={streamRef}
           />

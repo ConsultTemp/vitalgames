@@ -44,7 +44,7 @@ export function MultigamesCarousel() {
     if (!api) return
 
     setCurrent(api.selectedScrollSnap())
-    
+
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap())
       resetTimer()
@@ -71,7 +71,7 @@ export function MultigamesCarousel() {
   const getDescription = (slug: string) => {
     const descriptions = dict?.home?.multigames?.descriptions
     if (!descriptions) return ""
-    
+
     // Mappa gli slug alle chiavi del dizionario
     const keyMap: Record<string, string> = {
       "manhattan": "manhattan",
@@ -79,14 +79,14 @@ export function MultigamesCarousel() {
       "champions": "champions",
       "diamante": "diamante"
     }
-    
+
     const key = keyMap[slug] || slug
     const fullDescription = descriptions[key as keyof typeof descriptions] || ""
-    
+
     // Accorcia del 30% (mantieni il 70%)
     const targetLength = Math.floor(fullDescription.length * 0.7)
     if (fullDescription.length <= targetLength) return fullDescription
-    
+
     // Tronca alla parola più vicina per evitare di tagliare a metà una parola
     const truncated = fullDescription.substring(0, targetLength)
     const lastSpace = truncated.lastIndexOf(' ')
@@ -111,71 +111,73 @@ export function MultigamesCarousel() {
             >
               <CarouselContent className="-ml-0">
                 {multigames.map((multigame, index) => (
-                  <CarouselItem 
-                    key={multigame.id} 
-                    className="pl-0 basis-full backdrop-blur-sm bg-white/10 rounded-lg overflow-hidden"
+                  <CarouselItem
+                    key={multigame.id}
+                    className={`pl-0 basis-full px-1 md:px-2`}
                   >
-                {/* Desktop: immagine sinistra, contenuto destra */}
-                <div className="hidden md:grid md:grid-cols-2 items-center">
-                  <div className="relative w-full aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={multigame.image || "/placeholder.svg"}
-                      alt={multigame.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="flex flex-col space-y-6 text-white p-6 lg:p-8">
-                    <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold dharma uppercase !m-0">
-                      {multigame.title}
-                    </h2>
-                    <p className="text-sm lg:text-md opacity-90 !m-0 !mb-3 w-full">
-                      {getDescription(multigame.slug)}
-                    </p>
-                    <Link href={`/${lang}/games?type=awp-multigames`} className="!m-0">
-                      <Button 
-                        variant="vitalYellow" 
-                        className="px-8 py-6 text-xl lg:text-2xl !text-black dharma w-fit"
-                      >
-                        {(dict?.home?.multigames as any)?.viewAll || "Tutti i Multigames"}
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Mobile: immagine sopra, contenuto sotto */}
-                <div className="md:hidden flex flex-col">
-                  <div className="relative w-full aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={multigame.image || "/placeholder.svg"}
-                      alt={multigame.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="flex flex-col space-y-4 text-white p-4">
-                    <h2 className="text-3xl font-bold dharma uppercase text-left">
-                      {multigame.title}
-                    </h2>
-                    <p className="text-sm opacity-90 text-left w-full lg:w-3/4">
-                      {getDescription(multigame.slug)}
-                    </p>
-                    <div className="flex justify-start">
-                      <Link href={`/${lang}/games?type=awp-multigames`}>
-                        <Button 
-                          variant="vitalYellow" 
-                          className="px-8 py-6 text-lg !text-black dharma"
-                        >
-                          {(dict?.home?.multigames as any)?.viewAll || "Tutti i Multigames"}
-                        </Button>
-                      </Link>
+                    <div className="w-full h-full backdrop-blur-sm bg-white/10 rounded-lg overflow-hidden">
+                      {/* Desktop: immagine sinistra, contenuto destra */}
+                      <div className="hidden md:grid md:grid-cols-2 items-center">
+                      <div className="relative w-full aspect-[4/3] overflow-hidden">
+                        <Image
+                          src={multigame.image || "/placeholder.svg"}
+                          alt={multigame.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="flex flex-col space-y-6 text-white p-6 lg:p-8">
+                        <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold dharma uppercase !m-0">
+                          {multigame.title}
+                        </h2>
+                        <p className="text-sm lg:text-md opacity-90 !m-0 !mb-3 w-full">
+                          {getDescription(multigame.slug)}
+                        </p>
+                        <Link href={`/${lang}/games?type=awp-multigames`} className="!m-0">
+                          <Button
+                            variant="vitalYellow"
+                            className="px-8 py-6 text-base !text-black rounded-full w-fit"
+                          >
+                            {(dict?.home?.multigames as any)?.viewAll || "Tutti i Multigames"}
+                          </Button>
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
+
+                    {/* Mobile: immagine sopra, contenuto sotto */}
+                    <div className="md:hidden flex flex-col">
+                      <div className="relative w-full aspect-[4/3] overflow-hidden">
+                        <Image
+                          src={multigame.image || "/placeholder.svg"}
+                          alt={multigame.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="flex flex-col space-y-4 text-white p-4">
+                        <h2 className="text-3xl font-bold dharma uppercase text-left">
+                          {multigame.title}
+                        </h2>
+                        <p className="text-sm opacity-90 text-left w-full lg:w-3/4">
+                          {getDescription(multigame.slug)}
+                        </p>
+                        <div className="flex justify-start">
+                          <Link href={`/${lang}/games?type=awp-multigames`}>
+                            <Button
+                              variant="vitalYellow"
+                              className="px-8 py-6 text-base !text-black !rounded-full !w-fit"
+                            >
+                              {(dict?.home?.multigames as any)?.viewAll || "Tutti i Multigames"}
+                            </Button>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
           </div>
         </div>
 
@@ -189,7 +191,7 @@ export function MultigamesCarousel() {
           >
             <ChevronLeft className="h-5 w-5" />
           </Button>
-          
+
           {/* Indicatori */}
           <div className="flex gap-2">
             {multigames.map((_, index) => (
@@ -197,9 +199,8 @@ export function MultigamesCarousel() {
                 key={index}
                 variant="ghost"
                 size="sm"
-                className={`w-2 h-2 p-0 rounded-full ${
-                  current === index ? "bg-vitalYellow" : "bg-gray-300"
-                }`}
+                className={`w-2 h-2 p-0 rounded-full ${current === index ? "bg-vitalYellow" : "bg-gray-300"
+                  }`}
                 onClick={() => handleScrollTo(index)}
               />
             ))}
