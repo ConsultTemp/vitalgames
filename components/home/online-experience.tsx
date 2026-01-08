@@ -14,9 +14,9 @@ export default function OnlineExperience() {
   return (
     <section className="relative w-full bg-black py-12 md:py-20 lg:py-24">
       <div className="container mx-auto px-4 md:px-6">
-        <Card className="group relative overflow-hidden border border-gray-800 bg-black rounded-2xl">
+        <Card className="group relative overflow-hidden border border-[#505050] hover:border-vitalYellow transition-all duration-500 bg-black rounded-2xl">
           {/* Sfondo bgMultigame di tutta la card - sempre visibile su mobile, visibile solo su hover su desktop */}
-          <div className="absolute inset-0 opacity-100 lg:opacity-0 transition-opacity duration-500 lg:group-hover:opacity-100">
+          <div className="absolute inset-0 opacity-100 lg:opacity-0 transition-opacity duration-500 lg:group-hover:opacity-25">
             <Image
               src={bgMultigame}
               alt="Background"
@@ -32,14 +32,13 @@ export default function OnlineExperience() {
             <div className="relative flex flex-col items-center text-center space-y-6 p-8 md:p-12 pb-0">
               {/* Testi in alto */}
               <div className="relative flex flex-col items-center space-y-6 mb-4">
-                <h2 className="text-white text-4xl md:text-5xl font-bold dharma uppercase">
+                <h2 className="text-white text-4xl md:text-5xl font-hitmarker font-semibold">
                   OUR EXPERIENCE APPLIED TO THE ONLINE WORLD
                 </h2>
                 {/* Bottone */}
                 <Link href={`/${lang}/games?type=online-games`}>
                   <Button 
-                    variant="vitalYellow" 
-                    className="px-8 py-6 text-lg rounded-full !text-black"
+                    className="bg-[#403c00] border border-vitalYellow hover:scale-105 transition-all duration-300 px-8 text-white font-hitmarker-text-medium rounded-full h-12 text-base hover:bg-vitalYellow hover:text-black hover:animate-pulse"
                   >
                     Online games portfolio
                   </Button>
@@ -99,15 +98,14 @@ export default function OnlineExperience() {
             </div>
             {/* Colonna destra: testo e bottone (invariato) */}
             <div className="flex flex-col items-end justify-center space-y-8 p-8">
-              <h2 className="text-white text-5xl lg:text-6xl xl:text-7xl font-bold dharma uppercase text-right">
-                OUR EXPERIENCE APPLIED TO THE ONLINE WORLD
+              <h2 className="text-white text-5xl md:text-7xl font-hitmarker font-semibold text-right">
+                OUR EXPERIENCE APPLIED TO THE <span className="text-vitalYellow">ONLINE</span> WORLD
               </h2>
               <Link href={`/${lang}/games?type=online-games`}>
                 <Button 
-                  variant="vitalYellow" 
-                  className="px-8 py-6 text-lg rounded-full !text-black"
+                  className="bg-[#403c00] border border-vitalYellow hover:scale-105 transition-all duration-300 px-8 text-white font-hitmarker-text-medium rounded-full h-12 text-base hover:bg-vitalYellow hover:text-black"
                 >
-                  Online games portfolio
+                  ONLINE GAMES PORTFOLIO
                 </Button>
               </Link>
             </div>

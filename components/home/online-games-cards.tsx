@@ -21,11 +21,11 @@ export default function OnlineGamesCards() {
 
   return (
     <section className="relative overflow-visible absolute bg-transparent">
-      <div className="container mx-auto px-4 relative z-10 pb-12 md:pb-16">
+      <div className="container mx-auto px-6 py-12 relative z-10 pb-12 md:pb-16">
         <div className="flex flex-row items-center justify-between py-6">
           <div className="w-full flex flex-col items-start">
             <SmoothReveal>
-              <h2 className="text-center text-5xl md:text-6xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap">
+              <h2 className="text-center text-3xl font-hitmarker-black uppercase text-white whitespace-normal md:whitespace-nowrap mb-6">
                 {dict.home.onlineGames.title}
               </h2>
             </SmoothReveal>
@@ -33,14 +33,14 @@ export default function OnlineGamesCards() {
           <Link href={`/${lang}/games?type=online-games`}>
             <Button 
               variant={"outline"} 
-              className="border border-white rounded-full text-white bg-transparent px-4 py-2 hover:bg-vitalYellow hover:text-black hover:border-vitalYellow transition-all duration-300"
+              className="border border-[#505050] rounded-full mb-6 text-white font-hitmarker-text-medium text-base h-9 bg-transparent px-4 py-2 hover:bg-white/10 transition-all duration-300"
             >
               {dict.home.onlineGames.viewAll}
             </Button>
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
           {games.map((game) => (
             <div
               key={game.id}
@@ -49,7 +49,7 @@ export default function OnlineGamesCards() {
               <SmoothReveal>
                 {/* Desktop: card con hover per mostrare overlay */}
                 <div 
-                  className="hidden md:block w-full aspect-[1080/1196] group rounded-sm relative transition-all duration-300 overflow-hidden"
+                  className="hidden md:block w-full aspect-[1080/1196] group rounded-2xl border border-[#505050] relative transition-all duration-300 overflow-hidden"
                 >
                   <div className="w-full h-full">
                     <Image
@@ -58,21 +58,26 @@ export default function OnlineGamesCards() {
                       className="object-cover rounded-sm w-full h-full"
                     />
                   </div>
-                  {/* Overlay nero trasparente su hover desktop */}
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none group-hover:pointer-events-auto">
-                    <a
-                      href={game.demoLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button
-                        variant="vitalYellow"
-                        className="px-6 py-3 text-base !text-black rounded-full flex items-center gap-2"
+                  {/* Tendina animata che sale da sotto su hover desktop */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-black/20 backdrop-blur-lg transform rounded-t-3xl translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out pointer-events-none group-hover:pointer-events-auto">
+                    <div className="p-4 flex flex-col justify-end gap-3">
+                      <h3 className="uppercase text-white font-hitmarker-black text-2xl w-full text-center">
+                        {game.title}
+                      </h3>
+                      <a
+                        href={game.demoLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full"
                       >
-                        <Play className="h-5 w-5" />
-                        {(dict.home.onlineGames as any).playDemo || "Play demo"}
-                      </Button>
-                    </a>
+                        <Button
+                          className="w-full bg-vitalYellow hover:scale-105 transition-all duration-300 text-black font-hitmarker-text-medium rounded-full h-12 text-base uppercase"
+                        >
+                          <Play className="h-5 w-5" />
+                          {(dict.home.onlineGames as any).playDemo || "Play demo"}
+                        </Button>
+                      </a>
+                    </div>
                   </div>
                 </div>
 

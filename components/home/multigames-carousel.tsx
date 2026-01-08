@@ -94,7 +94,7 @@ export function MultigamesCarousel() {
   }
 
   return (
-    <div className="relative w-full bg-black py-12 md:py-20 cabinet-bg">
+    <div className="relative w-full bg-black py-12 md:py-20">
       <div className="container mx-auto px-4 md:px-8">
         <div className="relative w-full">
           <div className="relative w-full overflow-hidden rounded-lg">
@@ -115,7 +115,7 @@ export function MultigamesCarousel() {
                     key={multigame.id}
                     className={`pl-0 basis-full px-1 md:px-2`}
                   >
-                    <div className="w-full h-full backdrop-blur-sm bg-white/10 rounded-lg overflow-hidden">
+                    <div className="w-full h-full bg-black border border-[#505050] rounded-lg overflow-hidden">
                       {/* Desktop: immagine sinistra, contenuto destra */}
                       <div className="hidden md:grid md:grid-cols-2 items-center">
                       <div className="relative w-full aspect-[4/3] overflow-hidden">

@@ -9,6 +9,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-geist)', 'system-ui', 'sans-serif'],
+        hitmarker: ['var(--font-hitmarker)', 'system-ui', 'sans-serif'],
+        'hitmarker-text': ['var(--font-hitmarker-text)', 'system-ui', 'sans-serif'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(circle, var(--tw-gradient-stops))',
       },

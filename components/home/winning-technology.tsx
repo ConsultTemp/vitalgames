@@ -51,20 +51,20 @@ export default function WinningTechnology() {
       </div>
       <div className="max-w-6xl w-full flex flex-col items-center text-center z-2">
         {/* Logo */}
-        <div className="w-32 h-32 md:w-40 md:h-40 relative mb-8">
+        <div className="w-32 h-32 md:w-32 md:h-32 relative mb-8">
           <Image src={logo || "/placeholder.svg"} alt="Vital Games Logo" fill className="object-contain" priority />
         </div>
 
         {/* Main Title */}
-        <h1 className="text-2xl md:text-3xl font-bold mb-6 text-white">{dict.home.winningTechnology.title}</h1>
+        <h1 className="text-3xl md:text-4xl font-hitmarker-black mb-6 text-white uppercase ">{dict.home.winningTechnology.title}</h1>
 
         {/* First Text Block */}
-        <p className="text-sm md:text-sm mb-5 font-extralight text-white max-w-2xl">
+        <p className="text-sm md:text-base mb-5 font-hitmarker-text-regular text-white max-w-2xl">
           {dict.home.winningTechnology.description}
         </p>
 
         {/* Second Text Block */}
-        <p className="text-sm md:text-sm mb-6 font-extralight text-white max-w-2xl">
+        <p className="text-sm md:text-base mb-12 font-hitmarker-text-regular text-white max-w-2xl">
           {dict.home.winningTechnology.description2}
         </p>
 
@@ -72,7 +72,7 @@ export default function WinningTechnology() {
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-1.5 w-full">
           {cards.map((card) => (
             <div key={card.id} className="aspect-[5/3]">
-              <Card className="h-full w-full flex flex-col items-center justify-center text-center p-4 bg-white/5 backdrop-blur-sm border-0 text-white">
+              <Card className="uppercase h-full w-full flex flex-col items-center justify-center text-center p-4 bg-white/5 backdrop-blur-lg border-[#303030] hover:brightness-125 transition-all duration-300 text-white font-hitmarker-text-regular">
                 <div className="h-14 sm:h-16 mb-3">
                   <Image
                     src={card.icon || "/placeholder.svg"}

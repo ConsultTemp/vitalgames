@@ -1,5 +1,5 @@
 import type React from "react"
-import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import "./globals.css"
 import type { Metadata } from "next"
 import { i18n } from "@/i18n-config"
@@ -7,7 +7,94 @@ import { enhancedCompanyData, generateComprehensiveSchema, gameKeywords } from "
 import Script from "next/script"
 import IntroVideo from "./components/IntroVideo"
 
-const inter = Inter({ subsets: ["latin"], display: "swap", preload: true })
+const geist = localFont({
+  src: [
+    {
+      path: '../fonts/Geist-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/Geist-Medium.ttf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/Geist-SemiBold.ttf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/Geist-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/Geist-Black.ttf',
+      weight: '900',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-geist',
+  display: 'swap',
+  preload: true,
+})
+
+const hitmarker = localFont({
+  src: [
+    {
+      path: '../fonts/HitmarkerCondensed-Light.ttf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/HitmarkerCondensed-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/HitmarkerCondensed-Medium.ttf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/HitmarkerCondensed-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/HitmarkerCondensed-Black.ttf',
+      weight: '900',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-hitmarker',
+  display: 'swap',
+  preload: true,
+})
+
+const hitmarkerText = localFont({
+  src: [
+    {
+      path: '../fonts/HitmarkerText-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/HitmarkerText-Medium.ttf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/HitmarkerText-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-hitmarker-text',
+  display: 'swap',
+  preload: true,
+})
 
 export const metadata: Metadata = {
   title: {
@@ -224,7 +311,7 @@ export default function RootLayout({
         <style dangerouslySetInnerHTML={{
           __html: `
             /* Critical CSS for immediate rendering */
-            body { margin: 0; font-family: Inter, system-ui; }
+            body { margin: 0; font-family: var(--font-geist), system-ui, sans-serif; }
             .hero-section { min-height: 100vh; background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%); }
             .loading-spinner { display: none; }
           `
@@ -238,7 +325,7 @@ export default function RootLayout({
 
         {/* Canonical and Hreflang will be handled by individual pages */}
       </head>
-      <body className={`${inter.className} antialiased`} suppressHydrationWarning>
+      <body className={`${geist.variable} ${hitmarker.variable} ${hitmarkerText.variable} ${geist.className} antialiased`} suppressHydrationWarning>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
