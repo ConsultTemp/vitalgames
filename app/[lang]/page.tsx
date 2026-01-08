@@ -11,6 +11,10 @@ import ManhattanLanding from "@/components/home/manhatta"
 import { GameCarousel } from "@/components/home/game-carousel"
 import WinningTechnology from "@/components/home/winning-technology"
 import Partners from "@/components/home/partners"
+import OnlineExperience from "@/components/home/online-experience"
+import { MultigamesCarousel } from "@/components/home/multigames-carousel"
+import OnlineGamesCards from "@/components/home/online-games-cards"
+import NewsletterForm from "@/components/home/newsletter-form"
 
 type Params = Promise<{ lang: Locale }>
 
@@ -76,18 +80,23 @@ export default async function Home(props: { params: Params }) {
       {/* JSON-LD Scripts moved to client component for better hydration */}
       {/* <HomeJsonLdScripts lang={params.lang} products={products} /> */}
 
-      <div className="bg-black">
+      <div className="bg-[#101010]">
         <Hero />
-        <ManhattanLanding />
-        <Multigames />
-        <div className="cabinet-bg">
-          <CabinetSection />
-        </div>
-        <GameCarousel />
-        <GameCards />
         <div className="technology-bg">
           <WinningTechnology />
         </div>
+        <OnlineExperience/>
+        <MultigamesCarousel/>
+       {/*  <ManhattanLanding /> */}
+        
+        {/* <Multigames /> */}
+        {/* <div className="cabinet-bg">
+          <CabinetSection />
+        </div> */}
+        {/* <GameCarousel /> */}
+        <OnlineGamesCards/>
+        {/* <GameCards /> */}
+        <NewsletterForm/>
         <Partners />
         <AgeRestrictions />
       </div>

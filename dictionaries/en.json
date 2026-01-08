@@ -37,7 +37,7 @@
     "title": "Innovation in Gaming Since 1996",
     "description": "Vitalgames has been creating high-quality slot machines, VLTs, and multigame systems for over 25 years. Our products combine cutting-edge technology with engaging gameplay to deliver exceptional gaming experiences.",
     "subDescription": "Whether for bars, arcades, or online platforms, our gaming solutions are designed to maximize player engagement and operator revenue.",
-    "ctaButton": "Discover Our Games",
+    "ctaButton": "Our games",
     "bottomText": "A Leader in Gaming Technology Since 1996"
   },
   "home": {
@@ -46,10 +46,10 @@
       "description": "Gaming is first and foremost entertainment. Vitalgames is committed to ensuring that every player has a fun and conscious experience. The promotion of responsible gaming is at the core of our philosophy. Not allowed for minors under 18 years of age."
     },
     "cabinet": {
-      "title": "Discover",
-      "titleLine2": "Our",
-      "titleLine3": "Vlt Cabinets",
-      "mobileTitle": "Our cabinets VLT",
+      "title": "DISCOVER",
+      "titleLine2": "OUR",
+      "titleLine3": "VLT CABINETS",
+      "mobileTitle": "OUR CABINETS VLT",
       "subtitle": "Vitalgames",
       "description": "Explore our selection of high-quality VLT cabinets, designed to deliver an immersive and engaging gaming experience.",
       "cta": "Discover more"
@@ -103,6 +103,7 @@
         "Customization for operators"
       ],
       "cta": "Discover Multigames",
+      "viewAll": "All Multigames",
       "descriptions": {
         "manhattan": "Skyscrapers, lights and luxury: Manhattan is the elite multigame. From the waters with Shark to the western flavor of Midnight Saloon, to the refinement of Le Chef and the sparks of Cherry and Mister Diamond. The heart of the game beats here.",
         "champions": "An arena of champions where every spin is a challenge to the podium. With winning titles such as Crazy Circus, Nugget d'Oro, Fortune, Dolphins and Luxury, this multigame combines adrenaline, charm and fun. Only true champions conquer the jackpot.",
@@ -125,6 +126,23 @@
       "badge": "All games",
       "title": "All games",
       "viewAll": "View all games"
+    },
+    "onlineGames": {
+      "title": "Our online games",
+      "viewAll": "View all",
+      "playDemo": "Play demo",
+      "hero": {
+        "title": "Online Games",
+        "subtitle": "Try our online slot machines. Free demos available!"
+      }
+    },
+    "newsletter": {
+      "title": "JOIN THE MOVEMENT!!",
+      "description": "Contact Vitalgames. Operators, resellers and platforms, write to us for information and commercial proposals.",
+      "emailPlaceholder": "Email",
+      "successMessage": "Successfully subscribed to newsletter!",
+      "errorMessage": "An error occurred. Please try again.",
+      "sending": "Sending..."
     },
     "manhattan": {
       "title": "MANHATTAN",
@@ -352,7 +370,16 @@
         "bonus": "Bonus Games",
         "jackpot": "Jackpots",
         "multiplier": "Multipliers"
-      }
+      },
+      "all": "All",
+      "onlineGames": "Online Games",
+      "awpMultigames": "AWP Multigames",
+      "allGames": "All Games"
+    },
+    "sections": {
+      "awpMultigames": "AWP Multigames",
+      "allGames": "All Games",
+      "onlineGames": "Online Games"
     },
     "noGames": "No games found matching your criteria.",
     "loadMore": "Load More Games",
@@ -370,8 +397,6 @@
     "braccio-di-ferro": "Timeless icons and challenges to the last spin. Popeye brings a legendary cast to the stage with muscles, rivalries and surprising prizes. Energy, irony and twists: this slot certainly doesn't mince words.",
     "cherry": "Classic symbols, fast pace and always fresh prizes. Cherry recalls the essence of the most iconic slots, with bright fruits, golden bells and the timeless charm of the 7. A great classic, ready to give satisfaction with every spin.",
     "cowboy-revenge-2": "The Far West does not forget. Cowboy Revenge 2 brings you back to dust, duels and revenge with spins. Among determined characters, fiery atmospheres and bonuses ready to strike, here the law is only one: that of luck.",
-    "crazy-circus": "Welcome to the craziest tent in the world of slots. Crazy Circus mixes colors, eccentric characters and plot twists worthy of a show without rules. Here, the surprise is always behind the curtain.",
-    "dark-pirates": "In Dark Pirates, every spin is a boarding. Sunken treasures, mysterious symbols and pirates ready for anything: climb aboard and discover what lies in the chests of destiny.",
     "dolphins": "A dive into lightheartedness with Dolphins, where sea creatures and colorful symbols accompany each spin in a light-hearted aquatic world, but full of surprises.",
     "eden": "Between forbidden apples and ancestral symbols, Eden takes you back to where it all began. A lush garden hides unpredictable bonuses and an atmosphere of primordial charm.",
     "elfi": "Discover the enchanted forest of Elfi, where every spin can reveal hidden gold, magical features and lucky encounters. A fairytale to play.",
@@ -501,7 +526,7 @@
       },
       "email": {
         "title": "Email",
-        "value": "info@vitalgames.com"
+        "value": "amministrazione@vitalgames.it"
       },
       "hours": {
         "title": "Business Hours",
@@ -555,12 +580,16 @@
         "title": "Games",
         "links": [
           {
+            "label": "Online Games",
+            "href": "/games?type=online-games"
+          },
+          {
             "label": "All games",
-            "href": "/allgames"
+            "href": "/games?type=all-games"
           },
           {
             "label": "Multigames",
-            "href": "/awp-multigames"
+            "href": "/games?type=awp-multigames"
           },
           {
             "label": "Cabinet",

@@ -264,7 +264,7 @@ export default async function PrivacyPage(props: { params: Params }) {
               </p>
               <div className="space-y-1 text-sm text-muted-foreground">
                 <p>
-                  <strong>Email:</strong> info@vitalgames.it
+                  <strong>Email:</strong> amministrazione@vitalgames.it
                 </p>
                 <p>
                   <strong>{dictionary.contact.info.phone.title}:</strong> +39 023282352

@@ -126,6 +126,14 @@ export function GameCarousel() {
     return (
       <>
         <div className="w-full py-12 mt-12 bg-black px-4">
+          <div className="flex justify-between items-center mb-8">
+            <h2 className="text-white text-3xl dharma">{dict.home.onlineGames.title}</h2>
+            <Link href="/onlinegames">
+              <Button className="bg-none text-white rounded-full border border-white hover:border-vitalYellow hover:bg-vitalYellow hover:text-black text-sm">
+                {dict.home.onlineGames.viewAll}
+              </Button>
+            </Link>
+          </div>
           {gameSlides.map((slide) => (
             <div key={slide.id} className="rounded-lg overflow-hidden shadow-lg relative mb-8">
               <div className="relative w-full">
@@ -167,30 +175,30 @@ export function GameCarousel() {
         </div>
 
         <Dialog open={isAgeVerificationOpen} onOpenChange={setIsAgeVerificationOpen}>
-        <DialogContent className="max-w-[90%] sm:max-w-md bg-black  text-white rounded-sm">
-          <DialogHeader className="text-center">
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-yellow-500/10">
-              <AlertTriangle className="h-6 w-6 text-vitalYellow" />
-            </div>
-            <DialogTitle className="text-xl font-bold text-white">{dict.ageVerificationModal.title}</DialogTitle>
-            <DialogDescription className="text-gray-300 text-left">
-            {dict.ageVerificationModal.description}
-            </DialogDescription>
-          </DialogHeader>
-          <DialogFooter className="flex flex-col gap-2 sm:flex-row sm:justify-center">
-            <Button onClick={handleAgeConfirmation} className="bg-vitalYellow text-black hover:bg-gray-100 font-medium">
-              {dict.ageVerificationModal.confirm}
-            </Button>
-            <Button
-              variant="outline"
-              onClick={handleAgeDecline}
-              className="border-gray-600 text-gray-300 hover:bg-gray-800"
-            >
-              {dict.ageVerificationModal.decline}
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+          <DialogContent className="max-w-[90%] sm:max-w-md bg-black  text-white rounded-sm">
+            <DialogHeader className="text-center">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-yellow-500/10">
+                <AlertTriangle className="h-6 w-6 text-vitalYellow" />
+              </div>
+              <DialogTitle className="text-xl font-bold text-white">{dict.ageVerificationModal.title}</DialogTitle>
+              <DialogDescription className="text-gray-300 text-left">
+                {dict.ageVerificationModal.description}
+              </DialogDescription>
+            </DialogHeader>
+            <DialogFooter className="flex flex-col gap-2 sm:flex-row sm:justify-center">
+              <Button onClick={handleAgeConfirmation} className="bg-vitalYellow text-black hover:bg-gray-100 font-medium">
+                {dict.ageVerificationModal.confirm}
+              </Button>
+              <Button
+                variant="outline"
+                onClick={handleAgeDecline}
+                className="border-gray-600 text-gray-300 hover:bg-gray-800"
+              >
+                {dict.ageVerificationModal.decline}
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </>
     )
   }
@@ -198,14 +206,19 @@ export function GameCarousel() {
   // Versione desktop: carosello
   return (
     <>
-      <div className="relative w-full max-w-7xl mx-auto my-36 bg-black">
+      <div className="relative w-full max-w-7xl mx-auto my-36 bg-black pb-24">
         <div className="flex absolute right-0 w-full -top-12 flex-row items-center justify-between">
-          <h2 className="text-white text-5xl font-bold dharma">I nostri giochi online</h2>
-          <div className="flex space-x-2 z-10">
+          <h2 className="text-white text-5xl font-bold dharma">{dict.home.onlineGames.title}</h2>
+          <div className="flex items-center space-x-3 z-10">
+            <Link href="/onlinegames">
+              <Button className="text-sm text-white rounded-full border border-white hover:border-vitalYellow hover:bg-vitalYellow hover:text-black">
+                {dict.home.onlineGames.viewAll}
+              </Button>
+            </Link>
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full hover:bg-black hover:opacity-80"
+              className="rounded-full hover:bg-black"
               onClick={() => api?.scrollPrev()}
             >
               <ChevronLeft className="h-5 w-5" />
@@ -297,7 +310,7 @@ export function GameCarousel() {
             </div>
             <DialogTitle className="text-xl font-bold text-white">{dict.ageVerificationModal.title}</DialogTitle>
             <DialogDescription className="text-gray-300 text-left">
-            {dict.ageVerificationModal.description}
+              {dict.ageVerificationModal.description}
             </DialogDescription>
           </DialogHeader>
           <DialogFooter className="flex flex-col gap-2 sm:flex-row sm:justify-center">

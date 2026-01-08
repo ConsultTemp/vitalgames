@@ -261,7 +261,7 @@ const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
   }
 
   return (
-    <section className="relative min-h-screen contact-bg">
+    <section className="relative min-h-screen contact-bg py-36">
       <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="grid md:grid-cols-5 gap-8 max-w-6xl mx-auto">
           <aside className="bg-white/5 backdrop-blur-sm rounded-lg p-8 h-full md:col-span-2">
@@ -282,7 +282,7 @@ const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
                 <Mail className="text-white" size={20} />
                 <div className="space-y-2">
                   <h3 className="text-white font-semibold">{dictionary.emailLabel}</h3>
-                  <p className="text-gray-300 text-sm">info@vitalgames.it</p>
+                  <p className="text-gray-300 text-sm">amministrazione@vitalgames.it</p>
                 </div>
               </div>
 

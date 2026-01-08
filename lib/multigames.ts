@@ -41,11 +41,12 @@ export const multigames = [
             "https://example.com/video6.mp4"
         ],
         games: [
+            //games.find(g => g.slug === 'mister-diamond')!,
             games.find(g => g.slug === 'shark')!,
             games.find(g => g.slug === 'le-chef')!,
-            games.find(g => g.slug === 'magic-diamond-2')!,
             games.find(g => g.slug === 'cherry')!,
-            games.find(g => g.slug === 'midnight-saloon')!
+            games.find(g => g.slug === 'midnight-saloon')!,
+            
         ],
         recommended: ["casino-royale", "diamante", "golden-club"]
     },
@@ -92,34 +93,6 @@ export const multigames = [
             games.find(g => g.slug === 'fortune')!,
             games.find(g => g.slug === 'dolphins')!,
             games.find(g => g.slug === 'luxury')!,
-        ],
-        recommended: ["casino-royale", "diamante", "golden-club"]
-    },
-    {
-        id: 10,
-        slug: "fortune-ultralink",
-        title: "Fortune Ultralink",
-        isComingSoon: false,
-        coverImage: bgmultigamopen,
-        logo: multigamelogo,
-        mainImage: fortuneUltralinkMain,
-        video: "https://files.catbox.moe/ktlzt8.mp4",
-        videoId: "7af6905aada0dfd1f50df73636d13cfd",
-        description: "Sistema multigame con 10 giochi a tema casinò classico, interfaccia elegante e jackpot progressivo.",
-        videos: [
-            "https://example.com/video1.mp4",
-            "https://example.com/video2.mp4",
-            "https://example.com/video3.mp4",
-            "https://example.com/video4.mp4",
-            "https://example.com/video5.mp4",
-            "https://example.com/video6.mp4"
-        ],
-        games: [
-            games.find(g => g.slug === 'the-weird-family')!,
-            games.find(g => g.slug === 'dark-pirates')!,
-            games.find(g => g.slug === 'luxury')!,
-            games.find(g => g.slug === 'fortune')!,
-            games.find(g => g.slug === 'mexican')!
         ],
         recommended: ["casino-royale", "diamante", "golden-club"]
     },

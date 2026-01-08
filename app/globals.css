@@ -111,7 +111,58 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: var(--font-geist), system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-hitmarker {
+    font-family: var(--font-hitmarker), system-ui, sans-serif;
+  }
+  
+  .font-hitmarker-light {
+    font-family: var(--font-hitmarker), system-ui, sans-serif;
+    font-weight: 300;
+  }
+  
+  .font-hitmarker-regular {
+    font-family: var(--font-hitmarker), system-ui, sans-serif;
+    font-weight: 400;
+  }
+  
+  .font-hitmarker-medium {
+    font-family: var(--font-hitmarker), system-ui, sans-serif;
+    font-weight: 500;
+  }
+  
+  .font-hitmarker-bold {
+    font-family: var(--font-hitmarker), system-ui, sans-serif;
+    font-weight: 700;
+  }
+  
+  .font-hitmarker-black {
+    font-family: var(--font-hitmarker), system-ui, sans-serif;
+    font-weight: 900;
+  }
+  
+  .font-hitmarker-text {
+    font-family: var(--font-hitmarker-text), system-ui, sans-serif;
+  }
+  
+  .font-hitmarker-text-regular {
+    font-family: var(--font-hitmarker-text), system-ui, sans-serif;
+    font-weight: 400;
+  }
+  
+  .font-hitmarker-text-medium {
+    font-family: var(--font-hitmarker-text), system-ui, sans-serif;
+    font-weight: 500;
+  }
+  
+  .font-hitmarker-text-bold {
+    font-family: var(--font-hitmarker-text), system-ui, sans-serif;
+    font-weight: 700;
   }
 }
 

@@ -162,12 +162,6 @@ import THE_TIME_PHOTO2 from '../public/games-images/STRIPTEASE/PHOTO-2024-05-12-
 import THE_TIME_PHOTO3 from '../public/games-images/STRIPTEASE/PHOTO-2024-05-12-20-06-25 3.jpg'
 import THE_TIME_PHOTO4 from '../public/games-images/STRIPTEASE/PHOTO-2024-05-12-20-06-26.jpg'
 
-import THE_WEIRD_FAMILY from '../public/games-images/THE WEIRD FAMILY/THE WEIRD FAMILY_mobile.webp'
-import THE_WEIRD_FAMILY_PHOTO1 from '../public/games-images/THE WEIRD FAMILY/PHOTO-2024-05-10-16-35-38 3.jpg'
-import THE_WEIRD_FAMILY_PHOTO2 from '../public/games-images/THE WEIRD FAMILY/PHOTO-2024-05-10-16-35-40.jpg'
-import THE_WEIRD_FAMILY_PHOTO3 from '../public/games-images/THE WEIRD FAMILY/PHOTO-2024-05-10-16-35-41 2.jpg'
-import THE_WEIRD_FAMILY_PHOTO4 from '../public/games-images/THE WEIRD FAMILY/PHOTO-2024-05-10-16-35-42.jpg'
-
 import TORERO from '../public/games-images/TORERO/TORERO.jpg'
 import TORERO_PHOTO1 from '../public/games-images/TORERO/PHOTO-2024-05-15-11-28-18.jpg'
 import TORERO_PHOTO2 from '../public/games-images/TORERO/PHOTO-2024-05-15-11-28-19 2.jpg'
@@ -250,7 +244,9 @@ import PIGGY_GOLD_PHOTO2 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-1
 import PIGGY_GOLD_PHOTO3 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-31.jpg'
 import PIGGY_GOLD_PHOTO4 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-33 3.jpg'
 import PIGGY_GOLD_PHOTO5 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-34.jpg' */
-
+import misterdiamond from '../public/misterdiamond.jpeg'
+import MR_DIAMOND from '../public/misterdiamond.jpeg'
+import MR_DIAMOND_MOBILE from '../public/misterdiamond.jpeg'
 
 import alieni from '../public/allgames-webp/ALIENI.webp'
 import braccio from '../public/allgames-webp/BRACCIO DI FERRO.webp'
@@ -403,6 +399,17 @@ export const games = [
     mobileBg: chef_mobile_hero
     
   },
+  /* {
+    name: 'Mister Diamond',
+    subtitle: 'Scopri i segreti di un antico libro magico',
+    href: 'mister-diamond',
+    slug: 'mister-diamond',
+    coverImage: MR_DIAMOND,
+    mainImage: misterdiamond,
+    images: [],
+    isComingSoon: false,
+    mobileBg: MR_DIAMOND_MOBILE
+  }, */
   {
     name: 'Alieni',
     subtitle: 'The Weird Family ti aspetta con simboli misteriosi, bonus inquietanti e colpi di scena ad ogni spin. Tra risate dark e funzionalità speciali, entra in un gioco dove il bizzarro è solo l\'inizio.',
@@ -464,7 +471,7 @@ export const games = [
     mainImage: cowboy,
     images: [COWBOY_REVENGE_2_PHOTO1, COWBOY_REVENGE_2_PHOTO2, COWBOY_REVENGE_2_PHOTO3, COWBOY_REVENGE_2_PHOTO4],
     description: 'Rivivi l\'epoca del selvaggio west in questa avventura western',
-    featured: ['pepita-doro', 'mexican', 'julio', 'dark-pirates'],
+    featured: ['pepita-doro', 'mexican', 'julio'],
     mobileBg: cowboy_mobile_hero
   },
   {
@@ -476,7 +483,7 @@ export const games = [
     mainImage: dragon,
     images: [DRAGON_PHOTO1, DRAGON_PHOTO2, DRAGON_PHOTO3, DRAGON_PHOTO4],
     description: 'Un\'avventura epica nel mondo dei draghi',
-    featured: ['alieni', 'vampiro', 'zombie', 'dark-pirates'],
+    featured: ['alieni', 'vampiro', 'zombie'],
     mobileBg: dragon_mobile_hero
   },
   {
@@ -596,7 +603,7 @@ export const games = [
     mainImage: jungle,
     images: [JUNGLE_PHOTO1, JUNGLE_PHOTO2, JUNGLE_PHOTO3, JUNGLE_PHOTO4],
     description: 'Esplora la giungla in cerca di tesori nascosti',
-    featured: ['eden', 'elfi', 'nautilus', 'dark-pirates'],
+    featured: ['eden', 'elfi', 'nautilus'],
     mobileBg: jungle_mobile_hero
   },
   {
@@ -656,7 +663,7 @@ export const games = [
     mainImage: mohamed,
     images: [MOHAMED_PHOTO1, MOHAMED_PHOTO2, MOHAMED_PHOTO3, MOHAMED_PHOTO4],
     description: 'Un\'avventura nel deserto con Mohamed',
-    featured: ['mexican', 'julio', 'torero', 'dark-pirates'],
+    featured: ['mexican', 'julio', 'torero'],
     mobileBg: mohamed_mobile_hero
   },
   {
@@ -668,7 +675,7 @@ export const games = [
     mainImage: nautilus,
     images: [NAUTILUS_PHOTO1, NAUTILUS_PHOTO2, NAUTILUS_PHOTO3, NAUTILUS_PHOTO4],
     description: 'Esplora gli abissi marini con il Nautilus',
-    featured: ['alieni', 'dragon', 'il-barone-rosso', 'dark-pirates'],
+    featured: ['alieni', 'dragon', 'il-barone-rosso'],
     mobileBg: nautilus_mobile_hero
   },
   {
@@ -740,20 +747,8 @@ export const games = [
     mainImage: time,
     images: [THE_TIME_PHOTO1, THE_TIME_PHOTO2, THE_TIME_PHOTO3, THE_TIME_PHOTO4],
     description: 'Viaggia nel tempo in questa avventura',
-    featured: ['il-barone-rosso', 'cowboy-revenge-2', 'mexican', 'dark-pirates'],
+    featured: ['il-barone-rosso', 'cowboy-revenge-2', 'mexican'],
     mobileBg: time_mobile_hero
-  },
-  {
-    name: 'The Weird Family',
-    subtitle: 'Conosci la famiglia più strana del mondo',
-    href: 'the-weird-family',
-    slug: 'the-weird-family',
-    coverImage: THE_WEIRD_FAMILY,
-    mainImage: family,
-    images: [THE_WEIRD_FAMILY_PHOTO1, THE_WEIRD_FAMILY_PHOTO2, THE_WEIRD_FAMILY_PHOTO3, THE_WEIRD_FAMILY_PHOTO4],
-    description: 'Conosci la famiglia più strana del mondo',
-    featured: ['il-giullare', 'pablito', 'sonny-bono', 'reggae-frog'],
-    mobileBg: family_mobile_hero
   },
   {
     name: 'Torero',
@@ -776,7 +771,7 @@ export const games = [
     mainImage: vampiro,
     images: [VAMPIRO_PHOTO1, VAMPIRO_PHOTO2, VAMPIRO_PHOTO3, VAMPIRO_PHOTO4],
     description: 'Un\'avventura nel mondo dei vampiri',
-    featured: ['dragon', 'zombie', 'dark-pirates', 'alieni'],
+    featured: ['dragon', 'zombie', 'alieni'],
     mobileBg: vampiro_mobile_hero
   },
   {
@@ -788,20 +783,8 @@ export const games = [
     mainImage: zombie,
     images: [ZOMBIE_PHOTO1, ZOMBIE_PHOTO2, ZOMBIE_PHOTO3, ZOMBIE_PHOTO4],
     description: 'Sopravvivi all\'apocalisse zombie',
-    featured: ['vampiro', 'dragon', 'dark-pirates', 'alieni'],
+    featured: ['vampiro', 'dragon', 'alieni'],
     mobileBg: zombie_mobile_hero
-  },
-  {
-    name: 'Dark Pirates',
-    subtitle: 'Naviga con i pirati più temibili',
-    href: 'dark-pirates',
-    slug: 'dark-pirates',
-    coverImage: DARK_PIRATES,
-    mainImage: pirates,
-    images: [DARK_PIRATES_PHOTO1, DARK_PIRATES_PHOTO2, DARK_PIRATES_PHOTO3, DARK_PIRATES_PHOTO4],
-    description: 'Naviga con i pirati più temibili',
-    featured: ['cowboy-revenge-2', 'nautilus', 'vampiro', 'zombie'],
-    mobileBg: pirates_mobile_hero
   },
   {
     name: 'Mexican',
@@ -836,7 +819,7 @@ export const games = [
     mainImage: dolphins,
     images: [DOLPHINS_PHOTO1, DOLPHINS_PHOTO2, DOLPHINS_PHOTO3, DOLPHINS_PHOTO4],
     description: 'Un\'avventura nel mondo dei vampiri',
-    featured: ['dragon', 'zombie', 'dark-pirates', 'alieni'],
+    featured: ['dragon', 'zombie', 'alieni'],
     mobileBg: dolphins_mobile_hero
   },
   {
@@ -848,7 +831,7 @@ export const games = [
     mainImage: hot_pepper,
     images: [HOT_PEPPER_PHOTO2, HOT_PEPPER_PHOTO3, HOT_PEPPER_PHOTO4, HOT_PEPPER_PHOTO5],
     description: 'Sopravvivi all\'apocalisse zombie',
-    featured: ['vampiro', 'dragon', 'dark-pirates', 'alieni'],
+    featured: ['vampiro', 'dragon', 'alieni'],
     mobileBg: hot_pepper_mobile_hero
   },
   {

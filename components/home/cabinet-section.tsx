@@ -130,12 +130,12 @@ export default function CabinetSection() {
         {/* Mobile Layout */}
         <div className="flex flex-col items-center md:hidden">
           <div className="w-full text-center mb-6">
-            <h2 className="text-8xl sm:text-6xl font-bold text-white dharma leading-tight invisible h-0 md:h-fit md:visible">
+            <h2 className="text-7xl sm:text-5xl font-bold text-white dharma leading-tight invisible h-0 md:h-fit md:visible">
               <SmoothReveal>{cabinet.title} {cabinet.titleLine2}</SmoothReveal>
               <SmoothReveal>{cabinet.titleLine3}</SmoothReveal>
             </h2>
 
-            <h2 className="text-5xl sm:text-6xl font-bold text-white dharma leading-tight visible md:invisible">
+            <h2 className="text-4xl sm:text-6xl font-bold text-white dharma leading-tight visible md:invisible">
               {cabinet.mobileTitle}
             </h2>
           </div>

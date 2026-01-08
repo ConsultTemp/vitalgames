@@ -280,7 +280,7 @@ export const companyData = {
     longitude: "9.1900",
   },
   telephone: "+39 02 1234567",
-  email: "info@vitalgames.com",
+  email: "amministrazione@vitalgames.it",
   description: {
     it: "Dal 1996, Vitalgames è leader nella produzione di slot machine, VLT e sistemi multigame in Italia. Con sede a Milano, offriamo soluzioni di gioco innovative e conformi alle normative per bar, sale giochi e piattaforme online.",
     en: "Since 1996, Vitalgames has been a leader in the production of slot machines, VLTs and multigame systems in Italy. Based in Milan, we offer innovative gaming solutions compliant with regulations for bars, arcades and online platforms.",
@@ -886,7 +886,7 @@ export const enhancedCompanyData = {
   },
   contact: {
     telephone: "+39 02 1234567",
-    email: "info@vitalgames.com",
+    email: "amministrazione@vitalgames.it",
     website: "https://www.vitalgamesdigital.com",
     supportEmail: "support@vitalgames.com",
     salesEmail: "sales@vitalgames.com",
