@@ -20,6 +20,14 @@ function getLocale(request: NextRequest): string {
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
+  // Skip static assets - images, fonts, etc.
+  const staticExtensions = ['.webp', '.jpg', '.jpeg', '.png', '.gif', '.svg', '.ico', '.woff', '.woff2', '.ttf', '.otf', '.eot', '.css', '.js', '.json', '.xml', '.txt']
+  const isStaticAsset = staticExtensions.some(ext => pathname.endsWith(ext))
+  
+  if (isStaticAsset) {
+    return NextResponse.next()
+  }
+
   // Extract the locale from the pathname if it exists
   const pathnameHasLocale = i18n.locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
@@ -63,6 +71,8 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // Matcher ignoring `/_next/` and `/api/`
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  // Matcher ignoring `/_next/`, `/api/`, and static assets (images, fonts, etc.)
+  matcher: [
+    "/((?!api|_next/static|_next/image|favicon.ico|.*\\.(?:webp|jpg|jpeg|png|gif|svg|ico|woff|woff2|ttf|otf|eot|css|js|json|xml|txt)$).*)",
+  ],
 }

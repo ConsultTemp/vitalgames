@@ -15,7 +15,6 @@ export function MultigamesCarousel() {
   const { dictionary: dict, lang } = useLanguage()
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
-  // Funzione per resettare il timer
   const resetTimer = () => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current)
@@ -27,7 +26,6 @@ export function MultigamesCarousel() {
     }
   }
 
-  // Auto-scroll ogni 5 secondi
   useEffect(() => {
     if (!api) return
 
@@ -51,7 +49,6 @@ export function MultigamesCarousel() {
     })
   }, [api])
 
-  // Funzioni per gestire lo scroll manuale
   const handleScrollPrev = () => {
     api?.scrollPrev()
     resetTimer()
@@ -67,36 +64,52 @@ export function MultigamesCarousel() {
     resetTimer()
   }
 
-  // Prendi le descrizioni dai dizionari e accorciale del 30%
   const getDescription = (slug: string) => {
     const descriptions = dict?.home?.multigames?.descriptions
     if (!descriptions) return ""
 
-    // Mappa gli slug alle chiavi del dizionario
     const keyMap: Record<string, string> = {
       "manhattan": "manhattan",
-      "fortune-gold": "fortune-ultralink", // usa fortune-ultralink per fortune-gold
+      "fortune-gold": "fortune-ultralink",
       "champions": "champions",
       "diamante": "diamante"
     }
 
     const key = keyMap[slug] || slug
     const fullDescription = descriptions[key as keyof typeof descriptions] || ""
-
-    // Accorcia del 30% (mantieni il 70%)
     const targetLength = Math.floor(fullDescription.length * 0.7)
+    
     if (fullDescription.length <= targetLength) return fullDescription
 
-    // Tronca alla parola più vicina per evitare di tagliare a metà una parola
     const truncated = fullDescription.substring(0, targetLength)
     const lastSpace = truncated.lastIndexOf(' ')
     return lastSpace > 0 ? truncated.substring(0, lastSpace) + '...' : truncated + '...'
   }
 
+  const getMultigamePageImage = (slug: string) => {
+    const imageMap: Record<string, string> = {
+      "manhattan": "/manhattan.webp",
+      "fortune-gold": "/fortune-gold.webp",
+      "champions": "/champions-slot.webp",
+      "diamante": "/diamante.webp"
+    }
+    return imageMap[slug] || null
+  }
+
+  const getGradientColor = () => {
+    return "#0d1b2a"
+  }
+
   return (
-    <div className="relative w-full bg-black py-12 md:py-20">
+    <div 
+      className="relative w-full py-12"
+      style={{
+        background: 'linear-gradient(to bottom, #1a0d2e 0%, #2d1b1b 50%, #101010 100%)'
+      }}
+    >
       <div className="container mx-auto px-4 md:px-8">
-        <div className="relative w-full">
+        <div className="relative w-full flex flex-col items-start justify-start">
+          <h1 className=" max-w-2xl text-lg md:text-6xl font-hitmarker-black mb-6 text-white uppercase tracking-[-0.5px] text-left">{dict.home.multigames.title}</h1>
           <div className="relative w-full overflow-hidden rounded-lg">
             <Carousel
               setApi={setApi}
@@ -115,64 +128,68 @@ export function MultigamesCarousel() {
                     key={multigame.id}
                     className={`pl-0 basis-full px-1 md:px-2`}
                   >
-                    <div className="w-full h-full bg-black border border-[#505050] rounded-lg overflow-hidden">
-                      {/* Desktop: immagine sinistra, contenuto destra */}
+                    <div 
+                      className="w-full backdrop-blur-xs bg-black/60 border border-[#505050] rounded-xl overflow-hidden"
+                    >
                       <div className="hidden md:grid md:grid-cols-2 items-center">
-                      <div className="relative w-full aspect-[4/3] overflow-hidden">
-                        <Image
-                          src={multigame.image || "/placeholder.svg"}
-                          alt={multigame.title}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="flex flex-col space-y-6 text-white p-6 lg:p-8">
-                        <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold dharma uppercase !m-0">
-                          {multigame.title}
-                        </h2>
-                        <p className="text-sm lg:text-md opacity-90 !m-0 !mb-3 w-full">
-                          {getDescription(multigame.slug)}
-                        </p>
-                        <Link href={`/${lang}/games?type=awp-multigames`} className="!m-0">
-                          <Button
-                            variant="vitalYellow"
-                            className="px-8 py-6 text-base !text-black rounded-full w-fit"
-                          >
-                            {(dict?.home?.multigames as any)?.viewAll || "Tutti i Multigames"}
-                          </Button>
-                        </Link>
-                      </div>
-                    </div>
-
-                    {/* Mobile: immagine sopra, contenuto sotto */}
-                    <div className="md:hidden flex flex-col">
-                      <div className="relative w-full aspect-[4/3] overflow-hidden">
-                        <Image
-                          src={multigame.image || "/placeholder.svg"}
-                          alt={multigame.title}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="flex flex-col space-y-4 text-white p-4">
-                        <h2 className="text-3xl font-bold dharma uppercase text-left">
-                          {multigame.title}
-                        </h2>
-                        <p className="text-sm opacity-90 text-left w-full lg:w-3/4">
-                          {getDescription(multigame.slug)}
-                        </p>
-                        <div className="flex justify-start">
-                          <Link href={`/${lang}/games?type=awp-multigames`}>
+                        <div className="flex flex-col text-white p-6 items-start justify-center ">
+                          <p className="text-vitalYellow text-sm font-hitmarker-text-medium uppercase mb-2">
+                            AWP MULTIGAME
+                          </p>
+                          <h2 className="text-2xl md:text-8xl font-hitmarker-black uppercase mb-2">
+                            {multigame.title}
+                          </h2>
+                          <p className="text-sm lg:text-sm font-hitmarker-text-regular mb-6 w-full">
+                            {getDescription(multigame.slug)}
+                          </p>
+                          <Link href={`/${lang}/games?type=awp-multigames`} className="!m-0">
                             <Button
                               variant="vitalYellow"
-                              className="px-8 py-6 text-base !text-black !rounded-full !w-fit"
+                              className="py-6 px-8 uppercase"
                             >
                               {(dict?.home?.multigames as any)?.viewAll || "Tutti i Multigames"}
                             </Button>
                           </Link>
                         </div>
+                        <div className="relative w-full h-full min-h-[450px]">
+                          <Image
+                            src={multigame.image || "/placeholder.svg"}
+                            alt={multigame.title}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
                       </div>
-                    </div>
+
+                      <div className="md:hidden flex flex-col">
+                        <div className="relative w-full aspect-[4/3] overflow-hidden">
+                          <Image
+                            src={multigame.image || "/placeholder.svg"}
+                            alt={multigame.title}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                        <div className="flex flex-col gap-2 text-white p-4 items-center text-center">
+                          <p className="text-vitalYellow text-sm font-hitmarker-text-medium uppercase mb-2">
+                            AWP MULTIGAME
+                          </p>
+                          <h2 className="text-2xl font-hitmarker-black uppercase text-center">
+                            {multigame.title}
+                          </h2>
+                          <p className="text-sm font-hitmarker-text-regular text-center w-full mb-3">
+                            {getDescription(multigame.slug)}
+                          </p>
+                          <Link href={`/${lang}/games?type=awp-multigames`} className="w-full">
+                            <Button
+                              variant="vitalYellow"
+                              className="py-6 px-8 uppercase"                              
+                            >
+                              {(dict?.home?.multigames as any)?.viewAll || "Tutti i Multigame\s"}
+                            </Button>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </CarouselItem>
                 ))}
@@ -182,14 +199,20 @@ export function MultigamesCarousel() {
         </div>
 
         {/* Freccette di navigazione */}
-        <div className="flex items-center justify-between mt-8">
+        <div className="
+        flex items-center justify-between 
+        mt-8
+        ">
           <Button
-            variant="outline"
             size="icon"
-            className="rounded-full hover:bg-black border-white text-white"
+            className="
+            rounded-full border border-white
+            bg-white/80 text-white
+            hover:bg-white
+            "
             onClick={handleScrollPrev}
           >
-            <ChevronLeft className="h-5 w-5" />
+            <ChevronLeft className="h-5 w-5 text-black"/>
           </Button>
 
           {/* Indicatori */}
@@ -197,9 +220,7 @@ export function MultigamesCarousel() {
             {multigames.map((_, index) => (
               <Button
                 key={index}
-                variant="ghost"
-                size="sm"
-                className={`w-2 h-2 p-0 rounded-full ${current === index ? "bg-vitalYellow" : "bg-gray-300"
+                className={`w-3 h-[2px] p-0 justify-center items-center ${current === index ? "bg-vitalYellow h-[3px]" : "bg-white/25 h-[2px]"
                   }`}
                 onClick={() => handleScrollTo(index)}
               />
@@ -207,12 +228,15 @@ export function MultigamesCarousel() {
           </div>
 
           <Button
-            variant="outline"
-            size="icon"
-            className="rounded-full hover:bg-black border-white text-white"
+            size="icon" 
+            className="
+            rounded-full border border-white
+            bg-white/80 text-white
+            hover:bg-white
+            "
             onClick={handleScrollNext}
           >
-            <ChevronRight className="h-5 w-5" />
+            <ChevronRight className="h-5 w-5 text-black"/>
           </Button>
         </div>
       </div>

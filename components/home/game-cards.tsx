@@ -86,7 +86,7 @@ export default function GameCards() {
       <div className="container mx-auto px-4 relative z-10 pb-12 md:pb-36">
         <div className="flex flex-row items-center justify-between py-6">
           <div className=" w-full flex flex-col items-start">
-            <SmoothReveal> <h2 className="text-center text-5xl md:text-6xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap">{dict.home.gameCards.title}</h2></SmoothReveal>
+            <SmoothReveal> <h2 className="text-center text-5xl md:text-6xl font-hitmarker-text-bold uppercase whitespace-normal md:whitespace-nowrap">{dict.home.gameCards.title}</h2></SmoothReveal>
           </div>
           <Link href={"/allgames"}><Button variant={"outline"} className="border border-white rounded-full text-white bg-transparent px-4 py-2 hover:bg-vitalYellow hover:text-black hover:border-vitalYellow transition-all duration-300">Vedi tutto</Button></Link>
         </div>
