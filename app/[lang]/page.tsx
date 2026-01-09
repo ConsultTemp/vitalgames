@@ -14,6 +14,7 @@ import Partners from "@/components/home/partners"
 import OnlineExperience from "@/components/home/online-experience"
 import { MultigamesCarousel } from "@/components/home/multigames-carousel"
 import OnlineGamesCards from "@/components/home/online-games-cards"
+import OnlineGamesScrolling from "@/components/home/online-games-scrolling"
 import NewsletterForm from "@/components/home/newsletter-form"
 
 type Params = Promise<{ lang: Locale }>
@@ -95,8 +96,9 @@ export default async function Home(props: { params: Params }) {
         </div> */}
         {/* <GameCarousel /> */}
         <NewsletterForm/>
-        <OnlineGamesCards/>
+        {/* <OnlineGamesCards/> */}
         {/* <GameCards /> */}
+        <OnlineGamesScrolling/>
 
         <MultigamesCarousel/>
         <Partners />

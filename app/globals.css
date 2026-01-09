@@ -451,9 +451,27 @@ clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 96%);
   to { transform: translateX(-100%); }
 }
 
+@keyframes infinite-scroll-slow {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes infinite-scroll-slow-reverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
 @layer components {
   .animate-infinite-scroll {
     animation: infinite-scroll 50s linear infinite;
+  }
+  
+  .animate-infinite-scroll-slow {
+    animation: infinite-scroll-slow 90s linear infinite;
+  }
+  
+  .animate-infinite-scroll-slow-reverse {
+    animation: infinite-scroll-slow-reverse 90s linear infinite;
   }
 }
 
