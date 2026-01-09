@@ -52,7 +52,7 @@ export default function Navbar() {
   const menuItems = [
     { label: "Games", href: "/games", hasDropdown: false },
     { label: "Multigames", href: "/games?type=awp-multigames", hasDropdown: false },
-    { label: "Online Games", href: "/games?type=online-games", hasDropdown: false },
+    { label: "Online games", href: "/games?type=online-games", hasDropdown: false },
     { label: "Cabinet", href: "/vlt", hasDropdown: false },
     { label: "About us", href: "/about-us", hasDropdown: false },
   ]
@@ -103,7 +103,7 @@ export default function Navbar() {
                   <NavigationMenuItem key={item.label} className="relative group">
                     <Link
                       href={item.href}
-                      className={`text-base bg-transparent hover:bg-white/10 rounded-full px-4 py-2 font-hitmarker-text-medium text-[#999999] hover:text-vitalYellow transition-colors whitespace-nowrap duration-300 relative   hover:after:w-full flex items-center h-9 ${isActive ? "text-white after:w-full" : ""}`}
+                      className={`text-sm bg-transparent hover:bg-white/10 rounded-full px-4 py-2 font-hitmarker-text-medium text-[#999999] hover:text-vitalYellow transition-colors whitespace-nowrap duration-300 relative   hover:after:w-full flex items-center h-9 ${isActive ? "text-white after:w-full" : ""}`}
                     >
                       {item.label}
                     </Link>

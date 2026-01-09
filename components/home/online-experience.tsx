@@ -12,7 +12,7 @@ export default function OnlineExperience() {
   const { lang } = useLanguage()
 
   return (
-    <section className="relative w-full bg-black py-12 md:py-20 lg:py-24">
+    <section className="relative w-full bg-black py-16">
       <div className="container mx-auto px-4 md:px-6">
         <Card className="group relative overflow-hidden border border-[#505050] hover:border-vitalYellow transition-all duration-500 bg-black rounded-2xl">
           {/* Sfondo bgMultigame di tutta la card - sempre visibile su mobile, visibile solo su hover su desktop */}

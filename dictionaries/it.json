@@ -22,7 +22,7 @@
     {
       "key": "allgames",
       "href": "/allgames",
-      "label": "Tutti i Giochi"
+      "label": "Tutti i giochi"
     },
     {
       "key": "contact",
@@ -34,8 +34,8 @@
     "contactUs": "Contattaci"
   },
   "hero": {
-    "title": "INNOVAZIONE NEL GIOCO DAL 1996",
-    "description": "Entra nel mondo di Vitalgames.",
+    "title": "Eccellenza italiana e visione globale",
+    "description": "Dal 1996 guidiamo l’evoluzione del gioco con soluzioni sicure e all'avanguardia.",
     "subDescription": "VITAL GAMES",
     "ctaButton": "I NOSTRI GIOCHI",
     "bottomText": "Leader nella Tecnologia di Gioco Dal 1996"
@@ -70,7 +70,7 @@
     },
     "technology": {
       "title": "CHI SIAMO",
-      "subtitle": "L'EVOLUZIONE DEL GAMING, MADE IN ITALY",
+      "subtitle": "L'EVOLUZIONE DEL GAMING MADE IN ITALY",
       "description": "VitalGames è sinonimo di garanzia nel settore del gaming. Con radici profonde nel mercato AWP, abbiamo attraversato generazioni di giocatori, innovando costantemente senza mai perdere la nostra identità. Siamo parte integrante dell'evoluzione del gioco in Italia, punto di riferimento per chi cerca qualità, esperienza e una visione sempre proiettata al futuro.",
       "certification": {
         "title": "Qualità italiana certificata",
@@ -79,7 +79,7 @@
       "cta": "Lavora con noi"
     },
     "winningTechnology": {
-      "title": "L'EVOLUZIONE DEL GAMING, MADE IN ITALY",
+      "title": "L'EVOLUZIONE DEL GAMING MADE IN ITALY",
       "description": "VitalGames è sinonimo di garanzia nel settore del gaming. Con radici profonde nel mercato AWP, abbiamo attraversato generazioni di giocatori, innovando costantemente senza mai perdere la nostra identità.",
       "description2": "Siamo parte integrante dell'evoluzione del gioco in Italia, punto di riferimento per chi cerca qualità, esperienza e una visione sempre proiettata al futuro.",
       "cards": {
@@ -107,7 +107,7 @@
       "gameTitle": "Magic Diamond™"
     },
     "multigames": {
-      "title": "I NOSTRI",
+      "title": "SCOPRI GLI AWP MULTIGAMES",
       "titleLine2": "MULTIGAMES",
       "subtitle": "Vital games",
       "description": "Oltre il semplice gioco.",

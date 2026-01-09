@@ -2,6 +2,7 @@
 import { useState } from "react"
 import { ArrowRight } from "lucide-react"
 import { useLanguage } from "../language-provider"
+import Image from "next/image"
 
 type SubmitStatus = "idle" | "success" | "error"
 
@@ -56,15 +57,32 @@ export default function NewsletterForm() {
   }
 
   return (
-    <section className="relative w-full bg-black py-12 md:py-20 lg:py-24 px-4 md:px-8 lg:px-16 mb-12 md:mb-16">
-      <div className="container mx-auto px-4 md:px-8">
-        {/* Mobile: titolo sopra, resto sotto */}
-        <div className="lg:hidden flex flex-col space-y-6">
-          <h2 className="text-white text-5xl md:text-6xl font-bold dharma uppercase text-center">
+    <section className="relative w-full py-12 mb-12 md:mb-16">
+      {/* Card con immagine di sfondo */}
+      <div className="container mx-auto px-6">
+        <div className="relative w-full rounded-2xl pt-8 pb-56 px-8 md:px-16 overflow-hidden border border-[#505050] hover:border-vitalYellow transition-all duration-300 group">
+          {/* Immagine di sfondo */}
+          <div className="absolute inset-0">
+            <Image
+              src="/join-the-movement.webp"
+              alt="Join the movement"
+              fill
+              className="object-cover object-bottom transition-all duration-300 group-hover:scale-105"
+              priority
+            />
+            {/* Overlay scuro per leggibilità */}
+            <div className="absolute inset-0 bg-black/60 hover:bg-black/20 transition-all duration-300 group-hover:bg-black/20"></div>
+          </div>
+          
+          {/* Contenuto */}
+          <div className="relative z-10">
+            {/* Mobile: titolo sopra, resto sotto */}
+            <div className="md:hidden flex flex-col space-y-6">
+          <h2 className="text-white text-5xl md:text-6xl items-start justify-start font-hitmarker-black uppercase text-center">
             {((dict.home as any).newsletter as any)?.title || "JOIN THE MOVEMENT!!"}
           </h2>
           <div className="flex flex-col space-y-4">
-            <p className="text-white text-xs md:text-sm text-center">
+            <p className="text-white text-sm text-center font-hitmarker-text-regular">
               {((dict.home as any).newsletter as any)?.description || ""}
             </p>
             
@@ -86,14 +104,14 @@ export default function NewsletterForm() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={((dict.home as any).newsletter as any)?.emailPlaceholder || "Email"}
-                className="w-full px-4 py-3 pr-12 bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-vitalYellow disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-4 py-3 pr-12 bg-white/20 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder:text-white/60 !placeholder:font-hitmarker-text-regular !font-hitmarker-text-regular focus:outline-none focus:ring-2 focus:ring-vitalYellow disabled:opacity-50 disabled:cursor-not-allowed"
                 required
                 disabled={isSubmitting}
               />
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-white hover:text-vitalYellow transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="absolute right-0 top-0 h-full w-12 bg-vitalYellow flex items-center justify-center text-black hover:bg-vitalYellow/90 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed rounded-r-lg"
               >
                 {isSubmitting ? (
                   <svg
@@ -124,20 +142,20 @@ export default function NewsletterForm() {
           </div>
         </div>
 
-        {/* Desktop: titolo sinistra, resto destra */}
-        <div className="hidden lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Desktop: titolo sinistra, resto destra */}
+            <div className="hidden lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <div>
-            <h2 className="text-white text-5xl lg:text-6xl xl:text-7xl font-bold dharma uppercase">
+            <h2 className="text-white text-7xl font-hitmarker-black uppercase">
               {((dict.home as any).newsletter as any)?.title || "JOIN THE MOVEMENT!!"}
             </h2>
           </div>
           <div className="flex flex-col space-y-6">
-            <p className="text-white text-sm md:text-base">
+            <p className="text-white text-sm md:text-base font-hitmarker-text-regular">
               {((dict.home as any).newsletter as any)?.description || ""}
             </p>
             
             {submitStatus === "success" && (
-              <div className="p-3 bg-green-500/20 border border-green-500 rounded-lg text-green-300 text-sm">
+              <div className="p-3 bg-green-500/20 border border-green-500 rounded-lg text-green-300 text-sm placeholder:font-hitmarker-text-regular font-hitmarker-text-regular">
                 ✅ {((dict.home as any).newsletter as any)?.successMessage || "Successfully subscribed!"}
               </div>
             )}
@@ -161,7 +179,7 @@ export default function NewsletterForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-white hover:text-vitalYellow transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="absolute right-0 top-0 h-full w-12 bg-vitalYellow flex items-center justify-center text-black hover:bg-vitalYellow/90 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed rounded-r-lg"
               >
                 {isSubmitting ? (
                   <svg
@@ -189,6 +207,8 @@ export default function NewsletterForm() {
                 )}
               </button>
             </form>
+          </div>
+        </div>
           </div>
         </div>
       </div>

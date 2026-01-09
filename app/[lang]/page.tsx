@@ -80,13 +80,13 @@ export default async function Home(props: { params: Params }) {
       {/* JSON-LD Scripts moved to client component for better hydration */}
       {/* <HomeJsonLdScripts lang={params.lang} products={products} /> */}
 
-      <div className="bg-[#101010]">
+      <div className="bg-black">
         <Hero />
         <div className="technology-bg">
           <WinningTechnology />
         </div>
         <OnlineExperience/>
-        <MultigamesCarousel/>
+      
        {/*  <ManhattanLanding /> */}
         
         {/* <Multigames /> */}
@@ -94,9 +94,11 @@ export default async function Home(props: { params: Params }) {
           <CabinetSection />
         </div> */}
         {/* <GameCarousel /> */}
+        <NewsletterForm/>
         <OnlineGamesCards/>
         {/* <GameCards /> */}
-        <NewsletterForm/>
+
+        <MultigamesCarousel/>
         <Partners />
         <AgeRestrictions />
       </div>

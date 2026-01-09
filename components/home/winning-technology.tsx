@@ -56,7 +56,7 @@ export default function WinningTechnology() {
         </div>
 
         {/* Main Title */}
-        <h1 className="text-3xl md:text-4xl font-hitmarker-black mb-6 text-white uppercase ">{dict.home.winningTechnology.title}</h1>
+        <h1 className="text-3xl max-w-2xl mx-auto md:text-7xl font-hitmarker-black mb-6 text-white uppercase tracking-[-0.5px]">{dict.home.winningTechnology.title}</h1>
 
         {/* First Text Block */}
         <p className="text-sm md:text-base mb-5 font-hitmarker-text-regular text-white max-w-2xl">
@@ -69,9 +69,9 @@ export default function WinningTechnology() {
         </p>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-1.5 w-full">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-1.5 w-auto max-w-2xl">
           {cards.map((card) => (
-            <div key={card.id} className="aspect-[5/3]">
+            <div key={card.id} className="w-full">
               <Card className="uppercase h-full w-full flex flex-col items-center justify-center text-center p-4 bg-white/5 backdrop-blur-lg border-[#303030] hover:brightness-125 transition-all duration-300 text-white font-hitmarker-text-regular">
                 <div className="h-14 sm:h-16 mb-3">
                   <Image
