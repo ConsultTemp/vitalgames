@@ -8,6 +8,7 @@ import { useLanguage } from "@/components/language-provider"
 export default function OnlineGamesScrolling() {
   const { dictionary: dict, lang } = useLanguage()
   
+  
   // Duplica i giochi per creare un loop infinito senza interruzioni
   // Creiamo 2 copie per permettere il loop infinito (l'animazione va da 0 a -50%)
   const duplicatedGames = [...onlineGames, ...onlineGames]
