@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { createPortal } from "react-dom"
 import { usePathname } from "next/navigation"
 import Lottie from "lottie-react"
-import animationData from "@/public/animations/caricamento-vital.json"
+import animationData from "@/public/animations/caricamentovital.json"
 
 export function PageTransitionOverlay() {
   const pathname = usePathname()
@@ -22,7 +22,7 @@ export function PageTransitionOverlay() {
     // Nascondi dopo 0.5 secondi - SEMPRE
     const timer = setTimeout(() => {
       setShowOverlay(false)
-    }, 850)
+    }, 950)
 
     return () => {
       clearTimeout(timer)
@@ -63,7 +63,7 @@ export function PageTransitionOverlay() {
           justifyContent: 'center',
         }}
       >
-        <div className="w-[100px] h-[100px] md:w-[140px] md:h-[140px]">
+        <div className="w-[110px] h-[110px] md:w-[150px] md:h-[150px]">
           <Lottie
             animationData={animationData}
             loop={true}
