@@ -262,8 +262,8 @@ const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
 
   return (
     <section className="relative min-h-screen contact-bg py-36">
-      <div className="container mx-auto px-4 py-12 relative z-10">
-        <div className="grid md:grid-cols-5 gap-8 max-w-6xl mx-auto">
+      <div className="container mx-auto px-4 py-12 relative z-10 max-w-6xl">
+        <div className="grid md:grid-cols-5 gap-8 w-full">
           <aside className="bg-white/5 backdrop-blur-sm rounded-lg p-8 h-full md:col-span-2">
             <div className="space-y-8">
               <div className="mb-2">

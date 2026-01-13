@@ -16,6 +16,7 @@ import { MultigamesCarousel } from "@/components/home/multigames-carousel"
 import OnlineGamesCards from "@/components/home/online-games-cards"
 import OnlineGamesScrolling from "@/components/home/online-games-scrolling"
 import NewsletterForm from "@/components/home/newsletter-form"
+import { PageTransitionOverlay } from "@/components/page-transition-overlay"
 
 type Params = Promise<{ lang: Locale }>
 
@@ -80,6 +81,7 @@ export default async function Home(props: { params: Params }) {
     <>
       {/* JSON-LD Scripts moved to client component for better hydration */}
       {/* <HomeJsonLdScripts lang={params.lang} products={products} /> */}
+      <PageTransitionOverlay />
 
       <div className="bg-black">
         <Hero />

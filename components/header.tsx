@@ -48,6 +48,24 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Block body scroll when sidebar is open
+  useEffect(() => {
+    if (isSheetOpen) {
+      document.body.style.overflow = 'hidden'
+      document.body.style.position = 'fixed'
+      document.body.style.width = '100%'
+    } else {
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
+    }
+  }, [isSheetOpen])
+
   // Menu items based on the image
   const menuItems = [
     { label: "Games", href: "/games", hasDropdown: false },
@@ -120,7 +138,7 @@ export default function Navbar() {
             asChild
             className="bg-[#202020] border border-[#505050] hover:scale-105 hover:border-bg-white/20 transition-all duration-300 px-4 text-white font-hitmarker-text-medium rounded-full h-9 text-base"
           >
-            <Link href="/about-us#about-us-contact">{dict.header.contactUs}</Link>
+            <Link href="/contact-us">{dict.header.contactUs}</Link>
           </Button>
 
           {/* Language Selector */}
@@ -202,7 +220,7 @@ export default function Navbar() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 1.5, ease: "easeOut" }}
-                  className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[1000]"
+                  className="fixed inset-0 bg-black z-[1000]"
                   onClick={() => setIsSheetOpen(false)}
                 />
                 <motion.div
@@ -210,12 +228,22 @@ export default function Navbar() {
                   animate={{ x: 0 }}
                   exit={{ x: "-100%" }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="fixed left-0 top-0 h-full w-full bg-black z-[1001]"
+                  className="fixed inset-0 bg-black z-[1001] min-h-dvh"
+                  style={{ height: '100dvh' }}
                 >
-                  <div className="flex flex-col h-full">
+                  <div className="flex flex-col h-full min-h-dvh">
                     {/* Header */}
                     <div className="p-4 flex h-24 items-center justify-between">
-
+                      <Link href="/" className="flex items-center" onClick={() => setIsSheetOpen(false)}>
+                        <div className="relative h-10 w-16">
+                          <Image
+                            src={logo}
+                            alt="Vital Games"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      </Link>
                     </div>
 
                     {/* Content */}
@@ -260,14 +288,14 @@ export default function Navbar() {
                       })}
                       
                       {/* Contact Button and Language Selector - moved below menu items */}
-                      <div className="space-y-4 pt-8">
+                      <div className="space-y-4 pt-8 !mt-0">
                         {/* Contact Button */}
                         <Button
                           asChild
                           variant="vitalYellow"
                           className="w-full"
                         >
-                          <Link href="/about-us#about-us-contact" onClick={() => setIsSheetOpen(false)}>{dict.header.contactUs}</Link>
+                          <Link href="/contact-us" onClick={() => setIsSheetOpen(false)}>{dict.header.contactUs}</Link>
                         </Button>
 
                         {/* Language Selector for Mobile */}

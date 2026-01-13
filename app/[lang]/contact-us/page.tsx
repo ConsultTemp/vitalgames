@@ -4,6 +4,7 @@ import type { Locale } from "@/i18n-config"
 import { generateAdvancedSEOMetadata, enhancedCompanyData } from "@/lib/seo-config"
 import Script from "next/script"
 import SecureContactForm from "@/components/contact/secure-form"
+import { PageTransitionOverlay } from "@/components/page-transition-overlay"
 
 type Params = Promise<{ lang: Locale }>
 
@@ -168,6 +169,7 @@ export default async function ContactUs(props: { params: Params }) {
           }),
         }}
       />
+      <PageTransitionOverlay />
 
       <div className="relative bg-black min-h-screen">
         <SecureContactForm lang={params.lang} />

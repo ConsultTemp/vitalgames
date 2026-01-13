@@ -8,11 +8,11 @@ export default function HeroSection() {
   const { lang, dictionary: dict } = useLanguage()
 
   return (
-    <section className="relative w-full bg-black min-h-screen flex items-end">
+    <section className="relative w-full bg-black min-h-[20vh] md:min-h-screen flex items-end">
       <OptimizedVideo
         ratio="hero"
         videoId="2a8fbc891422d4e0ccea488a6709d001"
-        mobileId="0fd5f233bf57bdd4903b68cd63420efa"
+        mobileId="6c3d0602527049492d76b7de48d0ff3e"
         width="100vw"
         overlay={false}
       />

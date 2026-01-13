@@ -148,10 +148,10 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
               className={`
                 px-4 py-2 rounded-full 
                 text-sm font-hitmarker-text-medium uppercase
-                hover:scale-105 transition-all duration-300 ${
+                transition-all duration-300 border box-border ${
                 selectedType === null
-                  ? 'bg-vitalYellow text-black border-0'
-                  : 'bg-white/10 text-white border border-white/10'
+                  ? 'bg-vitalYellow text-black border-vitalYellow'
+                  : 'bg-white/10 text-white border-white/10'
               }`}
             >
               {dict.allGames?.filters?.all || "All"}
@@ -159,10 +159,10 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
             <button
               type="button"
               onClick={() => handleTypeChange('online-games')}
-              className={`px-4 py-2 rounded-full text-sm font-hitmarker-text-medium hover:scale-105 transition-all duration-300 uppercase ${
+              className={`px-4 py-2 rounded-full text-sm font-hitmarker-text-medium transition-all duration-300 uppercase border box-border ${
                 selectedType === 'online-games'
-                  ? 'bg-vitalYellow text-black border-0'
-                  : 'bg-white/10 text-white border border-white/10'
+                  ? 'bg-vitalYellow text-black border-vitalYellow'
+                  : 'bg-white/10 text-white border-white/10'
               }`}
             >
               Online Games
@@ -170,10 +170,10 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
             <button
               type="button"
               onClick={() => handleTypeChange('awp-multigames')}
-              className={`px-4 py-2 rounded-full text-sm font-hitmarker-text-medium hover:scale-105 transition-all duration-300 uppercase ${
+              className={`px-4 py-2 rounded-full text-sm font-hitmarker-text-medium transition-all duration-300 uppercase border box-border ${
                 selectedType === 'awp-multigames'
-                  ? 'bg-vitalYellow text-black border-0'
-                  : 'bg-white/10 text-white border border-white/10'
+                  ? 'bg-vitalYellow text-black border-vitalYellow'
+                  : 'bg-white/10 text-white border-white/10'
               }`}
             >
               AWP Multigames
@@ -181,10 +181,10 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
             <button
               type="button"
               onClick={() => handleTypeChange('all-games')}
-              className={`px-4 py-2 rounded-full text-sm font-hitmarker-text-medium hover:scale-105 transition-all duration-300 uppercase ${
+              className={`px-4 py-2 rounded-full text-sm font-hitmarker-text-medium transition-all duration-300 uppercase border box-border ${
                 selectedType === 'all-games'
-                  ? 'bg-vitalYellow text-black border-0'
-                  : 'bg-white/10 text-white border border-white/10'
+                  ? 'bg-vitalYellow text-black border-vitalYellow'
+                  : 'bg-white/10 text-white border-white/10'
               }`}
             >
               All Games

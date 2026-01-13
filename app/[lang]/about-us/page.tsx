@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button"
 import FloatingImage from "@/components/bg-image-component"
 import campana from "../../../public/campana.png"
 import diamante from "../../../public/diamond.png"
+import { PageTransitionOverlay } from "@/components/page-transition-overlay"
 
 type Params = Promise<{ lang: Locale }>
 
@@ -330,6 +331,7 @@ export default async function AboutUs(props: { params: Params }) {
           }),
         }}
       />
+      <PageTransitionOverlay />
 
       <div className="relative">
 

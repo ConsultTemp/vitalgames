@@ -13,6 +13,7 @@ import { Mail, MapPin, Phone } from "lucide-react"
 import diamante from '../../../public/diamond.png'
 import FloatingImage from "@/components/bg-image-component"
 import SecureContactForm from "@/components/contact/secure-form"
+import { PageTransitionOverlay } from "@/components/page-transition-overlay"
 
 const vltCards = [
   {
@@ -283,6 +284,7 @@ export default async function AboutUs(props: { params: Params }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <PageTransitionOverlay />
 
       <div className="min-h-screen bg-black">
         <header>

@@ -1,6 +1,7 @@
 import { getDictionary } from "@/lib/dictionary"
 import type { Locale } from "@/i18n-config"
 import { OptimizedLink as Link } from "@/components/optimized-link"
+import { PageTransitionOverlay } from "@/components/page-transition-overlay"
 
 type Params = Promise<{ lang: Locale }>
 
@@ -9,7 +10,9 @@ export default async function PrivacyPage(props: { params: Params }) {
   const dictionary = await getDictionary(params.lang)
 
   return (
-    <div className="pt-24 pb-16">
+    <>
+      <PageTransitionOverlay />
+      <div className="pt-24 pb-16">
       <div className="container mx-auto px-4">
         {/* Content */}
         <div className="max-w-4xl mx-auto">
@@ -289,5 +292,6 @@ export default async function PrivacyPage(props: { params: Params }) {
         </div>
       </div>
     </div>
+    </>
   )
 }

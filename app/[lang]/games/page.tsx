@@ -5,6 +5,7 @@ import { generateAdvancedSEOMetadata } from "@/lib/seo-config"
 import Script from "next/script"
 import VideoHero from "@/components/VideoHero"
 import GamesSearch from "@/components/games/games-search"
+import { PageTransitionOverlay } from "@/components/page-transition-overlay"
 import { games } from "@/lib/allgamesmap"
 import { multigames } from "@/lib/multigames"
 import { onlineGames } from "@/lib/onlinegames"
@@ -169,6 +170,7 @@ export default async function GamesPage(props: { params: Params }) {
           __html: JSON.stringify(allGamesSchema),
         }}
       />
+      <PageTransitionOverlay />
 
       <main className="bg-black">
         <header>
