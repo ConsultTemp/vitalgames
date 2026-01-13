@@ -313,18 +313,20 @@ export default async function AboutUs(props: { params: Params }) {
             </div> */}
 
             {/* Cards Section */}
-            <div className="mx-auto px-3 sm:px-16 lg:px-32 xl:px-48 py-32">
-              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-6">
+            <div className="mx-auto px-3 sm:px-12 lg:px-24 xl:px-40 py-20">
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
                 {vltCards.map((card, index) => (
                   <div
                     key={index}
                     className={
-                      index === 2
-                        ? "bg-transparent rounded-xl py-6 border border-1 border-[#3C3C3C] w-full h-80 flex flex-col items-center justify-self-center"
-                        : "bg-transparent rounded-xl py-6 border border-1 border-[#3C3C3C] w-full h-80 flex flex-col gap-4 items-center justify-self-center"
+                      card.id === 4
+                        ? "bg-transparent rounded-xl py-2 border border-1 border-[#3C3C3C] w-full h-80 lg:h-[27rem] flex flex-col gap-2 items-center justify-self-center"
+                        : index === 2
+                        ? "bg-transparent rounded-xl py-4 border border-1 border-[#3C3C3C] w-full h-80 flex flex-col items-center justify-self-center"
+                        : "bg-transparent rounded-xl py-4 border border-1 border-[#3C3C3C] w-full h-80 flex flex-col gap-3 items-center justify-self-center"
                     }
                   >
-                    <div className="relative w-4/5 flex-1 flex flex-col items-center justify-center">
+                    <div className={`relative w-4/5 flex-1 flex flex-col items-center justify-center`}>
                       <Image
                         src={card.image || "/placeholder.svg"}
                         alt={card.name}
@@ -332,7 +334,7 @@ export default async function AboutUs(props: { params: Params }) {
                         className="object-contain rounded-lg"
                       />
                     </div>
-                    <h3 className="text-lg text-white font-hitmarker-text-bold uppercase text-center px-3">{card.name}</h3>
+                    <h3 className="text-lg text-white font-hitmarker-text-bold uppercase text-center px-2">{card.name}</h3>
                   </div>
                 ))}
               </div>

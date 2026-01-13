@@ -22,7 +22,7 @@ export function PageTransitionOverlay() {
     // Nascondi dopo 0.5 secondi - SEMPRE
     const timer = setTimeout(() => {
       setShowOverlay(false)
-    }, 1500)
+    }, 850)
 
     return () => {
       clearTimeout(timer)
@@ -42,11 +42,27 @@ export function PageTransitionOverlay() {
         right: 0,
         bottom: 0,
         width: '100vw',
-        height: '100vh',
+        height: '100dvh', // Usa dynamic viewport height per considerare la barra del browser
+        minHeight: '100vh', // Fallback per browser che non supportano dvh
         pointerEvents: 'none',
       }}
     >
-      <div className="w-full h-full flex items-center justify-center">
+      {/* Area sicura che tiene conto della barra di ricerca del browser */}
+      <div 
+        className="w-full flex items-center justify-center"
+        style={{
+          height: '100%',
+          paddingTop: 'env(safe-area-inset-top)',
+          paddingBottom: 'env(safe-area-inset-bottom)',
+          paddingLeft: 'env(safe-area-inset-left)',
+          paddingRight: 'env(safe-area-inset-right)',
+          // Area sicura centrale che ignora le barre del browser
+          minHeight: 'calc(100dvh - 120px)', // Lascia spazio per le barre del browser
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
         <div className="w-[100px] h-[100px] md:w-[140px] md:h-[140px]">
           <Lottie
             animationData={animationData}
