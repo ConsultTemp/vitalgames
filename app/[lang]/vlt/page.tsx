@@ -7,6 +7,7 @@ import VideoHero from "@/components/VideoHero"
 import VLT_CARD1 from "@/public/Up Right 27\" touch.webp"
 import VLT_CARD2 from "@/public/Slant Top 27\"\" touch.webp"
 import VLT_CARD3 from "@/public/Up Right 22\"\" touch.webp"
+import VLT_CARD4 from "@/public/cabinet32inches.png"
 import { Button } from "@/components/ui/button"
 import SmoothReveal from "@/components/smooth-reveal"
 import { Mail, MapPin, Phone } from "lucide-react"
@@ -30,6 +31,11 @@ const vltCards = [
     id: 3,
     name: "Up Right 22\"\" touch",
     image: VLT_CARD3,
+  },
+  {
+    id: 4,
+    name: "32\" Curved Touch Screen Monitor",
+    image: VLT_CARD4,
   }
 ]
 
