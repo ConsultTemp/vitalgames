@@ -63,13 +63,26 @@ export default function NewsletterForm() {
         <div className="relative w-full rounded-2xl pt-8 pb-56 px-8 md:px-16 overflow-hidden border border-[#505050] hover:border-vitalYellow transition-all duration-300 group">
           {/* Immagine di sfondo */}
           <div className="absolute inset-0">
-            <Image
-              src="/join-the-movement.webp"
-              alt="Join the movement"
-              fill
-              className="object-cover object-bottom transition-all duration-300 group-hover:scale-105"
-              priority
-            />
+            {/* Mobile: join-mobile.png */}
+            <div className="md:hidden absolute inset-0">
+              <Image
+                src="/join-mobile.png"
+                alt="Join the movement"
+                fill
+                className="object-contain object-bottom transition-all duration-300 group-hover:scale-105"
+                priority
+              />
+            </div>
+            {/* Desktop: join-the-movement.webp */}
+            <div className="hidden md:block absolute inset-0">
+              <Image
+                src="/join-the-movement.png"
+                alt="Join the movement"
+                fill
+                className="object-cover object-bottom transition-all duration-300 group-hover:scale-105"
+                priority
+              />
+            </div>
             {/* Overlay scuro per leggibilità */}
             <div className="absolute inset-0 bg-black/60 hover:bg-black/20 transition-all duration-300 group-hover:bg-black/20"></div>
           </div>
