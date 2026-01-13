@@ -171,7 +171,7 @@ export default async function ContactUs(props: { params: Params }) {
       />
       <PageTransitionOverlay />
 
-      <div className="relative bg-black min-h-screen">
+      <div className="relative bg-black min-h-screen overflow-x-hidden">
         <SecureContactForm lang={params.lang} />
       </div>
     </>

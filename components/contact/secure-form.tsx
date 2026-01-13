@@ -261,10 +261,10 @@ const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
   }
 
   return (
-    <section className="relative min-h-screen contact-bg py-36">
-      <div className="container mx-auto px-4 py-12 relative z-10 max-w-6xl">
-        <div className="grid md:grid-cols-5 gap-8 w-full">
-          <aside className="bg-white/5 backdrop-blur-sm rounded-lg p-8 h-full md:col-span-2">
+    <section className="relative min-h-screen contact-bg py-36 overflow-x-hidden">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 py-12 relative z-10 max-w-6xl w-full overflow-x-hidden" style={{ paddingLeft: '1rem', paddingRight: '1rem' }}>
+        <div className="grid md:grid-cols-5 gap-8 w-full max-w-full">
+          <aside className="bg-white/5 backdrop-blur-sm rounded-lg p-4 sm:p-6 md:p-8 h-full md:col-span-2">
             <div className="space-y-8">
               <div className="mb-2">
                 <h2 className="
@@ -274,32 +274,32 @@ const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
               </div>
 
               <div className="flex items-center space-x-4">
-                <Phone className="text-white" size={20} />
-                <div className="">
+                <Phone className="text-white flex-shrink-0" size={20} />
+                <div className="min-w-0 flex-1">
                   <h3 className="
                   text-white font-hitmarker-text-regular text-sm uppercase">{dictionary.phone}</h3>
-                  <p className="text-white font-hitmarker-text-bold text-lg">+39 02 3282352</p>
+                  <p className="text-white font-hitmarker-text-bold text-lg break-words">+39 02 3282352</p>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4">
-                <Mail className="text-white" size={20} />
-                <div className="">
+                <Mail className="text-white flex-shrink-0" size={20} />
+                <div className="min-w-0 flex-1">
                   <h3 className="text-white font-hitmarker-text-regular text-sm uppercase">{dictionary.emailLabel}</h3>
-                  <p className="text-white font-hitmarker-text-bold text-lg uppercase">amministrazione@vitalgames.it</p>
+                  <p className="text-white font-hitmarker-text-bold text-lg uppercase break-words">amministrazione@vitalgames.it</p>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4">
-                <MapPin className="text-white" size={20} />
-                <div className="">
+                <MapPin className="text-white flex-shrink-0" size={20} />
+                <div className="min-w-0 flex-1">
                   <h3 className="text-white font-hitmarker-text-regular text-sm uppercase">{dictionary.address}</h3>
-                  <p className="text-white font-hitmarker-text-bold text-lg uppercase">Via Cusago 160,Milano, Lombardia, Italia</p>
+                  <p className="text-white font-hitmarker-text-bold text-lg uppercase break-words">Via Cusago 160,Milano, Lombardia, Italia</p>
                 </div>
               </div>
             </div>
           </aside>
-          <div className="flex flex-col h-full md:col-span-3">
+          <div className="flex flex-col h-full md:col-span-3 px-2 sm:px-0">
             <div className="mb-8">
               <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 font-hitmarker-black uppercase tracking-[-0,5px]">{dictionary.title}</h2>
             </div>
