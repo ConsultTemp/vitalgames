@@ -34,7 +34,7 @@ const vltCards = [
   },
   {
     id: 4,
-    name: "32\" Curved Touch Screen Monitor",
+    name: "32\"\" Curved Touch Screen Monitor",
     image: VLT_CARD4,
   }
 ]
