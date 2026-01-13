@@ -212,7 +212,7 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
               {filteredMultigames.map((game) => (
                 <div key={game.slug} className="w-full aspect-[1080/1196] block group rounded-lg overflow-hidden relative">
-                  <Link href={`/${lang}/awp-multigames/${game.slug}`} className="w-full h-full block relative overflow-hidden rounded-lg">
+                  <Link href={`/${lang}/games/${game.slug}`} className="w-full h-full block relative overflow-hidden rounded-lg">
                     <Image
                       src={game.mainImage}
                       alt={game.title}
@@ -245,7 +245,7 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
                         </ul>
                       </>
                     )}
-                    <Link href={`/${lang}/awp-multigames/${game.slug}`}>
+                    <Link href={`/${lang}/games/${game.slug}`}>
                       <Button variant="vitalYellow" className="w-full">
                         SCOPRI DI PIÙ
                       </Button>
@@ -280,7 +280,7 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
               {filteredAllGames.map((game) => (
                 <div key={game.name} className="w-full aspect-[1080/1196] block group rounded-lg overflow-hidden relative">
-                  <Link href={`/${lang}/awp-multigames/${game.slug}`} className="w-full h-full block relative overflow-hidden rounded-lg">
+                  <Link href={`/${lang}/games/${game.slug}`} className="w-full h-full block relative overflow-hidden rounded-lg">
                     <Image
                       src={game.mainImage}
                       alt={game.name}

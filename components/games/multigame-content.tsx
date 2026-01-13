@@ -54,25 +54,27 @@ export default async function MultigameContent({ multigame, lang }: MultigameCon
             </div>
           </div>
           <div className="px-4 md:px-8 lg:px-16 xl:px-24 space-y-16 relative z-10">
-            <h1 className="text-5xl font-hitmarker-text-regular uppercase text-white my-10">
+            <h1 className="text-3xl font-hitmarker-text-bold uppercase text-white mt-10">
               {dict.includedGamesIn} {multigame.title}
             </h1>
 
             {multigame.games.map((game: any, index: number) => {
+              // Neon color palette
               const neonColors = [
-                "#39FF14",
-                "#FF00FF",
-                "#00FFFF",
-                "#FFFF00",
-                "#FF073A"
-              ]
-              const neon = neonColors[index % neonColors.length]
+                "#39FF14", // verde neon
+                "#FF00FF", // fucsia neon
+                "#00FFFF", // blu elettrico (azzurro neon)
+                "#FFFF00", // giallo neon
+                "#FF073A"  // rosso neon
+              ];
+              const neon = neonColors[index % neonColors.length];
               return (
                 <article
                   key={index}
-                  className={`flex flex-col ${index % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"} last:mb-0 rounded-2xl items-center mb-8`}
+                  className={`flex flex-col ${index % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"} rounded-2xl items-center mb-8`}
                 >
                   <div className="h-full md:w-2/5 lg:w-[55%] relative flex items-center justify-center">
+                    {/* Ombra esterna */}
                     <span
                       className={`absolute top-1/2 -translate-y-1/2 pointer-events-none
                         ${index % 2 === 1
@@ -102,15 +104,20 @@ export default async function MultigameContent({ multigame, lang }: MultigameCon
                     />
                   </div>
                   <div className="text-left md:text-left p-3 px-0 md:p-6 w-full flex flex-col items-center">
-                    <div className="w-[100%] md:w-[65%] rounded-xl p-3 px-0 md:p-4 md:px-0 w-full gap-6 flex flex-col justify-center items-start relative z-30">
-                      <h2 className="text-5xl md:text-7xl text-white dharma w-full text-left">{game.name}</h2>
-                      <p className="text-gray-400 text-left w-full text-base md:mx-0 mb-2 text-[#989898]">
+                    <div className="w-[100%] md:w-[65%] rounded-xl  p-3 px-0 md:p-4 md:px-0 w-full flex flex-col justify-center items-start relative z-30">
+                      <p className="text-sm font-hitmarker-text-bold text-vitalYellow uppercase mb-1">ALL GAMES</p>
+                      <h2 className="text-5xl md:text-7xl text-white font-hitmarker-black uppercase tracking-[-0.5px] w-full text-left mb-2">{game.name}</h2>
+                      <p className="text-white font-hitmarker-text-regular text-left w-full text-base md:mx-0 mb-2 text-white/60 uppercase">
                         {dict.allGamesDescriptions?.[game.slug]}
                       </p>
-                      <Link href={`/${lang}/games/${game.slug}`} className="flex flex-col items-start">
+                      <Link href={`/${lang}/allgames/${game.slug}`} className="flex flex-col items-start">
                         <Button
-                          variant="default"
-                          className="bg-transparent text-white border border-white px-6 py-6 rounded-full hover:opacity-80 text-base"
+                          variant="vitalYellow"
+                          className="
+                            bg-[#403c00] border border-vitalYellow
+                            text-base text-white font-hitmarker-text-medium uppercase
+                            px-6 py-6 mt-4 rounded-full 
+                            hover:scale-105 transition-all duration-300"
                           aria-label={`Gioca ora a ${game.name}`}
                         >
                           {dict.common.buttons.playNow}
@@ -129,7 +136,7 @@ export default async function MultigameContent({ multigame, lang }: MultigameCon
           <div className="px-4 md:px-8 lg:px-16 xl:px-24">
             <h2
               id="recommended-games-heading"
-              className="text-3xl md:text-4xl text-white mb-4 dharma text-left"
+              className="text-lg md:text-2xl uppercase text-white font-hitmarker-text-bold mb-8 text-left"
             >
               {dict.allGames.recommended.otherMultigames}
             </h2>
@@ -141,7 +148,7 @@ export default async function MultigameContent({ multigame, lang }: MultigameCon
                   return recommendedMultigame?.id ? (
                     <article key={index} className="flex-1 hover:scale-[1.02] transition-all duration-300">
                       <Link
-                        href={`/${lang}/games/${recommendedMultigame.slug}`}
+                        href={`/${lang}/awp-multigames/${recommendedMultigame.slug}`}
                         aria-label={`Scopri ${recommendedMultigame.title} - Sistema multigame AWP`}
                       >
                         <div className="rounded-lg overflow-hidden">

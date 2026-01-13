@@ -7,6 +7,7 @@ import type { Locale } from "@/i18n-config"
 import { generateAdvancedSEOMetadata } from "@/lib/seo-config"
 import GameContent from "@/components/games/game-content"
 import Script from "next/script"
+import { PageTransitionOverlay } from "@/components/page-transition-overlay"
 
 type Params = Promise<{ lang: Locale; gameId: string }>
 
@@ -128,80 +129,9 @@ export default async function GamePage(props: { params: Params }) {
   }
 
   // Redirect multigames to awp-multigames route
-  if (multigame) {
+  /* if (multigame) {
     redirect(`/${params.lang}/awp-multigames/${params.gameId}`)
-  }
-
-  // Generate schema for multigame (legacy - should not be reached due to redirect)
-  if (false && multigame) {
-    const translatedDescription =
-      dict.home?.multigames?.descriptions?.[multigame.slug as keyof typeof dict.home.multigames.descriptions] ||
-      multigame.description
-
-    const jsonLd = {
-      "@context": "https://schema.org",
-      "@type": ["Product", "Game"],
-      "@id": `https://www.vitalgamesdigital.com/${params.lang}/games/${params.gameId}`,
-      name: multigame.title,
-      description: translatedDescription,
-      category: "AWP Multigame System",
-      brand: {
-        "@type": "Brand",
-        name: "Vitalgames",
-      },
-      manufacturer: {
-        "@type": "Organization",
-        name: "Vitalgames",
-        url: "https://www.vitalgamesdigital.com",
-        logo: "https://www.vitalgamesdigital.com/logo.png",
-      },
-      image: [
-        {
-          "@type": "ImageObject",
-          url: `https://www.vitalgamesdigital.com${multigame.mainImage.src}`,
-          width: 1200,
-          height: 630,
-          caption: `${multigame.title} - Sistema multigame AWP`,
-        },
-      ],
-      breadcrumb: {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: `https://www.vitalgamesdigital.com/${params.lang}`,
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "Games",
-            item: `https://www.vitalgamesdigital.com/${params.lang}/games`,
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: multigame.title,
-            item: `https://www.vitalgamesdigital.com/${params.lang}/games/${params.gameId}`,
-          },
-        ],
-      },
-    }
-
-    return (
-      <>
-        <Script
-          id={`multigame-${params.gameId}-schema`}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd),
-          }}
-        />
-        <GameContent gameId={params.gameId} lang={params.lang} />
-      </>
-    )
-  }
+  } */
 
   // Generate schema for allgame
   if (allgame) {
@@ -250,6 +180,7 @@ export default async function GamePage(props: { params: Params }) {
 
     return (
       <>
+        <PageTransitionOverlay />
         <Script
           id={`game-${params.gameId}-schema`}
           type="application/ld+json"
@@ -257,6 +188,16 @@ export default async function GamePage(props: { params: Params }) {
             __html: JSON.stringify(gameSchema),
           }}
         />
+        <GameContent gameId={params.gameId} lang={params.lang} />
+      </>
+    )
+  }
+
+  // Render multigame content
+  if (multigame) {
+    return (
+      <>
+        <PageTransitionOverlay />
         <GameContent gameId={params.gameId} lang={params.lang} />
       </>
     )
