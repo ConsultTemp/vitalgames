@@ -54,7 +54,7 @@ export default async function MultigameContent({ multigame, lang }: MultigameCon
             </div>
           </div>
           <div className="px-4 md:px-8 lg:px-16 xl:px-24 space-y-16 relative z-10">
-            <h1 className="text-5xl dharmalight text-white mb-16">
+            <h1 className="text-5xl font-hitmarker-text-regular uppercase text-white my-10">
               {dict.includedGamesIn} {multigame.title}
             </h1>
 

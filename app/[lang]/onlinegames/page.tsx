@@ -246,7 +246,7 @@ export default async function OnlineGamesPage(props: { params: Params }) {
           <div className="px-4 md:px-8 lg:px-16 xl:px-24 relative z-10">
             <h2
               id="recommended-games-heading"
-              className="text-4xl md:text-5xl font-bold text-white mb-8 text-left dharma"
+              className="text-lg md:text-2xl uppercase text-white font-hitmarker-text-bold mb-8"
             >
               Giochi Consigliati
             </h2>

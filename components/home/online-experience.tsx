@@ -16,7 +16,7 @@ export default function OnlineExperience() {
       <div className="container mx-auto px-4 md:px-6">
         <Card className="group relative overflow-hidden border border-[#505050] hover:border-vitalYellow transition-all duration-500 bg-black rounded-2xl">
           {/* Sfondo bgMultigame di tutta la card - sempre visibile su mobile, visibile solo su hover su desktop */}
-          <div className="absolute inset-0 opacity-100 lg:opacity-0 transition-opacity duration-500 lg:group-hover:opacity-25">
+          <div className="absolute inset-0 opacity-50 lg:opacity-0 transition-opacity duration-500 lg:group-hover:opacity-25">
             <Image
               src={bgMultigame}
               alt="Background"
@@ -38,7 +38,11 @@ export default function OnlineExperience() {
                 {/* Bottone */}
                 <Link href={`/${lang}/games?type=online-games`}>
                   <Button 
-                    className="bg-[#403c00] border border-vitalYellow hover:scale-105 transition-all duration-300 px-8 text-white font-hitmarker-text-medium rounded-full h-12 text-base hover:bg-vitalYellow hover:text-black hover:animate-pulse"
+                    className="
+                    bg-[#403c00] border border-vitalYellow 
+                    hover:scale-105 transition-all duration-300 
+                    px-8 text-white font-hitmarker-text-medium rounded-full h-12 text-base uppercase 
+                    hover:bg-vitalYellow hover:text-black hover:animate-pulse"
                   >
                     Online games portfolio
                   </Button>

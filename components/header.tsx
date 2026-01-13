@@ -166,7 +166,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Navigation */}
-      <div className="md:hidden flex w-full px-4 py-3 items-center justify-between bg-gradient-to-b from-black/90 to-transparent fixed top-0 left-0 right-0 z-[999] border-b border-[#505050]">
+      <div className="md:hidden flex w-full px-4 py-3 items-center justify-between bg-gradient-to-b from-black/90 to-transparent fixed top-0 left-0 right-0 z-[999]">
 
         {/* Left side with Logo */}
         <div className="flex items-center z-[1002]">
@@ -182,56 +182,9 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Right side with Contact Button, Language Selector and Menu */}
+        {/* Right side with Menu only */}
         <div className="flex items-center gap-2 z-[1002]">
-          <Button
-            asChild
-            className="bg-vitalYellow hover:bg-vitalYellow/90 px-4 text-black font-medium rounded-md py-2 text-xs"
-          >
-            <Link href="/about-us#about-us-contact">{dict.header.contactUs}</Link>
-          </Button>
-
-          {/* Language Selector for Mobile Header */}
-          <DropdownMenu open={isLangMenuOpenMobile} onOpenChange={setIsLangMenuOpenMobile}>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="text-white flex items-center gap-1 px-2 py-1 backdrop-blur-sm rounded-md hover:bg-black-5 transition-all duration-300">
-                <Image
-                  src={languages.find(l => l.code === lang)?.flag || eng}
-                  alt={languages.find(l => l.code === lang)?.label || 'EN'}
-                  width={16}
-                  height={16}
-                  className="object-contain rounded-sm"
-                />
-                <span className="text-sm font-medium">{languages.find(l => l.code === lang)?.label || 'EN'}</span>
-                <ChevronDown 
-                  className={`w-4 h-4 transition-transform duration-300 ${isLangMenuOpenMobile ? 'rotate-180' : ''}`}
-                />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md z-[1003] rounded-sm">
-              {languages.map((language) => (
-                <DropdownMenuItem
-                  key={language.code}
-                  className={`text-sm ${lang === language.code ? 'text-vitalYellow' : 'text-white'} hover:bg-white/5 cursor-pointer flex items-center gap-2`}
-                  onClick={() => {
-                    const newPath = pathname.replace(/^\/[a-z]{2}/, `/${language.code}`);
-                    window.location.href = newPath;
-                  }}
-                >
-                  <Image
-                    src={language.flag}
-                    alt={language.label}
-                    width={20}
-                    height={20}
-                    className="object-contain rounded-sm"
-                  />
-                  <span>{language.label}</span>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-        <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild>
             <Button
               variant="ghost"
@@ -266,7 +219,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Content */}
-                    <div className="flex flex-col p-6 space-y-4 overflow-y-auto flex-grow">
+                    <div className="flex flex-col p-6 space-y-3 px-8 overflow-y-auto flex-grow">
                       {menuItems.map((item, index) => {
                         // Check if link is active (handle query params)
                         let isActive = false
@@ -294,50 +247,77 @@ export default function Navbar() {
                               <Link
                                 href={item.href}
                                 onClick={() => setIsSheetOpen(false)}
-                                className={`block text-lg font-semibold text-white transition-colors duration-300 ${isActive ? "text-white" : ""}`}
+                                className={`block text-2xl font-hitmarker-text-bold uppercase text-white transition-colors duration-300 ${isActive ? "text-white" : ""}`}
                               >
                                 {item.label}
                               </Link>
+                              {item.label !== "About us" && (
+                                <div className="border-b border-white/20 mt-3"></div>
+                              )}
                             </div>
                           </div>
                         )
                       })}
-                    </div>
+                      
+                      {/* Contact Button and Language Selector - moved below menu items */}
+                      <div className="space-y-4 pt-8">
+                        {/* Contact Button */}
+                        <Button
+                          asChild
+                          variant="vitalYellow"
+                          className="w-full"
+                        >
+                          <Link href="/about-us#about-us-contact" onClick={() => setIsSheetOpen(false)}>{dict.header.contactUs}</Link>
+                        </Button>
 
-                    {/* Footer */}
-                    <div className="p-6 space-y-4">
-
-                      {/* Language Selector for Mobile */}
-                      {/* <div className="ml-auto">
-                        <DropdownMenu>
+                        {/* Language Selector for Mobile */}
+                        <DropdownMenu open={isLangMenuOpenMobile} onOpenChange={setIsLangMenuOpenMobile}>
                           <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" size="icon" className="text-white hover:bg-white/5">
-                              <Globe className="h-5 w-5" />
+                            <Button className="text-white flex items-center gap-1 px-3 py-2 bg-white/10 border border-[#505050] rounded-full hover:bg-white/5 transition-all duration-300 w-full justify-start">
+                              <Image
+                                src={languages.find(l => l.code === lang)?.flag || eng}
+                                alt={languages.find(l => l.code === lang)?.label || 'EN'}
+                                width={16}
+                                height={16}
+                                className="object-contain rounded-sm"
+                              />
+                              <span className="text-sm font-medium">{languages.find(l => l.code === lang)?.label || 'EN'}</span>
+                              <ChevronDown 
+                                className={`w-4 h-4 transition-transform duration-300 ${isLangMenuOpenMobile ? 'rotate-180' : ''} ml-auto`}
+                              />
                             </Button>
                           </DropdownMenuTrigger>
-                          <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md ">
+                          <DropdownMenuContent align="end" className="bg-black/90 backdrop-blur-md z-[1003] rounded-sm">
                             {languages.map((language) => (
                               <DropdownMenuItem
                                 key={language.code}
-                                className={`text-sm ${lang === language.code ? 'text-vitalYellow' : 'text-white'} hover:bg-white/5 cursor-pointer`}
+                                className={`text-sm ${lang === language.code ? 'text-vitalYellow' : 'text-white'} hover:bg-white/5 cursor-pointer flex items-center gap-2`}
                                 onClick={() => {
                                   const newPath = pathname.replace(/^\/[a-z]{2}/, `/${language.code}`);
                                   window.location.href = newPath;
                                 }}
                               >
-                                {language.label}
+                                <Image
+                                  src={language.flag}
+                                  alt={language.label}
+                                  width={20}
+                                  height={20}
+                                  className="object-contain rounded-sm"
+                                />
+                                <span>{language.label}</span>
                               </DropdownMenuItem>
                             ))}
                           </DropdownMenuContent>
                         </DropdownMenu>
-                      </div> */}
+                      </div>
                     </div>
                   </div>
                 </motion.div>
               </>
             )}
           </AnimatePresence>
-        </Sheet>
+          </Sheet>
+        </div>
       </div>
     </header>
   )

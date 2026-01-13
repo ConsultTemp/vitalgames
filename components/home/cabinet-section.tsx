@@ -180,11 +180,16 @@ export default function CabinetSection() {
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden md:flex w-full flex-row items-center">
+        <div className="hidden md:flex w-full flex-row items-center font-hitmarker-text-black">
           {/* Left side - Text content */}
           <div className="w-1/2 pr-8">
             <div className={`transition-all duration-700 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-              <h2 className="text-5xl lg:text-8xl flex flex-col items-start font-bold text-white mb-6 dharma invisible md:visible">
+              <h2 
+              className="
+              flex flex-col items-start 
+              text-5xl lg:text-8xl text-white font-hitmarker-text-medium uppercase
+              mb-6
+              invisible md:visible">
                 <SmoothReveal>{cabinet.title}</SmoothReveal>
                 <SmoothReveal>{cabinet.titleLine2}</SmoothReveal>
                 <SmoothReveal>{cabinet.titleLine3}</SmoothReveal>

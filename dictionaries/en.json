@@ -383,6 +383,8 @@
     },
     "noGames": "No games found matching your criteria.",
     "loadMore": "Load More Games",
+    "contains": "Contains:",
+    "partOf": "Part of:",
     "recommended": {
       "badge": "Recommended games",
       "title": "Recommended games",

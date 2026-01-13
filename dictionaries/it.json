@@ -398,6 +398,8 @@
     },
     "noGames": "Nessun gioco trovato che corrisponda ai tuoi criteri.",
     "loadMore": "Carica Altri Giochi",
+    "contains": "Contiene:",
+    "partOf": "Fa parte di:",
     "recommended": {
       "badge": "Giochi Consigliati",
       "title": "Giochi consigliati",

@@ -324,7 +324,7 @@ export default async function AboutUs(props: { params: Params }) {
                         className="object-contain rounded-lg"
                       />
                     </div>
-                    <h3 className="text-lg font-bold text-white text-center px-3">{card.name}</h3>
+                    <h3 className="text-lg text-white font-hitmarker-text-bold uppercase text-center px-3">{card.name}</h3>
                   </div>
                 ))}
               </div>

@@ -32,10 +32,10 @@ export default function HeroSection() {
           <h2 className="text-vitalYellow text-lg mb-3 font-hitmarker-text-bold">
             {dict.hero?.subDescription || "VITAL GAMES"}
           </h2>
-          <h1 className="text-white text-4xl md:text-8xl mb-4 font-hitmarker-black uppercase tracking-[-1px]">
+          <h1 className="text-white text-4xl md:text-8xl mb-4 font-hitmarker-black uppercase tracking-[-0.5px]">
             {dict.hero?.title || "Eccellenza italiana e visione globale"}
           </h1>
-          <p className="text-white text-lg mb-7 max-w-2xl font-hitmarker-text-regular">
+          <p className="text-white text-base md:text-lg mb-7 max-w-2xl font-hitmarker-text-regular uppercase">
             {dict.hero?.description || "Dal 1996 guidiamo l’evoluzione del gioco con soluzioni sicure e all'avanguardia."}
           </p>
           <Link href="/games">

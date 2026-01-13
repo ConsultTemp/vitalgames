@@ -4,7 +4,9 @@ import { useState, useMemo, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useSearchParams, useRouter, usePathname } from "next/navigation"
+import { Search, PlayIcon } from "lucide-react"
 import SmoothReveal from "../smooth-reveal"
+import { Button } from "@/components/ui/button"
 import type { Locale } from "@/i18n-config"
 
 interface Multigame {
@@ -12,6 +14,7 @@ interface Multigame {
   title: string
   mainImage: any
   isComingSoon?: boolean
+  games?: Array<{ name: string; slug?: string }>
 }
 
 interface AllGame {
@@ -42,6 +45,8 @@ interface GamesSearchDict {
       onlineGames?: string
     }
     noGames?: string
+    contains?: string
+    partOf?: string
   }
 }
 
@@ -59,6 +64,13 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
   const pathname = usePathname()
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedType, setSelectedType] = useState<string | null>(null)
+
+  // Helper function to find the multigame that contains a game
+  const findMultigameForGame = (gameSlug: string) => {
+    return multigames.find((multigame) => 
+      multigame.games && multigame.games.some((g) => g.slug === gameSlug)
+    )
+  }
 
   // Initialize selectedType from URL params
   useEffect(() => {
@@ -112,23 +124,34 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
       {/* SEARCH BAR */}
       <section className="py-8 px-4">
         <div className="container mx-auto">
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder={dict.allGames?.filters?.search || "Search games..."}
-            className="w-full mx-auto bg-gray-800 text-white text-[16px] rounded-full px-6 py-3"
-          />
+          <div className="relative">
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-vitalYellow w-5 h-5" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder={dict.allGames?.filters?.search || "Search games..."}
+              className="w-full mx-auto 
+              bg-white/10 border border-white/10 rounded-full 
+              placeholder:text-white/40 text-white text-[16px]
+              pl-12 pr-6 py-3
+              focus:outline-none focus:ring-2 focus:ring-vitalYellow
+              "
+            />
+          </div>
           
           {/* Filter buttons */}
-          <div className="flex flex-wrap gap-4 mt-4 justify-start">
+          <div className="flex flex-wrap gap-2 mt-4 justify-start">
             <button
               type="button"
               onClick={() => handleTypeChange(null)}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
+              className={`
+                px-4 py-2 rounded-full 
+                text-sm font-hitmarker-text-medium uppercase
+                hover:scale-105 transition-all duration-300 ${
                 selectedType === null
                   ? 'bg-vitalYellow text-black border-0'
-                  : 'bg-black text-white border border-white'
+                  : 'bg-white/10 text-white border border-white/10'
               }`}
             >
               {dict.allGames?.filters?.all || "All"}
@@ -136,10 +159,10 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
             <button
               type="button"
               onClick={() => handleTypeChange('online-games')}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
+              className={`px-4 py-2 rounded-full text-sm font-hitmarker-text-medium hover:scale-105 transition-all duration-300 uppercase ${
                 selectedType === 'online-games'
                   ? 'bg-vitalYellow text-black border-0'
-                  : 'bg-black text-white border border-white'
+                  : 'bg-white/10 text-white border border-white/10'
               }`}
             >
               Online Games
@@ -147,10 +170,10 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
             <button
               type="button"
               onClick={() => handleTypeChange('awp-multigames')}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
+              className={`px-4 py-2 rounded-full text-sm font-hitmarker-text-medium hover:scale-105 transition-all duration-300 uppercase ${
                 selectedType === 'awp-multigames'
                   ? 'bg-vitalYellow text-black border-0'
-                  : 'bg-black text-white border border-white'
+                  : 'bg-white/10 text-white border border-white/10'
               }`}
             >
               AWP Multigames
@@ -158,10 +181,10 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
             <button
               type="button"
               onClick={() => handleTypeChange('all-games')}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
+              className={`px-4 py-2 rounded-full text-sm font-hitmarker-text-medium hover:scale-105 transition-all duration-300 uppercase ${
                 selectedType === 'all-games'
                   ? 'bg-vitalYellow text-black border-0'
-                  : 'bg-black text-white border border-white'
+                  : 'bg-white/10 text-white border border-white/10'
               }`}
             >
               All Games
@@ -174,9 +197,13 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
       {showMultigames && (
       <section aria-labelledby="multigames-heading" className="py-8 md:py-12 px-4">
         <div className="container mx-auto">
-          <h2 id="multigames-heading" className="text-4xl md:text-5xl font-bold text-white mb-8 text-left dharma flex items-center gap-3">
+          <h2 id="multigames-heading" 
+          className="
+          flex gap-1
+          text-4xl md:text-5xl text-white font-hitmarker-black uppercase
+          mb-8 text-left">
             AWP Multigames
-            <span className="text-2xl md:text-3xl text-gray-400 font-normal">
+            <span className="text-sm text-vitalYellow font-hitmarker-text-bold">
               ({filteredMultigames.length}{searchQuery.trim() && ` / ${multigames.length}`})
             </span>
           </h2>
@@ -184,23 +211,47 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
           {filteredMultigames.length > 0 ? (
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
               {filteredMultigames.map((game) => (
-                <SmoothReveal key={game.slug}>
-                  <Link href={`/${lang}/games/${game.slug}`} className="w-full aspect-[1080/1196] block group rounded-lg overflow-hidden relative">
+                <div key={game.slug} className="w-full aspect-[1080/1196] block group rounded-lg overflow-hidden relative">
+                  <Link href={`/${lang}/awp-multigames/${game.slug}`} className="w-full h-full block relative overflow-hidden rounded-lg">
                     <Image
                       src={game.mainImage}
                       alt={game.title}
-                      className="object-cover rounded-lg transition-transform duration-300 group-hover:scale-105 w-full h-full"
+                      className="object-cover rounded-lg transition-transform duration-300 md:group-hover:scale-105 w-full h-full"
                     />
                     {game.isComingSoon && (
                       <>
-                        <div className="absolute inset-0 border-2 border-red-500 rounded-lg" />
-                        <div className="absolute w-full top-0 left-0 right-0 flex flex-col items-center text-center font-bold">
+                        <div className="absolute inset-0 border-2 border-red-500 rounded-lg z-10" />
+                        <div className="absolute w-full top-0 left-0 right-0 flex flex-col items-center text-center font-bold z-10">
                           <p className="bg-red-500 text-white w-fit px-2 py-1 text-xs rounded-b-md">COMING SOON</p>
                         </div>
                       </>
                     )}
                   </Link>
-                </SmoothReveal>
+                  {/* Tendina che sale dal basso - solo su desktop con hover */}
+                  <div className="hidden md:block absolute bottom-0 left-0 right-0 bg-black/90 rounded-t-xl transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20 p-3">
+                    <h3 className="text-vitalYellow font-hitmarker-black text-xl mb-2 uppercase">
+                      {game.title}
+                    </h3>
+                    {game.games && game.games.length > 0 && (
+                      <>
+                        <p className="text-xs font-hitmarker-text-regular text-white/60 mb-1.5">{dict.allGames?.contains || "Contiene:"}</p>
+                        <ul className="space-y-1 mb-3 font-hitmarker-text-regular text-white/60">
+                        {game.games.map((g, idx) => (
+                          <li key={idx} className="flex items-center gap-1 text-white font-hitmarker-text-medium uppercase">
+                            <span className="w-1 h-1 rounded-full bg-vitalYellow flex-shrink-0"></span>
+                            <span>{g.name}</span>
+                          </li>
+                        ))}
+                        </ul>
+                      </>
+                    )}
+                    <Link href={`/${lang}/awp-multigames/${game.slug}`}>
+                      <Button variant="vitalYellow" className="w-full">
+                        SCOPRI DI PIÙ
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
               ))}
             </div>
           ) : (
@@ -214,9 +265,13 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
       {showAllGames && (
       <section aria-labelledby="allgames-heading" className="py-8 md:py-12 px-4">
         <div className="container mx-auto">
-          <h2 id="allgames-heading" className="text-4xl md:text-5xl font-bold text-white mb-8 text-left dharma flex items-center gap-3">
+          <h2 id="allgames-heading" 
+          className="
+          flex gap-1
+          text-4xl md:text-5xl text-white font-hitmarker-black uppercase
+          mb-8 text-left">
             All Games
-            <span className="text-2xl md:text-3xl text-gray-400 font-normal">
+            <span className="text-sm text-vitalYellow font-hitmarker-text-bold">
               ({filteredAllGames.length}{searchQuery.trim() && ` / ${allGames.length}`})
             </span>
           </h2>
@@ -224,23 +279,45 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
           {filteredAllGames.length > 0 ? (
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
               {filteredAllGames.map((game) => (
-                <SmoothReveal key={game.name}>
-                  <Link href={`/${lang}/games/${game.slug}`} className="w-full aspect-[1080/1196] block group rounded-lg overflow-hidden relative">
+                <div key={game.name} className="w-full aspect-[1080/1196] block group rounded-lg overflow-hidden relative">
+                  <Link href={`/${lang}/awp-multigames/${game.slug}`} className="w-full h-full block relative overflow-hidden rounded-lg">
                     <Image
                       src={game.mainImage}
                       alt={game.name}
-                      className="object-cover rounded-lg transition-transform duration-300 group-hover:scale-105 w-full h-full"
+                      className="object-cover rounded-lg transition-transform duration-300 md:group-hover:scale-105 w-full h-full"
                     />
                     {game.isComingSoon && (
                       <>
-                        <div className="absolute inset-0 border-2 border-red-500 rounded-lg" />
-                        <div className="absolute w-full top-0 left-0 right-0 flex flex-col items-center text-center font-bold">
+                        <div className="absolute inset-0 border-2 border-red-500 rounded-lg z-10" />
+                        <div className="absolute w-full top-0 left-0 right-0 flex flex-col items-center text-center font-bold z-10">
                           <p className="bg-red-500 text-white w-fit px-2 py-1 text-xs rounded-b-md">COMING SOON</p>
                         </div>
                       </>
                     )}
                   </Link>
-                </SmoothReveal>
+                  {/* Tendina che sale dal basso - solo su desktop con hover */}
+                  <div className="hidden text-center md:block absolute bottom-0 left-0 right-0 bg-black/90 rounded-t-xl transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20 p-3">
+                    <h3 className="text-vitalYellow font-hitmarker-black text-2xl mb-2 uppercase">
+                      {game.name}
+                    </h3>
+                    {(() => {
+                      const multigame = findMultigameForGame(game.slug)
+                      return multigame ? (
+                        <p className="text-xs font-hitmarker-text-regular text-white/60 text-center mb-3 uppercase">
+                          {dict.allGames?.partOf || "Fa parte di: "}
+                          <span className="text-white font-hitmarker-text-bold ml-1">
+                            {multigame.title}
+                          </span>
+                        </p>
+                      ) : null
+                    })()}
+                    <Link href={`/${lang}/games/${game.slug}`}>
+                      <Button variant="vitalYellow" className="w-full">
+                        SCOPRI DI PIÙ
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
               ))}
             </div>
           ) : (
@@ -254,9 +331,13 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
       {showOnlineGames && (
       <section aria-labelledby="onlinegames-heading" className="py-8 md:py-12 px-4">
         <div className="container mx-auto">
-          <h2 id="onlinegames-heading" className="text-4xl md:text-5xl font-bold text-white mb-8 text-left dharma flex items-center gap-3">
-            Online Games
-            <span className="text-2xl md:text-3xl text-gray-400 font-normal">
+          <h2 id="onlinegames-heading" 
+            className="
+            flex gap-1
+            text-4xl md:text-5xl text-white font-hitmarker-black uppercase
+            mb-8 text-left">            
+              Online Games
+            <span className="text-sm text-vitalYellow font-hitmarker-text-bold">
               ({filteredOnlineGames.length}{searchQuery.trim() && ` / ${onlineGames.length}`})
             </span>
           </h2>
@@ -264,20 +345,40 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
           {filteredOnlineGames.length > 0 ? (
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
               {filteredOnlineGames.map((game) => (
-                <SmoothReveal key={game.title}>
+                <div key={game.title} className="w-full aspect-[1080/1196] block group rounded-lg overflow-hidden relative">
                   <a
                     href={game.demoLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full aspect-[1080/1196] block group rounded-lg overflow-hidden relative"
+                    className="w-full h-full block relative overflow-hidden rounded-lg"
                   >
                     <Image
                       src={game.image}
                       alt={game.title}
-                      className="object-cover rounded-lg transition-transform duration-300 group-hover:scale-105 w-full h-full"
+                      className="object-cover rounded-lg transition-transform duration-300 md:group-hover:scale-105 w-full h-full"
                     />
                   </a>
-                </SmoothReveal>
+                  {/* Tendina che sale dal basso - solo su desktop con hover */}
+                  <div className="hidden text-center md:block absolute bottom-0 left-0 right-0 bg-black/90 rounded-t-xl transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20 p-3">
+                    <h3 className="text-vitalYellow font-hitmarker-black text-2xl mb-2 uppercase">
+                      {game.title}
+                    </h3>
+                    <p className="text-xs font-hitmarker-text-regular text-white/60 text-center mb-3 uppercase">
+                      A GAME BY VITAL GAMES DIGITAL
+                    </p>
+                    <a
+                      href={game.demoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full block"
+                    >
+                      <Button variant="vitalYellow" className="w-full">
+                        <PlayIcon className="h-5 w-5" fill="black" />
+                        PLAY DEMO
+                      </Button>
+                    </a>
+                  </div>
+                </div>
               ))}
             </div>
           ) : (

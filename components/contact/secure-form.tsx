@@ -266,43 +266,47 @@ const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
         <div className="grid md:grid-cols-5 gap-8 max-w-6xl mx-auto">
           <aside className="bg-white/5 backdrop-blur-sm rounded-lg p-8 h-full md:col-span-2">
             <div className="space-y-8">
-              <div className="mb-8">
-                <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 dharmalight">{dictionary.title}</h2>
+              <div className="mb-2">
+                <h2 className="
+                text-4xl md:text-6xl font-bold text-white font-hitmarker-black uppercase tracking-[-0,5px]
+                mb-1"
+                >{dictionary.title}</h2>
               </div>
 
               <div className="flex items-center space-x-4">
                 <Phone className="text-white" size={20} />
-                <div className="space-y-2">
-                  <h3 className="text-white font-semibold">{dictionary.phone}</h3>
-                  <p className="text-gray-300 text-sm">+39 02 3282352</p>
+                <div className="">
+                  <h3 className="
+                  text-white font-hitmarker-text-regular text-sm uppercase">{dictionary.phone}</h3>
+                  <p className="text-white font-hitmarker-text-bold text-lg">+39 02 3282352</p>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4">
                 <Mail className="text-white" size={20} />
-                <div className="space-y-2">
-                  <h3 className="text-white font-semibold">{dictionary.emailLabel}</h3>
-                  <p className="text-gray-300 text-sm">amministrazione@vitalgames.it</p>
+                <div className="">
+                  <h3 className="text-white font-hitmarker-text-regular text-sm uppercase">{dictionary.emailLabel}</h3>
+                  <p className="text-white font-hitmarker-text-bold text-lg uppercase">amministrazione@vitalgames.it</p>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4">
                 <MapPin className="text-white" size={20} />
-                <div className="space-y-2">
-                  <h3 className="text-white font-semibold">{dictionary.address}</h3>
-                  <p className="text-gray-300 text-sm">Via Cusago 160,Milano, Lombardia, Italia</p>
+                <div className="">
+                  <h3 className="text-white font-hitmarker-text-regular text-sm uppercase">{dictionary.address}</h3>
+                  <p className="text-white font-hitmarker-text-bold text-lg uppercase">Via Cusago 160,Milano, Lombardia, Italia</p>
                 </div>
               </div>
             </div>
           </aside>
           <div className="flex flex-col h-full md:col-span-3">
             <div className="mb-8">
-              <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 dharmalight">{dictionary.title}</h2>
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 font-hitmarker-black uppercase tracking-[-0,5px]">{dictionary.title}</h2>
             </div>
 
             <div className="flex-grow">
               {submitStatus === "success" && (
-                <div className="mb-6 p-4 bg-green-500/20 border border-green-500 rounded-lg text-green-300">
+                <div className="mb-6 p-4 bg-vitalYellow text-black font-hitmarker-text-bold text-lg uppercase">
                   ✅ {dictionary.successMessage}
                 </div>
               )}
@@ -371,7 +375,7 @@ const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
                         onChange={handleInputChange}
                         placeholder={dictionary.captchaPlaceholder}
                         maxLength={4}
-                        className={`w-full px-4 py-2 bg-white/10 backdrop-blur-sm border rounded-lg text-white text-center text-lg tracking-widest focus:outline-none focus:ring-2 ${captchaError ? "border-red-500 focus:ring-red-400" : "border-white"
+                        className={`w-full px-4 py-2 bg-white/10 backdrop-blur-lg border rounded-lg text-white text-center text-lg tracking-widest focus:outline-none focus:ring-2 focus:ring-vitalYellow ${captchaError ? "border-red-500 focus:ring-red-400" : "border-white"
                           }`}
                         disabled={isSubmitting}
                         autoFocus
@@ -450,10 +454,10 @@ const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
                     autoComplete="off"
                   />
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div>
-                      <label htmlFor="name" className="block text-white mb-2">
-                        {dictionary.name} *
+                      <label htmlFor="name" className="block text-white mb-2 font-hitmarker-text-regular text-sm uppercase">
+                        {dictionary.name}*
                       </label>
                       <input
                         type="text"
@@ -462,7 +466,13 @@ const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
                         value={formData.name}
                         onChange={handleInputChange}
                         placeholder={dictionary.namePlaceholder}
-                        className={`w-full px-4 py-2 bg-white/5 backdrop-blur-sm border rounded-lg text-white focus:outline-none focus:ring-2 ${errors.name ? "border-red-500 focus:ring-red-400" : "border-white"
+                        className={`
+                          w-full px-4 py-3 
+                          bg-white/5 backdrop-blur-2xl border rounded-lg 
+                          text-white font-hitmarker-text-bold text-sm uppercase
+                          placeholder:text-white/60 placeholder:font-hitmarker-text-regular placeholder:text-sm placeholder:uppercase
+                          focus:outline-none focus:ring-2 focus:ring-vitalYellow
+                          ${errors.name ? "border-red-500 focus:ring-red-400" : "border-white"
                           }`}
                         disabled={isSubmitting}
                       />
@@ -470,8 +480,8 @@ const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-white mb-2">
-                        {dictionary.email} *
+                      <label htmlFor="email" className="block text-white mb-2 font-hitmarker-text-regular text-sm uppercase">
+                        {dictionary.email}*
                       </label>
                       <input
                         type="email"
@@ -480,7 +490,13 @@ const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder={dictionary.emailPlaceholder}
-                        className={`w-full px-4 py-2 bg-white/5 backdrop-blur-sm border rounded-lg text-white focus:outline-none focus:ring-2 ${errors.email ? "border-red-500 focus:ring-red-400" : "border-white"
+                        className={`
+                          w-full px-4 py-3 
+                          bg-white/5 backdrop-blur-2xl border rounded-lg 
+                          text-white font-hitmarker-text-bold text-sm uppercase
+                          placeholder:text-white/60 placeholder:font-hitmarker-text-regular placeholder:text-sm placeholder:uppercase
+                          focus:outline-none focus:ring-2 focus:ring-vitalYellow  
+                          ${errors.email ? "border-red-500 focus:ring-red-400" : "border-white"
                           }`}
                         disabled={isSubmitting}
                       />
@@ -489,8 +505,8 @@ const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-white mb-2">
-                      {dictionary.message} *
+                    <label htmlFor="message" className="block text-white mb-2 font-hitmarker-text-regular text-sm uppercase">
+                      {dictionary.message}*
                     </label>
                     <textarea
                       id="message"
@@ -499,7 +515,13 @@ const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
                       onChange={handleInputChange}
                       rows={4}
                       placeholder={dictionary.messagePlaceholder}
-                      className={`w-full px-4 py-2 bg-white/5 backdrop-blur-sm border rounded-lg text-white focus:outline-none focus:ring-2 resize-vertical ${errors.message ? "border-red-500 focus:ring-red-400" : "border-white"
+                      className={`
+                        w-full px-4 py-2 
+                        bg-white/5 backdrop-blur-2xl border rounded-lg 
+                        text-white font-hitmarker-text-bold text-sm uppercase
+                        placeholder:text-white/60 placeholder:font-hitmarker-text-regular placeholder:text-sm placeholder:uppercase
+                        focus:outline-none focus:ring-2 focus:ring-vitalYellow resize-vertical
+                        ${errors.message ? "border-red-500 focus:ring-red-400" : "border-white"
                         }`}
                       disabled={isSubmitting}
                     />
@@ -510,7 +532,7 @@ const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
                     type="button"
                     onClick={handleInitialSubmit}
                     disabled={isSubmitting}
-                    className={`w-full py-3 px-6 rounded-lg font-semibold text-black transition-all duration-200 ${isSubmitting
+                    className={`w-full py-3 px-6 rounded-lg font-hitmarker-text-medium text-black text-lg uppercase transition-all duration-200 ${isSubmitting
                         ? "bg-gray-400 cursor-not-allowed"
                         : "bg-vitalYellow hover:opacity-80"
                       }`}
@@ -537,7 +559,7 @@ const SecureContactForm: React.FC<{ lang: string }> = ({ lang }) => {
                     )}
                   </button>
 
-                  <p className="text-gray-400 text-xs text-center">* {dictionary.requiredFields}</p>
+                  <p className="text-white/60 text-xs text-center font-hitmarker-text-regular uppercase">* {dictionary.requiredFields}</p>
                 </div>
               )}
             </div>

@@ -56,7 +56,9 @@ export default function WinningTechnology() {
         </div>
 
         {/* Main Title */}
-        <h1 className="text-3xl max-w-2xl mx-auto md:text-7xl font-hitmarker-black mb-6 text-white uppercase tracking-[-0.5px]">{dict.home.winningTechnology.title}</h1>
+        <h1 className="
+        text-4xl md:text-7xl uppercase font-hitmarker-black
+        max-w-2xl mx-auto mb-6 text-white uppercase tracking-[-0.5px]">{dict.home.winningTechnology.title}</h1>
 
         {/* First Text Block */}
         <p className="text-sm md:text-base mb-5 font-hitmarker-text-regular text-white max-w-2xl">

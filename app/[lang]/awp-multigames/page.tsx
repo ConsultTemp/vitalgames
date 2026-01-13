@@ -5,9 +5,9 @@ import type { Locale } from "@/i18n-config"
 import { generateAdvancedSEOMetadata } from "@/lib/seo-config"
 import Image from "next/image"
 import Link from "next/link"
-import SmoothReveal from "@/components/smooth-reveal"
 import VideoHero from "@/components/VideoHero"
 import FloatingImage from "@/components/bg-image-component"
+import { Button } from "@/components/ui/button"
 import sevens from "../../../public/seven.png"
 import bar from "../../../public/bar.png"
 import { games } from "@/lib/allgames"
@@ -220,17 +220,19 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
               <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 w-full">
                 {multigames.map((game) => (
                   <article key={game.id} className="transition-all duration-300">
-                    <SmoothReveal>
+                    <div
+                      className="w-full block group rounded-lg relative overflow-hidden"
+                    >
                       <Link
                         href={ game.isComingSoon && game.slug == "fortune-gold" ? `/${lang}/awp-multigames` : `/${lang}/awp-multigames/${game.slug}`}
-                        className="w-full block group rounded-lg relative overflow-hidden hover:scale-105 transition-all duration-300"
+                        className="w-full block relative overflow-hidden rounded-lg"
                         aria-label={`Scopri ${game.title} - ${game.description}`}
                       >
                         <div className="w-full h-full relative">
                           <Image
                             src={game.mainImage || "/placeholder.svg"}
                             alt={`${game.title} - Sistema multigame AWP con 5 giochi`}
-                            className="object-cover w-full h-full"
+                            className="object-cover w-full h-full md:group-hover:scale-105 transition-transform duration-300"
                             width={1080}
                             height={1196}
                             loading="lazy"
@@ -238,14 +240,38 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
                         </div>
                         {game.isComingSoon && (
                           <>
-                            <div className="absolute inset-0 border-4 border-red-500 rounded-md" />
-                            <div className="absolute w-full top-0 left-0 right-0 flex flex-col items-center text-center font-bold">
+                            <div className="absolute inset-0 border-4 border-red-500 rounded-md z-10" />
+                            <div className="absolute w-full top-0 left-0 right-0 flex flex-col items-center text-center font-bold z-10">
                               <p className="bg-red-500 text-white w-fit px-2 py-1 text-xs rounded-b-md">COMING SOON</p>
                             </div>
                           </>
                         )}
                       </Link>
-                    </SmoothReveal>
+                      {/* Tendina che sale dal basso - solo su desktop con hover */}
+                      <div className="hidden md:block absolute bottom-0 left-0 right-0 bg-black/70 rounded-t-xl transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-20 p-3">
+                        <h3 className="text-white font-hitmarker-black text-xl mb-2 uppercase">
+                          {game.title}
+                        </h3>
+                        {game.games && game.games.length > 0 && (
+                          <>
+                            <p className="text-xs text-white/60 mb-1.5">{dict.allGames?.contains || "Contiene:"}</p>
+                            <ul className="space-y-1 mb-3">
+                            {game.games.map((g, idx) => (
+                              <li key={idx} className="flex items-center gap-1.5 text-white font-hitmarker-text-regular">
+                                <span className="w-1.5 h-1.5 rounded-full bg-vitalYellow flex-shrink-0"></span>
+                                <span>{g.name}</span>
+                              </li>
+                            ))}
+                            </ul>
+                          </>
+                        )}
+                        <Link href={ game.isComingSoon && game.slug == "fortune-gold" ? `/${lang}/awp-multigames` : `/${lang}/awp-multigames/${game.slug}`}>
+                          <Button variant="vitalYellow" className="w-full">
+                            SCOPRI DI PIÙ
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
                   </article>
                 ))}
               </div>
@@ -260,14 +286,12 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
             <div className="relative z-10">
               <div className="container mx-auto px-3">
                 <div className="mb-8 w-full flex flex-col items-start">
-                  <SmoothReveal>
-                    <h2
-                      id="recommended-heading"
-                      className="text-start dharmalight text-3xl md:text-5xl font-bold text-white whitespace-normal md:whitespace-nowrap"
-                    >
-                      {dict.awpMultigames.page.section.title}
-                    </h2>
-                  </SmoothReveal>
+                  <h2
+                    id="recommended-heading"
+                    className="text-start dharmalight text-3xl md:text-5xl font-bold text-white whitespace-normal md:whitespace-nowrap"
+                  >
+                    {dict.awpMultigames.page.section.title}
+                  </h2>
                 </div>
 
                 <div>
@@ -278,22 +302,21 @@ export default async function AwpMultigamesPage({ params }: { params: Params }) 
 
                   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5  gap-3 md:gap-4">
                     {games.slice(0, 5).map((game) => (
-                      <SmoothReveal key={game.id}>
-                        <Link
-                          href={`/${lang}/allgames/${game.slug}`}
-                          className="w-full aspect-[1080/1196] block group rounded-lg overflow-hidden relative"
-                          aria-label={`Vai a ${game.title}`}
-                        >
-                          <Image
-                            src={game.image || "/placeholder.svg"}
-                            alt={`${game.title}`}
-                            className="object-cover rounded-lg w-full h-full transition-transform duration-300 group-hover:scale-105"
-                            width={1080}
-                            height={1196}
-                            loading="lazy"
-                          />
-                        </Link>
-                      </SmoothReveal>
+                      <Link
+                        key={game.id}
+                        href={`/${lang}/allgames/${game.slug}`}
+                        className="w-full aspect-[1080/1196] block group rounded-lg overflow-hidden relative"
+                        aria-label={`Vai a ${game.title}`}
+                      >
+                        <Image
+                          src={game.image || "/placeholder.svg"}
+                          alt={`${game.title}`}
+                          className="object-cover rounded-lg w-full h-full transition-transform duration-300 group-hover:scale-105"
+                          width={1080}
+                          height={1196}
+                          loading="lazy"
+                        />
+                      </Link>
                     ))}
                   </div>
                 </div>

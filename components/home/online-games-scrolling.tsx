@@ -40,7 +40,7 @@ export default function OnlineGamesScrolling() {
         <div 
           className="absolute left-0 bottom-0 w-full h-32 md:h-48 z-10 pointer-events-none"
           style={{
-            background: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 20%, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.6) 70%, transparent 100%)'
+            background: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 10%, rgba(0,0,0,0.85) 60%, transparent 100%)'
           }}
         />
         
@@ -48,7 +48,7 @@ export default function OnlineGamesScrolling() {
         <div 
           className="absolute inset-0 z-9 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse at center, transparent 0%, transparent 50%, rgba(0,0,0,0.25) 100%)'
+            background: 'radial-gradient(ellipse at center, transparent 20%, transparent 60%, rgba(0,0,0,0.25) 100%)'
           }}
         />
 
@@ -58,9 +58,9 @@ export default function OnlineGamesScrolling() {
             {duplicatedGames.map((game, index) => (
               <div
                 key={`row1-${game.id}-${index}`}
-                className="flex-shrink-0 mx-1 md:mx-2 w-[200px] h-[200px] md:w-[300px] md:h-[300px]"
+                className="flex-shrink-0 mx-1 md:mx-2 w-[200px] h-[200px] md:w-[280px] md:h-[280px]"
               >
-                <div className="w-full h-full rounded-md overflow-hidden border border-[#505050]">
+                <div className="w-full h-full rounded-md overflow-hidden border border-white/50">
                   <Image
                     src={game.image || "/placeholder.svg"}
                     alt={game.title}
@@ -80,9 +80,9 @@ export default function OnlineGamesScrolling() {
             {duplicatedReversedGames.map((game, index) => (
               <div
                 key={`row2-${game.id}-${index}`}
-                className="flex-shrink-0 mx-1 md:mx-2 w-[200px] h-[200px] md:w-[300px] md:h-[300px]"
+                className="flex-shrink-0 mx-1 md:mx-2 w-[200px] h-[200px] md:w-[280px] md:h-[280px]"
               >
-                <div className="w-full h-full rounded-md overflow-hidden border border-[#505050]">
+                <div className="w-full h-full rounded-md overflow-hidden border border-white/50">
                   <Image
                     src={game.image || "/placeholder.svg"}
                     alt={game.title}
@@ -98,24 +98,32 @@ export default function OnlineGamesScrolling() {
       </div>
 
       {/* Titolo, paragrafo e bottone - in basso a sinistra, responsive */}
-      <div className="absolute bottom-4 md:bottom-8 left-0 right-0 z-20">
+      <div className="absolute bottom-0 left-0 right-0 z-20">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
+          <h2 className="
+          text-white text-3xl md:text-7xl text-center md:text-left
+          font-hitmarker-black tracking-[-0.5px] uppercase 
+          mb-1">
             {dict.home?.onlineGames?.title || "Game Library"}
           </h2>
-          <p className="text-gray-400 text-xs md:text-sm lg:text-base mb-3 md:mb-4 max-w-md">
+          <p className="text-white font-hitmarker-text-regular text-xs md:text-lg mb-3 md:mb-4 max-w-md text-center md:text-left leading-thight uppercase">
             All online games titles, from upcoming releases to classic favorites.
           </p>
           <Link href={`/${lang}/games?type=online-games`}>
             <Button 
-              variant={"outline"} 
-              className="border border-[#505050] rounded-full text-white font-hitmarker-text-medium text-sm md:text-base h-8 md:h-9 bg-transparent px-3 md:px-4 py-2 hover:bg-white/10 transition-all duration-300"
+              variant={"vitalYellow"} 
+              className="
+              bg-[#403c00] border border-vitalYellow w-full md:w-auto
+              text-white font-hitmarker-text-medium rounded-full h-12 text-base uppercase 
+              px-8
+              hover:scale-105 transition-all duration-300 
+              hover:bg-vitalYellow hover:text-black"
             >
               {dict.home?.onlineGames?.viewAll || "View all"}
-            </Button>
-          </Link>
-        </div>
-      </div>
-    </section>
-  )
+  </Button>
+</Link>
+</div>
+</div>
+</section>
+)
 }

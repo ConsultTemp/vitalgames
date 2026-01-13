@@ -55,7 +55,7 @@ export default function Partners() {
       <section className="py-16 px-0 sm:px-0 md:px-12 lg:px-16 relative">
         <div className="relative">
           {/* @ts-ignore */}
-          <h2 className="text-6xl md:text-7xl text-center mb-8 text-white font-hitmarker-black uppercase tracking-[-1px]">{dict.home.partners.title}</h2>
+          <h2 className="text-4xl md:text-7xl text-center mb-8 text-white font-hitmarker-black uppercase tracking-[-1px]">{dict.home.partners.title}</h2>
 
           <div className="overflow-hidden relative">
             {/* Sfumatura sinistra */}
@@ -70,7 +70,6 @@ export default function Partners() {
                   <div
                     key={`${partner.id}-${index}`}
                     className="flex-shrink-0 flex items-center justify-center px-3"
-                    loop={true}
                     onMouseEnter={() => setHoveredPartner(partner.id)}
                     onMouseLeave={() => setHoveredPartner(null)}
                     onClick={() => setClickedPartner(clickedPartner === partner.id ? null : partner.id)}
@@ -82,7 +81,7 @@ export default function Partners() {
                           alt={partner.name}
                           fill
                           className={`object-contain transition-opacity duration-300 ${
-                            isActive ? 'opacity-100' : 'opacity-50'
+                            isActive ? 'opacity-100' : 'opacity-70'
                           }`}
                           sizes="270px"
                         />

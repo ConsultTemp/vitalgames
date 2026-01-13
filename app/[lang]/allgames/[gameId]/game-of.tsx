@@ -2,7 +2,8 @@
 
 import { useParams } from "next/navigation"
 import Image from "next/image"
-import { OptimizedLink as Link } from "@/components/optimized-link"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
 import { multigames } from "@/lib/multigames"
 import { notFound } from "next/navigation"
 import { useLanguage } from "@/components/language-provider"
@@ -10,7 +11,7 @@ import { useLanguage } from "@/components/language-provider"
 export default function Multigame() {
   const params = useParams()
   const gameId = params.gameId as string
-  const { dictionary: dict } = useLanguage()
+  const { dictionary: dict, lang } = useLanguage()
   console.log(gameId)
 
   // Cerca il gioco corrispondente nel multigames object
@@ -26,8 +27,8 @@ export default function Multigame() {
       
       <div className="flex flex-col md:flex-row gap-8">
         <div className="w-full md:w-5/12 flex flex-col justify-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 dharma">{dict.multigameDetail.partOf}</h2>
-          <div className="relative w-full aspect-[4/3]">
+          <h2 className="text-lg md:text-2xl uppercase text-white font-hitmarker-text-bold mb-8">{dict.multigameDetail.partOf}</h2>
+          <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden">
             <Image
               src={game.mainImage || "/placeholder.svg"}
               alt={game.title}
@@ -39,15 +40,15 @@ export default function Multigame() {
         </div>
 
         <div className="w-full md:w-7/12 flex flex-col justify-center">
-        <h4 className="text-4xl md:text-7xl font-bold mb-3 dharma">{game.title}</h4>
+        <p className="text-base uppercase text-vitalYellow font-hitmarker-text-bold">MULTIGAME</p>
+        <h4 className="text-5xl md:text-7xl font-bold mb-3 font-hitmarker-black uppercase tracking-[-0.5px]">{game.title}</h4>
         {/* @ts-ignore */}
-          <p className="text-sm mb-8 text-gray-300">{dict.home.multigames.descriptions?.[game.slug]}</p>
+          <p className="text-sm font-hitmarker-text-regular mb-8 text-white/60 uppercase">{dict.home.multigames.descriptions?.[game.slug]}</p>
           <div>
-            <Link
-              href={`/awp-multigames/${game.slug}`}
-              className="inline-block px-6 py-3 bg-transparent border border-white rounded-full text-white hover:bg-white hover:text-black transition-colors"
-            >
-              Scopri di più
+            <Link href={`/${lang}/awp-multigames/${game.slug}`}>
+              <Button variant="vitalYellow" className="px-8 py-6 uppercase">
+                Scopri di più
+              </Button>
             </Link>
           </div>
         </div>

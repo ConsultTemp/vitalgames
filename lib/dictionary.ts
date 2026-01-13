@@ -302,6 +302,8 @@ export interface Dictionary {
     }
     noGames: string
     loadMore: string
+    contains: string
+    partOf: string
     recommended: {
       badge: string
       title: string

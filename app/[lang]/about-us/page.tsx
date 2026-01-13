@@ -5,15 +5,11 @@ import type { Locale } from "@/i18n-config"
 import { generateAdvancedSEOMetadata, enhancedCompanyData } from "@/lib/seo-config"
 import Script from "next/script"
 import SmoothReveal from "@/components/smooth-reveal"
-import { Card } from "@/components/ui/card"
 import vitalhq from "../../../public/vital-hq.jpeg"
 import vitalpres from "../../../public/vitalgames-pres.jpeg"
-import iso from "@/public/isologo.svg"
-import star from "@/public/star1.png"
-import diamond from "@/public/diamante1.png"
-import coin from "@/public/coin2.png"
 import Partners from "@/components/home/partners"
 import VideoHero from "@/components/VideoHero"
+import WinningTechnology from "@/components/home/winning-technology"
 import { Phone, Mail, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import FloatingImage from "@/components/bg-image-component"
@@ -99,33 +95,6 @@ export async function generateMetadata(props: { params: Params }): Promise<Metad
 export default async function AboutUs(props: { params: Params }) {
   const params = await props.params
   const dictionary = await getDictionary(params.lang)
-
-  const cards = [
-    {
-      id: 1,
-      icon: iso,
-      alt: "ISO Certification",
-      description: dictionary.aboutUs.cards.iso.description,
-    },
-    {
-      id: 2,
-      icon: star,
-      alt: "Star Icon",
-      description: dictionary.aboutUs.cards.experience.description,
-    },
-    {
-      id: 3,
-      icon: diamond,
-      alt: "Diamond Icon",
-      description: dictionary.aboutUs.cards.games.description,
-    },
-    {
-      id: 4,
-      icon: coin,
-      alt: "Coin Icon",
-      description: dictionary.aboutUs.cards.partners.description,
-    },
-  ]
 
   // Generate comprehensive schema for About Us page
   const aboutUsSchema = {
@@ -427,55 +396,9 @@ export default async function AboutUs(props: { params: Params }) {
         </section>
 
         {/* Winning Technology Section */}
-        <section className="technology-bg" aria-labelledby="technology-section">
-          <div className="flex min-h-screen flex-col items-center justify-center py-8 px-2 md:px-3">
-            <div className="max-w-6xl w-full flex flex-col items-center text-center">
-              <h2 id="technology-section" className="sr-only">
-                {params.lang === "it"
-                  ? "Tecnologia e Innovazione"
-                  : params.lang === "en"
-                    ? "Technology and Innovation"
-                    : "Tecnología e Innovación"}
-              </h2>
-
-              {/* Three paragraphs */}
-              <div className="space-y-6 mb-12 max-w-2xl">
-                <p
-                  className="text-xs md:text-sm text-white"
-                  dangerouslySetInnerHTML={{ __html: dictionary.aboutUs.description }}
-                />
-                <p
-                  className="text-xs md:text-sm text-white"
-                  dangerouslySetInnerHTML={{ __html: dictionary.aboutUs.philosophy.description }}
-                />
-                <p
-                  className="text-xs md:text-sm text-white"
-                  dangerouslySetInnerHTML={{ __html: dictionary.aboutUs.presence.description }}
-                />
-              </div>
-
-              {/* Cards Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-1.5 w-full">
-                {cards.map((card) => (
-                  <article key={card.id} className="">
-                    <Card className="h-full w-full flex flex-col items-center justify-center text-center p-4 bg-white/5 backdrop-blur-sm border-0 text-white py-4">
-                      <div className="h-14 sm:h-16 mb-3">
-                        <Image
-                          src={card.icon || "/placeholder.svg"}
-                          alt={card.alt}
-                          width={60}
-                          height={60}
-                          className="object-contain h-full w-auto"
-                        />
-                      </div>
-                      <p className="text-xs sm:text-sm" dangerouslySetInnerHTML={{ __html: card.description }} />
-                    </Card>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        <div className="technology-bg">
+          <WinningTechnology />
+        </div>
 
         <Partners />
       </div>

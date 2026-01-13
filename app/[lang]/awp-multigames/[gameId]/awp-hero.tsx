@@ -83,9 +83,9 @@ export default function GameSection({ imageUrl, videoUrl, videoId, title, descri
 
         {/* Text content */}
         <div className="text-center max-w-3xl">
-          <p className="text-vitalYellow font-medium mb-2">Multigames</p>
-          <h2 className="text-7xl md:text-8xl font-bold uppercase dharma">{title}</h2>
-          <p className="text-gray-400 text-xs md:text-base max-w-2xl mx-auto">
+          <p className="text-vitalYellow font-hitmarker-text-bold uppercase">Multigames</p>
+          <h2 className="text-7xl md:text-8xl font-hitmarker-black uppercase mb-2">{title}</h2>
+          <p className="text-white font-hitmarker-text-regular uppercase text-xs max-w-lg mx-12">
             {description}
           </p>
         </div>

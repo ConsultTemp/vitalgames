@@ -158,8 +158,16 @@ export default async function AllgameContent({ game, lang }: AllgameContentProps
             />
             <div className="absolute inset-0" />
             <div className="absolute left-0 top-8 md:top-0 h-full w-full md:w-1/2 p-4 pt-8 md:p-12 flex flex-col items-center md:items-start justify-start md:justify-center text-center md:text-left">
-              <h1 className="text-6xl sm:text-7xl md:text-9xl font-bold text-white dharma">{game.name}</h1>
-              <p className="text-xs text-white mt-2 max-w-xl">
+              <p className="text-sm md:text-lg uppercase text-vitalYellow font-hitmarker-text-bold">ALL GAMES</p>
+              <h1 className="
+              text-6xl sm:text-7xl md:text-9xl 
+              text-white 
+              font-hitmarker-black 
+              uppercase 
+              tracking-[-0.5px]">{game.name}</h1>
+              <p className="
+              text-lg text-white font-hitmarker-text-medium leading-tight
+              mt-2 max-w-xl">
                 {dict.allGamesDescriptions[game.slug]}
               </p>
             </div>
@@ -174,12 +182,12 @@ export default async function AllgameContent({ game, lang }: AllgameContentProps
           <h2 id="gallery-heading" className="sr-only">
             Galleria immagini {game.name}
           </h2>
-          <div className={`relative w-full h-[${game.images?.length < 1 ? "0vh" : "30vh"}] sm:h-[${game.images?.length < 1 ? "0vh" : "40vh"}] md:h-[${game.images?.length < 1 ? "0vh" : "60vh"}]`}>
+          <div className={`relative w-full h-[${game.images?.length < 1 ? "0vh" : "15vh"}] sm:h-[${game.images?.length < 1 ? "0vh" : "40vh"}] md:h-[${game.images?.length < 1 ? "0vh" : "60vh"}]`}>
             <div className="flex animate-infinite-scroll -ml-[1000px] sm:-ml-[1500px] md:-ml-[2000px]">
               {game.images?.map((image: any, index: number) => (
                 <div
                   key={`left-${index}`}
-                  className="flex-shrink-0 h-[125px] sm:h-[145px] md:h-[375px] mx-2 sm:mx-3 md:mx-4 h-full"
+                  className="flex-shrink-0 h-[60px] sm:h-[145px] md:h-[375px] mx-2 sm:mx-3 md:mx-4 h-full"
                 >
                   <div className="bg-[#171717] rounded-xl p-2 sm:p-3 md:p-4 border border-1 border-[#3C3C3C] h-full">
                     <div className="relative h-full">
@@ -249,7 +257,7 @@ export default async function AllgameContent({ game, lang }: AllgameContentProps
                 <SmoothReveal>
                   <h2
                     id="recommended-heading"
-                    className="text-start dharma text-4xl md:text-6xl font-bold text-white dharma whitespace-normal md:whitespace-nowrap"
+                    className="text-start text-lg md:text-2xl uppercase text-white font-hitmarker-text-bold whitespace-normal md:whitespace-nowrap"
                   >
                     {dict.allGames.recommended.title || "Ti potrebbero interessare anche"}
                   </h2>
@@ -264,7 +272,7 @@ export default async function AllgameContent({ game, lang }: AllgameContentProps
                     <SmoothReveal key={multigame.id}>
                       <article>
                         <Link
-                          href={`/${lang}/games/${multigame.slug}`}
+                          href={`/${lang}/awp-multigames/${multigame.slug}`}
                           className="block group rounded-lg overflow-hidden"
                           aria-label={`Scopri ${multigame.title} - Sistema multigame Vitalgames`}
                         >

@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation"
+import { notFound, redirect } from "next/navigation"
 import type { Metadata } from "next"
 import { games } from "@/lib/allgamesmap"
 import { multigames } from "@/lib/multigames"
@@ -127,8 +127,13 @@ export default async function GamePage(props: { params: Params }) {
     notFound()
   }
 
-  // Generate schema for multigame
+  // Redirect multigames to awp-multigames route
   if (multigame) {
+    redirect(`/${params.lang}/awp-multigames/${params.gameId}`)
+  }
+
+  // Generate schema for multigame (legacy - should not be reached due to redirect)
+  if (false && multigame) {
     const translatedDescription =
       dict.home?.multigames?.descriptions?.[multigame.slug as keyof typeof dict.home.multigames.descriptions] ||
       multigame.description

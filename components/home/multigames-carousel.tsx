@@ -109,7 +109,7 @@ export function MultigamesCarousel() {
     >
       <div className="container mx-auto px-4 md:px-8">
         <div className="relative w-full flex flex-col items-start justify-start">
-          <h1 className=" max-w-2xl text-lg md:text-6xl font-hitmarker-black mb-6 text-white uppercase tracking-[-0.5px] text-left">{dict.home.multigames.title}</h1>
+          <h1 className=" max-w-2xl text-2xl md:text-6xl font-hitmarker-black mb-6 text-white uppercase text-left">{dict.home.multigames.title}</h1>
           <div className="relative w-full overflow-hidden rounded-lg">
             <Carousel
               setApi={setApi}
