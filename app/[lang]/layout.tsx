@@ -1,5 +1,4 @@
 import type React from "react"
-import { Inter } from "next/font/google"
 import "../globals.css"
 import type { Metadata } from "next"
 import { i18n } from "@/i18n-config"
@@ -12,8 +11,7 @@ import { getDictionary } from "@/lib/dictionary"
 import { LanguageProvider } from "@/components/language-provider"
 import { PerformanceProvider } from "@/components/performance-provider"
 import CookieBanner from "@/components/cookie-banner"
-
-const inter = Inter({ subsets: ["latin"], display: "swap" })
+import { HtmlLangUpdater } from "@/components/html-lang-updater"
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
   const { lang } = await params
@@ -48,32 +46,29 @@ export default async function LocaleLayout({
   const dictionary = await getDictionary(lang)
 
   return (
-    <html lang={lang}>
+    <HtmlLangUpdater lang={lang}>
+      {/* Skip to main content per accessibilità */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-blue-600 text-white p-2 z-50"
+      >
+        Salta al contenuto principale
+      </a>
 
-      <body className={`${inter.className} antialiased`}>
-        {/* Skip to main content per accessibilità */}
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-blue-600 text-white p-2 z-50"
-        >
-          Salta al contenuto principale
-        </a>
-
-        <div className="w-screen">
-          <PerformanceProvider>
-            <LanguageProvider>
-              <div className="w-screen overflow-x-hidden">
-                <Header />
-                <main id="main-content">
-                  {children}
-                  </main>
-                <Footer />
-                <CookieBanner lang={lang} />
-              </div>
-            </LanguageProvider>
-          </PerformanceProvider>
-        </div>
-      </body>
-    </html>
+      <div className="w-screen">
+        <PerformanceProvider>
+          <LanguageProvider>
+            <div className="w-screen overflow-x-hidden">
+              <Header />
+              <main id="main-content">
+                {children}
+              </main>
+              <Footer />
+              <CookieBanner lang={lang} />
+            </div>
+          </LanguageProvider>
+        </PerformanceProvider>
+      </div>
+    </HtmlLangUpdater>
   )
 }

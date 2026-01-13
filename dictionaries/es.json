@@ -34,10 +34,10 @@
     "contactUs": "Contáctanos"
   },
   "hero": {
-    "title": "Innovación en Juegos Desde 1996",
-    "description": "Vitalgames ha estado creando máquinas tragamonedas, VLT y sistemas multigame de alta calidad durante más de 25 años. Nuestros productos combinan tecnología de vanguardia con una jugabilidad atractiva para ofrecer experiencias de juego excepcionales.",
-    "subDescription": "Ya sea para bares, salas de juego o plataformas online, nuestras soluciones de juego están diseñadas para maximizar la participación de los jugadores y los ingresos de los operadores.",
-    "ctaButton": "Nuestros juegos",
+    "title": "Excelencia italiana y visión global",
+    "description": "Desde 1996 lideramos la evolución del juego con soluciones seguras y de vanguardia.",
+    "subDescription": "VITAL GAMES",
+    "ctaButton": "NUESTROS JUEGOS",
     "bottomText": "Líder en Tecnología de Juegos Desde 1996"
   },
   "home": {
@@ -72,21 +72,21 @@
       "cta": "Trabaja con nosotros"
     },
     "winningTechnology": {
-      "title": "La evolución del gaming, made in Italy",
-      "description": "VitalGames es sinónimo de confiabilidad en la industria del juego. Con profundas raíces en el mercado AWP, hemos atravesado generaciones de jugadores, innovando constantemente sin perder nuestra identidad.",
-      "description2": "Somos una parte integral de la evolución del juego en Italia, un punto de referencia para quienes buscan calidad, experiencia y una visión siempre proyectada hacia el futuro.",
+      "title": "LA EVOLUCIÓN DEL GAMING MADE IN ITALY",
+      "description": "VitalGames es sinónimo de garantía en el sector del gaming. Con raíces profundas en el mercado AWP, hemos atravesado generaciones de jugadores, innovando constantemente sin perder nuestra identidad.",
+      "description2": "Somos parte integrante de la evolución del juego en Italia, punto de referencia para quienes buscan calidad, experiencia y una visión siempre proyectada al futuro.",
       "cards": {
         "iso": {
           "description": "Certificado ISO, estándar de calidad"
         },
         "experience": {
-          "description": "25 años de actividad en el mercado del gaming italiano"
+          "description": "25 años en el mercado del gaming"
         },
         "games": {
           "description": "Más de 40 mil títulos en Italia"
         },
         "partners": {
-          "description": "Colaboraciones consolidadas con los principales operadores y concesionarios del sector"
+          "description": "Colaboraciones con los principales operadores"
         }
       }
     },

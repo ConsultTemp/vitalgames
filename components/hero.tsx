@@ -3,6 +3,8 @@ import OptimizedVideo from "./OptimizedVideo"
 import { Button } from "./ui/button"
 import { OptimizedLink as Link } from "./optimized-link"
 import { useLanguage } from "./language-provider"
+import Image from "next/image"
+import vitalgamesLogo from "../public/vitalgamesdigital-logo.svg"
 
 export default function HeroSection() {
   const { lang, dictionary: dict } = useLanguage()
@@ -30,11 +32,17 @@ export default function HeroSection() {
       <div className="absolute inset-0 flex flex-col items-start justify-end z-10 px-6 md:px-16 pb-16 md:pb-40">
         <div className="max-w-3xl text-left">
           <h2 className="text-vitalYellow text-lg mb-3 font-hitmarker-text-bold">
-            {dict.hero?.subDescription || "VITAL GAMES"}
+            {"VITALGAMES"}
           </h2>
-          <h1 className="text-white text-4xl md:text-8xl mb-4 font-hitmarker-black uppercase tracking-[-0.5px]">
-            {dict.hero?.title || "Eccellenza italiana e visione globale"}
-          </h1>
+          <div className="relative w-full max-w-5xl mb-4 h-20 md:h-48">
+            <Image
+              src={vitalgamesLogo}
+              alt="Vital Games Digital"
+              fill
+              className="object-contain object-left"
+              priority
+            />
+          </div>
           <p className="text-white text-base md:text-lg mb-7 max-w-2xl font-hitmarker-text-regular uppercase">
             {dict.hero?.description || "Dal 1996 guidiamo l’evoluzione del gioco con soluzioni sicure e all'avanguardia."}
           </p>

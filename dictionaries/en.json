@@ -34,11 +34,11 @@
     "contactUs": "Contact us"
   },
   "hero": {
-    "title": "Innovation in Gaming Since 1996",
-    "description": "Vitalgames has been creating high-quality slot machines, VLTs, and multigame systems for over 25 years. Our products combine cutting-edge technology with engaging gameplay to deliver exceptional gaming experiences.",
-    "subDescription": "Whether for bars, arcades, or online platforms, our gaming solutions are designed to maximize player engagement and operator revenue.",
-    "ctaButton": "Our games",
-    "bottomText": "A Leader in Gaming Technology Since 1996"
+    "title": "Italian Excellence and Global Vision",
+    "description": "Since 1996, we've been leading the evolution of gaming with secure and cutting-edge solutions.",
+    "subDescription": "VITAL GAMES",
+    "ctaButton": "OUR GAMES",
+    "bottomText": "Leader in Gaming Technology Since 1996"
   },
   "home": {
     "ageRestriction": {
@@ -65,12 +65,12 @@
       "cta": "Work with us"
     },
     "winningTechnology": {
-      "title": "The evolution of gaming, made in Italy",
+      "title": "THE EVOLUTION OF GAMING MADE IN ITALY",
       "description": "VitalGames is synonymous with reliability in the gaming industry. With deep roots in the AWP market, we have gone through generations of players, constantly innovating while never losing our identity.",
       "description2": "We are an integral part of the evolution of gaming in Italy, a reference point for those seeking quality, experience, and a vision always projected towards the future.",
       "cards": {
         "iso": {
-          "description": "ISO certified quality standard"
+          "description": "ISO certified, quality standard"
         },
         "experience": {
           "description": "25 years in the gaming market"
@@ -79,7 +79,7 @@
           "description": "Over 40,000 titles in Italy"
         },
         "partners": {
-          "description": "Partnerships with leading operators"
+          "description": "Collaborations with leading operators"
         }
       }
     },

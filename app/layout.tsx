@@ -280,15 +280,11 @@ export async function generateStaticParams() {
 
 export default function RootLayout({
   children,
-  params,
 }: {
   children: React.ReactNode
-  params: { lang?: string }
 }) {
-  const lang = params?.lang || i18n.defaultLocale
-
   return (
-    <html lang={lang} suppressHydrationWarning>
+    <html lang={i18n.defaultLocale} suppressHydrationWarning>
       <head>
         {/* DNS Prefetch and Preconnect for Performance */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
@@ -336,21 +332,7 @@ export default function RootLayout({
           />
         </noscript>
 
-        {/* Skip to main content for accessibility */}
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50"
-        >
-          Vai al contenuto principale
-        </a>
-
-        {/* <div className="intro-video-wrapper">
-          <IntroVideo />
-        </div> */}
-        <main id="main-content">
-          {children}
-        </main>
-
+        {children}
       </body>
     </html>
   )
