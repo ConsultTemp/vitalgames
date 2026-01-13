@@ -47,7 +47,7 @@ export function PageTransitionOverlay() {
       }}
     >
       <div className="w-full h-full flex items-center justify-center">
-        <div className="w-[200px] h-[200px] md:w-[300px] md:h-[300px]">
+        <div className="w-[100px] h-[100px] md:w-[140px] md:h-[140px]">
           <Lottie
             animationData={animationData}
             loop={true}
