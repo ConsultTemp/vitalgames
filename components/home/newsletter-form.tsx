@@ -29,7 +29,7 @@ export default function NewsletterForm() {
       const message = `Nuova iscrizione alla newsletter:\n\nEmail: ${email}`
       submitData.append("message", message)
 
-      const response = await fetch("https://formsubmit.co/mattiavitalgames@gmail.com", {
+      const response = await fetch("https://formsubmit.co/3636ab288a28b1d9915ffb20ca73d468", {
         method: "POST",
         body: submitData,
       })

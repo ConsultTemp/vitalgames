@@ -89,13 +89,6 @@ import JUNGLE_PHOTO1 from '../public/games-images/JUNGLE/WhatsApp Image 2024-05-
 import JUNGLE_PHOTO2 from '../public/games-images/JUNGLE/WhatsApp Image 2024-05-16 at 12.56.25 (2).jpeg'
 import JUNGLE_PHOTO3 from '../public/games-images/JUNGLE/WhatsApp Image 2024-05-16 at 12.56.25 (3).jpeg'
 import JUNGLE_PHOTO4 from '../public/games-images/JUNGLE/WhatsApp Image 2024-05-16 at 12.56.25.jpeg'
-
-import LA_SCATOLA_MAGICA from '../public/games-images/LA SCATOLA MAGICA/LA SCATOLA MAGICA.jpg'
-import LA_SCATOLA_MAGICA_PHOTO1 from '../public/games-images/LA SCATOLA MAGICA/PHOTO-2024-05-13-11-10-21 3.jpg'
-import LA_SCATOLA_MAGICA_PHOTO2 from '../public/games-images/LA SCATOLA MAGICA/PHOTO-2024-05-13-11-10-21.jpg'
-import LA_SCATOLA_MAGICA_PHOTO3 from '../public/games-images/LA SCATOLA MAGICA/PHOTO-2024-05-13-11-10-22 2.jpg'
-import LA_SCATOLA_MAGICA_PHOTO4 from '../public/games-images/LA SCATOLA MAGICA/PHOTO-2024-05-13-11-10-22 4.jpg'
-
 import LO_STRUZZO from '../public/games-images/LO STRUZZO/LO STRUZZO.jpg'
 import LO_STRUZZO_PHOTO1 from '../public/games-images/LO STRUZZO/PHOTO-2024-05-10-10-58-01 2.jpg'
 import LO_STRUZZO_PHOTO2 from '../public/games-images/LO STRUZZO/PHOTO-2024-05-10-10-58-02.jpg'
@@ -260,7 +253,6 @@ import grillo from '../public/allgames-webp/IL GRILLO.webp'
 import julio from '../public/allgames-webp/JULIO.webp'
 import fortune from '../public/allgames-webp/FORTUNE.webp'
 import jungle from '../public/allgames-webp/JUNGLE.webp'
-import scatola from '../public/allgames-webp/LA SCATOLA MAGICA.webp'
 import magic from '../public/allgames-webp/MAGIC DIAMOND 2.webp'
 import mohamed from '../public/allgames-webp/MOHAMED.webp'
 import nautilus from '../public/allgames-webp/NAUTILUS.webp'
@@ -307,7 +299,6 @@ import grillo_mobile_hero from '../public/allgames-mobile-hero/IL GRILLO_mobile.
 import julio_mobile_hero from '../public/allgames-mobile-hero/JULIO_mobile.webp'
 import fortune_mobile_hero from '../public/allgames-mobile-hero/FORTUNE_mobile.webp'
 import jungle_mobile_hero from '../public/allgames-mobile-hero/JUNGLE_mobile.webp'
-import scatola_mobile_hero from '../public/allgames-mobile-hero/LA SCATOLA MAGICA_mobile.webp'
 import magic_mobile_hero from '../public/allgames-mobile-hero/BOOK OF MAGIC_mobile.webp'
 import magic_diamond_mobile_hero from '../public/allgames-mobile-hero/MAGIC DIAMOND 2_mobile.webp'
 import mohamed_mobile_hero from '../public/allgames-mobile-hero/MOHAMED_mobile.webp'
@@ -445,7 +436,7 @@ export const games = [
     mainImage: bookofmagic,
     images: [BOOK_OF_MAGIC_PHOTO1, BOOK_OF_MAGIC_PHOTO2, BOOK_OF_MAGIC_PHOTO3, BOOK_OF_MAGIC_PHOTO4],
     description: 'Un libro magico che ti porterà in un mondo di incantesimi e misteri',
-    featured: ['la-scatola-magica', 'magic-diamond-2', 'elfi', 'eden'],
+    featured: [ 'magic-diamond-2', 'elfi', 'eden'],
     mobileBg: magic_mobile_hero
     
   },
@@ -495,7 +486,7 @@ export const games = [
     mainImage: eden,
     images: [EDEN_PHOTO1, EDEN_PHOTO2, EDEN_PHOTO3, EDEN_PHOTO4],
     description: 'Esplora il paradiso terrestre in questo gioco magico',
-    featured: ['elfi', 'book-of-magic', 'la-scatola-magica', 'magic-diamond-2'],
+    featured: ['elfi', 'book-of-magic',  'magic-diamond-2'],
     mobileBg: eden_mobile_hero
   },
   {
@@ -507,7 +498,7 @@ export const games = [
     coverImage: ELFI,
     images: [],
     description: 'Entra nel mondo magico degli elfi',
-    featured: ['eden', 'book-of-magic', 'la-scatola-magica', 'magic-diamond-2'],
+    featured: ['eden', 'book-of-magic',  'magic-diamond-2'],
     mobileBg: elfi_mobile_hero
   },
   {
@@ -607,18 +598,6 @@ export const games = [
     mobileBg: jungle_mobile_hero
   },
   {
-    name: 'La Scatola Magica',
-    subtitle: 'Scopri i segreti della scatola misteriosa',
-    href: 'la-scatola-magica',
-    slug: 'la-scatola-magica',
-    coverImage: LA_SCATOLA_MAGICA,
-    mainImage: scatola,
-    images: [LA_SCATOLA_MAGICA_PHOTO1, LA_SCATOLA_MAGICA_PHOTO2, LA_SCATOLA_MAGICA_PHOTO3, LA_SCATOLA_MAGICA_PHOTO4],
-    description: 'Scopri i segreti della scatola magica',
-    featured: ['book-of-magic', 'magic-diamond-2', 'elfi', 'eden'],
-    mobileBg: scatola_mobile_hero
-  },
-  {
     name: 'Lo Struzzo',
     subtitle: 'Corri veloce come il vento',
     href: 'lo-struzzo',
@@ -651,7 +630,7 @@ export const games = [
     mainImage: magic,
     images: [MAGIC_DIAMOND_2_PHOTO1, MAGIC_DIAMOND_2_PHOTO2, MAGIC_DIAMOND_2_PHOTO3, MAGIC_DIAMOND_2_PHOTO4],
     description: 'Cerca il diamante magico in questa nuova avventura',
-    featured: ['book-of-magic', 'la-scatola-magica', 'elfi', 'eden'],
+    featured: ['book-of-magic',  'elfi', 'eden'],
     mobileBg: magic_diamond_mobile_hero
   },
   {

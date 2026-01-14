@@ -9,7 +9,6 @@ import giullare from '../public/allgames-webp/IL GIULLARE.webp'
 import grillo from '../public/allgames-webp/IL GRILLO.webp'
 import julio from '../public/allgames-webp/JULIO.webp'
 import jungle from '../public/allgames-webp/JUNGLE.webp'
-import scatola from '../public/allgames-webp/LA SCATOLA MAGICA.webp'
 import magic from '../public/allgames-webp/MAGIC DIAMOND 2.webp'
 import mohamed from '../public/allgames-webp/MOHAMED.webp'
 import nautilus from '../public/allgames-webp/NAUTILUS.webp'
@@ -116,12 +115,6 @@ export const games = [
     slug: "jungle",
     title: "Jungle",
     image: jungle,
-  },
-  {
-    id: 12,
-    slug: "la-scatola-magica",
-    title: "La Scatola Magica",
-    image: scatola,
   },
   {
     id: 13,

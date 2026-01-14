@@ -203,8 +203,7 @@ export const multigames = [
             games.find(g => g.slug === 'striptease')!,
             games.find(g => g.slug === 'alieni')!,
             games.find(g => g.slug === 'il-giullare')!,
-            games.find(g => g.slug === 'scacco-matto')!,
-            games.find(g => g.slug === 'la-scatola-magica')!
+            games.find(g => g.slug === 'scacco-matto')!
         ],
         recommended: ["casino-royale", "diamante", "golden-club"]
     },
