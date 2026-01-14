@@ -85,7 +85,7 @@ export default async function Home(props: { params: Params }) {
 
       <div className="bg-black">
         <Hero />
-        <div className="technology-bg">
+        <div className="technology-bg-2">
           <WinningTechnology />
         </div>
         <OnlineExperience/>

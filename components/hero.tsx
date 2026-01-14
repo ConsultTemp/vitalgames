@@ -31,9 +31,6 @@ export default function HeroSection() {
       {/* Contenuto con testo e bottone */}
       <div className="absolute inset-0 flex flex-col items-start justify-end z-10 px-6 md:px-16 pb-16 md:pb-40">
         <div className="max-w-3xl text-left">
-          <h2 className="text-vitalYellow text-lg mb-3 font-hitmarker-text-bold">
-            {"VITALGAMES"}
-          </h2>
           <div className="relative w-full max-w-5xl mb-4 h-20 md:h-48">
             <Image
               src={vitalgamesLogo}

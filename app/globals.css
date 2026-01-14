@@ -376,6 +376,50 @@ clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 96%);
   height: 100%;
 }
 
+.technology-bg-2{
+  background: url("../public/techonologybg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.technology-bg-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Mobile: sfumatura più lunga e graduale */
+  background: linear-gradient(to bottom, 
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0.9) 5%,
+    rgba(0,0,0,0.5) 20%,
+    rgba(0,0,0,0.3) 35%,
+    rgba(0,0,0,0.15) 50%,
+    rgba(0,0,0,0.08) 65%,
+    rgba(0,0,0,0) 80%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Desktop: sfumatura leggermente più lunga */
+@media (min-width: 768px) {
+  .technology-bg-2::before {
+    background: linear-gradient(to bottom, 
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,0.85) 8%,
+      rgba(0,0,0,0.45) 25%,
+      rgba(0,0,0,0.2) 45%,
+      rgba(0,0,0,0) 60%
+    );
+  }
+}
+
 .neon-card {
   position: relative;
   transition: transform 0.3s ease;

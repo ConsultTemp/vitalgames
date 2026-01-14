@@ -43,17 +43,14 @@ export default function WinningTechnology() {
   return (
     <div className="flex min-h-[80vh] flex-col items-center justify-center py-6 px-4 md:px-3 relative">
 
-      <div className="absolute inset-0 z-1 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
         {/* Bottom left large diamond */}
-        <div className="absolute top-4   w-40 md:w-96 h-40 md:h-96 left-[-50px] md:left-[-150px] animate-float-slow rotate-10">
+        <div className="absolute top-[-20px]   w-40 md:w-96 h-40 md:h-96 right-[-50px] md:right-[-150px] animate-float-slow rotate-10">
           <FloatingImage src={diamante || "/placeholder.svg"} alt="Diamond" className="w-[160px] md:w-[384px] h-[160px] md:h-[384px]" />
         </div>
       </div>
-      <div className="max-w-6xl w-full flex flex-col items-center text-center z-2">
-        {/* Logo */}
-        <div className="w-32 h-32 md:w-32 md:h-32 relative mb-8">
-          <Image src={logo || "/placeholder.svg"} alt="Vital Games Logo" fill className="object-contain" priority />
-        </div>
+      <div className="max-w-6xl w-full flex flex-col items-center text-center relative z-10">
+       
 
         {/* Main Title */}
         <h1 className="
