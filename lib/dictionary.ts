@@ -193,7 +193,9 @@ export interface Dictionary {
     }
     onlineGames: {
       title: string
+      description: string
       viewAll: string
+      playDemo: string
       hero: {
         title: string
         subtitle: string
@@ -304,9 +306,11 @@ export interface Dictionary {
     loadMore: string
     contains: string
     partOf: string
+    discoverMore: string
     recommended: {
       badge: string
       title: string
+      viewAll: string
       otherMultigames: string
     }
   }

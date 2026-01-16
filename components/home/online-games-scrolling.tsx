@@ -107,7 +107,7 @@ export default function OnlineGamesScrolling() {
             {dict.home?.onlineGames?.title || "Game Library"}
           </h2>
           <p className="text-white font-hitmarker-text-regular text-xs md:text-lg mb-3 md:mb-4 max-w-md text-center md:text-left leading-thight uppercase">
-            All online games titles, from upcoming releases to classic favorites.
+            {dict.home?.onlineGames?.description || "All online games titles, from upcoming releases to classic favorites."}
           </p>
           <Link href={`/${lang}/games?type=online-games`}>
             <Button 

@@ -47,6 +47,7 @@ interface GamesSearchDict {
     noGames?: string
     contains?: string
     partOf?: string
+    discoverMore?: string
   }
 }
 
@@ -247,7 +248,7 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
                     )}
                     <Link href={`/${lang}/games/${game.slug}`}>
                       <Button variant="vitalYellow" className="w-full">
-                        SCOPRI DI PIÙ
+                        {dict.allGames?.discoverMore || "DISCOVER MORE"}
                       </Button>
                     </Link>
                   </div>
@@ -313,7 +314,7 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
                     })()}
                     <Link href={`/${lang}/games/${game.slug}`}>
                       <Button variant="vitalYellow" className="w-full">
-                        SCOPRI DI PIÙ
+                        {dict.allGames?.discoverMore || "DISCOVER MORE"}
                       </Button>
                     </Link>
                   </div>

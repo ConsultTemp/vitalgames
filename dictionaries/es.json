@@ -143,6 +143,7 @@
     },
     "onlineGames": {
       "title": "Nuestros juegos online",
+      "description": "Todos los títulos de juegos online, desde próximos lanzamientos hasta clásicos favoritos.",
       "viewAll": "Ver todos",
       "playDemo": "Jugar demo",
       "hero": {
@@ -392,6 +393,7 @@
     "loadMore": "Cargar Más Juegos",
     "contains": "Contiene:",
     "partOf": "Parte de:",
+    "discoverMore": "DESCUBRE MÁS",
     "recommended": {
       "badge": "Juegos Recomendados",
       "title": "Juegos recomendados",
