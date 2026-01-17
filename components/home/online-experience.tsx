@@ -9,7 +9,8 @@ import bgMultigame from "@/public/light-rays.webp"
 import game from "@/public/screen-gioco.webp"
 
 export default function OnlineExperience() {
-  const { lang } = useLanguage()
+  const { lang, dictionary } = useLanguage()
+  const { onlineExperience } = dictionary.home
 
   return (
     <section className="relative w-full bg-black py-16">
@@ -33,7 +34,7 @@ export default function OnlineExperience() {
               {/* Testi in alto */}
               <div className="relative flex flex-col items-center space-y-6 mb-4">
                 <h2 className="text-white text-4xl md:text-5xl font-hitmarker font-semibold">
-                  OUR EXPERIENCE APPLIED TO THE ONLINE WORLD
+                  {onlineExperience.title}
                 </h2>
                 {/* Bottone */}
                 <Link href={`/${lang}/games?type=online-games`}>
@@ -44,7 +45,7 @@ export default function OnlineExperience() {
                     px-8 text-white font-hitmarker-text-medium rounded-full h-12 text-base uppercase 
                     hover:bg-vitalYellow hover:text-black hover:animate-pulse"
                   >
-                    Online games portfolio
+                    {onlineExperience.button}
                   </Button>
                 </Link>
               </div>
@@ -103,13 +104,15 @@ export default function OnlineExperience() {
             {/* Colonna destra: testo e bottone (invariato) */}
             <div className="flex flex-col items-end justify-center space-y-8 p-8">
               <h2 className="text-white text-5xl md:text-7xl font-hitmarker font-semibold text-right">
-                OUR EXPERIENCE APPLIED TO THE <span className="text-vitalYellow">ONLINE</span> WORLD
+                {onlineExperience.titlePart1}
+                <span className="text-vitalYellow">{onlineExperience.titlePart2}</span>
+                {onlineExperience.titlePart3}
               </h2>
               <Link href={`/${lang}/games?type=online-games`}>
                 <Button 
                   className="bg-[#403c00] border border-vitalYellow hover:scale-105 transition-all duration-300 px-8 text-white font-hitmarker-text-medium rounded-full h-12 text-base hover:bg-vitalYellow hover:text-black"
                 >
-                  ONLINE GAMES PORTFOLIO
+                  {onlineExperience.button.toUpperCase()}
                 </Button>
               </Link>
             </div>

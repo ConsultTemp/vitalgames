@@ -201,6 +201,13 @@ export interface Dictionary {
         subtitle: string
       }
     }
+    onlineExperience: {
+      title: string
+      titlePart1: string
+      titlePart2: string
+      titlePart3: string
+      button: string
+    }
   }
   vlt: {
     title: string

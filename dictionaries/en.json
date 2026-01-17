@@ -154,6 +154,13 @@
     },
     "partners": {
       "title": "Our Partners"
+    },
+    "onlineExperience": {
+      "title": "OUR EXPERIENCE APPLIED TO THE ONLINE WORLD",
+      "titlePart1": "OUR EXPERIENCE APPLIED TO THE ",
+      "titlePart2": "ONLINE",
+      "titlePart3": " WORLD",
+      "button": "Online games portfolio"
     }
   },
   "contactForm": {
