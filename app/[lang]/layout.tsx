@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
   const { lang } = await params
 
   return generateAdvancedSEOMetadata("home", lang, {
-    image: "/fleethero.jpg"
+    image: "/bar.png"
   })
 }
 

@@ -99,9 +99,9 @@ export async function generateMetadata(props: { params: Params }): Promise<Metad
     keywords: keywords[params.lang],
     image: "/allgames-hero.jpg",
     additionalImages: [
-      "/images/slot-collection-1.jpg",
-      "/images/vlt-collection.jpg",
-      "/images/multigame-collection.jpg",
+      "/bgcabinet.png",
+      "/bgvlt.png",
+      "/bgmultigamopen.png",
     ],
   })
 }
@@ -149,7 +149,7 @@ export default async function GamesPage(props: { params: Params }) {
         "@id": "https://www.vitalgamesdigital.com/#organization",
         name: "Vitalgames",
         url: "https://www.vitalgamesdigital.com",
-        logo: "https://www.vitalgamesdigital.com/logo.png",
+        logo: "https://www.vitalgamesdigital.com/logovital.svg",
       },
     ],
   }

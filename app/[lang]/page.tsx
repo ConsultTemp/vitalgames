@@ -25,7 +25,7 @@ export async function generateMetadata(props: { params: Params }): Promise<Metad
 
   // Usa la funzione SEO avanzata
   const advancedSEO = generateAdvancedSEOMetadata("home", params.lang, {
-    image: "/fleethero.jpg",
+    image: "/bar.png",
   })
 
   return {
@@ -44,19 +44,19 @@ export async function generateMetadata(props: { params: Params }): Promise<Metad
       locale: params.lang === "it" ? "it_IT" : params.lang === "en" ? "en_US" : "ar_SA",
       images: [
         {
-          url: "/fleethero.jpg",
+          url: "/bar.png",
           width: 1200,
           height: 630,
           alt: "Vitalgames - Produttore di Slot Machine dal 1996",
         },
         {
-          url: "/images/slot-machines-showcase.jpg",
+          url: "/bgcabinet.png",
           width: 1200,
           height: 630,
           alt: "Collezione Slot Machine Vitalgames",
         },
         {
-          url: "/images/vlt-collection.jpg",
+          url: "/bgvlt.png",
           width: 1200,
           height: 630,
           alt: "Sistemi VLT Vitalgames",
@@ -65,7 +65,7 @@ export async function generateMetadata(props: { params: Params }): Promise<Metad
     },
     twitter: {
       ...advancedSEO.twitter,
-      images: ["/fleethero.jpg"],
+      images: ["/bar.png"],
       creator: "@VitalgamesOfficial",
       site: "@VitalgamesOfficial",
     },

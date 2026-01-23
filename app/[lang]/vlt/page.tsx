@@ -269,7 +269,7 @@ export default async function AboutUs(props: { params: Params }) {
         "@id": "https://www.vitalgamesdigital.com/#organization",
         name: "Vitalgames",
         url: "https://www.vitalgamesdigital.com",
-        logo: "https://www.vitalgamesdigital.com/logo.png",
+        logo: "https://www.vitalgamesdigital.com/logovital.svg",
         makesOffer: {
           "@type": "Offer",
           itemOffered: {

@@ -91,9 +91,9 @@ export async function generateMetadata(props: { params: Params }): Promise<Metad
     keywords: keywords[params.lang],
     image: "/onlinegames-hero.jpg",
     additionalImages: [
-      "/images/online-slot-collection-1.jpg",
-      "/images/online-vlt-collection.jpg",
-      "/images/online-multigame-collection.jpg",
+      "/bgcabinet.png",
+      "/bgvlt.png",
+      "/bgmultigamopen.png",
     ],
   })
 }

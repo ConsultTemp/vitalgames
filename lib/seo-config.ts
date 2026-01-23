@@ -630,7 +630,7 @@ export function generateCompanySchema() {
     "@id": "https://www.vitalgamesdigital.com",
     name: companyData.name,
     url: "https://www.vitalgamesdigital.com",
-    logo: "https://www.vitalgamesdigital.com.com/logo.png",
+    logo: "https://www.vitalgamesdigital.com/logovital.svg",
     foundingDate: companyData.foundingYear,
     description: companyData.description.en,
     address: {
@@ -677,7 +677,7 @@ export function generateProductSchema(product: any, locale: Locale) {
       },
     },
     category: "Gaming Machines",
-    image: product.image || "https://www.vitalgamesdigital.com.com/products/default.jpg",
+    image: product.image || "https://www.vitalgamesdigital.com/bar.png",
   }
 }
 
@@ -961,11 +961,11 @@ export function generateAdvancedSEOMetadata(
   // Prepara le immagini OpenGraph
   const ogImages = [
     {
-      url: customData?.image || "/fleethero.jpg",
+      url: customData?.image || "/bar.png",
       width: 1200,
       height: 630,
       alt: baseSEO?.title || "Vitalgames",
-      type: "image/jpeg",
+      type: "image/png",
     },
   ]
 
@@ -1020,7 +1020,7 @@ export function generateAdvancedSEOMetadata(
       card: "summary_large_image",
       title: customData?.title || baseSEO?.title || "Vitalgames",
       description: customData?.description || baseSEO?.description,
-      images: [customData?.image || "/fleethero.jpg"],
+      images: [customData?.image || "/bar.png"],
       creator: "@VitalgamesOfficial",
       site: "@VitalgamesOfficial",
     },
