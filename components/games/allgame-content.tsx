@@ -149,12 +149,14 @@ export default async function AllgameContent({ game, lang }: AllgameContentProps
               height={800}
               className="object-contain w-full h-auto block md:hidden"
               priority
+              sizes="100vw"
             />
             <Image
               src={game.coverImage || game.mainImage}
               alt={`${game.name} - Slot machine innovativa Vitalgames con grafica HD e bonus game`}
               className="object-contain hidden md:block"
               priority
+              sizes="100vw"
             />
             <div className="absolute inset-0" />
             <div className="absolute left-0 top-8 md:top-0 h-full w-full md:w-1/2 p-4 pt-8 md:p-12 flex flex-col items-center md:items-start justify-start md:justify-center text-center md:text-left">
@@ -196,6 +198,7 @@ export default async function AllgameContent({ game, lang }: AllgameContentProps
                         alt={`${game.name} - Screenshot ${index + 1} della slot machine con interfaccia di gioco e simboli`}
                         className="h-full w-auto object-contain rounded-lg"
                         loading="lazy"
+                        sizes="(max-width: 640px) 60px, (max-width: 768px) 145px, 375px"
                       />
                     </div>
                   </div>
@@ -215,6 +218,7 @@ export default async function AllgameContent({ game, lang }: AllgameContentProps
                         height={1080}
                         className="w-full h-full object-cover rounded-lg"
                         loading="lazy"
+                        sizes="(max-width: 640px) 250px, (max-width: 768px) 350px, 500px"
                       />
                     </div>
                   </div>
@@ -234,6 +238,7 @@ export default async function AllgameContent({ game, lang }: AllgameContentProps
                         height={1080}
                         className="w-full h-full object-cover rounded-lg"
                         loading="lazy"
+                        sizes="(max-width: 640px) 250px, (max-width: 768px) 350px, 500px"
                       />
                     </div>
                   </div>
@@ -283,6 +288,7 @@ export default async function AllgameContent({ game, lang }: AllgameContentProps
                             height={1196}
                             className="w-full h-auto object-contain rounded-lg"
                             loading="lazy"
+                            sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 20vw"
                           />
                         </Link>
                       </article>

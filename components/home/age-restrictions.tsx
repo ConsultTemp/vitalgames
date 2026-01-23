@@ -28,6 +28,8 @@ export default function AgeRestrictions({ className = '' }: AgeRestrictionsProps
               width={60} 
               height={60}
               className="w-12 h-12 md:w-16 md:h-16"
+              loading="lazy"
+              sizes="(max-width: 768px) 48px, 64px"
             />
             <div className='flex flex-col items-center sm:items-start text-center sm:text-left max-w-[90%] sm:max-w-none'>
                 <h3 className='text-sm md:text-base font-extrabold mb-1'>

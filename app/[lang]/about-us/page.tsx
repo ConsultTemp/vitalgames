@@ -378,7 +378,8 @@ export default async function AboutUs(props: { params: Params }) {
                     width={500}
                     height={500}
                     className="rounded-lg object-cover aspect-square"
-                    priority
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 500px"
                   />
                 </SmoothReveal>
 
@@ -389,7 +390,8 @@ export default async function AboutUs(props: { params: Params }) {
                     width={500}
                     height={500}
                     className="rounded-lg object-cover aspect-square"
-                    priority
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 500px"
                   />
                 </SmoothReveal>
               </div>

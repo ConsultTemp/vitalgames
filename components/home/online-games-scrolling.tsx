@@ -11,6 +11,7 @@ export default function OnlineGamesScrolling() {
   
   // Duplica i giochi per creare un loop infinito senza interruzioni
   // Creiamo 2 copie per permettere il loop infinito (l'animazione va da 0 a -50%)
+  // Ridotto da 2x a evitare caricamento eccessivo
   const duplicatedGames = [...onlineGames, ...onlineGames]
   // Per la seconda riga invertiamo l'ordine per creare movimento opposto
   const reversedGames = [...onlineGames].reverse()
@@ -67,6 +68,8 @@ export default function OnlineGamesScrolling() {
                     width={300}
                     height={300}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 200px, 280px"
                   />
                 </div>
               </div>
@@ -89,6 +92,8 @@ export default function OnlineGamesScrolling() {
                     width={300}
                     height={300}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 200px, 280px"
                   />
                 </div>
               </div>

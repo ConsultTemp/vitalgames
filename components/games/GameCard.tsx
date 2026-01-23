@@ -19,7 +19,7 @@ export function GameCard({ game, compact = false }: GameCardProps) {
     return (
       <div className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-yellow-400 transition-colors">
         <div className="relative aspect-video">
-          <Image src={game.image || "/placeholder.svg"} alt={game.title} fill className="object-cover" />
+          <Image src={game.image || "/placeholder.svg"} alt={game.title} fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
         </div>
         <div className="p-3">
           <h3 className="text-white font-medium text-sm">{game.title}</h3>
@@ -32,7 +32,7 @@ export function GameCard({ game, compact = false }: GameCardProps) {
     <Link href={`/game/${game.slug}`}>
       <div className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-yellow-400 transition-colors">
         <div className="relative aspect-video">
-          <Image src={game.image || "/placeholder.svg"} alt={game.title} fill className="object-cover" />
+          <Image src={game.image || "/placeholder.svg"} alt={game.title} fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
         </div>
         <div className="p-4">
           <h3 className="text-white font-medium mb-1">{game.title}</h3>

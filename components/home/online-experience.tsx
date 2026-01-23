@@ -23,7 +23,8 @@ export default function OnlineExperience() {
               alt="Background"
               className="w-full h-full object-cover object-center lg:object-left"
               fill
-              priority
+              loading="lazy"
+              sizes="(max-width: 1024px) 100vw, 1200px"
             />
           </div>
           
@@ -56,7 +57,8 @@ export default function OnlineExperience() {
                     src={game}
                     alt="Game screen"
                     className="w-full h-auto object-contain"
-                    priority
+                    loading="lazy"
+                    sizes="(max-width: 768px) 256px, 320px"
                   />
                 </div>
               </div>
@@ -67,7 +69,8 @@ export default function OnlineExperience() {
                 src={diamonds}
                 alt="Diamonds"
                 className="w-full h-auto object-contain"
-                priority
+                loading="lazy"
+                sizes="100vw"
               />
             </div>
           </div>
@@ -84,7 +87,8 @@ export default function OnlineExperience() {
                       src={game}
                       alt="Game screen"
                       className="w-full h-auto object-contain"
-                      priority
+                      loading="lazy"
+                      sizes="(max-width: 1280px) 600px, 750px"
                     />
                     {/* Velo nero trasparente sopra game - scompare su hover, z-index tra game e diamonds */}
                     <div className="absolute inset-0 bg-black/60 transition-opacity duration-500 group-hover:opacity-0 z-[5] rounded-lg"></div>
@@ -96,7 +100,8 @@ export default function OnlineExperience() {
                     src={diamonds}
                     alt="Diamonds"
                     className="w-full h-auto object-contain"
-                    priority
+                    loading="lazy"
+                    sizes="100vw"
                   />
                 </div>
               </div>

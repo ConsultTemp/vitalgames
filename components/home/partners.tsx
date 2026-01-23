@@ -47,8 +47,8 @@ export default function Partners() {
   const [hoveredPartner, setHoveredPartner] = useState<number | null>(null)
   const [clickedPartner, setClickedPartner] = useState<number | null>(null)
 
-  // Duplica i partner per il loop infinito (3 volte per garantire continuità)
-  const duplicatedPartners = [...partners, ...partners, ...partners]
+  // Duplica i partner per il loop infinito (2 volte per ridurre caricamento)
+  const duplicatedPartners = [...partners, ...partners]
 
   return (
     <main className="bg-black text-white p-4 pt-0 pb-24">
@@ -84,6 +84,7 @@ export default function Partners() {
                             isActive ? 'opacity-100' : 'opacity-70'
                           }`}
                           sizes="270px"
+                          loading="lazy"
                         />
                       </div>
                     </div>

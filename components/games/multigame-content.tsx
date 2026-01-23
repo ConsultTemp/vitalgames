@@ -101,6 +101,7 @@ export default async function MultigameContent({ multigame, lang }: MultigameCon
                       width={400}
                       height={400}
                       loading="lazy"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
                     />
                   </div>
                   <div className="text-left md:text-left p-3 px-0 md:p-6 w-full flex flex-col items-center">
@@ -157,6 +158,7 @@ export default async function MultigameContent({ multigame, lang }: MultigameCon
                             alt={`${recommendedMultigame.title} - Sistema multigame AWP alternativo`}
                             className="w-full h-auto"
                             loading="lazy"
+                            sizes="(max-width: 768px) 100vw, 33vw"
                           />
                         </div>
                       </Link>

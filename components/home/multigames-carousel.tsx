@@ -157,6 +157,8 @@ export function MultigamesCarousel() {
                             alt={multigame.title}
                             fill
                             className="object-cover"
+                            loading={index === 0 ? "eager" : "lazy"}
+                            sizes="(max-width: 768px) 100vw, 50vw"
                           />
                         </div>
                       </div>
@@ -168,6 +170,8 @@ export function MultigamesCarousel() {
                             alt={multigame.title}
                             fill
                             className="object-cover"
+                            loading={index === 0 ? "eager" : "lazy"}
+                            sizes="100vw"
                           />
                         </div>
                         <div className="flex flex-col gap-2 text-white p-4 items-center text-center">

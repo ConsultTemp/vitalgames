@@ -79,6 +79,8 @@ export default function WinningTechnology() {
                     width={60}
                     height={60}
                     className="object-contain h-full w-auto"
+                    loading="lazy"
+                    sizes="60px"
                   />
                 </div>
                 <p className="text-xs sm:text-xs">{card.description}</p>

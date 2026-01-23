@@ -46,6 +46,8 @@ export default function Footer() {
                 width={120}
                 height={80}
                 className="object-contain mb-4"
+                loading="lazy"
+                sizes="120px"
               />
             </div>
             <Accordion type="single" collapsible className="w-full text-left">
@@ -105,6 +107,8 @@ export default function Footer() {
                 width={120}
                 height={80}
                 className="object-contain mb-4"
+                loading="lazy"
+                sizes="120px"
               />
             </div>
             {/* Mobile grid for the rest of the content */}

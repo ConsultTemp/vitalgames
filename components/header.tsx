@@ -96,6 +96,8 @@ export default function Navbar() {
                 alt="Vital Games"
                 fill
                 className="object-contain"
+                priority
+                sizes="64px"
               />
             </div>
           </Link>
@@ -151,6 +153,7 @@ export default function Navbar() {
                   width={16}
                   height={16}
                   className="object-contain"
+                  sizes="16px"
                 />
                 <span className="text-sm font-medium">{languages.find(l => l.code === lang)?.label || 'EN'}</span>
                 <ChevronDown 
@@ -174,6 +177,7 @@ export default function Navbar() {
                     width={20}
                     height={20}
                     className="object-contain"
+                    sizes="20px"
                   />
                   <span>{language.label}</span>
                 </DropdownMenuItem>
@@ -195,6 +199,8 @@ export default function Navbar() {
                 alt="Vital Games"
                 fill
                 className="object-contain"
+                priority
+                sizes="64px"
               />
             </div>
           </Link>
@@ -241,6 +247,7 @@ export default function Navbar() {
                             alt="Vital Games"
                             fill
                             className="object-contain"
+                            sizes="64px"
                           />
                         </div>
                       </Link>
@@ -308,6 +315,7 @@ export default function Navbar() {
                                 width={16}
                                 height={16}
                                 className="object-contain rounded-sm"
+                                sizes="16px"
                               />
                               <span className="text-sm font-medium">{languages.find(l => l.code === lang)?.label || 'EN'}</span>
                               <ChevronDown 
@@ -331,6 +339,7 @@ export default function Navbar() {
                                   width={20}
                                   height={20}
                                   className="object-contain rounded-sm"
+                                  sizes="20px"
                                 />
                                 <span>{language.label}</span>
                               </DropdownMenuItem>

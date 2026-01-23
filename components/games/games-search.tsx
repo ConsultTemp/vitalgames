@@ -218,6 +218,8 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
                       src={game.mainImage}
                       alt={game.title}
                       className="object-cover rounded-lg transition-transform duration-300 md:group-hover:scale-105 w-full h-full"
+                      loading="lazy"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     />
                     {game.isComingSoon && (
                       <>
@@ -286,6 +288,8 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
                       src={game.mainImage}
                       alt={game.name}
                       className="object-cover rounded-lg transition-transform duration-300 md:group-hover:scale-105 w-full h-full"
+                      loading="lazy"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     />
                     {game.isComingSoon && (
                       <>
@@ -357,6 +361,8 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
                       src={game.image}
                       alt={game.title}
                       className="object-cover rounded-lg transition-transform duration-300 md:group-hover:scale-105 w-full h-full"
+                      loading="lazy"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     />
                   </a>
                   {/* Tendina che sale dal basso - solo su desktop con hover */}

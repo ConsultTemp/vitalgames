@@ -38,6 +38,7 @@ export default function HeroSection() {
               fill
               className="object-contain object-left"
               priority
+              sizes="(max-width: 768px) 90vw, 1200px"
             />
           </div>
           <p className="text-white text-base md:text-lg mb-7 max-w-2xl font-hitmarker-text-regular uppercase">

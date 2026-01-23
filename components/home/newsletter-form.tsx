@@ -70,7 +70,8 @@ export default function NewsletterForm() {
                 alt="Join the movement"
                 fill
                 className="object-contain object-bottom transition-all duration-300 group-hover:scale-105"
-                priority
+                loading="lazy"
+                sizes="100vw"
               />
             </div>
             {/* Desktop: join-the-movement.webp */}
@@ -80,7 +81,8 @@ export default function NewsletterForm() {
                 alt="Join the movement"
                 fill
                 className="object-cover object-bottom transition-all duration-300 group-hover:scale-105"
-                priority
+                loading="lazy"
+                sizes="100vw"
               />
             </div>
             {/* Overlay scuro per leggibilità */}

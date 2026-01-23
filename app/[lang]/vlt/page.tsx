@@ -8,11 +8,6 @@ import VLT_CARD1 from "@/public/Up Right 27\" touch.webp"
 import VLT_CARD2 from "@/public/Slant Top 27\"\" touch.webp"
 import VLT_CARD3 from "@/public/Up Right 22\"\" touch.webp"
 import VLT_CARD4 from "@/public/cabinet32inches.png"
-import { Button } from "@/components/ui/button"
-import SmoothReveal from "@/components/smooth-reveal"
-import { Mail, MapPin, Phone } from "lucide-react"
-import diamante from '../../../public/diamond.png'
-import FloatingImage from "@/components/bg-image-component"
 import SecureContactForm from "@/components/contact/secure-form"
 import { PageTransitionOverlay } from "@/components/page-transition-overlay"
 
@@ -332,6 +327,8 @@ export default async function AboutUs(props: { params: Params }) {
                         alt={card.name}
                         fill
                         className="object-contain rounded-lg"
+                        loading="lazy"
+                        sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 30vw"
                       />
                     </div>
                     <h3 className="text-lg text-white font-hitmarker-text-bold uppercase text-center px-2">{card.name}</h3>
