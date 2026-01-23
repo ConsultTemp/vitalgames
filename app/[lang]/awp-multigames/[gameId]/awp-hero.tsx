@@ -27,7 +27,7 @@ export default function GameSection({ imageUrl, videoUrl, videoId, title, descri
   }
 
   return (
-    <div className="relative w-full overflow-hidden text-white h-screen py-16 mb-0 md:mb-12">
+    <div className="relative w-full overflow-hidden text-white h-screen pt-16 pb-8">
       {/* Background image as actual img tag with lower z-index */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Image src={imageUrl || "/placeholder.svg"} alt="" className="w-full h-full object-cover" />
