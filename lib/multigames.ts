@@ -31,7 +31,7 @@ export const multigames = [
         isComingSoon: false,
         video: "1882591ec6b6173e792aa38691a3e742",
         videoId: "1882591ec6b6173e792aa38691a3e742",
-        description: "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
+        description: "Manhattan by Vital games.",
         videos: [
             "https://example.com/video1.mp4",
             "https://example.com/video2.mp4",
@@ -46,6 +46,7 @@ export const multigames = [
             games.find(g => g.slug === 'le-chef')!,
             games.find(g => g.slug === 'cherry')!,
             games.find(g => g.slug === 'midnight-saloon')!,
+            games.find(g => g.slug === 'mr-diamond')!,
             
         ],
         recommended: ["casino-royale", "diamante", "golden-club"]
@@ -78,7 +79,7 @@ export const multigames = [
         isComingSoon: false,
         video: "https://files.catbox.moe/bajs3j.mp4",
         videoId: "eff1b1eabdec37a81e7d37b098addfc2",
-        description: "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
+        description: "Champions by Vital games.",
         videos: [
             "https://example.com/video1.mp4",
             "https://example.com/video2.mp4",
@@ -106,7 +107,7 @@ export const multigames = [
         mainImage: diamanteMain,
         video: "https://files.catbox.moe/du9st4.mp4",
         videoId: "b42301b3f381fff515ac1d10e0fb95e5",
-        description: "La nostra soluzione premium con 12 giochi esclusivi, grafica HD e funzionalità bonus avanzate.",
+        description: "Diamante by Vital games.",
         videos: [
             "https://files.catbox.moe/mx9cy6.mp4",
             "https://files.catbox.moe/8umbgu.mp4",
@@ -134,7 +135,7 @@ export const multigames = [
         mainImage: casinoRoyaleMain,
         video: "https://files.catbox.moe/u2755e.mp4",
         videoId: "cd61795d8ce0804f5b77d538d3e172d0",
-        description: "Sistema multigame con 10 giochi a tema casinò classico, interfaccia elegante e jackpot progressivo.",
+        description: "Casino Royale by Vital games.",
         videos: [
             "https://example.com/video1.mp4",
             "https://example.com/video2.mp4",
@@ -162,7 +163,7 @@ export const multigames = [
         mainImage: piggyGoldMain,
         video: "https://files.catbox.moe/wwptcc.mp4",
         videoId: "a8f94893a94814b067b8a0fc3437ce9b",
-        description: "Divertente sistema con 10 giochi a tema denaro e fortuna, perfetto per un pubblico giovane.",
+        description: "Piggy Gold by Vital games.",
         videos: [
             "https://example.com/video1.mp4",
             "https://example.com/video2.mp4",
@@ -190,7 +191,7 @@ export const multigames = [
         mainImage: rubinoMain,
         video: "https://files.catbox.moe/c7g4z7.mp4",
         videoId: "7f713ed0783228931433e388d4360c8c",
-        description: "Multigame con 6 giochi premium, grafica vibrante e funzionalità bonus esclusive.",
+        description: "Rubino by Vital games.",
         videos: [
             "https://example.com/video1.mp4",
             "https://example.com/video2.mp4",
@@ -217,7 +218,7 @@ export const multigames = [
         mainImage: zaffiroMain,
         video: "https://files.catbox.moe/73mdoy.mp4",
         videoId: "3d6fee71aa9f6061c151620d476678d9",
-        description: "Sistema elegante con 8 giochi a tema gemme, effetti visivi spettacolari e alta percentuale di vincita.",
+        description: "Zaffiro by Vital games.",
         videos: [
             "https://example.com/video1.mp4",
             "https://example.com/video2.mp4",
@@ -245,7 +246,7 @@ export const multigames = [
         mainImage: luckySlotMain,
         video: "https://files.catbox.moe/qc006a.mp4",
         videoId: "71836f0694f2b305a94c25bcc0265dbb",
-        description: "Sistema con 8 giochi a tema fortuna, grafica accattivante e funzionalità bonus esclusive.",
+        description: "Lucky Slot by Vital games.",
         videos: [
             "https://example.com/video1.mp4",
             "https://example.com/video2.mp4",
@@ -271,7 +272,7 @@ export const multigames = [
         mainImage: goldenClubMain,
         video: "https://files.catbox.moe/yr12je.mp4",
         videoId: "ef85323f39e89462feb516af31eb66bd",
-        description: "Esperienza VIP con 8 giochi selezionati, tema lussuoso e meccaniche di gioco innovative.",
+        description: "Golden Club by Vital games.",
         videos: [
             "https://example.com/video1.mp4",
             "https://example.com/video2.mp4",
@@ -300,7 +301,7 @@ export const multigames = [
         isComingSoon: false,
         mainImage: goldenArgento,
         videoId: "",
-        description: "Sistema premium con 10 giochi esclusivi, grafica HD e funzionalità bonus avanzate.",
+        description: "Golden Club Argento by Vital games.",
         videos: [
             "https://example.com/video1.mp4",
             "https://example.com/video2.mp4",
@@ -321,7 +322,7 @@ export const multigames = [
         mainImage: goldenPlatino,
         isComingSoon: false,
         videoId: "",
-        description: "Sistema premium con 10 giochi esclusivi, grafica HD e funzionalità bonus avanzate.",
+        description: "Golden Club Platino by Vital games.",
         videos: [
             "https://example.com/video1.mp4",
             "https://example.com/video2.mp4",
@@ -348,7 +349,7 @@ export const multigames = [
         mainImage: pool4,
         isComingSoon: false,
         videoId: "",
-        description: "Sistema con 8 giochi a tema gemme, effetti visivi spettacolari e alta percentuale di vincita.",
+        description: "Pool 4 by Vital games.",
         videos: [
             "https://example.com/video1.mp4",
             "https://example.com/video2.mp4",
@@ -375,7 +376,7 @@ export const multigames = [
         mainImage: circusMain,
         video: "https://files.catbox.moe/609t67.mp4",
         videoId: "0b2d6da9a394b5c02d1ce372b0721a80",
-        description: "Sistema divertente con 10 giochi a tema circo, perfetto per un pubblico giovane e dinamico.",
+        description: "Circus by Vital games.",
         videos: [
             "https://example.com/video1.mp4",
             "https://example.com/video2.mp4",

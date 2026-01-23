@@ -232,14 +232,16 @@ import MINOTAURUS_PHOTO3 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-1
 import MINOTAURUS_PHOTO4 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-33 3.jpg'
 import MINOTAURUS_PHOTO5 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-34.jpg'
 
+
 /* import PIGGY_GOLD from '../public/games-images/p'
 import PIGGY_GOLD_PHOTO2 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-29 4.jpg'
 import PIGGY_GOLD_PHOTO3 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-31.jpg'
 import PIGGY_GOLD_PHOTO4 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-33 3.jpg'
 import PIGGY_GOLD_PHOTO5 from '../public/games-images/MINOTAURUS/PHOTO-2024-05-10-15-34-34.jpg' */
 import misterdiamond from '../public/misterdiamond.jpeg'
-import MR_DIAMOND from '../public/misterdiamond.jpeg'
-import MR_DIAMOND_MOBILE from '../public/misterdiamond.jpeg'
+import MR_DIAMOND from '../public/games-images/MR_DIAMOND/MR_DIAMOND_ALLGAMES_DESKTOP.webp'
+import MR_DIAMOND_MOBILE from '../public/allgames-mobile-hero/MR_DIAMOND_ALLGAMES_VERTICALE.webp'
+
 
 import alieni from '../public/allgames-webp/ALIENI.webp'
 import braccio from '../public/allgames-webp/BRACCIO DI FERRO.webp'
@@ -286,6 +288,7 @@ import golden_slot from '../public/allgames-webp/GOLDEN SLOT.webp'
 import minotaurus from '../public/allgames-webp/MINOTAURUS.webp'
 import crazyCircus from '../public/allgames-webp/CRAZY CIRCUS.webp'
 import piggyGold from '../public/allgames-webp/PIGGY GOLD.webp'
+import mrDiamond from '../public/onlinegames/MrDiamond.webp'
 
 import alieni_mobile_hero from '../public/allgames-mobile-hero/ALIENI_mobile.webp'
 import braccio_mobile_hero from '../public/allgames-mobile-hero/BRACCIO DI FERRO.webp'
@@ -860,5 +863,18 @@ export const games = [
     description: 'Balliamo con la rana reggae',
     featured: ['il-grillo', 'lo-struzzo', 'sonny-bono', 'striptease'],
     mobileBg: piggyGold_mobile_hero
-  }
+  },
+  {
+    name: "Mr Diamond",
+    subtitle: "Pure class",
+    description: "Pure class",
+    coverImage: MR_DIAMOND,
+    mobileBg: MR_DIAMOND_MOBILE,
+    image: mrDiamond,
+    featured: ['il-grillo', 'lo-struzzo', 'torero', 'striptease'],
+    slug: "mr-diamond",
+    mainImage: mrDiamond,
+    demoLink: "https://fiera.vitalgam.es/SLOT/MrDiamond/?demo=true&lan=it&cur=eur",
+    href: "mr-diamond",
+  },
 ]

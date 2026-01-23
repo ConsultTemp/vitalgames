@@ -44,6 +44,7 @@ import bookOfMagic from '../public/allgames-webp/BOOK OF MAGIC.webp'
 import piggyGold from '../public/allgames-webp/PIGGY GOLD.webp'
 import luxury from '../public/allgames-webp/LUXURY.webp'
 import misterdiamond from '../public/misterdiamond.jpeg'
+import mrDiamond from '../public/onlinegames/MrDiamond.webp'
 
 export const games = [
   {
@@ -315,4 +316,5 @@ export const games = [
     image: luxury,
   },
   { id: 47, slug: "dolphins", title: "Dolphins", image: dolphins },
+  { id: 48, slug: "mr-diamond", title: "Mr Diamond", image: mrDiamond },
 ]
