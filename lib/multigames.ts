@@ -59,7 +59,7 @@ export const multigames = [
         mainImage: fortunegold,
         isComingSoon: false,
         videoId: "",
-        description: "Sistema sportivo con 8 giochi a tema calcio, perfetto per gli appassionati di sport.",
+        description: "Fortune Gold by Vital games.",
         recommended: ["casino-royale", "diamante", "golden-club"],
         games: [
             games.find(g => g.slug === 'book-of-magic')!,

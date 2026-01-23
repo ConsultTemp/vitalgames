@@ -212,7 +212,7 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
           {filteredMultigames.length > 0 ? (
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
               {filteredMultigames.map((game) => (
-                <div key={game.slug} className="w-full aspect-[1080/1196] block group rounded-lg overflow-hidden relative">
+                <div key={game.slug} className="w-full block group rounded-lg overflow-hidden relative">
                   <Link href={`/${lang}/games/${game.slug}`} className="w-full h-full block relative overflow-hidden rounded-lg">
                     <Image
                       src={game.mainImage}
@@ -230,17 +230,17 @@ export default function GamesSearch({ multigames, allGames, onlineGames, lang, d
                   </Link>
                   {/* Tendina che sale dal basso - solo su desktop con hover */}
                   <div className="hidden md:block absolute bottom-0 left-0 right-0 bg-black/90 rounded-t-xl transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20 p-3">
-                    <h3 className="text-vitalYellow font-hitmarker-black text-xl mb-2 uppercase">
+                    <h3 className="text-vitalYellow font-hitmarker-black text-lg mb-2 uppercase">
                       {game.title}
                     </h3>
                     {game.games && game.games.length > 0 && (
                       <>
-                        <p className="text-xs font-hitmarker-text-regular text-white/60 mb-1.5">{dict.allGames?.contains || "Contiene:"}</p>
-                        <ul className="space-y-1 mb-3 font-hitmarker-text-regular text-white/60">
+                        <p className="text-xs font-hitmarker-text-regular text-white/60 mb-1">{dict.allGames?.contains || "Contiene:"}</p>
+                        <ul className="space-y-1 mb-2 font-hitmarker-text-regular text-white/60">
                         {game.games.map((g, idx) => (
                           <li key={idx} className="flex items-center gap-1 text-white font-hitmarker-text-medium uppercase">
                             <span className="w-1 h-1 rounded-full bg-vitalYellow flex-shrink-0"></span>
-                            <span>{g.name}</span>
+                            <span className="text-xs">{g.name}</span>
                           </li>
                         ))}
                         </ul>
