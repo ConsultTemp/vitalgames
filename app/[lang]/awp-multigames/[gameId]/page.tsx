@@ -285,6 +285,7 @@ export default async function MultigamePage({ params }: { params: Params }) {
             videoId={multigame.videoId && multigame.videoId.trim() !== '' ? multigame.videoId : undefined}
             title={multigame.title}
             description={translatedDescription}
+            fallbackImage={multigame.mainImage}
           />
         </header>
 

@@ -10,6 +10,7 @@ import cherry from "../../public/cherry.png"
 import campana from "../../public/campana.png"
 import diamante1 from "../../public/diamond.png"
 import squalo from "../../public/squalo.png"
+import bgmultigamopen from "../../public/bgmultigamopen.png"
 import SmoothReveal from "../smooth-reveal"
 
 interface MultigameContentProps {
@@ -20,9 +21,7 @@ interface MultigameContentProps {
 export default async function MultigameContent({ multigame, lang }: MultigameContentProps) {
   const dict = await getDictionary(lang)
 
-  const translatedDescription =
-    dict.home?.multigames?.descriptions?.[multigame.slug as keyof typeof dict.home.multigames.descriptions] ||
-    multigame.description
+  const translatedDescription = multigame.title + " by Vital games."
 
   return (
     <div className="bg-black">
@@ -33,6 +32,7 @@ export default async function MultigameContent({ multigame, lang }: MultigameCon
           videoId={multigame.videoId && multigame.videoId.trim() !== '' ? multigame.videoId : undefined}
           title={multigame.title}
           description={translatedDescription}
+          fallbackImage={multigame.mainImage}
         />
       </header>
 

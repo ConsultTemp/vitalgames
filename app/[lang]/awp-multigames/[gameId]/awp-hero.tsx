@@ -11,9 +11,10 @@ interface GameSectionProps {
     videoId?: string;
     title: string;
     description: string;
+    fallbackImage?: StaticImageData;
 }
 
-export default function GameSection({ imageUrl, videoUrl, videoId, title, description }: GameSectionProps) {
+export default function GameSection({ imageUrl, videoUrl, videoId, title, description, fallbackImage }: GameSectionProps) {
   console.log(videoUrl)
   console.log(!!videoUrl)
   const [isPlaying, setIsPlaying] = useState(false)
@@ -27,7 +28,7 @@ export default function GameSection({ imageUrl, videoUrl, videoId, title, descri
   }
 
   return (
-    <div className="relative w-full overflow-hidden text-white h-screen pb-8">
+    <div className="relative w-full overflow-hidden text-white  py-8">
       {/* Background image as actual img tag with lower z-index */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Image src={imageUrl || "/placeholder.svg"} alt="" className="w-full h-full object-cover" />
@@ -79,13 +80,23 @@ export default function GameSection({ imageUrl, videoUrl, videoId, title, descri
               </button>
             )}
           </div>
+        ) : fallbackImage ? (
+          <div className="w-full max-w-4xl mb-12 relative rounded-lg overflow-hidden">
+            <Image 
+              src={fallbackImage} 
+              alt={`${title} - Multigame`}
+              className="w-full h-auto object-cover rounded-lg"
+              width={1920}
+              height={1080}
+            />
+          </div>
         ) : null}
 
         {/* Text content */}
         <div className="text-center max-w-3xl">
           <p className="text-vitalYellow font-hitmarker-text-bold uppercase">Multigames</p>
-          <h2 className="text-7xl md:text-8xl font-hitmarker-black uppercase mb-2">{title}</h2>
-          <p className="text-white font-hitmarker-text-regular uppercase text-xs max-w-lg mx-12">
+          <h2 className="text-7xl md:text-8xl font-hitmarker-black uppercase mb-4">{title}</h2>
+          <p className="text-white/90 font-hitmarker-text-regular uppercase text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
             {description}
           </p>
         </div>
