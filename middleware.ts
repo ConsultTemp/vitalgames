@@ -20,6 +20,11 @@ function getLocale(request: NextRequest): string {
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
+  // Skip robots.txt and sitemap files
+  if (pathname === '/robots.txt' || pathname.startsWith('/sitemap')) {
+    return NextResponse.next()
+  }
+
   // Skip static assets - images, fonts, etc.
   const staticExtensions = ['.webp', '.jpg', '.jpeg', '.png', '.gif', '.svg', '.ico', '.woff', '.woff2', '.ttf', '.otf', '.eot', '.css', '.js', '.json', '.xml', '.txt']
   const isStaticAsset = staticExtensions.some(ext => pathname.endsWith(ext))

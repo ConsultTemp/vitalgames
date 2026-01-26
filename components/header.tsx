@@ -30,6 +30,7 @@ export default function Navbar() {
   const [isSheetOpen, setIsSheetOpen] = useState(false)
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false)
   const [isLangMenuOpenMobile, setIsLangMenuOpenMobile] = useState(false)
+  const [isLangMenuOpenMobileHeader, setIsLangMenuOpenMobileHeader] = useState(false)
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const { dictionary: dict, lang, setLang } = useLanguage()
@@ -206,8 +207,50 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Right side with Menu only */}
+        {/* Right side with Language Selector and Menu */}
         <div className="flex items-center gap-2 z-[1002]">
+          {/* Language Selector for Mobile Header */}
+          <DropdownMenu open={isLangMenuOpenMobileHeader} onOpenChange={setIsLangMenuOpenMobileHeader}>
+            <DropdownMenuTrigger asChild>
+              <Button className="bg-transparent border border-[#505050] text-white font-hitmarker-text-medium flex items-center gap-1.5 pl-3 pr-2.5 h-9 rounded-full hover:bg-white/10 transition-all duration-300">
+                <Image
+                  src={languages.find(l => l.code === lang)?.flag || eng}
+                  alt={languages.find(l => l.code === lang)?.label || 'EN'}
+                  width={16}
+                  height={16}
+                  className="object-contain"
+                  sizes="16px"
+                />
+                <span className="text-sm font-medium">{languages.find(l => l.code === lang)?.label || 'EN'}</span>
+                <ChevronDown 
+                  className={`w-4 h-4 transition-transform duration-300 ${isLangMenuOpenMobileHeader ? 'rotate-180' : ''}`}
+                />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="bg-black/50 border border-[#202020] font-hitmarker-text-medium text-base backdrop-blur-md z-[1003] rounded-2xl shadow-xl">
+              {languages.map((language) => (
+                <DropdownMenuItem
+                  key={language.code}
+                  className={`text-sm ${lang === language.code ? 'text-vitalYellow font-bold' : 'text-white'} hover:bg-white/10 p-2 rounded-xl cursor-pointer flex items-center gap-2`}
+                  onClick={() => {
+                    const newPath = pathname.replace(/^\/[a-z]{2}/, `/${language.code}`);
+                    window.location.href = newPath;
+                  }}
+                >
+                  <Image
+                    src={language.flag}
+                    alt={language.label}
+                    width={20}
+                    height={20}
+                    className="object-contain"
+                    sizes="20px"
+                  />
+                  <span>{language.label}</span>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild>
             <Button
