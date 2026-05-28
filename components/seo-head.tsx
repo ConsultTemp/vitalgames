@@ -16,7 +16,7 @@ export default function SEOHead({
   title,
   description,
   keywords,
-  ogImage = "/bar.png",
+  ogImage = "/vital-logo.png",
   ogType = "website",
   twitterCard = "summary_large_image",
 }: SEOHeadProps) {

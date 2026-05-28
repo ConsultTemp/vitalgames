@@ -179,7 +179,7 @@ export const metadata: Metadata = {
         type: "image/jpeg",
       },
       {
-        url: "https://www.vitalgamesdigital.com/bar.png",
+        url: "https://www.vitalgamesdigital.com/vital-logo.png",
         width: 800,
         height: 600,
         alt: "Vitalgames Logo - Produttore Slot Machine",
@@ -198,7 +198,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Vitalgames | Leader Slot Machine Italia dal 1996",
     description: "🎰 Produttore leader di slot machine, VLT e multigame. Soluzioni certificate ADM per bar, sale giochi e casinò. Milano.",
-    images: ["https://www.vitalgamesdigital.com/bar.png"],
+    images: ["https://www.vitalgamesdigital.com/vital-logo.png"],
     creator: "@VitalgamesOfficial",
     site: "@VitalgamesOfficial",
   },

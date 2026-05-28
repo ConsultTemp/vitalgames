@@ -23,6 +23,33 @@ import { games } from './allgamesmap'
 import { atlanticMultigames } from './allgames'
 
 export const multigames = [
+
+    {
+        id: 15,
+        slug: "atlantic-multigame",
+        title: "Atlantic Multigame",
+        coverImage: atlanticMultigameMain,
+        isComingSoon: false, 
+        mainImage: atlanticMultigameMain,
+        video: "https://files.catbox.moe/mo9iid.mp4",
+        videoId: "d29da4a134c4d3c9b1aabed29c97230e",
+        description: "Atlantic Multigame by Vital games.",
+        videos: [
+            "https://example.com/video1.mp4",
+            "https://example.com/video2.mp4",
+            "https://example.com/video3.mp4",
+            "https://example.com/video4.mp4",
+            "https://example.com/video5.mp4",
+            "https://example.com/video6.mp4"
+        ],
+        games: atlanticMultigames.map((game) => ({
+            id: game.id,
+            slug: game.slug,
+            name: game.title,
+            mainImage: game.image,
+        })),
+        recommended: ["casino-royale", "diamante", "golden-club"]
+    },
     {
         id: 11,
         slug: "manhattan",
@@ -388,32 +415,6 @@ export const multigames = [
             "https://example.com/video6.mp4"
         ],
         games: [],
-        recommended: ["casino-royale", "diamante", "golden-club"]
-    },
-    {
-        id: 15,
-        slug: "atlantic-multigame",
-        title: "Atlantic Multigame",
-        coverImage: atlanticMultigameMain,
-        isComingSoon: false, 
-        mainImage: atlanticMultigameMain,
-        video: "https://files.catbox.moe/mo9iid.mp4",
-        videoId: "7c721da61464741345c4c435979e75ce",
-        description: "Atlantic Multigame by Vital games.",
-        videos: [
-            "https://example.com/video1.mp4",
-            "https://example.com/video2.mp4",
-            "https://example.com/video3.mp4",
-            "https://example.com/video4.mp4",
-            "https://example.com/video5.mp4",
-            "https://example.com/video6.mp4"
-        ],
-        games: atlanticMultigames.map((game) => ({
-            id: game.id,
-            slug: game.slug,
-            name: game.title,
-            mainImage: game.image,
-        })),
         recommended: ["casino-royale", "diamante", "golden-club"]
     }
 ]

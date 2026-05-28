@@ -677,7 +677,7 @@ export function generateProductSchema(product: any, locale: Locale) {
       },
     },
     category: "Gaming Machines",
-    image: product.image || "https://www.vitalgamesdigital.com/bar.png",
+    image: product.image || "https://www.vitalgamesdigital.com/vital-logo.png",
   }
 }
 
@@ -961,7 +961,7 @@ export function generateAdvancedSEOMetadata(
   // Prepara le immagini OpenGraph
   const ogImages = [
     {
-      url: customData?.image || "/bar.png",
+      url: customData?.image || "/vital-logo.png",
       width: 1200,
       height: 630,
       alt: baseSEO?.title || "Vitalgames",
@@ -1020,7 +1020,7 @@ export function generateAdvancedSEOMetadata(
       card: "summary_large_image",
       title: customData?.title || baseSEO?.title || "Vitalgames",
       description: customData?.description || baseSEO?.description,
-      images: [customData?.image || "/bar.png"],
+      images: [customData?.image || "/vital-logo.png"],
       creator: "@VitalgamesOfficial",
       site: "@VitalgamesOfficial",
     },
