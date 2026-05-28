@@ -111,7 +111,8 @@ export default async function MultigameContent({ multigame, lang }: MultigameCon
                       <p className="text-white font-hitmarker-text-regular text-left w-full text-base md:mx-0 mb-2 text-white/60 uppercase">
                         {dict.allGamesDescriptions?.[game.slug]}
                       </p>
-                      <Link href={`/${lang}/games/${game.slug}`} className="flex flex-col items-start">
+
+                      {game.href &&<Link href={`/${lang}/games/${game.slug}`} className="flex flex-col items-start">
                         <Button
                           variant="vitalYellow"
                           className="
@@ -123,7 +124,7 @@ export default async function MultigameContent({ multigame, lang }: MultigameCon
                         >
                           {dict.common.buttons.playNow}
                         </Button>
-                      </Link>
+                      </Link>}
                     </div>
                   </div>
                 </article>

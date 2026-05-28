@@ -45,6 +45,11 @@ import piggyGold from '../public/allgames-webp/PIGGY GOLD.webp'
 import luxury from '../public/allgames-webp/LUXURY.webp'
 import misterdiamond from '../public/misterdiamond.jpeg'
 import mrDiamond from '../public/onlinegames/MrDiamond.webp'
+import crazyMouse from '../public/allgames-webp/crazymouse.webp'
+import captainLuck from '../public/allgames-webp/captainluck.webp'
+import ladyDiamond from '../public/allgames-webp/ladydiamond.webp'
+import gooseFarm from '../public/allgames-webp/goosefarm.webp'
+import pingoTime from '../public/allgames-webp/pingotime.webp'
 
 export const games = [
   {
@@ -317,4 +322,37 @@ export const games = [
   },
   { id: 47, slug: "dolphins", title: "Dolphins", image: dolphins },
   { id: 48, slug: "mr-diamond", title: "Mr Diamond", image: mrDiamond },
+]
+
+export const atlanticMultigames = [
+  {
+    id: 1,
+    slug: "crazy-mouse",
+    title: "Crazy Mouse",
+    image: crazyMouse,
+  },
+  {
+    id: 2,
+    slug: "captain-luck",
+    title: "Captain's Luck",
+    image: captainLuck,
+  },
+  {
+    id: 3,
+    slug: "lady-diamond",
+    title: "Lady Diamond",
+    image: ladyDiamond,
+  },
+  {
+    id: 4,
+    slug: "goose-farm",
+    title: "Goose Farm",
+    image: gooseFarm,
+  },
+  {
+    id: 5,
+    slug: "pingo-time",
+    title: "Pingo Time",
+    image: pingoTime,
+  }
 ]

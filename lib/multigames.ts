@@ -15,10 +15,12 @@ import pool4 from '../public/multigames-pagis/Card/Pool4.webp'
 import goldenArgento from '../public/multigames-pagis/Card/Golden Club - Argento.webp'
 import goldenPlatino from '../public/multigames-pagis/Card/Golden Club - Platino.webp'
 import fortunegold from '../public/multigames/Multigames/Fortune Gold/fortune_gold.webp'
+import atlanticMultigameMain from '../public/multigames-pagis/Card/atlanticmulti.webp'
 
 
 
 import { games } from './allgamesmap'
+import { atlanticMultigames } from './allgames'
 
 export const multigames = [
     {
@@ -388,4 +390,30 @@ export const multigames = [
         games: [],
         recommended: ["casino-royale", "diamante", "golden-club"]
     },
+    {
+        id: 15,
+        slug: "atlantic-multigame",
+        title: "Atlantic Multigame",
+        coverImage: atlanticMultigameMain,
+        isComingSoon: false, 
+        mainImage: atlanticMultigameMain,
+        video: "https://files.catbox.moe/mo9iid.mp4",
+        videoId: "1c543ebf79ca4c8898ef84eb3a74bd60",
+        description: "Atlantic Multigame by Vital games.",
+        videos: [
+            "https://example.com/video1.mp4",
+            "https://example.com/video2.mp4",
+            "https://example.com/video3.mp4",
+            "https://example.com/video4.mp4",
+            "https://example.com/video5.mp4",
+            "https://example.com/video6.mp4"
+        ],
+        games: atlanticMultigames.map((game) => ({
+            id: game.id,
+            slug: game.slug,
+            name: game.title,
+            mainImage: game.image,
+        })),
+        recommended: ["casino-royale", "diamante", "golden-club"]
+    }
 ]

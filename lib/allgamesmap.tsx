@@ -336,6 +336,13 @@ import golden_slot_mobile_hero from '../public/allgames-mobile-hero/GOLDEN SLOT_
 import minotaurus_mobile_hero from '../public/allgames-mobile-hero/MINOTAURUS_mobile.webp'
 import crazyCircus_mobile_hero from '../public/allgames-mobile-hero/CRAZY CIRCUS_mobile.webp'
 
+import crazyMouse from '../public/allgames-webp/crazymouse.webp'
+import captainLuck from '../public/allgames-webp/captainluck.webp'
+import ladyDiamond from '../public/allgames-webp/ladydiamond.webp'
+import gooseFarm from '../public/allgames-webp/goosefarm.webp'
+import pingoTime from '../public/allgames-webp/pingotime.webp'
+
+
 export const games = [
   {
     name: 'Shark',
@@ -876,5 +883,45 @@ export const games = [
     mainImage: mrDiamond,
     demoLink: "https://fiera.vitalgam.es/SLOT/MrDiamond/?demo=true&lan=it&cur=eur",
     href: "mr-diamond",
+  },
+  {
+    name: "Crazy Mouse",
+    subtitle: "Mouse run",
+    description: "Mouse run",
+    featured: ['il-grillo', 'lo-struzzo', 'torero', 'striptease'],
+    slug: "crazy-mouse",
+    mainImage: crazyMouse,
+  },
+  {
+    name: "Captain's Luck",
+    subtitle: "Captain's luck",
+    description: "Captain's luck",
+    featured: ['il-grillo', 'lo-struzzo', 'torero', 'striptease'],
+    slug: "captain-luck",
+    mainImage: captainLuck,
+  },
+  {
+    name: "Lady Diamond",
+    subtitle: "Lady diamond",
+    description: "Lady diamond",
+    featured: ['il-grillo', 'lo-struzzo', 'torero', 'striptease'],
+    slug: "lady-diamond",
+    mainImage: ladyDiamond,
+  },
+  {
+    name: "Goose Farm",
+    subtitle: "Goose farm",
+    description: "Goose farm",
+    featured: ['il-grillo', 'lo-struzzo', 'torero', 'striptease'],
+    slug: "goose-farm",
+    mainImage: gooseFarm,
+  },
+  {
+    name: "Pingo Time",
+    subtitle: "Pingo time",
+    description: "Pingo time",
+    featured: ['il-grillo', 'lo-struzzo', 'torero', 'striptease'],
+    slug: "pingo-time",
+    mainImage: pingoTime,
   },
 ]

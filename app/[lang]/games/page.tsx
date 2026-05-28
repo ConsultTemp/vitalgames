@@ -155,7 +155,8 @@ export default async function GamesPage(props: { params: Params }) {
   }
 
   // Sort games to put coming soon games first
-  const sortedAllGames = [...games].sort((a, b) => {
+  //rimuoviamo gli ultimi 5 giochi aggiunti dalla lista
+  const sortedAllGames = [...games].slice(0, -5).sort((a, b) => {
     if (a.isComingSoon && !b.isComingSoon) return -1
     if (!a.isComingSoon && b.isComingSoon) return 1
     return 0
