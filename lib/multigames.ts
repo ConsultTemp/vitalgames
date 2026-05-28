@@ -398,7 +398,7 @@ export const multigames = [
         isComingSoon: false, 
         mainImage: atlanticMultigameMain,
         video: "https://files.catbox.moe/mo9iid.mp4",
-        videoId: "1c543ebf79ca4c8898ef84eb3a74bd60",
+        videoId: "7c721da61464741345c4c435979e75ce",
         description: "Atlantic Multigame by Vital games.",
         videos: [
             "https://example.com/video1.mp4",
