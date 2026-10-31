@@ -16,6 +16,7 @@ import goldenArgento from '../public/multigames-pagis/Card/Golden Club - Argento
 import goldenPlatino from '../public/multigames-pagis/Card/Golden Club - Platino.webp'
 import fortunegold from '../public/multigames/Multigames/Fortune Gold/fortune_gold.webp'
 import atlanticMultigameMain from '../public/multigames-pagis/Card/atlanticmulti.webp'
+import sidneyMultigameMain from '../public/multigames-pagis/Card/sidney.webp'
 
 
 
@@ -23,6 +24,24 @@ import { games } from './allgamesmap'
 import { atlanticMultigames } from './allgames'
 
 export const multigames = [
+
+    {
+        id: 16,
+        slug: "sidney-multigame",
+        title: "Sidney Multigame",
+        coverImage: sidneyMultigameMain,
+        isComingSoon: false,
+        mainImage: sidneyMultigameMain,
+        videoId: "e09ad60cd9c4d579b4f0444c5841cad9",
+        description: "Sidney Multigame by Vital games.",
+        videos: [],
+        games: [
+            games.find(g => g.slug === 'lo-struzzo')!,
+            games.find(g => g.slug === 'piggy-gold')!,
+            games.find(g => g.slug === 'pingo-time')!,
+        ],
+        recommended: ["casino-royale", "diamante", "golden-club"]
+    },
 
     {
         id: 15,

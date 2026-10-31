@@ -13,8 +13,8 @@ export default function HeroSection() {
     <section className="relative w-full bg-black min-h-[20vh] md:min-h-screen flex items-end">
       <OptimizedVideo
         ratio="hero"
-        videoId="2a8fbc891422d4e0ccea488a6709d001"
-        mobileId="6c3d0602527049492d76b7de48d0ff3e"
+        videoId="6ccef08f92aca1655aec9b104227d83f"
+        mobileId="3d6cd5cf115208765d61fdead4335e91"
         width="100vw"
         overlay={false}
       />
