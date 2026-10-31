@@ -18,8 +18,32 @@ import lucky8 from '../public/onlinegames/lucky8.webp'
 import robinWood from '../public/onlinegames/robin.webp'
 import shark from '../public/onlinegames/shark.webp'
 import igor from '../public/onlinegames/igor.webp'
+import ladyDiamond from '../public/onlinegames/ladydiamond.webp'
+import ladyDiamond50 from '../public/onlinegames/ladydiamond50.webp'
+import loStruzzo50 from '../public/onlinegames/struzzo50.webp'
 
 export const onlineGames = [
+  {
+    id: 21,
+    title: "Lady Diamond",
+    description: "Shine bright",
+    image: ladyDiamond,
+    demoLink: "https://fiera.vitalgam.es:18443/lady/?demo=true&lan=IT&cur=EUR&lobby=https%3A%2F%2Ffiera.vitalgam.es%3A18443%2F"
+  },
+  {
+    id: 22,
+    title: "Lady Diamond 50 Lines",
+    description: "50 lines of class",
+    image: ladyDiamond50,
+    demoLink: "https://fiera.vitalgam.es:18443/lady-5x5/?demo=true&lan=IT&cur=EUR&lobby=https%3A%2F%2Ffiera.vitalgam.es%3A18443%2F"
+  },
+  {
+    id: 23,
+    title: "Lo Struzzo 50 Lines",
+    description: "Run wilder",
+    image: loStruzzo50,
+    demoLink: "https://fiera.vitalgam.es:18443/struzzo-50/?demo=true&lan=IT&cur=EUR&lobby=https%3A%2F%2Ffiera.vitalgam.es%3A18443%2F"
+  },
   {
     id: 1,
     title: "Mr Diamond",
